@@ -1,0 +1,3308 @@
+/**
+ * VSTEP SPEAKING PART 01 - ACADEMIC SCRIPT
+ * Handles slide navigation, interactive formula presentation, speech synthesis, and random practice.
+ */
+
+document.addEventListener('DOMContentLoaded', () => {
+    try {
+    // App State
+    const state = {
+        studentName: 'Khách',
+        isAudio: true,
+        isDark: false,
+        ynIndex: 0,
+        selectedVoiceURI: null,
+        unlockedTabs: {}
+    };
+
+    // DOM References
+    const welcomeModal = document.getElementById('welcome-modal');
+    const studentInput = document.getElementById('student-name');
+    const studentClassInput = document.getElementById('student-class');
+    const loginError = document.getElementById('login-error');
+    const trackingForm = document.getElementById('tracking-form');
+    const entryInput = document.getElementById('entry_388968236');
+    const startBtn = document.getElementById('start-btn');
+    const userProfile = document.getElementById('user-profile');
+    const displayName = document.getElementById('display-name');
+    
+    const sidebar = document.getElementById('sidebar');
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const navItems = document.querySelectorAll('.nav-item');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+    const topTitle = document.getElementById('top-title');
+    const themeToggle = document.getElementById('theme-toggle');
+    const audioToggle = document.getElementById('audio-toggle');
+    const voiceSelect = document.getElementById('voice-select');
+
+    // Tab Titles Mapping
+    const titles = {
+        'overview': 'OVERVIEW',
+        'yes-no': 'YES/NO QUESTIONS',
+        'choice': 'CHOICE QUESTIONS',
+        'wh-questions': 'WH- QUESTIONS',
+        'benefits': 'COMMON BENEFITS',
+        'activities': 'COMMON ACTIVITIES'
+    };
+
+    // Quản lý danh sách giọng đọc AI
+    const populateVoices = () => {
+        if (!voiceSelect || !('speechSynthesis' in window)) return;
+        const voices = window.speechSynthesis.getVoices();
+        const enVoices = voices.filter(v => v.lang.startsWith('en'));
+        if (enVoices.length === 0) return;
+        
+        const currentSelection = state.selectedVoiceURI || voiceSelect.value;
+        
+        voiceSelect.innerHTML = '';
+        enVoices.forEach(v => {
+            const opt = document.createElement('option');
+            opt.value = v.voiceURI;
+            opt.textContent = `${v.name.replace('Microsoft ', '').replace('Online (Natural) - English (United States)', 'US').replace(' - English (United States)', ' US')} (${v.lang})`;
+            voiceSelect.appendChild(opt);
+        });
+
+        const usVoices = enVoices.filter(v => v.lang === 'en-US' || v.lang.replace('_', '-') === 'en-US' || v.lang.startsWith('en-US'));
+        const defaultVoice = voices.find(v => v.name.includes('Guy'))
+                          || usVoices.find(v => v.name.includes('Evan') || v.name.includes('Eric') || v.name.includes('Alex') || v.name.includes('Jenny') || v.name.includes('Aria') || v.name.includes('Ava'))
+                          || usVoices.find(v => v.name.includes('Natural') || v.name.includes('Online') || v.name.includes('Premium') || v.name.includes('Enhanced') || v.name.includes('Siri'))
+                          || usVoices.find(v => v.name.includes('Google US English') || v.name.includes('Samantha'))
+                          || usVoices[0] || enVoices[0];
+
+        if (currentSelection && voices.some(v => v.voiceURI === currentSelection)) {
+            voiceSelect.value = currentSelection;
+            state.selectedVoiceURI = currentSelection;
+        } else if (defaultVoice) {
+            voiceSelect.value = defaultVoice.voiceURI;
+            state.selectedVoiceURI = defaultVoice.voiceURI;
+        }
+    };
+
+    if (voiceSelect) {
+        voiceSelect.addEventListener('change', (e) => {
+            state.selectedVoiceURI = e.target.value;
+            window.speakText("Hello! I am your AI speaking partner.");
+        });
+    }
+
+    if ('speechSynthesis' in window) {
+        populateVoices();
+        window.speechSynthesis.onvoiceschanged = () => populateVoices();
+    }
+
+    // Global AI Speech
+    window.speakText = (txt) => {
+        if (!state.isAudio) return;
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            const utt = new SpeechSynthesisUtterance(txt);
+            
+            const voices = window.speechSynthesis.getVoices();
+            
+            let bestVoice = null;
+            if (state.selectedVoiceURI) {
+                bestVoice = voices.find(v => v.voiceURI === state.selectedVoiceURI);
+            }
+            if (!bestVoice) {
+                const preferredNames = [
+                    "Microsoft Guy",
+                    "Google UK English Male",
+                    "Google US English Male",
+                    "Alex",
+                    "Daniel",
+                    "Google US English",
+                    "Samantha"
+                ];
+                for (let name of preferredNames) {
+                    bestVoice = voices.find(v => v.name.includes(name));
+                    if (bestVoice) break;
+                }
+                if (!bestVoice) {
+                    bestVoice = voices.find(v => (v.lang.startsWith("en-US") || v.lang.startsWith("en-GB")) && v.name.includes("Male"));
+                }
+                if (!bestVoice) {
+                    bestVoice = voices.find(v => v.lang.startsWith("en-US") || v.lang.startsWith("en-GB"));
+                }
+                if (!bestVoice) {
+                    bestVoice = voices[0];
+                }
+            }
+            
+            if (bestVoice) {
+                utt.voice = bestVoice;
+                utt.lang = bestVoice.lang;
+            } else {
+                utt.lang = 'en-US';
+            }
+            utt.rate = 1.0; // Normal speed
+            utt.pitch = 1.25; // Slightly higher pitch for energetic Gen-Z vibe
+            
+            window.speechSynthesis.speak(utt);
+        }
+    };
+
+    // 1. WELCOME MODAL & STUDENT AUTHENTICATION
+    const validStudentsB212 = [
+        "Nguyễn Duy Hồng Anh",
+        "Nguyễn Ngọc Minh Anh",
+        "Nguyễn Lê Mỹ Hân",
+        "Nguyễn Hồng Minh Huy",
+        "Nguyễn Quốc Khải",
+        "Đoàn Nguyễn Đình Khang",
+        "Lê Nguyễn Gia Khánh",
+        "Nguyễn Hữu Khánh",
+        "Hồ Thị Ngọc Lan",
+        "Trần Thị Hồng Lỉnh",
+        "Võ Thị Triệu Minh",
+        "Hứa Đình Nghi",
+        "Võ Thị Bảo Ngọc",
+        "Lê Tiến Phát",
+        "Nguyễn Hoàng Thông",
+        "Nguyễn Kim Tiền",
+        "Lê Thị Bảo Trân",
+        "Võ Thị Diễm Trinh",
+        "Nguyễn Tiến Trung",
+        "Trần Thị Ánh Tuyết",
+        "Đặng Nguyễn Khánh Uyên",
+        "Nguyễn Thị Chúc Yến"
+    ];
+
+    const normalizeStr = (str) => {
+        return (str || '')
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .toLowerCase()
+            .replace(/\s+/g, ' ')
+            .trim();
+    };
+
+    window.finishLogin = () => {
+        const val = studentInput.value.trim();
+        state.studentName = val;
+        displayName.textContent = val;
+        userProfile.classList.remove('hidden');
+        welcomeModal.style.opacity = '0';
+        setTimeout(() => welcomeModal.classList.add('hidden'), 300);
+    };
+
+    const enterRoom = () => {
+        const nameVal = studentInput.value.trim();
+        const classVal = studentClassInput.value.trim();
+        
+        if (!nameVal || !classVal) {
+            loginError.textContent = 'Vui lòng nhập đầy đủ Họ tên và Lớp!';
+            loginError.style.display = 'block';
+            return;
+        }
+
+        const formattedClass = classVal.toUpperCase().replace(/\s+/g, '');
+        const normName = normalizeStr(nameVal);
+
+        // Check Teacher access
+        const isTeacher = (formattedClass === 'GV' || formattedClass === 'GV2026') && 
+                          (normName === 'ptmn' || normName === 'pham thi minh nguyet' || normName === 'minh nguyet');
+
+        if (isTeacher) {
+            state.accessLevel = 'FULL';
+        } else if (formattedClass === 'B212') {
+            // Check student list for class B212
+            const matchedStudent = validStudentsB212.find(s => {
+                const sNorm = normalizeStr(s);
+                return sNorm === normName || s.toLowerCase() === nameVal.toLowerCase();
+            });
+
+            if (!matchedStudent) {
+                loginError.textContent = 'Họ và Tên không thuộc danh sách lớp B212. Vui lòng kiểm tra lại!';
+                loginError.style.display = 'block';
+                return;
+            }
+            state.accessLevel = 'FULL';
+        } else {
+            loginError.textContent = 'Mã lớp không hợp lệ. Vui lòng nhập đúng lớp B212!';
+            loginError.style.display = 'block';
+            return;
+        }
+
+        loginError.style.display = 'none';
+        startBtn.disabled = true;
+        startBtn.innerHTML = `<span>Đang vào lớp...</span> <i class="fa-solid fa-spinner fa-spin"></i>`;
+        
+        entryInput.value = `${nameVal} - ${classVal}`;
+        window.submitted = true;
+        trackingForm.submit();
+        
+        // Fallback timeout in case iframe block prevents onload
+        setTimeout(() => {
+            if (!welcomeModal.classList.contains('hidden')) {
+                window.finishLogin();
+            }
+        }, 1500);
+    };
+
+    startBtn?.addEventListener('click', enterRoom);
+    studentInput?.addEventListener('keypress', (e) => { if (e.key === 'Enter') enterRoom(); });
+    studentClassInput?.addEventListener('keypress', (e) => { if (e.key === 'Enter') enterRoom(); });
+
+    // Sidebar & Navigation
+    mobileToggle?.addEventListener('click', () => sidebar.classList.toggle('open'));
+
+    let currentTargetTab = null;
+    let currentTargetItem = null;
+
+    navItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = item.getAttribute('data-target');
+            
+
+
+            activateTab(target, item);
+        });
+    });
+
+    function activateTab(target, item) {
+        navItems.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+        
+        tabPanes.forEach(pane => {
+            if (pane.id === target) {
+                pane.classList.remove('hidden');
+                pane.classList.remove('fade-in');
+                void pane.offsetWidth;
+                pane.classList.add('fade-in');
+            } else {
+                pane.classList.add('hidden');
+            }
+        });
+
+        if (topTitle) topTitle.textContent = titles[target] || target.toUpperCase();
+        if (target === 'topics') {
+            const activeBtn = document.querySelector('.sub-tab-btn.active') || document.querySelector('.sub-tab-btn');
+            if (activeBtn) {
+                const match = activeBtn.getAttribute('onclick')?.match(/switchSubTab\('([^']+)'/);
+                const subId = match ? match[1] : 'books';
+                window.switchSubTab(subId, activeBtn);
+            }
+        }
+        if (window.innerWidth <= 768) sidebar.classList.remove('open');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+
+    // Theme & Audio toggles
+    themeToggle?.addEventListener('click', () => {
+        state.isDark = !state.isDark;
+        document.body.classList.toggle('dark-theme', state.isDark);
+        themeToggle.innerHTML = state.isDark ? '<i class="fa-solid fa-sun" style="color:#f59e0b"></i>' : '<i class="fa-solid fa-moon"></i>';
+    });
+
+    audioToggle?.addEventListener('click', () => {
+        state.isAudio = !state.isAudio;
+        audioToggle.innerHTML = state.isAudio ? '<i class="fa-solid fa-volume-high"></i>' : '<i class="fa-solid fa-volume-xmark" style="color:var(--danger)"></i>';
+        audioToggle.classList.toggle('active', state.isAudio);
+        if (!state.isAudio && 'speechSynthesis' in window) window.speechSynthesis.cancel();
+    });
+    // 3. YES/NO PRACTICE ROOM SLIDER (7 Formulas)
+    // 3. YES/NO PRACTICE ROOM SLIDER (7 Formulas from PowerPoint)
+    window.toggleSampleAnswer = (btn) => {
+        const ansEl = btn.nextElementSibling;
+        if (ansEl.style.display === 'none') {
+            ansEl.style.display = 'block';
+            btn.innerHTML = '<i class="fa-solid fa-eye-slash"></i> Ẩn câu trả lời mẫu';
+        } else {
+            ansEl.style.display = 'none';
+            btn.innerHTML = '<i class="fa-solid fa-eye"></i> Nhấn xem câu trả lời mẫu';
+        }
+    };
+
+        // 3. YES/NO PRACTICE ROOM SLIDER (7 Formulas from B2 PowerPoint)
+        // 3. YES/NO PRACTICE ROOM SLIDER (7 Formulas with 6 Examples Each)
+    const ynFormulas = [
+        {
+                "title": "1. Do you often [hoạt động – Vo]?",
+                "formula": "→ Sure. I often <strong>[hoạt động – Vo]</strong> <strong>[thời gian]</strong> whenever I have free time. It allows me to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>.",
+                "examples": [
+                        {
+                                "q": "Do you often <span class='sub-hl'>play sports</span>?",
+                                "a": "→ Sure. I often play sports in the afternoon whenever I have free time. It allows me to relax after a busy day and stay healthy.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Sure. I often <strong>play sports</strong> <strong>in the afternoon</strong> whenever I have free time. It allows me to <strong>relax after a busy day</strong> and <strong>stay healthy</strong>.</div>"
+                        },
+                        {
+                                "q": "Do you often <span class='sub-hl'>read books</span>?",
+                                "a": "→ Sure. I often read books in the evening whenever I have free time. It allows me to widen my knowledge and develop my imagination.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Sure. I often <strong>read books</strong> <strong>in the evening</strong> whenever I have free time. It allows me to <strong>widen my knowledge</strong> and <strong>develop my imagination</strong>.</div>"
+                        },
+                        {
+                                "q": "Do you often <span class='sub-hl'>listen to music</span>?",
+                                "a": "→ Sure. I often listen to music before going to bed whenever I have free time. It allows me to relax after a busy day and sleep better.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Sure. I often <strong>listen to music</strong> <strong>before going to bed</strong> whenever I have free time. It allows me to <strong>relax after a busy day</strong> and <strong>sleep better</strong>.</div>"
+                        },
+                        {
+                                "q": "Do you often <span class='sub-hl'>watch movies</span>?",
+                                "a": "→ Sure. I often watch movies at weekends whenever I have free time. It allows me to enjoy my free time and improve my mood.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Sure. I often <strong>watch movies</strong> <strong>at weekends</strong> whenever I have free time. It allows me to <strong>enjoy my free time</strong> and <strong>improve my mood</strong>.</div>"
+                        },
+                        {
+                                "q": "Do you often <span class='sub-hl'>go for a walk</span>?",
+                                "a": "→ Sure. I often go for a walk in the early morning whenever I have free time. It allows me to stay in good shape and clear my mind.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Sure. I often <strong>go for a walk</strong> <strong>in the early morning</strong> whenever I have free time. It allows me to <strong>stay in good shape</strong> and <strong>clear my mind</strong>.</div>"
+                        },
+                        {
+                                "q": "Do you often <span class='sub-hl'>go shopping</span>?",
+                                "a": "→ Sure. I often go shopping at weekends whenever I have free time. It allows me to enjoy my free time and forget about my worries.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Sure. I often <strong>go shopping</strong> <strong>at weekends</strong> whenever I have free time. It allows me to <strong>enjoy my free time</strong> and <strong>forget about my worries</strong>.</div>"
+                        }
+                ],
+                "exQ": "Do you often <span class='sub-hl'>play sports</span>?",
+                "exA": "→ Sure. I often play sports in the afternoon whenever I have free time. It allows me to relax after a busy day and stay healthy.",
+                "exAFormatted": "→ Sure. I often <span class=\"sub-hl\">play sports</span> <span class=\"sub-hl\">in the afternoon</span> whenever I have free time. It allows me to <span class=\"sub-hl\">relax after a busy day</span> and <span class=\"sub-hl\">stay healthy</span>.",
+                "vocab": [
+                        {
+                                "type": "time",
+                                "title": "Cụm Thời gian:",
+                                "items": [
+                                        {
+                                                "en": "in the morning",
+                                                "vn": "vào buổi sáng"
+                                        },
+                                        {
+                                                "en": "in the afternoon",
+                                                "vn": "vào buổi chiều"
+                                        },
+                                        {
+                                                "en": "in the evening",
+                                                "vn": "vào buổi tối"
+                                        },
+                                        {
+                                                "en": "at night",
+                                                "vn": "vào ban đêm"
+                                        },
+                                        {
+                                                "en": "at weekends",
+                                                "vn": "vào cuối tuần"
+                                        },
+                                        {
+                                                "en": "on weekdays",
+                                                "vn": "vào các ngày trong tuần"
+                                        },
+                                        {
+                                                "en": "on my days off",
+                                                "vn": "vào những ngày nghỉ"
+                                        },
+                                        {
+                                                "en": "in my free time",
+                                                "vn": "vào thời gian rảnh rỗi"
+                                        },
+                                        {
+                                        "en": "after school",
+                                        "vn": "sau giờ học"
+                                },
+                                {
+                                        "en": "after work",
+                                        "vn": "sau giờ làm"
+                                }
+                                ]
+                        },
+                        {
+                                "type": "benefit",
+                                "title": "Cụm Lợi ích:",
+                                "items": [
+                                        {
+                                                "isNote": true,
+                                                "vn": "👉 (Sử dụng các cụm trong BẢNG LỢI ÍCH B2)"
+                                        }
+                                ]
+                        }
+                ]
+        },
+        {
+                "title": "2. Do you often [hoạt động 1 – Vo] while [hoạt động 2 – Ving]?",
+                "formula": "→ Not really. I don’t often <strong>[hoạt động 1 – Vo]</strong> while <strong>[hoạt động 2 – Ving]</strong> because I find it difficult to concentrate. Instead, I prefer to focus on one task at a time so that I can <strong>[give it my full attention / complete it more effectively / do it more carefully]</strong>.",
+                "examples": [
+                        {
+                                "q": "Do you often <span class='sub-hl'>listen to music</span> while <span class='sub-hl'>doing homework</span>?",
+                                "a": "→ Not really. I don’t often listen to music while doing homework because I find it difficult to concentrate. Instead, I prefer to focus on one task at a time so that I can complete it more effectively.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Not really. I don’t often <strong>listen to music</strong> while <strong>doing homework</strong> because I find it difficult to concentrate. Instead, I prefer to focus on one task at a time so that I can <strong>complete it more effectively</strong>.</div>"
+                        },
+                        {
+                                "q": "Do you often <span class='sub-hl'>listen to the radio</span> while <span class='sub-hl'>cooking</span>?",
+                                "a": "→ Not really. I don’t often listen to the radio while cooking because I find it difficult to concentrate. Instead, I prefer to focus on one task at a time so that I can do it more carefully.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Not really. I don’t often <strong>listen to the radio</strong> while <strong>cooking</strong> because I find it difficult to concentrate. Instead, I prefer to focus on one task at a time so that I can <strong>do it more carefully</strong>.</div>"
+                        },
+                        {
+                                "q": "Do you often <span class='sub-hl'>listen to podcasts</span> while <span class='sub-hl'>exercising</span>?",
+                                "a": "→ Not really. I don’t often listen to podcasts while exercising because I find it difficult to concentrate. Instead, I prefer to focus on one task at a time so that I can give it my full attention.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Not really. I don’t often <strong>listen to podcasts</strong> while <strong>exercising</strong> because I find it difficult to concentrate. Instead, I prefer to focus on one task at a time so that I can <strong>give it my full attention</strong>.</div>"
+                        },
+                        {
+                                "q": "Do you often <span class='sub-hl'>watch videos</span> while <span class='sub-hl'>eating</span>?",
+                                "a": "→ Not really. I don’t often watch videos while eating because I find it difficult to concentrate. Instead, I prefer to focus on one task at a time so that I can enjoy my food better.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Not really. I don’t often <strong>watch videos</strong> while <strong>eating</strong> because I find it difficult to concentrate. Instead, I prefer to focus on one task at a time so that I can <strong>enjoy my food better</strong>.</div>"
+                        },
+                        {
+                                "q": "Do you often <span class='sub-hl'>check social media</span> while <span class='sub-hl'>working</span>?",
+                                "a": "→ Not really. I don’t often check social media while working because I find it difficult to concentrate. Instead, I prefer to focus on one task at a time so that I can avoid careless mistakes.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Not really. I don’t often <strong>check social media</strong> while <strong>working</strong> because I find it difficult to concentrate. Instead, I prefer to focus on one task at a time so that I can <strong>avoid careless mistakes</strong>.</div>"
+                        },
+                        {
+                                "q": "Do you often <span class='sub-hl'>chat with friends</span> while <span class='sub-hl'>studying</span>?",
+                                "a": "→ Not really. I don’t often chat with friends while studying because I find it difficult to concentrate. Instead, I prefer to focus on one task at a time so that I can absorb information better.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Not really. I don’t often <strong>chat with friends</strong> while <strong>studying</strong> because I find it difficult to concentrate. Instead, I prefer to focus on one task at a time so that I can <strong>absorb information better</strong>.</div>"
+                        }
+                ],
+                "exQ": "Do you often <span class='sub-hl'>listen to music</span> while <span class='sub-hl'>doing your homework</span>?",
+                "exA": "→ Not really. I don’t often listen to music while doing my homework because it’s hard for me to focus. I prefer to do one thing at a time to do it better.",
+                "exAFormatted": "→ Not really. I don’t often <span class=\"sub-hl\">listen to music</span> while <span class=\"sub-hl\">doing my homework</span> because <span class=\"sub-hl\">it’s hard for me to focus</span>. I prefer to focus on one task at a time so that I can <span class=\"sub-hl\">complete it more effectively</span>.",
+                "vocab": [
+                        {
+                                "type": "purpose",
+                                "title": "Mục đích / Lý do tập trung:",
+                                "items": [
+                                        {
+                                                "en": "complete it more effectively",
+                                                "vn": "hoàn thành hiệu quả hơn"
+                                        },
+                                        {
+                                                "en": "give it my full attention",
+                                                "vn": "tập trung toàn bộ sự chú ý"
+                                        },
+                                        {
+                                                "en": "do it more carefully",
+                                                "vn": "làm cẩn thận hơn"
+                                        },
+                                        {
+                                                "en": "avoid making careless mistakes",
+                                                "vn": "tránh mắc lỗi bất cẩn"
+                                        },
+                                        {
+                                                "en": "absorb information better",
+                                                "vn": "tiếp thu thông tin tốt hơn"
+                                        }
+                                ]
+                        }
+                ]
+        },
+        {
+                "title": "3. Do you like/love/enjoy [hoạt động – Ving]?",
+                "formula": "→ Yes, I do. I’m really into <strong>[hoạt động – Ving]</strong> because I find it <strong>[tính từ mô tả hoạt động]</strong>. It’s a good way to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>.",
+                "examples": [
+                        {
+                                "q": "Do you like <span class='sub-hl'>reading books</span>?",
+                                "a": "→ Yes, I do. I’m really into reading books because I find it very interesting. It’s a good way to clear my mind and widen my knowledge.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Yes, I do. I’m really into <strong>reading books</strong> because I find it <strong>very interesting</strong>. It’s a good way to <strong>clear my mind</strong> and <strong>widen my knowledge</strong>.</div>"
+                        },
+                        {
+                                "q": "Do you like <span class='sub-hl'>traveling</span>?",
+                                "a": "→ Yes, I do. I’m really into traveling because I find it extremely exciting. It’s a good way to explore new cultures and enrich my life experience.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Yes, I do. I’m really into <strong>traveling</strong> because I find it <strong>extremely exciting</strong>. It’s a good way to <strong>explore new cultures</strong> and <strong>enrich my life experience</strong>.</div>"
+                        },
+                        {
+                                "q": "Do you love <span class='sub-hl'>playing musical instruments</span>?",
+                                "a": "→ Yes, I do. I’m really into playing musical instruments because I find it very relaxing. It’s a good way to enhance my creativity and reduce stress.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Yes, I do. I’m really into <strong>playing musical instruments</strong> because I find it <strong>very relaxing</strong>. It’s a good way to <strong>enhance my creativity</strong> and <strong>reduce stress</strong>.</div>"
+                        },
+                        {
+                                "q": "Do you enjoy <span class='sub-hl'>cooking</span>?",
+                                "a": "→ Yes, I do. I’m really into cooking because I find it wonderful. It’s a good way to save money and stay healthy.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Yes, I do. I’m really into <strong>cooking</strong> because I find it <strong>wonderful</strong>. It’s a good way to <strong>save money</strong> and <strong>stay healthy</strong>.</div>"
+                        },
+                        {
+                                "q": "Do you like <span class='sub-hl'>hanging out with your friends</span>?",
+                                "a": "→ Yes, I do. I’m really into hanging out with my friends because I find it enjoyable. It’s a good way to strengthen our relationships and have fun.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Yes, I do. I’m really into <strong>hanging out with my friends</strong> because I find it <strong>enjoyable</strong>. It’s a good way to <strong>strengthen our relationships</strong> and <strong>have fun</strong>.</div>"
+                        },
+                        {
+                                "q": "Do you love <span class='sub-hl'>doing volunteer work</span>?",
+                                "a": "→ Yes, I do. I’m really into doing volunteer work because I find it meaningful. It’s a good way to help people in need and build soft skills.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Yes, I do. I’m really into <strong>doing volunteer work</strong> because I find it <strong>meaningful</strong>. It’s a good way to <strong>help people in need</strong> and <strong>build soft skills</strong>.</div>"
+                        }
+                ],
+                "exQ": "Do you like <span class='sub-hl'>reading books</span>?",
+                "exA": "→ Yes, I do. I’m really into reading books because I find it very interesting. It’s a good way to clear my mind and widen my knowledge.",
+                "exAFormatted": "→ Yes, I do. I’m really into <span class=\"sub-hl\">reading books</span> because I find it <span class=\"sub-hl\">very interesting</span>. It’s a good way to <span class=\"sub-hl\">clear my mind</span> and <span class=\"sub-hl\">widen my knowledge</span>.",
+                "vocab": [
+                        {
+                                "type": "adj",
+                                "title": "Tính từ mô tả hoạt động:",
+                                "items": [
+                                                {
+                                                                                                "en": "interesting",
+                                                                                                "vn": "thú vị"
+                                                },
+                                                {
+                                                                                                "en": "exciting",
+                                                                                                "vn": "hào hứng"
+                                                },
+                                                {
+                                                                                                "en": "relaxing",
+                                                                                                "vn": "thư giãn"
+                                                },
+                                                {
+                                                                                                "en": "enjoyable",
+                                                                                                "vn": "thoải mái, thú vị"
+                                                },
+                                                {
+                                                                                                "en": "meaningful",
+                                                                                                "vn": "ý nghĩa"
+                                                },
+                                                {
+                                                                                                "en": "beneficial",
+                                                                                                "vn": "có lợi"
+                                                },
+                                                {
+                                                                                                "en": "entertaining",
+                                                                                                "vn": "mang tính giải trí"
+                                                },
+                                                {
+                                                                                                "en": "fascinating",
+                                                                                                "vn": "lôi cuốn, hấp dẫn"
+                                                }
+]
+                        },
+                        {
+                                "type": "benefit",
+                                "title": "Cụm Lợi ích:",
+                                "items": [
+                                        {
+                                                "isNote": true,
+                                                "vn": "👉 (Sử dụng các cụm trong BẢNG LỢI ÍCH B2)"
+                                        }
+                                ]
+                        }
+                ]
+        },
+        {
+                "title": "4. Did you often [hoạt động – V0] when you were a child?",
+                "formula": "→ Sure. I used to <strong>[hoạt động – Vo]</strong> regularly when I was a child because I found it <strong>[tính từ mô tả hoạt động]</strong>. It allowed me to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>.",
+                "examples": [
+                        {
+                                "q": "Did you often <span class='sub-hl'>watch cartoons</span> when you were a child?",
+                                "a": "→ Sure. I used to watch cartoons regularly when I was a child because I found it entertaining. It allowed me to enjoy my free time and develop my imagination.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Sure. I used to <strong>watch cartoons</strong> regularly when I was a child because I found it <strong>entertaining</strong>. It allowed me to <strong>enjoy my free time</strong> and <strong>develop my imagination</strong>.</div>"
+                        },
+                        {
+                                "q": "Did you often <span class='sub-hl'>play outside</span> when you were a child?",
+                                "a": "→ Sure. I used to play outside regularly when I was a child because I found it fascinating. It allowed me to stay active and make new friends.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Sure. I used to <strong>play outside</strong> regularly when I was a child because I found it <strong>fascinating</strong>. It allowed me to <strong>stay active</strong> and <strong>make new friends</strong>.</div>"
+                        },
+                        {
+                                "q": "Did you often <span class='sub-hl'>read books</span> when you were a child?",
+                                "a": "→ Sure. I used to read books regularly when I was a child because I found it interesting. It allowed me to widen my knowledge and improve my reading skills.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Sure. I used to <strong>read books</strong> regularly when I was a child because I found it <strong>interesting</strong>. It allowed me to <strong>widen my knowledge</strong> and <strong>improve my reading skills</strong>.</div>"
+                        },
+                        {
+                                "q": "Did you often <span class='sub-hl'>ride a bike</span> when you were a child?",
+                                "a": "→ Sure. I used to ride a bike regularly when I was a child because I found it exciting. It allowed me to exercise and explore my neighborhood.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Sure. I used to <strong>ride a bike</strong> regularly when I was a child because I found it <strong>exciting</strong>. It allowed me to <strong>exercise</strong> and <strong>explore my neighborhood</strong>.</div>"
+                        },
+                        {
+                                "q": "Did you often <span class='sub-hl'>play video games</span> when you were a child?",
+                                "a": "→ Sure. I used to play video games regularly when I was a child because I found it thrilling. It allowed me to unwind after school and improve my reflexes.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Sure. I used to <strong>play video games</strong> regularly when I was a child because I found it <strong>thrilling</strong>. It allowed me to <strong>unwind after school</strong> and <strong>improve my reflexes</strong>.</div>"
+                        },
+                        {
+                                "q": "Did you often <span class='sub-hl'>visit your grandparents</span> when you were a child?",
+                                "a": "→ Sure. I used to visit my grandparents regularly when I was a child because I found it wonderful. It allowed me to enjoy family meals and create sweet childhood memories.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Sure. I used to <strong>visit my grandparents</strong> regularly when I was a child because I found it <strong>wonderful</strong>. It allowed me to <strong>enjoy family meals</strong> and <strong>create sweet childhood memories</strong>.</div>"
+                        }
+                ],
+                "exQ": "Did you often <span class='sub-hl'>watch cartoons</span> when you were a child?",
+                "exA": "→ Sure. I used to watch cartoons regularly when I was a child because I found it entertaining. It allowed me to enjoy my free time and develop my imagination.",
+                "exAFormatted": "→ Sure. I used to <span class=\"sub-hl\">watch cartoons</span> regularly when I was a child because I found it <span class=\"sub-hl\">entertaining</span>. It allowed me to <span class=\"sub-hl\">enjoy my free time</span> and <span class=\"sub-hl\">develop my imagination</span>.",
+                "vocab": [
+                        {
+                                "type": "adj",
+                                "title": "Tính từ mô tả hoạt động:",
+                                "items": [
+                                                {
+                                                                                                "en": "interesting",
+                                                                                                "vn": "thú vị"
+                                                },
+                                                {
+                                                                                                "en": "exciting",
+                                                                                                "vn": "hào hứng"
+                                                },
+                                                {
+                                                                                                "en": "relaxing",
+                                                                                                "vn": "thư giãn"
+                                                },
+                                                {
+                                                                                                "en": "enjoyable",
+                                                                                                "vn": "thoải mái, thú vị"
+                                                },
+                                                {
+                                                                                                "en": "meaningful",
+                                                                                                "vn": "ý nghĩa"
+                                                },
+                                                {
+                                                                                                "en": "beneficial",
+                                                                                                "vn": "có lợi"
+                                                },
+                                                {
+                                                                                                "en": "entertaining",
+                                                                                                "vn": "mang tính giải trí"
+                                                },
+                                                {
+                                                                                                "en": "fascinating",
+                                                                                                "vn": "lôi cuốn, hấp dẫn"
+                                                }
+]
+                        },
+                        {
+                                "type": "benefit",
+                                "title": "Cụm Lợi ích:",
+                                "items": [
+                                        {
+                                                "isNote": true,
+                                                "vn": "👉 (Sử dụng các cụm trong BẢNG LỢI ÍCH B2)"
+                                        }
+                                ]
+                        }
+                ]
+        },
+        {
+                "title": "5. Are you good at [hoạt động – Ving]?",
+                "formula": "<div style='margin-bottom: 8px;'><strong>- Trả lời YES:</strong> → Sure. I'm quite good at <strong>[hoạt động – Ving]</strong> because I’ve practiced it for a long time. It allows me to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>.</div><div><strong>- Trả lời NO:</strong> → Not really. I'm not very good at <strong>[hoạt động – Ving]</strong> because I don't have much experience with it. However, I'm trying to improve by practicing more regularly.</div>",
+                "examples": [
+                        {
+                                "q": "Are you good at <span class='sub-hl'>cooking</span>?",
+                                "a": "→ I’m quite good at cooking because I've practiced it for a long time. It helps me save money and stay healthy.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời (YES):</strong> → I’m quite good at <strong>cooking</strong> because I've practiced it for a long time. It helps me <strong>save money</strong> and <strong>stay healthy</strong>.</div><div style='margin-top: 6px;'><strong>- Trả lời (NO):</strong> → Not really. I’m not very good at <strong>cooking</strong> because I don't have much experience with it. However, I'm trying to improve by practicing more regularly.</div>"
+                        },
+                        {
+                                "q": "Are you good at <span class='sub-hl'>speaking English</span>?",
+                                "a": "→ Sure. I'm quite good at speaking English because I've practiced it for a long time. It allows me to communicate with foreigners and feel more confident.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời (YES):</strong> → Sure. I'm quite good at <strong>speaking English</strong> because I've practiced it for a long time. It allows me to <strong>communicate with foreigners</strong> and <strong>feel more confident</strong>.</div><div style='margin-top: 6px;'><strong>- Trả lời (NO):</strong> → Not really. I'm not very good at <strong>speaking English</strong> because I don't have much experience with it. However, I'm trying to improve by practicing more regularly.</div>"
+                        },
+                        {
+                                "q": "Are you good at <span class='sub-hl'>playing sports</span>?",
+                                "a": "→ Sure. I'm quite good at playing sports because I've practiced it for a long time. It allows me to stay in good shape and reduce stress.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời (YES):</strong> → Sure. I'm quite good at <strong>playing sports</strong> because I've practiced it for a long time. It allows me to <strong>stay in good shape</strong> and <strong>reduce stress</strong>.</div><div style='margin-top: 6px;'><strong>- Trả lời (NO):</strong> → Not really. I'm not very good at <strong>playing sports</strong> because I don't have much experience with it. However, I'm trying to improve by practicing more regularly.</div>"
+                        },
+                        {
+                                "q": "Are you good at <span class='sub-hl'>using computers</span>?",
+                                "a": "→ Sure. I'm quite good at using computers because I've practiced it for a long time. It allows me to work more efficiently and learn new skills.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời (YES):</strong> → Sure. I'm quite good at <strong>using computers</strong> because I've practiced it for a long time. It allows me to <strong>work more efficiently</strong> and <strong>learn new skills</strong>.</div><div style='margin-top: 6px;'><strong>- Trả lời (NO):</strong> → Not really. I'm not very good at <strong>using computers</strong> because I don't have much experience with it. However, I'm trying to improve by practicing more regularly.</div>"
+                        },
+                        {
+                                "q": "Are you good at <span class='sub-hl'>singing</span>?",
+                                "a": "→ Not really. I'm not very good at singing because I don't have much talent for it. However, I still love singing karaoke with friends to have fun and relieve stress.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời (NO):</strong> → Not really. I'm not very good at <strong>singing</strong> because I don't have much talent for it. However, I still love singing karaoke with friends to <strong>have fun</strong> and <strong>relieve stress</strong>.</div><div style='margin-top: 6px;'><strong>- Trả lời (YES):</strong> → Sure. I'm quite good at <strong>singing</strong> because I've practiced it for a long time. It allows me to <strong>entertain others</strong> and <strong>express my feelings</strong>.</div>"
+                        },
+                        {
+                                "q": "Are you good at <span class='sub-hl'>drawing or painting</span>?",
+                                "a": "→ Not really. I'm not very good at drawing because I don't have much experience with it. However, I'm trying to learn some basic techniques to enhance my creativity.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời (NO):</strong> → Not really. I'm not very good at <strong>drawing</strong> because I don't have much experience with it. However, I'm trying to learn some basic techniques to <strong>enhance my creativity</strong>.</div><div style='margin-top: 6px;'><strong>- Trả lời (YES):</strong> → Sure. I'm quite good at <strong>drawing</strong> because I've practiced it for a long time. It allows me to <strong>relax my mind</strong> and <strong>create beautiful artwork</strong>.</div>"
+                        }
+                ],
+                "exQ": "Are you good at <span class='sub-hl'>cooking</span>?",
+                "exA": "→ I’m quite good at cooking because I've practiced it for a long time. It helps me save money and stay healthy.",
+                "exAFormatted": "→ I’m quite good at <span class=\"sub-hl\">cooking</span> because <span class=\"sub-hl\">I've practiced it for a long time</span>. It allows me to <span class=\"sub-hl\">save money</span> and <span class=\"sub-hl\">stay healthy</span>.",
+                "vocab": [
+                        {
+                                "type": "benefit",
+                                "title": "Cụm Lợi ích (Khi trả lời YES):",
+                                "items": [
+                                        {
+                                                "isNote": true,
+                                                "vn": "👉 (Sử dụng các cụm trong BẢNG LỢI ÍCH B2)"
+                                        }
+                                ]
+                        }
+                ]
+        },
+        {
+                "title": "6. Are/Is […] important to you?",
+                "formula": "<div style='margin-bottom: 8px;'><strong>- Trả lời YES:</strong> → Sure. <strong>[chủ đề]</strong> is definitely important to me because it allows me to <strong>[lợi ích 1]</strong>. It also gives me a chance to <strong>[lợi ích 2]</strong>.</div><div><strong>- Trả lời NO:</strong> → Not really. <strong>[chủ đề]</strong> isn’t very important to me because it doesn't play a big role in my daily life. Instead, I prefer to spend my time on <strong>[hoạt động / chủ đề khác]</strong>.</div>",
+                "examples": [
+                        {
+                                "q": "Is <span class='sub-hl'>family</span> important to you?",
+                                "a": "→ Sure. Family is definitely important to me because it allows me to feel supported during difficult times. Besides that, it gives me a chance to learn valuable life lessons.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Sure. <strong>Family</strong> is definitely important to me because it allows me to <strong>feel supported during difficult times</strong>. Besides that, it gives me a chance to <strong>learn valuable life lessons</strong>.</div>"
+                        },
+                        {
+                                "q": "Is <span class='sub-hl'>music</span> important to you?",
+                                "a": "→ Sure. Music is definitely important to me because it allows me to relax after a long day. It also gives me a chance to improve my mood.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Sure. <strong>Music</strong> is definitely important to me because it allows me to <strong>relax after a long day</strong>. It also gives me a chance to <strong>improve my mood</strong>.</div>"
+                        },
+                        {
+                                "q": "Are <span class='sub-hl'>hobbies</span> important to you?",
+                                "a": "→ Sure. Hobbies are definitely important to me because they allow me to develop new skills. They also give me a chance to reduce daily stress.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Sure. <strong>Hobbies</strong> are definitely important to me because they allow me to <strong>develop new skills</strong>. They also give me a chance to <strong>reduce daily stress</strong>.</div>"
+                        },
+                        {
+                                "q": "Are <span class='sub-hl'>soft skills</span> important to you?",
+                                "a": "→ Sure. Soft skills are definitely important to me because they allow me to work effectively in a team. They also give me a chance to advance my career.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Sure. <strong>Soft skills</strong> are definitely important to me because they allow me to <strong>work effectively in a team</strong>. They also give me a chance to <strong>advance my career</strong>.</div>"
+                        },
+                        {
+                                "q": "Is <span class='sub-hl'>health</span> important to you?",
+                                "a": "→ Sure. Health is definitely important to me because it allows me to stay energetic and live happily. It also gives me a chance to pursue my long-term goals.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Sure. <strong>Health</strong> is definitely important to me because it allows me to <strong>stay energetic and live happily</strong>. It also gives me a chance to <strong>pursue my long-term goals</strong>.</div>"
+                        },
+                        {
+                                "q": "Is <span class='sub-hl'>friendship</span> important to you?",
+                                "a": "→ Sure. Friendship is definitely important to me because it allows me to share life experiences and receive emotional support whenever I face challenges.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Sure. <strong>Friendship</strong> is definitely important to me because it allows me to <strong>share life experiences</strong> and <strong>receive emotional support whenever I face challenges</strong>.</div>"
+                        }
+                ],
+                "exQ": "Is <span class='sub-hl'>family</span> important to you?",
+                "exA": "→ Sure. Family is definitely important to me because it allows me to feel supported during difficult times. Besides that, it gives me a chance to learn valuable life lessons.",
+                "exAFormatted": "→ Sure. <span class=\"sub-hl\">Family</span> is definitely important to me because it allows me to <span class=\"sub-hl\">feel supported during difficult times</span>. Besides that, it gives me a chance to <span class=\"sub-hl\">learn valuable life lessons</span>.",
+                "vocab": [
+                        {
+                                "type": "benefit",
+                                "title": "Cụm Lợi ích / Giá trị:",
+                                "items": [
+                                        {
+                                                "isNote": true,
+                                                "vn": "👉 (Sử dụng các cụm trong BẢNG LỢI ÍCH B2)"
+                                        }
+                                ]
+                        }
+                ]
+        },
+        {
+                "title": "7. Have you ever [hoạt động – V3/ed]?",
+                "formula": "<div style='margin-bottom: 8px;'><strong>- Trả lời ĐÃ TỪNG:</strong> → Yes, I <strong>[hoạt động – V2]</strong> a while ago, and I found it <strong>[tính từ mô tả trải nghiệm]</strong>. It allowed me to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>.</div><div><strong>- Trả lời CHƯA TỪNG:</strong> → Not yet. I haven't had the chance to <strong>[hoạt động – V0]</strong> yet. However, I'd love to try it one day because I think it would be a/an <strong>[tính từ mô tả trải nghiệm]</strong> experience.</div>",
+                "examples": [
+                        {
+                                "q": "Have you ever <span class='sub-hl'>attended a live concert</span>?",
+                                "a": "→ Yes, I attended a live concert a few years ago, and I found it really exciting. It allowed me to enjoy live music and experience the amazing atmosphere.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời (ĐÃ TỪNG):</strong> → Yes, I <strong>attended a live concert</strong> a few years ago, and I found it <strong>really exciting</strong>. It allowed me to <strong>enjoy live music</strong> and <strong>experience the amazing atmosphere</strong>.</div>"
+                        },
+                        {
+                                "q": "Have you ever <span class='sub-hl'>traveled abroad</span>?",
+                                "a": "→ Not yet. I haven't had the chance to travel abroad yet. However, I'd love to try it one day because I think it would be an unforgettable experience.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời (CHƯA TỪNG):</strong> → Not yet. I haven't had the chance to <strong>travel abroad</strong> yet. However, I'd love to try it one day because I think it would be an <strong>unforgettable experience</strong>.</div>"
+                        },
+                        {
+                                "q": "Have you ever <span class='sub-hl'>tried Vietnamese food</span>?",
+                                "a": "→ Yes, I tried Vietnamese food a while ago, and I found it extremely delicious. It allowed me to discover new flavors and learn about Vietnamese cuisine.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời (ĐÃ TỪNG):</strong> → Yes, I <strong>tried Vietnamese food</strong> a while ago, and I found it <strong>extremely delicious</strong>. It allowed me to <strong>discover new flavors</strong> and <strong>learn about Vietnamese cuisine</strong>.</div>"
+                        },
+                        {
+                                "q": "Have you ever <span class='sub-hl'>learned to play a musical instrument</span>?",
+                                "a": "→ Not yet. I haven't had the chance to learn to play a musical instrument yet. However, I'd love to try it one day because I think it would be a rewarding experience.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời (CHƯA TỪNG):</strong> → Not yet. I haven't had the chance to <strong>learn to play a musical instrument</strong> yet. However, I'd love to try it one day because I think it would be a <strong>rewarding experience</strong>.</div>"
+                        },
+                        {
+                                "q": "Have you ever <span class='sub-hl'>done volunteer work</span>?",
+                                "a": "→ Yes, I did volunteer work last summer, and I found it very meaningful. It allowed me to help disadvantaged people and develop practical teamwork skills.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời (ĐÃ TỪNG):</strong> → Yes, I <strong>did volunteer work</strong> last summer, and I found it <strong>very meaningful</strong>. It allowed me to <strong>help disadvantaged people</strong> and <strong>develop practical teamwork skills</strong>.</div>"
+                        },
+                        {
+                                "q": "Have you ever <span class='sub-hl'>given a public speech</span>?",
+                                "a": "→ Yes, I gave a presentation in front of my class a month ago, and I found it quite challenging but rewarding. It allowed me to overcome stage fright and boost my confidence.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời (ĐÃ TỪNG):</strong> → Yes, I <strong>gave a presentation</strong> in front of my class a month ago, and I found it <strong>quite challenging but rewarding</strong>. It allowed me to <strong>overcome stage fright</strong> and <strong>boost my confidence</strong>.</div>"
+                        }
+                ],
+                "exQ": "Have you ever <span class='sub-hl'>attended a live concert</span>?",
+                "exA": "→ Yes, I attended a live concert a few years ago, and I found it really exciting. It allowed me to enjoy live music and experience the amazing atmosphere.",
+                "exAFormatted": "→ Yes, I <span class=\"sub-hl\">attended a live concert</span> a few years ago, and I found it <span class=\"sub-hl\">really exciting</span>. It allowed me to <span class=\"sub-hl\">enjoy live music</span> and <span class=\"sub-hl\">experience the amazing atmosphere</span>.",
+                "vocab": [
+                        {
+                                "type": "adj",
+                                "title": "Tính từ mô tả trải nghiệm:",
+                                "items": [
+                                                {
+                                                                                                "en": "unforgettable",
+                                                                                                "vn": "khó quên, đáng nhớ"
+                                                },
+                                                {
+                                                                                                "en": "exciting",
+                                                                                                "vn": "hào hứng"
+                                                },
+                                                {
+                                                                                                "en": "wonderful",
+                                                                                                "vn": "tuyệt vời"
+                                                },
+                                                {
+                                                                                                "en": "rewarding",
+                                                                                                "vn": "bổ ích, đáng giá"
+                                                },
+                                                {
+                                                                                                "en": "fascinating",
+                                                                                                "vn": "lôi cuốn, hấp dẫn"
+                                                }
+]
+                        }
+                ]
+        }
+];
+
+
+    window.formatTitleHighlight = (title) => {
+        if (!title) return '';
+        return title
+            .replace(/\s+\?/g, '?')
+            .replace(/\[(.*?)\]/g, '<span class="title-bracket-hl">[$1]</span>');
+    };
+
+    window.formatFormulaHighlight = (formHtml) => {
+        if (!formHtml) return '';
+        let res = formHtml.replace(/<strong>\s*\[(.*?)\]\s*<\/strong>/g, "[$1]");
+        return res.replace(/\[(.*?)\]/g, '<span class="formula-bracket-hl">[$1]</span>');
+    };
+
+    window.getExamplesBlockHTML = (item) => {
+        if (!item || !item.examples || !item.examples.length) return '';
+        
+        return `
+            <div class="accordion-box" onclick="this.classList.toggle('open')" style="margin-bottom: 1.25rem; border: 2px solid #f59e0b; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px -2px rgba(245, 158, 11, 0.15);">
+                <div class="accordion-header" style="padding: 1rem 1.25rem; background: rgba(245, 158, 11, 0.08);">
+                    <div class="acc-title" style="color:#d97706; font-size:1.05rem; font-weight: 700;">
+                        <i class="fa-solid fa-list-ul"></i> CÁC CÂU HỎI VÍ DỤ (${item.examples.length} câu)
+                    </div>
+                    <div class="acc-toggle" style="background:#d97706;"><span class="txt-close"><i class="fa-solid fa-hand-pointer"></i> Nhấn để xem ví dụ ▼</span><span class="txt-open"><i class="fa-solid fa-chevron-up"></i> Thu gọn ▲</span></div>
+                </div>
+                <div class="accordion-content" onclick="event.stopPropagation()" style="padding: 1rem 1.25rem;">
+                    <div style="display: flex; flex-direction: column; gap: 0.65rem;">
+                        ${item.examples.map((ex, idx) => `
+                            <div class="example-q-item" style="background: var(--bg-card, #ffffff); border: 1px solid rgba(245, 158, 11, 0.25); border-left: 4px solid #f59e0b; padding: 0.85rem 1rem; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; gap: 0.85rem; box-shadow: 0 2px 6px rgba(0,0,0,0.03); transition: all 0.2s ease;">
+                                <div style="display: flex; align-items: center; gap: 0.75rem; flex: 1;">
+                                    <span style="display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: #fef3c7; color: #b45309; font-weight: 800; font-size: 0.85rem; flex-shrink: 0; border: 1px solid rgba(245, 158, 11, 0.3);">${idx + 1}</span>
+                                    <span style="font-size: 1.05rem; color: var(--text-main); font-weight: 500; line-height: 1.5;">${ex.q}</span>
+                                </div>
+                                <button class="icon-btn" style="width: 34px; height: 34px; border-radius: 8px; background: rgba(245, 158, 11, 0.12); color: #d97706; font-size: 0.95rem; flex-shrink: 0; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(245, 158, 11, 0.25); transition: all 0.2s;" onclick="event.stopPropagation(); speakText('${ex.q.replace(/<[^>]+>/g, '').replace(/'/g, "\\'")}')" title="Nghe phát âm câu hỏi">
+                                    <i class="fa-solid fa-volume-high"></i>
+                                </button>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            </div>
+        `;
+    };
+
+    window.getSuggestionsHTML = (item) => {
+        if (!item || !item.vocab || !item.vocab.length) return '';
+
+        let html = `
+            <div class="sugg-container mt-3 pt-3 fade-in" style="border-top: 1px dashed var(--border); text-align: left;">
+                <div style="font-weight: 700; color: #059669; font-size: 0.95rem; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fa-solid fa-list-check"></i> GỢI Ý TỪ VỰNG:
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 1rem; font-size: 0.92rem; line-height: 1.6;">`;
+
+        item.vocab.forEach(group => {
+            const isBlue = group.type === 'benefit';
+            const col = isBlue ? '#2563eb' : '#059669';
+            const bg = isBlue ? 'rgba(59, 130, 246, 0.06)' : 'rgba(16, 185, 129, 0.06)';
+            const border = isBlue ? 'rgba(59, 130, 246, 0.25)' : 'rgba(16, 185, 129, 0.25)';
+            let icon = 'fa-solid fa-lightbulb';
+            if (group.type === 'benefit') icon = 'fa-solid fa-star';
+            else if (group.type === 'time') icon = 'fa-regular fa-clock';
+            else if (group.type === 'emotion') icon = 'fa-solid fa-face-smile';
+            else if (group.type === 'activity') icon = 'fa-solid fa-wand-magic-sparkles';
+            if (group.icon) icon = group.icon;
+
+            html += `
+                    <div style="background: ${bg}; padding: 0.85rem 1rem; border-radius: 10px; border: 1px solid ${border};">
+                        <div style="color: ${col}; font-weight: 700; margin-bottom: 0.5rem; font-size: 0.95rem;"><i class="${icon}"></i> ${group.title}</div>
+                        <div style="color: var(--text-main); display: flex; flex-direction: column; gap: 0.5rem;">`;
+            group.items.forEach(pair => {
+                if (pair.isNote) {
+                    html += `
+                            <div style="font-style: italic; color: #64748b; font-weight: 500; display: flex; align-items: center; padding: 0.25rem 0;">
+                                ${pair.vn}
+                            </div>`;
+                } else {
+                    html += `
+                            <div>
+                                <button type="button" onclick="event.stopPropagation(); speakText('${pair.en}')" title="Nghe phát âm" style="background: none; border: none; color: ${col}; cursor: pointer; padding: 0 0.4rem 0 0; font-size: 1rem;"><i class="fa-solid fa-volume-high"></i></button>
+                                <strong>${pair.en}</strong>: ${pair.vn}
+                            </div>`;
+                }
+            });
+            html += `
+                        </div>
+                    </div>`;
+        });
+
+        html += `
+                </div>
+            </div>`;
+        return html;
+    };
+
+    const ynStage = document.getElementById('yn-stage');
+    const ynNumEl = document.getElementById('yn-current-num');
+
+    const renderYnSlide = () => {
+        if (!ynStage) return;
+        const d = ynFormulas[state.ynIndex];
+        if (ynNumEl) ynNumEl.textContent = state.ynIndex + 1;
+        ynStage.innerHTML = `
+            <div class="f-card-clean fade-in">
+                <div class="f-title" style="margin-bottom:1.5rem;">${formatTitleHighlight(d.title)}</div>
+                ${getExamplesBlockHTML(d)}
+                
+                <div class="accordion-box" onclick="this.classList.toggle('open')" style="margin-bottom: 1.25rem; border: 2px solid #3b82f6; box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.1);">
+                    <div class="accordion-header" style="padding: 1rem 1.25rem; background: rgba(59, 130, 246, 0.08);">
+                        <div class="acc-title" style="color:#2563eb; font-size:1.05rem;"><i class="fa-solid fa-lightbulb"></i> GỢI Ý CÂU TRẢ LỜI</div>
+                        <div class="acc-toggle" style="background:#2563eb;"><span class="txt-close"><i class="fa-solid fa-hand-pointer"></i> Nhấn để xem gợi ý câu trả lời ▼</span><span class="txt-open"><i class="fa-solid fa-chevron-up"></i> Thu gọn ▲</span></div>
+                    </div>
+                    <div class="accordion-content" onclick="event.stopPropagation()">
+                        <div class="f-formula-box" style="margin: 0; border: none; background: transparent; padding: 0.5rem 0;">${formatFormulaHighlight(d.formula)}</div>
+                        ${getSuggestionsHTML(d)}
+                    </div>
+                </div>
+
+                <div class="accordion-box" onclick="this.classList.toggle('open')" style="margin-bottom: 0; border: 2px solid #8b5cf6; box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1);">
+                    <div class="accordion-header" style="padding: 1rem 1.25rem; background: rgba(139, 92, 246, 0.08);">
+                        <div class="acc-title" style="color:#7c3aed; font-size:1.05rem;"><i class="fa-solid fa-desktop"></i> VÍ DỤ THỰC HÀNH</div>
+                        <div class="acc-toggle" style="background:#7c3aed;"><span class="txt-close"><i class="fa-solid fa-hand-pointer"></i> Nhấn vào hiện câu hỏi ▼</span><span class="txt-open"><i class="fa-solid fa-chevron-up"></i> Thu gọn ▲</span></div>
+                    </div>
+                    <div class="accordion-content" onclick="event.stopPropagation()">
+                        <div class="f-example-box" style="margin: 0; border: none; background: transparent; padding: 0.5rem 0;">
+                            <div class="ex-label" style="font-size:1.1rem; color:var(--text-main); margin-bottom:0.75rem; text-transform:none;">
+                                ❓ Câu hỏi: <strong>${d.exQ}</strong>
+                            </div>
+                            <div style="margin-top:0.75rem;">
+                                <button class="btn-audio-sample" style="background:#8b5cf6; margin-bottom:0.5rem; cursor:pointer;" onclick="toggleSampleAnswer(this)">
+                                    <i class="fa-solid fa-eye"></i> Nhấn xem câu trả lời mẫu
+                                </button>
+                                <div class="fade-in" style="display:none; margin-top:0.75rem; padding-top:0.75rem; border-top:1px dashed var(--border);">
+                                    <div class="ex-text" style="color:var(--secondary); font-weight:500; font-size:1.05rem; line-height:1.8;">${d.exAFormatted || d.exA}</div>
+                                    <button class="btn-audio-sample mt-2" onclick="speakText('${d.exA.replace(/<[^>]*>/g, '').replace(/→/g, '').replace(/'/g, "\\'").trim()}')">
+                                        <i class="fa-solid fa-volume-high"></i> Nghe Audio phát âm
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    };
+
+    document.getElementById('yn-prev')?.addEventListener('click', () => {
+        state.ynIndex = (state.ynIndex - 1 + ynFormulas.length) % ynFormulas.length;
+        renderYnSlide();
+    });
+    document.getElementById('yn-next')?.addEventListener('click', () => {
+        state.ynIndex = (state.ynIndex + 1) % ynFormulas.length;
+        renderYnSlide();
+    });
+    renderYnSlide();
+
+    // 4. CHOICE QUESTIONS TABS
+    const cTabs = document.querySelectorAll('.c-tab');
+    const choiceBox = document.getElementById('choice-display-box');
+
+            const choiceData = {
+        "opt1": {
+                "title": "✅ PHƯƠNG ÁN 1 – CHỌN 1 TRONG 2",
+                "form": "→ Personally, I prefer <strong>[lựa chọn – noun/Ving]</strong> because I find it more <strong>[tính từ mô tả lựa chọn]</strong>. It allows me to <strong>[lợi ích 1]</strong> and gives me a chance to <strong>[lợi ích 2]</strong>.",
+                "audio": "Personally, I prefer studying in the library because I find it more peaceful. It allows me to concentrate better and gives me a chance to avoid distractions.",
+                "examples": [
+                        {
+                                "q": "Do you prefer <span class='sub-hl'>studying at home</span> or <span class='sub-hl'>in the library</span>?",
+                                "a": "→ Personally, I prefer studying in the library because I find it more peaceful. It allows me to concentrate better and gives me a chance to avoid distractions.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Personally, I prefer <strong>studying in the library</strong> because I find it more <strong>peaceful</strong>. It allows me to <strong>concentrate better</strong> and gives me a chance to <strong>avoid distractions</strong>.</div>"
+                        },
+                        {
+                                "q": "Do you prefer <span class='sub-hl'>paper books</span> or <span class='sub-hl'>e-books</span>?",
+                                "a": "→ Personally, I prefer paper books because I find them more authentic. It allows me to protect my eyesight and gives me a chance to enjoy the feeling of turning pages.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Personally, I prefer <strong>paper books</strong> because I find them more <strong>authentic</strong>. It allows me to <strong>protect my eyesight</strong> and gives me a chance to <strong>enjoy the feeling of turning pages</strong>.</div>"
+                        },
+                        {
+                                "q": "Do you prefer <span class='sub-hl'>traveling alone</span> or <span class='sub-hl'>with friends</span>?",
+                                "a": "→ Personally, I prefer traveling with friends because I find it more enjoyable. It allows me to share great memories and gives me a chance to strengthen our friendships.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Personally, I prefer <strong>traveling with friends</strong> because I find it more <strong>enjoyable</strong>. It allows me to <strong>share great memories</strong> and gives me a chance to <strong>strengthen our friendships</strong>.</div>"
+                        },
+                        {
+                                "q": "Do you prefer <span class='sub-hl'>watching movies at home</span> or <span class='sub-hl'>at the cinema</span>?",
+                                "a": "→ Personally, I prefer watching movies at the cinema because I find it more thrilling. It allows me to enjoy top-quality sound effects and gives me a chance to experience the movie fully.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Personally, I prefer <strong>watching movies at the cinema</strong> because I find it more <strong>thrilling</strong>. It allows me to <strong>enjoy top-quality sound effects</strong> and gives me a chance to <strong>experience the movie fully</strong>.</div>"
+                        },
+                        {
+                                "q": "Do you prefer <span class='sub-hl'>shopping online</span> or <span class='sub-hl'>in traditional stores</span>?",
+                                "a": "→ Personally, I prefer shopping online because I find it more convenient. It allows me to compare prices easily and gives me a chance to save a lot of time.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Personally, I prefer <strong>shopping online</strong> because I find it more <strong>convenient</strong>. It allows me to <strong>compare prices easily</strong> and gives me a chance to <strong>save a lot of time</strong>.</div>"
+                        },
+                        {
+                                "q": "Do you prefer <span class='sub-hl'>living in a big city</span> or <span class='sub-hl'>in the countryside</span>?",
+                                "a": "→ Personally, I prefer living in a big city because I find it more dynamic. It allows me to access better educational facilities and gives me a chance to explore career opportunities.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Personally, I prefer <strong>living in a big city</strong> because I find it more <strong>dynamic</strong>. It allows me to <strong>access better educational facilities</strong> and gives me a chance to <strong>explore career opportunities</strong>.</div>"
+                        }
+                ],
+                "exQ": "Do you prefer <span class='sub-hl'>studying at home</span> or <span class='sub-hl'>in the library</span>?",
+                "exA": "→ Personally, I prefer studying in the library because I find it more peaceful. It allows me to concentrate better and gives me a chance to avoid distractions.",
+                "exAFormatted": "→ Personally, I prefer <span class=\"sub-hl\">studying in the library</span> because I find it more <span class=\"sub-hl\">peaceful</span>. It allows me to <span class=\"sub-hl\">concentrate better</span> and gives me a chance to <span class=\"sub-hl\">avoid distractions</span>.",
+                "vocab": [
+                        {
+                                "type": "adj",
+                                "title": "Tính từ so sánh lựa chọn:",
+                                "items": [
+                                                {
+                                                                                                "en": "convenient",
+                                                                                                "vn": "tiện lợi"
+                                                },
+                                                {
+                                                                                                "en": "peaceful",
+                                                                                                "vn": "yên tĩnh"
+                                                },
+                                                {
+                                                                                                "en": "enjoyable",
+                                                                                                "vn": "thú vị"
+                                                },
+                                                {
+                                                                                                "en": "comfortable",
+                                                                                                "vn": "thoải mái"
+                                                },
+                                                {
+                                                                                                "en": "economical",
+                                                                                                "vn": "tiết kiệm"
+                                                },
+                                                {
+                                                                                                "en": "authentic",
+                                                                                                "vn": "chân thực"
+                                                },
+                                                {
+                                                                                                "en": "dynamic",
+                                                                                                "vn": "năng động"
+                                                }
+]
+                        },
+                        {
+                                "type": "benefit",
+                                "title": "Cụm Lợi ích:",
+                                "items": [
+                                        {
+                                                "isNote": true,
+                                                "vn": "👉 (Sử dụng các cụm trong BẢNG LỢI ÍCH B2)"
+                                        }
+                                ]
+                        }
+                ]
+        },
+        "opt2": {
+                "title": "✅ PHƯƠNG ÁN 2 – CẢ HAI ĐỀU QUAN TRỌNG",
+                "form": "→ I think both are equally important because they offer different benefits. <strong>[A]</strong> helps me <strong>[lợi ích của A]</strong>, while <strong>[B]</strong> allows me to <strong>[lợi ích của B]</strong>.",
+                "audio": "I think both are equally important because they offer different benefits. Money helps me meet my daily needs, while happiness allows me to enjoy life and maintain good mental health.",
+                "examples": [
+                        {
+                                "q": "Which is more important, <span class='sub-hl'>money</span> or <span class='sub-hl'>happiness</span>?",
+                                "a": "→ I think both are equally important because they offer different benefits. Money helps me meet my daily needs, while happiness allows me to enjoy life and maintain good mental health.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I think both are equally important because they offer different benefits. <strong>Money</strong> helps me <strong>meet my daily needs</strong>, while <strong>happiness</strong> allows me to <strong>enjoy life and maintain good mental health</strong>.</div>"
+                        },
+                        {
+                                "q": "Which is more important, <span class='sub-hl'>family</span> or <span class='sub-hl'>work</span>?",
+                                "a": "→ I think both are equally important because they offer different benefits. Work helps me earn a living and develop my career, while family provides emotional support and unconditional love.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I think both are equally important because they offer different benefits. <strong>Work</strong> helps me <strong>earn a living and develop my career</strong>, while <strong>family</strong> provides <strong>emotional support and unconditional love</strong>.</div>"
+                        },
+                        {
+                                "q": "Which is more important, <span class='sub-hl'>practical skills</span> or <span class='sub-hl'>academic knowledge</span>?",
+                                "a": "→ I think both are equally important because they offer different benefits. Academic knowledge provides a strong theoretical background, while practical skills allow me to solve real-world problems effectively.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I think both are equally important because they offer different benefits. <strong>Academic knowledge</strong> provides a strong theoretical background, while <strong>practical skills</strong> allow me to solve real-world problems effectively.</div>"
+                        },
+                        {
+                                "q": "Which is more important, <span class='sub-hl'>physical health</span> or <span class='sub-hl'>mental health</span>?",
+                                "a": "→ I think both are equally important because they offer different benefits. Physical health keeps my body strong and active, while mental health allows me to stay optimistic and manage daily stress.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I think both are equally important because they offer different benefits. <strong>Physical health</strong> keeps my body strong and active, while <strong>mental health</strong> allows me to stay optimistic and manage daily stress.</div>"
+                        },
+                        {
+                                "q": "Which is more important, <span class='sub-hl'>talent</span> or <span class='sub-hl'>hard work</span>?",
+                                "a": "→ I think both are equally important because they offer different benefits. Talent gives us an initial advantage, while hard work allows us to develop discipline and achieve long-term success.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I think both are equally important because they offer different benefits. <strong>Talent</strong> gives us an initial advantage, while <strong>hard work</strong> allows us to develop discipline and achieve long-term success.</div>"
+                        },
+                        {
+                                "q": "Which is more important, <span class='sub-hl'>individual study</span> or <span class='sub-hl'>group study</span>?",
+                                "a": "→ I think both are equally important because they offer different benefits. Individual study helps me focus on personal weaknesses, while group study allows me to exchange ideas and learn from peers.",
+                                "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I think both are equally important because they offer different benefits. <strong>Individual study</strong> helps me focus on personal weaknesses, while <strong>group study</strong> allows me to exchange ideas and learn from peers.</div>"
+                        }
+                ],
+                "exQ": "Which is more important, <span class='sub-hl'>money</span> or <span class='sub-hl'>happiness</span>?",
+                "exA": "→ I think both are equally important because they offer different benefits. Money helps me meet my daily needs, while happiness allows me to enjoy life and maintain good mental health.",
+                "exAFormatted": "→ I think both are equally important because they offer different benefits. <span class=\"sub-hl\">Money</span> helps me <span class=\"sub-hl\">meet my daily needs</span>, while <span class=\"sub-hl\">happiness</span> allows me to <span class=\"sub-hl\">enjoy life and maintain good mental health</span>.",
+                "vocab": [
+                        {
+                                "type": "benefit",
+                                "title": "Cụm Lợi ích song song:",
+                                "items": [
+                                        {
+                                                "isNote": true,
+                                                "vn": "👉 (Sử dụng các cụm trong BẢNG LỢI ÍCH B2)"
+                                        }
+                                ]
+                        }
+                ]
+        }
+};
+
+const renderChoice = (o) => {
+        if (!choiceBox || !choiceData[o]) return;
+        const d = choiceData[o];
+        choiceBox.innerHTML = `
+            <div class="f-card-clean fade-in" style="max-width:100%;">
+                <div class="f-title" style="margin-bottom:1.5rem;">${formatTitleHighlight(d.title)}</div>
+                
+                <div class="accordion-box" onclick="this.classList.toggle('open')" style="margin-bottom: 1.25rem; border: 2px solid #3b82f6; box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.1);">
+                    <div class="accordion-header" style="padding: 1rem 1.25rem; background: rgba(59, 130, 246, 0.08);">
+                        <div class="acc-title" style="color:#2563eb; font-size:1.05rem;"><i class="fa-solid fa-lightbulb"></i> GỢI Ý CÂU TRẢ LỜI</div>
+                        <div class="acc-toggle" style="background:#2563eb;"><span class="txt-close"><i class="fa-solid fa-hand-pointer"></i> Nhấn để xem gợi ý câu trả lời ▼</span><span class="txt-open"><i class="fa-solid fa-chevron-up"></i> Thu gọn ▲</span></div>
+                    </div>
+                    <div class="accordion-content" onclick="event.stopPropagation()">
+                        <div class="f-formula-box" style="margin: 0; border: none; background: transparent; padding: 0.5rem 0;">${formatFormulaHighlight(d.form)}</div>
+                        ${getSuggestionsHTML(d)}
+                    </div>
+                </div>
+
+                <div class="accordion-box" onclick="this.classList.toggle('open')" style="margin-bottom: 0; border: 2px solid #8b5cf6; box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1);">
+                    <div class="accordion-header" style="padding: 1rem 1.25rem; background: rgba(139, 92, 246, 0.08);">
+                        <div class="acc-title" style="color:#7c3aed; font-size:1.05rem;"><i class="fa-solid fa-desktop"></i> VÍ DỤ THỰC HÀNH</div>
+                        <div class="acc-toggle" style="background:#7c3aed;"><span class="txt-close"><i class="fa-solid fa-hand-pointer"></i> Nhấn vào hiện câu hỏi ▼</span><span class="txt-open"><i class="fa-solid fa-chevron-up"></i> Thu gọn ▲</span></div>
+                    </div>
+                    <div class="accordion-content" onclick="event.stopPropagation()">
+                        <div class="f-example-box" style="margin: 0; border: none; background: transparent; padding: 0.5rem 0;">
+                            <div class="ex-label" style="font-size:1.1rem; color:var(--text-main); margin-bottom:0.75rem; text-transform:none;">
+                                ❓ Câu hỏi: <strong>${d.exQ}</strong>
+                            </div>
+                            <div style="margin-top:0.75rem;">
+                                <button class="btn-audio-sample" style="background:#8b5cf6; margin-bottom:0.5rem; cursor:pointer;" onclick="toggleSampleAnswer(this)">
+                                    <i class="fa-solid fa-eye"></i> Nhấn xem câu trả lời mẫu
+                                </button>
+                                <div class="fade-in" style="display:none; margin-top:0.75rem; padding-top:0.75rem; border-top:1px dashed var(--border);">
+                                    <div class="ex-text" style="color:var(--secondary); font-weight:500; font-size:1.05rem; line-height:1.8;">${d.exAFormatted || d.exA}</div>
+                                    <button class="btn-audio-sample mt-2" onclick="speakText('${d.audio.replace(/<[^>]*>/g, '').replace(/'/g, "\\'")}')">
+                                        <i class="fa-solid fa-volume-high"></i> Nghe Audio phát âm
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    };
+
+    cTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            cTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            renderChoice(tab.getAttribute('data-opt'));
+        });
+    });
+    renderChoice('opt1');
+    const choiceExamplesBox = document.getElementById('choice-examples-box');
+    if (choiceExamplesBox && choiceData['opt1']) {
+        choiceExamplesBox.innerHTML = getExamplesBlockHTML(choiceData['opt1']);
+    }
+
+    // 5. WH-QUESTIONS SHOWCASE (15 Formulas exactly from PowerPoint)
+            const whBank = {
+        "what": [
+                {
+                        "title": "1. What do you often do [thời gian]?",
+                        "formula": "<div style='margin-bottom: 8px;'><strong>- Cách 1:</strong> → I tend to <strong>[hoạt động – Vo]</strong> <strong>[thời gian]</strong> because I find it <strong>[tính từ mô tả hoạt động]</strong>. It allows me to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>.</div><div><strong>- Cách 2:</strong> → I usually <strong>[hoạt động 1 – Vo]</strong> <strong>[thời gian]</strong> because it allows me to <strong>[lợi ích 1]</strong>. Sometimes, I also <strong>[hoạt động 2 – Vo]</strong>, which gives me a chance to <strong>[lợi ích 2]</strong>.</div>",
+                        "examples": [
+                                {
+                                        "q": "What do you often do <span class='sub-hl'>in the evening</span>?",
+                                        "a": "→ I tend to watch movies in the evening because I find it relaxing. It allows me to broaden my knowledge and clear my mind.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I tend to <strong>watch movies</strong> <strong>in the evening</strong> because I find it <strong>relaxing</strong>. It allows me to <strong>broaden my knowledge</strong> and <strong>clear my mind</strong>.</div>"
+                                },
+                                {
+                                        "q": "What do you often do <span class='sub-hl'>in the afternoon</span>?",
+                                        "a": "→ I usually read books in the afternoon because it allows me to widen my knowledge. Sometimes, I also listen to music, which gives me a chance to relax after a busy day.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I usually <strong>read books</strong> <strong>in the afternoon</strong> because it allows me to <strong>widen my knowledge</strong>. Sometimes, I also <strong>listen to music</strong>, which gives me a chance to <strong>relax after a busy day</strong>.</div>"
+                                },
+                                {
+                                        "q": "What do you often do <span class='sub-hl'>in your free time</span>?",
+                                        "a": "→ I tend to play sports in my free time because I find it energetic. It allows me to stay in good shape and boost my stamina.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I tend to <strong>play sports</strong> <strong>in my free time</strong> because I find it <strong>energetic</strong>. It allows me to <strong>stay in good shape</strong> and <strong>boost my stamina</strong>.</div>"
+                                },
+                                {
+                                        "q": "What do you often do <span class='sub-hl'>at weekends</span>?",
+                                        "a": "→ I usually hang out with my friends at weekends because it allows me to have fun. Sometimes, I also go shopping, which gives me a chance to buy necessary items.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I usually <strong>hang out with my friends</strong> <strong>at weekends</strong> because it allows me to <strong>have fun</strong>. Sometimes, I also <strong>go shopping</strong>, which gives me a chance to <strong>buy necessary items</strong>.</div>"
+                                },
+                                {
+                                        "q": "What do you often do <span class='sub-hl'>after school</span>?",
+                                        "a": "→ I tend to listen to music after school because I find it very soothing. It allows me to reduce stress and refresh my mind.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I tend to <strong>listen to music</strong> <strong>after school</strong> because I find it <strong>very soothing</strong>. It allows me to <strong>reduce stress</strong> and <strong>refresh my mind</strong>.</div>"
+                                },
+                                {
+                                        "q": "What do you often do <span class='sub-hl'>in the morning</span>?",
+                                        "a": "→ I tend to go jogging in the morning because I find it refreshing. It allows me to breathe fresh air and stay energized for the whole day.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I tend to <strong>go jogging</strong> <strong>in the morning</strong> because I find it <strong>refreshing</strong>. It allows me to <strong>breathe fresh air</strong> and <strong>stay energized for the whole day</strong>.</div>"
+                                }
+                        ],
+                        "exQ": "What do you often do <span class='sub-hl'>in the evening</span>?",
+                        "exA": "→ I tend to watch movies in the evening because I find it relaxing. It allows me to broaden my knowledge and clear my mind.",
+                        "exAFormatted": "→ I tend to <span class=\"sub-hl\">watch movies</span> <span class=\"sub-hl\">in the evening</span> because I find it <span class=\"sub-hl\">relaxing</span>. It allows me to <span class=\"sub-hl\">broaden my knowledge</span> and <span class=\"sub-hl\">clear my mind</span>.",
+                        "vocab": [
+                                {
+                                        "type": "time",
+                                        "title": "Cụm Thời gian:",
+                                        "items": [
+                                                {
+                                                        "en": "in the morning",
+                                                        "vn": "vào buổi sáng"
+                                                },
+                                                {
+                                                        "en": "in the afternoon",
+                                                        "vn": "vào buổi chiều"
+                                                },
+                                                {
+                                                        "en": "in the evening",
+                                                        "vn": "vào buổi tối"
+                                                },
+                                                {
+                                                        "en": "at night",
+                                                        "vn": "vào ban đêm"
+                                                },
+                                                {
+                                                        "en": "at weekends",
+                                                        "vn": "vào cuối tuần"
+                                                },
+                                                {
+                                                        "en": "on weekdays",
+                                                        "vn": "vào các ngày trong tuần"
+                                                },
+                                                {
+                                                        "en": "on my days off",
+                                                        "vn": "vào những ngày nghỉ"
+                                                },
+                                                {
+                                                        "en": "in my free time",
+                                                        "vn": "vào thời gian rảnh rỗi"
+                                                },
+                                                {
+                                        "en": "after school",
+                                        "vn": "sau giờ học"
+                                },
+                                {
+                                        "en": "after work",
+                                        "vn": "sau giờ làm"
+                                }
+                                        ]
+                                },
+                                {
+                                "type": "adj",
+                                "title": "Tính từ mô tả hoạt động:",
+                                "items": [
+                                                {
+                                                                                                "en": "interesting",
+                                                                                                "vn": "thú vị"
+                                                },
+                                                {
+                                                                                                "en": "exciting",
+                                                                                                "vn": "hào hứng"
+                                                },
+                                                {
+                                                                                                "en": "relaxing",
+                                                                                                "vn": "thư giãn"
+                                                },
+                                                {
+                                                                                                "en": "enjoyable",
+                                                                                                "vn": "thoải mái, thú vị"
+                                                },
+                                                {
+                                                                                                "en": "meaningful",
+                                                                                                "vn": "ý nghĩa"
+                                                },
+                                                {
+                                                                                                "en": "beneficial",
+                                                                                                "vn": "có lợi"
+                                                },
+                                                {
+                                                                                                "en": "entertaining",
+                                                                                                "vn": "mang tính giải trí"
+                                                },
+                                                {
+                                                                                                "en": "fascinating",
+                                                                                                "vn": "lôi cuốn, hấp dẫn"
+                                                }
+]
+                        },
+                                {
+                                        "type": "benefit",
+                                        "title": "Cụm Lợi ích:",
+                                        "items": [
+                                                {
+                                                        "isNote": true,
+                                                        "vn": "👉 (Sử dụng các cụm trong BẢNG LỢI ÍCH B2)"
+                                                }
+                                        ]
+                                }
+                        ]
+                },
+                {
+                        "title": "2. What do you often do to [mục đích]?",
+                        "formula": "→ I often <strong>[hoạt động 1 – Vo]</strong> to <strong>[mục đích]</strong> because it’s an effective way to <strong>[lợi ích 1]</strong>. I also try to <strong>[hoạt động 2 – Vo]</strong> because it allows me to <strong>[lợi ích 2]</strong>.",
+                        "examples": [
+                                {
+                                        "q": "What do you often do to <span class='sub-hl'>keep in shape</span>?",
+                                        "a": "→ I often exercise to keep in shape because it’s an effective way to burn calories. I also try to have a balanced diet because it allows me to control my weight.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I often <strong>exercise</strong> to <strong>keep in shape</strong> because it’s an effective way to <strong>burn calories</strong>. I also try to <strong>have a balanced diet</strong> because it allows me to <strong>control my weight</strong>.</div>"
+                                },
+                                {
+                                        "q": "What do you often do to <span class='sub-hl'>stay healthy</span>?",
+                                        "a": "→ I often run in the morning to stay healthy because it’s an effective way to strengthen my immune system. I also try to drink enough water because it allows me to maintain good physical health.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I often <strong>run in the morning</strong> to <strong>stay healthy</strong> because it’s an effective way to <strong>strengthen my immune system</strong>. I also try to <strong>drink enough water</strong> because it allows me to <strong>maintain good physical health</strong>.</div>"
+                                },
+                                {
+                                        "q": "What do you often do to <span class='sub-hl'>improve your English skills</span>?",
+                                        "a": "→ I often read English books to improve my English skills because it’s an effective way to enrich my vocabulary. I also try to practice speaking with friends because it allows me to build confidence.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I often <strong>read English books</strong> to <strong>improve my English skills</strong> because it’s an effective way to <strong>enrich my vocabulary</strong>. I also try to <strong>practice speaking with friends</strong> because it allows me to <strong>build confidence</strong>.</div>"
+                                },
+                                {
+                                        "q": "What do you often do to <span class='sub-hl'>reduce stress</span>?",
+                                        "a": "→ I often listen to acoustic music to reduce stress because it’s an effective way to calm my mind. I also try to take a short walk because it allows me to clear my head.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I often <strong>listen to acoustic music</strong> to <strong>reduce stress</strong> because it’s an effective way to <strong>calm my mind</strong>. I also try to <strong>take a short walk</strong> because it allows me to <strong>clear my head</strong>.</div>"
+                                },
+                                {
+                                        "q": "What do you often do to <span class='sub-hl'>widen your knowledge</span>?",
+                                        "a": "→ I often read non-fiction books to widen my knowledge because it’s an effective way to explore new fields. I also try to watch documentary videos because it allows me to gain practical insights.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I often <strong>read non-fiction books</strong> to <strong>widen my knowledge</strong> because it’s an effective way to <strong>explore new fields</strong>. I also try to <strong>watch documentary videos</strong> because it allows me to <strong>gain practical insights</strong>.</div>"
+                                },
+                                {
+                                        "q": "What do you often do to <span class='sub-hl'>save money</span>?",
+                                        "a": "→ I often cook at home to save money because it’s an effective way to cut down on dining expenses. I also try to plan my monthly budget because it allows me to control impulsive spending.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I often <strong>cook at home</strong> to <strong>save money</strong> because it’s an effective way to <strong>cut down on dining expenses</strong>. I also try to <strong>plan my monthly budget</strong> because it allows me to <strong>control impulsive spending</strong>.</div>"
+                                }
+                        ],
+                        "exQ": "What do you often do to <span class='sub-hl'>keep in shape</span>?",
+                        "exA": "→ I often exercise to keep in shape because it’s an effective way to burn calories. I also try to have a balanced diet because it allows me to control my weight.",
+                        "exAFormatted": "→ I often <span class=\"sub-hl\">exercise</span> to <span class=\"sub-hl\">keep in shape</span> because it’s an effective way to <span class=\"sub-hl\">burn calories</span>. I also try to <span class=\"sub-hl\">have a balanced diet</span> because it allows me to <span class=\"sub-hl\">control my weight</span>.",
+                        "vocab": [
+                                {
+                                        "type": "benefit",
+                                        "title": "Cụm Lợi ích / Biện pháp:",
+                                        "items": [
+                                                {
+                                                        "isNote": true,
+                                                        "vn": "👉 (Sử dụng các cụm trong BẢNG LỢI ÍCH B2)"
+                                                }
+                                        ]
+                                }
+                        ]
+                },
+                {
+                        "title": "3. What do you often do when [tình huống – mệnh đề]?",
+                        "formula": "→ I usually <strong>[hoạt động – Vo]</strong> when <strong>[tình huống]</strong> because I find it a great way to <strong>[lợi ích 1]</strong>. It also allows me to <strong>[lợi ích 2]</strong>, so I can feel <strong>[tính từ cảm xúc]</strong>.",
+                        "examples": [
+                                {
+                                        "q": "What do you often do when you <span class='sub-hl'>feel sad</span>?",
+                                        "a": "→ I usually listen to music when I feel sad because I find it a great way to improve my mood. It also allows me to forget about my worries, so I can feel more positive.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I usually <strong>listen to music</strong> when I <strong>feel sad</strong> because I find it a great way to <strong>improve my mood</strong>. It also allows me to <strong>forget about my worries</strong>, so I can feel <strong>more positive</strong>.</div>"
+                                },
+                                {
+                                        "q": "What do you often do when you <span class='sub-hl'>feel stressed</span>?",
+                                        "a": "→ I usually go for a walk when I feel stressed because I find it a great way to clear my mind. It also allows me to breathe fresh air, so I can feel more relaxed.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I usually <strong>go for a walk</strong> when I <strong>feel stressed</strong> because I find it a great way to <strong>clear my mind</strong>. It also allows me to <strong>breathe fresh air</strong>, so I can feel <strong>more relaxed</strong>.</div>"
+                                },
+                                {
+                                        "q": "What do you often do when you <span class='sub-hl'>are free</span>?",
+                                        "a": "→ I usually read books when I am free because I find it a great way to widen my knowledge. It also allows me to develop my imagination, so I can feel inspired.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I usually <strong>read books</strong> when I <strong>am free</strong> because I find it a great way to <strong>widen my knowledge</strong>. It also allows me to <strong>develop my imagination</strong>, so I can feel <strong>inspired</strong>.</div>"
+                                },
+                                {
+                                        "q": "What do you often do when you <span class='sub-hl'>feel bored</span>?",
+                                        "a": "→ I usually watch comedy movies when I feel bored because I find it a great way to have fun. It also allows me to pass the time, so I can feel refreshed.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I usually <strong>watch comedy movies</strong> when I <strong>feel bored</strong> because I find it a great way to <strong>have fun</strong>. It also allows me to <strong>pass the time</strong>, so I can feel <strong>refreshed</strong>.</div>"
+                                },
+                                {
+                                        "q": "What do you often do when you <span class='sub-hl'>are tired</span>?",
+                                        "a": "→ I usually take a short nap when I am tired because I find it a great way to regain my energy. It also allows me to rest my eyes, so I can feel re-energized.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I usually <strong>take a short nap</strong> when I <strong>am tired</strong> because I find it a great way to <strong>regain my energy</strong>. It also allows me to <strong>rest my eyes</strong>, so I can feel <strong>re-energized</strong>.</div>"
+                                },
+                                {
+                                        "q": "What do you often do when you <span class='sub-hl'>feel anxious</span>?",
+                                        "a": "→ I usually do deep breathing exercises when I feel anxious because I find it a great way to calm down. It also allows me to release mental tension, so I can feel much more peaceful.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I usually <strong>do deep breathing exercises</strong> when I <strong>feel anxious</strong> because I find it a great way to <strong>calm down</strong>. It also allows me to <strong>release mental tension</strong>, so I can feel <strong>much more peaceful</strong>.</div>"
+                                }
+                        ],
+                        "exQ": "What do you often do when you <span class='sub-hl'>feel sad</span>?",
+                        "exA": "→ I usually listen to music when I feel sad because I find it a great way to improve my mood. It also allows me to forget about my worries, so I can feel more positive.",
+                        "exAFormatted": "→ I usually <span class=\"sub-hl\">listen to music</span> when I <span class=\"sub-hl\">feel sad</span> because I find it a great way to <span class=\"sub-hl\">improve my mood</span>. It also allows me to <span class=\"sub-hl\">forget about my worries</span>, so I can feel <span class=\"sub-hl\">more positive</span>.",
+                        "vocab": [
+                                {
+                                "type": "emotion",
+                                "title": "Tính từ mô tả cảm xúc:",
+                                "items": [
+                                                {
+                                                                                                "en": "relaxed",
+                                                                                                "vn": "thư thái"
+                                                },
+                                                {
+                                                                                                "en": "refreshed",
+                                                                                                "vn": "sảng khoái"
+                                                },
+                                                {
+                                                                                                "en": "positive",
+                                                                                                "vn": "tích cực"
+                                                },
+                                                {
+                                                                                                "en": "energetic",
+                                                                                                "vn": "tràn đầy năng lượng"
+                                                },
+                                                {
+                                                                                                "en": "comfortable",
+                                                                                                "vn": "dễ chịu"
+                                                },
+                                                {
+                                                                                                "en": "calm",
+                                                                                                "vn": "bình tĩnh, thanh thản"
+                                                },
+                                                {
+                                                                                                "en": "productive",
+                                                                                                "vn": "hiệu quả"
+                                                },
+                                                {
+                                                                                                "en": "motivated",
+                                                                                                "vn": "có động lực"
+                                                },
+                                                {
+                                                                                                "en": "confident",
+                                                                                                "vn": "tự tin"
+                                                },
+                                                {
+                                                                                                "en": "satisfied",
+                                                                                                "vn": "hài lòng"
+                                                }
+]
+                        },
+                                {
+                                        "type": "benefit",
+                                        "title": "Cụm Lợi ích:",
+                                        "items": [
+                                                {
+                                                        "isNote": true,
+                                                        "vn": "👉 (Sử dụng các cụm trong BẢNG LỢI ÍCH B2)"
+                                                }
+                                        ]
+                                }
+                        ]
+                },
+                {
+                        "title": "4. What kinds of [danh từ] do you like?",
+                        "formula": "→ I’m a big fan of <strong>[2 thể loại]</strong> because I find them very <strong>[tính từ]</strong>. They allow me to <strong>[lợi ích 1]</strong> and give me a chance to <strong>[lợi ích 2]</strong>.",
+                        "examples": [
+                                {
+                                        "q": "What kinds of <span class='sub-hl'>movies</span> do you like?",
+                                        "a": "→ I’m a big fan of action and comedy movies because I find them very interesting. They allow me to relax after a busy day and enjoy my free time.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I’m a big fan of <strong>action and comedy movies</strong> because I find them very <strong>interesting</strong>. They allow me to <strong>relax after a busy day</strong> and <strong>enjoy my free time</strong>.</div>"
+                                },
+                                {
+                                        "q": "What kinds of <span class='sub-hl'>music</span> do you like?",
+                                        "a": "→ I’m a big fan of pop and acoustic music because I find them very soothing. They allow me to improve my mood and give me a chance to clear my mind.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I’m a big fan of <strong>pop and acoustic music</strong> because I find them very <strong>soothing</strong>. They allow me to <strong>improve my mood</strong> and give me a chance to <strong>clear my mind</strong>.</div>"
+                                },
+                                {
+                                        "q": "What kinds of <span class='sub-hl'>books</span> do you like?",
+                                        "a": "→ I’m a big fan of detective novels and self-help books because I find them very fascinating. They allow me to widen my knowledge and give me a chance to develop my critical thinking.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I’m a big fan of <strong>detective novels and self-help books</strong> because I find them very <strong>fascinating</strong>. They allow me to <strong>widen my knowledge</strong> and give me a chance to <strong>develop my critical thinking</strong>.</div>"
+                                },
+                                {
+                                        "q": "What kinds of <span class='sub-hl'>sports</span> do you like?",
+                                        "a": "→ I’m a big fan of badminton and swimming because I find them very dynamic. They allow me to stay in good shape and give me a chance to boost my stamina.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I’m a big fan of <strong>badminton and swimming</strong> because I find them very <strong>dynamic</strong>. They allow me to <strong>stay in good shape</strong> and give me a chance to <strong>boost my stamina</strong>.</div>"
+                                },
+                                {
+                                        "q": "What kinds of <span class='sub-hl'>food</span> do you like?",
+                                        "a": "→ I’m a big fan of traditional Vietnamese and Italian food because I find them both delicious and rich in flavor. They allow me to enjoy great meals and discover diverse culinary cultures.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I’m a big fan of <strong>traditional Vietnamese and Italian food</strong> because I find them both <strong>delicious and rich in flavor</strong>. They allow me to <strong>enjoy great meals</strong> and <strong>discover diverse culinary cultures</strong>.</div>"
+                                },
+                                {
+                                        "q": "What kinds of <span class='sub-hl'>hobbies</span> do you like?",
+                                        "a": "→ I’m a big fan of photography and gardening because I find them very peaceful. They allow me to reconnect with nature and give me a chance to express my creative side.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I’m a big fan of <strong>photography and gardening</strong> because I find them very <strong>peaceful</strong>. They allow me to <strong>reconnect with nature</strong> and give me a chance to <strong>express my creative side</strong>.</div>"
+                                }
+                        ],
+                        "exQ": "What kinds of <span class='sub-hl'>movies</span> do you like?",
+                        "exA": "→ I’m a big fan of action and comedy movies because I find them very interesting. They allow me to relax after a busy day and enjoy my free time.",
+                        "exAFormatted": "→ I’m a big fan of <span class=\"sub-hl\">action and comedy movies</span> because I find them very <span class=\"sub-hl\">interesting</span>. They allow me to <span class=\"sub-hl\">relax after a busy day</span> and <span class=\"sub-hl\">enjoy my free time</span>.",
+                        "vocab": [
+                                {
+                                "type": "adj",
+                                "title": "Tính từ mô tả thể loại:",
+                                "items": [
+                                                {
+                                                                                                "en": "interesting",
+                                                                                                "vn": "thú vị"
+                                                },
+                                                {
+                                                                                                "en": "exciting",
+                                                                                                "vn": "hào hứng"
+                                                },
+                                                {
+                                                                                                "en": "relaxing",
+                                                                                                "vn": "thư giãn"
+                                                },
+                                                {
+                                                                                                "en": "enjoyable",
+                                                                                                "vn": "thoải mái, thú vị"
+                                                },
+                                                {
+                                                                                                "en": "meaningful",
+                                                                                                "vn": "ý nghĩa"
+                                                },
+                                                {
+                                                                                                "en": "beneficial",
+                                                                                                "vn": "có lợi"
+                                                },
+                                                {
+                                                                                                "en": "entertaining",
+                                                                                                "vn": "mang tính giải trí"
+                                                },
+                                                {
+                                                                                                "en": "fascinating",
+                                                                                                "vn": "lôi cuốn, hấp dẫn"
+                                                }
+]
+                        },
+                                {
+                                        "type": "benefit",
+                                        "title": "Cụm Lợi ích:",
+                                        "items": [
+                                                {
+                                                        "isNote": true,
+                                                        "vn": "👉 (Sử dụng các cụm trong BẢNG LỢI ÍCH B2)"
+                                                }
+                                        ]
+                                }
+                        ]
+                },
+                {
+                        "title": "5. What is your favorite [danh từ]?",
+                        "formula": "→ One of my <strong>[danh từ số nhiều]</strong> is <strong>[thứ cụ thể]</strong> because I find it both <strong>[2 tính từ mô tả phù hợp]</strong>. It always makes me feel <strong>[tính từ mô tả cảm xúc]</strong> and helps me <strong>[lợi ích]</strong>.",
+                        "examples": [
+                                {
+                                        "q": "What is your favorite <span class='sub-hl'>food</span>?",
+                                        "a": "→ One of my favorite foods is Vietnamese pho because I find it both delicious and nutritious. It always makes me feel satisfied and helps me stay energized throughout the day.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → One of my favorite foods is <strong>Vietnamese pho</strong> because I find it both <strong>delicious and nutritious</strong>. It always makes me feel <strong>satisfied</strong> and helps me <strong>stay energized throughout the day</strong>.</div>"
+                                },
+                                {
+                                        "q": "What is your favorite <span class='sub-hl'>movie</span>?",
+                                        "a": "→ One of my favorite movies is Spider-Man because I find it both thrilling and inspiring. It always makes me feel excited and helps me relieve stress.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → One of my favorite movies is <strong>Spider-Man</strong> because I find it both <strong>thrilling and inspiring</strong>. It always makes me feel <strong>excited</strong> and helps me <strong>relieve stress</strong>.</div>"
+                                },
+                                {
+                                        "q": "What is your favorite <span class='sub-hl'>color</span>?",
+                                        "a": "→ One of my favorite colors is blue because I find it both peaceful and elegant. It always makes me feel calm and helps me stay focused.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → One of my favorite colors is <strong>blue</strong> because I find it both <strong>peaceful and elegant</strong>. It always makes me feel <strong>calm</strong> and helps me <strong>stay focused</strong>.</div>"
+                                },
+                                {
+                                        "q": "What is your favorite <span class='sub-hl'>sport</span>?",
+                                        "a": "→ One of my favorite sports is football because I find it both exciting and competitive. It always makes me feel energetic and helps me build teamwork skills.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → One of my favorite sports is <strong>football</strong> because I find it both <strong>exciting and competitive</strong>. It always makes me feel <strong>energetic</strong> and helps me <strong>build teamwork skills</strong>.</div>"
+                                },
+                                {
+                                        "q": "What is your favorite <span class='sub-hl'>season</span>?",
+                                        "a": "→ One of my favorite seasons is autumn because I find the weather both cool and pleasant. It always makes me feel romantic and helps me enjoy outdoor walks.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → One of my favorite seasons is <strong>autumn</strong> because I find the weather both <strong>cool and pleasant</strong>. It always makes me feel <strong>romantic</strong> and helps me <strong>enjoy outdoor walks</strong>.</div>"
+                                },
+                                {
+                                        "q": "What is your favorite <span class='sub-hl'>subject</span>?",
+                                        "a": "→ One of my favorite subjects is English because I find it both useful and engaging. It always makes me feel confident and helps me connect with international friends.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → One of my favorite subjects is <strong>English</strong> because I find it both <strong>useful and engaging</strong>. It always makes me feel <strong>confident</strong> and helps me <strong>connect with international friends</strong>.</div>"
+                                }
+                        ],
+                        "exQ": "What is your favorite <span class='sub-hl'>food</span>?",
+                        "exA": "→ One of my favorite foods is Vietnamese pho because I find it both delicious and nutritious. It always makes me feel satisfied and helps me stay energized throughout the day.",
+                        "exAFormatted": "→ One of my favorite foods is <span class=\"sub-hl\">Vietnamese pho</span> because I find it both <span class=\"sub-hl\">delicious and nutritious</span>. It always makes me feel <span class=\"sub-hl\">satisfied</span> and helps me <span class=\"sub-hl\">stay energized throughout the day</span>.",
+                        "vocab": [
+                                {
+                                "type": "emotion",
+                                "title": "Tính từ mô tả cảm xúc:",
+                                "items": [
+                                                {
+                                                                                                "en": "relaxed",
+                                                                                                "vn": "thư thái"
+                                                },
+                                                {
+                                                                                                "en": "refreshed",
+                                                                                                "vn": "sảng khoái"
+                                                },
+                                                {
+                                                                                                "en": "positive",
+                                                                                                "vn": "tích cực"
+                                                },
+                                                {
+                                                                                                "en": "energetic",
+                                                                                                "vn": "tràn đầy năng lượng"
+                                                },
+                                                {
+                                                                                                "en": "comfortable",
+                                                                                                "vn": "dễ chịu"
+                                                },
+                                                {
+                                                                                                "en": "calm",
+                                                                                                "vn": "bình tĩnh, thanh thản"
+                                                },
+                                                {
+                                                                                                "en": "productive",
+                                                                                                "vn": "hiệu quả"
+                                                },
+                                                {
+                                                                                                "en": "motivated",
+                                                                                                "vn": "có động lực"
+                                                },
+                                                {
+                                                                                                "en": "confident",
+                                                                                                "vn": "tự tin"
+                                                },
+                                                {
+                                                                                                "en": "satisfied",
+                                                                                                "vn": "hài lòng"
+                                                }
+]
+                        },
+                                {
+                                        "type": "benefit",
+                                        "title": "Cụm Lợi ích:",
+                                        "items": [
+                                                {
+                                                        "isNote": true,
+                                                        "vn": "👉 (Sử dụng các cụm trong BẢNG LỢI ÍCH B2)"
+                                                }
+                                        ]
+                                }
+                        ]
+                },
+                {
+                        "title": "6. What are the benefits of [noun/noun phrase/Ving]?",
+                        "formula": "→ <strong>[noun/noun phrase/Ving]</strong> <strong>bring(s)</strong> us a number of benefits. For example, <strong>it allows</strong> / <strong>they allow</strong> us to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>. Moreover, we can <strong>[lợi ích 3]</strong>.",
+                        "note": "<strong>LƯU Ý VỀ SỐ ÍT &amp; SỐ NHIỀU:</strong><br>• <strong>Danh từ số ít / Danh từ không đếm được / V-ing</strong> (như <em>exercise, reading books, learning English...</em>) ➝ Dùng <strong>brings</strong> và <strong>it allows</strong>.<br>• <strong>Danh từ số nhiều</strong> (như <em>soft skills, extracurricular activities...</em>) ➝ Dùng <strong>bring</strong> và <strong>they allow</strong>.",
+                        "examples": [
+                                {
+                                        "q": "What are the benefits of <span class='sub-hl'>exercise</span>?",
+                                        "a": "→ Exercise brings us a number of benefits. For example, it allows us to stay healthy and reduce stress. Moreover, we can improve our physical fitness.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → <strong>Exercise</strong> brings us a number of benefits. For example, it allows us to <strong>stay healthy</strong> and <strong>reduce stress</strong>. Moreover, we can <strong>improve our physical fitness</strong>.</div>"
+                                },
+                                {
+                                        "q": "What are the benefits of <span class='sub-hl'>reading books</span>?",
+                                        "a": "→ Reading books brings us a number of benefits. For example, it allows us to broaden our knowledge and improve our vocabulary. Moreover, we can develop our imagination.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → <strong>Reading books</strong> brings us a number of benefits. For example, it allows us to <strong>broaden our knowledge</strong> and <strong>improve our vocabulary</strong>. Moreover, we can <strong>develop our imagination</strong>.</div>"
+                                },
+                                {
+                                        "q": "What are the benefits of <span class='sub-hl'>using public transport</span>?",
+                                        "a": "→ Using public transport brings us a number of benefits. For example, it allows us to save money and reduce traffic congestion. Moreover, we can protect the environment.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → <strong>Using public transport</strong> brings us a number of benefits. For example, it allows us to <strong>save money</strong> and <strong>reduce traffic congestion</strong>. Moreover, we can <strong>protect the environment</strong>.</div>"
+                                },
+                                {
+                                        "q": "What are the benefits of <span class='sub-hl'>soft skills</span>?",
+                                        "a": "→ Soft skills bring us a number of benefits. For example, they allow us to communicate effectively and resolve conflicts. Moreover, we can advance our career prospects.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → <strong>Soft skills</strong> bring us a number of benefits. For example, they allow us to <strong>communicate effectively</strong> and <strong>resolve conflicts</strong>. Moreover, we can <strong>advance our career prospects</strong>.</div>"
+                                },
+                                {
+                                        "q": "What are the benefits of <span class='sub-hl'>learning a foreign language</span>?",
+                                        "a": "→ Learning a foreign language brings us a number of benefits. For example, it allows us to communicate with global citizens and explore diverse cultures. Moreover, we can expand our employment opportunities.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → <strong>Learning a foreign language</strong> brings us a number of benefits. For example, it allows us to <strong>communicate with global citizens</strong> and <strong>explore diverse cultures</strong>. Moreover, we can <strong>expand our employment opportunities</strong>.</div>"
+                                },
+                                {
+                                        "q": "What are the benefits of <span class='sub-hl'>teamwork</span>?",
+                                        "a": "→ Teamwork brings us a number of benefits. For example, it allows us to share heavy workloads and brainstorm creative solutions. Moreover, we can build stronger interpersonal relationships.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → <strong>Teamwork</strong> brings us a number of benefits. For example, it allows us to <strong>share heavy workloads</strong> and <strong>brainstorm creative solutions</strong>. Moreover, we can <strong>build stronger interpersonal relationships</strong>.</div>"
+                                }
+                        ],
+                        "exQ": "What are the benefits of <span class='sub-hl'>exercise</span>?",
+                        "exA": "→ Exercise brings us a number of benefits. For example, it allows us to stay healthy and reduce stress. Moreover, we can improve our physical fitness.",
+                        "exAFormatted": "→ <span class=\"sub-hl\">Exercise</span> brings us a number of benefits. For example, it allows us to <span class=\"sub-hl\">stay healthy</span> and <span class=\"sub-hl\">reduce stress</span>. Moreover, we can <span class=\"sub-hl\">improve our physical fitness</span>.",
+                        "vocab": [
+                                {
+                                        "type": "benefit",
+                                        "title": "Cụm Lợi ích tổng hợp:",
+                                        "items": [
+                                                {
+                                                        "isNote": true,
+                                                        "vn": "👉 (Sử dụng các cụm trong BẢNG LỢI ÍCH B2)"
+                                                }
+                                        ]
+                                }
+                        ]
+                }
+        ],
+        "who": [
+                {
+                        "title": "1. Who’s your favorite [noun – danh từ chỉ người]?",
+                        "formula": "→ I’m a huge fan of <strong>[tên]</strong>. I admire <strong>him/her</strong> because <strong>[lý do chính]</strong>. Besides, <strong>he/she</strong> is very <strong>[2 tính từ mô tả tính cách]</strong>, which I find very impressive.",
+                        "examples": [
+                                {
+                                        "q": "Who’s your favorite <span class='sub-hl'>singer</span>?",
+                                        "a": "→ I’m a huge fan of Justin Bieber. I admire him because he has a beautiful voice. Besides, he is very talented and creative, which I find very impressive.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I’m a huge fan of <strong>Justin Bieber</strong>. I admire him because <strong>he has a beautiful voice</strong>. Besides, he is very <strong>talented and creative</strong>, which I find very impressive.</div>"
+                                },
+                                {
+                                        "q": "Who’s your favorite <span class='sub-hl'>actor</span>?",
+                                        "a": "→ I’m a huge fan of Tom Hanks. I admire him because of his versatile acting skills. Besides, he is very humble and dedicated, which I find very impressive.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I’m a huge fan of <strong>Tom Hanks</strong>. I admire him because of <strong>his versatile acting skills</strong>. Besides, he is very <strong>humble and dedicated</strong>, which I find very impressive.</div>"
+                                },
+                                {
+                                        "q": "Who’s your favorite <span class='sub-hl'>teacher</span>?",
+                                        "a": "→ I’m a huge fan of my high school English teacher. I admire her because she explains complex ideas clearly. Besides, she is very patient and supportive, which I find very impressive.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I’m a huge fan of <strong>my high school English teacher</strong>. I admire her because <strong>she explains complex ideas clearly</strong>. Besides, she is very <strong>patient and supportive</strong>, which I find very impressive.</div>"
+                                },
+                                {
+                                        "q": "Who’s your favorite <span class='sub-hl'>football player</span>?",
+                                        "a": "→ I’m a huge fan of Lionel Messi. I admire him because of his unbelievable skills on the pitch. Besides, he is very modest and hardworking, which I find very impressive.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I’m a huge fan of <strong>Lionel Messi</strong>. I admire him because of <strong>his unbelievable skills on the pitch</strong>. Besides, he is very <strong>modest and hardworking</strong>, which I find very impressive.</div>"
+                                },
+                                {
+                                        "q": "Who’s your favorite <span class='sub-hl'>writer / author</span>?",
+                                        "a": "→ I’m a huge fan of J.K. Rowling. I admire her because she creates captivating magical stories. Besides, she is extremely imaginative and passionate, which I find very impressive.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I’m a huge fan of <strong>J.K. Rowling</strong>. I admire her because <strong>she creates captivating magical stories</strong>. Besides, she is extremely <strong>imaginative and passionate</strong>, which I find very impressive.</div>"
+                                },
+                                {
+                                        "q": "Who’s your favorite <span class='sub-hl'>family member</span>?",
+                                        "a": "→ I’m a huge fan of my mother. I admire her because she always takes wonderful care of our whole family. Besides, she is remarkably strong and caring, which I find very impressive.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I’m a huge fan of <strong>my mother</strong>. I admire her because <strong>she always takes wonderful care of our whole family</strong>. Besides, she is remarkably <strong>strong and caring</strong>, which I find very impressive.</div>"
+                                }
+                        ],
+                        "exQ": "Who’s your favorite <span class='sub-hl'>singer</span>?",
+                        "exA": "→ I’m a huge fan of Justin Bieber. I admire him because he has a beautiful voice. Besides, he is very talented and creative, which I find very impressive.",
+                        "exAFormatted": "→ I’m a huge fan of <span class=\"sub-hl\">Justin Bieber</span>. I admire him because <span class=\"sub-hl\">he has a beautiful voice</span>. Besides, he is very <span class=\"sub-hl\">talented and creative</span>, which I find very impressive.",
+                        "vocab": [
+                                {
+                                "type": "adj",
+                                "title": "Tính từ mô tả phẩm chất / tính cách:",
+                                "items": [
+                                                {
+                                                                                                "en": "talented",
+                                                                                                "vn": "tài năng"
+                                                },
+                                                {
+                                                                                                "en": "creative",
+                                                                                                "vn": "sáng tạo"
+                                                },
+                                                {
+                                                                                                "en": "passionate",
+                                                                                                "vn": "đầy đam mê"
+                                                },
+                                                {
+                                                                                                "en": "dedicated",
+                                                                                                "vn": "tận tâm"
+                                                },
+                                                {
+                                                                                                "en": "humble",
+                                                                                                "vn": "khiêm tốn"
+                                                },
+                                                {
+                                                                                                "en": "kind-hearted",
+                                                                                                "vn": "nhân hậu"
+                                                },
+                                                {
+                                                                                                "en": "patient",
+                                                                                                "vn": "kiên nhẫn"
+                                                },
+                                                {
+                                                                                                "en": "supportive",
+                                                                                                "vn": "luôn ủng hộ"
+                                                },
+                                                {
+                                                                                                "en": "inspiring",
+                                                                                                "vn": "truyền cảm hứng"
+                                                }
+]
+                        }
+                        ]
+                },
+                {
+                        "title": "2. Who do you often [hoạt động – Vo] with?",
+                        "formula": "→ I often <strong>[hoạt động – Vo]</strong> with my <strong>[đối tượng phù hợp]</strong> because <strong>[lý do]</strong>. I find it more <strong>[tính từ phù hợp]</strong> when we can share the experience and spend quality time together.",
+                        "examples": [
+                                {
+                                        "q": "Who do you often <span class='sub-hl'>go shopping</span> with?",
+                                        "a": "→ I often go shopping with my sister because we have similar interests. I find it more enjoyable when we can help each other choose suitable things and share our opinions.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I often <strong>go shopping</strong> with <strong>my sister</strong> because <strong>we have similar interests</strong>. I find it more <strong>enjoyable</strong> when we can help each other choose suitable things and share our opinions.</div>"
+                                },
+                                {
+                                        "q": "Who do you often <span class='sub-hl'>study</span> with?",
+                                        "a": "→ I often study with my close classmate because we can help each other solve difficult exercises. I find it more productive when we can share the experience and spend quality time together.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I often <strong>study</strong> with <strong>my close classmate</strong> because <strong>we can help each other solve difficult exercises</strong>. I find it more <strong>productive</strong> when we can share the experience and spend quality time together.</div>"
+                                },
+                                {
+                                        "q": "Who do you often <span class='sub-hl'>play sports</span> with?",
+                                        "a": "→ I often play sports with my neighborhood friends because we share the same passion for badminton. I find it more exhilarating when we can motivate each other and spend quality time together.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I often <strong>play sports</strong> with <strong>my neighborhood friends</strong> because <strong>we share the same passion for badminton</strong>. I find it more <strong>exhilarating</strong> when we can motivate each other and spend quality time together.</div>"
+                                },
+                                {
+                                        "q": "Who do you often <span class='sub-hl'>go out</span> with?",
+                                        "a": "→ I often go out with my best friends because they always make me laugh. I find it more relaxing when we can share our daily stories and spend quality time together.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I often <strong>go out</strong> with <strong>my best friends</strong> because <strong>they always make me laugh</strong>. I find it more <strong>relaxing</strong> when we can share our daily stories and spend quality time together.</div>"
+                                },
+                                {
+                                        "q": "Who do you often <span class='sub-hl'>travel</span> with?",
+                                        "a": "→ I often travel with my family because we love spending holiday trips together. I find it more memorable when we can explore scenic destinations and strengthen family bonds.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I often <strong>travel</strong> with <strong>my family</strong> because <strong>we love spending holiday trips together</strong>. I find it more <strong>memorable</strong> when we can explore scenic destinations and strengthen family bonds.</div>"
+                                },
+                                {
+                                        "q": "Who do you often <span class='sub-hl'>cook</span> with?",
+                                        "a": "→ I often cook with my mother at weekends because she teaches me traditional recipes. I find it more enjoyable when we can prepare delicious meals and chat happily.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I often <strong>cook</strong> with <strong>my mother</strong> at weekends because <strong>she teaches me traditional recipes</strong>. I find it more <strong>enjoyable</strong> when we can prepare delicious meals and chat happily.</div>"
+                                }
+                        ],
+                        "exQ": "Who do you often <span class='sub-hl'>go shopping</span> with?",
+                        "exA": "→ I often go shopping with my sister because we have similar interests. I find it more enjoyable when we can help each other choose suitable things and share our opinions.",
+                        "exAFormatted": "→ I often <span class=\"sub-hl\">go shopping</span> with <span class=\"sub-hl\">my sister</span> because <span class=\"sub-hl\">we have similar interests</span>. I find it more <span class=\"sub-hl\">enjoyable</span> when we can help each other choose suitable things and share our opinions.",
+                        "vocab": [
+                                {
+                                "type": "adj",
+                                "title": "Tính từ mô tả trải nghiệm cùng người khác:",
+                                "items": [
+                                                {
+                                                                                                "en": "enjoyable",
+                                                                                                "vn": "thú vị"
+                                                },
+                                                {
+                                                                                                "en": "productive",
+                                                                                                "vn": "hiệu quả"
+                                                },
+                                                {
+                                                                                                "en": "relaxing",
+                                                                                                "vn": "thư giãn"
+                                                },
+                                                {
+                                                                                                "en": "memorable",
+                                                                                                "vn": "đáng nhớ"
+                                                },
+                                                {
+                                                                                                "en": "motivating",
+                                                                                                "vn": "tạo động lực"
+                                                }
+]
+                        }
+                        ]
+                }
+        ],
+        "when": [
+                {
+                        "title": "1. When do you often [hoạt động – Vo]?",
+                        "formula": "→ I usually <strong>[hoạt động – Vo]</strong> <strong>[thời gian]</strong> because that’s when I have some free time. I find it a great opportunity to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>.",
+                        "examples": [
+                                {
+                                        "q": "When do you often <span class='sub-hl'>listen to music</span>?",
+                                        "a": "→ I often listen to music in the evening because that’s when I have some free time. I find it a great opportunity to relax after a busy day and reduce stress.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I often <strong>listen to music</strong> <strong>in the evening</strong> because that’s when I have some free time. I find it a great opportunity to <strong>relax after a busy day</strong> and <strong>reduce stress</strong>.</div>"
+                                },
+                                {
+                                        "q": "When do you often <span class='sub-hl'>read books</span>?",
+                                        "a": "→ I usually read books before going to bed because that’s when I have some free time. I find it a great opportunity to clear my mind and widen my knowledge.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I usually <strong>read books</strong> <strong>before going to bed</strong> because that’s when I have some free time. I find it a great opportunity to <strong>clear my mind</strong> and <strong>widen my knowledge</strong>.</div>"
+                                },
+                                {
+                                        "q": "When do you often <span class='sub-hl'>meet your friends</span>?",
+                                        "a": "→ I usually meet my friends at weekends because that’s when I have some free time. I find it a great opportunity to catch up on each other’s lives and strengthen our friendships.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I usually <strong>meet my friends</strong> <strong>at weekends</strong> because that’s when I have some free time. I find it a great opportunity to <strong>catch up on each other’s lives</strong> and <strong>strengthen our friendships</strong>.</div>"
+                                },
+                                {
+                                        "q": "When do you often <span class='sub-hl'>do your homework</span>?",
+                                        "a": "→ I usually do my homework in the afternoon because that’s when I have some free time. I find it a great opportunity to review my lessons and complete assignments effectively.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I usually <strong>do my homework</strong> <strong>in the afternoon</strong> because that’s when I have some free time. I find it a great opportunity to <strong>review my lessons</strong> and <strong>complete assignments effectively</strong>.</div>"
+                                },
+                                {
+                                        "q": "When do you often <span class='sub-hl'>exercise</span>?",
+                                        "a": "→ I usually exercise in the early morning because that’s when I have high energy levels. I find it a great opportunity to boost my metabolism and start the day productively.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I usually <strong>exercise</strong> <strong>in the early morning</strong> because that’s when I have high energy levels. I find it a great opportunity to <strong>boost my metabolism</strong> and <strong>start the day productively</strong>.</div>"
+                                },
+                                {
+                                        "q": "When do you often <span class='sub-hl'>go for a walk</span>?",
+                                        "a": "→ I usually go for a walk in the late afternoon because that’s when the weather is cool. I find it a great opportunity to unwind and enjoy the sunset.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I usually <strong>go for a walk</strong> <strong>in the late afternoon</strong> because that’s when the weather is cool. I find it a great opportunity to <strong>unwind</strong> and <strong>enjoy the sunset</strong>.</div>"
+                                }
+                        ],
+                        "exQ": "When do you often <span class='sub-hl'>listen to music</span>?",
+                        "exA": "→ I often listen to music in the evening because that’s when I have some free time. I find it a great opportunity to relax after a busy day and reduce stress.",
+                        "exAFormatted": "→ I often <span class=\"sub-hl\">listen to music</span> <span class=\"sub-hl\">in the evening</span> because that’s when I have some free time. I find it a great opportunity to <span class=\"sub-hl\">relax after a busy day</span> and <span class=\"sub-hl\">reduce stress</span>.",
+                        "vocab": [
+                                {
+                                        "type": "time",
+                                        "title": "Cụm Thời gian:",
+                                        "items": [
+                                                {
+                                                        "en": "in the morning",
+                                                        "vn": "vào buổi sáng"
+                                                },
+                                                {
+                                                        "en": "in the afternoon",
+                                                        "vn": "vào buổi chiều"
+                                                },
+                                                {
+                                                        "en": "in the evening",
+                                                        "vn": "vào buổi tối"
+                                                },
+                                                {
+                                                        "en": "at night",
+                                                        "vn": "vào ban đêm"
+                                                },
+                                                {
+                                                        "en": "at weekends",
+                                                        "vn": "vào cuối tuần"
+                                                },
+                                                {
+                                                        "en": "on weekdays",
+                                                        "vn": "vào các ngày trong tuần"
+                                                },
+                                                {
+                                                        "en": "on my days off",
+                                                        "vn": "vào những ngày nghỉ"
+                                                },
+                                                {
+                                                        "en": "in my free time",
+                                                        "vn": "vào thời gian rảnh rỗi"
+                                                }
+                                        ]
+                                },
+                                {
+                                        "type": "benefit",
+                                        "title": "Cụm Lợi ích:",
+                                        "items": [
+                                                {
+                                                        "isNote": true,
+                                                        "vn": "👉 (Sử dụng các cụm trong BẢNG LỢI ÍCH B2)"
+                                                }
+                                        ]
+                                }
+                        ]
+                }
+        ],
+        "where": [
+                {
+                        "title": "1. Where do you often [hoạt động – Vo]?",
+                        "formula": "→ I usually <strong>[hoạt động – Vo]</strong> <strong>[cụm địa điểm]</strong> because I find it very <strong>[tính từ mô tả địa điểm]</strong>. It allows me to <strong>[lợi ích 1]</strong> and gives me a chance to <strong>[lợi ích 2]</strong>.",
+                        "examples": [
+                                {
+                                        "q": "Where do you often <span class='sub-hl'>read books</span>?",
+                                        "a": "→ I often read books in the school library because I find it very quiet. It allows me to focus better and gives me a chance to stay motivated.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I often <strong>read books</strong> <strong>in the school library</strong> because I find it very <strong>quiet</strong>. It allows me to <strong>focus better</strong> and gives me a chance to <strong>stay motivated</strong>.</div>"
+                                },
+                                {
+                                        "q": "Where do you often <span class='sub-hl'>go shopping</span>?",
+                                        "a": "→ I usually go shopping at the local supermarket because I find it very convenient. It allows me to find fresh groceries and gives me a chance to compare prices.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I usually <strong>go shopping</strong> <strong>at the local supermarket</strong> because I find it very <strong>convenient</strong>. It allows me to <strong>find fresh groceries</strong> and gives me a chance to <strong>compare prices</strong>.</div>"
+                                },
+                                {
+                                        "q": "Where do you often <span class='sub-hl'>exercise</span>?",
+                                        "a": "→ I usually exercise in the central park because I find it very spacious and airy. It allows me to stay in good shape and gives me a chance to enjoy fresh air.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I usually <strong>exercise</strong> <strong>in the central park</strong> because I find it very <strong>spacious and airy</strong>. It allows me to <strong>stay in good shape</strong> and <strong>gives me a chance to enjoy fresh air</strong>.</div>"
+                                },
+                                {
+                                        "q": "Where do you often <span class='sub-hl'>hang out with your friends</span>?",
+                                        "a": "→ I usually hang out with my friends at cozy coffee shops because I find them very comfortable. It allows me to unwind and gives me a chance to chat without loud noise.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I usually <strong>hang out with my friends</strong> <strong>at cozy coffee shops</strong> because I find them very <strong>comfortable</strong>. It allows me to <strong>unwind</strong> and gives me a chance to <strong>chat without loud noise</strong>.</div>"
+                                },
+                                {
+                                        "q": "Where do you often <span class='sub-hl'>study English</span>?",
+                                        "a": "→ I usually study English in my own bedroom because I find it very peaceful. It allows me to avoid all distractions and gives me a chance to concentrate on practicing pronunciation.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I usually <strong>study English</strong> <strong>in my own bedroom</strong> because I find it very <strong>peaceful</strong>. It allows me to <strong>avoid all distractions</strong> and gives me a chance to <strong>concentrate on practicing pronunciation</strong>.</div>"
+                                },
+                                {
+                                        "q": "Where do you often <span class='sub-hl'>relax</span>?",
+                                        "a": "→ I usually relax on the balcony of my house because I find it breezy and soothing. It allows me to drink tea and gives me a chance to watch the city view.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I usually <strong>relax</strong> <strong>on the balcony of my house</strong> because I find it <strong>breezy and soothing</strong>. It allows me to <strong>drink tea</strong> and gives me a chance to <strong>watch the city view</strong>.</div>"
+                                }
+                        ],
+                        "exQ": "Where do you often <span class='sub-hl'>read books</span>?",
+                        "exA": "→ I often read books in the school library because I find it very quiet. It allows me to focus better and gives me a chance to stay motivated.",
+                        "exAFormatted": "→ I often <span class=\"sub-hl\">read books</span> <span class=\"sub-hl\">in the school library</span> because I find it very <span class=\"sub-hl\">quiet</span>. It allows me to <span class=\"sub-hl\">focus better</span> and gives me a chance to <span class=\"sub-hl\">stay motivated</span>.",
+                        "vocab": [
+                                {
+                                        "type": "place",
+                                        "title": "Cụm Địa điểm phổ biến:",
+                                        "items": [
+                                                {
+                                                        "en": "in the school library",
+                                                        "vn": "ở thư viện trường"
+                                                },
+                                                {
+                                                        "en": "at a local coffee shop",
+                                                        "vn": "ở quán cà phê gần nhà"
+                                                },
+                                                {
+                                                        "en": "in the central park",
+                                                        "vn": "ở công viên trung tâm"
+                                                },
+                                                {
+                                                        "en": "at the gym",
+                                                        "vn": "ở phòng tập thể hình"
+                                                },
+                                                {
+                                                        "en": "at the local supermarket",
+                                                        "vn": "ở siêu thị địa phương"
+                                                },
+                                                {
+                                                        "en": "in my bedroom",
+                                                        "vn": "trong phòng ngủ của tôi"
+                                                }
+                                        ]
+                                },
+                                {
+                                "type": "adj",
+                                "title": "Tính từ mô tả không gian:",
+                                "items": [
+                                                {
+                                                                                                "en": "peaceful",
+                                                                                                "vn": "yên bình"
+                                                },
+                                                {
+                                                                                                "en": "quiet",
+                                                                                                "vn": "yên tĩnh"
+                                                },
+                                                {
+                                                                                                "en": "cozy",
+                                                                                                "vn": "ấm cúng"
+                                                },
+                                                {
+                                                                                                "en": "comfortable",
+                                                                                                "vn": "dễ chịu"
+                                                },
+                                                {
+                                                                                                "en": "modern",
+                                                                                                "vn": "hiện đại"
+                                                },
+                                                {
+                                                                                                "en": "convenient",
+                                                                                                "vn": "tiện lợi"
+                                                },
+                                                {
+                                                                                                "en": "spacious",
+                                                                                                "vn": "rộng rãi"
+                                                },
+                                                {
+                                                                                                "en": "airy",
+                                                                                                "vn": "thoáng mát"
+                                                }
+]
+                        }
+                        ]
+                }
+        ],
+        "why": [
+                {
+                        "title": "1. Why do you like [hoạt động – Ving]?",
+                        "formula": "→ I’m really into <strong>[hoạt động – Ving]</strong> because I find it very <strong>[tính từ mô tả hoạt động]</strong>. It allows me to <strong>[lợi ích 1]</strong> and gives me a chance to <strong>[lợi ích 2]</strong>.",
+                        "examples": [
+                                {
+                                        "q": "Why do you like <span class='sub-hl'>swimming</span>?",
+                                        "a": "→ I’m really into swimming because I find it very interesting. It allows me to stay healthy and gives me a chance to clear my mind.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I’m really into <strong>swimming</strong> because I find it <strong>very interesting</strong>. It allows me to <strong>stay healthy</strong> and gives me a chance to <strong>clear my mind</strong>.</div>"
+                                },
+                                {
+                                        "q": "Why do you like <span class='sub-hl'>listening to music</span>?",
+                                        "a": "→ I’m really into listening to music because I find it very relaxing. It allows me to improve my mood and gives me a chance to relieve mental pressure.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I’m really into <strong>listening to music</strong> because I find it <strong>very relaxing</strong>. It allows me to <strong>improve my mood</strong> and gives me a chance to <strong>relieve mental pressure</strong>.</div>"
+                                },
+                                {
+                                        "q": "Why do you like <span class='sub-hl'>reading books</span>?",
+                                        "a": "→ I’m really into reading books because I find it very inspiring. It allows me to broaden my horizons and gives me a chance to enhance my imagination.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I’m really into <strong>reading books</strong> because I find it <strong>very inspiring</strong>. It allows me to <strong>broaden my horizons</strong> and gives me a chance to <strong>enhance my imagination</strong>.</div>"
+                                },
+                                {
+                                        "q": "Why do you like <span class='sub-hl'>playing sports</span>?",
+                                        "a": "→ I’m really into playing sports because I find it very beneficial. It allows me to maintain good health and gives me a chance to build endurance.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I’m really into <strong>playing sports</strong> because I find it <strong>very beneficial</strong>. It allows me to <strong>maintain good health</strong> and gives me a chance to <strong>build endurance</strong>.</div>"
+                                },
+                                {
+                                        "q": "Why do you like <span class='sub-hl'>learning English</span>?",
+                                        "a": "→ I’m really into learning English because I find it very useful. It allows me to communicate with people globally and gives me a chance to explore better career opportunities.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I’m really into <strong>learning English</strong> because I find it <strong>very useful</strong>. It allows me to <strong>communicate with people globally</strong> and gives me a chance to <strong>explore better career opportunities</strong>.</div>"
+                                },
+                                {
+                                        "q": "Why do you like <span class='sub-hl'>traveling</span>?",
+                                        "a": "→ I’m really into traveling because I find it extremely exciting. It allows me to visit scenic places and gives me a chance to enrich my practical life experience.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I’m really into <strong>traveling</strong> because I find it <strong>extremely exciting</strong>. It allows me to <strong>visit scenic places</strong> and gives me a chance to <strong>enrich my practical life experience</strong>.</div>"
+                                }
+                        ],
+                        "exQ": "Why do you like <span class='sub-hl'>swimming</span>?",
+                        "exA": "→ I’m really into swimming because I find it very interesting. It allows me to stay healthy and gives me a chance to clear my mind.",
+                        "exAFormatted": "→ I’m really into <span class=\"sub-hl\">swimming</span> because I find it very <span class=\"sub-hl\">interesting</span>. It allows me to <span class=\"sub-hl\">stay healthy</span> and gives me a chance to <span class=\"sub-hl\">clear my mind</span>.",
+                        "vocab": [
+                                {
+                                "type": "adj",
+                                "title": "Tính từ mô tả hoạt động:",
+                                "items": [
+                                                {
+                                                                                                "en": "interesting",
+                                                                                                "vn": "thú vị"
+                                                },
+                                                {
+                                                                                                "en": "exciting",
+                                                                                                "vn": "hào hứng"
+                                                },
+                                                {
+                                                                                                "en": "relaxing",
+                                                                                                "vn": "thư giãn"
+                                                },
+                                                {
+                                                                                                "en": "enjoyable",
+                                                                                                "vn": "thoải mái, thú vị"
+                                                },
+                                                {
+                                                                                                "en": "meaningful",
+                                                                                                "vn": "ý nghĩa"
+                                                },
+                                                {
+                                                                                                "en": "beneficial",
+                                                                                                "vn": "có lợi"
+                                                },
+                                                {
+                                                                                                "en": "entertaining",
+                                                                                                "vn": "mang tính giải trí"
+                                                },
+                                                {
+                                                                                                "en": "fascinating",
+                                                                                                "vn": "lôi cuốn, hấp dẫn"
+                                                }
+]
+                        },
+                                {
+                                        "type": "benefit",
+                                        "title": "Cụm Lợi ích:",
+                                        "items": [
+                                                {
+                                                        "isNote": true,
+                                                        "vn": "👉 (Sử dụng các cụm trong BẢNG LỢI ÍCH B2)"
+                                                }
+                                        ]
+                                }
+                        ]
+                }
+        ],
+        "how": [
+                {
+                        "title": "1. How do you [go/get/commute/travel] to [địa điểm]?",
+                        "formula": "→ I usually <strong>[go/get/commute/travel]</strong> there by <strong>[phương tiện]</strong>, as it’s very <strong>[2 tính từ mô tả phương tiện]</strong>. That way, I can <strong>[2 lợi ích]</strong>.",
+                        "examples": [
+                                {
+                                        "q": "How do you go to school <span class='sub-hl'>every day</span>?",
+                                        "a": "→ I usually go to school by motorbike, as it’s very fast and convenient. That way, I can avoid traffic jams and save a lot of time.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I usually go to school by <strong>motorbike</strong>, as it’s very <strong>fast and convenient</strong>. That way, I can <strong>avoid traffic jams</strong> and <strong>save a lot of time</strong>.</div>"
+                                },
+                                {
+                                        "q": "How do you <span class='sub-hl'>travel to work</span>?",
+                                        "a": "→ I usually travel to work by bus, as it’s very economical and safe. That way, I can save money and reduce carbon emissions.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I usually travel to work by <strong>bus</strong>, as it’s very <strong>economical and safe</strong>. That way, I can <strong>save money</strong> and <strong>reduce carbon emissions</strong>.</div>"
+                                },
+                                {
+                                        "q": "How do you <span class='sub-hl'>commute to university</span>?",
+                                        "a": "→ I usually commute to university by electric bike, as it’s very flexible and eco-friendly. That way, I can get to class on time and protect the environment.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I usually commute to university by <strong>electric bike</strong>, as it’s very <strong>flexible and eco-friendly</strong>. That way, I can <strong>get to class on time</strong> and <strong>protect the environment</strong>.</div>"
+                                },
+                                {
+                                        "q": "How do you <span class='sub-hl'>go to the supermarket</span>?",
+                                        "a": "→ I usually go to the supermarket on foot, as it’s very healthy and relaxing. That way, I can get some light exercise and enjoy the fresh air.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I usually go to the supermarket <strong>on foot</strong>, as it’s very <strong>healthy and relaxing</strong>. That way, I can <strong>get some light exercise</strong> and <strong>enjoy the fresh air</strong>.</div>"
+                                },
+                                {
+                                        "q": "How do you <span class='sub-hl'>travel to other cities</span>?",
+                                        "a": "→ I usually travel to other cities by train, as it’s very comfortable and scenic. That way, I can rest during the journey and enjoy beautiful landscapes along the way.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I usually travel to other cities by <strong>train</strong>, as it’s very <strong>comfortable and scenic</strong>. That way, I can <strong>rest during the journey</strong> and <strong>enjoy beautiful landscapes along the way</strong>.</div>"
+                                },
+                                {
+                                        "q": "How do you <span class='sub-hl'>go around your neighborhood</span>?",
+                                        "a": "→ I usually ride a bicycle around my neighborhood, as it’s very agile and fun. That way, I can avoid parking hassles and get some physical exercise.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I usually ride a <strong>bicycle</strong> around my neighborhood, as it’s very <strong>agile and fun</strong>. That way, I can <strong>avoid parking hassles</strong> and <strong>get some physical exercise</strong>.</div>"
+                                }
+                        ],
+                        "exQ": "How do you go to school <span class='sub-hl'>every day</span>?",
+                        "exA": "→ I usually go to school by motorbike, as it’s very fast and convenient. That way, I can avoid traffic jams and save a lot of time.",
+                        "exAFormatted": "→ I usually go to school by <span class=\"sub-hl\">motorbike</span>, as it’s very <span class=\"sub-hl\">fast and convenient</span>. That way, I can <span class=\"sub-hl\">avoid traffic jams</span> and <span class=\"sub-hl\">save a lot of time</span>.",
+                        "vocab": [
+                                {
+                                        "type": "transport",
+                                        "title": "Phương tiện giao thông:",
+                                        "items": [
+                                                {
+                                                        "en": "by motorbike",
+                                                        "vn": "bằng xe máy"
+                                                },
+                                                {
+                                                        "en": "by bus",
+                                                        "vn": "bằng xe buýt"
+                                                },
+                                                {
+                                                        "en": "by electric bike",
+                                                        "vn": "bằng xe đạp điện"
+                                                },
+                                                {
+                                                "en": "by car",
+                                                "vn": "bằng ô tô"
+                                        },
+                                        {
+                                                "en": "by taxi",
+                                                "vn": "bằng taxi"
+                                        },
+                                                {
+                                                        "en": "on foot",
+                                                        "vn": "đi bộ"
+                                                }
+                                        ]
+                                },
+                                {
+                                "type": "adj",
+                                "title": "Tính từ mô tả phương tiện:",
+                                "items": [
+                                                {
+                                                                                                "en": "fast",
+                                                                                                "vn": "nhanh chóng"
+                                                },
+                                                {
+                                                                                                "en": "convenient",
+                                                                                                "vn": "tiện lợi"
+                                                },
+                                                {
+                                                                                                "en": "economical",
+                                                                                                "vn": "tiết kiệm"
+                                                },
+                                                {
+                                                                                                "en": "safe",
+                                                                                                "vn": "an toàn"
+                                                },
+                                                {
+                                                                                                "en": "flexible",
+                                                                                                "vn": "linh hoạt"
+                                                },
+                                                {
+                                                                                                "en": "eco-friendly",
+                                                                                                "vn": "thân thiện với môi trường"
+                                                },
+                                                {
+                                                                                                "en": "healthy",
+                                                                                                "vn": "lành mạnh"
+                                                },
+                                                {
+                                                                                                "en": "relaxing",
+                                                                                                "vn": "thư giãn"
+                                                }
+]
+                        }
+                        ]
+                },
+                {
+                        "title": "2. How often do you [hoạt động – Vo]?",
+                        "formula": "→ Although I have a busy schedule, I still try to <strong>[hoạt động – Vo]</strong> <strong>[tần suất]</strong> because it allows me to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>. Moreover, it makes me feel <strong>[tính từ cảm xúc]</strong>.",
+                        "examples": [
+                                {
+                                        "q": "How often do you go to the library <span class='sub-hl'>every week</span>?",
+                                        "a": "→ Although I have a busy schedule, I still try to go to the library twice a week because it allows me to focus better and study more effectively. Moreover, it makes me feel more productive.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Although I have a busy schedule, I still try to <strong>go to the library</strong> <strong>twice a week</strong> because it allows me to <strong>focus better</strong> and <strong>study more effectively</strong>. Moreover, it makes me feel <strong>more productive</strong>.</div>"
+                                },
+                                {
+                                        "q": "How often do you <span class='sub-hl'>exercise</span>?",
+                                        "a": "→ Although I have a busy schedule, I still try to exercise every morning because it allows me to stay in good shape and boost my stamina. Moreover, it makes me feel energetic throughout the day.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Although I have a busy schedule, I still try to <strong>exercise</strong> <strong>every morning</strong> because it allows me to <strong>stay in good shape</strong> and <strong>boost my stamina</strong>. Moreover, it makes me feel <strong>energetic throughout the day</strong>.</div>"
+                                },
+                                {
+                                        "q": "How often do you <span class='sub-hl'>read books</span>?",
+                                        "a": "→ Although I have a busy schedule, I still try to read books every night because it allows me to widen my knowledge and clear my mind. Moreover, it makes me feel peaceful before sleep.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Although I have a busy schedule, I still try to <strong>read books</strong> <strong>every night</strong> because it allows me to <strong>widen my knowledge</strong> and <strong>clear my mind</strong>. Moreover, it makes me feel <strong>peaceful before sleep</strong>.</div>"
+                                },
+                                {
+                                        "q": "How often do you <span class='sub-hl'>go shopping</span>?",
+                                        "a": "→ Although I have a busy schedule, I still try to go shopping on weekends because it allows me to buy daily essentials and relax after work. Moreover, it makes me feel cheerful.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Although I have a busy schedule, I still try to <strong>go shopping</strong> <strong>on weekends</strong> because it allows me to <strong>buy daily essentials</strong> and <strong>relax after work</strong>. Moreover, it makes me feel <strong>cheerful</strong>.</div>"
+                                },
+                                {
+                                        "q": "How often do you <span class='sub-hl'>watch movies</span>?",
+                                        "a": "→ Although I have a busy schedule, I still try to watch movies on Sunday evenings because it allows me to enjoy my free time and unwind. Moreover, it makes me feel refreshed for the new week.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Although I have a busy schedule, I still try to <strong>watch movies</strong> <strong>on Sunday evenings</strong> because it allows me to <strong>enjoy my free time</strong> and <strong>unwind</strong>. Moreover, it makes me feel <strong>refreshed for the new week</strong>.</div>"
+                                },
+                                {
+                                        "q": "How often do you <span class='sub-hl'>hang out with your friends</span>?",
+                                        "a": "→ Although I have a busy schedule, I still try to hang out with my friends once a week because it allows me to maintain close connections and laugh together. Moreover, it makes me feel happier.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Although I have a busy schedule, I still try to <strong>hang out with my friends</strong> <strong>once a week</strong> because it allows me to <strong>maintain close connections</strong> and <strong>laugh together</strong>. Moreover, it makes me feel <strong>happier</strong>.</div>"
+                                }
+                        ],
+                        "exQ": "How often do you go to the library <span class='sub-hl'>every week</span>?",
+                        "exA": "→ Although I have a busy schedule, I still try to go to the library twice a week because it allows me to focus better and study more effectively. Moreover, it makes me feel more productive.",
+                        "exAFormatted": "→ Although I have a busy schedule, I still try to <span class=\"sub-hl\">go to the library</span> <span class=\"sub-hl\">twice a week</span> because it allows me to <span class=\"sub-hl\">focus better</span> and <span class=\"sub-hl\">study more effectively</span>. Moreover, it makes me feel <span class=\"sub-hl\">more productive</span>.",
+                        "vocab": [
+                                {
+                                        "type": "frequency",
+                                        "title": "Cụm Tần suất:",
+                                        "items": [
+                                                {
+                                                        "en": "every day",
+                                                        "vn": "mỗi ngày"
+                                                },
+                                                {
+                                                        "en": "twice a week",
+                                                        "vn": "hai lần một tuần"
+                                                },
+                                                {
+                                                        "en": "three times a week",
+                                                        "vn": "ba lần một tuần"
+                                                },
+                                                {
+                                                        "en": "on weekends",
+                                                        "vn": "vào các ngày cuối tuần"
+                                                },
+                                                {
+                                                        "en": "every morning",
+                                                        "vn": "mỗi buổi sáng"
+                                                },
+                                                {
+                                                        "en": "once in a while",
+                                                        "vn": "thỉnh thoảng"
+                                                }
+                                        ]
+                                },
+                                {
+                                "type": "emotion",
+                                "title": "Tính từ mô tả cảm xúc:",
+                                "items": [
+                                                {
+                                                                                                "en": "relaxed",
+                                                                                                "vn": "thư thái"
+                                                },
+                                                {
+                                                                                                "en": "refreshed",
+                                                                                                "vn": "sảng khoái"
+                                                },
+                                                {
+                                                                                                "en": "positive",
+                                                                                                "vn": "tích cực"
+                                                },
+                                                {
+                                                                                                "en": "energetic",
+                                                                                                "vn": "tràn đầy năng lượng"
+                                                },
+                                                {
+                                                                                                "en": "comfortable",
+                                                                                                "vn": "dễ chịu"
+                                                },
+                                                {
+                                                                                                "en": "calm",
+                                                                                                "vn": "bình tĩnh, thanh thản"
+                                                },
+                                                {
+                                                                                                "en": "productive",
+                                                                                                "vn": "hiệu quả"
+                                                },
+                                                {
+                                                                                                "en": "motivated",
+                                                                                                "vn": "có động lực"
+                                                },
+                                                {
+                                                                                                "en": "confident",
+                                                                                                "vn": "tự tin"
+                                                },
+                                                {
+                                                                                                "en": "satisfied",
+                                                                                                "vn": "hài lòng"
+                                                }
+]
+                        },
+                                {
+                                        "type": "benefit",
+                                        "title": "Cụm Lợi ích:",
+                                        "items": [
+                                                {
+                                                        "isNote": true,
+                                                        "vn": "👉 (Sử dụng các cụm trong BẢNG LỢI ÍCH B2)"
+                                                }
+                                        ]
+                                }
+                        ]
+                },
+                {
+                        "title": "3. How much time do you spend [hoạt động – Ving]?",
+                        "formula": "→ Although I have a busy schedule, I still spend about <strong>[lượng thời gian]</strong> <strong>[hoạt động – Ving]</strong> every day because it allows me to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>. Moreover, it makes me feel more <strong>[tính từ cảm xúc]</strong>.",
+                        "examples": [
+                                {
+                                        "q": "How much time do you spend <span class='sub-hl'>studying English</span>?",
+                                        "a": "→ Although I have a busy schedule, I still spend about two hours studying English every day because it allows me to enrich my vocabulary and improve my pronunciation. It also makes me feel more confident.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Although I have a busy schedule, I still spend about <strong>two hours</strong> <strong>studying English</strong> every day because it allows me to <strong>enrich my vocabulary</strong> and <strong>improve my pronunciation</strong>. It also makes me feel <strong>more confident</strong>.</div>"
+                                },
+                                {
+                                        "q": "How much time do you spend <span class='sub-hl'>reading books</span>?",
+                                        "a": "→ Although I have a busy schedule, I still spend about thirty minutes reading books every day because it allows me to expand my knowledge and relax my mind. Moreover, it makes me feel more knowledgeable.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Although I have a busy schedule, I still spend about <strong>thirty minutes</strong> <strong>reading books</strong> every day because it allows me to <strong>expand my knowledge</strong> and <strong>relax my mind</strong>. Moreover, it makes me feel <strong>more knowledgeable</strong>.</div>"
+                                },
+                                {
+                                        "q": "How much time do you spend <span class='sub-hl'>using social media</span>?",
+                                        "a": "→ Although I have a busy schedule, I still spend about one hour using social media every day because it allows me to stay updated on current news and connect with friends. Moreover, it makes me feel more connected.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Although I have a busy schedule, I still spend about <strong>one hour</strong> <strong>using social media</strong> every day because it allows me to <strong>stay updated on current news</strong> and <strong>connect with friends</strong>. Moreover, it makes me feel <strong>more connected</strong>.</div>"
+                                },
+                                {
+                                        "q": "How much time do you spend <span class='sub-hl'>exercising</span>?",
+                                        "a": "→ Although I have a busy schedule, I still spend about forty-five minutes exercising every day because it allows me to stay healthy and burn excess calories. Moreover, it makes me feel more energized.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Although I have a busy schedule, I still spend about <strong>forty-five minutes</strong> <strong>exercising</strong> every day because it allows me to <strong>stay healthy</strong> and <strong>burn excess calories</strong>. Moreover, it makes me feel <strong>more energized</strong>.</div>"
+                                },
+                                {
+                                        "q": "How much time do you spend <span class='sub-hl'>sleeping</span>?",
+                                        "a": "→ Although I have a busy schedule, I still try to spend about seven to eight hours sleeping every day because it allows my body to recover and clear my mind. Moreover, it makes me feel well-rested.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Although I have a busy schedule, I still try to spend about <strong>seven to eight hours</strong> <strong>sleeping</strong> every day because it allows my body to <strong>recover</strong> and <strong>clear my mind</strong>. Moreover, it makes me feel <strong>well-rested</strong>.</div>"
+                                },
+                                {
+                                        "q": "How much time do you spend <span class='sub-hl'>doing homework</span>?",
+                                        "a": "→ Although I have a busy schedule, I still spend about an hour and a half doing homework every day because it allows me to review class lessons and prepare for exams. Moreover, it makes me feel more prepared.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → Although I have a busy schedule, I still spend about <strong>an hour and a half</strong> <strong>doing homework</strong> every day because it allows me to <strong>review class lessons</strong> and <strong>prepare for exams</strong>. Moreover, it makes me feel <strong>more prepared</strong>.</div>"
+                                }
+                        ],
+                        "exQ": "How much time do you spend <span class='sub-hl'>studying English</span>?",
+                        "exA": "→ Although I have a busy schedule, I still spend about two hours studying English every day because it allows me to enrich my vocabulary and improve my pronunciation. It also makes me feel more confident.",
+                        "exAFormatted": "→ Although I have a busy schedule, I still spend about <span class=\"sub-hl\">two hours</span> <span class=\"sub-hl\">studying English</span> every day because it allows me to <span class=\"sub-hl\">enrich my vocabulary</span> and <span class=\"sub-hl\">improve my pronunciation</span>. It also makes me feel <span class=\"sub-hl\">more confident</span>.",
+                        "vocab": [
+                                {
+                                        "type": "duration",
+                                        "title": "Cụm Thời lượng:",
+                                        "items": [
+                                                {
+                                                        "en": "about thirty minutes",
+                                                        "vn": "khoảng 30 phút"
+                                                },
+                                                {
+                                                        "en": "about one hour",
+                                                        "vn": "khoảng 1 tiếng"
+                                                },
+                                                {
+                                                        "en": "about two hours",
+                                                        "vn": "khoảng 2 tiếng"
+                                                },
+                                                {
+                                                        "en": "forty-five minutes",
+                                                        "vn": "45 phút"
+                                                },
+                                                {
+                                                        "en": "around an hour and a half",
+                                                        "vn": "khoảng 1 tiếng rưỡi"
+                                                }
+                                        ]
+                                },
+                                {
+                                "type": "emotion",
+                                "title": "Tính từ mô tả cảm xúc:",
+                                "items": [
+                                                {
+                                                                                                "en": "relaxed",
+                                                                                                "vn": "thư thái"
+                                                },
+                                                {
+                                                                                                "en": "refreshed",
+                                                                                                "vn": "sảng khoái"
+                                                },
+                                                {
+                                                                                                "en": "positive",
+                                                                                                "vn": "tích cực"
+                                                },
+                                                {
+                                                                                                "en": "energetic",
+                                                                                                "vn": "tràn đầy năng lượng"
+                                                },
+                                                {
+                                                                                                "en": "comfortable",
+                                                                                                "vn": "dễ chịu"
+                                                },
+                                                {
+                                                                                                "en": "calm",
+                                                                                                "vn": "bình tĩnh, thanh thản"
+                                                },
+                                                {
+                                                                                                "en": "productive",
+                                                                                                "vn": "hiệu quả"
+                                                },
+                                                {
+                                                                                                "en": "motivated",
+                                                                                                "vn": "có động lực"
+                                                },
+                                                {
+                                                                                                "en": "confident",
+                                                                                                "vn": "tự tin"
+                                                },
+                                                {
+                                                                                                "en": "satisfied",
+                                                                                                "vn": "hài lòng"
+                                                }
+]
+                        },
+                                {
+                                        "type": "benefit",
+                                        "title": "Cụm Lợi ích:",
+                                        "items": [
+                                                {
+                                                        "isNote": true,
+                                                        "vn": "👉 (Sử dụng các cụm trong BẢNG LỢI ÍCH B2)"
+                                                }
+                                        ]
+                                }
+                        ]
+                },
+                {
+                        "title": "4. How much money do you spend on [thứ gì đó – noun] every month?",
+                        "formula": "→ I’m still a student, so I try to keep my spending under control. I often spend about <strong>[số tiền]</strong> on <strong>[thứ gì đó]</strong> every month. It allows me to <strong>[lợi ích]</strong> while still saving some money.",
+                        "examples": [
+                                {
+                                        "q": "How much money do you spend on <span class='sub-hl'>clothes</span> every month?",
+                                        "a": "→ I’m still a student, so I try to keep my spending under control. I only spend about $50 on clothes every month. It allows me to buy the clothes I need while still saving some money.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I’m still a student, so I try to keep my spending under control. I only spend about <strong>$50</strong> on <strong>clothes</strong> every month. It allows me to <strong>buy the clothes I need</strong> while still saving some money.</div>"
+                                },
+                                {
+                                        "q": "How much money do you spend on <span class='sub-hl'>books</span> every month?",
+                                        "a": "→ I’m still a student, so I try to keep my spending under control. I only spend about 200,000 VND on books every month. It allows me to purchase useful learning materials while still saving some money.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I’m still a student, so I try to keep my spending under control. I only spend about <strong>200,000 VND</strong> on <strong>books</strong> every month. It allows me to <strong>purchase useful learning materials</strong> while still saving some money.</div>"
+                                },
+                                {
+                                        "q": "How much money do you spend on <span class='sub-hl'>food</span> every month?",
+                                        "a": "→ I’m still a student, so I try to keep my spending under control. I often spend about two million VND on food every month. It allows me to eat nutritious meals while still saving some money.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I’m still a student, so I try to keep my spending under control. I often spend about <strong>two million VND</strong> on <strong>food</strong> every month. It allows me to <strong>eat nutritious meals</strong> while still saving some money.</div>"
+                                },
+                                {
+                                        "q": "How much money do you spend on <span class='sub-hl'>entertainment</span> every month?",
+                                        "a": "→ I’m still a student, so I try to keep my spending under control. I usually spend around 300,000 VND on entertainment every month. It allows me to hang out with friends occasionally while still saving some money.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I’m still a student, so I try to keep my spending under control. I usually spend around <strong>300,000 VND</strong> on <strong>entertainment</strong> every month. It allows me to <strong>hang out with friends occasionally</strong> while still saving some money.</div>"
+                                },
+                                {
+                                        "q": "How much money do you spend on <span class='sub-hl'>transportation / petrol</span> every month?",
+                                        "a": "→ I’m still a student, so I try to keep my spending under control. I usually spend about 200,000 VND on petrol every month. It allows me to commute to school and work while still saving some money.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I’m still a student, so I try to keep my spending under control. I usually spend about <strong>200,000 VND</strong> on <strong>petrol</strong> every month. It allows me to <strong>commute to school and work</strong> while still saving some money.</div>"
+                                },
+                                {
+                                        "q": "How much money do you spend on <span class='sub-hl'>hobbies</span> every month?",
+                                        "a": "→ I’m still a student, so I try to keep my spending under control. I spend around 400,000 VND on my hobbies every month. It allows me to buy sports gear and painting supplies while still saving some money.",
+                                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → I’m still a student, so I try to keep my spending under control. I spend around <strong>400,000 VND</strong> on my <strong>hobbies</strong> every month. It allows me to <strong>buy sports gear and painting supplies</strong> while still saving some money.</div>"
+                                }
+                        ],
+                        "exQ": "How much money do you spend on <span class='sub-hl'>clothes</span> every month?",
+                        "exA": "→ I’m still a student, so I try to keep my spending under control. I only spend about $50 on clothes every month. It allows me to buy the clothes I need while still saving some money.",
+                        "exAFormatted": "→ I’m still a student, so I try to keep my spending under control. I only spend about <span class=\"sub-hl\">$50</span> on <span class=\"sub-hl\">clothes</span> every month. It allows me to <span class=\"sub-hl\">buy the clothes I need</span> while still saving some money.",
+                        "vocab": [
+                                {
+                                        "type": "money",
+                                        "title": "Cụm Số tiền tham khảo:",
+                                        "items": [
+                                                {
+                                                "en": "about $50",
+                                                "vn": "khoảng 50 đô"
+                                        },
+                                        {
+                                                "en": "about 1 million VND",
+                                                "vn": "khoảng 1 triệu VNĐ"
+                                        },
+                                                {
+                                                        "en": "200,000 VND",
+                                                        "vn": "200.000 VNĐ"
+                                                },
+                                                {
+                                                        "en": "two million VND",
+                                                        "vn": "2 triệu VNĐ"
+                                                },
+                                                {
+                                                        "en": "around 300,000 VND",
+                                                        "vn": "khoảng 300.000 VNĐ"
+                                                },
+                                                {
+                                                        "en": "about 500,000 VND",
+                                                        "vn": "khoảng 500.000 VNĐ"
+                                                }
+                                        ]
+                                },
+                                {
+                                        "type": "benefit",
+                                        "title": "Cụm Mục đích / Lợi ích:",
+                                        "items": [
+                                                {
+                                                        "isNote": true,
+                                                        "vn": "👉 (Sử dụng các cụm trong BẢNG LỢI ÍCH B2)"
+                                                }
+                                        ]
+                                }
+                        ]
+                }
+        ]
+};
+
+const whShowcase = document.getElementById('wh-showcase');
+
+    window.filterWh = (cat) => {
+        document.querySelectorAll('.w-pill').forEach(p => p.classList.remove('active'));
+        if (typeof window !== 'undefined' && window.event && window.event.currentTarget && window.event.currentTarget.classList) {
+            window.event.currentTarget.classList.add('active');
+        }
+        if (!whShowcase) return;
+        const list = whBank[cat] || [];
+        whShowcase.innerHTML = `
+            <div class="wh-grid fade-in" style="grid-template-columns: 1fr; gap: 1.5rem;">
+                ${list.map(item => `
+                    <div class="f-card-clean" style="max-width:100%; margin:0; background:var(--bg-card); padding:1.5rem; border-radius:20px; border:1px solid var(--border); box-shadow:var(--shadow-sm);">
+                        <div class="f-title" style="margin-bottom:1.5rem;">${formatTitleHighlight(item.title)}</div>
+                        ${getExamplesBlockHTML(item)}
+                        
+                        <div class="accordion-box" onclick="this.classList.toggle('open')" style="margin-bottom: 1.25rem; border: 2px solid #3b82f6; box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.1);">
+                            <div class="accordion-header" style="padding: 1rem 1.25rem; background: rgba(59, 130, 246, 0.08);">
+                                <div class="acc-title" style="color:#2563eb; font-size:1.05rem;"><i class="fa-solid fa-lightbulb"></i> GỢI Ý CÂU TRẢ LỜI</div>
+                                <div class="acc-toggle" style="background:#2563eb;"><span class="txt-close"><i class="fa-solid fa-hand-pointer"></i> Nhấn để xem gợi ý câu trả lời ▼</span><span class="txt-open"><i class="fa-solid fa-chevron-up"></i> Thu gọn ▲</span></div>
+                            </div>
+                            <div class="accordion-content" onclick="event.stopPropagation()">
+                                <div class="f-formula-box" style="margin: 0; border: none; background: transparent; padding: 0.5rem 0;">${formatFormulaHighlight(item.formula)}</div>
+                                ${item.note ? `<div class="tpl-note mt-2 mb-2" style="display:block;"><i class="fa-solid fa-circle-exclamation"></i> ${item.note}</div>` : ''}
+                                ${getSuggestionsHTML(item)}
+                            </div>
+                        </div>
+
+                        <div class="accordion-box" onclick="this.classList.toggle('open')" style="margin-bottom: 0; border: 2px solid #8b5cf6; box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1);">
+                            <div class="accordion-header" style="padding: 1rem 1.25rem; background: rgba(139, 92, 246, 0.08);">
+                                <div class="acc-title" style="color:#7c3aed; font-size:1.05rem;"><i class="fa-solid fa-desktop"></i> VÍ DỤ THỰC HÀNH</div>
+                                <div class="acc-toggle" style="background:#7c3aed;"><span class="txt-close"><i class="fa-solid fa-hand-pointer"></i> Nhấn vào hiện câu hỏi ▼</span><span class="txt-open"><i class="fa-solid fa-chevron-up"></i> Thu gọn ▲</span></div>
+                            </div>
+                            <div class="accordion-content" onclick="event.stopPropagation()">
+                                <div class="f-example-box" style="margin: 0; border: none; background: transparent; padding: 0.5rem 0;">
+                                    <div class="ex-label" style="font-size:1.1rem; color:var(--text-main); margin-bottom:0.75rem; text-transform:none;">
+                                        ❓ Câu hỏi: <strong>${item.exQ}</strong>
+                                    </div>
+                                    <div style="margin-top:0.75rem;">
+                                        <button class="btn-audio-sample" style="background:#8b5cf6; margin-bottom:0.5rem; cursor:pointer;" onclick="toggleSampleAnswer(this)">
+                                            <i class="fa-solid fa-eye"></i> Nhấn xem câu trả lời mẫu
+                                        </button>
+                                        <div class="fade-in" style="display:none; margin-top:0.75rem; padding-top:0.75rem; border-top:1px dashed var(--border);">
+                                            <div class="ex-text" style="color:var(--secondary); font-weight:500; font-size:1.05rem; line-height:1.8;">${item.exAFormatted || item.exA}</div>
+                                            <button class="btn-audio-sample mt-2" onclick="speakText('${item.exA.replace(/<[^>]*>/g, '').replace(/→/g, '').replace(/'/g, "\\'").trim()}')">
+                                                <i class="fa-solid fa-volume-high"></i> Nghe Audio phát âm
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+    };
+    filterWh('what');
+
+    // =========================================
+    // AUDIO RECORDING LOGIC
+    // =========================================
+    let mediaRecorder = null;
+    let audioChunks = [];
+    let currentStream = null;
+
+    window.toggleRecording = async (type) => {
+        const btn = document.getElementById(`btn-record-${type}`);
+        const status = document.getElementById(`recording-status-${type}`);
+        const playback = document.getElementById(`audio-playback-${type}`);
+        const submitBtn = document.getElementById(`btn-submit-${type}`);
+
+        if (mediaRecorder && mediaRecorder.state === 'recording') {
+            mediaRecorder.stop();
+            btn.innerHTML = '<i class="fa-solid fa-microphone"></i> Ghi âm lại';
+            btn.style.background = '#3b82f6';
+            btn.style.boxShadow = '0 4px 10px rgba(59,130,246,0.3)';
+            status.style.display = 'none';
+            if (currentStream) currentStream.getTracks().forEach(t => t.stop());
+            return;
+        }
+
+        try {
+            playback.style.display = 'none';
+            if (submitBtn) submitBtn.style.display = 'none';
+            audioChunks = [];
+            currentStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            mediaRecorder = new MediaRecorder(currentStream);
+
+            mediaRecorder.ondataavailable = (e) => {
+                if (e.data.size > 0) audioChunks.push(e.data);
+            };
+
+            mediaRecorder.onstop = () => {
+                const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+                const audioUrl = URL.createObjectURL(audioBlob);
+                playback.src = audioUrl;
+                playback.style.display = 'block';
+                
+                // Attach the blob to the submit button
+                if (submitBtn) {
+                    submitBtn.style.display = 'block';
+                    submitBtn.dataset.blobUrl = audioUrl;
+                }
+            };
+
+            mediaRecorder.start();
+            btn.innerHTML = '<i class="fa-solid fa-stop"></i> Dừng ghi âm';
+            btn.style.background = '#ef4444';
+            btn.style.boxShadow = '0 4px 10px rgba(239,68,68,0.3)';
+            status.style.display = 'block';
+
+        } catch (err) {
+            alert('Không thể truy cập Micro. Vui lòng cấp quyền Microphone cho trình duyệt (hoặc bạn đang không dùng HTTPS/localhost)!');
+        }
+    };
+
+    window.submitAudio = (type) => {
+        const submitBtn = document.getElementById(`btn-submit-${type}`);
+        if (!submitBtn || !submitBtn.dataset.blobUrl) return;
+
+        // 1. Download file automatically
+        const a = document.createElement('a');
+        a.href = submitBtn.dataset.blobUrl;
+        
+        // Tạo tên file có ngày giờ để tránh trùng lặp
+        const dateStr = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
+        a.download = `VSTEP_Speaking_${type}_${dateStr}.webm`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+
+        // 2. Alert
+        alert('Đã tải xuống bản ghi âm của bạn thành công!');
+    };
+
+    // Random Practice Selector
+    
+    window.spinWheel = (type) => {
+        let pool = [];
+        let qEl, hintEl, btn;
+
+        if (type === 'wh') {
+            const safeWhBank = typeof whBank !== 'undefined' ? whBank : {};
+            const whValues = Object.values(safeWhBank);
+            // Fallback for browsers that don't support .flat()
+            pool = whValues.flat ? whValues.flat() : whValues.reduce((acc, val) => acc.concat(val), []);
+            qEl = document.getElementById('wheel-q');
+            hintEl = document.getElementById('wheel-hint');
+            btn = document.getElementById('spin-btn');
+        } else if (type === 'yn') {
+            pool = typeof ynFormulas !== 'undefined' ? ynFormulas : [];
+            qEl = document.getElementById('wheel-q-yn');
+            hintEl = document.getElementById('wheel-hint-yn');
+            btn = document.getElementById('spin-btn-yn');
+        } else if (type === 'choice') {
+            const safeChoiceData = typeof choiceData !== 'undefined' ? choiceData : {};
+            const choiceValues = Object.values(safeChoiceData);
+            pool = choiceValues.flat ? choiceValues.flat() : choiceValues.reduce((acc, val) => acc.concat(val), []);
+            qEl = document.getElementById('wheel-q-choice');
+            hintEl = document.getElementById('wheel-hint-choice');
+            btn = document.getElementById('spin-btn-choice');
+        }
+
+        if (!pool || pool.length === 0 || !qEl || !btn) return;
+
+        // Flatten the pool to include ALL examples as individual questions
+        let flattenedPool = [];
+        let choiceMap = {};
+
+        pool.forEach(item => {
+            if (item.examples && item.examples.length > 0) {
+                item.examples.forEach(ex => {
+                    let cleanQ = ex.q.replace(/<[^>]*>/g, '').trim();
+                    
+                    if (type === 'choice') {
+                        if (choiceMap[cleanQ]) {
+                            // Combine Cách 1 and Cách 2
+                            let existing = choiceMap[cleanQ];
+                            let f1 = existing.exAFormatted;
+                            let f2 = ex.f;
+                            
+                            existing.exAFormatted = `<div style="margin-bottom: 12px;"><div style="color:#2563eb; font-weight:bold; margin-bottom:4px;">🎯 CÁCH 1 (Chọn 1 trong 2):</div>${f1}</div><div><div style="color:#16a34a; font-weight:bold; margin-bottom:4px;">🎯 CÁCH 2 (Cả 2 đều quan trọng):</div>${f2}</div>`;
+                            existing.exA = existing.exA + " OR " + ex.a;
+                            // Clear formula since it varies by Cách
+                            existing.formula = "Hãy tham khảo 2 cách trả lời mẫu bên dưới.";
+                        } else {
+                            let newEx = { 
+                                ...item, 
+                                exQ: ex.q, 
+                                originalQ: item.exQ || item.title,
+                                exAFormatted: ex.f, 
+                                exA: ex.a 
+                            };
+                            choiceMap[cleanQ] = newEx;
+                            flattenedPool.push(newEx);
+                        }
+                    } else {
+                        flattenedPool.push({ 
+                            ...item, 
+                            exQ: ex.q, 
+                            originalQ: item.exQ || item.title,
+                            exAFormatted: ex.f, 
+                            exA: ex.a 
+                        });
+                    }
+                });
+            } else {
+                flattenedPool.push(item);
+            }
+        });
+        pool = flattenedPool;
+
+        btn.disabled = true;
+        let c = 0;
+        const int = setInterval(() => {
+            const rand = pool[Math.floor(Math.random() * pool.length)];
+            if (rand) {
+                qEl.textContent = (rand.exQ || rand.title || "Câu hỏi ngẫu nhiên").replace(/<[^>]*>/g, '');
+            }
+            c++;
+            if (c > 10) {
+                clearInterval(int);
+                const final = pool[Math.floor(Math.random() * pool.length)];
+                if (final) {
+                    qEl.innerHTML = `<div style="display:flex; align-items:center; justify-content:center; gap:0.75rem; text-align:left;"><i class="fa-solid fa-microphone" style="color:#f59e0b; flex-shrink:0; font-size:1.5rem;"></i> <span>"${final.exQ || final.title || ''}"</span></div>`;
+                    if (hintEl) {
+                        hintEl.innerHTML = `
+                            <div class="hint-toggle-btn" style="cursor:pointer; display:inline-flex; align-items:center; gap:0.5rem; font-weight:600; color:#d97706; padding:0.25rem 0;" onclick="this.nextElementSibling.style.display='block'; this.style.display='none';">
+                                <i class="fa-solid fa-lightbulb"></i> GỢI Ý (Nhấp để xem)
+                            </div>
+                            <div class="hint-content fade-in" style="display:none; margin-top:0.5rem; font-size:1.05rem; line-height:1.6; text-align: left;">
+                                <div style="margin-bottom: 0.75rem;">
+                                    <strong style="color: #059669;">💡 Áp dụng Cấu trúc:</strong><br/> 
+                                    <div style="background: rgba(16, 185, 129, 0.05); padding: 0.75rem; border-left: 3px solid #10b981; margin-top: 0.5rem; border-radius: 4px;">
+                                        ${final.formula || ''}
+                                    </div>
+                                </div>
+                                <div>
+                                    <strong style="color: #64748b; font-size: 0.95em;">📝 Tham khảo câu mẫu:</strong><br/> 
+                                    <div style="color: #64748b; font-size: 0.95em; margin-top: 0.25rem; font-style: italic;">
+                                        ${final.exAFormatted || `"${final.exA || ''}"`}
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        hintEl.classList.remove('hidden');
+                    }
+                    speakText((final.exQ || final.title || '').replace(/<[^>]*>/g, ''));
+                    
+                    const recordBox = document.getElementById('record-box-' + type);
+                    if (recordBox) {
+                        recordBox.style.display = 'block';
+                        const playback = document.getElementById('audio-playback-' + type);
+                        if(playback) { playback.style.display = 'none'; playback.src = ''; }
+                        const submitBtn = document.getElementById('btn-submit-' + type);
+                        if(submitBtn) { submitBtn.style.display = 'none'; }
+                        const btnRecord = document.getElementById('btn-record-' + type);
+                        if(btnRecord) {
+                            btnRecord.innerHTML = '<i class="fa-solid fa-microphone"></i> Bắt đầu Ghi âm';
+                            btnRecord.style.background = '#ef4444';
+                            btnRecord.style.boxShadow = '0 4px 10px rgba(239,68,68,0.3)';
+                        }
+                    }
+                }
+                btn.disabled = false;
+            }
+        }, 60);
+    };
+
+    if ('speechSynthesis' in window) {
+        window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+    }
+    // =========================================
+    // REVIEW GAMES LOGIC & SFX
+    // =========================================
+    let audioCtx = null;
+    
+    function playTone(freq, type, duration) {
+        if (!state.isAudio) return;
+        if (!audioCtx) {
+            const AC = window.AudioContext || window.webkitAudioContext;
+            if (!AC) return;
+            audioCtx = new AC();
+        }
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+    }
+    
+    const sfx = {
+        flip: () => playTone(300, 'sine', 0.1),
+        correct: () => {
+            playTone(600, 'sine', 0.1);
+            setTimeout(() => playTone(800, 'sine', 0.15), 100);
+        },
+        wrong: () => {
+            playTone(250, 'sawtooth', 0.2);
+            setTimeout(() => playTone(200, 'sawtooth', 0.25), 100);
+        },
+        win: () => {
+            playTone(400, 'sine', 0.1);
+            setTimeout(() => playTone(500, 'sine', 0.1), 100);
+            setTimeout(() => playTone(600, 'sine', 0.1), 200);
+            setTimeout(() => playTone(800, 'sine', 0.4), 300);
+        }
+    };
+    
+    function shootConfetti() {
+        if (typeof confetti === 'function') {
+            const duration = 2500;
+            const end = Date.now() + duration;
+            (function frame() {
+                confetti({ particleCount: 3, angle: 60, spread: 55, origin: { x: 0 }, colors: ['#26ccff', '#a25afd', '#ff5e7e', '#88ff5a', '#fcff42', '#ffa62d', '#ff36ff'], zIndex: 9999 });
+                confetti({ particleCount: 3, angle: 120, spread: 55, origin: { x: 1 }, colors: ['#26ccff', '#a25afd', '#ff5e7e', '#88ff5a', '#fcff42', '#ffa62d', '#ff36ff'], zIndex: 9999 });
+                if (Date.now() < end) requestAnimationFrame(frame);
+            }());
+        }
+    }
+    let reviewWords = [];
+    
+    function extractReviewWords(tabId) {
+        let currentWords = [];
+        const cards = document.querySelectorAll('#' + tabId + ' .icon-btn');
+        cards.forEach(btn => {
+            const container = btn.parentElement;
+            const enEl = container.querySelector('strong');
+            if (enEl && enEl.nextElementSibling) {
+                currentWords.push({
+                    en: enEl.textContent.trim(),
+                    vn: enEl.nextElementSibling.textContent.trim()
+                });
+            }
+        });
+        return currentWords;
+    }
+
+    window.startReviewGame = (type, tabId) => {
+        const words = extractReviewWords(tabId);
+        if (words.length === 0) return;
+        const tabEl = document.getElementById(tabId);
+        const placeholder = tabEl.querySelector('.game-placeholder');
+        const content = tabEl.querySelector('.game-content');
+        
+        if(placeholder) placeholder.style.display = 'none';
+        if(content) content.style.display = 'block';
+        
+        if (type === 'flashcards' || type === 'flashcard') {
+            initFlashcards(words, content, tabId);
+        } else if (type === 'matching' || type === 'match') {
+            initMatchingGame(words, content, tabId);
+        } else if (type === 'quiz') {
+            initQuizGame(words, content, tabId);
+        } else if (type === 'spelling') {
+            initSpellingGame(words, content, tabId);
+        }
+    };
+
+    function initFlashcards(allWords, container, tabId) {
+        let words = [...allWords].sort(() => 0.5 - Math.random());
+        let currentIndex = 0;
+        
+        function renderCard() {
+            if (currentIndex >= words.length) {
+                sfx.win();
+                shootConfetti();
+                container.innerHTML = `
+                    <div class="fade-in" style="text-align:center; padding: 2rem;">
+                        <i class="fa-solid fa-trophy" style="font-size:4rem; color:#f59e0b; margin-bottom:1rem;"></i>
+                        <h3 style="font-size:1.5rem; margin-bottom:1rem;">Tuyệt vời! Bạn đã ôn xong tất cả các từ.</h3>
+                        <button class="btn btn-primary" onclick="startReviewGame('flashcards', '${tabId}')"><i class="fa-solid fa-rotate-right"></i> Ôn tập lại</button>
+                    </div>
+                `;
+                return;
+            }
+            const word = words[currentIndex];
+            container.innerHTML = `
+                <div class="fade-in" style="display:flex; flex-direction:column; align-items:center; height:100%; justify-content:center;">
+                    <div style="margin-bottom:1rem; font-weight:bold; color:var(--text-muted);">Thẻ ${currentIndex + 1} / ${words.length}</div>
+                    <div class="flashcard-container" onclick="if(!this.querySelector('.flashcard').classList.contains('flipped')) { sfx.flip(); this.querySelector('.flashcard').classList.add('flipped'); speakText('${word.en.replace(/'/g, "\\'")}') } else { this.querySelector('.flashcard').classList.remove('flipped'); }">
+                        <div class="flashcard">
+                            <div class="flashcard-face flashcard-front">
+                                <div class="fc-word">${word.en}</div>
+                                <div class="fc-hint"><i class="fa-solid fa-hand-pointer"></i> Nhấp để lật xem nghĩa</div>
+                            </div>
+                            <div class="flashcard-face flashcard-back">
+                                <div class="fc-word">${word.vn}</div>
+                                <div class="fc-hint"><i class="fa-solid fa-volume-high"></i> Nhấp để lật & nghe lại</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display:flex; gap:1rem; margin-top:1.5rem; flex-wrap:wrap; justify-content:center;">
+                        <button class="btn" style="background:#fef2f2; color:#991b1b; border:1px solid #fecaca; box-shadow:none;" id="fc-btn-review"><i class="fa-solid fa-xmark"></i> Cần ôn lại</button>
+                        <button class="btn" style="background:#ecfdf5; color:#065f46; border:1px solid #a7f3d0; box-shadow:none;" id="fc-btn-gotit"><i class="fa-solid fa-check"></i> Đã thuộc</button>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('fc-btn-review').onclick = (e) => {
+                e.stopPropagation();
+                words.push(word); // move to end
+                currentIndex++;
+                renderCard();
+            };
+            document.getElementById('fc-btn-gotit').onclick = (e) => {
+                e.stopPropagation();
+                currentIndex++;
+                renderCard();
+            };
+        }
+        renderCard();
+    }
+
+    function initMatchingGame(allWords, container, tabId) {
+        let pool = [...allWords].sort(() => 0.5 - Math.random()).slice(0, 6);
+        let items = [];
+        pool.forEach((w, i) => {
+            items.push({ id: i, text: w.en, type: 'en', word: w });
+            items.push({ id: i, text: w.vn, type: 'vn', word: w });
+        });
+        items.sort(() => 0.5 - Math.random());
+        
+        container.innerHTML = `
+            <div class="fade-in" style="display:flex; justify-content:space-between; margin-bottom:1.5rem; align-items:center; flex-wrap:wrap; gap:1rem;">
+                <div style="font-weight:bold; color:var(--text-main); font-size:1.1rem;"><i class="fa-solid fa-link" style="color:var(--primary);"></i> Ghép các cặp từ tương ứng</div>
+                <button class="btn btn-secondary" onclick="startReviewGame('matching', '${tabId}')" style="padding: 0.5rem 1rem; font-size: 0.9rem;"><i class="fa-solid fa-rotate-right"></i> Bài mới</button>
+            </div>
+            <div class="matching-grid fade-in" id="match-grid"></div>
+        `;
+        
+        const grid = document.getElementById('match-grid');
+        let selectedItem = null;
+        let matchedCount = 0;
+        let animating = false;
+        
+        items.forEach((item, idx) => {
+            const card = document.createElement('div');
+            card.className = 'match-card';
+            card.textContent = item.text;
+            card.onclick = () => {
+                if (animating || card.classList.contains('matched') || card.classList.contains('selected')) return;
+                
+                if (!selectedItem) {
+                    card.classList.add('selected');
+                    selectedItem = { el: card, data: item };
+                    if (item.type === 'en') speakText(item.text);
+                } else {
+                    animating = true;
+                    if (selectedItem.data.id === item.id && selectedItem.data.type !== item.type) {
+                        card.classList.add('selected');
+                        sfx.correct();
+                        if (item.type === 'en') speakText(item.text);
+                        setTimeout(() => {
+                            card.classList.remove('selected');
+                            card.classList.add('matched');
+                            selectedItem.el.classList.remove('selected');
+                            selectedItem.el.classList.add('matched');
+                            selectedItem = null;
+                            matchedCount++;
+                            animating = false;
+                            if (matchedCount === 6) {
+                                sfx.win();
+                                shootConfetti();
+                                setTimeout(() => {
+                                    container.innerHTML = `
+                                        <div class="fade-in" style="text-align:center; padding: 2rem;">
+                                            <i class="fa-solid fa-star" style="font-size:4rem; color:#f59e0b; margin-bottom:1rem;"></i>
+                                            <h3 style="font-size:1.5rem; margin-bottom:1rem;">Hoàn thành xuất sắc!</h3>
+                                            <button class="btn btn-primary" onclick="startReviewGame('matching', '${tabId}')"><i class="fa-solid fa-play"></i> Chơi tiếp</button>
+                                        </div>
+                                    `;
+                                }, 300);
+                            }
+                        }, 400);
+                    } else {
+                        card.classList.add('error');
+                        selectedItem.el.classList.remove('selected');
+                        selectedItem.el.classList.add('error');
+                        sfx.wrong();
+                        if (item.type === 'en') speakText(item.text);
+                        setTimeout(() => {
+                            card.classList.remove('error');
+                            selectedItem.el.classList.remove('error');
+                            selectedItem = null;
+                            animating = false;
+                        }, 500);
+                    }
+                }
+            };
+            grid.appendChild(card);
+        });
+    }
+
+    function initQuizGame(allWords, container, tabId) {
+        let words = [...allWords].sort(() => 0.5 - Math.random()).slice(0, 10);
+        let currentIndex = 0;
+        let score = 0;
+        
+        function renderQuiz() {
+            if (currentIndex >= words.length) {
+                sfx.win();
+                shootConfetti();
+                container.innerHTML = `
+                    <div class="fade-in" style="text-align:center; padding: 2rem;">
+                        <i class="fa-solid fa-award" style="font-size:4rem; color:#10b981; margin-bottom:1rem;"></i>
+                        <h3 style="font-size:1.5rem; margin-bottom:0.5rem;">Hoàn thành Quiz!</h3>
+                        <p style="font-size:1.2rem; margin-bottom:1.5rem;">Bạn đạt <strong style="color:var(--primary); font-size:1.5rem;">${score} / ${words.length}</strong> điểm.</p>
+                        <button class="btn btn-primary" onclick="startReviewGame('quiz', '${tabId}')"><i class="fa-solid fa-rotate-right"></i> Làm lại</button>
+                    </div>
+                `;
+                return;
+            }
+            
+            const currentWord = words[currentIndex];
+            let options = [currentWord];
+            let distractors = [...allWords].filter(w => w.en !== currentWord.en).sort(() => 0.5 - Math.random()).slice(0, 3);
+            options = [...options, ...distractors].sort(() => 0.5 - Math.random());
+            
+            container.innerHTML = `
+                <div class="quiz-container fade-in">
+                    <div style="display:flex; justify-content:space-between; margin-bottom:1.2rem; color:var(--text-muted); font-weight:600;">
+                        <div>Câu hỏi: <span style="color:var(--text-main);">${currentIndex + 1} / ${words.length}</span></div>
+                        <div>Điểm: <span style="color:var(--primary);">${score}</span></div>
+                    </div>
+                    <div class="quiz-question">Nghĩa tiếng Anh của:<br><span style="color:var(--text-main); font-size:1.6rem; display:block; margin-top:0.75rem;">"${currentWord.vn}"</span></div>
+                    <div class="quiz-options">
+                        ${options.map((opt, i) => `
+                            <div class="quiz-option" data-ans="${opt.en === currentWord.en}">
+                                <div style="background:var(--border); border-radius:50%; width:30px; height:30px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">${['A', 'B', 'C', 'D'][i]}</div>
+                                <div>${opt.en}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+            
+            const opts = container.querySelectorAll('.quiz-option');
+            let answered = false;
+            opts.forEach(opt => {
+                opt.onclick = () => {
+                    if (answered) return;
+                    answered = true;
+                    const isCorrect = opt.getAttribute('data-ans') === 'true';
+                    speakText(opt.querySelector('div:nth-child(2)').textContent);
+                    
+                    if (isCorrect) {
+                        opt.classList.add('correct');
+                        sfx.correct();
+                        score++;
+                    } else {
+                        opt.classList.add('wrong');
+                        sfx.wrong();
+                        opts.forEach(o => {
+                            if (o.getAttribute('data-ans') === 'true') o.classList.add('correct');
+                        });
+                    }
+                    
+                    setTimeout(() => {
+                        currentIndex++;
+                        renderQuiz();
+                    }, 1500);
+                };
+            });
+        }
+        renderQuiz();
+    }
+
+    function initSpellingGame(allWords, container, tabId) {
+        let words = [...allWords].sort(() => 0.5 - Math.random()).slice(0, 10);
+        let currentIndex = 0;
+        let score = 0;
+        
+        function renderSpelling() {
+            if (currentIndex >= words.length) {
+                sfx.win();
+                shootConfetti();
+                container.innerHTML = `
+                    <div class="fade-in" style="text-align:center; padding: 2rem;">
+                        <i class="fa-solid fa-medal" style="font-size:4rem; color:#ec4899; margin-bottom:1rem;"></i>
+                        <h3 style="font-size:1.5rem; margin-bottom:0.5rem;">Hoàn thành Thử Thách Gõ Từ!</h3>
+                        <p style="font-size:1.2rem; margin-bottom:1.5rem;">Bạn gõ đúng <strong style="color:var(--primary); font-size:1.5rem;">${score} / ${words.length}</strong> từ.</p>
+                        <button class="btn btn-primary" onclick="startReviewGame('spelling', '${tabId}')"><i class="fa-solid fa-rotate-right"></i> Làm lại</button>
+                    </div>
+                `;
+                return;
+            }
+            
+            const currentWord = words[currentIndex];
+            
+            container.innerHTML = `
+                <div class="quiz-container fade-in" style="max-width: 500px;">
+                    <div style="display:flex; justify-content:space-between; margin-bottom:1.2rem; color:var(--text-muted); font-weight:600;">
+                        <div>Câu hỏi: <span style="color:var(--text-main);">${currentIndex + 1} / ${words.length}</span></div>
+                        <div>Điểm: <span style="color:var(--primary);">${score}</span></div>
+                    </div>
+                    <div class="quiz-question" style="margin-bottom:1.5rem; position:relative;">
+                        <div style="color:var(--text-muted); font-size:1rem; margin-bottom:0.5rem;">Nghĩa tiếng Việt:</div>
+                        <div style="color:var(--text-main); font-size:1.6rem; margin-bottom:1.5rem; line-height:1.4;">"${currentWord.vn}"</div>
+                        <button class="icon-btn" onclick="speakText('${currentWord.en.replace(/'/g, "\\'")}')" style="margin: 0 auto; background:var(--bg-body); width: 45px; height: 45px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'" title="Nghe gợi ý"><i class="fa-solid fa-volume-high"></i></button>
+                    </div>
+                    <div style="display:flex; flex-direction:column; gap:1rem;">
+                        <input type="text" id="spell-input" placeholder="Gõ tiếng Anh vào đây..." autocomplete="off" spellcheck="false" style="width:100%; padding:1rem 1.5rem; font-size:1.2rem; border-radius:12px; border:2px solid var(--border); background:var(--bg-card); color:var(--text-main); outline:none; transition:border-color 0.2s;" onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='var(--border)'">
+                        <div id="spell-error" style="color:#ef4444; font-size:0.9rem; display:none;">Chưa đúng, thử lại nhé!</div>
+                        <button class="btn btn-primary" id="spell-btn" style="width:100%; padding:1rem; font-size:1.1rem; background:linear-gradient(135deg, #ec4899, #be185d); border:none;"><i class="fa-solid fa-paper-plane"></i> Kiểm tra</button>
+                    </div>
+                </div>
+            `;
+            
+            const input = document.getElementById('spell-input');
+            const btn = document.getElementById('spell-btn');
+            const errorText = document.getElementById('spell-error');
+            setTimeout(() => input.focus(), 100);
+            
+            let attempts = 0;
+            
+            function checkAnswer() {
+                const val = input.value.trim().toLowerCase();
+                const correctVal = currentWord.en.toLowerCase();
+                
+                if (val === correctVal) {
+                    sfx.correct();
+                    speakText(currentWord.en);
+                    input.style.borderColor = '#22c55e';
+                    input.style.backgroundColor = '#dcfce7';
+                    input.style.color = '#166534';
+                    btn.disabled = true;
+                    if (attempts === 0) score++;
+                    setTimeout(() => {
+                        currentIndex++;
+                        renderSpelling();
+                    }, 1500);
+                } else {
+                    sfx.wrong();
+                    attempts++;
+                    input.style.borderColor = '#ef4444';
+                    input.classList.add('error');
+                    errorText.style.display = 'block';
+                    input.value = '';
+                    
+                    if (attempts >= 3) {
+                        errorText.innerHTML = `Đáp án đúng: <strong style="color:#111;">${currentWord.en}</strong>`;
+                    }
+                    
+                    setTimeout(() => {
+                        input.classList.remove('error');
+                    }, 500);
+                }
+            }
+            
+            btn.onclick = checkAnswer;
+            input.onkeypress = (e) => {
+                if (e.key === 'Enter') checkAnswer();
+            };
+        }
+        renderSpelling();
+    }
+
+    } catch(e) {
+        alert('JS Error: ' + e.message + '\\nLine: ' + e.lineNumber);
+    }
+});
+
+
+
+
+window.switchSubTab = function(tabId, btnElement) {
+    document.querySelectorAll('.subtab-pane').forEach(el => {
+        el.classList.add('hidden');
+        el.classList.remove('active');
+        el.style.display = 'none';
+    });
+    const target = document.getElementById('subtab-' + tabId);
+    if (target) {
+        target.classList.remove('hidden');
+        target.classList.add('active');
+        target.style.display = 'block';
+    }
+    
+    document.querySelectorAll('.sub-tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+        btn.style.background = 'transparent';
+        btn.style.color = 'var(--primary)';
+        btn.style.boxShadow = 'none';
+    });
+    
+    const activeBtn = btnElement || (window.event && window.event.currentTarget) || document.querySelector(`.sub-tab-btn[onclick*="${tabId}"]`);
+    if (activeBtn) {
+        activeBtn.classList.add('active');
+        activeBtn.style.background = 'var(--primary)';
+        activeBtn.style.color = '#ffffff';
+        activeBtn.style.boxShadow = '0 4px 12px rgba(67, 97, 238, 0.3)';
+    }
+};
