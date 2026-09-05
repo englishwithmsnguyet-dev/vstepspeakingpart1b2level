@@ -17,12 +17,8 @@
 <link href="styles.css?v=20260819_1" rel="stylesheet"/>
 <script>
         window.onerror = function(msg, url, lineNo, columnNo, error) {
-            if (lineNo === 0 || msg.toLowerCase().indexOf('script error') > -1) {
-                // Ignore cross-origin or blocked script errors
-                return false;
-            }
-            alert("Global Error: " + msg + "\nLine: " + lineNo + "\nCol: " + columnNo);
-            return false;
+            console.error("Window error: ", msg, url, lineNo, error);
+            return true; // Suppress error popup from third-party in-app browsers (Zalo, FB, etc.)
         };
     </script>
 </head>
