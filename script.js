@@ -150,10 +150,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.speechSynthesis.cancel();
             }
 
-            const cleanTxt = (txt || '').replace(/<[^>]*>/g, '').replace(/[\r\n]+/g, ' ').trim();
-            if (!cleanTxt) return;
+            let conversationalTxt = (txt || '').replace(/<[^>]*>/g, '').replace(/[\r\n]+/g, ' ').trim();
+            if (!conversationalTxt) return;
 
-            const utt = new SpeechSynthesisUtterance(cleanTxt);
+            // Xử lý ngữ điệu đàm thoại tự nhiên (Natural Conversational Intonation & Cadence)
+            conversationalTxt = conversationalTxt.replace(/^→\s*/, '');
+            // Ngắt nhịp thở nhẹ sau các từ nối đàm thoại và liên từ tạo nhịp điệu người thật
+            conversationalTxt = conversationalTxt
+                .replace(/^(Well|Actually|To be honest|Honestly|Personally|Sure|Definitely|Certainly|Not really|In my opinion|As for me|To tell the truth|In fact)([,.!?]|\s)/i, '$1, ')
+                .replace(/\b(because|so that|in order to|as a result|besides that|furthermore|moreover|on the other hand|while|whereas)\b/gi, ', $1')
+                .replace(/\s*,\s*,\s*/g, ', ')
+                .replace(/\s+/g, ' ')
+                .trim();
+
+            const utt = new SpeechSynthesisUtterance(conversationalTxt);
             window._activeUtterance = utt; // Tránh thu hồi bộ nhớ ngầm trên Mobile
 
             const voices = window.speechSynthesis.getVoices() || [];
@@ -173,10 +183,10 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 utt.lang = 'en-US';
             }
-            // Giữ pitch = 1.0 để giọng ấm tự nhiên của con người, không bị biến âm robot/the thé
+            // Giữ pitch = 1.0 để giọng ấm tự nhiên của con người, không bị biến âm robot
             utt.pitch = 1.0;
-            // Tốc độ 0.95 đĩnh đạc, rõ ràng chuẩn bản ngữ
-            utt.rate = 0.95;
+            // Tốc độ 0.90 mô phỏng nhịp điệu trò chuyện tự nhiên, có điểm dừng và luyến láy
+            utt.rate = 0.90;
 
             utt.onend = () => {
                 window._activeUtterance = null;
