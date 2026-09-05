@@ -136,12 +136,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { once: true });
     }
 
-    // Global AI Speech (Tối ưu giọng đọc tự nhiên cho cả Mobile & Desktop)
-    window._activeUtterance = null;
-    window.speakText = (txt) => {
-        if (!state.isAudio) return;
-        if (!('speechSynthesis' in window)) return;
+    // Studio Audio Manifest (Real Human Studio Recordings)
+    let studioAudioManifest = {};
+    fetch('audio/manifest.json')
+        .then(r => r.json())
+        .then(data => {
+            studioAudioManifest = data;
+        })
+        .catch(() => {});
 
+    // Browser Speech Synthesis Fallback
+    window._activeUtterance = null;
+    const speakWithBrowserTTS = (cleanTxt) => {
+        if (!('speechSynthesis' in window)) return;
         try {
             if (window.speechSynthesis.paused) {
                 window.speechSynthesis.resume();
@@ -150,13 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.speechSynthesis.cancel();
             }
 
-            let conversationalTxt = (txt || '').replace(/<[^>]*>/g, '').replace(/[\r\n]+/g, ' ').trim();
-            if (!conversationalTxt) return;
-
-            // Xử lý ngữ điệu đàm thoại tự nhiên (Natural Conversational Intonation & Cadence)
-            conversationalTxt = conversationalTxt.replace(/^→\s*/, '');
-            // Ngắt nhịp thở nhẹ sau các từ nối đàm thoại và liên từ tạo nhịp điệu người thật
-            conversationalTxt = conversationalTxt
+            let conversationalTxt = cleanTxt
                 .replace(/^(Well|Actually|To be honest|Honestly|Personally|Sure|Definitely|Certainly|Not really|In my opinion|As for me|To tell the truth|In fact)([,.!?]|\s)/i, '$1, ')
                 .replace(/\b(because|so that|in order to|as a result|besides that|furthermore|moreover|on the other hand|while|whereas)\b/gi, ', $1')
                 .replace(/\s*,\s*,\s*/g, ', ')
@@ -164,47 +165,70 @@ document.addEventListener('DOMContentLoaded', () => {
                 .trim();
 
             const utt = new SpeechSynthesisUtterance(conversationalTxt);
-            window._activeUtterance = utt; // Tránh thu hồi bộ nhớ ngầm trên Mobile
+            window._activeUtterance = utt;
 
             const voices = window.speechSynthesis.getVoices() || [];
             let bestVoice = null;
-
             if (state.selectedVoiceURI) {
                 bestVoice = voices.find(v => v.voiceURI === state.selectedVoiceURI);
             }
-
             if (!bestVoice && voices.length > 0) {
                 bestVoice = getBestNaturalVoice(voices);
             }
-
             if (bestVoice) {
                 utt.voice = bestVoice;
                 utt.lang = bestVoice.lang;
             } else {
                 utt.lang = 'en-US';
             }
-            // Giữ pitch = 1.0 để giọng ấm tự nhiên của con người, không bị biến âm robot
             utt.pitch = 1.0;
-            // Tốc độ 0.90 mô phỏng nhịp điệu trò chuyện tự nhiên, có điểm dừng và luyến láy
             utt.rate = 0.90;
 
-            utt.onend = () => {
-                window._activeUtterance = null;
-            };
-            utt.onerror = (e) => {
-                console.warn("TTS Error:", e);
-                window._activeUtterance = null;
-            };
+            utt.onend = () => { window._activeUtterance = null; };
+            utt.onerror = () => { window._activeUtterance = null; };
 
             setTimeout(() => {
                 window.speechSynthesis.speak(utt);
-                if (window.speechSynthesis.paused) {
-                    window.speechSynthesis.resume();
-                }
+                if (window.speechSynthesis.paused) window.speechSynthesis.resume();
             }, 10);
         } catch (e) {
-            console.error("Error in speakText:", e);
+            console.error("Error in browser TTS:", e);
         }
+    };
+
+    // Global AI Speech - Tự động ưu tiên Studio Audio người thật (MP3 chất lượng cao)
+    window._currentAudio = null;
+    window.speakText = (txt) => {
+        if (!state.isAudio) return;
+
+        let cleanTxt = (txt || '').replace(/<[^>]*>/g, '').replace(/^→\s*/, '').replace(/[\r\n]+/g, ' ').trim();
+        if (!cleanTxt) return;
+
+        // 1. Kiểm tra trong kho Studio MP3 (Ava/Guy Neural người thật phòng thu)
+        const audioPath = studioAudioManifest[cleanTxt] || studioAudioManifest[cleanTxt.toLowerCase()];
+        if (audioPath) {
+            try {
+                if (window._currentAudio) {
+                    window._currentAudio.pause();
+                    window._currentAudio.currentTime = 0;
+                }
+                const audio = new Audio(audioPath);
+                window._currentAudio = audio;
+                const playPromise = audio.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(err => {
+                        console.warn("Studio audio play blocked, fallback to browser TTS:", err);
+                        speakWithBrowserTTS(cleanTxt);
+                    });
+                }
+                return;
+            } catch (e) {
+                console.warn("Audio tag error:", e);
+            }
+        }
+
+        // 2. Nếu chưa có file MP3, fallback sang trình duyệt
+        speakWithBrowserTTS(cleanTxt);
     };
 
     // 1. WELCOME MODAL & STUDENT AUTHENTICATION
