@@ -171,14 +171,14 @@ document.addEventListener('DOMContentLoaded', () => {
         return (str || '')
             .normalize('NFD')
             .replace(/[\u0300-\u036f]/g, '')
+            .replace(/[đĐ]/g, 'd')
             .toLowerCase()
             .replace(/\s+/g, ' ')
             .trim();
     };
 
     window.finishLogin = () => {
-        const val = studentInput.value.trim();
-        state.studentName = val;
+        const val = state.studentName || studentInput.value.trim();
         displayName.textContent = val;
         userProfile.classList.remove('hidden');
         welcomeModal.style.opacity = '0';
@@ -203,12 +203,12 @@ document.addEventListener('DOMContentLoaded', () => {
                           (normName === 'ptmn' || normName === 'pham thi minh nguyet' || normName === 'minh nguyet');
 
         if (isTeacher) {
+            state.studentName = 'Cô Nguyệt';
             state.accessLevel = 'FULL';
         } else if (formattedClass === 'B212') {
             // Check student list for class B212
             const matchedStudent = validStudentsB212.find(s => {
-                const sNorm = normalizeStr(s);
-                return sNorm === normName || s.toLowerCase() === nameVal.toLowerCase();
+                return normalizeStr(s) === normName;
             });
 
             if (!matchedStudent) {
@@ -216,6 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 loginError.style.display = 'block';
                 return;
             }
+            state.studentName = matchedStudent;
             state.accessLevel = 'FULL';
         } else {
             loginError.textContent = 'Mã lớp không hợp lệ. Vui lòng nhập đúng lớp B212!';
