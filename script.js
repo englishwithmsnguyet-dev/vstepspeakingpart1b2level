@@ -88,56 +88,87 @@ document.addEventListener('DOMContentLoaded', () => {
     if ('speechSynthesis' in window) {
         populateVoices();
         window.speechSynthesis.onvoiceschanged = () => populateVoices();
+        window.addEventListener('touchstart', () => {
+            if (window.speechSynthesis && (!window.speechSynthesis.getVoices() || window.speechSynthesis.getVoices().length === 0)) {
+                window.speechSynthesis.getVoices();
+            }
+        }, { once: true });
     }
 
-    // Global AI Speech
+    // Global AI Speech (Optimized for Android & iOS)
+    window._activeUtterance = null;
     window.speakText = (txt) => {
         if (!state.isAudio) return;
-        if ('speechSynthesis' in window) {
-            window.speechSynthesis.cancel();
-            const utt = new SpeechSynthesisUtterance(txt);
-            
-            const voices = window.speechSynthesis.getVoices();
-            
+        if (!('speechSynthesis' in window)) return;
+
+        try {
+            if (window.speechSynthesis.paused) {
+                window.speechSynthesis.resume();
+            }
+            if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
+                window.speechSynthesis.cancel();
+            }
+
+            const cleanTxt = (txt || '').replace(/<[^>]*>/g, '').replace(/[\r\n]+/g, ' ').trim();
+            if (!cleanTxt) return;
+
+            const utt = new SpeechSynthesisUtterance(cleanTxt);
+            window._activeUtterance = utt; // Prevent V8 garbage collection on Android
+
+            const voices = window.speechSynthesis.getVoices() || [];
             let bestVoice = null;
+
             if (state.selectedVoiceURI) {
                 bestVoice = voices.find(v => v.voiceURI === state.selectedVoiceURI);
             }
-            if (!bestVoice) {
+
+            if (!bestVoice && voices.length > 0) {
+                const enVoices = voices.filter(v => v.lang && (v.lang.toLowerCase().startsWith('en') || v.lang.toLowerCase().startsWith('us')));
                 const preferredNames = [
-                    "Microsoft Guy",
+                    "Google US English",
                     "Google UK English Male",
                     "Google US English Male",
+                    "Microsoft Guy",
                     "Alex",
                     "Daniel",
-                    "Google US English",
-                    "Samantha"
+                    "Samantha",
+                    "en-us-x",
+                    "en-gb-x"
                 ];
                 for (let name of preferredNames) {
-                    bestVoice = voices.find(v => v.name.includes(name));
+                    bestVoice = enVoices.find(v => v.name && v.name.toLowerCase().includes(name.toLowerCase()));
                     if (bestVoice) break;
                 }
-                if (!bestVoice) {
-                    bestVoice = voices.find(v => (v.lang.startsWith("en-US") || v.lang.startsWith("en-GB")) && v.name.includes("Male"));
-                }
-                if (!bestVoice) {
-                    bestVoice = voices.find(v => v.lang.startsWith("en-US") || v.lang.startsWith("en-GB"));
-                }
-                if (!bestVoice) {
-                    bestVoice = voices[0];
+                if (!bestVoice && enVoices.length > 0) {
+                    bestVoice = enVoices.find(v => v.lang.includes('US') || v.lang.includes('en-US')) || enVoices[0];
                 }
             }
-            
+
             if (bestVoice) {
                 utt.voice = bestVoice;
                 utt.lang = bestVoice.lang;
             } else {
                 utt.lang = 'en-US';
             }
-            utt.rate = 1.0; // Normal speed
-            utt.pitch = 1.25; // Slightly higher pitch for energetic Gen-Z vibe
-            
-            window.speechSynthesis.speak(utt);
+            utt.rate = 1.0;
+            utt.pitch = 1.05;
+
+            utt.onend = () => {
+                window._activeUtterance = null;
+            };
+            utt.onerror = (e) => {
+                console.warn("TTS Error:", e);
+                window._activeUtterance = null;
+            };
+
+            setTimeout(() => {
+                window.speechSynthesis.speak(utt);
+                if (window.speechSynthesis.paused) {
+                    window.speechSynthesis.resume();
+                }
+            }, 10);
+        } catch (e) {
+            console.error("Error in speakText:", e);
         }
     };
 
@@ -3299,7 +3330,7 @@ const whShowcase = document.getElementById('wh-showcase');
     }
 
     } catch(e) {
-        alert('JS Error: ' + e.message + '\\nLine: ' + e.lineNumber);
+        console.error('JS Error: ', e);
     }
 });
 
