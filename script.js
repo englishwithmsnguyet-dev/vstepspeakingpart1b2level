@@ -2915,7 +2915,7 @@ const whShowcase = document.getElementById('wh-showcase');
         osc.stop(audioCtx.currentTime + duration);
     }
     
-    const sfx = {
+    const sfx = window.sfx = {
         flip: () => playTone(300, 'sine', 0.1),
         correct: () => {
             playTone(600, 'sine', 0.1);
@@ -2930,6 +2930,21 @@ const whShowcase = document.getElementById('wh-showcase');
             setTimeout(() => playTone(500, 'sine', 0.1), 100);
             setTimeout(() => playTone(600, 'sine', 0.1), 200);
             setTimeout(() => playTone(800, 'sine', 0.4), 300);
+        }
+    };
+
+    window.flipFlashcard = (containerEl, wordEn) => {
+        if (!containerEl) return;
+        const card = containerEl.querySelector('.flashcard');
+        if (!card) return;
+        if (!card.classList.contains('flipped')) {
+            try { if (window.sfx && window.sfx.flip) window.sfx.flip(); } catch(e) {}
+            card.classList.add('flipped');
+            if (typeof window.speakText === 'function' && wordEn) {
+                window.speakText(wordEn);
+            }
+        } else {
+            card.classList.remove('flipped');
         }
     };
     
@@ -3004,7 +3019,7 @@ const whShowcase = document.getElementById('wh-showcase');
             container.innerHTML = `
                 <div class="fade-in" style="display:flex; flex-direction:column; align-items:center; height:100%; justify-content:center;">
                     <div style="margin-bottom:1rem; font-weight:bold; color:var(--text-muted);">Thẻ ${currentIndex + 1} / ${words.length}</div>
-                    <div class="flashcard-container" onclick="if(!this.querySelector('.flashcard').classList.contains('flipped')) { sfx.flip(); this.querySelector('.flashcard').classList.add('flipped'); speakText('${word.en.replace(/'/g, "\\'")}') } else { this.querySelector('.flashcard').classList.remove('flipped'); }">
+                    <div class="flashcard-container" onclick="flipFlashcard(this, '${word.en.replace(/'/g, "\\'")}')">
                         <div class="flashcard">
                             <div class="flashcard-face flashcard-front">
                                 <div class="fc-word">${word.en}</div>
