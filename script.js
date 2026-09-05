@@ -244,7 +244,19 @@ document.addEventListener('DOMContentLoaded', () => {
     studentClassInput?.addEventListener('keypress', (e) => { if (e.key === 'Enter') enterRoom(); });
 
     // Sidebar & Navigation
-    mobileToggle?.addEventListener('click', () => sidebar.classList.toggle('open'));
+    mobileToggle?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        sidebar.classList.toggle('open');
+    });
+
+    // Tap outside sidebar to close on mobile
+    document.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768 && sidebar && sidebar.classList.contains('open')) {
+            if (!sidebar.contains(e.target) && !mobileToggle?.contains(e.target)) {
+                sidebar.classList.remove('open');
+            }
+        }
+    });
 
     let currentTargetTab = null;
     let currentTargetItem = null;
