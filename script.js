@@ -45,36 +45,76 @@ document.addEventListener('DOMContentLoaded', () => {
         'activities': 'COMMON ACTIVITIES'
     };
 
+    // Thuật toán tìm giọng đọc AI tự nhiên nhất (High Quality / Neural / Natural / Siri)
+    const getBestNaturalVoice = (voices) => {
+        if (!voices || voices.length === 0) return null;
+        const enVoices = voices.filter(v => v.lang && (v.lang.toLowerCase().startsWith('en') || v.lang.toLowerCase().startsWith('us')));
+        if (enVoices.length === 0) return null;
+
+        // 1. Ưu tiên cao nhất: Các giọng Neural / Natural / Premium / Enhanced / Siri (Chất lượng phòng thu / người thật)
+        const premiumKeywords = ['natural', 'premium', 'enhanced', 'neural', 'siri'];
+        for (const kw of premiumKeywords) {
+            const match = enVoices.find(v => (v.name && v.name.toLowerCase().includes(kw)) || (v.voiceURI && v.voiceURI.toLowerCase().includes(kw)));
+            if (match) return match;
+        }
+
+        // 2. Trên iOS (iPhone/iPad): Ưu tiên các giọng hiện đại chất lượng cao của Apple
+        const appleModernNames = ['ava', 'evan', 'allison', 'zoe', 'nathan', 'oliver', 'tom', 'nicky', 'daniel', 'serena'];
+        for (const name of appleModernNames) {
+            const match = enVoices.find(v => v.name && v.name.toLowerCase().includes(name));
+            if (match) return match;
+        }
+
+        // 3. Trên PC (Microsoft Edge, Windows, Chrome Desktop)
+        const pcModernNames = ['guy', 'jenny', 'aria', 'google us english', 'google uk english female'];
+        for (const name of pcModernNames) {
+            const match = enVoices.find(v => v.name && v.name.toLowerCase().includes(name));
+            if (match) return match;
+        }
+
+        // 4. Trên Android (Google Speech Services): Ưu tiên giọng network (WaveNet)
+        const networkVoice = enVoices.find(v => (v.voiceURI && v.voiceURI.includes('network')) || (v.name && v.name.toLowerCase().includes('network')));
+        if (networkVoice) return networkVoice;
+
+        // 5. Lọc bỏ các giọng tổng hợp máy móc cổ điển (Alex, Samantha standard) nếu có giọng khác
+        const nonRobotic = enVoices.filter(v => {
+            const n = (v.name || '').toLowerCase();
+            return !n.includes('alex') && !n.includes('samantha') && !n.includes('fred') && !n.includes('victoria');
+        });
+        if (nonRobotic.length > 0) {
+            return nonRobotic.find(v => v.lang.includes('US') || v.lang.includes('en-US')) || nonRobotic[0];
+        }
+
+        return enVoices[0];
+    };
+
     // Quản lý danh sách giọng đọc AI
     const populateVoices = () => {
-        if (!voiceSelect || !('speechSynthesis' in window)) return;
-        const voices = window.speechSynthesis.getVoices();
-        const enVoices = voices.filter(v => v.lang.startsWith('en'));
+        if (!('speechSynthesis' in window)) return;
+        const voices = window.speechSynthesis.getVoices() || [];
+        const enVoices = voices.filter(v => v.lang && (v.lang.startsWith('en') || v.lang.startsWith('EN')));
         if (enVoices.length === 0) return;
         
-        const currentSelection = state.selectedVoiceURI || voiceSelect.value;
-        
-        voiceSelect.innerHTML = '';
-        enVoices.forEach(v => {
-            const opt = document.createElement('option');
-            opt.value = v.voiceURI;
-            opt.textContent = `${v.name.replace('Microsoft ', '').replace('Online (Natural) - English (United States)', 'US').replace(' - English (United States)', ' US')} (${v.lang})`;
-            voiceSelect.appendChild(opt);
-        });
-
-        const usVoices = enVoices.filter(v => v.lang === 'en-US' || v.lang.replace('_', '-') === 'en-US' || v.lang.startsWith('en-US'));
-        const defaultVoice = voices.find(v => v.name.includes('Guy'))
-                          || usVoices.find(v => v.name.includes('Evan') || v.name.includes('Eric') || v.name.includes('Alex') || v.name.includes('Jenny') || v.name.includes('Aria') || v.name.includes('Ava'))
-                          || usVoices.find(v => v.name.includes('Natural') || v.name.includes('Online') || v.name.includes('Premium') || v.name.includes('Enhanced') || v.name.includes('Siri'))
-                          || usVoices.find(v => v.name.includes('Google US English') || v.name.includes('Samantha'))
-                          || usVoices[0] || enVoices[0];
-
-        if (currentSelection && voices.some(v => v.voiceURI === currentSelection)) {
-            voiceSelect.value = currentSelection;
-            state.selectedVoiceURI = currentSelection;
-        } else if (defaultVoice) {
-            voiceSelect.value = defaultVoice.voiceURI;
+        const defaultVoice = getBestNaturalVoice(voices);
+        if (defaultVoice && !state.selectedVoiceURI) {
             state.selectedVoiceURI = defaultVoice.voiceURI;
+        }
+
+        if (voiceSelect) {
+            const currentSelection = state.selectedVoiceURI || voiceSelect.value;
+            voiceSelect.innerHTML = '';
+            enVoices.forEach(v => {
+                const opt = document.createElement('option');
+                opt.value = v.voiceURI;
+                opt.textContent = `${v.name.replace('Microsoft ', '').replace('Online (Natural) - English (United States)', 'US').replace(' - English (United States)', ' US')} (${v.lang})`;
+                voiceSelect.appendChild(opt);
+            });
+
+            if (currentSelection && voices.some(v => v.voiceURI === currentSelection)) {
+                voiceSelect.value = currentSelection;
+            } else if (defaultVoice) {
+                voiceSelect.value = defaultVoice.voiceURI;
+            }
         }
     };
 
@@ -91,11 +131,12 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('touchstart', () => {
             if (window.speechSynthesis && (!window.speechSynthesis.getVoices() || window.speechSynthesis.getVoices().length === 0)) {
                 window.speechSynthesis.getVoices();
+                populateVoices();
             }
         }, { once: true });
     }
 
-    // Global AI Speech (Optimized for Android & iOS)
+    // Global AI Speech (Tối ưu giọng đọc tự nhiên cho cả Mobile & Desktop)
     window._activeUtterance = null;
     window.speakText = (txt) => {
         if (!state.isAudio) return;
@@ -113,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!cleanTxt) return;
 
             const utt = new SpeechSynthesisUtterance(cleanTxt);
-            window._activeUtterance = utt; // Prevent V8 garbage collection on Android
+            window._activeUtterance = utt; // Tránh thu hồi bộ nhớ ngầm trên Mobile
 
             const voices = window.speechSynthesis.getVoices() || [];
             let bestVoice = null;
@@ -123,25 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             if (!bestVoice && voices.length > 0) {
-                const enVoices = voices.filter(v => v.lang && (v.lang.toLowerCase().startsWith('en') || v.lang.toLowerCase().startsWith('us')));
-                const preferredNames = [
-                    "Google US English",
-                    "Google UK English Male",
-                    "Google US English Male",
-                    "Microsoft Guy",
-                    "Alex",
-                    "Daniel",
-                    "Samantha",
-                    "en-us-x",
-                    "en-gb-x"
-                ];
-                for (let name of preferredNames) {
-                    bestVoice = enVoices.find(v => v.name && v.name.toLowerCase().includes(name.toLowerCase()));
-                    if (bestVoice) break;
-                }
-                if (!bestVoice && enVoices.length > 0) {
-                    bestVoice = enVoices.find(v => v.lang.includes('US') || v.lang.includes('en-US')) || enVoices[0];
-                }
+                bestVoice = getBestNaturalVoice(voices);
             }
 
             if (bestVoice) {
@@ -150,8 +173,10 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 utt.lang = 'en-US';
             }
-            utt.rate = 1.0;
-            utt.pitch = 1.05;
+            // Giữ pitch = 1.0 để giọng ấm tự nhiên của con người, không bị biến âm robot/the thé
+            utt.pitch = 1.0;
+            // Tốc độ 0.95 đĩnh đạc, rõ ràng chuẩn bản ngữ
+            utt.rate = 0.95;
 
             utt.onend = () => {
                 window._activeUtterance = null;
