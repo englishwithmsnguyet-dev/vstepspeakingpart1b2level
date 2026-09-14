@@ -137,53 +137,73 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Studio Audio Manifest (Real Human Studio Recordings)
-    let studioAudioManifest = {};
-    fetch('audio/manifest.json')
-        .then(r => r.json())
-        .then(data => {
-            studioAudioManifest = data;
-        })
-        .catch(() => {});
+    let studioAudioManifest = window.studioAudioManifest || {};
+    if (!window.studioAudioManifest) {
+        fetch('audio/manifest.json')
+            .then(r => r.json())
+            .then(data => {
+                studioAudioManifest = data;
+                window.studioAudioManifest = data;
+            })
+            .catch(() => {});
+    }
 
-    // Browser Speech Synthesis Fallback
+    // Classic Computer Browser Speech (Original Pitch 1.25, Rate 1.0, Energetic & Smooth)
     window._activeUtterance = null;
-    const speakWithBrowserTTS = (cleanTxt) => {
+    const speakClassicTTS = (cleanTxt) => {
         if (!('speechSynthesis' in window)) return;
         try {
+            if (window._currentAudio) {
+                window._currentAudio.pause();
+                window._currentAudio.currentTime = 0;
+            }
             if (window.speechSynthesis.paused) {
                 window.speechSynthesis.resume();
             }
-            if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
-                window.speechSynthesis.cancel();
-            }
-
-            let conversationalTxt = cleanTxt
-                .replace(/^(Well|Actually|To be honest|Honestly|Personally|Sure|Definitely|Certainly|Not really|In my opinion|As for me|To tell the truth|In fact)([,.!?]|\s)/i, '$1, ')
-                .replace(/\b(because|so that|in order to|as a result|besides that|furthermore|moreover|on the other hand|while|whereas)\b/gi, ', $1')
-                .replace(/\s*,\s*,\s*/g, ', ')
-                .replace(/\s+/g, ' ')
-                .trim();
-
-            const utt = new SpeechSynthesisUtterance(conversationalTxt);
+            window.speechSynthesis.cancel();
+            
+            const utt = new SpeechSynthesisUtterance(cleanTxt);
             window._activeUtterance = utt;
-
             const voices = window.speechSynthesis.getVoices() || [];
+            
             let bestVoice = null;
             if (state.selectedVoiceURI) {
                 bestVoice = voices.find(v => v.voiceURI === state.selectedVoiceURI);
             }
-            if (!bestVoice && voices.length > 0) {
-                bestVoice = getBestNaturalVoice(voices);
+            if (!bestVoice) {
+                const preferredNames = [
+                    "Microsoft Guy",
+                    "Google UK English Male",
+                    "Google US English Male",
+                    "Alex",
+                    "Daniel",
+                    "Google US English",
+                    "Samantha"
+                ];
+                for (let name of preferredNames) {
+                    bestVoice = voices.find(v => v.name && v.name.includes(name));
+                    if (bestVoice) break;
+                }
+                if (!bestVoice) {
+                    bestVoice = voices.find(v => v.lang && (v.lang.startsWith("en-US") || v.lang.startsWith("en-GB")) && v.name && v.name.includes("Male"));
+                }
+                if (!bestVoice) {
+                    bestVoice = voices.find(v => v.lang && (v.lang.startsWith("en-US") || v.lang.startsWith("en-GB")));
+                }
+                if (!bestVoice) {
+                    bestVoice = voices[0];
+                }
             }
+            
             if (bestVoice) {
                 utt.voice = bestVoice;
                 utt.lang = bestVoice.lang;
             } else {
                 utt.lang = 'en-US';
             }
-            utt.pitch = 1.0;
-            utt.rate = 0.90;
-
+            utt.rate = 1.0; // Tốc độ chuẩn ban đầu
+            utt.pitch = 1.25; // Cao độ sáng, trẻ trung, năng động gốc trên máy tính
+            
             utt.onend = () => { window._activeUtterance = null; };
             utt.onerror = () => { window._activeUtterance = null; };
 
@@ -192,44 +212,86 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (window.speechSynthesis.paused) window.speechSynthesis.resume();
             }, 10);
         } catch (e) {
-            console.error("Error in browser TTS:", e);
+            console.error("Error in classic TTS:", e);
         }
     };
 
-    // Global AI Speech - Tự động ưu tiên Studio Audio người thật (MP3 chất lượng cao)
+    // Global AI Speech - Hỗ trợ cả 2 chế độ (Giọng Gốc Máy Tính & Giọng Phòng Thu Studio)
     window._currentAudio = null;
-    window.speakText = (txt) => {
+    window.speakText = (txt, forcedMode) => {
         if (!state.isAudio) return;
 
+        const mode = forcedMode || state.voiceMode;
         let cleanTxt = (txt || '').replace(/<[^>]*>/g, '').replace(/^→\s*/, '').replace(/[\r\n]+/g, ' ').trim();
         if (!cleanTxt) return;
 
-        // 1. Kiểm tra trong kho Studio MP3 (Ava/Guy Neural người thật phòng thu)
-        const audioPath = studioAudioManifest[cleanTxt] || studioAudioManifest[cleanTxt.toLowerCase()];
-        if (audioPath) {
-            try {
-                if (window._currentAudio) {
-                    window._currentAudio.pause();
-                    window._currentAudio.currentTime = 0;
+        if (mode === 'studio') {
+            const manifest = window.studioAudioManifest || studioAudioManifest || {};
+            const audioPath = manifest[cleanTxt] || manifest[cleanTxt.toLowerCase()];
+            if (audioPath) {
+                try {
+                    if (window._currentAudio) {
+                        window._currentAudio.pause();
+                        window._currentAudio.currentTime = 0;
+                    }
+                    if ('speechSynthesis' in window) {
+                        window.speechSynthesis.cancel();
+                    }
+                    const audio = new Audio(audioPath);
+                    window._currentAudio = audio;
+                    const playPromise = audio.play();
+                    if (playPromise !== undefined) {
+                        playPromise.catch(err => {
+                            console.warn("Studio audio play blocked, fallback to classic:", err);
+                            speakClassicTTS(cleanTxt);
+                        });
+                    }
+                    return;
+                } catch (e) {
+                    console.warn("Audio tag error:", e);
                 }
-                const audio = new Audio(audioPath);
-                window._currentAudio = audio;
-                const playPromise = audio.play();
-                if (playPromise !== undefined) {
-                    playPromise.catch(err => {
-                        console.warn("Studio audio play blocked, fallback to browser TTS:", err);
-                        speakWithBrowserTTS(cleanTxt);
-                    });
-                }
-                return;
-            } catch (e) {
-                console.warn("Audio tag error:", e);
             }
         }
 
-        // 2. Nếu chưa có file MP3, fallback sang trình duyệt
-        speakWithBrowserTTS(cleanTxt);
+        // Chế độ 'classic' (Mặc định) hoặc fallback
+        speakClassicTTS(cleanTxt);
     };
+
+    // Hàm Nghe Thử & Chọn Chế Độ Giọng
+    window.previewVoice = (mode) => {
+        const sampleSentence = "Sure. I often play sports in the afternoon whenever I have free time. It allows me to relax after a busy day and stay healthy.";
+        window.speakText(sampleSentence, mode);
+    };
+
+    window.setVoiceMode = (mode) => {
+        state.voiceMode = mode;
+        localStorage.setItem('vstep_voice_mode', mode);
+        updateVoiceUI();
+        window.previewVoice(mode);
+    };
+
+    const voiceModeToggle = document.getElementById('voice-mode-toggle');
+    const voiceModeLabel = document.getElementById('voice-mode-label');
+    const currentVoiceBadge = document.getElementById('current-voice-badge');
+
+    const updateVoiceUI = () => {
+        const mode = state.voiceMode;
+        if (voiceModeLabel) {
+            voiceModeLabel.textContent = mode === 'studio' ? 'Giọng Studio' : 'Giọng Gốc';
+        }
+        if (currentVoiceBadge) {
+            currentVoiceBadge.textContent = mode === 'studio' ? 'Đang dùng: Giọng Phòng Thu Studio' : 'Đang dùng: Giọng Gốc Máy Tính';
+            currentVoiceBadge.style.background = mode === 'studio' ? '#8b5cf6' : '#4361ee';
+        }
+    };
+
+    if (voiceModeToggle) {
+        voiceModeToggle.addEventListener('click', () => {
+            const nextMode = state.voiceMode === 'studio' ? 'classic' : 'studio';
+            window.setVoiceMode(nextMode);
+        });
+    }
+    updateVoiceUI();
 
     // 1. WELCOME MODAL & STUDENT AUTHENTICATION
     const validStudentsB212 = [
