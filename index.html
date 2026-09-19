@@ -1996,6 +1996,7 @@
                             <button class="sub-tab-btn" onclick="switchSubTab('transport', this)" style="padding: 0.6rem 1.4rem; border-radius: 50px; border: 1.5px solid var(--primary); background: transparent; color: var(--primary); cursor: pointer; white-space: nowrap; font-weight: 700; font-size: 0.95rem; transition: all 0.25s ease;">TRANSPORTATION</button>
                             <button class="sub-tab-btn" onclick="switchSubTab('internet', this)" style="padding: 0.6rem 1.4rem; border-radius: 50px; border: 1.5px solid var(--primary); background: transparent; color: var(--primary); cursor: pointer; white-space: nowrap; font-weight: 700; font-size: 0.95rem; transition: all 0.25s ease;">INTERNET</button>
                             <button class="sub-tab-btn" onclick="switchSubTab('socialmedia', this)" style="padding: 0.6rem 1.4rem; border-radius: 50px; border: 1.5px solid var(--primary); background: transparent; color: var(--primary); cursor: pointer; white-space: nowrap; font-weight: 700; font-size: 0.95rem; transition: all 0.25s ease;">SOCIAL MEDIA</button>
+                            <button class="sub-tab-btn" onclick="switchSubTab('environment', this)" style="padding: 0.6rem 1.4rem; border-radius: 50px; border: 1.5px solid var(--primary); background: transparent; color: var(--primary); cursor: pointer; white-space: nowrap; font-weight: 700; font-size: 0.95rem; transition: all 0.25s ease;">ENVIRONMENT</button>
                             <!-- Thêm các chủ đề khác ở đây -->
 </div>
 <!-- Sub-tab content cho Books & Reading -->
@@ -10961,12 +10962,716 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Sub-tab content cho Environment -->
+                        <div id="subtab-environment" class="subtab-pane fade-in" style="display: none;">
+                            
+                            <!-- TYPES OF POLLUTION -->
+                            <div class="benefits-grid" id="env-pollution-types">
+                                <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #6366f1; border-bottom: 2px solid #6366f1; padding-bottom: 0.5rem; display: inline-block;">🌫️ TYPES OF POLLUTION</h3>
+                                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #6366f1; font-weight: 800;">air pollution</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/eə pəˌluː.ʃən/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">ô nhiễm không khí</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('air pollution')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #6366f1; font-weight: 800;">water pollution</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈwɔː.tər pəˌluː.ʃən/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">ô nhiễm nguồn nước</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('water pollution')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #6366f1; font-weight: 800;">soil pollution</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/sɔɪl pəˌluː.ʃən/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">ô nhiễm đất</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('soil pollution')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #6366f1; font-weight: 800;">noise pollution</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/nɔɪz pəˌluː.ʃən/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">ô nhiễm tiếng ồn</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('noise pollution')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #6366f1; font-weight: 800;">light pollution</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/laɪt pəˌluː.ʃən/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">ô nhiễm ánh sáng</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('light pollution')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #6366f1; font-weight: 800;">plastic pollution</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈplæs.tɪk pəˌluː.ʃən/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">ô nhiễm rác thải nhựa</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('plastic pollution')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #6366f1; font-weight: 800;">thermal pollution</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈθɜː.məl pəˌluː.ʃən/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">ô nhiễm nhiệt</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('thermal pollution')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #6366f1; font-weight: 800;">radioactive pollution</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˌreɪ.di.əʊˈæk.tɪv pəˌluː.ʃən/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">ô nhiễm phóng xạ</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('radioactive pollution')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+                                </div>
+                            </div>
+
+                            <!-- ENVIRONMENTAL PROBLEMS -->
+                            <div class="benefits-grid" id="env-problems">
+                                <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #ef4444; border-bottom: 2px solid #ef4444; padding-bottom: 0.5rem; display: inline-block;">⚠️ ENVIRONMENTAL PROBLEMS</h3>
+                                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ef4444; font-weight: 800;">climate change</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈklaɪ.mət tʃeɪndʒ/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">biến đổi khí hậu</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('climate change')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ef4444; font-weight: 800;">global warming</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˌɡləʊ.bəl ˈwɔː.mɪŋ/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">sự nóng lên toàn cầu</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('global warming')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ef4444; font-weight: 800;">deforestation</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/diːˌfɒr.ɪˈsteɪ.ʃən/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">nạn phá rừng, tàn phá rừng</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('deforestation')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ef4444; font-weight: 800;">loss of biodiversity</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/lɒs əv ˌbaɪ.əʊ.daɪˈvɜː.sə.ti/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">sự suy giảm đa dạng sinh học</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('loss of biodiversity')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ef4444; font-weight: 800;">rising sea levels</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈraɪ.zɪŋ siː ˌlev.əlz/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">mực nước biển dâng cao</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('rising sea levels')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ef4444; font-weight: 800;">overfishing</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˌəʊ.vəˈfɪʃ.ɪŋ/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">đánh bắt thủy hải sản quá mức</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('overfishing')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ef4444; font-weight: 800;">melting ice caps</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈmel.tɪŋ aɪs ˌkæps/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">các chỏm băng tan chảy ở hai cực</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('melting ice caps')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ef4444; font-weight: 800;">habitat destruction</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈhæb.ɪ.tæt dɪˌstrʌk.ʃən/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">sự phá hủy môi trường sống tự nhiên</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('habitat destruction')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+                                </div>
+                            </div>
+
+                            <!-- CAUSES OF ENVIRONMENTAL ISSUES -->
+                            <div class="benefits-grid" id="env-causes">
+                                <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #f59e0b; border-bottom: 2px solid #f59e0b; padding-bottom: 0.5rem; display: inline-block;">🏭 CAUSES OF ENVIRONMENTAL ISSUES</h3>
+                                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #f59e0b; font-weight: 800;">burn fossil fuels</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">đốt cháy nhiên liệu hóa thạch (than đá, dầu mỏ...)</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('burn fossil fuels')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #f59e0b; font-weight: 800;">burn trash</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">đốt rác thải bừa bãi</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('burn trash')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #f59e0b; font-weight: 800;">cut down trees</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">chặt phá cây cối, đốn rừng</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('cut down trees')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #f59e0b; font-weight: 800;">litter in public places</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">xả rác bừa bãi ở nơi công cộng</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('litter in public places')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #f59e0b; font-weight: 800;">use plastic bags</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">sử dụng túi nilon khó phân hủy</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('use plastic bags')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #f59e0b; font-weight: 800;">waste natural resources</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">lãng phí tài nguyên thiên nhiên</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('waste natural resources')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #f59e0b; font-weight: 800;">emit harmful gases</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">thải các loại khí độc hại vào bầu không khí</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('emit harmful gases')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #f59e0b; font-weight: 800;">use chemical fertilizers</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">lạm dụng phân bón hóa học</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('use chemical fertilizers')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #f59e0b; font-weight: 800;">use private means of transport</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">sử dụng phương tiện cá nhân (gây nhiều khói bụi)</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('use private means of transport')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #f59e0b; font-weight: 800;">dump industrial waste into rivers</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">xả chất thải công nghiệp trực tiếp ra sông ngòi</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('dump industrial waste into rivers')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #f59e0b; font-weight: 800;">overuse electricity and water</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">sử dụng lãng phí điện và nước sinh hoạt</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('overuse electricity and water')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #f59e0b; font-weight: 800;">build factories near residential areas</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">xây dựng nhà máy gần khu dân cư sinh sống</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('build factories near residential areas')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #f59e0b; font-weight: 800;">throw trash in the wrong places</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">vứt rác không đúng nơi quy định</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('throw trash in the wrong places')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #f59e0b; font-weight: 800;">overconsume single-use products</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">tiêu dùng quá mức các sản phẩm dùng một lần</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('overconsume single-use products')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #f59e0b; font-weight: 800;">exploit natural resources excessively</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">khai thác tài nguyên thiên nhiên quá mức</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('exploit natural resources excessively')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #f59e0b; font-weight: 800;">use chemical fertilizers and pesticides in agriculture</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">lạm dụng phân bón hóa học và thuốc trừ sâu trong nông nghiệp</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('use chemical fertilizers and pesticides in agriculture')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+                                </div>
+                            </div>
+
+                            <!-- SOLUTIONS & ECO-FRIENDLY HABITS -->
+                            <div class="benefits-grid" id="env-solutions">
+                                <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #10b981; border-bottom: 2px solid #10b981; padding-bottom: 0.5rem; display: inline-block;">🌱 SOLUTIONS & ECO-FRIENDLY HABITS</h3>
+                                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">recycle waste</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">tái chế rác thải</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('recycle waste')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">use reusable bags</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">sử dụng túi tái sử dụng (túi vải...)</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('use reusable bags')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">save energy</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">tiết kiệm năng lượng (điện, gas...)</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('save energy')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">go green</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">theo đuổi lối sống xanh, thân thiện môi trường</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('go green')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">protect wildlife</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">bảo vệ động vật hoang dã</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('protect wildlife')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">plant more trees</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">trồng thêm nhiều cây xanh</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('plant more trees')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">reduce carbon footprint</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">cắt giảm lượng khí thải carbon / dấu chân carbon</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('reduce carbon footprint')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">walk or cycle to school</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">đi bộ hoặc đạp xe đến trường</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('walk or cycle to school')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">turn off lights when not in use</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">tắt đèn và thiết bị điện khi không sử dụng</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('turn off lights when not in use')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">reuse old bottles</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">tái sử dụng chai lọ cũ</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('reuse old bottles')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">avoid single-use plastics</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">tránh sử dụng đồ nhựa dùng một lần</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('avoid single-use plastics')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">support eco-friendly products</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">ủng hộ và sử dụng các sản phẩm thân thiện với môi trường</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('support eco-friendly products')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">bring your own water bottle</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">tự mang theo bình nước cá nhân</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('bring your own water bottle')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">raise environmental awareness</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">nâng cao nhận thức bảo vệ môi trường cho cộng đồng</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('raise environmental awareness')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">take part in clean-up campaigns</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">tham gia vào các chiến dịch dọn dẹp, làm sạch môi trường</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('take part in clean-up campaigns')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">limit the use of paper</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">hạn chế sử dụng giấy để bảo vệ cây rừng</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('limit the use of paper')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">use public means of transport</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">sử dụng phương tiện giao thông công cộng (xe buýt, tàu điện)</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('use public means of transport')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">use green energy</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">sử dụng năng lượng xanh, năng lượng tái tạo (mặt trời, gió...)</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('use green energy')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+                                </div>
+                            </div>
+
+                            <!-- GÓC ÔN TẬP CHO SUBTAB ENVIRONMENT -->
+                            <div class="game-review-area" style="margin-top: 3.5rem; border-top: 2px dashed var(--border); padding-top: 2.5rem;">
+                                <div class="f-title" style="text-align: center; margin-bottom: 1.5rem; color: var(--primary);">
+                                    <i class="fa-solid fa-gamepad"></i> Góc Ôn Tập Từ Vựng
+                                </div>
+                                
+                                <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 2rem; flex-wrap: wrap;">
+                                    <button class="btn" onclick="startReviewGame('flashcards', 'subtab-environment')" style="background: linear-gradient(135deg, #10b981, #059669); color: white; border:none; box-shadow: 0 4px 10px rgba(16,185,129,0.3);"><i class="fa-solid fa-layer-group"></i> Lật Thẻ</button>
+                                    <button class="btn" onclick="startReviewGame('matching', 'subtab-environment')" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9); color: white; border:none; box-shadow: 0 4px 10px rgba(139,92,246,0.3);"><i class="fa-solid fa-link"></i> Nối Từ</button>
+                                    <button class="btn" onclick="startReviewGame('quiz', 'subtab-environment')" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white; border:none; box-shadow: 0 4px 10px rgba(245,158,11,0.3);"><i class="fa-solid fa-list-check"></i> Trắc Nghiệm</button>
+                                    <button class="btn" onclick="startReviewGame('spelling', 'subtab-environment')" style="background: linear-gradient(135deg, #ec4899, #be185d); color: white; border:none; box-shadow: 0 4px 10px rgba(236,72,153,0.3);"><i class="fa-solid fa-keyboard"></i> Gõ Từ</button>
+                                </div>
+
+                                <div class="game-stage" style="background: var(--bg-card); border: 2px solid var(--border); border-radius: 20px; padding: 2rem; min-height: 400px; position: relative; overflow: hidden; box-shadow: inset 0 2px 10px rgba(0,0,0,0.02);">
+                                    <div class="game-placeholder" style="color: var(--text-muted); font-size: 1.1rem; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%;">
+                                        <i class="fa-solid fa-ghost" style="font-size: 3.5rem; margin-bottom: 1rem; color: var(--border);"></i><br>
+                                        Hãy chọn một trò chơi để bắt đầu ôn tập
+                                    </div>
+                                    <div class="game-content" style="display: none; height: 100%; width: 100%;"></div>
+                                </div>
+                            </div>
+                        </div>
 </div>
 </section>
 </div>
 </main>
 </div>
 <script src="audio/manifest.js"></script>
-<script src="script.js?v=20260919_08"></script>
+<script src="script.js?v=20260919_09"></script>
 </body>
 </html>
