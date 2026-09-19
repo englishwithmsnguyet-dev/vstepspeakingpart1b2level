@@ -1997,6 +1997,7 @@
                             <button class="sub-tab-btn" onclick="switchSubTab('internet', this)" style="padding: 0.6rem 1.4rem; border-radius: 50px; border: 1.5px solid var(--primary); background: transparent; color: var(--primary); cursor: pointer; white-space: nowrap; font-weight: 700; font-size: 0.95rem; transition: all 0.25s ease;">INTERNET</button>
                             <button class="sub-tab-btn" onclick="switchSubTab('socialmedia', this)" style="padding: 0.6rem 1.4rem; border-radius: 50px; border: 1.5px solid var(--primary); background: transparent; color: var(--primary); cursor: pointer; white-space: nowrap; font-weight: 700; font-size: 0.95rem; transition: all 0.25s ease;">SOCIAL MEDIA</button>
                             <button class="sub-tab-btn" onclick="switchSubTab('environment', this)" style="padding: 0.6rem 1.4rem; border-radius: 50px; border: 1.5px solid var(--primary); background: transparent; color: var(--primary); cursor: pointer; white-space: nowrap; font-weight: 700; font-size: 0.95rem; transition: all 0.25s ease;">ENVIRONMENT</button>
+                            <button class="sub-tab-btn" onclick="switchSubTab('festivals', this)" style="padding: 0.6rem 1.4rem; border-radius: 50px; border: 1.5px solid var(--primary); background: transparent; color: var(--primary); cursor: pointer; white-space: nowrap; font-weight: 700; font-size: 0.95rem; transition: all 0.25s ease;">FESTIVALS</button>
                             <!-- Thêm các chủ đề khác ở đây -->
 </div>
 <!-- Sub-tab content cho Books & Reading -->
@@ -11666,12 +11667,795 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Sub-tab content cho Festivals -->
+                        <div id="subtab-festivals" class="subtab-pane fade-in" style="display: none;">
+                            
+                            <!-- TYPES OF FESTIVALS -->
+                            <div class="benefits-grid" id="festivals-types">
+                                <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #8b5cf6; border-bottom: 2px solid #8b5cf6; padding-bottom: 0.5rem; display: inline-block;">🎋 TYPES OF FESTIVALS</h3>
+                                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #8b5cf6; font-weight: 800;">traditional festival</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/trəˈdɪʃ.ən.əl ˈfes.tɪ.vəl/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">lễ hội truyền thống</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('traditional festival')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #8b5cf6; font-weight: 800;">religious festival</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/rɪˈlɪdʒ.əs ˈfes.tɪ.vəl/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">lễ hội tôn giáo</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('religious festival')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #8b5cf6; font-weight: 800;">cultural festival</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈkʌl.tʃər.əl ˈfes.tɪ.vəl/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">lễ hội văn hóa</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('cultural festival')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #8b5cf6; font-weight: 800;">harvest festival</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈhɑː.vɪst ˈfes.tɪ.vəl/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">lễ hội mùa màng, lễ mừng thu hoạch</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('harvest festival')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #8b5cf6; font-weight: 800;">music festival</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈmjuː.zɪk ˈfes.tɪ.vəl/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">lễ hội âm nhạc</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('music festival')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #8b5cf6; font-weight: 800;">spring festival</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/sprɪŋ ˈfes.tɪ.vəl/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">lễ hội mùa xuân</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('spring festival')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #8b5cf6; font-weight: 800;">lantern festival</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈlæn.tən ˈfes.tɪ.vəl/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">lễ hội đèn lồng</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('lantern festival')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #8b5cf6; font-weight: 800;">fireworks festival</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈfaɪə.wɜːks ˈfes.tɪ.vəl/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">lễ hội pháo hoa</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('fireworks festival')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAMOUS FESTIVALS IN VIETNAM -->
+                            <div class="benefits-grid" id="festivals-vietnam">
+                                <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #ef4444; border-bottom: 2px solid #ef4444; padding-bottom: 0.5rem; display: inline-block;">🇻🇳 FAMOUS FESTIVALS IN VIETNAM</h3>
+                                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ef4444; font-weight: 800;">Lunar New Year Festival</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈluː.nər njuː jɪər ˈfes.tɪ.vəl/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">Tết Nguyên Đán</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('Lunar New Year Festival')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ef4444; font-weight: 800;">Mid-Autumn Festival</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/mɪd ˈɔː.təm ˈfes.tɪ.vəl/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">Tết Trung Thu</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('Mid-Autumn Festival')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ef4444; font-weight: 800;">Hung Kings' Temple Festival</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/hʊŋ kɪŋz ˈtem.pəl ˈfes.tɪ.vəl/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">Giỗ Tổ Hùng Vương</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('Hung Kings\' Temple Festival')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ef4444; font-weight: 800;">Hue Festival</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/hweɪ ˈfes.tɪ.vəl/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">Festival Huế</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('Hue Festival')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ef4444; font-weight: 800;">Lim Festival</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/lɪm ˈfes.tɪ.vəl/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">Hội Lim (quan họ Bắc Ninh)</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('Lim Festival')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ef4444; font-weight: 800;">Huong Pagoda Festival</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/hʊəŋ pəˈɡəʊ.də ˈfes.tɪ.vəl/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">Lễ hội Chùa Hương</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('Huong Pagoda Festival')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ef4444; font-weight: 800;">Elephant Race Festival</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈel.ɪ.fənt reɪs ˈfes.tɪ.vəl/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">Hội đua voi (Tây Nguyên)</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('Elephant Race Festival')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ef4444; font-weight: 800;">Hoi An Lantern Festival</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/hɔɪ ɑːn ˈlæn.tən ˈfes.tɪ.vəl/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">Lễ hội hoa đăng / đèn lồng Hội An</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('Hoi An Lantern Festival')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ef4444; font-weight: 800;">Whale Festival</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/weɪl ˈfes.tɪ.vəl/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">Lễ hội Cầu Ngư (Lễ hội Nghinh Ông)</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('Whale Festival')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ef4444; font-weight: 800;">Do Son Buffalo Fighting Festival</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/dɔː sɒn ˈbʌf.ə.ləʊ ˈfaɪ.tɪŋ ˈfes.tɪ.vəl/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">Lễ hội chọi trâu Đồ Sơn</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('Do Son Buffalo Fighting Festival')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAMOUS FESTIVALS AROUND THE WORLD -->
+                            <div class="benefits-grid" id="festivals-world">
+                                <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #3b82f6; border-bottom: 2px solid #3b82f6; padding-bottom: 0.5rem; display: inline-block;">🌍 FAMOUS FESTIVALS AROUND THE WORLD</h3>
+                                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #3b82f6; font-weight: 800;">Christmas (worldwide)</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈkrɪs.məs/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">Lễ Giáng sinh (toàn thế giới)</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('Christmas')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #3b82f6; font-weight: 800;">Halloween (Western countries)</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˌhæl.əʊˈiːn/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">Lễ hội hóa trang Halloween (phương Tây)</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('Halloween')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #3b82f6; font-weight: 800;">Diwali (India)</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/dɪˈwɑː.li/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">Lễ hội ánh sáng Diwali (Ấn Độ)</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('Diwali')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #3b82f6; font-weight: 800;">Songkran Festival (Thailand)</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈsɒŋ.krɑːn ˈfes.tɪ.vəl/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">Lễ hội té nước Songkran (Thái Lan)</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('Songkran Festival')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #3b82f6; font-weight: 800;">Carnival (Brazil)</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈkɑː.nɪ.vəl/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">Lễ hội hóa trang Carnival (Brazil)</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('Carnival')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #3b82f6; font-weight: 800;">Oktoberfest (Germany)</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ɒkˈtəʊ.bə.fest/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">Lễ hội bia Oktoberfest (Đức)</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('Oktoberfest')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #3b82f6; font-weight: 800;">La Tomatina (Spain)</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/lɑː təməˈtiːnə/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">Lễ hội ném cà chua La Tomatina (Tây Ban Nha)</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('La Tomatina')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #3b82f6; font-weight: 800;">Chinese New Year (China)</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˌtʃaɪˈniːz njuː jɪər/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">Tết Nguyên Đán Trung Quốc</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('Chinese New Year')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #3b82f6; font-weight: 800;">Holi (India)</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈhəʊ.li/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">Lễ hội sắc màu Holi (Ấn Độ)</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('Holi')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #3b82f6; font-weight: 800;">Thanksgiving (USA & Canada)</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˌθæŋksˈɡɪv.ɪŋ/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">Lễ Tạ ơn (Mỹ & Canada)</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('Thanksgiving')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+                                </div>
+                            </div>
+
+                            <!-- FESTIVAL PREPARATIONS -->
+                            <div class="benefits-grid" id="festivals-preparations">
+                                <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #f59e0b; border-bottom: 2px solid #f59e0b; padding-bottom: 0.5rem; display: inline-block;">🧹 FESTIVAL PREPARATIONS</h3>
+                                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #f59e0b; font-weight: 800;">clean the house</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">dọn dẹp và trang hoàng nhà cửa trước lễ hội</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('clean the house')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #f59e0b; font-weight: 800;">buy decorations</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">mua sắm các vật dụng trang trí lễ hội</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('buy decorations')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #f59e0b; font-weight: 800;">prepare traditional food</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">chuẩn bị và nấu các món ăn truyền thống</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('prepare traditional food')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #f59e0b; font-weight: 800;">make sticky rice cakes</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">gói bánh chưng, bánh tét</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('make sticky rice cakes')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #f59e0b; font-weight: 800;">go shopping for gifts</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">đi mua sắm quà tặng cho người thân, bạn bè</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('go shopping for gifts')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #f59e0b; font-weight: 800;">put up lanterns</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">treo đèn lồng rực rỡ trước hiên nhà</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('put up lanterns')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #f59e0b; font-weight: 800;">decorate the altar</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">lau dọn và bày biện mâm ngũ quả trên bàn thờ gia tiên</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('decorate the altar')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #f59e0b; font-weight: 800;">buy new clothes</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">sắm sửa quần áo mới diện lễ hội</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('buy new clothes')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+                                </div>
+                            </div>
+
+                            <!-- FESTIVAL ACTIVITIES -->
+                            <div class="benefits-grid" id="festivals-activities">
+                                <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #ec4899; border-bottom: 2px solid #ec4899; padding-bottom: 0.5rem; display: inline-block;">🎆 FESTIVAL ACTIVITIES</h3>
+                                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ec4899; font-weight: 800;">visit relatives and friends</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">đi chúc tết, thăm hỏi họ hàng và bạn bè</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('visit relatives and friends')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ec4899; font-weight: 800;">watch fireworks</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">chiêm ngưỡng các màn bắn pháo hoa rực rỡ</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('watch fireworks')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ec4899; font-weight: 800;">join a parade</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">hòa mình vào dòng người diễu hành trên phố</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('join a parade')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ec4899; font-weight: 800;">play traditional games</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">tham gia các trò chơi dân gian (kéo co, đập niêu...)</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('play traditional games')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ec4899; font-weight: 800;">give or receive lucky money</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">mừng tuổi hoặc nhận bao lì xì may mắn</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('give or receive lucky money')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ec4899; font-weight: 800;">wear traditional costumes</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">mặc trang phục truyền thống (áo dài...)</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('wear traditional costumes')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ec4899; font-weight: 800;">light lanterns or candles</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">thả hoa đăng trên sông hoặc thắp nến cầu bình an</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('light lanterns or candles')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ec4899; font-weight: 800;">attend religious ceremonies</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">tham dự các nghi lễ tôn giáo, đi chùa / nhà thờ cầu may</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('attend religious ceremonies')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ec4899; font-weight: 800;">dance and sing</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">hát ca và nhảy múa trong không khí tưng bừng</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('dance and sing')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+                                </div>
+                            </div>
+
+                            <!-- REASONS TO ENJOY FESTIVALS -->
+                            <div class="benefits-grid" id="festivals-reasons">
+                                <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #10b981; border-bottom: 2px solid #10b981; padding-bottom: 0.5rem; display: inline-block;">❤️ REASONS TO ENJOY FESTIVALS</h3>
+                                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">learn about culture and traditions</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">khám phá và hiểu sâu hơn về văn hóa, truyền thống cội nguồn</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('learn about culture and traditions')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">enjoy time with family and friends</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">tận hưởng thời gian sum họp ấm áp bên người thân và bạn bè</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('enjoy time with family and friends')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">have fun and relax</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">vui chơi giải trí, xả hơi sau những ngày bận rộn</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('have fun and relax')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">taste delicious food</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">thưởng thức nhiều món ăn ngon và đặc sản truyền thống</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('taste delicious food')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">take part in exciting events</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">tham gia vào nhiều hoạt động, sự kiện náo nhiệt</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('take part in exciting events')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">feel the festive atmosphere</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">cảm nhận trọn vẹn bầu không khí lễ hội rộn ràng, hân hoan</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('feel the festive atmosphere')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">wear beautiful traditional clothes</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">diện những bộ trang phục truyền thống duyên dáng</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('wear beautiful traditional clothes')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">take nice photos and videos</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">chụp những bức ảnh kỷ niệm và quay video lung linh</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('take nice photos and videos')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">forget daily stress for a while</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">tạm gác lại những âu lo, áp lực công việc và học tập</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('forget daily stress for a while')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">make good memories</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">lưu giữ những kỷ niệm đẹp và ý nghĩa trong đời</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('make good memories')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+                                </div>
+                            </div>
+
+                            <!-- GÓC ÔN TẬP CHO SUBTAB FESTIVALS -->
+                            <div class="game-review-area" style="margin-top: 3.5rem; border-top: 2px dashed var(--border); padding-top: 2.5rem;">
+                                <div class="f-title" style="text-align: center; margin-bottom: 1.5rem; color: var(--primary);">
+                                    <i class="fa-solid fa-gamepad"></i> Góc Ôn Tập Từ Vựng
+                                </div>
+                                
+                                <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 2rem; flex-wrap: wrap;">
+                                    <button class="btn" onclick="startReviewGame('flashcards', 'subtab-festivals')" style="background: linear-gradient(135deg, #10b981, #059669); color: white; border:none; box-shadow: 0 4px 10px rgba(16,185,129,0.3);"><i class="fa-solid fa-layer-group"></i> Lật Thẻ</button>
+                                    <button class="btn" onclick="startReviewGame('matching', 'subtab-festivals')" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9); color: white; border:none; box-shadow: 0 4px 10px rgba(139,92,246,0.3);"><i class="fa-solid fa-link"></i> Nối Từ</button>
+                                    <button class="btn" onclick="startReviewGame('quiz', 'subtab-festivals')" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white; border:none; box-shadow: 0 4px 10px rgba(245,158,11,0.3);"><i class="fa-solid fa-list-check"></i> Trắc Nghiệm</button>
+                                    <button class="btn" onclick="startReviewGame('spelling', 'subtab-festivals')" style="background: linear-gradient(135deg, #ec4899, #be185d); color: white; border:none; box-shadow: 0 4px 10px rgba(236,72,153,0.3);"><i class="fa-solid fa-keyboard"></i> Gõ Từ</button>
+                                </div>
+
+                                <div class="game-stage" style="background: var(--bg-card); border: 2px solid var(--border); border-radius: 20px; padding: 2rem; min-height: 400px; position: relative; overflow: hidden; box-shadow: inset 0 2px 10px rgba(0,0,0,0.02);">
+                                    <div class="game-placeholder" style="color: var(--text-muted); font-size: 1.1rem; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%;">
+                                        <i class="fa-solid fa-ghost" style="font-size: 3.5rem; margin-bottom: 1rem; color: var(--border);"></i><br>
+                                        Hãy chọn một trò chơi để bắt đầu ôn tập
+                                    </div>
+                                    <div class="game-content" style="display: none; height: 100%; width: 100%;"></div>
+                                </div>
+                            </div>
+                        </div>
 </div>
 </section>
 </div>
 </main>
 </div>
 <script src="audio/manifest.js"></script>
-<script src="script.js?v=20260919_09"></script>
+<script src="script.js?v=20260919_10"></script>
 </body>
 </html>
