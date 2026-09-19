@@ -3119,11 +3119,12 @@ const whShowcase = document.getElementById('wh-showcase');
         const cards = document.querySelectorAll('#' + tabId + ' .icon-btn');
         cards.forEach(btn => {
             const container = btn.parentElement;
-            const enEl = container.querySelector('strong');
-            if (enEl && enEl.nextElementSibling) {
+            const enEl = container.querySelector('.vocab-en') || container.querySelector('strong');
+            const vnEl = container.querySelector('.vocab-vn') || (enEl ? enEl.nextElementSibling : null);
+            if (enEl && vnEl) {
                 currentWords.push({
                     en: enEl.textContent.trim(),
-                    vn: enEl.nextElementSibling.textContent.trim()
+                    vn: vnEl.textContent.trim()
                 });
             }
         });
