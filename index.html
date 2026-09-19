@@ -2002,6 +2002,8 @@
                             <button class="sub-tab-btn" onclick="switchSubTab('weather', this)" style="padding: 0.6rem 1.4rem; border-radius: 50px; border: 1.5px solid var(--primary); background: transparent; color: var(--primary); cursor: pointer; white-space: nowrap; font-weight: 700; font-size: 0.95rem; transition: all 0.25s ease;">WEATHER</button>
                             <button class="sub-tab-btn" onclick="switchSubTab('season', this)" style="padding: 0.6rem 1.4rem; border-radius: 50px; border: 1.5px solid var(--primary); background: transparent; color: var(--primary); cursor: pointer; white-space: nowrap; font-weight: 700; font-size: 0.95rem; transition: all 0.25s ease;">SEASONS</button>
                             <button class="sub-tab-btn" onclick="switchSubTab('jobs', this)" style="padding: 0.6rem 1.4rem; border-radius: 50px; border: 1.5px solid var(--primary); background: transparent; color: var(--primary); cursor: pointer; white-space: nowrap; font-weight: 700; font-size: 0.95rem; transition: all 0.25s ease;">JOBS & CAREER</button>
+                            <button class="sub-tab-btn" onclick="switchSubTab('housing', this)" style="padding: 0.6rem 1.4rem; border-radius: 50px; border: 1.5px solid var(--primary); background: transparent; color: var(--primary); cursor: pointer; white-space: nowrap; font-weight: 700; font-size: 0.95rem; transition: all 0.25s ease;">HOUSING</button>
+                            <button class="sub-tab-btn" onclick="switchSubTab('family', this)" style="padding: 0.6rem 1.4rem; border-radius: 50px; border: 1.5px solid var(--primary); background: transparent; color: var(--primary); cursor: pointer; white-space: nowrap; font-weight: 700; font-size: 0.95rem; transition: all 0.25s ease;">FAMILY</button>
                             <!-- Thêm các chủ đề khác ở đây -->
 </div>
 <!-- Sub-tab content cho Books & Reading -->
@@ -15994,12 +15996,1160 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Sub-tab content cho Housing & Accommodation -->
+                        <div id="subtab-housing" class="subtab-pane fade-in" style="display: none;">
+                            
+                            <!-- TYPES OF HOUSING -->
+                            <div class="benefits-grid" id="housing-types">
+                                <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #3b82f6; border-bottom: 2px solid #3b82f6; padding-bottom: 0.5rem; display: inline-block;">🏠 TYPES OF HOUSING</h3>
+                                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #3b82f6; font-weight: 800;">apartment</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/əˈpɑːt.mənt/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">căn hộ chung cư</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('apartment')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #3b82f6; font-weight: 800;">house</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/haʊs/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">nhà riêng, nhà mặt đất</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('house')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #3b82f6; font-weight: 800;">studio</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈstjuː.di.əʊ/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">căn hộ studio (khép kín nhỏ gọn)</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('studio')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #3b82f6; font-weight: 800;">dormitory</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈdɔː.mɪ.tər.i/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">ký túc xá sinh viên</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('dormitory')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #3b82f6; font-weight: 800;">villa</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈvɪl.ə/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">biệt thự sang trọng</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('villa')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #3b82f6; font-weight: 800;">townhouse</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈtaʊn.haʊs/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">nhà phố liền kề</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('townhouse')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #3b82f6; font-weight: 800;">bungalow</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈbʌŋ.ɡəl.əʊ/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">nhà gỗ một tầng phong cách mộc</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('bungalow')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #3b82f6; font-weight: 800;">mobile home</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈməʊ.baɪl həʊm/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">nhà di động (dạng xe nhà lưu động)</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('mobile home')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+                                </div>
+                            </div>
+
+                            <!-- ROOMS & PARTS OF A HOUSE -->
+                            <div class="benefits-grid" id="housing-rooms">
+                                <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #8b5cf6; border-bottom: 2px solid #8b5cf6; padding-bottom: 0.5rem; display: inline-block;">🚪 ROOMS & PARTS OF A HOUSE</h3>
+                                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #8b5cf6; font-weight: 800;">living room</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈlɪv.ɪŋ ruːm/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">phòng khách</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('living room')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #8b5cf6; font-weight: 800;">bedroom</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈbed.ruːm/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">phòng ngủ</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('bedroom')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #8b5cf6; font-weight: 800;">kitchen</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈkɪtʃ.ən/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">phòng bếp</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('kitchen')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #8b5cf6; font-weight: 800;">bathroom</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈbɑːθ.ruːm/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">phòng tắm, nhà vệ sinh</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('bathroom')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #8b5cf6; font-weight: 800;">balcony</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈbæl.kə.ni/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">ban công</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('balcony')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #8b5cf6; font-weight: 800;">garage</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈɡær.ɑːʒ/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">nhà để xe, ga-ra</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('garage')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #8b5cf6; font-weight: 800;">garden</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈɡɑː.dən/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">sân vườn, khu vườn</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('garden')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #8b5cf6; font-weight: 800;">rooftop</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈruːf.tɒp/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">sân thượng, mái bằng trên nóc nhà</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('rooftop')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+                                </div>
+                            </div>
+
+                            <!-- HOUSE FEATURES -->
+                            <div class="benefits-grid" id="housing-features">
+                                <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #10b981; border-bottom: 2px solid #10b981; padding-bottom: 0.5rem; display: inline-block;">✨ HOUSE FEATURES</h3>
+                                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">spacious</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈspeɪ.ʃəs/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(adj)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">rộng rãi, thoáng mát</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('spacious')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">modern</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈmɒd.ən/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(adj)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">hiện đại, đời mới</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('modern')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">fully furnished</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˌfʊl.i ˈfɜː.nɪʃt/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(adj)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">được trang bị đầy đủ đồ đạc nội thất</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('fully furnished')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">well-equipped</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˌwel ɪˈkwɪpt/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(adj)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">trang bị đầy đủ tiện nghi, thiết bị máy móc</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('well-equipped')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">air-conditioned</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˌeə.kənˈdɪʃ.ənd/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(adj)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">có lắp đặt máy lạnh điều hòa không khí</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('air-conditioned')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">cozy</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈkəʊ.zi/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(adj)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">ấm cúng, tạo cảm giác thân mật dễ chịu</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('cozy')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">peaceful</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈpiːs.fəl/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(adj)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">yên bình, thanh tĩnh, không ồn ào</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('peaceful')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+                                </div>
+                            </div>
+
+                            <!-- ACCOMMODATION-RELATED PHRASES -->
+                            <div class="benefits-grid" id="housing-phrases">
+                                <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #f59e0b; border-bottom: 2px solid #f59e0b; padding-bottom: 0.5rem; display: inline-block;">🔑 ACCOMMODATION-RELATED PHRASES</h3>
+                                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #f59e0b; font-weight: 800;">look for a place to live</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">tìm kiếm một nơi để an cư / sinh sống</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('look for a place to live')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #f59e0b; font-weight: 800;">rent an apartment</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">thuê một căn hộ chung cư</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('rent an apartment')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #f59e0b; font-weight: 800;">pay the rent</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">trả tiền thuê nhà định kỳ hàng tháng</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('pay the rent')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #f59e0b; font-weight: 800;">sign a contract</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">đặt bút ký kết hợp đồng thuê nhà</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('sign a contract')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #f59e0b; font-weight: 800;">share a room</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">ở ghép chung phòng với bạn bè</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('share a room')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #f59e0b; font-weight: 800;">live in a dorm</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">sinh sống tại khu ký túc xá</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('live in a dorm')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #f59e0b; font-weight: 800;">move in/move out</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">dọn đồ đến ở / dọn đồ chuyển đi nơi khác</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('move in')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+                                </div>
+                            </div>
+
+                            <!-- GÓC ÔN TẬP CHO SUBTAB-HOUSING -->
+                            <div class="game-review-area" style="margin-top: 3.5rem; border-top: 2px dashed var(--border); padding-top: 2.5rem;">
+                                <div class="f-title" style="text-align: center; margin-bottom: 1.5rem; color: var(--primary);">
+                                    <i class="fa-solid fa-gamepad"></i> Góc Ôn Tập Từ Vựng
+                                </div>
+                                
+                                <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 2rem; flex-wrap: wrap;">
+                                    <button class="btn" onclick="startReviewGame('flashcards', 'subtab-housing')" style="background: linear-gradient(135deg, #10b981, #059669); color: white; border:none; box-shadow: 0 4px 10px rgba(16,185,129,0.3);"><i class="fa-solid fa-layer-group"></i> Lật Thẻ</button>
+                                    <button class="btn" onclick="startReviewGame('matching', 'subtab-housing')" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9); color: white; border:none; box-shadow: 0 4px 10px rgba(139,92,246,0.3);"><i class="fa-solid fa-link"></i> Nối Từ</button>
+                                    <button class="btn" onclick="startReviewGame('quiz', 'subtab-housing')" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white; border:none; box-shadow: 0 4px 10px rgba(245,158,11,0.3);"><i class="fa-solid fa-list-check"></i> Trắc Nghiệm</button>
+                                    <button class="btn" onclick="startReviewGame('spelling', 'subtab-housing')" style="background: linear-gradient(135deg, #ec4899, #be185d); color: white; border:none; box-shadow: 0 4px 10px rgba(236,72,153,0.3);"><i class="fa-solid fa-keyboard"></i> Gõ Từ</button>
+                                </div>
+
+                                <div class="game-stage" style="background: var(--bg-card); border: 2px solid var(--border); border-radius: 20px; padding: 2rem; min-height: 400px; position: relative; overflow: hidden; box-shadow: inset 0 2px 10px rgba(0,0,0,0.02);">
+                                    <div class="game-placeholder" style="color: var(--text-muted); font-size: 1.1rem; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%;">
+                                        <i class="fa-solid fa-ghost" style="font-size: 3.5rem; margin-bottom: 1rem; color: var(--border);"></i><br>
+                                        Hãy chọn một trò chơi để bắt đầu ôn tập
+                                    </div>
+                                    <div class="game-content" style="display: none; height: 100%; width: 100%;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sub-tab content cho Family & Relationships -->
+                        <div id="subtab-family" class="subtab-pane fade-in" style="display: none;">
+                            
+                            <!-- TYPES OF FAMILY -->
+                            <div class="benefits-grid" id="family-types">
+                                <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #8b5cf6; border-bottom: 2px solid #8b5cf6; padding-bottom: 0.5rem; display: inline-block;">👨‍👩‍👧‍👦 TYPES OF FAMILY</h3>
+                                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #8b5cf6; font-weight: 800;">nuclear family</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈnjuː.klɪər ˈfæm.əl.i/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">gia đình hạt nhân (chỉ gồm cha mẹ và con cái)</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('nuclear family')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #8b5cf6; font-weight: 800;">extended family</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ɪkˈsten.dɪd ˈfæm.əl.i/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">gia đình đa thế hệ (tam đại, tứ đại đồng đường)</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('extended family')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #8b5cf6; font-weight: 800;">single-parent family</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˌsɪŋ.ɡəl ˈpeə.rənt ˈfæm.əl.i/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">gia đình đơn thân (chỉ có bố hoặc mẹ nuôi con)</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('single-parent family')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #8b5cf6; font-weight: 800;">blended family</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈblen.dɪd ˈfæm.əl.i/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">gia đình tái hôn (có con chung, con riêng)</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('blended family')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #8b5cf6; font-weight: 800;">childless family</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈtʃaɪld.ləs ˈfæm.əl.i/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">gia đình không có con cái</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('childless family')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #8b5cf6; font-weight: 800;">same-sex family</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˌseɪm ˈseks ˈfæm.əl.i/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">gia đình của cặp đôi cùng giới tính</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('same-sex family')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #8b5cf6; font-weight: 800;">adoptive family</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/əˈdɒp.tɪv ˈfæm.əl.i/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">gia đình có nhận con nuôi</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('adoptive family')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAMILY MEMBERS -->
+                            <div class="benefits-grid" id="family-members">
+                                <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #3b82f6; border-bottom: 2px solid #3b82f6; padding-bottom: 0.5rem; display: inline-block;">❤️ FAMILY MEMBERS</h3>
+                                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #3b82f6; font-weight: 800;">father</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈfɑː.ðər/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">cha, bố</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('father')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #3b82f6; font-weight: 800;">mother</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈmʌð.ər/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">mẹ, má</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('mother')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #3b82f6; font-weight: 800;">son</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/sʌn/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">con trai</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('son')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #3b82f6; font-weight: 800;">daughter</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈdɔː.tər/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">con gái</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('daughter')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #3b82f6; font-weight: 800;">brother</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈbrʌð.ər/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">anh trai hoặc em trai</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('brother')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #3b82f6; font-weight: 800;">sister</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈsɪs.tər/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">chị gái hoặc em gái</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('sister')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #3b82f6; font-weight: 800;">grandfather</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈɡræn.fɑː.ðər/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">ông nội hoặc ông ngoại</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('grandfather')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #3b82f6; font-weight: 800;">grandmother</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈɡræn.mʌð.ər/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">bà nội hoặc bà ngoại</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('grandmother')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #3b82f6; font-weight: 800;">sibling</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈsɪb.lɪŋ/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">anh chị em ruột thịt</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('sibling')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #3b82f6; font-weight: 800;">uncle</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈʌŋ.kəl/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">chú, bác, cậu, dượng</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('uncle')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #3b82f6; font-weight: 800;">aunt</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ɑːnt/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">cô, dì, thím, mợ, bác gái</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('aunt')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #3b82f6; font-weight: 800;">cousin</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈkʌz.ən/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">anh chị em họ</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('cousin')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #3b82f6; font-weight: 800;">nephew</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈnef.juː/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">cháu trai (con của anh chị em)</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('nephew')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #3b82f6; font-weight: 800;">niece</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/niːs/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">cháu gái (con của anh chị em)</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('niece')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #3b82f6; font-weight: 800;">spouse</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/spaʊs/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">người bạn đời, vợ hoặc chồng</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('spouse')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #3b82f6; font-weight: 800;">in-laws</strong>
+                <span class="vocab-ipa" style="font-size: 0.88rem; color: var(--text-muted); font-family: inherit;">/ˈɪn.lɔːz/</span>
+                <span class="vocab-pos" style="font-size: 0.78rem; font-weight: 700; color: #8b5cf6; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px;">(n)</span>
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">gia đình bên nhà chồng hoặc nhà vợ</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('in-laws')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAMILY LIFE & RELATIONSHIPS -->
+                            <div class="benefits-grid" id="family-life">
+                                <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #10b981; border-bottom: 2px solid #10b981; padding-bottom: 0.5rem; display: inline-block;">🏡 FAMILY LIFE & RELATIONSHIPS</h3>
+                                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">spend quality time with family</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">dành thời gian ý nghĩa, trọn vẹn bên gia đình</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('spend quality time with family')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">have dinner together</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">quây quần cùng nhau ăn bữa cơm tối sum họp</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('have dinner together')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">have a family gathering</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">tổ chức buổi tụ họp, sum vầy đại gia đình</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('have a family gathering')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">celebrate family occasions</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">kỷ niệm những dịp lễ, sự kiện trọng đại của gia đình</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('celebrate family occasions')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">support each other</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">luôn yêu thương, san sẻ và ủng hộ lẫn nhau</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('support each other')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">respect family rules</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">tôn trọng quy tắc và nề nếp gia phong</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('respect family rules')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">solve conflicts peacefully</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">giải quyết mọi bất đồng, mâu thuẫn một cách hòa nhã</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('solve conflicts peacefully')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">share household chores</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">chia sẻ công việc nội trợ, dọn dẹp nhà cửa</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('share household chores')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">raise children together</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">cùng nhau chăm sóc và nuôi dạy con cái nên người</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('raise children together')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">maintain close relationships</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">gìn giữ mối quan hệ gia đình gắn bó thân thiết</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('maintain close relationships')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">pass down family traditions</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">lưu truyền các giá trị truyền thống gia đình qua nhiều thế hệ</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('pass down family traditions')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">get married</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">kết hôn, dựng vợ gả chồng</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('get married')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">propose to someone</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">ngỏ lời cầu hôn với người mình yêu</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('propose to someone')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">have a wedding ceremony</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">tổ chức lễ thành hôn trang trọng</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('have a wedding ceremony')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">go on a honeymoon</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">đi du lịch hưởng tuần trăng mật lãng mạn</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('go on a honeymoon')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">live a happy married life</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">tận hưởng cuộc sống hôn nhân đầm ấm, hạnh phúc</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('live a happy married life')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #10b981; font-weight: 800;">celebrate wedding anniversaries</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">kỷ niệm ngày cưới hàng năm</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('celebrate wedding anniversaries')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+                                </div>
+                            </div>
+
+                            <!-- PROBLEMS IN FAMILY RELATIONSHIPS -->
+                            <div class="benefits-grid" id="family-problems">
+                                <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #ef4444; border-bottom: 2px solid #ef4444; padding-bottom: 0.5rem; display: inline-block;">⚠️ PROBLEMS IN FAMILY RELATIONSHIPS</h3>
+                                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ef4444; font-weight: 800;">have arguments or disagreements</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">nảy sinh tranh cãi hoặc bất đồng quan điểm</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('have arguments or disagreements')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ef4444; font-weight: 800;">have a generation gap</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">khoảng cách thế hệ về suy nghĩ và lối sống giữa các thành viên</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('have a generation gap')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ef4444; font-weight: 800;">lack communication</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">thiếu sự trò chuyện, lắng nghe và thấu hiểu lẫn nhau</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('lack communication')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ef4444; font-weight: 800;">feel neglected or misunderstood</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">cảm thấy bị gia đình ngó lơ, bỏ rơi hoặc hiểu lầm</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('feel neglected or misunderstood')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ef4444; font-weight: 800;">have different lifestyles or values</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">khác biệt về phong cách sống hoặc quan điểm giá trị</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('have different lifestyles or values')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ef4444; font-weight: 800;">face financial difficulties</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">đối mặt với áp lực, gánh nặng tài chính kinh tế gia đình</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('face financial difficulties')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ef4444; font-weight: 800;">struggle with parenting</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">chật vật, gặp nhiều khó khăn trong việc nuôi dạy con cái</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('struggle with parenting')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ef4444; font-weight: 800;">lack emotional support</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">thiếu thốn sự chở che và động viên về mặt tinh thần</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('lack emotional support')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ef4444; font-weight: 800;">deal with divorce or separation</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">phải đối mặt với việc ly dị hoặc ly thân</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('deal with divorce or separation')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div style="background: var(--bg-card); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm);">
+        <div>
+            <div style="display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;">
+                <strong class="vocab-en" style="font-size: 1.1rem; color: #ef4444; font-weight: 800;">experience domestic violence</strong>
+                
+                
+            </div>
+            <div class="vocab-vn" style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">phải gánh chịu nạn bạo hành gia đình thể xác hoặc tinh thần</div>
+        </div>
+        <button class="icon-btn" style="background: var(--bg-body); border: 1px solid var(--border); margin-left: 10px; flex-shrink: 0;" onclick="speakText('experience domestic violence')" title="Nghe phát âm">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+                                </div>
+                            </div>
+
+                            <!-- GÓC ÔN TẬP CHO SUBTAB-FAMILY -->
+                            <div class="game-review-area" style="margin-top: 3.5rem; border-top: 2px dashed var(--border); padding-top: 2.5rem;">
+                                <div class="f-title" style="text-align: center; margin-bottom: 1.5rem; color: var(--primary);">
+                                    <i class="fa-solid fa-gamepad"></i> Góc Ôn Tập Từ Vựng
+                                </div>
+                                
+                                <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 2rem; flex-wrap: wrap;">
+                                    <button class="btn" onclick="startReviewGame('flashcards', 'subtab-family')" style="background: linear-gradient(135deg, #10b981, #059669); color: white; border:none; box-shadow: 0 4px 10px rgba(16,185,129,0.3);"><i class="fa-solid fa-layer-group"></i> Lật Thẻ</button>
+                                    <button class="btn" onclick="startReviewGame('matching', 'subtab-family')" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9); color: white; border:none; box-shadow: 0 4px 10px rgba(139,92,246,0.3);"><i class="fa-solid fa-link"></i> Nối Từ</button>
+                                    <button class="btn" onclick="startReviewGame('quiz', 'subtab-family')" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white; border:none; box-shadow: 0 4px 10px rgba(245,158,11,0.3);"><i class="fa-solid fa-list-check"></i> Trắc Nghiệm</button>
+                                    <button class="btn" onclick="startReviewGame('spelling', 'subtab-family')" style="background: linear-gradient(135deg, #ec4899, #be185d); color: white; border:none; box-shadow: 0 4px 10px rgba(236,72,153,0.3);"><i class="fa-solid fa-keyboard"></i> Gõ Từ</button>
+                                </div>
+
+                                <div class="game-stage" style="background: var(--bg-card); border: 2px solid var(--border); border-radius: 20px; padding: 2rem; min-height: 400px; position: relative; overflow: hidden; box-shadow: inset 0 2px 10px rgba(0,0,0,0.02);">
+                                    <div class="game-placeholder" style="color: var(--text-muted); font-size: 1.1rem; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%;">
+                                        <i class="fa-solid fa-ghost" style="font-size: 3.5rem; margin-bottom: 1rem; color: var(--border);"></i><br>
+                                        Hãy chọn một trò chơi để bắt đầu ôn tập
+                                    </div>
+                                    <div class="game-content" style="display: none; height: 100%; width: 100%;"></div>
+                                </div>
+                            </div>
+                        </div>
 </div>
 </section>
 </div>
 </main>
 </div>
 <script src="audio/manifest.js"></script>
-<script src="script.js?v=20260919_12"></script>
+<script src="script.js?v=20260919_13"></script>
 </body>
 </html>
