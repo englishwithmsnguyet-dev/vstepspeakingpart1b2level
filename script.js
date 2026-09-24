@@ -3580,13 +3580,13 @@ const practiceTopicsData = [
                 formula: `<div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 1 (Thực hiện cùng bạn bè / người thân vì có chung sở thích):</div>
                     <div class="topic-formula-text">
-                        → I often <span class="formula-bracket-hl">[hoạt động - Vo]</span> with my <span class="formula-bracket-hl">[đối tượng]</span> because we have similar interests. I find it much more <span class="formula-bracket-hl">[tính từ so sánh hơn]</span> when doing it together, and it allows us to <span class="formula-bracket-hl">[lợi ích - Vo]</span>.
+                        → I often <span class="formula-bracket-hl">[hoạt động - Vo]</span> with my <span class="formula-bracket-hl">[đối tượng]</span> because <span class="formula-bracket-hl">[lý do]</span>. I find it much more <span class="formula-bracket-hl">[tính từ so sánh hơn]</span> when doing it together, and it allows us to <span class="formula-bracket-hl">[lợi ích - Vo]</span>.
                     </div>
                 </div>
                 <div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 2 (Thích thực hiện một mình để tìm sự yên bình & tự do nhịp độ):</div>
                     <div class="topic-formula-text">
-                        → Although my friends sometimes invite me to join them, I usually prefer <span class="formula-bracket-hl">[hoạt động - V-ing]</span> alone because I find it more <span class="formula-bracket-hl">[tính từ mô tả]</span>. It gives me a chance to <span class="formula-bracket-hl">[lợi ích - Vo]</span> and proceed at my own pace.
+                        → Although my friends sometimes invite me to join them, I usually prefer <span class="formula-bracket-hl">[hoạt động - V-ing]</span> alone because I find it more <span class="formula-bracket-hl">[tính từ so sánh hơn]</span>. It gives me a chance to <span class="formula-bracket-hl">[lợi ích - Vo]</span>.
                     </div>
                 </div>`,
                 vocabGroups: [
@@ -3600,21 +3600,48 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        title: "✨ [Tính từ so sánh hơn]:",
+                        title: "💡 [Gợi ý lý do đồng hành (thay vào [lý do])]:",
                         items: [
-                            { en: "more motivating", vn: "tạo nhiều động lực hơn" },
-                            { en: "more enjoyable and thrilling", vn: "thú vị và hào hứng hơn" },
-                            { en: "more peaceful and contemplative", vn: "yên bình và tĩnh tâm hơn" },
-                            { en: "more flexible", vn: "linh hoạt hơn về mặt thời gian" }
+                            { en: "we share similar interests", vn: "chúng tôi có chung sở thích" },
+                            { en: "we have a lot in common", vn: "chúng tôi có nhiều điểm tương đồng" },
+                            { en: "we want to spend quality time together", vn: "chúng tôi muốn dành thời gian chất lượng bên nhau" },
+                            { en: "they always motivate and support me", vn: "họ luôn thúc đẩy và ủng hộ tôi" },
+                            { en: "it's a great way to stay connected", vn: "đó là cách tuyệt vời để giữ gắn kết" }
                         ]
                     },
                     {
-                        title: "🤝 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Gắn kết xã hội & cá nhân]:",
+                        title: "✨ [Tính từ so sánh hơn (đã tách riêng & bổ sung từ quen thuộc)]:",
+                        items: [
+                            { en: "more fun", vn: "vui vẻ hơn" },
+                            { en: "more relaxing", vn: "thư thái / thư giãn hơn" },
+                            { en: "more exciting", vn: "hào hứng / phấn khích hơn" },
+                            { en: "more enjoyable", vn: "thú vị / mang lại nhiều niềm vui hơn" },
+                            { en: "more motivating", vn: "tạo nhiều động lực hơn" },
+                            { en: "more comfortable", vn: "thoải mái hơn" },
+                            { en: "more interesting", vn: "thú vị / hấp dẫn hơn" },
+                            { en: "more peaceful", vn: "yên bình hơn" },
+                            { en: "more flexible", vn: "linh hoạt hơn về thời gian" },
+                            { en: "more thrilling", vn: "kịch tính / hồi hộp hơn" },
+                            { en: "more productive", vn: "hiệu quả hơn" },
+                            { en: "more contemplative", vn: "tĩnh tâm / chiêm nghiệm sâu sắc hơn" }
+                        ]
+                    },
+                    {
+                        title: "👥 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Khi tham gia cùng người khác]:",
                         items: [
                             { en: "strengthen our bond", vn: "thắt chặt tình cảm gắn kết" },
                             { en: "share memorable moments", vn: "chia sẻ những khoảnh khắc đáng nhớ" },
-                            { en: "learn from each other", vn: "học hỏi lẫn nhau" },
-                            { en: "proceed at my own pace", vn: "tiến hành theo nhịp độ của riêng mình" }
+                            { en: "learn from each other", vn: "học hỏi kinh nghiệm lẫn nhau" },
+                            { en: "encourage each other to keep practicing", vn: "khích lệ nhau cùng duy trì luyện tập" }
+                        ]
+                    },
+                    {
+                        title: "👤 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Khi thực hiện một mình]:",
+                        items: [
+                            { en: "proceed at my own pace", vn: "làm theo nhịp độ của riêng mình" },
+                            { en: "focus completely without distractions", vn: "tập trung trọn vẹn mà không bị xao nhãng" },
+                            { en: "enjoy my own personal space", vn: "tận hưởng không gian riêng tư của bản thân" },
+                            { en: "clear my mind and reflect", vn: "thư thái đầu óc và tĩnh tâm suy ngẫm" }
                         ]
                     }
                 ],
@@ -3622,12 +3649,12 @@ const practiceTopicsData = [
                     {
                         label: "Bài mẫu Cách 1 (Chơi thể thao cùng bạn thân - Tăng động lực & Gắn kết)",
                         text: "I often play badminton with my close friends because we share similar interests. I find it much more motivating when practicing together, and it allows us to strengthen our bond and share enjoyable moments.",
-                        formatted: `→ I often <span class="sub-hl">play badminton</span> with my <span class="sub-hl">close friends</span> because we share similar interests. I find it much more <span class="sub-hl">motivating</span> when practicing together, and it allows us to <span class="sub-hl">strengthen our bond</span> and <span class="sub-hl">share enjoyable moments</span>.`
+                        formatted: `→ I often <span class="sub-hl">play badminton</span> with my <span class="sub-hl">close friends</span> because <span class="sub-hl">we share similar interests</span>. I find it much more <span class="sub-hl">motivating</span> when practicing together, and it allows us to <span class="sub-hl">strengthen our bond</span> and <span class="sub-hl">share enjoyable moments</span>.`
                     },
                     {
                         label: "Bài mẫu Cách 2 (Đọc sách một mình để tĩnh tâm & thư giãn đầu óc)",
                         text: "Although my friends sometimes invite me to join them, I usually prefer reading books alone because I find it more peaceful. It gives me a chance to clear my mind and proceed at my own pace.",
-                        formatted: `→ Although my friends sometimes invite me to join them, I usually prefer <span class="sub-hl">reading books alone</span> because I find it more <span class="sub-hl">peaceful</span>. It gives me a chance to <span class="sub-hl">clear my mind</span> and <span class="sub-hl">proceed at my own pace</span>.`
+                        formatted: `→ Although my friends sometimes invite me to join them, I usually prefer <span class="sub-hl">reading books alone</span> because I find it more <span class="sub-hl">peaceful</span>. It gives me a chance to <span class="sub-hl">clear my mind and proceed at my own pace</span>.`
                     }
                 ]
             },
@@ -3824,11 +3851,15 @@ const practiceTopicsData = [
                 </div>`,
                 vocabGroups: [
                     {
-                        title: "✨ [Tính từ so sánh hơn B2]:",
+                        title: "✨ [Tính từ so sánh hơn (đã tách riêng & bổ sung từ quen thuộc)]:",
                         items: [
                             { en: "much more collaborative", vn: "mang tính phối hợp đồng đội cao hơn nhiều" },
-                            { en: "far more thrilling and engaging", vn: "kịch tính và lôi cuốn hơn nhiều" },
-                            { en: "more peaceful and comfortable", vn: "yên bình và thoải mái hơn" },
+                            { en: "far more thrilling", vn: "kịch tính / hồi hộp hơn nhiều" },
+                            { en: "far more engaging", vn: "cuốn hút / hấp dẫn hơn nhiều" },
+                            { en: "more enjoyable", vn: "thú vị / vui vẻ hơn" },
+                            { en: "more peaceful", vn: "yên bình hơn" },
+                            { en: "more comfortable", vn: "thoải mái hơn" },
+                            { en: "more exciting", vn: "hào hứng / phấn khích hơn" },
                             { en: "more flexible with time", vn: "linh hoạt và chủ động hơn về thời gian" }
                         ]
                     },
