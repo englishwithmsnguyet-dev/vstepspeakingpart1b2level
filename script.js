@@ -3535,7 +3535,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        title: "✨ [Kho tính từ mô tả (Học viên chọn 2 tính từ kết hợp với 'and')]:",
+                        title: "✨ [Kho tính từ mô tả]:",
                         items: [
                             { en: "entertaining", vn: "mang tính giải trí cao" },
                             { en: "educational", vn: "giàu tính giáo dục" },
@@ -3600,7 +3600,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        title: "💡 [Gợi ý lý do đồng hành (thay vào [lý do])]:",
+                        title: "💡 [Lý do đồng hành]:",
                         items: [
                             { en: "we share similar interests", vn: "chúng tôi có chung sở thích" },
                             { en: "we have a lot in common", vn: "chúng tôi có nhiều điểm tương đồng" },
@@ -3921,7 +3921,7 @@ const practiceTopicsData = [
                 </div>`,
                 vocabGroups: [
                     {
-                        title: "🌟 [Cấu trúc diễn đạt sở thích / đam mê (+ V-ing / Noun) - Thay thế cho cụm gạch chân]:",
+                        title: "🌟 [Cấu trúc diễn đạt sở thích / đam mê]:",
                         items: [
                             { en: "I'm a big fan of", vn: "Tôi là một người rất hâm mộ / cực kỳ mê (+ V-ing / Danh từ)" },
                             { en: "I'm really into", vn: "Tôi thật sự rất say mê / chuộng (+ V-ing / Danh từ)" },
@@ -3942,7 +3942,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        title: "✨ [Kho tính từ mô tả sách (Học viên chọn 2 tính từ kết hợp với 'and')]:",
+                        title: "✨ [Kho tính từ mô tả sách]:",
                         items: [
                             { en: "inspiring", vn: "truyền cảm hứng mạnh mẽ" },
                             { en: "thought-provoking", vn: "khơi gợi suy ngẫm sâu sắc" },
@@ -4370,9 +4370,11 @@ function renderPracticeTopic(topicId) {
                 let itemsHtml = vg.items.map(it => `
                     <div class="topic-vocab-list-item" onclick="speakText('${it.en.replace(/'/g, "\\'")}')" title="Nhấn để nghe phát âm">
                         <i class="fa-solid fa-volume-high vocab-audio-icon"></i>
-                        <strong class="vocab-en">${it.en}</strong>
-                        <span class="vocab-colon">:</span>
-                        <span class="vocab-vn">${it.vn}</span>
+                        <div class="vocab-content">
+                            <strong class="vocab-en">${it.en}</strong>
+                            <span class="vocab-colon">:</span>
+                            <span class="vocab-vn">${it.vn}</span>
+                        </div>
                     </div>
                 `).join('');
 

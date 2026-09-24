@@ -709,12 +709,13 @@ body.dark-theme .topic-q-type-badge {
 }
 .topic-vocab-list-item {
     display: flex;
-    align-items: baseline;
+    align-items: flex-start;
+    gap: 0.55rem;
     font-size: 1rem;
-    line-height: 1.8;
+    line-height: 1.75;
     cursor: pointer;
-    padding: 0.25rem 0.5rem;
-    border-radius: 6px;
+    padding: 0.35rem 0.55rem;
+    border-radius: 8px;
     transition: background 0.15s ease;
 }
 .topic-vocab-list-item:hover {
@@ -722,10 +723,15 @@ body.dark-theme .topic-q-type-badge {
 }
 .topic-vocab-list-item .vocab-audio-icon {
     color: var(--primary);
-    font-size: 0.85rem;
-    margin-right: 0.55rem;
-    position: relative;
-    top: -1px;
+    font-size: 0.88rem;
+    margin-top: 0.28rem;
+    flex-shrink: 0;
+}
+.topic-vocab-list-item .vocab-content {
+    flex: 1;
+    min-width: 0;
+    word-break: normal;
+    overflow-wrap: break-word;
 }
 .topic-vocab-list-item .vocab-en {
     color: var(--primary);
