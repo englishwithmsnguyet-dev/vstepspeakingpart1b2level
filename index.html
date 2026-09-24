@@ -14,7 +14,7 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
 <!-- Canvas Confetti -->
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
-<link href="styles.css?v=20260819_1" rel="stylesheet"/>
+<link href="styles.css?v=20260924_1" rel="stylesheet"/>
 <script>
         window.onerror = function(msg, url, lineNo, columnNo, error) {
             console.error("Window error: ", msg, url, lineNo, error);
@@ -111,6 +111,12 @@
 <a href="#topics">
 <i class="fa-solid fa-book-open"></i>
 <span>Từ Vựng Theo Chủ Đề</span>
+</a>
+</li>
+<li class="nav-item" data-target="practice-topics">
+<a href="#practice-topics">
+<i class="fa-solid fa-comments"></i>
+<span>Luyện Tập Theo Chủ Đề</span>
 </a>
 </li>
 </ul>
@@ -18531,10 +18537,120 @@
                         </div>
 </div>
 </section>
+
+                <!-- =========================================================
+                     TAB: PRACTICE TOPICS (LUYỆN TẬP THEO CHỦ ĐỀ - B2 LEVEL)
+                ========================================================== -->
+                <section id="practice-topics" class="tab-pane hidden fade-in">
+                    <div class="hero-card" style="margin-bottom: 2rem;">
+                        <div class="hero-text">
+                            <span class="badge-mini"><i class="fa-solid fa-graduation-cap"></i> SPEAKING PART 01 PRACTICE • B2 LEVEL</span>
+                            <h1>LUYỆN TẬP THEO CHỦ ĐỀ</h1>
+                            <p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 0.5rem; line-height: 1.6;">
+                                Thực hành trả lời các câu hỏi thi vấn đáp theo từng chủ đề thực tế với gợi ý cấu trúc chuẩn B2, từ vựng điền khuyết và bài mẫu tham khảo.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Topic Selector Bar -->
+                    <div class="f-card-clean" style="margin-bottom: 2rem;">
+                        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem;">
+                            <div style="font-weight: 800; font-size: 1.15rem; color: var(--text-main); display: flex; align-items: center; gap: 0.5rem;">
+                                <i class="fa-solid fa-layer-group" style="color: var(--primary);"></i> CHỌN CHỦ ĐỀ LUYỆN TẬP (60 TOPICS):
+                            </div>
+                            <div style="font-size: 0.95rem; color: var(--text-muted); background: var(--bg-card); padding: 0.4rem 0.9rem; border-radius: 8px; border: 1px solid var(--border);">
+                                Đang chọn: <strong id="current-topic-label" style="color: var(--primary);">Topic 01 / 60</strong>
+                            </div>
+                        </div>
+
+                        <!-- 2 Lựa chọn phương thức chọn chủ đề -->
+                        <div class="topic-mode-container">
+                            <button type="button" id="topic-mode-manual-btn" class="topic-mode-btn active" onclick="setTopicSelectionMode('manual')">
+                                <i class="fa-solid fa-hand-pointer"></i> 🎯 Tự chọn 1 chủ đề nói
+                            </button>
+                            <button type="button" id="topic-mode-random-btn" class="topic-mode-btn" onclick="setTopicSelectionMode('random')">
+                                <i class="fa-solid fa-shuffle"></i> 🎲 Chọn ngẫu nhiên 1 chủ đề
+                            </button>
+                        </div>
+
+                        <!-- PANEL 1: TỰ CHỌN 1 CHỦ ĐỀ NÓI -->
+                        <div id="topic-manual-panel" class="fade-in">
+                            <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
+                                <select id="practice-topic-select" onchange="switchPracticeTopic(this.value)" style="flex: 1; min-width: 260px; padding: 0.85rem 1.25rem; border-radius: 12px; border: 2px solid var(--primary); background: var(--bg-card); color: var(--text-main); font-weight: 700; font-size: 1.02rem; cursor: pointer; box-shadow: var(--shadow-sm); outline: none;">
+                                    <option value="1" selected>🎯 Topic 01: Let's talk about hobbies</option>
+                                    <option value="2">🎯 Topic 02: Let's talk about video games</option>
+                                    <option value="3">🎯 Topic 03: Let's talk about books</option>
+                                    <option value="4">🎯 Topic 04: Let's talk about listening to the radio</option>
+                                    <option value="5" disabled>🔒 Topic 05: Let's talk about music (Sắp cập nhật)</option>
+                                    <option value="6" disabled>🔒 Topic 06: Let's talk about musical instruments (Sắp cập nhật)</option>
+                                    <option value="7" disabled>🔒 Topic 07: Let's talk about restaurants (Sắp cập nhật)</option>
+                                    <option value="8" disabled>🔒 Topic 08: Let's talk about fast food restaurants (Sắp cập nhật)</option>
+                                    <option value="9" disabled>🔒 Topic 09: Let's talk about cooking (Sắp cập nhật)</option>
+                                    <option value="10" disabled>🔒 Topic 10: Let's talk about the cooking class (Sắp cập nhật)</option>
+                                    <option value="11" disabled>🔒 Topic 11: Let's talk about health (Sắp cập nhật)</option>
+                                    <option value="12" disabled>🔒 Topic 12: Let's talk about health (part 2) (Sắp cập nhật)</option>
+                                    <option value="13" disabled>🔒 Topic 13: Talk about your favorite day of the week (Sắp cập nhật)</option>
+                                    <option value="14" disabled>🔒 Topic 14: Let's talk about an evening walk (Sắp cập nhật)</option>
+                                    <option value="15" disabled>🔒 Topic 15: Let's talk about shopping habits (Sắp cập nhật)</option>
+                                    <option value="16" disabled>🔒 Topic 16: Let's talk about prices and shopping habits (Sắp cập nhật)</option>
+                                    <option value="17" disabled>🔒 Topic 17: Let's talk about traveling (Sắp cập nhật)</option>
+                                    <option value="18" disabled>🔒 Topic 18: Let's talk about holidays (Sắp cập nhật)</option>
+                                    <option value="19" disabled>🔒 Topic 19: Let's talk about schools (Sắp cập nhật)</option>
+                                    <option value="20" disabled>🔒 Topic 20: Let's talk about learning English (Sắp cập nhật)</option>
+                                    <option value="21" disabled>🔒 Topic 21: Let's talk about studying English on the Internet (Sắp cập nhật)</option>
+                                    <option value="22" disabled>🔒 Topic 22: Let's talk about using mobile phones (Sắp cập nhật)</option>
+                                    <option value="23" disabled>🔒 Topic 23: Let's talk about your dream job (Sắp cập nhật)</option>
+                                    <option value="24" disabled>🔒 Topic 24: Let's talk about transportation (Sắp cập nhật)</option>
+                                    <option value="25" disabled>🔒 Topic 25: Let's talk about planes (Sắp cập nhật)</option>
+                                    <option value="26" disabled>🔒 Topic 26: Let's talk about traffic problems (Sắp cập nhật)</option>
+                                    <option value="27" disabled>🔒 Topic 27: Let's talk about your hometown (Sắp cập nhật)</option>
+                                    <option value="28" disabled>🔒 Topic 28: Let's talk about neighbors (Sắp cập nhật)</option>
+                                    <option value="29" disabled>🔒 Topic 29: Let's talk about a room in your house (Sắp cập nhật)</option>
+                                    <option value="30" disabled>🔒 Topic 30: Let's talk about childhood (Sắp cập nhật)</option>
+                                </select>
+                                <button type="button" class="btn" onclick="pickRandomPracticeTopic()" title="Hoặc bốc ngẫu nhiên nhanh 1 chủ đề" style="background: linear-gradient(135deg, #8b5cf6, #6366f1); color: white; border: none; font-weight: 700; padding: 0.85rem 1.35rem; border-radius: 12px; cursor: pointer; box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25); white-space: nowrap;">
+                                    <i class="fa-solid fa-shuffle"></i> Bốc ngẫu nhiên
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- PANEL 2: CHỌN NGẪU NHIÊN 1 CHỦ ĐỀ -->
+                        <div id="topic-random-panel" class="fade-in" style="display: none;">
+                            <div style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.08), rgba(99, 102, 241, 0.05)); border: 2px dashed rgba(124, 58, 237, 0.35); border-radius: 16px; padding: 1.5rem; text-align: center;">
+                                <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 1.15rem; font-weight: 800; color: #7c3aed; margin-bottom: 0.5rem;">
+                                    <i class="fa-solid fa-dice" style="font-size: 1.35rem;"></i> CHỌN NGẪU NHIÊN 1 CHỦ ĐỀ
+                                </div>
+                                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.25rem; max-width: 550px; margin-left: auto; margin-right: auto;">
+                                    Hệ thống sẽ bốc ngẫu nhiên 1 chủ đề nói từ các chủ đề đã học để bạn luyện phản xạ trả lời như trong phòng thi thật!
+                                </p>
+
+                                <div style="background: var(--bg-card); border: 2px solid #8b5cf6; border-radius: 14px; padding: 1rem 1.75rem; margin-bottom: 1.25rem; display: inline-block; min-width: 300px; box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);">
+                                    <div style="font-size: 0.85rem; font-weight: 700; color: #8b5cf6; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.35rem;">
+                                        <i class="fa-solid fa-bullseye"></i> Chủ đề ngẫu nhiên hiện tại:
+                                    </div>
+                                    <div id="random-topic-title-display" style="font-size: 1.25rem; font-weight: 800; color: var(--text-main);">
+                                        Chủ đề 01: Let's talk about hobbies
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <button type="button" class="btn" onclick="pickRandomPracticeTopic()" style="background: linear-gradient(135deg, #7c3aed, #4f46e5); color: white; border: none; font-weight: 800; font-size: 1.05rem; padding: 0.85rem 2.2rem; border-radius: 50px; cursor: pointer; box-shadow: 0 6px 18px rgba(124, 58, 237, 0.35); transition: all 0.2s;">
+                                        <i class="fa-solid fa-shuffle"></i> Bốc Ngẫu Nhiên Chủ Đề Khác
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Topic Content Stage -->
+                    <div id="practice-topic-content" class="f-card-clean">
+                        <!-- Rendered by JavaScript -->
+                    </div>
+                </section>
 </div>
 </main>
 </div>
 <script src="audio/manifest.js"></script>
-<script src="script.js?v=20260919_14"></script>
+<script src="script.js?v=20260924_1"></script>
 </body>
 </html>

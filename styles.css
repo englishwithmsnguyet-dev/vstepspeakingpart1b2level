@@ -570,3 +570,530 @@ body.dark-theme .formula-bracket-hl {
     border-color: rgba(59, 130, 246, 0.4);
     box-shadow: none;
 }
+
+
+/* =========================================================
+   PRACTICE BY TOPIC (60 TOPICS)
+========================================================= */
+.topic-q-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 1.75rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+.topic-q-card:hover {
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+}
+.topic-q-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: linear-gradient(135deg, #4361ee, #3a0ca3);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 800;
+    padding: 0.35rem 0.85rem;
+    border-radius: 50px;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.5px;
+}
+.topic-q-type-badge {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #2563eb;
+    background: rgba(37, 99, 235, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 8px;
+    margin-left: 0.5rem;
+}
+body.dark-theme .topic-q-type-badge {
+    color: #93c5fd;
+    background: rgba(37, 99, 235, 0.2);
+}
+.topic-vocab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+.topic-vocab-chip {
+    background: var(--bg-body);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.6rem 0.85rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.92rem;
+    transition: all 0.2s ease;
+}
+.topic-vocab-chip:hover {
+    border-color: var(--primary);
+    transform: translateY(-1px);
+}
+.topic-vocab-chip strong {
+    color: var(--primary);
+    font-weight: 700;
+}
+.topic-vocab-chip span {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-left: 0.5rem;
+    text-align: right;
+}
+.topic-section-box {
+    margin-bottom: 1.25rem;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+}
+.topic-section-header {
+    padding: 0.85rem 1.25rem;
+    font-weight: 800;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+}
+.topic-section-content {
+    padding: 1.25rem;
+    border-top: 1px solid var(--border);
+    line-height: 1.8;
+}
+
+/* Topic Formula Rows - Clean text with highlights, no cards */
+.topic-formula-row {
+    margin-bottom: 1.5rem;
+}
+.topic-formula-row:last-child {
+    margin-bottom: 0;
+}
+.topic-formula-title {
+    font-weight: 800;
+    font-size: 1.05rem;
+    color: var(--primary);
+    margin-bottom: 0.4rem;
+}
+.topic-formula-text {
+    font-size: 1.08rem;
+    line-height: 2.2;
+    color: var(--text-main);
+    padding-left: 0.25rem;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* Topic Vocabulary List (Dạng List rõ ràng, dễ đọc) */
+.topic-vocab-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-top: 0.4rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 0.6rem 0.85rem;
+}
+.topic-vocab-list-item {
+    display: flex;
+    align-items: baseline;
+    font-size: 1rem;
+    line-height: 1.8;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+    transition: background 0.15s ease;
+}
+.topic-vocab-list-item:hover {
+    background: rgba(67, 97, 238, 0.08);
+}
+.topic-vocab-list-item .vocab-audio-icon {
+    color: var(--primary);
+    font-size: 0.85rem;
+    margin-right: 0.55rem;
+    position: relative;
+    top: -1px;
+}
+.topic-vocab-list-item .vocab-en {
+    color: var(--primary);
+    font-weight: 700;
+}
+.topic-vocab-list-item .vocab-colon {
+    margin: 0 0.45rem;
+    color: var(--text-muted);
+}
+.topic-vocab-list-item .vocab-vn {
+    color: var(--text-main);
+}
+
+/* Topic Selection Mode (Tự chọn vs Ngẫu nhiên) */
+.topic-mode-container {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+}
+.topic-mode-btn {
+    flex: 1;
+    min-width: 220px;
+    padding: 0.85rem 1.25rem;
+    border-radius: 12px;
+    border: 2px solid var(--border);
+    background: var(--bg-card);
+    color: var(--text-main);
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-sm);
+    user-select: none;
+}
+.topic-mode-btn:hover {
+    border-color: var(--primary);
+    background: rgba(67, 97, 238, 0.05);
+}
+.topic-mode-btn.active {
+    border-color: var(--primary);
+    background: var(--grad-primary);
+    color: white;
+    box-shadow: 0 4px 14px rgba(67, 97, 238, 0.35);
+}
+.topic-mode-btn.active i {
+    color: white;
+}
+
+/* ==========================================================================
+   EXAM TIMER & AUDIO RECORDING COMPONENT (VSTEP SPEAKING PART 1)
+   ========================================================================== */
+.topic-exam-recorder {
+    background: var(--bg-card);
+    border: 1.5px solid rgba(239, 68, 68, 0.25);
+    border-radius: 16px;
+    padding: 1.25rem 1.5rem;
+    margin-top: 0.5rem;
+    box-shadow: 0 4px 14px rgba(239, 68, 68, 0.06);
+    position: relative;
+    overflow: hidden;
+}
+
+.topic-exam-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px dashed var(--border);
+}
+
+.topic-exam-phase-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.88rem;
+    font-weight: 700;
+    padding: 0.35rem 0.85rem;
+    border-radius: 50px;
+    background: rgba(100, 116, 139, 0.1);
+    color: var(--text-muted);
+    border: 1px solid rgba(100, 116, 139, 0.2);
+    transition: all 0.3s ease;
+}
+
+.topic-exam-phase-badge.recording {
+    background: rgba(239, 68, 68, 0.12);
+    color: #ef4444;
+    border-color: rgba(239, 68, 68, 0.35);
+}
+
+.topic-exam-phase-badge.done {
+    background: rgba(16, 185, 129, 0.12);
+    color: #059669;
+    border-color: rgba(16, 185, 129, 0.35);
+}
+
+.topic-exam-time-options {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.topic-exam-time-options span {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-right: 0.25rem;
+}
+
+.btn-time-opt {
+    padding: 0.3rem 0.75rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--bg-body);
+    color: var(--text-main);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-time-opt:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.btn-time-opt.active {
+    background: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
+    box-shadow: 0 2px 8px rgba(67, 97, 238, 0.3);
+}
+
+/* Timer Body */
+.topic-exam-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+}
+
+.topic-exam-timer-wrap {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.topic-exam-digits {
+    font-family: 'SF Mono', Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--primary);
+    line-height: 1;
+    min-width: 130px;
+    transition: color 0.3s ease;
+}
+
+.topic-exam-digits.warning {
+    color: #f59e0b;
+}
+
+.topic-exam-digits.danger {
+    color: #ef4444;
+    animation: pulse 1s infinite;
+}
+
+/* Mic Wave Visualizer */
+.topic-mic-wave {
+    display: none;
+    align-items: center;
+    gap: 0.25rem;
+    height: 32px;
+    padding: 0.25rem 0.65rem;
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    border-radius: 50px;
+}
+
+.topic-mic-wave.active {
+    display: inline-flex;
+}
+
+.topic-mic-bar {
+    width: 3px;
+    background: #ef4444;
+    border-radius: 2px;
+    animation: wavePulse 0.9s ease-in-out infinite alternate;
+}
+
+.topic-mic-bar:nth-child(1) { height: 8px; animation-delay: 0.1s; }
+.topic-mic-bar:nth-child(2) { height: 16px; animation-delay: 0.3s; }
+.topic-mic-bar:nth-child(3) { height: 12px; animation-delay: 0.2s; }
+.topic-mic-bar:nth-child(4) { height: 22px; animation-delay: 0.4s; }
+.topic-mic-bar:nth-child(5) { height: 18px; animation-delay: 0.25s; }
+.topic-mic-bar:nth-child(6) { height: 14px; animation-delay: 0.15s; }
+.topic-mic-bar:nth-child(7) { height: 10px; animation-delay: 0.35s; }
+.topic-mic-bar:nth-child(8) { height: 6px; animation-delay: 0.05s; }
+
+@keyframes wavePulse {
+    0% { transform: scaleY(0.4); opacity: 0.5; }
+    100% { transform: scaleY(1.3); opacity: 1; }
+}
+
+.topic-recording-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #ef4444;
+    animation: blinkRed 1s infinite;
+    display: inline-block;
+}
+
+@keyframes blinkRed {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.3; transform: scale(0.85); }
+}
+
+/* Control Buttons */
+.topic-exam-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    flex-wrap: wrap;
+}
+
+.btn-exam-rec {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.65rem 1.4rem;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: all 0.25s ease;
+}
+
+.btn-exam-rec.start {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.35);
+}
+.btn-exam-rec.start:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(239, 68, 68, 0.45);
+}
+
+.btn-exam-rec.stop {
+    background: #475569;
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(71, 85, 105, 0.3);
+}
+.btn-exam-rec.stop:hover {
+    background: #334155;
+}
+
+.btn-exam-rec.reset {
+    background: var(--bg-body);
+    color: var(--text-main);
+    border: 1.5px solid var(--border);
+}
+.btn-exam-rec.reset:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* Playback Box */
+.topic-exam-playback {
+    margin-top: 1.15rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    animation: fadeIn 0.35s ease;
+}
+
+.topic-exam-audio-player {
+    flex: 1;
+    min-width: 220px;
+    height: 42px;
+    border-radius: 50px;
+}
+
+.btn-exam-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.6rem 1.15rem;
+    border-radius: 50px;
+    background: #10b981;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+    transition: all 0.2s ease;
+}
+
+.btn-exam-download:hover {
+    background: #059669;
+    transform: translateY(-1px);
+}
+
+/* Full Topic Exam Modal */
+.topic-full-exam-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(6px);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    animation: fadeIn 0.25s ease;
+}
+
+.topic-full-exam-modal {
+    background: var(--bg-card);
+    border-radius: 20px;
+    border: 2px solid var(--primary);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+    width: 100%;
+    max-width: 780px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 2rem;
+    position: relative;
+}
+
+.topic-full-exam-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border);
+}
+
+.topic-full-exam-title {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.topic-full-exam-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 0.25rem;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.topic-full-exam-close:hover {
+    color: #ef4444;
+}

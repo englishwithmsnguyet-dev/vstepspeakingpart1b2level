@@ -42,7 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
         'choice': 'CHOICE QUESTIONS',
         'wh-questions': 'WH- QUESTIONS',
         'benefits': 'COMMON BENEFITS',
-        'activities': 'COMMON ACTIVITIES'
+        'activities': 'COMMON ACTIVITIES',
+        'topics': 'TỪ VỰNG THEO CHỦ ĐỀ',
+        'practice-topics': 'LUYỆN TẬP THEO CHỦ ĐỀ'
     };
 
     // Thuật toán tìm giọng đọc AI tự nhiên nhất (High Quality / Neural / Natural / Siri)
@@ -452,6 +454,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.innerWidth <= 768) sidebar.classList.remove('open');
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+
+    window.switchTab = (tabId) => {
+        const item = document.querySelector(`.nav-item[data-target="${tabId}"]`);
+        if (item) {
+            activateTab(tabId, item);
+        }
+    };
 
 
     // Theme & Audio toggles
@@ -3487,3 +3496,1518 @@ window.switchSubTab = function(tabId, btnElement) {
         activeBtn.style.boxShadow = '0 4px 12px rgba(67, 97, 238, 0.3)';
     }
 };
+
+// ==========================================================================
+// PRACTICE TOPICS DATA & ENGINE (B2 LEVEL)
+// ==========================================================================
+const practiceTopicsData = [
+    {
+        id: 1,
+        title: "Chủ đề 01: Let's talk about hobbies",
+        introText: "Let’s talk about hobbies.",
+        questions: [
+            {
+                qNum: 1,
+                question: "What hobbies do you have?",
+                qType: "Wh-question: What hobbies do you have?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Nêu một sở thích tiêu biểu & lý do):</div>
+                    <div class="topic-formula-text">
+                        → One of my favorite hobbies is <span class="formula-bracket-hl">[V-ing / danh từ]</span> because I find it both <span class="formula-bracket-hl">[2 tính từ]</span>. It allows me to <span class="formula-bracket-hl">[lợi ích 1]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích 2]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Nêu thói quen trong thời gian rảnh & các hoạt động phong phú):</div>
+                    <div class="topic-formula-text">
+                        → In my spare time, I tend to <span class="formula-bracket-hl">[Vo]</span> because it allows me to <span class="formula-bracket-hl">[lợi ích 1]</span>. Occasionally, I also <span class="formula-bracket-hl">[Vo]</span>, which gives me an opportunity to <span class="formula-bracket-hl">[lợi ích 2]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🎯 [Sở thích phổ biến]:",
+                        items: [
+                            { en: "reading self-help books", vn: "đọc sách phát triển bản thân" },
+                            { en: "playing badminton", vn: "chơi cầu lông" },
+                            { en: "listening to acoustic music", vn: "nghe nhạc mộc acoustic" },
+                            { en: "cooking nutritious meals", vn: "nấu các bữa ăn giàu dinh dưỡng" },
+                            { en: "traveling to new destinations", vn: "du lịch khám phá vùng đất mới" },
+                            { en: "doing yoga and meditation", vn: "tập yoga và thiền" }
+                        ]
+                    },
+                    {
+                        title: "✨ [Cặp 2 tính từ mô tả hoạt động]:",
+                        items: [
+                            { en: "entertaining and educational", vn: "vừa giải trí vừa mang tính giáo dục" },
+                            { en: "relaxing and refreshing", vn: "thư thái và làm tươi mới tinh thần" },
+                            { en: "physically demanding and rewarding", vn: "đòi hỏi thể lực nhưng rất xứng đáng" },
+                            { en: "fun and creative", vn: "vui vẻ và giàu tính sáng tạo" },
+                            { en: "inspiring and thought-provoking", vn: "truyền cảm hứng và khơi gợi tư duy" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Cụm Lợi Ích Chuẩn B2]:",
+                        note: `Sử dụng các cụm từ trong <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>unwind after a tiring day, broaden my horizons, stay in good shape, boost my mental well-being, explore diverse cultures...</em>).`
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Sở thích đọc sách - Vừa giải trí vừa mở rộng tầm nhìn)",
+                        text: "One of my favorite hobbies is reading self-help books because I find it both entertaining and educational. It allows me to unwind after a tiring day and gives me a chance to broaden my horizons.",
+                        formatted: `→ One of my favorite hobbies is <span class="sub-hl">reading self-help books</span> because I find it both <span class="sub-hl">entertaining and educational</span>. It allows me to <span class="sub-hl">unwind after a tiring day</span> and gives me a chance to <span class="sub-hl">broaden my horizons</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Chơi cầu lông & Du lịch khám phá)",
+                        text: "In my spare time, I tend to play badminton because it allows me to stay in good shape. Occasionally, I also travel to new destinations, which gives me an opportunity to experience different cultures.",
+                        formatted: `→ In my spare time, I tend to <span class="sub-hl">play badminton</span> because it allows me to <span class="sub-hl">stay in good shape</span>. Occasionally, I also <span class="sub-hl">travel to new destinations</span>, which gives me an opportunity to <span class="sub-hl">experience different cultures</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 2,
+                question: "Who do you usually do your hobbies with?",
+                qType: "Wh-question: Who do you usually [Vo] with?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Thực hiện cùng bạn bè / người thân vì có chung sở thích):</div>
+                    <div class="topic-formula-text">
+                        → I often <span class="formula-bracket-hl">[Vo]</span> with my <span class="formula-bracket-hl">[đối tượng]</span> because we have similar interests. I find it much more <span class="formula-bracket-hl">[tính từ so sánh hơn]</span> when doing it together, and it allows us to <span class="formula-bracket-hl">[lợi ích: strengthen our bond / share enjoyable moments]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Thích thực hiện một mình để tìm sự yên bình & tự do nhịp độ):</div>
+                    <div class="topic-formula-text">
+                        → Although my friends sometimes invite me to join them, I usually prefer <span class="formula-bracket-hl">[V-ing]</span> alone because I find it more <span class="formula-bracket-hl">[peaceful / flexible]</span>. It gives me a chance to <span class="formula-bracket-hl">[clear my mind]</span> and proceed at my own pace.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "👥 [Đối tượng đồng hành]:",
+                        items: [
+                            { en: "my close friends", vn: "những người bạn thân thiết" },
+                            { en: "my family members", vn: "các thành viên trong gia đình" },
+                            { en: "my colleagues / classmates", vn: "đồng nghiệp / bạn học cùng lớp" },
+                            { en: "like-minded people", vn: "những người có cùng chí hướng / sở thích" }
+                        ]
+                    },
+                    {
+                        title: "✨ [Tính từ so sánh hơn]:",
+                        items: [
+                            { en: "more motivating", vn: "tạo nhiều động lực hơn" },
+                            { en: "more enjoyable and thrilling", vn: "thú vị và hào hứng hơn" },
+                            { en: "more peaceful and contemplative", vn: "yên bình và tĩnh tâm hơn" },
+                            { en: "more flexible", vn: "linh hoạt hơn về mặt thời gian" }
+                        ]
+                    },
+                    {
+                        title: "🤝 [Cụm từ gắn kết xã hội & cá nhân]:",
+                        items: [
+                            { en: "strengthen our bond", vn: "thắt chặt tình cảm gắn kết" },
+                            { en: "share memorable moments", vn: "chia sẻ những khoảnh khắc đáng nhớ" },
+                            { en: "learn from each other", vn: "học hỏi lẫn nhau" },
+                            { en: "proceed at my own pace", vn: "tiến hành theo nhịp độ của riêng mình" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Chơi thể thao cùng bạn thân - Tăng động lực & Gắn kết)",
+                        text: "I often play badminton with my close friends because we share similar interests. I find it much more motivating when practicing together, and it allows us to strengthen our bond and share enjoyable moments.",
+                        formatted: `→ I often <span class="sub-hl">play badminton</span> with my <span class="sub-hl">close friends</span> because we share similar interests. I find it much more <span class="sub-hl">motivating</span> when practicing together, and it allows us to <span class="sub-hl">strengthen our bond</span> and <span class="sub-hl">share enjoyable moments</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Đọc sách một mình để tĩnh tâm & thư giãn đầu óc)",
+                        text: "Although my friends sometimes invite me to join them, I usually prefer reading books alone because I find it more peaceful. It gives me a chance to clear my mind and proceed at my own pace.",
+                        formatted: `→ Although my friends sometimes invite me to join them, I usually prefer <span class="sub-hl">reading books alone</span> because I find it more <span class="sub-hl">peaceful</span>. It gives me a chance to <span class="sub-hl">clear my mind</span> and <span class="sub-hl">proceed at my own pace</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 3,
+                question: "How much time do you spend on your hobbies?",
+                qType: "Wh-question: How much time do you spend on your hobbies?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Cấu trúc nhượng bộ dù bận rộn vẫn dành thời gian chăm sóc bản thân):</div>
+                    <div class="topic-formula-text">
+                        → Although I have a hectic schedule, I still try to dedicate about <span class="formula-bracket-hl">[khoảng thời gian]</span> to <span class="formula-bracket-hl">[V-ing]</span> every day/week because it allows me to <span class="formula-bracket-hl">[lợi ích 1]</span> and <span class="formula-bracket-hl">[lợi ích 2]</span>. It also makes me feel <span class="formula-bracket-hl">[tính từ cảm xúc]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Phân chia thời gian giữa ngày thường và cuối tuần):</div>
+                    <div class="topic-formula-text">
+                        → On weekdays, I can only spare about <span class="formula-bracket-hl">[thời gian ngắn]</span> to <span class="formula-bracket-hl">[Vo]</span>. However, on weekends, I usually spend several hours on it because it gives me an opportunity to <span class="formula-bracket-hl">[lợi ích]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "⏱️ [Cụm từ chỉ lượng thời gian]:",
+                        items: [
+                            { en: "about an hour every evening", vn: "khoảng 1 tiếng mỗi buổi tối" },
+                            { en: "30 to 45 minutes daily", vn: "30 đến 45 phút mỗi ngày" },
+                            { en: "two to three hours at weekends", vn: "2 đến 3 tiếng vào dịp cuối tuần" },
+                            { en: "a couple of hours on Sundays", vn: "một vài tiếng vào mỗi Chủ nhật" }
+                        ]
+                    },
+                    {
+                        title: "🧘 [Cụm lợi ích & phục hồi năng lượng]:",
+                        items: [
+                            { en: "release stress", vn: "giải tỏa căng thẳng áp lực" },
+                            { en: "recharge my batteries", vn: "nạp lại năng lượng tinh thần" },
+                            { en: "maintain a healthy work-life balance", vn: "duy trì cân bằng công việc - cuộc sống" },
+                            { en: "escape from daily pressure", vn: "thoát khỏi những áp lực thường nhật" }
+                        ]
+                    },
+                    {
+                        title: "😊 [Tính từ cảm xúc B2]:",
+                        items: [
+                            { en: "rejuvenated / refreshed", vn: "sảng khoái / tươi mới" },
+                            { en: "energetic", vn: "tràn đầy sinh lực" },
+                            { en: "content and fulfilled", vn: "mãn nguyện và thỏa mãn" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Dành 1 tiếng tập yoga mỗi ngày - Giảm stress & Tươi mới)",
+                        text: "Although I have a hectic schedule, I still try to dedicate about an hour to practicing yoga every day because it allows me to release stress and maintain a healthy lifestyle. It also makes me feel rejuvenated.",
+                        formatted: `→ Although I have a hectic schedule, I still try to dedicate about <span class="sub-hl">an hour</span> to <span class="sub-hl">practicing yoga</span> every day because it allows me to <span class="sub-hl">release stress</span> and <span class="sub-hl">maintain a healthy lifestyle</span>. It also makes me feel <span class="sub-hl">rejuvenated</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Ngày thường 30 phút, cuối tuần dành nhiều thời gian đọc sách)",
+                        text: "On weekdays, I can only spare about 30 minutes in the evening to read books. However, on weekends, I usually spend several hours on it because it gives me an opportunity to escape from daily pressure and expand my knowledge.",
+                        formatted: `→ On weekdays, I can only spare about <span class="sub-hl">30 minutes in the evening</span> to <span class="sub-hl">read books</span>. However, on weekends, I usually spend several hours on it because it gives me an opportunity to <span class="sub-hl">escape from daily pressure</span> and <span class="sub-hl">expand my knowledge</span>.`
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: 2,
+        title: "Chủ đề 02: Let's talk about video games",
+        introText: "Let’s talk about video games.",
+        questions: [
+            {
+                qNum: 1,
+                question: "What video game do you often play?",
+                qType: "Wh-question: What video game do you often play?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Nêu tên game yêu thích kèm cặp 2 tính từ B2):</div>
+                    <div class="topic-formula-text">
+                        → One of my favorite video games is <span class="formula-bracket-hl">[tên game]</span> because I find it both <span class="formula-bracket-hl">[2 tính từ]</span>. It allows me to <span class="formula-bracket-hl">[lợi ích 1]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích 2]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Nêu thiết bị chơi và mục đích thư giãn trí tuệ):</div>
+                    <div class="topic-formula-text">
+                        → Whenever I want to unwind, I tend to play <span class="formula-bracket-hl">[tên game]</span> on my <span class="formula-bracket-hl">[thiết bị]</span>. It offers an engaging experience and allows me to <span class="formula-bracket-hl">[lợi ích]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🎮 [Tên trò chơi & thể loại]:",
+                        items: [
+                            { en: "online chess", vn: "cờ vua trực tuyến" },
+                            { en: "Minecraft", vn: "game sinh tồn xây dựng thế giới Minecraft" },
+                            { en: "FIFA football", vn: "trò chơi bóng đá FIFA" },
+                            { en: "League of Legends", vn: "Liên Minh Huyền Thoại (chiến thuật đồng đội)" },
+                            { en: "PUBG Mobile", vn: "game bắn súng sinh tồn PUBG" },
+                            { en: "Genshin Impact", vn: "game phiêu lưu khám phá thế giới mở" }
+                        ]
+                    },
+                    {
+                        title: "✨ [Cặp 2 tính từ mô tả game]:",
+                        items: [
+                            { en: "entertaining and mentally stimulating", vn: "vừa giải trí vừa kích thích tư duy" },
+                            { en: "fascinating and competitive", vn: "hấp dẫn và đầy tính cạnh tranh" },
+                            { en: "relaxing and creative", vn: "thư thái và khơi gợi sức sáng tạo" },
+                            { en: "thrilling and engaging", vn: "hồi hộp và cuốn hút" }
+                        ]
+                    },
+                    {
+                        title: "💡 [Lợi ích rèn luyện tư duy]:",
+                        items: [
+                            { en: "sharpen my tactical thinking", vn: "rèn luyện tư duy chiến thuật" },
+                            { en: "boost my concentration", vn: "tăng cường khả năng tập trung" },
+                            { en: "foster my creativity", vn: "nuôi dưỡng trí tưởng tượng sáng tạo" },
+                            { en: "unwind after long study hours", vn: "xả hơi sau nhiều giờ học hành căng thẳng" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Cờ vua online - Kích thích tư duy & Rèn luyện chiến thuật)",
+                        text: "One of my favorite video games is online chess because I find it both entertaining and mentally stimulating. It allows me to unwind after a busy day and gives me a chance to sharpen my tactical thinking.",
+                        formatted: `→ One of my favorite video games is <span class="sub-hl">online chess</span> because I find it both <span class="sub-hl">entertaining and mentally stimulating</span>. It allows me to <span class="sub-hl">unwind after a busy day</span> and gives me a chance to <span class="sub-hl">sharpen my tactical thinking</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Minecraft trên laptop - Thúc đẩy sáng tạo & Giảm stress)",
+                        text: "Whenever I want to unwind, I tend to play Minecraft on my laptop. It offers an engaging experience and allows me to foster my creativity and escape from daily stress.",
+                        formatted: `→ Whenever I want to unwind, I tend to play <span class="sub-hl">Minecraft on my laptop</span>. It offers an engaging experience and allows me to <span class="sub-hl">foster my creativity</span> and <span class="sub-hl">escape from daily stress</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 2,
+                question: "Why do you often play that game?",
+                qType: "Wh-question: Why do you often play that game?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Cấu trúc B2 với effective way to & gives me a chance to):</div>
+                    <div class="topic-formula-text">
+                        → I’m really into playing this game because it’s an effective way to <span class="formula-bracket-hl">[lợi ích 1]</span>. Besides that, it gives me a chance to <span class="formula-bracket-hl">[lợi ích 2]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Nêu cảm xúc thư thái & nâng cao kỹ năng phối hợp đồng đội):</div>
+                    <div class="topic-formula-text">
+                        → The primary reason is that playing this game makes me feel completely <span class="formula-bracket-hl">[tính từ cảm xúc]</span>. Moreover, it allows me to <span class="formula-bracket-hl">[lợi ích phối hợp/rèn luyện]</span>, which is very valuable in my life.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🎯 [Cụm lợi ích chuẩn B2]:",
+                        items: [
+                            { en: "escape from academic pressure", vn: "thoát khỏi áp lực học tập thi cử" },
+                            { en: "sharpen my reflexes and quick thinking", vn: "rèn luyện phản xạ và tư duy nhạy bén" },
+                            { en: "enhance my problem-solving skills", vn: "nâng cao kỹ năng xử lý vấn đề" },
+                            { en: "collaborate effectively with teammates", vn: "phối hợp ăn ý với đồng đội" },
+                            { en: "boost my hand-eye coordination", vn: "tăng sự phối hợp nhịp nhàng giữa tay và mắt" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Bảng Lợi Ích B2]:",
+                        note: `Tham khảo thêm các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>clear my mind, regain my energy, improve my mood, relieve mental fatigue...</em>).`
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Thoát khỏi áp lực học tập & Rèn luyện phản xạ)",
+                        text: "I’m really into playing this game because it’s an effective way to escape from academic pressure. Besides that, it gives me a chance to sharpen my reflexes and problem-solving skills.",
+                        formatted: `→ I’m really into playing this game because it’s an effective way to <span class="sub-hl">escape from academic pressure</span>. Besides that, it gives me a chance to <span class="sub-hl">sharpen my reflexes and problem-solving skills</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Cảm giác thư thái & Nâng cao kỹ năng làm việc nhóm)",
+                        text: "The primary reason is that playing this game makes me feel completely relaxed after intense study hours. Moreover, it allows me to collaborate with my teammates, which helps enhance my teamwork skills.",
+                        formatted: `→ The primary reason is that playing this game makes me feel completely <span class="sub-hl">relaxed after intense study hours</span>. Moreover, it allows me to <span class="sub-hl">collaborate with my teammates</span>, which helps <span class="sub-hl">enhance my teamwork skills</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 3,
+                question: "Do you prefer playing video games alone or with friends? Why?",
+                qType: "Choice question: Do you prefer [alone] or [with friends]?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Lựa chọn dứt khoát 1 phương án kèm tính từ so sánh hơn B2):</div>
+                    <div class="topic-formula-text">
+                        → Personally, I prefer playing video games <span class="formula-bracket-hl">[with friends / alone]</span> because I find it much more <span class="formula-bracket-hl">[tính từ so sánh hơn]</span>. It allows <span class="formula-bracket-hl">[me / us]</span> to <span class="formula-bracket-hl">[lợi ích 1]</span> and gives <span class="formula-bracket-hl">[me / us]</span> a chance to <span class="formula-bracket-hl">[lợi ích 2]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Cấu trúc nhượng bộ Although - Đánh giá cao cả hai nhưng nghiêng về một bên):</div>
+                    <div class="topic-formula-text">
+                        → Although playing <span class="formula-bracket-hl">[alone / with friends]</span> has its own merits, I still lean towards playing <span class="formula-bracket-hl">[with friends / alone]</span> because it is far more <span class="formula-bracket-hl">[tính từ so sánh hơn]</span>. It allows <span class="formula-bracket-hl">[me / us]</span> to <span class="formula-bracket-hl">[lợi ích]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "✨ [Tính từ so sánh hơn B2]:",
+                        items: [
+                            { en: "much more collaborative", vn: "mang tính phối hợp đồng đội cao hơn nhiều" },
+                            { en: "far more thrilling and engaging", vn: "kịch tính và lôi cuốn hơn nhiều" },
+                            { en: "more peaceful and comfortable", vn: "yên bình và thoải mái hơn" },
+                            { en: "more flexible with time", vn: "linh hoạt và chủ động hơn về thời gian" }
+                        ]
+                    },
+                    {
+                        title: "👥 [Lợi ích khi chơi cùng bạn bè]:",
+                        items: [
+                            { en: "strengthen our bond", vn: "thắt chặt tình bạn bè khăng khít" },
+                            { en: "share enjoyable moments together", vn: "cùng chia sẻ những giây phút tràn ngập niềm vui" },
+                            { en: "communicate and coordinate strategies", vn: "trao đổi và phối hợp chiến thuật ăn ý" }
+                        ]
+                    },
+                    {
+                        title: "👤 [Lợi ích khi chơi một mình]:",
+                        items: [
+                            { en: "immerse myself fully in the storyline", vn: "đắm chìm trọn vẹn vào cốt truyện game" },
+                            { en: "play at my own pace without distractions", vn: "chơi theo nhịp độ của mình không lo bị xao nhãng" },
+                            { en: "avoid unnecessary peer pressure", vn: "tránh áp lực thắng thua từ bạn chơi" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Chọn chơi với bạn bè - Tính hợp tác cao & Gắn kết tình cảm)",
+                        text: "Personally, I prefer playing video games with friends because I find it much more collaborative. It allows us to strengthen our bond and gives us a chance to share enjoyable moments together.",
+                        formatted: `→ Personally, I prefer <span class="sub-hl">playing video games with friends</span> because I find it much more <span class="sub-hl">collaborative</span>. It allows us to <span class="sub-hl">strengthen our bond</span> and gives us a chance to <span class="sub-hl">share enjoyable moments together</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Cấu trúc nhượng bộ - Nghiêng về chơi một mình để yên tĩnh)",
+                        text: "Although playing with friends is quite entertaining, I still lean towards playing alone because it is far more peaceful. It allows me to immerse myself fully in the game and play at my own pace without any distractions.",
+                        formatted: `→ Although playing with friends is quite entertaining, I still lean towards <span class="sub-hl">playing alone</span> because it is far more <span class="sub-hl">peaceful</span>. It allows me to <span class="sub-hl">immerse myself fully in the game</span> and <span class="sub-hl">play at my own pace without any distractions</span>.`
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: 3,
+        title: "Chủ đề 03: Let's talk about books",
+        introText: "Let’s talk about books.",
+        questions: [
+            {
+                qNum: 1,
+                question: "What is your favorite book?",
+                qType: "Wh-question: What is your favorite book?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Nêu cuốn sách yêu thích nhất & 2 tính từ học thuật B2):</div>
+                    <div class="topic-formula-text">
+                        → One of my all-time favorite books is <span class="formula-bracket-hl">[tên sách]</span> because I find it both <span class="formula-bracket-hl">[2 tính từ]</span>. It allows me to <span class="formula-bracket-hl">[lợi ích 1]</span> and gives me an opportunity to <span class="formula-bracket-hl">[lợi ích 2]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Khẳng định đam mê với thể loại sách, rồi nêu tác phẩm tâm đắc):</div>
+                    <div class="topic-formula-text">
+                        → To be honest, I have a strong passion for reading <span class="formula-bracket-hl">[thể loại sách]</span>, and the book that impresses me the most is <span class="formula-bracket-hl">[tên sách]</span>. It offers profound insights and helps me <span class="formula-bracket-hl">[lợi ích]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "📖 [Tên tác phẩm & sách kinh điển]:",
+                        items: [
+                            { en: "The Alchemist", vn: "Nhà giả kim (Paulo Coelho)" },
+                            { en: "Atomic Habits", vn: "Thói quen nguyên tử (James Clear)" },
+                            { en: "How to Win Friends and Influence People", vn: "Đắc Nhân Tâm (Dale Carnegie)" },
+                            { en: "To Kill a Mockingbird", vn: "Giết con chim nhại (Harper Lee)" },
+                            { en: "Harry Potter series", vn: "Bộ tiểu thuyết Harry Potter (J.K. Rowling)" }
+                        ]
+                    },
+                    {
+                        title: "✨ [Cặp 2 tính từ mô tả sách B2]:",
+                        items: [
+                            { en: "inspiring and thought-provoking", vn: "truyền cảm hứng và khơi gợi suy ngẫm sâu sắc" },
+                            { en: "fascinating and educational", vn: "lôi cuốn và giàu tính giáo dục" },
+                            { en: "meaningful and eye-opening", vn: "đầy ý nghĩa và mở mang tầm mắt" },
+                            { en: "captivating and motivational", vn: "cuốn hút và tạo động lực to lớn" }
+                        ]
+                    },
+                    {
+                        title: "🌱 [Lợi ích đọc sách B2]:",
+                        items: [
+                            { en: "broaden my horizons", vn: "mở rộng tầm nhìn và sự hiểu biết" },
+                            { en: "gain profound life lessons", vn: "thu nhận những bài học nhân sinh sâu sắc" },
+                            { en: "cultivate positive habits", vn: "nuôi dưỡng những thói quen tích cực" },
+                            { en: "pursue personal dreams with courage", vn: "can đảm theo đuổi ước mơ cá nhân" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Nhà Giả Kim - Truyền cảm hứng & Can đảm theo đuổi ước mơ)",
+                        text: "One of my all-time favorite books is The Alchemist because I find it both inspiring and thought-provoking. It allows me to broaden my horizons and gives me an opportunity to pursue my personal dreams with courage.",
+                        formatted: `→ One of my all-time favorite books is <span class="sub-hl">The Alchemist</span> because I find it both <span class="sub-hl">inspiring and thought-provoking</span>. It allows me to <span class="sub-hl">broaden my horizons</span> and gives me an opportunity to <span class="sub-hl">pursue my personal dreams with courage</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Atomic Habits - Sách phát triển bản thân & Xây dựng thói quen tốt)",
+                        text: "To be honest, I have a strong passion for reading self-help books, and the book that impresses me the most is Atomic Habits. It offers profound insights and helps me cultivate good habits while breaking harmful ones.",
+                        formatted: `→ To be honest, I have a strong passion for reading <span class="sub-hl">self-help books</span>, and the book that impresses me the most is <span class="sub-hl">Atomic Habits</span>. It offers profound insights and helps me <span class="sub-hl">cultivate good habits while breaking harmful ones</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 2,
+                question: "Do you prefer reading paper books or electronic books?",
+                qType: "Choice question: Do you prefer [paper books] or [electronic books]?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Lựa chọn dứt khoát 1 loại sách & đưa ra lý do thuyết phục):</div>
+                    <div class="topic-formula-text">
+                        → Personally, I prefer reading <span class="formula-bracket-hl">[paper books / e-books]</span> because I find them much more <span class="formula-bracket-hl">[tính từ so sánh hơn]</span>. They allow me to <span class="formula-bracket-hl">[lợi ích 1]</span> and give me a chance to <span class="formula-bracket-hl">[lợi ích 2]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Cân bằng cả hai - Mỗi loại đều sở hữu lợi ích riêng biệt):</div>
+                    <div class="topic-formula-text">
+                        → In my opinion, both mediums offer distinct benefits. Paper books help me <span class="formula-bracket-hl">[lợi ích 1: bảo vệ mắt/tập trung]</span>, whereas e-books allow me to <span class="formula-bracket-hl">[lợi ích 2: tiện lợi mang theo]</span> whenever I am on the go.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "✨ [Tính từ so sánh hơn]:",
+                        items: [
+                            { en: "more comfortable for my eyesight", vn: "dễ chịu hơn cho thị lực của tôi" },
+                            { en: "more convenient and portable", vn: "tiện lợi và dễ dàng mang theo hơn" },
+                            { en: "more tactile and authentic", vn: "cảm giác chạm chân thực và truyền thống hơn" },
+                            { en: "more cost-effective", vn: "tiết kiệm chi phí hơn" }
+                        ]
+                    },
+                    {
+                        title: "📖 [Lợi thế của Sách Giấy (Paper Books)]:",
+                        items: [
+                            { en: "protect my eyesight from screen glare", vn: "bảo vệ mắt khỏi ánh sáng xanh màn hình" },
+                            { en: "concentrate deeply without digital notifications", vn: "tập trung sâu mà không bị ngắt quãng bởi thông báo" },
+                            { en: "enjoy the authentic feel of turning real pages", vn: "tận hưởng cảm giác lật từng trang giấy thơm tho" }
+                        ]
+                    },
+                    {
+                        title: "📱 [Lợi thế của Sách Điện Tử (E-books)]:",
+                        items: [
+                            { en: "store hundreds of titles in one lightweight device", vn: "lưu hàng trăm đầu sách trong thiết bị nhỏ gọn" },
+                            { en: "access reading materials anytime, anywhere", vn: "truy cập kho tài liệu mọi lúc mọi nơi" },
+                            { en: "look up vocabulary and take notes instantly", vn: "tra cứu từ vựng và ghi chú tức thì" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Chọn sách giấy - Dễ chịu cho mắt & Tập trung sâu)",
+                        text: "Personally, I prefer reading paper books because I find them much more comfortable for my eyesight. They allow me to concentrate deeply without digital distractions and give me the authentic pleasure of turning real pages.",
+                        formatted: `→ Personally, I prefer <span class="sub-hl">reading paper books</span> because I find them much more <span class="sub-hl">comfortable for my eyesight</span>. They allow me to <span class="sub-hl">concentrate deeply without digital distractions</span> and give me the authentic pleasure of turning real pages.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Cân bằng cả hai - Sách giấy ở nhà & E-book khi di chuyển)",
+                        text: "In my opinion, both mediums offer distinct benefits. Paper books help me protect my eyes and focus better, whereas e-books allow me to access hundreds of titles easily whenever I am on the go.",
+                        formatted: `→ In my opinion, <span class="sub-hl">both mediums offer distinct benefits</span>. Paper books help me <span class="sub-hl">protect my eyes and focus better</span>, whereas e-books allow me to <span class="sub-hl">access hundreds of titles easily whenever I am on the go</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 3,
+                question: "What kinds of books do teenagers in your country enjoy reading?",
+                qType: "Wh-question: What kinds of books do teenagers in your country enjoy reading?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Nêu các thể loại phổ biến kèm lý do hấp dẫn thanh thiếu niên):</div>
+                    <div class="topic-formula-text">
+                        → I believe most teenagers in my country are big fans of <span class="formula-bracket-hl">[thể loại 1]</span> and <span class="formula-bracket-hl">[thể loại 2]</span> because they find them <span class="formula-bracket-hl">[tính từ]</span>. These genres allow them to <span class="formula-bracket-hl">[lợi ích 1]</span> and give them an opportunity to <span class="formula-bracket-hl">[lợi ích 2]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Phân nhóm đa dạng: vừa đọc giải trí vừa đọc phát triển bản thân):</div>
+                    <div class="topic-formula-text">
+                        → From my perspective, while many teenagers read <span class="formula-bracket-hl">[thể loại giải trí]</span> to relax, an increasing number also read <span class="formula-bracket-hl">[thể loại kỹ năng]</span>. These books allow them to <span class="formula-bracket-hl">[lợi ích]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "📚 [Thể loại sách giới trẻ ưa chuộng]:",
+                        items: [
+                            { en: "comic books and manga", vn: "truyện tranh và manga Nhật Bản" },
+                            { en: "fantasy and fiction novels", vn: "tiểu thuyết giả tưởng và viễn tưởng" },
+                            { en: "personal development books", vn: "sách kỹ năng và phát triển bản thân" },
+                            { en: "detective and adventure stories", vn: "truyện trinh thám và phiêu lưu mạo hiểm" }
+                        ]
+                    },
+                    {
+                        title: "✨ [Tính từ mô tả thể loại]:",
+                        items: [
+                            { en: "highly entertaining", vn: "giàu tính giải trí cao" },
+                            { en: "relatable and inspiring", vn: "gần gũi và truyền nhiều cảm hứng" },
+                            { en: "practical and informative", vn: "thiết thực và cung cấp nhiều thông tin" }
+                        ]
+                    },
+                    {
+                        title: "🌟 [Lợi ích đối với người trẻ]:",
+                        items: [
+                            { en: "relieve study pressure", vn: "giải tỏa áp lực bài vở học hành" },
+                            { en: "foster their creative imagination", vn: "nuôi dưỡng trí tưởng tượng sáng tạo" },
+                            { en: "acquire vital soft skills", vn: "tiếp thu các kỹ năng mềm quan trọng" },
+                            { en: "cultivate a positive mindset", vn: "xây dựng tư duy và lối sống tích cực" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Truyện tranh & Tiểu thuyết giả tưởng - Giải tỏa áp lực & Phát huy sáng tạo)",
+                        text: "I believe most teenagers in my country are big fans of comic books and fantasy novels because they find them highly entertaining. These genres allow them to relieve study pressure and give them an opportunity to foster their imagination.",
+                        formatted: `→ I believe most teenagers in my country are big fans of <span class="sub-hl">comic books and fantasy novels</span> because they find them <span class="sub-hl">highly entertaining</span>. These genres allow them to <span class="sub-hl">relieve study pressure</span> and give them an opportunity to <span class="sub-hl">foster their imagination</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Xu hướng đọc sách phát triển bản thân để rèn kỹ năng mềm)",
+                        text: "From my perspective, while many teenagers read fiction books to relax, an increasing number also read personal development books. These books allow them to acquire vital soft skills and cultivate a positive mindset.",
+                        formatted: `→ From my perspective, while many teenagers read <span class="sub-hl">fiction books to relax</span>, an increasing number also read <span class="sub-hl">personal development books</span>. These books allow them to <span class="sub-hl">acquire vital soft skills</span> and <span class="sub-hl">cultivate a positive mindset</span>.`
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: 4,
+        title: "Chủ đề 04: Let's talk about listening to the radio",
+        introText: "Let’s talk about listening to the radio.",
+        questions: [
+            {
+                qNum: 1,
+                question: "Do you often listen to the radio?",
+                qType: "Yes/No question: Do you often listen to the radio?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Có - Thường xuyên nghe khi di chuyển hoặc làm việc nhà):</div>
+                    <div class="topic-formula-text">
+                        → Sure. I often listen to the radio <span class="formula-bracket-hl">[thời điểm/tần suất]</span> whenever I have free time. It allows me to <span class="formula-bracket-hl">[lợi ích 1]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích 2]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Không - Hiếm khi nghe radio truyền thống, ưu tiên nền tảng nhạc số/podcast):</div>
+                    <div class="topic-formula-text">
+                        → Not really. I rarely listen to traditional radio because I prefer digital platforms like <span class="formula-bracket-hl">[Spotify / podcasts]</span>. It allows me to <span class="formula-bracket-hl">[lợi ích: nghe theo yêu cầu/tránh quảng cáo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "📻 [Thời điểm & tần suất nghe]:",
+                        items: [
+                            { en: "on my daily commute", vn: "trên đường đi học/đi làm hàng ngày" },
+                            { en: "while doing household chores", vn: "trong lúc dọn dẹp làm việc nhà" },
+                            { en: "early in the morning", vn: "vào lúc sáng sớm" },
+                            { en: "rarely / almost never", vn: "hiếm khi / hầu như không bao giờ" }
+                        ]
+                    },
+                    {
+                        title: "📡 [Lợi ích khi nghe radio]:",
+                        items: [
+                            { en: "catch up on traffic updates", vn: "nắm bắt các cập nhật về tình hình giao thông" },
+                            { en: "enjoy cheerful music", vn: "thưởng thức âm nhạc vui vẻ tiếp thêm năng lượng" },
+                            { en: "access on-demand content anytime", vn: "tiếp cận nội dung theo yêu cầu mọi lúc" },
+                            { en: "avoid commercial interruptions", vn: "tránh bị ngắt quãng bởi quảng cáo" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Có - Nghe trên đường đi lại để cập nhật giao thông & Nghe nhạc)",
+                        text: "Sure. I often listen to the radio on my daily commute whenever I am on the road. It allows me to catch up on traffic updates and gives me a chance to enjoy cheerful music to start my day.",
+                        formatted: `→ Sure. I often listen to the radio <span class="sub-hl">on my daily commute</span> whenever I am on the road. It allows me to <span class="sub-hl">catch up on traffic updates</span> and gives me a chance to <span class="sub-hl">enjoy cheerful music to start my day</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Không - Ưu tiên podcast kỹ thuật số theo sở thích riêng)",
+                        text: "Not really. I rarely listen to traditional radio because I prefer digital platforms like Spotify podcasts. It allows me to access on-demand content anytime and avoid commercial interruptions.",
+                        formatted: `→ Not really. I rarely listen to traditional radio because I prefer <span class="sub-hl">digital platforms like Spotify podcasts</span>. It allows me to <span class="sub-hl">access on-demand content anytime</span> and <span class="sub-hl">avoid commercial interruptions</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 2,
+                question: "What radio station do you usually listen to?",
+                qType: "Wh-question: What radio station do you usually listen to?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Nêu kênh radio phổ biến trong nước & lợi ích thực tế):</div>
+                    <div class="topic-formula-text">
+                        → One of my favorite radio channels is <span class="formula-bracket-hl">[tên kênh]</span> because I find it very <span class="formula-bracket-hl">[tính từ]</span>. It allows me to stay updated on <span class="formula-bracket-hl">[thông tin]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích: tránh kẹt xe/thư giãn]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Nêu đài phát thanh quốc tế / luyện tiếng Anh chuẩn B2):</div>
+                    <div class="topic-formula-text">
+                        → To be honest, I regularly tune in to <span class="formula-bracket-hl">[BBC World Service / VOA]</span> because it is extremely <span class="formula-bracket-hl">[educational / informative]</span>. It allows me to hone my English listening skills and gives me an opportunity to keep abreast of global news.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "📻 [Kênh phát thanh tiêu biểu]:",
+                        items: [
+                            { en: "VOV Traffic", vn: "Kênh VOV Giao Thông" },
+                            { en: "BBC World Service", vn: "Kênh BBC toàn cầu (tiếng Anh chuẩn)" },
+                            { en: "VOV1 - National News", vn: "Kênh Thời sự Quốc gia VOV1" },
+                            { en: "VOA Learning English", vn: "Chương trình học tiếng Anh của VOA" },
+                            { en: "Xone FM", vn: "Kênh âm nhạc giải trí Xone FM" }
+                        ]
+                    },
+                    {
+                        title: "✨ [Tính từ mô tả kênh phát thanh]:",
+                        items: [
+                            { en: "informative and practical", vn: "giàu thông tin và có tính thực tế cao" },
+                            { en: "extremely educational", vn: "vô cùng mang tính giáo dục" },
+                            { en: "timely and helpful", vn: "kịp thời và hữu ích" }
+                        ]
+                    },
+                    {
+                        title: "🎯 [Lợi ích chuyên biệt]:",
+                        items: [
+                            { en: "avoid congested roads during rush hours", vn: "tránh các cung đường kẹt xe giờ cao điểm" },
+                            { en: "hone my English listening skills", vn: "mài giũa kỹ năng nghe tiếng Anh" },
+                            { en: "keep abreast of global news", vn: "bắt kịp các tin tức quốc tế" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Kênh VOV Giao thông - Thiết thực & Tránh tắc đường giờ cao điểm)",
+                        text: "One of my favorite radio channels is VOV Traffic because I find it very informative and practical. It allows me to stay updated on traffic conditions and gives me a chance to avoid congested roads during rush hours.",
+                        formatted: `→ One of my favorite radio channels is <span class="sub-hl">VOV Traffic</span> because I find it very <span class="sub-hl">informative and practical</span>. It allows me to <span class="sub-hl">stay updated on traffic conditions</span> and gives me a chance to <span class="sub-hl">avoid congested roads during rush hours</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Kênh BBC World Service - Nâng cao kỹ năng nghe tiếng Anh & Tin tức quốc tế)",
+                        text: "To be honest, I regularly tune in to BBC World Service because it is extremely educational. It allows me to hone my English listening skills and gives me an opportunity to keep abreast of global news.",
+                        formatted: `→ To be honest, I regularly tune in to <span class="sub-hl">BBC World Service</span> because it is extremely <span class="sub-hl">educational</span>. It allows me to <span class="sub-hl">hone my English listening skills</span> and gives me an opportunity to <span class="sub-hl">keep abreast of global news</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 3,
+                question: "What are the benefits of listening to the radio?",
+                qType: "Wh-question: What are the benefits of listening to the radio?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Cấu trúc brings us a number of significant benefits):</div>
+                    <div class="topic-formula-text">
+                        → Listening to the radio brings us a number of significant benefits. For example, it allows us to <span class="formula-bracket-hl">[lợi ích 1]</span> and gives us a chance to <span class="formula-bracket-hl">[lợi ích 2: thư giãn không hại mắt]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Lợi thế giúp người nghe đa nhiệm multitasking vượt trội):</div>
+                    <div class="topic-formula-text">
+                        → In my view, the biggest advantage of listening to the radio is that it enables listeners to multitask. It allows us to <span class="formula-bracket-hl">[lợi ích]</span> while driving or doing household chores.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "📻 [Cụm lợi ích B2 của thói quen nghe radio]:",
+                        items: [
+                            { en: "keep up to date with current affairs", vn: "cập nhật kịp thời các vấn đề thời sự" },
+                            { en: "relax without straining our eyes on screens", vn: "thư giãn mà không gây căng thẳng mỏi mắt với màn hình" },
+                            { en: "enables listeners to multitask efficiently", vn: "cho phép người nghe làm nhiều việc đồng thời hiệu quả" },
+                            { en: "gain useful knowledge cost-effectively", vn: "thu thập kiến thức hữu ích một cách tiết kiệm chi phí" },
+                            { en: "stimulate auditory imagination", vn: "kích thích khả năng tưởng tượng qua âm thanh" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp thêm các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>pass the time, clear my mind, broaden my horizons, stay well-informed...</em>).`
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Cập nhật thời sự & Thư giãn cho mắt không nhìn màn hình)",
+                        text: "Listening to the radio brings us a number of significant benefits. For example, it allows us to keep up to date with current affairs and gives us a chance to relax without straining our eyes on electronic screens.",
+                        formatted: `→ Listening to the radio brings us a number of significant benefits. For example, it allows us to <span class="sub-hl">keep up to date with current affairs</span> and gives us a chance to <span class="sub-hl">relax without straining our eyes on electronic screens</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Khả năng đa nhiệm khi vừa làm việc nhà vừa nghe thông tin)",
+                        text: "In my view, the biggest advantage of listening to the radio is that it enables listeners to multitask. It allows us to gain useful information and enjoy pleasant music while driving or doing household chores.",
+                        formatted: `→ In my view, the biggest advantage of listening to the radio is that it <span class="sub-hl">enables listeners to multitask</span>. It allows us to <span class="sub-hl">gain useful information</span> and <span class="sub-hl">enjoy pleasant music while driving or doing household chores</span>.`
+                    }
+                ]
+            }
+        ]
+    }
+];
+
+// ==========================================================================
+// TOPIC SELECTION & RENDERING CONTROLLER
+// ==========================================================================
+window.switchPracticeTopic = (topicId) => {
+    renderPracticeTopic(parseInt(topicId));
+};
+
+window.setTopicSelectionMode = (mode) => {
+    const manualBtn = document.getElementById('topic-mode-manual-btn');
+    const randomBtn = document.getElementById('topic-mode-random-btn');
+    const manualPanel = document.getElementById('topic-manual-panel');
+    const randomPanel = document.getElementById('topic-random-panel');
+
+    if (mode === 'manual') {
+        if (manualBtn) manualBtn.classList.add('active');
+        if (randomBtn) randomBtn.classList.remove('active');
+        if (manualPanel) manualPanel.style.display = 'block';
+        if (randomPanel) randomPanel.style.display = 'none';
+    } else {
+        if (manualBtn) manualBtn.classList.remove('active');
+        if (randomBtn) randomBtn.classList.add('active');
+        if (manualPanel) manualPanel.style.display = 'none';
+        if (randomPanel) randomPanel.style.display = 'block';
+        pickRandomPracticeTopic();
+    }
+};
+
+window.pickRandomPracticeTopic = () => {
+    const available = practiceTopicsData.map(t => t.id);
+    if (!available || available.length === 0) return;
+
+    const selectEl = document.getElementById('practice-topic-select');
+    const currentId = selectEl ? parseInt(selectEl.value) : 1;
+
+    let nextId = currentId;
+    if (available.length > 1) {
+        const pool = available.filter(id => id !== currentId);
+        nextId = pool[Math.floor(Math.random() * pool.length)];
+    } else {
+        nextId = available[0];
+    }
+
+    renderPracticeTopic(nextId);
+
+    // Confetti celebration
+    if (typeof confetti === 'function') {
+        try {
+            confetti({
+                particleCount: 50,
+                spread: 70,
+                origin: { y: 0.3 }
+            });
+        } catch (e) {}
+    }
+};
+
+function renderPracticeTopic(topicId) {
+    const container = document.getElementById('practice-topic-content');
+    if (!container) return;
+    
+    const topic = practiceTopicsData.find(t => t.id === topicId) || practiceTopicsData[0];
+    if (!topic) return;
+
+    const labelEl = document.getElementById('current-topic-label');
+    if (labelEl) labelEl.textContent = `Topic ${String(topic.id).padStart(2, '0')} / 60`;
+
+    const selectEl = document.getElementById('practice-topic-select');
+    if (selectEl) selectEl.value = String(topic.id);
+
+    const randomDisplayEl = document.getElementById('random-topic-title-display');
+    if (randomDisplayEl) randomDisplayEl.textContent = topic.title;
+
+    let html = `
+        <div class="f-card-clean fade-in" style="margin-bottom: 2rem;">
+            <div style="background: linear-gradient(135deg, rgba(67, 97, 238, 0.08), rgba(58, 12, 163, 0.05)); border: 2px solid rgba(67, 97, 238, 0.2); border-radius: 20px; padding: 1.5rem 1.75rem; margin-bottom: 2rem;">
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 0.75rem;">
+                    <div style="font-size: 1.4rem; font-weight: 800; color: var(--primary); display: flex; align-items: center; gap: 0.6rem;">
+                        <i class="fa-solid fa-comments"></i> ${topic.title}
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;">
+                        <button class="btn-audio-sample" onclick="speakText('${(topic.introText || topic.intro || '').replace(/'/g, "\\'")}')" style="background: var(--primary);">
+                            <i class="fa-solid fa-volume-high"></i> Nghe Câu Dẫn
+                        </button>
+                        <button class="btn-audio-sample" onclick="openFullTopicExamModal(${topic.id})" style="background: linear-gradient(135deg, #ef4444, #dc2626); box-shadow: 0 4px 12px rgba(239, 68, 68, 0.35);">
+                            <i class="fa-solid fa-stopwatch"></i> Thi Thử Cả Chủ Đề (90s)
+                        </button>
+                    </div>
+                </div>
+                <div style="font-size: 1.05rem; color: var(--text-main); line-height: 1.7; font-style: italic; background: var(--bg-card); padding: 0.85rem 1.25rem; border-radius: 12px; border: 1px dashed var(--border);">
+                    🗣️ Câu dẫn của thí sinh: <strong>"${topic.introText || topic.intro || ''}"</strong>
+                </div>
+            </div>
+    `;
+
+    topic.questions.forEach((q) => {
+        // Build suggestions HTML
+        let vocabHtml = '';
+        q.vocabGroups.forEach(vg => {
+            if (vg.type === 'note' || vg.note) {
+                vocabHtml += `
+                    <div style="margin-bottom: 1.25rem; background: rgba(67, 97, 238, 0.05); border-left: 4px solid var(--primary); padding: 0.85rem 1.15rem; border-radius: 12px; border: 1px solid rgba(67, 97, 238, 0.15); border-left-width: 4px;">
+                        <div style="font-weight: 800; font-size: 0.95rem; color: var(--primary); margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.4rem;">
+                            ${vg.title}
+                        </div>
+                        <div style="font-size: 0.95rem; line-height: 1.65; color: var(--text-main);">
+                            ${vg.note}
+                        </div>
+                    </div>
+                `;
+            } else if (vg.items && vg.items.length > 0) {
+                let itemsHtml = vg.items.map(it => `
+                    <div class="topic-vocab-list-item" onclick="speakText('${it.en.replace(/'/g, "\\'")}')" title="Nhấn để nghe phát âm">
+                        <i class="fa-solid fa-volume-high vocab-audio-icon"></i>
+                        <strong class="vocab-en">${it.en}</strong>
+                        <span class="vocab-colon">:</span>
+                        <span class="vocab-vn">${it.vn}</span>
+                    </div>
+                `).join('');
+
+                vocabHtml += `
+                    <div style="margin-bottom: 1.25rem;">
+                        <div style="font-weight: 800; font-size: 0.95rem; color: var(--text-main); margin-bottom: 0.4rem;">${vg.title}</div>
+                        <div class="topic-vocab-list">${itemsHtml}</div>
+                    </div>
+                `;
+            }
+        });
+
+        // Build samples HTML
+        let samplesHtml = q.samples.map((s) => `
+            <div style="background: var(--bg-body); border-radius: 14px; padding: 1.25rem; border: 1px solid var(--border); margin-bottom: 1rem;">
+                <div style="font-weight: 800; color: #7c3aed; font-size: 0.95rem; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fa-solid fa-star"></i> ${s.label}:
+                </div>
+                <div class="ex-text" style="font-size: 1.05rem; line-height: 1.85; color: var(--text-main); font-weight: 500; margin-bottom: 0.85rem; text-align: justify; text-justify: inter-word;">
+                    ${s.formatted}
+                </div>
+                <button class="btn-audio-sample" onclick="speakText('${s.text.replace(/'/g, "\\'")}')" style="background: #8b5cf6;">
+                    <i class="fa-solid fa-volume-high"></i> Nghe Audio bài mẫu
+                </button>
+            </div>
+        `).join('');
+
+        html += `
+            <div class="topic-q-card fade-in">
+                <!-- Question Header -->
+                <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1.25rem; flex-wrap: wrap;">
+                    <div>
+                        <div class="topic-q-badge">
+                            <i class="fa-solid fa-circle-question"></i> CÂU HỎI ${q.qNum} / 3
+                        </div>
+                        <span class="topic-q-type-badge">
+                            <i class="fa-solid fa-tag"></i> ${q.qType}
+                        </span>
+                        <div style="font-size: 1.25rem; font-weight: 800; color: var(--text-main); margin-top: 0.5rem; line-height: 1.5;">
+                            ${q.question}
+                        </div>
+                    </div>
+                    <button class="icon-btn" onclick="speakText('${q.question.replace(/'/g, "\\'")}')" title="Nghe phát âm câu hỏi" style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: rgba(67, 97, 238, 0.1); color: var(--primary); border: 1.5px solid rgba(67, 97, 238, 0.25);">
+                        <i class="fa-solid fa-volume-high" style="font-size: 1.1rem;"></i>
+                    </button>
+                </div>
+
+                <!-- 1. GỢI Ý CÁCH TRẢ LỜI -->
+                <div class="topic-section-box" style="border-color: rgba(59, 130, 246, 0.4); box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.08);">
+                    <div class="topic-section-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'none' ? 'block' : 'none'" style="background: rgba(59, 130, 246, 0.08); color: #2563eb;">
+                        <span><i class="fa-solid fa-lightbulb" style="color: #2563eb;"></i> 💡 GỢI Ý CÁCH TRẢ LỜI</span>
+                        <span style="font-size: 0.85rem; font-weight: 600;"><i class="fa-solid fa-chevron-down"></i></span>
+                    </div>
+                    <div class="topic-section-content" style="background: rgba(59, 130, 246, 0.02);">
+                        <div class="f-formula-box" style="margin: 0; padding: 0.5rem 0; background: transparent; border: none;">
+                            ${q.formula}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. GỢI Ý TỪ VỰNG -->
+                <div class="topic-section-box" style="border-color: rgba(245, 158, 11, 0.4); box-shadow: 0 4px 6px -1px rgba(245, 158, 11, 0.08);">
+                    <div class="topic-section-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'none' ? 'block' : 'none'" style="background: rgba(245, 158, 11, 0.08); color: #d97706;">
+                        <span><i class="fa-solid fa-pen-to-square" style="color: #d97706;"></i> 📝 GỢI Ý TỪ VỰNG</span>
+                        <span style="font-size: 0.85rem; font-weight: 600;"><i class="fa-solid fa-chevron-down"></i></span>
+                    </div>
+                    <div class="topic-section-content">
+                        ${vocabHtml}
+                    </div>
+                </div>
+
+                <!-- 3. THỰC HÀNH NÓI & GHI ÂM TÍNH GIỜ (NHƯ LÚC THI) -->
+                <div class="topic-section-box" style="border-color: rgba(239, 68, 68, 0.45); box-shadow: 0 4px 6px -1px rgba(239, 68, 68, 0.08);">
+                    <div class="topic-section-header" style="background: rgba(239, 68, 68, 0.08); color: #dc2626; cursor: default;">
+                        <span><i class="fa-solid fa-microphone-lines" style="color: #dc2626;"></i> 🎙️ THỰC HÀNH NÓI & GHI ÂM TÍNH GIỜ (NHƯ LÚC THI)</span>
+                        <span id="topic-q-phase-badge-${q.qNum}" class="topic-exam-phase-badge">⏱️ Sẵn sàng trả lời</span>
+                    </div>
+                    <div class="topic-section-content" style="background: var(--bg-card); padding: 1.25rem 1.35rem;">
+                        <div class="topic-exam-recorder" style="margin-top: 0; border: none; box-shadow: none; padding: 0;">
+                            <div class="topic-exam-top">
+                                <div class="topic-exam-time-options">
+                                    <span><i class="fa-regular fa-clock"></i> Thời gian nói:</span>
+                                    <span style="font-weight: 800; color: #ef4444; font-size: 0.95rem; background: rgba(239, 68, 68, 0.08); padding: 0.25rem 0.75rem; border-radius: 50px; border: 1px solid rgba(239, 68, 68, 0.25);"><i class="fa-solid fa-stopwatch"></i> 25 giây / câu</span>
+                                </div>
+                                <div style="font-size: 0.85rem; color: var(--text-muted); font-style: italic;">
+                                    💡 Máy tính sẽ phát tiếng <strong>Beep</strong> khi bắt đầu và <strong>Chuông</strong> khi hết giờ.
+                                </div>
+                            </div>
+
+                            <div class="topic-exam-body">
+                                <div class="topic-exam-timer-wrap">
+                                    <div id="topic-q-digits-${q.qNum}" class="topic-exam-digits">00:25</div>
+                                    <div id="topic-q-wave-${q.qNum}" class="topic-mic-wave">
+                                        <div class="topic-mic-bar"></div>
+                                        <div class="topic-mic-bar"></div>
+                                        <div class="topic-mic-bar"></div>
+                                        <div class="topic-mic-bar"></div>
+                                        <div class="topic-mic-bar"></div>
+                                        <div class="topic-mic-bar"></div>
+                                        <div class="topic-mic-bar"></div>
+                                        <div class="topic-mic-bar"></div>
+                                        <span style="font-size: 0.78rem; font-weight: 700; color: #ef4444; margin-left: 0.25rem;">
+                                            <span class="topic-recording-dot"></span> ĐANG THU ÂM
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="topic-exam-actions">
+                                    <button type="button" id="btn-topic-start-${q.qNum}" class="btn-exam-rec start" onclick="startTopicQuestionRecording(${q.qNum})">
+                                        <i class="fa-solid fa-microphone"></i> Bắt đầu nói & Ghi âm
+                                    </button>
+                                    <button type="button" id="btn-topic-stop-${q.qNum}" class="btn-exam-rec stop" onclick="stopTopicQuestionRecording(${q.qNum})" style="display: none;">
+                                        <i class="fa-solid fa-square"></i> Dừng & Nộp bài
+                                    </button>
+                                    <button type="button" id="btn-topic-reset-${q.qNum}" class="btn-exam-rec reset" onclick="resetTopicQuestionRecording(${q.qNum})" style="display: none;">
+                                        <i class="fa-solid fa-rotate-left"></i> Ghi âm lại
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Playback Box -->
+                            <div id="topic-playback-box-${q.qNum}" class="topic-exam-playback" style="display: none;">
+                                <audio id="topic-audio-player-${q.qNum}" controls class="topic-exam-audio-player"></audio>
+                                <a id="btn-download-topic-q-${q.qNum}" class="btn-exam-download" download="VSTEP_Speaking_P1_Q${q.qNum}.webm">
+                                    <i class="fa-solid fa-download"></i> Tải bài nói (.webm)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. GỢI Ý ĐÁP ÁN MẪU THAM KHẢO -->
+                <div class="topic-section-box" style="border-color: rgba(139, 92, 246, 0.4); box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.08);">
+                    <div class="topic-section-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'none' ? 'block' : 'none'" style="background: rgba(139, 92, 246, 0.08); color: #7c3aed;">
+                        <span><i class="fa-solid fa-star" style="color: #7c3aed;"></i> ⭐ GỢI Ý ĐÁP ÁN MẪU THAM KHẢO</span>
+                        <span style="font-size: 0.85rem; font-weight: 600;"><i class="fa-solid fa-chevron-down"></i></span>
+                    </div>
+                    <div class="topic-section-content">
+                        ${samplesHtml}
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+
+    html += `</div>`;
+    container.innerHTML = html;
+}
+
+// ==========================================================================
+// EXAM AUDIO SYNTHESIZER & SOUND EFFECTS (Web Audio API)
+// ==========================================================================
+function playExamTone(freq, duration, type = 'sine') {
+    try {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContext) return;
+        if (!window._examAudioCtx) {
+            window._examAudioCtx = new AudioContext();
+        }
+        if (window._examAudioCtx.state === 'suspended') {
+            window._examAudioCtx.resume();
+        }
+        const ctx = window._examAudioCtx;
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, ctx.currentTime);
+        gain.gain.setValueAtTime(0.2, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(ctx.currentTime);
+        osc.stop(ctx.currentTime + duration);
+    } catch (e) {
+        console.warn('Exam audio synth notice:', e);
+    }
+}
+
+function playExamDoubleBeep() {
+    playExamTone(880, 0.15);
+    setTimeout(() => playExamTone(880, 0.15), 200);
+}
+
+function playExamTimeUpChime() {
+    playExamTone(523.25, 0.15); // C5
+    setTimeout(() => {
+        playExamTone(659.25, 0.15); // E5
+        setTimeout(() => {
+            playExamTone(783.99, 0.35); // G5
+        }, 120);
+    }, 120);
+}
+
+function stopAllActiveRecordings() {
+    if (window._topicTimers) {
+        Object.keys(window._topicTimers).forEach(qNum => {
+            if (window._topicTimers[qNum] && window._topicTimers[qNum].isRecording) {
+                stopTopicQuestionRecording(qNum);
+            }
+        });
+    }
+    if (window._fullExamTimer && window._fullExamTimer.isRecording) {
+        stopFullTopicRecording();
+    }
+}
+
+// ==========================================================================
+// TOPIC PRACTICE - TIMED AUDIO RECORDER ENGINE (PER-QUESTION: 25s)
+// ==========================================================================
+window._topicTimers = {};
+
+window.setTopicQuestionTime = (qNum, seconds, btnEl) => {
+    if (window._topicTimers[qNum] && window._topicTimers[qNum].isRecording) return;
+    
+    if (!window._topicTimers[qNum]) {
+        window._topicTimers[qNum] = {};
+    }
+    window._topicTimers[qNum].totalTime = seconds;
+    window._topicTimers[qNum].timeLeft = seconds;
+
+    const digitsEl = document.getElementById(`topic-q-digits-${qNum}`);
+    if (digitsEl) {
+        const mm = String(Math.floor(seconds / 60)).padStart(2, '0');
+        const ss = String(seconds % 60).padStart(2, '0');
+        digitsEl.textContent = `${mm}:${ss}`;
+        digitsEl.classList.remove('warning', 'danger');
+    }
+};
+
+window.startTopicQuestionRecording = async (qNum) => {
+    stopAllActiveRecordings();
+
+    const timerObj = window._topicTimers[qNum] || { totalTime: 25, timeLeft: 25 };
+    window._topicTimers[qNum] = timerObj;
+    timerObj.totalTime = 25;
+    timerObj.timeLeft = 25;
+
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        timerObj.stream = stream;
+
+        let options = { mimeType: 'audio/webm' };
+        if (typeof MediaRecorder !== 'undefined' && MediaRecorder.isTypeSupported) {
+            if (!MediaRecorder.isTypeSupported('audio/webm') && MediaRecorder.isTypeSupported('audio/mp4')) {
+                options = { mimeType: 'audio/mp4' };
+            }
+        }
+
+        const recorder = new MediaRecorder(stream, options);
+        timerObj.recorder = recorder;
+        timerObj.chunks = [];
+
+        recorder.ondataavailable = (e) => {
+            if (e.data && e.data.size > 0) {
+                timerObj.chunks.push(e.data);
+            }
+        };
+
+        recorder.onstop = () => {
+            const blob = new Blob(timerObj.chunks, { type: recorder.mimeType || 'audio/webm' });
+            if (timerObj.blobUrl) URL.revokeObjectURL(timerObj.blobUrl);
+            timerObj.blobUrl = URL.createObjectURL(blob);
+
+            const player = document.getElementById(`topic-audio-player-${qNum}`);
+            const downloadBtn = document.getElementById(`btn-download-topic-q-${qNum}`);
+            const playbackBox = document.getElementById(`topic-playback-box-${qNum}`);
+
+            if (player) player.src = timerObj.blobUrl;
+            if (downloadBtn) {
+                downloadBtn.href = timerObj.blobUrl;
+                const student = (document.getElementById('display-name')?.textContent || 'HocVien').trim().replace(/\s+/g, '_');
+                downloadBtn.download = `VSTEP_B2_Speaking_P1_Q${qNum}_${student}.webm`;
+            }
+            if (playbackBox) playbackBox.style.display = 'flex';
+
+            const badge = document.getElementById(`topic-q-phase-badge-${qNum}`);
+            if (badge) {
+                badge.className = 'topic-exam-phase-badge done';
+                badge.innerHTML = '<i class="fa-solid fa-circle-check"></i> Đã hoàn thành bài nói';
+            }
+
+            const startBtn = document.getElementById(`btn-topic-start-${qNum}`);
+            const stopBtn = document.getElementById(`btn-topic-stop-${qNum}`);
+            const resetBtn = document.getElementById(`btn-topic-reset-${qNum}`);
+            if (startBtn) startBtn.style.display = 'none';
+            if (stopBtn) stopBtn.style.display = 'none';
+            if (resetBtn) resetBtn.style.display = 'inline-flex';
+
+            const waveEl = document.getElementById(`topic-q-wave-${qNum}`);
+            if (waveEl) waveEl.classList.remove('active');
+        };
+
+        playExamDoubleBeep();
+        recorder.start(1000);
+        timerObj.isRecording = true;
+
+        const badge = document.getElementById(`topic-q-phase-badge-${qNum}`);
+        if (badge) {
+            badge.className = 'topic-exam-phase-badge recording';
+            badge.innerHTML = '<span class="topic-recording-dot"></span> Đang ghi âm bài nói';
+        }
+
+        const waveEl = document.getElementById(`topic-q-wave-${qNum}`);
+        if (waveEl) waveEl.classList.add('active');
+
+        const startBtn = document.getElementById(`btn-topic-start-${qNum}`);
+        const stopBtn = document.getElementById(`btn-topic-stop-${qNum}`);
+        const resetBtn = document.getElementById(`btn-topic-reset-${qNum}`);
+        const playbackBox = document.getElementById(`topic-playback-box-${qNum}`);
+        if (startBtn) startBtn.style.display = 'none';
+        if (stopBtn) stopBtn.style.display = 'inline-flex';
+        if (resetBtn) resetBtn.style.display = 'none';
+        if (playbackBox) playbackBox.style.display = 'none';
+
+        const digitsEl = document.getElementById(`topic-q-digits-${qNum}`);
+        if (digitsEl) {
+            digitsEl.textContent = '00:25';
+            digitsEl.classList.remove('warning', 'danger');
+        }
+
+        timerObj.timerInterval = setInterval(() => {
+            timerObj.timeLeft--;
+            const cur = timerObj.timeLeft;
+            if (digitsEl) {
+                const mm = String(Math.floor(cur / 60)).padStart(2, '0');
+                const ss = String(cur % 60).padStart(2, '0');
+                digitsEl.textContent = `${mm}:${ss}`;
+
+                if (cur <= 8 && cur > 3) {
+                    digitsEl.classList.add('warning');
+                } else if (cur <= 3) {
+                    digitsEl.classList.remove('warning');
+                    digitsEl.classList.add('danger');
+                }
+            }
+
+            if (cur <= 0) {
+                playExamTimeUpChime();
+                stopTopicQuestionRecording(qNum);
+            }
+        }, 1000);
+
+    } catch (err) {
+        console.warn('Microphone permission error:', err);
+        alert('⚠️ Không thể truy cập Microphone! Vui lòng cho phép trình duyệt truy cập micro để ghi âm bài nói.');
+    }
+};
+
+window.stopTopicQuestionRecording = (qNum) => {
+    const timerObj = window._topicTimers[qNum];
+    if (!timerObj || !timerObj.isRecording) return;
+
+    timerObj.isRecording = false;
+    if (timerObj.timerInterval) {
+        clearInterval(timerObj.timerInterval);
+        timerObj.timerInterval = null;
+    }
+
+    if (timerObj.recorder && timerObj.recorder.state !== 'inactive') {
+        try { timerObj.recorder.stop(); } catch(e) {}
+    }
+
+    if (timerObj.stream) {
+        try { timerObj.stream.getTracks().forEach(t => t.stop()); } catch(e) {}
+        timerObj.stream = null;
+    }
+};
+
+window.resetTopicQuestionRecording = (qNum) => {
+    const timerObj = window._topicTimers[qNum] || {};
+    if (timerObj.isRecording) {
+        stopTopicQuestionRecording(qNum);
+    }
+    timerObj.totalTime = 25;
+    timerObj.timeLeft = 25;
+
+    const digitsEl = document.getElementById(`topic-q-digits-${qNum}`);
+    if (digitsEl) {
+        digitsEl.textContent = '00:25';
+        digitsEl.classList.remove('warning', 'danger');
+    }
+
+    const badge = document.getElementById(`topic-q-phase-badge-${qNum}`);
+    if (badge) {
+        badge.className = 'topic-exam-phase-badge';
+        badge.innerHTML = '⏱️ Sẵn sàng trả lời';
+    }
+
+    const startBtn = document.getElementById(`btn-topic-start-${qNum}`);
+    const stopBtn = document.getElementById(`btn-topic-stop-${qNum}`);
+    const resetBtn = document.getElementById(`btn-topic-reset-${qNum}`);
+    const playbackBox = document.getElementById(`topic-playback-box-${qNum}`);
+    const waveEl = document.getElementById(`topic-q-wave-${qNum}`);
+
+    if (startBtn) startBtn.style.display = 'inline-flex';
+    if (stopBtn) stopBtn.style.display = 'none';
+    if (resetBtn) resetBtn.style.display = 'none';
+    if (playbackBox) playbackBox.style.display = 'none';
+    if (waveEl) waveEl.classList.remove('active');
+};
+
+// ==========================================================================
+// FULL TOPIC EXAM SIMULATION MODAL (3 Questions Continuous - 90s)
+// ==========================================================================
+window._fullExamTimer = {
+    totalTime: 90,
+    timeLeft: 90,
+    isRecording: false,
+    interval: null,
+    recorder: null,
+    chunks: [],
+    stream: null,
+    blobUrl: null
+};
+
+window.openFullTopicExamModal = (topicId) => {
+    stopAllActiveRecordings();
+    const topic = practiceTopicsData.find(t => t.id === topicId) || practiceTopicsData[0];
+    if (!topic) return;
+
+    let overlay = document.getElementById('topic-full-exam-overlay');
+    if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.id = 'topic-full-exam-overlay';
+        overlay.className = 'topic-full-exam-overlay';
+        document.body.appendChild(overlay);
+    }
+
+    const qListHtml = topic.questions.map(q => `
+        <div style="background: var(--bg-body); border-radius: 12px; padding: 1rem 1.25rem; border: 1px solid var(--border); margin-bottom: 0.85rem;">
+            <div style="font-weight: 800; color: var(--primary); font-size: 0.92rem; margin-bottom: 0.35rem;">
+                CÂU HỎI ${q.qNum}:
+            </div>
+            <div style="font-size: 1.15rem; font-weight: 700; color: var(--text-main); line-height: 1.5;">
+                ${q.question}
+            </div>
+        </div>
+    `).join('');
+
+    overlay.innerHTML = `
+        <div class="topic-full-exam-modal fade-in">
+            <div class="topic-full-exam-header">
+                <div>
+                    <div style="font-size: 0.85rem; font-weight: 700; color: #ef4444; letter-spacing: 0.5px; text-transform: uppercase;">
+                        <i class="fa-solid fa-microphone-lines"></i> VSTEP B2 EXAM SIMULATION • SPEAKING PART 01
+                    </div>
+                    <div class="topic-full-exam-title">
+                        ${topic.title}
+                    </div>
+                </div>
+                <button class="topic-full-exam-close" onclick="closeFullTopicExamModal()" title="Đóng phòng thi">&times;</button>
+            </div>
+
+            <div style="margin-bottom: 1.25rem;">
+                <div style="font-size: 0.95rem; font-weight: 700; color: var(--text-muted); margin-bottom: 0.75rem;">
+                    📋 NỘI DUNG 3 CÂU HỎI BẠN CẦN TRẢ LỜI LIÊN TỤC:
+                </div>
+                ${qListHtml}
+            </div>
+
+            <!-- Exam Console -->
+            <div style="background: var(--bg-body); border: 2px solid rgba(239, 68, 68, 0.3); border-radius: 16px; padding: 1.5rem; text-align: center;">
+                <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap;">
+                    <span style="font-size: 0.9rem; font-weight: 700; color: var(--text-muted);">Thời gian thi:</span>
+                    <button type="button" class="btn-time-opt" onclick="setFullExamTime(60, this)">60s</button>
+                    <button type="button" class="btn-time-opt active" onclick="setFullExamTime(90, this)">90s (Chuẩn 1 Chủ Đề B2)</button>
+                    <button type="button" class="btn-time-opt" onclick="setFullExamTime(180, this)">180s (3 Phút - Cả Part 1)</button>
+                </div>
+
+                <div id="full-exam-badge" class="topic-exam-phase-badge" style="margin-bottom: 1rem;">
+                    ⏱️ SẴN SÀNG VÀO THI
+                </div>
+
+                <div style="display: flex; align-items: center; justify-content: center; gap: 1.25rem; margin-bottom: 1.25rem;">
+                    <div id="full-exam-digits" class="topic-exam-digits" style="font-size: 3.5rem;">01:30</div>
+                    <div id="full-exam-wave" class="topic-mic-wave">
+                        <div class="topic-mic-bar"></div>
+                        <div class="topic-mic-bar"></div>
+                        <div class="topic-mic-bar"></div>
+                        <div class="topic-mic-bar"></div>
+                        <div class="topic-mic-bar"></div>
+                        <div class="topic-mic-bar"></div>
+                        <div class="topic-mic-bar"></div>
+                        <div class="topic-mic-bar"></div>
+                        <span style="font-size: 0.8rem; font-weight: 700; color: #ef4444; margin-left: 0.3rem;">
+                            <span class="topic-recording-dot"></span> ĐANG THU ÂM
+                        </span>
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap;">
+                    <button type="button" id="btn-full-start" class="btn-exam-rec start" onclick="startFullTopicRecording(${topic.id})">
+                        <i class="fa-solid fa-play"></i> Bắt đầu thi thử & Ghi âm
+                    </button>
+                    <button type="button" id="btn-full-stop" class="btn-exam-rec stop" onclick="stopFullTopicRecording()" style="display: none;">
+                        <i class="fa-solid fa-square"></i> Nộp bài & Dừng thi
+                    </button>
+                    <button type="button" id="btn-full-reset" class="btn-exam-rec reset" onclick="resetFullTopicRecording()" style="display: none;">
+                        <i class="fa-solid fa-rotate-left"></i> Thi lại
+                    </button>
+                </div>
+
+                <div id="full-exam-playback" class="topic-exam-playback" style="display: none; justify-content: center;">
+                    <audio id="full-exam-player" controls class="topic-exam-audio-player"></audio>
+                    <a id="full-exam-download" class="btn-exam-download" download="VSTEP_B2_Speaking_P1_Topic_${topic.id}.webm">
+                        <i class="fa-solid fa-download"></i> Tải bài thi của bạn (.webm)
+                    </a>
+                </div>
+            </div>
+        </div>
+    `;
+
+    overlay.style.display = 'flex';
+};
+
+window.closeFullTopicExamModal = () => {
+    if (window._fullExamTimer && window._fullExamTimer.isRecording) {
+        stopFullTopicRecording();
+    }
+    const overlay = document.getElementById('topic-full-exam-overlay');
+    if (overlay) overlay.style.display = 'none';
+};
+
+window.setFullExamTime = (seconds, btnEl) => {
+    if (window._fullExamTimer.isRecording) return;
+    window._fullExamTimer.totalTime = seconds;
+    window._fullExamTimer.timeLeft = seconds;
+    if (btnEl && btnEl.parentElement) {
+        btnEl.parentElement.querySelectorAll('.btn-time-opt').forEach(b => b.classList.remove('active'));
+        btnEl.classList.add('active');
+    }
+    const digitsEl = document.getElementById('full-exam-digits');
+    if (digitsEl) {
+        const mm = String(Math.floor(seconds / 60)).padStart(2, '0');
+        const ss = String(seconds % 60).padStart(2, '0');
+        digitsEl.textContent = `${mm}:${ss}`;
+        digitsEl.classList.remove('warning', 'danger');
+    }
+};
+
+window.startFullTopicRecording = async (topicId) => {
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        window._fullExamTimer.stream = stream;
+
+        let options = { mimeType: 'audio/webm' };
+        if (typeof MediaRecorder !== 'undefined' && MediaRecorder.isTypeSupported) {
+            if (!MediaRecorder.isTypeSupported('audio/webm') && MediaRecorder.isTypeSupported('audio/mp4')) {
+                options = { mimeType: 'audio/mp4' };
+            }
+        }
+
+        const recorder = new MediaRecorder(stream, options);
+        window._fullExamTimer.recorder = recorder;
+        window._fullExamTimer.chunks = [];
+
+        recorder.ondataavailable = (e) => {
+            if (e.data && e.data.size > 0) {
+                window._fullExamTimer.chunks.push(e.data);
+            }
+        };
+
+        recorder.onstop = () => {
+            const blob = new Blob(window._fullExamTimer.chunks, { type: recorder.mimeType || 'audio/webm' });
+            if (window._fullExamTimer.blobUrl) URL.revokeObjectURL(window._fullExamTimer.blobUrl);
+            window._fullExamTimer.blobUrl = URL.createObjectURL(blob);
+
+            const player = document.getElementById('full-exam-player');
+            const downloadBtn = document.getElementById('full-exam-download');
+            const playbackBox = document.getElementById('full-exam-playback');
+
+            if (player) player.src = window._fullExamTimer.blobUrl;
+            if (downloadBtn) {
+                downloadBtn.href = window._fullExamTimer.blobUrl;
+                const student = (document.getElementById('display-name')?.textContent || 'HocVien').trim().replace(/\s+/g, '_');
+                downloadBtn.download = `VSTEP_B2_Speaking_P1_Topic${topicId}_${student}.webm`;
+            }
+            if (playbackBox) playbackBox.style.display = 'flex';
+
+            const badge = document.getElementById('full-exam-badge');
+            if (badge) {
+                badge.className = 'topic-exam-phase-badge done';
+                badge.innerHTML = '<i class="fa-solid fa-circle-check"></i> ĐÃ HOÀN THÀNH BÀI THI 🎉';
+            }
+
+            const startBtn = document.getElementById('btn-full-start');
+            const stopBtn = document.getElementById('btn-full-stop');
+            const resetBtn = document.getElementById('btn-full-reset');
+            if (startBtn) startBtn.style.display = 'none';
+            if (stopBtn) stopBtn.style.display = 'none';
+            if (resetBtn) resetBtn.style.display = 'inline-flex';
+
+            const wave = document.getElementById('full-exam-wave');
+            if (wave) wave.classList.remove('active');
+        };
+
+        playExamDoubleBeep();
+        recorder.start(1000);
+        window._fullExamTimer.isRecording = true;
+
+        const badge = document.getElementById('full-exam-badge');
+        if (badge) {
+            badge.className = 'topic-exam-phase-badge recording';
+            badge.innerHTML = '<span class="topic-recording-dot"></span> HỆ THỐNG ĐANG GHI ÂM BÀI NÓI CỦA BẠN';
+        }
+
+        const wave = document.getElementById('full-exam-wave');
+        if (wave) wave.classList.add('active');
+
+        const startBtn = document.getElementById('btn-full-start');
+        const stopBtn = document.getElementById('btn-full-stop');
+        const resetBtn = document.getElementById('btn-full-reset');
+        const playback = document.getElementById('full-exam-playback');
+        if (startBtn) startBtn.style.display = 'none';
+        if (stopBtn) stopBtn.style.display = 'inline-flex';
+        if (resetBtn) resetBtn.style.display = 'none';
+        if (playback) playback.style.display = 'none';
+
+        const digitsEl = document.getElementById('full-exam-digits');
+        window._fullExamTimer.timeLeft = window._fullExamTimer.totalTime || 90;
+
+        window._fullExamTimer.interval = setInterval(() => {
+            window._fullExamTimer.timeLeft--;
+            const cur = window._fullExamTimer.timeLeft;
+            if (digitsEl) {
+                const mm = String(Math.floor(cur / 60)).padStart(2, '0');
+                const ss = String(cur % 60).padStart(2, '0');
+                digitsEl.textContent = `${mm}:${ss}`;
+
+                if (cur <= 20 && cur > 5) {
+                    digitsEl.classList.add('warning');
+                } else if (cur <= 5) {
+                    digitsEl.classList.remove('warning');
+                    digitsEl.classList.add('danger');
+                }
+            }
+
+            if (cur <= 0) {
+                playExamTimeUpChime();
+                stopFullTopicRecording();
+            }
+        }, 1000);
+
+    } catch (err) {
+        console.warn('Full exam mic error:', err);
+        alert('⚠️ Không thể truy cập Microphone! Vui lòng cho phép quyền truy cập micro.');
+    }
+};
+
+window.stopFullTopicRecording = () => {
+    if (!window._fullExamTimer.isRecording) return;
+    window._fullExamTimer.isRecording = false;
+    if (window._fullExamTimer.interval) {
+        clearInterval(window._fullExamTimer.interval);
+        window._fullExamTimer.interval = null;
+    }
+    if (window._fullExamTimer.recorder && window._fullExamTimer.recorder.state !== 'inactive') {
+        try { window._fullExamTimer.recorder.stop(); } catch(e) {}
+    }
+    if (window._fullExamTimer.stream) {
+        try { window._fullExamTimer.stream.getTracks().forEach(t => t.stop()); } catch(e) {}
+        window._fullExamTimer.stream = null;
+    }
+};
+
+window.resetFullTopicRecording = () => {
+    if (window._fullExamTimer.isRecording) {
+        stopFullTopicRecording();
+    }
+    window._fullExamTimer.timeLeft = window._fullExamTimer.totalTime || 90;
+    const digitsEl = document.getElementById('full-exam-digits');
+    if (digitsEl) {
+        const mm = String(Math.floor(window._fullExamTimer.timeLeft / 60)).padStart(2, '0');
+        const ss = String(window._fullExamTimer.timeLeft % 60).padStart(2, '0');
+        digitsEl.textContent = `${mm}:${ss}`;
+        digitsEl.classList.remove('warning', 'danger');
+    }
+
+    const badge = document.getElementById('full-exam-badge');
+    if (badge) {
+        badge.className = 'topic-exam-phase-badge';
+        badge.innerHTML = '⏱️ SẴN SÀNG VÀO THI';
+    }
+
+    const startBtn = document.getElementById('btn-full-start');
+    const stopBtn = document.getElementById('btn-full-stop');
+    const resetBtn = document.getElementById('btn-full-reset');
+    const playback = document.getElementById('full-exam-playback');
+    const wave = document.getElementById('full-exam-wave');
+
+    if (startBtn) startBtn.style.display = 'inline-flex';
+    if (stopBtn) stopBtn.style.display = 'none';
+    if (resetBtn) resetBtn.style.display = 'none';
+    if (playback) playback.style.display = 'none';
+    if (wave) wave.classList.remove('active');
+};
+
+// Auto-initialize topic 1 on load
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        if (typeof renderPracticeTopic === 'function') renderPracticeTopic(1);
+    });
+} else {
+    if (typeof renderPracticeTopic === 'function') renderPracticeTopic(1);
+}
+
