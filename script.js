@@ -3610,7 +3610,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        title: "✨ [Tính từ so sánh hơn (đã tách riêng & bổ sung từ quen thuộc)]:",
+                        title: "✨ [Tính từ so sánh hơn]:",
                         items: [
                             { en: "more fun", vn: "vui vẻ hơn" },
                             { en: "more relaxing", vn: "thư thái / thư giãn hơn" },
@@ -3740,7 +3740,7 @@ const practiceTopicsData = [
                 </div>`,
                 vocabGroups: [
                     {
-                        title: "🎮 [Tên trò chơi & thể loại (dễ phát âm & quen thuộc)]:",
+                        title: "🎮 [Tên trò chơi & thể loại]:",
                         items: [
                             { en: "Candy Crush", vn: "trò chơi xếp kẹo giải đố Candy Crush" },
                             { en: "Township", vn: "game xây dựng thành phố và nông trại Township" },
@@ -3854,7 +3854,7 @@ const practiceTopicsData = [
                 </div>`,
                 vocabGroups: [
                     {
-                        title: "✨ [Tính từ so sánh hơn (đã tách riêng & bổ sung từ quen thuộc)]:",
+                        title: "✨ [Tính từ so sánh hơn]:",
                         items: [
                             { en: "much more collaborative", vn: "mang tính phối hợp đồng đội cao hơn nhiều" },
                             { en: "far more thrilling", vn: "kịch tính / hồi hộp hơn nhiều" },
