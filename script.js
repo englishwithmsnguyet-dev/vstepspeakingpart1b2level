@@ -4326,8 +4326,11 @@ function renderPracticeTopic(topicId) {
                         <button class="btn-audio-sample" onclick="speakText('${(topic.introText || topic.intro || '').replace(/'/g, "\\'")}')" style="background: var(--primary);">
                             <i class="fa-solid fa-volume-high"></i> Nghe Câu Dẫn
                         </button>
-                        <button class="btn-audio-sample" onclick="openFullTopicExamModal(${topic.id})" style="background: linear-gradient(135deg, #ef4444, #dc2626); box-shadow: 0 4px 12px rgba(239, 68, 68, 0.35);">
-                            <i class="fa-solid fa-stopwatch"></i> Thi Thử Cả Chủ Đề (90s)
+                        <button class="btn-audio-sample" onclick="openFullTopicExamModal(${topic.id})" style="background: linear-gradient(135deg, #ef4444, #dc2626); box-shadow: 0 4px 12px rgba(239, 68, 68, 0.35);" title="Thi thử liên tục 3 câu của chủ đề này">
+                            <i class="fa-solid fa-stopwatch"></i> Thi Thử 1 Chủ Đề (90s)
+                        </button>
+                        <button class="btn-audio-sample" onclick="openFullPartExamModal(${topic.id})" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed); box-shadow: 0 4px 12px rgba(139, 92, 246, 0.35);" title="Thi thử chuẩn Part 1: Chủ đề này ghép cùng 1 chủ đề khác trong 3 phút">
+                            <i class="fa-solid fa-layer-group"></i> Thi Thử Cả Part 1 (2 Chủ Đề - 180s)
                         </button>
                     </div>
                 </div>
@@ -4763,6 +4766,8 @@ window.resetTopicQuestionRecording = (qNum) => {
 // ==========================================================================
 // FULL TOPIC EXAM SIMULATION MODAL (3 Questions Continuous - 90s)
 // ==========================================================================
+// FULL TOPIC / FULL PART EXAM SIMULATION MODAL
+// ==========================================================================
 window._fullExamTimer = {
     totalTime: 90,
     timeLeft: 90,
@@ -4774,10 +4779,138 @@ window._fullExamTimer = {
     blobUrl: null
 };
 
-window.openFullTopicExamModal = (topicId) => {
+window._fullExamState = {
+    mode: 'single', // 'single' (1 topic - 3 questions) | 'full' (2 topics - 6 questions)
+    topic1Id: 1,
+    topic2Id: 2,
+    seconds: 90
+};
+
+window.renderExamQuestionsHtml = () => {
+    const t1 = practiceTopicsData.find(t => t.id === window._fullExamState.topic1Id) || practiceTopicsData[0];
+    const otherTopics = practiceTopicsData.filter(t => t.id !== t1.id);
+    let t2 = practiceTopicsData.find(t => t.id === window._fullExamState.topic2Id);
+    if (!t2 || t2.id === t1.id) {
+        t2 = otherTopics[0] || t1;
+        window._fullExamState.topic2Id = t2.id;
+    }
+
+    const titleEl = document.getElementById('full-exam-modal-title');
+    const badgeEl = document.getElementById('full-exam-header-badge');
+    const questionsContainer = document.getElementById('full-exam-questions-container');
+
+    if (window._fullExamState.seconds === 180) {
+        // Full Part 1 Mode (2 Topics - 6 questions)
+        if (badgeEl) badgeEl.innerHTML = '<i class="fa-solid fa-microphone-lines"></i> VSTEP B2 EXAM SIMULATION • FULL PART 01 (2 CHỦ ĐỀ - 6 CÂU HỎI)';
+        if (titleEl) titleEl.innerHTML = `<span><i class="fa-solid fa-layer-group"></i> ${t1.title} & ${t2.title}</span>`;
+
+        const q1Html = t1.questions.map(q => `
+            <div style="background: var(--bg-card); border-radius: 10px; padding: 0.85rem 1rem; border: 1px solid var(--border); margin-bottom: 0.6rem;">
+                <div style="font-weight: 800; color: var(--primary); font-size: 0.85rem; margin-bottom: 0.25rem;">CÂU HỎI ${q.qNum}:</div>
+                <div style="font-size: 1.02rem; font-weight: 700; color: var(--text-main); line-height: 1.45;">${q.question}</div>
+            </div>
+        `).join('');
+
+        const q2Html = t2.questions.map(q => `
+            <div style="background: var(--bg-card); border-radius: 10px; padding: 0.85rem 1rem; border: 1px solid var(--border); margin-bottom: 0.6rem;">
+                <div style="font-weight: 800; color: #059669; font-size: 0.85rem; margin-bottom: 0.25rem;">CÂU HỎI ${q.qNum}:</div>
+                <div style="font-size: 1.02rem; font-weight: 700; color: var(--text-main); line-height: 1.45;">${q.question}</div>
+            </div>
+        `).join('');
+
+        if (questionsContainer) {
+            questionsContainer.innerHTML = `
+                <div style="font-size: 0.95rem; font-weight: 800; color: #ef4444; margin-bottom: 0.85rem; display: flex; align-items: center; gap: 0.4rem;">
+                    <i class="fa-solid fa-clipboard-list"></i> BÀI THI TOÀN DIỆN PART 1 • TRẢ LỜI LIÊN TỤC 2 CHỦ ĐỀ (6 CÂU) TRONG 3 PHÚT:
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1rem; margin-bottom: 0.5rem;">
+                    <!-- Topic 1 -->
+                    <div style="background: var(--bg-body); border-radius: 14px; padding: 1.1rem; border: 2px solid rgba(67, 97, 238, 0.35);">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 2px solid rgba(67, 97, 238, 0.2);">
+                            <span style="font-weight: 800; color: var(--primary); font-size: 0.95rem; display: flex; align-items: center; gap: 0.4rem;">
+                                <i class="fa-solid fa-flag"></i> PHẦN 1: ${t1.title}
+                            </span>
+                            <span style="font-size: 0.78rem; font-weight: 700; color: var(--primary); background: rgba(67, 97, 238, 0.1); padding: 0.2rem 0.5rem; border-radius: 6px;">3 câu</span>
+                        </div>
+                        ${q1Html}
+                    </div>
+
+                    <!-- Topic 2 -->
+                    <div style="background: var(--bg-body); border-radius: 14px; padding: 1.1rem; border: 2px solid rgba(16, 185, 129, 0.35);">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 2px solid rgba(16, 185, 129, 0.2);">
+                            <span style="font-weight: 800; color: #059669; font-size: 0.95rem; display: flex; align-items: center; gap: 0.4rem;">
+                                <i class="fa-solid fa-flag-checkered"></i> PHẦN 2: ${t2.title}
+                            </span>
+                            <button type="button" onclick="randomizeTopic2InExam()" style="background: var(--bg-card); border: 1px solid #10b981; color: #059669; font-size: 0.78rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 0.3rem;" title="Bốc ngẫu nhiên chủ đề thứ 2 khác">
+                                <i class="fa-solid fa-shuffle"></i> Đổi Chủ Đề 2
+                            </button>
+                        </div>
+                        ${q2Html}
+                    </div>
+                </div>
+            `;
+        }
+    } else {
+        // Single Topic Mode (3 questions)
+        if (badgeEl) badgeEl.innerHTML = '<i class="fa-solid fa-microphone-lines"></i> VSTEP B2 EXAM SIMULATION • SPEAKING PART 01 (1 CHỦ ĐỀ)';
+        if (titleEl) titleEl.innerHTML = `<span><i class="fa-solid fa-comments"></i> ${t1.title}</span>`;
+
+        const qListHtml = t1.questions.map(q => `
+            <div style="background: var(--bg-body); border-radius: 12px; padding: 1rem 1.25rem; border: 1px solid var(--border); margin-bottom: 0.85rem;">
+                <div style="font-weight: 800; color: var(--primary); font-size: 0.92rem; margin-bottom: 0.35rem;">
+                    CÂU HỎI ${q.qNum}:
+                </div>
+                <div style="font-size: 1.15rem; font-weight: 700; color: var(--text-main); line-height: 1.5;">
+                    ${q.question}
+                </div>
+            </div>
+        `).join('');
+
+        if (questionsContainer) {
+            questionsContainer.innerHTML = `
+                <div style="font-size: 0.95rem; font-weight: 700; color: var(--text-muted); margin-bottom: 0.75rem;">
+                    📋 NỘI DUNG 3 CÂU HỎI BẠN CẦN TRẢ LỜI LIÊN TỤC:
+                </div>
+                ${qListHtml}
+            `;
+        }
+    }
+};
+
+window.randomizeTopic2InExam = () => {
+    if (window._fullExamTimer.isRecording) return;
+    const t1Id = window._fullExamState.topic1Id;
+    const candidates = practiceTopicsData.filter(t => t.id !== t1Id && t.id !== window._fullExamState.topic2Id);
+    if (candidates.length > 0) {
+        const nextT2 = candidates[Math.floor(Math.random() * candidates.length)];
+        window._fullExamState.topic2Id = nextT2.id;
+    } else {
+        const other = practiceTopicsData.find(t => t.id !== t1Id);
+        if (other) window._fullExamState.topic2Id = other.id;
+    }
+    renderExamQuestionsHtml();
+};
+
+window.openFullTopicExamModal = (topicId, initialSeconds = 90, topic2Id = null) => {
     stopAllActiveRecordings();
-    const topic = practiceTopicsData.find(t => t.id === topicId) || practiceTopicsData[0];
-    if (!topic) return;
+    const t1 = practiceTopicsData.find(t => t.id === topicId) || practiceTopicsData[0];
+    if (!t1) return;
+
+    let t2 = topic2Id ? practiceTopicsData.find(t => t.id === topic2Id) : null;
+    if (!t2 || t2.id === t1.id) {
+        const others = practiceTopicsData.filter(t => t.id !== t1.id);
+        t2 = others[Math.floor(Math.random() * others.length)] || t1;
+    }
+
+    window._fullExamState = {
+        mode: initialSeconds === 180 ? 'full' : 'single',
+        topic1Id: t1.id,
+        topic2Id: t2.id,
+        seconds: initialSeconds
+    };
+
+    window._fullExamTimer.totalTime = initialSeconds;
+    window._fullExamTimer.timeLeft = initialSeconds;
 
     let overlay = document.getElementById('topic-full-exam-overlay');
     if (!overlay) {
@@ -4787,45 +4920,36 @@ window.openFullTopicExamModal = (topicId) => {
         document.body.appendChild(overlay);
     }
 
-    const qListHtml = topic.questions.map(q => `
-        <div style="background: var(--bg-body); border-radius: 12px; padding: 1rem 1.25rem; border: 1px solid var(--border); margin-bottom: 0.85rem;">
-            <div style="font-weight: 800; color: var(--primary); font-size: 0.92rem; margin-bottom: 0.35rem;">
-                CÂU HỎI ${q.qNum}:
-            </div>
-            <div style="font-size: 1.15rem; font-weight: 700; color: var(--text-main); line-height: 1.5;">
-                ${q.question}
-            </div>
-        </div>
-    `).join('');
+    const mm = String(Math.floor(initialSeconds / 60)).padStart(2, '0');
+    const ss = String(initialSeconds % 60).padStart(2, '0');
 
     overlay.innerHTML = `
         <div class="topic-full-exam-modal fade-in">
             <div class="topic-full-exam-header">
                 <div>
-                    <div style="font-size: 0.85rem; font-weight: 700; color: #ef4444; letter-spacing: 0.5px; text-transform: uppercase;">
+                    <div id="full-exam-header-badge" style="font-size: 0.85rem; font-weight: 700; color: #ef4444; letter-spacing: 0.5px; text-transform: uppercase;">
                         <i class="fa-solid fa-microphone-lines"></i> VSTEP B2 EXAM SIMULATION • SPEAKING PART 01
                     </div>
-                    <div class="topic-full-exam-title">
-                        ${topic.title}
+                    <div id="full-exam-modal-title" class="topic-full-exam-title">
+                        ${t1.title}
                     </div>
                 </div>
                 <button class="topic-full-exam-close" onclick="closeFullTopicExamModal()" title="Đóng phòng thi">&times;</button>
             </div>
 
-            <div style="margin-bottom: 1.25rem;">
-                <div style="font-size: 0.95rem; font-weight: 700; color: var(--text-muted); margin-bottom: 0.75rem;">
-                    📋 NỘI DUNG 3 CÂU HỎI BẠN CẦN TRẢ LỜI LIÊN TỤC:
-                </div>
-                ${qListHtml}
-            </div>
+            <!-- Questions Area (Dynamically rendered for 1 topic or 2 topics) -->
+            <div id="full-exam-questions-container" style="margin-bottom: 1.25rem;"></div>
 
             <!-- Exam Console -->
             <div style="background: var(--bg-body); border: 2px solid rgba(239, 68, 68, 0.3); border-radius: 16px; padding: 1.5rem; text-align: center;">
                 <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap;">
                     <span style="font-size: 0.9rem; font-weight: 700; color: var(--text-muted);">Thời gian thi:</span>
-                    <button type="button" class="btn-time-opt" onclick="setFullExamTime(60, this)">60s</button>
-                    <button type="button" class="btn-time-opt active" onclick="setFullExamTime(90, this)">90s (Chuẩn 1 Chủ Đề B2)</button>
-                    <button type="button" class="btn-time-opt" onclick="setFullExamTime(180, this)">180s (3 Phút - Cả Part 1)</button>
+                    <button type="button" class="btn-time-opt ${initialSeconds === 60 ? 'active' : ''}" onclick="setFullExamTime(60, this)">60s</button>
+                    <button type="button" class="btn-time-opt ${initialSeconds === 75 ? 'active' : ''}" onclick="setFullExamTime(75, this)">75s</button>
+                    <button type="button" class="btn-time-opt ${initialSeconds === 90 ? 'active' : ''}" onclick="setFullExamTime(90, this)">90s (Chuẩn 1 Chủ Đề)</button>
+                    <button type="button" class="btn-time-opt ${initialSeconds === 180 ? 'active' : ''}" onclick="setFullExamTime(180, this)" style="border-color: #ef4444; font-weight: 800;">
+                        <i class="fa-solid fa-layer-group"></i> 180s (Chuẩn Cả Part 1: 2 Chủ Đề)
+                    </button>
                 </div>
 
                 <div id="full-exam-badge" class="topic-exam-phase-badge" style="margin-bottom: 1rem;">
@@ -4833,7 +4957,7 @@ window.openFullTopicExamModal = (topicId) => {
                 </div>
 
                 <div style="display: flex; align-items: center; justify-content: center; gap: 1.25rem; margin-bottom: 1.25rem;">
-                    <div id="full-exam-digits" class="topic-exam-digits" style="font-size: 3.5rem;">01:30</div>
+                    <div id="full-exam-digits" class="topic-exam-digits" style="font-size: 3.5rem;">${mm}:${ss}</div>
                     <div id="full-exam-wave" class="topic-mic-wave">
                         <div class="topic-mic-bar"></div>
                         <div class="topic-mic-bar"></div>
@@ -4850,7 +4974,7 @@ window.openFullTopicExamModal = (topicId) => {
                 </div>
 
                 <div style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap;">
-                    <button type="button" id="btn-full-start" class="btn-exam-rec start" onclick="startFullTopicRecording(${topic.id})">
+                    <button type="button" id="btn-full-start" class="btn-exam-rec start" onclick="startFullTopicRecording()">
                         <i class="fa-solid fa-play"></i> Bắt đầu thi thử & Ghi âm
                     </button>
                     <button type="button" id="btn-full-stop" class="btn-exam-rec stop" onclick="stopFullTopicRecording()" style="display: none;">
@@ -4863,7 +4987,7 @@ window.openFullTopicExamModal = (topicId) => {
 
                 <div id="full-exam-playback" class="topic-exam-playback" style="display: none; justify-content: center;">
                     <audio id="full-exam-player" controls class="topic-exam-audio-player"></audio>
-                    <a id="full-exam-download" class="btn-exam-download" download="VSTEP_B2_Speaking_P1_Topic_${topic.id}.webm">
+                    <a id="full-exam-download" class="btn-exam-download">
                         <i class="fa-solid fa-download"></i> Tải bài thi của bạn (.webm)
                     </a>
                 </div>
@@ -4871,7 +4995,21 @@ window.openFullTopicExamModal = (topicId) => {
         </div>
     `;
 
+    renderExamQuestionsHtml();
     overlay.style.display = 'flex';
+};
+
+window.openFullPartExamModal = (preferredTopic1Id = null) => {
+    let t1Id = preferredTopic1Id;
+    if (!t1Id) {
+        const randIdx = Math.floor(Math.random() * practiceTopicsData.length);
+        t1Id = practiceTopicsData[randIdx].id;
+    }
+    const otherCandidates = practiceTopicsData.filter(t => t.id !== t1Id);
+    const rand2Idx = Math.floor(Math.random() * otherCandidates.length);
+    const t2Id = otherCandidates[rand2Idx]?.id || practiceTopicsData[0].id;
+
+    openFullTopicExamModal(t1Id, 180, t2Id);
 };
 
 window.closeFullTopicExamModal = () => {
@@ -4884,6 +5022,7 @@ window.closeFullTopicExamModal = () => {
 
 window.setFullExamTime = (seconds, btnEl) => {
     if (window._fullExamTimer.isRecording) return;
+    window._fullExamState.seconds = seconds;
     window._fullExamTimer.totalTime = seconds;
     window._fullExamTimer.timeLeft = seconds;
     if (btnEl && btnEl.parentElement) {
@@ -4897,6 +5036,8 @@ window.setFullExamTime = (seconds, btnEl) => {
         digitsEl.textContent = `${mm}:${ss}`;
         digitsEl.classList.remove('warning', 'danger');
     }
+    // Update questions display for single vs full mode
+    renderExamQuestionsHtml();
 };
 
 window.startFullTopicRecording = async (topicId) => {
@@ -4933,8 +5074,12 @@ window.startFullTopicRecording = async (topicId) => {
             if (player) player.src = window._fullExamTimer.blobUrl;
             if (downloadBtn) {
                 downloadBtn.href = window._fullExamTimer.blobUrl;
-                const student = (document.getElementById('display-name')?.textContent || 'HocVien').trim().replace(/\s+/g, '_');
-                downloadBtn.download = `VSTEP_B2_Speaking_P1_Topic${topicId}_${student}.webm`;
+                if (window._fullExamState && window._fullExamState.seconds === 180) {
+                    downloadBtn.download = `VSTEP_B2_Speaking_P1_FullTest_T${window._fullExamState.topic1Id}_T${window._fullExamState.topic2Id}_${student}.webm`;
+                } else {
+                    const tid = (window._fullExamState && window._fullExamState.topic1Id) || topicId || 1;
+                    downloadBtn.download = `VSTEP_B2_Speaking_P1_Topic${tid}_${student}.webm`;
+                }
             }
             if (playbackBox) playbackBox.style.display = 'flex';
 
