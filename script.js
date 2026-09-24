@@ -3843,13 +3843,13 @@ const practiceTopicsData = [
                 formula: `<div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 1 (Lựa chọn dứt khoát 1 phương án kèm tính từ so sánh hơn B2):</div>
                     <div class="topic-formula-text">
-                        → Personally, I prefer playing video games <span class="formula-bracket-hl">[lựa chọn: with friends / alone]</span> because I find it much more <span class="formula-bracket-hl">[tính từ so sánh hơn]</span>. It allows <span class="formula-bracket-hl">[me / us]</span> to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives <span class="formula-bracket-hl">[me / us]</span> a chance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                        → Personally, I prefer playing video games <span class="formula-bracket-hl">[hình thức lựa chọn]</span> because I find it much more <span class="formula-bracket-hl">[tính từ so sánh hơn]</span>. It allows <span class="formula-bracket-hl">[me / us]</span> to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives <span class="formula-bracket-hl">[me / us]</span> a chance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
                     </div>
                 </div>
                 <div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 2 (Cấu trúc nhượng bộ Although - Đánh giá cao cả hai nhưng nghiêng về một bên):</div>
                     <div class="topic-formula-text">
-                        → Although playing <span class="formula-bracket-hl">[phương án nhượng bộ: alone / with friends]</span> has its own merits, I still lean towards playing <span class="formula-bracket-hl">[phương án lựa chọn: with friends / alone]</span> because it's far more <span class="formula-bracket-hl">[tính từ so sánh hơn]</span>. It allows <span class="formula-bracket-hl">[me / us]</span> to <span class="formula-bracket-hl">[lợi ích - Vo]</span>.
+                        → Although playing <span class="formula-bracket-hl">[hình thức nhượng bộ]</span> has its own merits, I still lean towards playing <span class="formula-bracket-hl">[hình thức lựa chọn]</span> because it's far more <span class="formula-bracket-hl">[tính từ so sánh hơn]</span>. It allows <span class="formula-bracket-hl">[me / us]</span> to <span class="formula-bracket-hl">[lợi ích - Vo]</span>.
                     </div>
                 </div>`,
                 vocabGroups: [
@@ -3990,16 +3990,23 @@ const practiceTopicsData = [
                 formula: `<div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 1 (Lựa chọn dứt khoát 1 loại sách & đưa ra lý do thuyết phục):</div>
                     <div class="topic-formula-text">
-                        → Personally, I prefer reading <span class="formula-bracket-hl">[lựa chọn: paper books / e-books]</span> because I find them much more <span class="formula-bracket-hl">[tính từ so sánh hơn]</span>. They allow me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and give me a chance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                        → Personally, I prefer reading <span class="formula-bracket-hl">[loại sách lựa chọn]</span> because I find them much more <span class="formula-bracket-hl">[tính từ so sánh hơn]</span>. They allow me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and give me a chance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
                     </div>
                 </div>
                 <div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 2 (Cân bằng cả hai - Mỗi loại đều sở hữu lợi ích riêng biệt):</div>
                     <div class="topic-formula-text">
-                        → In my opinion, both mediums offer distinct benefits. Paper books help me <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span>, whereas e-books allow me to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span> whenever I am on the go.
+                        → In my opinion, both types of books have their own benefits. Paper books help me <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span>, while e-books allow me to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span> whenever I am on the go.
                     </div>
                 </div>`,
                 vocabGroups: [
+                    {
+                        title: "📚 [Loại sách lựa chọn]:",
+                        items: [
+                            { en: "paper books", vn: "sách giấy truyền thống" },
+                            { en: "e-books", vn: "sách điện tử" }
+                        ]
+                    },
                     {
                         title: "✨ [Tính từ so sánh hơn]:",
                         items: [
@@ -4030,12 +4037,12 @@ const practiceTopicsData = [
                     {
                         label: "Bài mẫu Cách 1 (Chọn sách giấy - Dễ chịu cho mắt & Tập trung sâu)",
                         text: "Personally, I prefer reading paper books because I find them much more comfortable for my eyesight. They allow me to concentrate deeply without digital distractions and give me the authentic pleasure of turning real pages.",
-                        formatted: `→ Personally, I prefer <span class="sub-hl">reading paper books</span> because I find them much more <span class="sub-hl">comfortable for my eyesight</span>. They allow me to <span class="sub-hl">concentrate deeply without digital distractions</span> and give me the authentic pleasure of turning real pages.`
+                        formatted: `→ Personally, I prefer reading <span class="sub-hl">paper books</span> because I find them much more <span class="sub-hl">comfortable for my eyesight</span>. They allow me to <span class="sub-hl">concentrate deeply without digital distractions</span> and give me the authentic pleasure of turning real pages.`
                     },
                     {
                         label: "Bài mẫu Cách 2 (Cân bằng cả hai - Sách giấy ở nhà & E-book khi di chuyển)",
-                        text: "In my opinion, both mediums offer distinct benefits. Paper books help me protect my eyes and focus better, whereas e-books allow me to access hundreds of titles easily whenever I am on the go.",
-                        formatted: `→ In my opinion, <span class="sub-hl">both mediums offer distinct benefits</span>. Paper books help me <span class="sub-hl">protect my eyes and focus better</span>, whereas e-books allow me to <span class="sub-hl">access hundreds of titles easily whenever I am on the go</span>.`
+                        text: "In my opinion, both types of books have their own benefits. Paper books help me protect my eyes and focus better, while e-books allow me to access hundreds of titles easily whenever I am on the go.",
+                        formatted: `→ In my opinion, <span class="sub-hl">both types of books have their own benefits</span>. Paper books help me <span class="sub-hl">protect my eyes and focus better</span>, while e-books allow me to <span class="sub-hl">access hundreds of titles easily whenever I am on the go</span>.`
                     }
                 ]
             },
@@ -4116,7 +4123,7 @@ const practiceTopicsData = [
                 <div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 2 (Không - Hiếm khi nghe radio truyền thống, ưu tiên nền tảng nhạc số/podcast):</div>
                     <div class="topic-formula-text">
-                        → Not really. I rarely listen to traditional radio because I prefer digital platforms like <span class="formula-bracket-hl">[nền tảng số: Spotify / podcasts]</span>. It allows me to <span class="formula-bracket-hl">[lợi ích - Vo]</span>.
+                        → Not really. I rarely listen to traditional radio because I prefer digital platforms like <span class="formula-bracket-hl">[nền tảng số]</span>. It allows me to <span class="formula-bracket-hl">[lợi ích - Vo]</span>.
                     </div>
                 </div>`,
                 vocabGroups: [
