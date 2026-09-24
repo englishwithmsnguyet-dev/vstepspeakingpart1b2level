@@ -3609,7 +3609,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        title: "🤝 [Cụm từ gắn kết xã hội & cá nhân]:",
+                        title: "🤝 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Gắn kết xã hội & cá nhân]:",
                         items: [
                             { en: "strengthen our bond", vn: "thắt chặt tình cảm gắn kết" },
                             { en: "share memorable moments", vn: "chia sẻ những khoảnh khắc đáng nhớ" },
@@ -3658,7 +3658,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        title: "🧘 [Cụm lợi ích & phục hồi năng lượng]:",
+                        title: "🧘 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Phục hồi năng lượng]:",
                         items: [
                             { en: "release stress", vn: "giải tỏa căng thẳng áp lực" },
                             { en: "recharge my batteries", vn: "nạp lại năng lượng tinh thần" },
@@ -3738,7 +3738,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        title: "💡 [Lợi ích rèn luyện tư duy]:",
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Rèn luyện tư duy]:",
                         items: [
                             { en: "sharpen my tactical thinking", vn: "rèn luyện tư duy chiến thuật" },
                             { en: "boost my concentration", vn: "tăng cường khả năng tập trung" },
@@ -3767,18 +3767,18 @@ const practiceTopicsData = [
                 formula: `<div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 1 (Cấu trúc B2 với effective way to & gives me a chance to):</div>
                     <div class="topic-formula-text">
-                        → I’m really into playing this game because it’s an effective way to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span>. Besides that, it gives me a chance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                        → I’m really into playing this game because it’s an effective way to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span>. Besides, it gives me a chance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
                     </div>
                 </div>
                 <div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 2 (Nêu cảm xúc thư thái & nâng cao kỹ năng phối hợp đồng đội):</div>
                     <div class="topic-formula-text">
-                        → The primary reason is that playing this game makes me feel completely <span class="formula-bracket-hl">[tính từ cảm xúc]</span>. Moreover, it allows me to <span class="formula-bracket-hl">[lợi ích - Vo]</span>, which is very valuable in my life.
+                        → The primary reason is that playing this game makes me feel completely <span class="formula-bracket-hl">[tính từ cảm xúc]</span>. Moreover, it allows me to <span class="formula-bracket-hl">[lợi ích]</span>, which is very valuable in my life.
                     </div>
                 </div>`,
                 vocabGroups: [
                     {
-                        title: "🎯 [Cụm lợi ích chuẩn B2]:",
+                        title: "🎯 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH)]:",
                         items: [
                             { en: "escape from academic pressure", vn: "thoát khỏi áp lực học tập thi cử" },
                             { en: "sharpen my reflexes and quick thinking", vn: "rèn luyện phản xạ và tư duy nhạy bén" },
@@ -3796,8 +3796,8 @@ const practiceTopicsData = [
                 samples: [
                     {
                         label: "Bài mẫu Cách 1 (Thoát khỏi áp lực học tập & Rèn luyện phản xạ)",
-                        text: "I’m really into playing this game because it’s an effective way to escape from academic pressure. Besides that, it gives me a chance to sharpen my reflexes and problem-solving skills.",
-                        formatted: `→ I’m really into playing this game because it’s an effective way to <span class="sub-hl">escape from academic pressure</span>. Besides that, it gives me a chance to <span class="sub-hl">sharpen my reflexes and problem-solving skills</span>.`
+                        text: "I’m really into playing this game because it’s an effective way to escape from academic pressure. Besides, it gives me a chance to sharpen my reflexes and problem-solving skills.",
+                        formatted: `→ I’m really into playing this game because it’s an effective way to <span class="sub-hl">escape from academic pressure</span>. Besides, it gives me a chance to <span class="sub-hl">sharpen my reflexes and problem-solving skills</span>.`
                     },
                     {
                         label: "Bài mẫu Cách 2 (Cảm giác thư thái & Nâng cao kỹ năng làm việc nhóm)",
@@ -3819,7 +3819,7 @@ const practiceTopicsData = [
                 <div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 2 (Cấu trúc nhượng bộ Although - Đánh giá cao cả hai nhưng nghiêng về một bên):</div>
                     <div class="topic-formula-text">
-                        → Although playing <span class="formula-bracket-hl">[phương án nhượng bộ: alone / with friends]</span> has its own merits, I still lean towards playing <span class="formula-bracket-hl">[phương án lựa chọn: with friends / alone]</span> because it is far more <span class="formula-bracket-hl">[tính từ so sánh hơn]</span>. It allows <span class="formula-bracket-hl">[me / us]</span> to <span class="formula-bracket-hl">[lợi ích - Vo]</span>.
+                        → Although playing <span class="formula-bracket-hl">[phương án nhượng bộ: alone / with friends]</span> has its own merits, I still lean towards playing <span class="formula-bracket-hl">[phương án lựa chọn: with friends / alone]</span> because it's far more <span class="formula-bracket-hl">[tính từ so sánh hơn]</span>. It allows <span class="formula-bracket-hl">[me / us]</span> to <span class="formula-bracket-hl">[lợi ích - Vo]</span>.
                     </div>
                 </div>`,
                 vocabGroups: [
@@ -3833,7 +3833,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        title: "👥 [Lợi ích khi chơi cùng bạn bè]:",
+                        title: "👥 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Khi chơi cùng bạn bè]:",
                         items: [
                             { en: "strengthen our bond", vn: "thắt chặt tình bạn bè khăng khít" },
                             { en: "share enjoyable moments together", vn: "cùng chia sẻ những giây phút tràn ngập niềm vui" },
@@ -3841,7 +3841,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        title: "👤 [Lợi ích khi chơi một mình]:",
+                        title: "👤 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Khi chơi một mình]:",
                         items: [
                             { en: "immerse myself fully in the storyline", vn: "đắm chìm trọn vẹn vào cốt truyện game" },
                             { en: "play at my own pace without distractions", vn: "chơi theo nhịp độ của mình không lo bị xao nhãng" },
@@ -3857,8 +3857,8 @@ const practiceTopicsData = [
                     },
                     {
                         label: "Bài mẫu Cách 2 (Cấu trúc nhượng bộ - Nghiêng về chơi một mình để yên tĩnh)",
-                        text: "Although playing with friends is quite entertaining, I still lean towards playing alone because it is far more peaceful. It allows me to immerse myself fully in the game and play at my own pace without any distractions.",
-                        formatted: `→ Although playing with friends is quite entertaining, I still lean towards <span class="sub-hl">playing alone</span> because it is far more <span class="sub-hl">peaceful</span>. It allows me to <span class="sub-hl">immerse myself fully in the game</span> and <span class="sub-hl">play at my own pace without any distractions</span>.`
+                        text: "Although playing with friends is quite entertaining, I still lean towards playing alone because it's far more peaceful. It allows me to immerse myself fully in the game and play at my own pace without any distractions.",
+                        formatted: `→ Although playing with friends is quite entertaining, I still lean towards <span class="sub-hl">playing alone</span> because it's far more <span class="sub-hl">peaceful</span>. It allows me to <span class="sub-hl">immerse myself fully in the game</span> and <span class="sub-hl">play at my own pace without any distractions</span>.`
                     }
                 ]
             }
@@ -3911,7 +3911,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        title: "🌱 [Lợi ích đọc sách B2]:",
+                        title: "🌱 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Đọc sách]:",
                         items: [
                             { en: "broaden my horizons", vn: "mở rộng tầm nhìn và sự hiểu biết" },
                             { en: "gain profound life lessons", vn: "thu nhận những bài học nhân sinh sâu sắc" },
@@ -3960,7 +3960,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        title: "📖 [Lợi thế của Sách Giấy (Paper Books)]:",
+                        title: "📖 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Lợi thế của Sách Giấy]:",
                         items: [
                             { en: "protect my eyesight from screen glare", vn: "bảo vệ mắt khỏi ánh sáng xanh màn hình" },
                             { en: "concentrate deeply without digital notifications", vn: "tập trung sâu mà không bị ngắt quãng bởi thông báo" },
@@ -3968,7 +3968,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        title: "📱 [Lợi thế của Sách Điện Tử (E-books)]:",
+                        title: "📱 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Lợi thế của Sách Điện Tử]:",
                         items: [
                             { en: "store hundreds of titles in one lightweight device", vn: "lưu hàng trăm đầu sách trong thiết bị nhỏ gọn" },
                             { en: "access reading materials anytime, anywhere", vn: "truy cập kho tài liệu mọi lúc mọi nơi" },
@@ -4024,7 +4024,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        title: "🌟 [Lợi ích đối với người trẻ]:",
+                        title: "🌟 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Đối với người trẻ]:",
                         items: [
                             { en: "relieve study pressure", vn: "giải tỏa áp lực bài vở học hành" },
                             { en: "foster their creative imagination", vn: "nuôi dưỡng trí tưởng tượng sáng tạo" },
@@ -4080,7 +4080,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        title: "📡 [Lợi ích khi nghe radio]:",
+                        title: "📡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Khi nghe radio / podcast]:",
                         items: [
                             { en: "catch up on traffic updates", vn: "nắm bắt các cập nhật về tình hình giao thông" },
                             { en: "enjoy cheerful music", vn: "thưởng thức âm nhạc vui vẻ tiếp thêm năng lượng" },
@@ -4115,7 +4115,7 @@ const practiceTopicsData = [
                 <div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 2 (Nêu đài phát thanh quốc tế / luyện tiếng Anh chuẩn B2):</div>
                     <div class="topic-formula-text">
-                        → To be honest, I regularly tune in to <span class="formula-bracket-hl">[tên kênh quốc tế]</span> because it is extremely <span class="formula-bracket-hl">[tính từ mô tả]</span>. It allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives me an opportunity to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                        → To be honest, I regularly tune in to <span class="formula-bracket-hl">[tên kênh quốc tế]</span> because it's extremely <span class="formula-bracket-hl">[tính từ mô tả]</span>. It allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives me an opportunity to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
                     </div>
                 </div>`,
                 vocabGroups: [
@@ -4138,7 +4138,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        title: "🎯 [Lợi ích chuyên biệt]:",
+                        title: "🎯 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Kênh phát thanh]:",
                         items: [
                             { en: "avoid congested roads during rush hours", vn: "tránh các cung đường kẹt xe giờ cao điểm" },
                             { en: "hone my English listening skills", vn: "mài giũa kỹ năng nghe tiếng Anh" },
@@ -4154,8 +4154,8 @@ const practiceTopicsData = [
                     },
                     {
                         label: "Bài mẫu Cách 2 (Kênh BBC World Service - Nâng cao kỹ năng nghe tiếng Anh & Tin tức quốc tế)",
-                        text: "To be honest, I regularly tune in to BBC World Service because it is extremely educational. It allows me to hone my English listening skills and gives me an opportunity to keep abreast of global news.",
-                        formatted: `→ To be honest, I regularly tune in to <span class="sub-hl">BBC World Service</span> because it is extremely <span class="sub-hl">educational</span>. It allows me to <span class="sub-hl">hone my English listening skills</span> and gives me an opportunity to <span class="sub-hl">keep abreast of global news</span>.`
+                        text: "To be honest, I regularly tune in to BBC World Service because it's extremely educational. It allows me to hone my English listening skills and gives me an opportunity to keep abreast of global news.",
+                        formatted: `→ To be honest, I regularly tune in to <span class="sub-hl">BBC World Service</span> because it's extremely <span class="sub-hl">educational</span>. It allows me to <span class="sub-hl">hone my English listening skills</span> and gives me an opportunity to <span class="sub-hl">keep abreast of global news</span>.`
                     }
                 ]
             },
@@ -4177,7 +4177,7 @@ const practiceTopicsData = [
                 </div>`,
                 vocabGroups: [
                     {
-                        title: "📻 [Cụm lợi ích B2 của thói quen nghe radio]:",
+                        title: "📻 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Thói quen nghe radio]:",
                         items: [
                             { en: "keep up to date with current affairs", vn: "cập nhật kịp thời các vấn đề thời sự" },
                             { en: "relax without straining our eyes on screens", vn: "thư giãn mà không gây căng thẳng mỏi mắt với màn hình" },
