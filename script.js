@@ -3910,16 +3910,27 @@ const practiceTopicsData = [
                 formula: `<div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 1 (Nêu cuốn sách yêu thích nhất & 2 tính từ học thuật B2):</div>
                     <div class="topic-formula-text">
-                        → One of my all-time favorite books is <span class="formula-bracket-hl">[tên cuốn sách]</span> because I find it both <span class="formula-bracket-hl">[tính từ 1]</span> and <span class="formula-bracket-hl">[tính từ 2]</span>. It allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives me an opportunity to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                        → <u>One of my all-time favorite books is</u> <span class="formula-bracket-hl">[tên cuốn sách]</span> because I find it both <span class="formula-bracket-hl">[tính từ 1]</span> and <span class="formula-bracket-hl">[tính từ 2]</span>. It allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives me an opportunity to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
                     </div>
                 </div>
                 <div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 2 (Khẳng định đam mê với thể loại sách, rồi nêu tác phẩm tâm đắc):</div>
                     <div class="topic-formula-text">
-                        → Well, I have a strong passion for reading <span class="formula-bracket-hl">[thể loại sách]</span>, and the book that impresses me the most is <span class="formula-bracket-hl">[tên cuốn sách]</span>. It offers profound insights and helps me <span class="formula-bracket-hl">[lợi ích - Vo]</span>.
+                        → Well, <u>I have a strong passion for reading</u> <span class="formula-bracket-hl">[thể loại sách]</span>, and the book that impresses me the most is <span class="formula-bracket-hl">[tên cuốn sách]</span>. It offers profound insights and helps me <span class="formula-bracket-hl">[lợi ích - Vo]</span>.
                     </div>
                 </div>`,
                 vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc diễn đạt sở thích / đam mê (+ V-ing / Noun) - Thay thế cho cụm gạch chân]:",
+                        items: [
+                            { en: "I'm a big fan of", vn: "Tôi là một người rất hâm mộ / cực kỳ mê (+ V-ing / Danh từ)" },
+                            { en: "I'm really into", vn: "Tôi thật sự rất say mê / chuộng (+ V-ing / Danh từ)" },
+                            { en: "I'm really keen on", vn: "Tôi rất hứng thú / say sưa với (+ V-ing / Danh từ)" },
+                            { en: "I have a strong passion for", vn: "Tôi có niềm đam mê mãnh liệt đối với (+ V-ing / Danh từ)" },
+                            { en: "One of my all-time favorite books is", vn: "Một trong những cuốn sách tôi thích nhất từ trước đến nay là (+ Tên sách)" },
+                            { en: "I'm particularly fond of", vn: "Tôi đặc biệt yêu thích / chuộng (+ V-ing / Danh từ)" }
+                        ]
+                    },
                     {
                         title: "📖 [Tên tác phẩm & sách kinh điển]:",
                         items: [
@@ -3958,12 +3969,12 @@ const practiceTopicsData = [
                     {
                         label: "Bài mẫu Cách 1 (Nhà Giả Kim - Truyền cảm hứng & Can đảm theo đuổi ước mơ)",
                         text: "One of my all-time favorite books is The Alchemist because I find it both inspiring and thought-provoking. It allows me to broaden my horizons and gives me an opportunity to pursue my personal dreams with courage.",
-                        formatted: `→ One of my all-time favorite books is <span class="sub-hl">The Alchemist</span> because I find it both <span class="sub-hl">inspiring and thought-provoking</span>. It allows me to <span class="sub-hl">broaden my horizons</span> and gives me an opportunity to <span class="sub-hl">pursue my personal dreams with courage</span>.`
+                        formatted: `→ <u>One of my all-time favorite books is</u> <span class="sub-hl">The Alchemist</span> because I find it both <span class="sub-hl">inspiring and thought-provoking</span>. It allows me to <span class="sub-hl">broaden my horizons</span> and gives me an opportunity to <span class="sub-hl">pursue my personal dreams with courage</span>.`
                     },
                     {
                         label: "Bài mẫu Cách 2 (Atomic Habits - Sách phát triển bản thân & Xây dựng thói quen tốt)",
                         text: "Well, I have a strong passion for reading self-help books, and the book that impresses me the most is Atomic Habits. It offers profound insights and helps me cultivate good habits while breaking harmful ones.",
-                        formatted: `→ Well, I have a strong passion for reading <span class="sub-hl">self-help books</span>, and the book that impresses me the most is <span class="sub-hl">Atomic Habits</span>. It offers profound insights and helps me <span class="sub-hl">cultivate good habits while breaking harmful ones</span>.`
+                        formatted: `→ Well, <u>I have a strong passion for reading</u> <span class="sub-hl">self-help books</span>, and the book that impresses me the most is <span class="sub-hl">Atomic Habits</span>. It offers profound insights and helps me <span class="sub-hl">cultivate good habits while breaking harmful ones</span>.`
                     }
                 ]
             },

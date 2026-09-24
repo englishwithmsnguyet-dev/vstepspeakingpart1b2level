@@ -689,6 +689,12 @@ body.dark-theme .topic-q-type-badge {
     text-align: justify;
     text-justify: inter-word;
 }
+.topic-formula-text u, .ex-text u {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1.5px;
+    font-weight: 600;
+}
 
 /* Topic Vocabulary List (Dạng List rõ ràng, dễ đọc) */
 .topic-vocab-list {
