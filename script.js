@@ -3740,8 +3740,11 @@ const practiceTopicsData = [
                 </div>`,
                 vocabGroups: [
                     {
-                        title: "🎮 [Tên trò chơi & thể loại]:",
+                        title: "🎮 [Tên trò chơi & thể loại (dễ phát âm & quen thuộc)]:",
                         items: [
+                            { en: "Candy Crush", vn: "trò chơi xếp kẹo giải đố Candy Crush" },
+                            { en: "Township", vn: "game xây dựng thành phố và nông trại Township" },
+                            { en: "Play Together", vn: "game thế giới ảo vui nhộn kết nối bạn bè" },
                             { en: "online chess", vn: "cờ vua trực tuyến" },
                             { en: "Minecraft", vn: "game sinh tồn xây dựng thế giới Minecraft" },
                             { en: "FIFA football", vn: "trò chơi bóng đá FIFA" },
