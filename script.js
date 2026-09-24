@@ -3513,7 +3513,7 @@ const practiceTopicsData = [
                 formula: `<div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 1 (Nêu một sở thích tiêu biểu & lý do):</div>
                     <div class="topic-formula-text">
-                        → One of my favorite hobbies is <span class="formula-bracket-hl">[sở thích - V-ing / danh từ]</span> because I find it both <span class="formula-bracket-hl">[tính từ 1]</span> and <span class="formula-bracket-hl">[tính từ 2]</span>. It allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                        → <u>One of my favorite hobbies is</u> <span class="formula-bracket-hl">[sở thích - V-ing / danh từ]</span> because I find it both <span class="formula-bracket-hl">[tính từ 1]</span> and <span class="formula-bracket-hl">[tính từ 2]</span>. It allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
                     </div>
                 </div>
                 <div class="topic-formula-row">
@@ -3523,6 +3523,17 @@ const practiceTopicsData = [
                     </div>
                 </div>`,
                 vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc diễn đạt sở thích / đam mê]:",
+                        items: [
+                            { en: "I'm a big fan of", vn: "Tôi là một người rất hâm mộ / cực kỳ mê (+ V-ing / Danh từ)" },
+                            { en: "I'm really into", vn: "Tôi thật sự rất say mê / thích (+ V-ing / Danh từ)" },
+                            { en: "I'm really keen on", vn: "Tôi rất hứng thú / say sưa với (+ V-ing / Danh từ)" },
+                            { en: "I have a strong passion for", vn: "Tôi có niềm đam mê mãnh liệt đối với (+ V-ing / Danh từ)" },
+                            { en: "One of my favorite hobbies is", vn: "Một trong những sở thích tôi yêu thích nhất là..." },
+                            { en: "I'm particularly fond of", vn: "Tôi đặc biệt yêu thích / chuộng (+ V-ing / Danh từ)" }
+                        ]
+                    },
                     {
                         title: "🎯 [Sở thích phổ biến]:",
                         items: [
@@ -3564,7 +3575,7 @@ const practiceTopicsData = [
                     {
                         label: "Bài mẫu Cách 1 (Sở thích đọc sách - Vừa giải trí vừa mở rộng tầm nhìn)",
                         text: "One of my favorite hobbies is reading self-help books because I find it both entertaining and educational. It allows me to unwind after a tiring day and gives me a chance to broaden my horizons.",
-                        formatted: `→ One of my favorite hobbies is <span class="sub-hl">reading self-help books</span> because I find it both <span class="sub-hl">entertaining and educational</span>. It allows me to <span class="sub-hl">unwind after a tiring day</span> and gives me a chance to <span class="sub-hl">broaden my horizons</span>.`
+                        formatted: `→ <u>One of my favorite hobbies is</u> <span class="sub-hl">reading self-help books</span> because I find it both <span class="sub-hl">entertaining and educational</span>. It allows me to <span class="sub-hl">unwind after a tiring day</span> and gives me a chance to <span class="sub-hl">broaden my horizons</span>.`
                     },
                     {
                         label: "Bài mẫu Cách 2 (Chơi cầu lông & Du lịch khám phá)",
@@ -3729,7 +3740,7 @@ const practiceTopicsData = [
                 formula: `<div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 1 (Nêu tên game yêu thích kèm 2 tính từ B2):</div>
                     <div class="topic-formula-text">
-                        → One of my favorite video games is <span class="formula-bracket-hl">[tên trò chơi]</span> because I find it both <span class="formula-bracket-hl">[tính từ 1]</span> and <span class="formula-bracket-hl">[tính từ 2]</span>. It allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                        → <u>One of my favorite video games is</u> <span class="formula-bracket-hl">[tên trò chơi]</span> because I find it both <span class="formula-bracket-hl">[tính từ 1]</span> and <span class="formula-bracket-hl">[tính từ 2]</span>. It allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
                     </div>
                 </div>
                 <div class="topic-formula-row">
@@ -3739,6 +3750,17 @@ const practiceTopicsData = [
                     </div>
                 </div>`,
                 vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc diễn đạt sở thích / đam mê]:",
+                        items: [
+                            { en: "I'm a big fan of", vn: "Tôi là một người rất hâm mộ / cực kỳ mê (+ V-ing / Danh từ)" },
+                            { en: "I'm really into", vn: "Tôi thật sự rất say mê / thích (+ V-ing / Danh từ)" },
+                            { en: "I'm really keen on", vn: "Tôi rất hứng thú / say sưa với (+ V-ing / Danh từ)" },
+                            { en: "I have a strong passion for", vn: "Tôi có niềm đam mê mãnh liệt đối với (+ V-ing / Danh từ)" },
+                            { en: "One of my favorite video games is", vn: "Một trong những trò chơi điện tử tôi thích nhất là..." },
+                            { en: "I'm particularly fond of", vn: "Tôi đặc biệt yêu thích / chuộng (+ V-ing / Danh từ)" }
+                        ]
+                    },
                     {
                         title: "🎮 [Tên trò chơi & thể loại]:",
                         items: [
@@ -3781,7 +3803,7 @@ const practiceTopicsData = [
                     {
                         label: "Bài mẫu Cách 1 (Cờ vua online - Kích thích tư duy & Rèn luyện chiến thuật)",
                         text: "One of my favorite video games is online chess because I find it both entertaining and mentally stimulating. It allows me to unwind after a busy day and gives me a chance to sharpen my tactical thinking.",
-                        formatted: `→ One of my favorite video games is <span class="sub-hl">online chess</span> because I find it both <span class="sub-hl">entertaining and mentally stimulating</span>. It allows me to <span class="sub-hl">unwind after a busy day</span> and gives me a chance to <span class="sub-hl">sharpen my tactical thinking</span>.`
+                        formatted: `→ <u>One of my favorite video games is</u> <span class="sub-hl">online chess</span> because I find it both <span class="sub-hl">entertaining and mentally stimulating</span>. It allows me to <span class="sub-hl">unwind after a busy day</span> and gives me a chance to <span class="sub-hl">sharpen my tactical thinking</span>.`
                     },
                     {
                         label: "Bài mẫu Cách 2 (Minecraft trên laptop - Thúc đẩy sáng tạo & Giảm stress)",
