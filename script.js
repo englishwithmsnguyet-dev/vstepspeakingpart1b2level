@@ -3932,13 +3932,18 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        title: "📖 [Tên tác phẩm & sách kinh điển]:",
+                        title: "📖 [Tên tác phẩm & sách tiêu biểu]:",
                         items: [
+                            { en: "The Little Prince", vn: "Hoàng tử bé (Antoine de Saint-Exupéry)" },
                             { en: "The Alchemist", vn: "Nhà giả kim (Paulo Coelho)" },
                             { en: "Atomic Habits", vn: "Thói quen nguyên tử (James Clear)" },
+                            { en: "Rich Dad Poor Dad", vn: "Cha giàu cha nghèo (Robert Kiyosaki)" },
+                            { en: "Harry Potter series", vn: "Bộ tiểu thuyết Harry Potter (J.K. Rowling)" },
+                            { en: "Sherlock Holmes", vn: "Tuyển tập truyện trinh thám Sherlock Holmes" },
+                            { en: "Diary of a Wimpy Kid", vn: "Nhật ký chú bé nhút nhát (Jeff Kinney)" },
+                            { en: "Doraemon comics", vn: "Truyện tranh Doraemon" },
                             { en: "How to Win Friends and Influence People", vn: "Đắc Nhân Tâm (Dale Carnegie)" },
-                            { en: "To Kill a Mockingbird", vn: "Giết con chim nhại (Harper Lee)" },
-                            { en: "Harry Potter series", vn: "Bộ tiểu thuyết Harry Potter (J.K. Rowling)" }
+                            { en: "To Kill a Mockingbird", vn: "Giết con chim nhại (Harper Lee)" }
                         ]
                     },
                     {
