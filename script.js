@@ -4010,10 +4010,16 @@ const practiceTopicsData = [
                     {
                         title: "✨ [Tính từ so sánh hơn]:",
                         items: [
-                            { en: "more comfortable for my eyesight", vn: "dễ chịu hơn cho thị lực của tôi" },
-                            { en: "more convenient and portable", vn: "tiện lợi và dễ dàng mang theo hơn" },
-                            { en: "more tactile and authentic", vn: "cảm giác chạm chân thực và truyền thống hơn" },
-                            { en: "more cost-effective", vn: "tiết kiệm chi phí hơn" }
+                            { en: "more convenient", vn: "tiện lợi / thuận tiện hơn" },
+                            { en: "cheaper", vn: "rẻ hơn / tiết kiệm hơn" },
+                            { en: "easier to read", vn: "dễ đọc hơn" },
+                            { en: "more comfortable", vn: "thoải mái / dễ chịu hơn" },
+                            { en: "lighter", vn: "nhẹ hơn (dễ cầm trên tay)" },
+                            { en: "more interesting", vn: "thú vị / hấp dẫn hơn" },
+                            { en: "more portable", vn: "gọn nhẹ / dễ mang theo hơn" },
+                            { en: "more practical", vn: "thiết thực / tiện dụng hơn" },
+                            { en: "more affordable", vn: "giá cả phải chăng / kinh tế hơn" },
+                            { en: "more authentic", vn: "chân thực / mang cảm giác truyền thống hơn" }
                         ]
                     },
                     {
@@ -4035,9 +4041,9 @@ const practiceTopicsData = [
                 ],
                 samples: [
                     {
-                        label: "Bài mẫu Cách 1 (Chọn sách giấy - Dễ chịu cho mắt & Tập trung sâu)",
-                        text: "Personally, I prefer reading paper books because I find them much more comfortable for my eyesight. They allow me to concentrate deeply without digital distractions and give me the authentic pleasure of turning real pages.",
-                        formatted: `→ Personally, I prefer reading <span class="sub-hl">paper books</span> because I find them much more <span class="sub-hl">comfortable for my eyesight</span>. They allow me to <span class="sub-hl">concentrate deeply without digital distractions</span> and give me the authentic pleasure of turning real pages.`
+                        label: "Bài mẫu Cách 1 (Chọn sách giấy - Thoải mái cho mắt & Tập trung sâu)",
+                        text: "Personally, I prefer reading paper books because I find them much more comfortable. They allow me to concentrate deeply without digital distractions and give me the authentic pleasure of turning real pages.",
+                        formatted: `→ Personally, I prefer reading <span class="sub-hl">paper books</span> because I find them much more <span class="sub-hl">comfortable</span>. They allow me to <span class="sub-hl">concentrate deeply without digital distractions</span> and give me the authentic pleasure of turning real pages.`
                     },
                     {
                         label: "Bài mẫu Cách 2 (Cân bằng cả hai - Sách giấy ở nhà & E-book khi di chuyển)",
