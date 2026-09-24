@@ -3735,7 +3735,7 @@ const practiceTopicsData = [
                 <div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 2 (Nêu thiết bị chơi và mục đích thư giãn trí tuệ):</div>
                     <div class="topic-formula-text">
-                        → Whenever I want to unwind, I tend to play <span class="formula-bracket-hl">[tên trò chơi]</span> on my <span class="formula-bracket-hl">[thiết bị]</span>. It offers an engaging experience and allows me to <span class="formula-bracket-hl">[lợi ích - Vo]</span>.
+                        → Whenever I want to unwind, I tend to play <span class="formula-bracket-hl">[tên trò chơi]</span> on my <span class="formula-bracket-hl">[thiết bị]</span>. It offers a/an <span class="formula-bracket-hl">[tính từ mô tả trải nghiệm]</span> experience because it allows me to <span class="formula-bracket-hl">[lợi ích - Vo]</span>.
                     </div>
                 </div>`,
                 vocabGroups: [
@@ -3751,7 +3751,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        title: "✨ [Kho tính từ mô tả game (Học viên chọn 2 tính từ kết hợp với 'and')]:",
+                        title: "✨ [Kho tính từ mô tả game / trải nghiệm]:",
                         items: [
                             { en: "entertaining", vn: "mang tính giải trí cao" },
                             { en: "mentally stimulating", vn: "kích thích tư duy não bộ" },
@@ -3782,8 +3782,8 @@ const practiceTopicsData = [
                     },
                     {
                         label: "Bài mẫu Cách 2 (Minecraft trên laptop - Thúc đẩy sáng tạo & Giảm stress)",
-                        text: "Whenever I want to unwind, I tend to play Minecraft on my laptop. It offers an engaging experience and allows me to foster my creativity and escape from daily stress.",
-                        formatted: `→ Whenever I want to unwind, I tend to play <span class="sub-hl">Minecraft on my laptop</span>. It offers an engaging experience and allows me to <span class="sub-hl">foster my creativity</span> and <span class="sub-hl">escape from daily stress</span>.`
+                        text: "Whenever I want to unwind, I tend to play Minecraft on my laptop. It offers an engaging experience because it allows me to foster my creativity and escape from daily stress.",
+                        formatted: `→ Whenever I want to unwind, I tend to play <span class="sub-hl">Minecraft on my laptop</span>. It offers <span class="sub-hl">an engaging experience</span> because it allows me to <span class="sub-hl">foster my creativity</span> and <span class="sub-hl">escape from daily stress</span>.`
                     }
                 ]
             },
