@@ -5094,41 +5094,46 @@ window.startFullTopicRecording = async (topicId) => {
         };
 
         recorder.onstop = () => {
-            const blob = new Blob(window._fullExamTimer.chunks, { type: recorder.mimeType || 'audio/webm' });
-            if (window._fullExamTimer.blobUrl) URL.revokeObjectURL(window._fullExamTimer.blobUrl);
-            window._fullExamTimer.blobUrl = URL.createObjectURL(blob);
+            try {
+                const blob = new Blob(window._fullExamTimer.chunks, { type: recorder.mimeType || 'audio/webm' });
+                if (window._fullExamTimer.blobUrl) URL.revokeObjectURL(window._fullExamTimer.blobUrl);
+                window._fullExamTimer.blobUrl = URL.createObjectURL(blob);
 
-            const player = document.getElementById('full-exam-player');
-            const downloadBtn = document.getElementById('full-exam-download');
-            const playbackBox = document.getElementById('full-exam-playback');
+                const player = document.getElementById('full-exam-player');
+                const downloadBtn = document.getElementById('full-exam-download');
+                const playbackBox = document.getElementById('full-exam-playback');
 
-            if (player) player.src = window._fullExamTimer.blobUrl;
-            if (downloadBtn) {
-                downloadBtn.href = window._fullExamTimer.blobUrl;
-                if (window._fullExamState && window._fullExamState.seconds === 180) {
-                    downloadBtn.download = `VSTEP_B2_Speaking_P1_FullTest_T${window._fullExamState.topic1Id}_T${window._fullExamState.topic2Id}_${student}.webm`;
-                } else {
-                    const tid = (window._fullExamState && window._fullExamState.topic1Id) || topicId || 1;
-                    downloadBtn.download = `VSTEP_B2_Speaking_P1_Topic${tid}_${student}.webm`;
+                if (player) player.src = window._fullExamTimer.blobUrl;
+                if (downloadBtn) {
+                    downloadBtn.href = window._fullExamTimer.blobUrl;
+                    const student = (document.getElementById('display-name')?.textContent || 'HocVien').trim().replace(/\s+/g, '_');
+                    if (window._fullExamState && window._fullExamState.seconds === 180) {
+                        downloadBtn.download = `VSTEP_B2_Speaking_P1_FullTest_T${window._fullExamState.topic1Id}_T${window._fullExamState.topic2Id}_${student}.webm`;
+                    } else {
+                        const tid = (window._fullExamState && window._fullExamState.topic1Id) || topicId || 1;
+                        downloadBtn.download = `VSTEP_B2_Speaking_P1_Topic${tid}_${student}.webm`;
+                    }
                 }
+                if (playbackBox) playbackBox.style.display = 'flex';
+            } catch (err) {
+                console.error("Error finalizing exam recording:", err);
+            } finally {
+                const badge = document.getElementById('full-exam-badge');
+                if (badge) {
+                    badge.className = 'topic-exam-phase-badge done';
+                    badge.innerHTML = '<i class="fa-solid fa-circle-check"></i> ĐÃ HOÀN THÀNH BÀI THI 🎉';
+                }
+
+                const startBtn = document.getElementById('btn-full-start');
+                const stopBtn = document.getElementById('btn-full-stop');
+                const resetBtn = document.getElementById('btn-full-reset');
+                if (startBtn) startBtn.style.display = 'none';
+                if (stopBtn) stopBtn.style.display = 'none';
+                if (resetBtn) resetBtn.style.display = 'inline-flex';
+
+                const wave = document.getElementById('full-exam-wave');
+                if (wave) wave.classList.remove('active');
             }
-            if (playbackBox) playbackBox.style.display = 'flex';
-
-            const badge = document.getElementById('full-exam-badge');
-            if (badge) {
-                badge.className = 'topic-exam-phase-badge done';
-                badge.innerHTML = '<i class="fa-solid fa-circle-check"></i> ĐÃ HOÀN THÀNH BÀI THI 🎉';
-            }
-
-            const startBtn = document.getElementById('btn-full-start');
-            const stopBtn = document.getElementById('btn-full-stop');
-            const resetBtn = document.getElementById('btn-full-reset');
-            if (startBtn) startBtn.style.display = 'none';
-            if (stopBtn) stopBtn.style.display = 'none';
-            if (resetBtn) resetBtn.style.display = 'inline-flex';
-
-            const wave = document.getElementById('full-exam-wave');
-            if (wave) wave.classList.remove('active');
         };
 
         playExamDoubleBeep();
@@ -5185,12 +5190,26 @@ window.startFullTopicRecording = async (topicId) => {
 };
 
 window.stopFullTopicRecording = () => {
-    if (!window._fullExamTimer.isRecording) return;
-    window._fullExamTimer.isRecording = false;
     if (window._fullExamTimer.interval) {
         clearInterval(window._fullExamTimer.interval);
         window._fullExamTimer.interval = null;
     }
+
+    if (!window._fullExamTimer.isRecording) {
+        // Fallback: If timer already stopped but UI still shows stop button
+        const startBtn = document.getElementById('btn-full-start');
+        const stopBtn = document.getElementById('btn-full-stop');
+        const resetBtn = document.getElementById('btn-full-reset');
+        const wave = document.getElementById('full-exam-wave');
+        if (startBtn) startBtn.style.display = 'none';
+        if (stopBtn) stopBtn.style.display = 'none';
+        if (resetBtn) resetBtn.style.display = 'inline-flex';
+        if (wave) wave.classList.remove('active');
+        return;
+    }
+
+    window._fullExamTimer.isRecording = false;
+
     if (window._fullExamTimer.recorder && window._fullExamTimer.recorder.state !== 'inactive') {
         try { window._fullExamTimer.recorder.stop(); } catch(e) {}
     }
