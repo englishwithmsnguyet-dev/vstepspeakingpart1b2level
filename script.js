@@ -3916,7 +3916,7 @@ const practiceTopicsData = [
                 <div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 2 (Khẳng định đam mê với thể loại sách, rồi nêu tác phẩm tâm đắc):</div>
                     <div class="topic-formula-text">
-                        → To be honest, I have a strong passion for reading <span class="formula-bracket-hl">[thể loại sách]</span>, and the book that impresses me the most is <span class="formula-bracket-hl">[tên cuốn sách]</span>. It offers profound insights and helps me <span class="formula-bracket-hl">[lợi ích - Vo]</span>.
+                        → Actually, I have a strong passion for reading <span class="formula-bracket-hl">[thể loại sách]</span>, and the book that impresses me the most is <span class="formula-bracket-hl">[tên cuốn sách]</span>. It offers profound insights and helps me <span class="formula-bracket-hl">[lợi ích - Vo]</span>.
                     </div>
                 </div>`,
                 vocabGroups: [
@@ -3962,8 +3962,8 @@ const practiceTopicsData = [
                     },
                     {
                         label: "Bài mẫu Cách 2 (Atomic Habits - Sách phát triển bản thân & Xây dựng thói quen tốt)",
-                        text: "To be honest, I have a strong passion for reading self-help books, and the book that impresses me the most is Atomic Habits. It offers profound insights and helps me cultivate good habits while breaking harmful ones.",
-                        formatted: `→ To be honest, I have a strong passion for reading <span class="sub-hl">self-help books</span>, and the book that impresses me the most is <span class="sub-hl">Atomic Habits</span>. It offers profound insights and helps me <span class="sub-hl">cultivate good habits while breaking harmful ones</span>.`
+                        text: "Actually, I have a strong passion for reading self-help books, and the book that impresses me the most is Atomic Habits. It offers profound insights and helps me cultivate good habits while breaking harmful ones.",
+                        formatted: `→ Actually, I have a strong passion for reading <span class="sub-hl">self-help books</span>, and the book that impresses me the most is <span class="sub-hl">Atomic Habits</span>. It offers profound insights and helps me <span class="sub-hl">cultivate good habits while breaking harmful ones</span>.`
                     }
                 ]
             },
@@ -4149,7 +4149,7 @@ const practiceTopicsData = [
                 <div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 2 (Nêu đài phát thanh quốc tế / luyện tiếng Anh chuẩn B2):</div>
                     <div class="topic-formula-text">
-                        → To be honest, I regularly tune in to <span class="formula-bracket-hl">[tên kênh quốc tế]</span> because it's extremely <span class="formula-bracket-hl">[tính từ mô tả]</span>. It allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives me an opportunity to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                        → Actually, I regularly tune in to <span class="formula-bracket-hl">[tên kênh quốc tế]</span> because it's extremely <span class="formula-bracket-hl">[tính từ mô tả]</span>. It allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives me an opportunity to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
                     </div>
                 </div>`,
                 vocabGroups: [
@@ -4188,8 +4188,8 @@ const practiceTopicsData = [
                     },
                     {
                         label: "Bài mẫu Cách 2 (Kênh BBC World Service - Nâng cao kỹ năng nghe tiếng Anh & Tin tức quốc tế)",
-                        text: "To be honest, I regularly tune in to BBC World Service because it's extremely educational. It allows me to hone my English listening skills and gives me an opportunity to keep abreast of global news.",
-                        formatted: `→ To be honest, I regularly tune in to <span class="sub-hl">BBC World Service</span> because it's extremely <span class="sub-hl">educational</span>. It allows me to <span class="sub-hl">hone my English listening skills</span> and gives me an opportunity to <span class="sub-hl">keep abreast of global news</span>.`
+                        text: "Actually, I regularly tune in to BBC World Service because it's extremely educational. It allows me to hone my English listening skills and gives me an opportunity to keep abreast of global news.",
+                        formatted: `→ Actually, I regularly tune in to <span class="sub-hl">BBC World Service</span> because it's extremely <span class="sub-hl">educational</span>. It allows me to <span class="sub-hl">hone my English listening skills</span> and gives me an opportunity to <span class="sub-hl">keep abreast of global news</span>.`
                     }
                 ]
             },
