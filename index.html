@@ -18559,12 +18559,17 @@
                                 <i class="fa-solid fa-microphone-lines"></i> MÔ PHỎNG PHÒNG THI CHÍNH THỨC • VSTEP SPEAKING PART 01
                             </div>
                             <div style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.55;">
-                                Đúng định dạng chuẩn đề thi VSTEP B2: <strong>Ghép 2 chủ đề ngẫu nhiên • 6 câu hỏi liên tục • 3 phút (180 giây)</strong> có đồng hồ đếm ngược và ghi âm nộp bài.
+                                Đúng định dạng chuẩn đề thi VSTEP B2: <strong>Ghép 2 chủ đề • 6 câu hỏi liên tục • 3 phút (180 giây)</strong> có đồng hồ đếm ngược và ghi âm nộp bài.
                             </div>
                         </div>
-                        <button type="button" class="btn" onclick="openFullPartExamModal()" style="background: linear-gradient(135deg, #ef4444, #dc2626); color: white; border: none; font-weight: 800; font-size: 1rem; padding: 0.85rem 1.75rem; border-radius: 50px; cursor: pointer; box-shadow: 0 4px 15px rgba(239, 68, 68, 0.35); white-space: nowrap; display: flex; align-items: center; gap: 0.5rem; transition: transform 0.2s;">
-                            <i class="fa-solid fa-play"></i> Vào Thi Thử Cả Part 1 (180s)
-                        </button>
+                        <div style="display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: center;">
+                            <button type="button" class="btn" onclick="setTopicSelectionMode('pair'); document.getElementById('topic-mode-pair-btn')?.scrollIntoView({ behavior: 'smooth', block: 'center' });" style="background: var(--bg-card); color: #dc2626; border: 2px solid #ef4444; font-weight: 800; font-size: 0.95rem; padding: 0.8rem 1.35rem; border-radius: 50px; cursor: pointer; display: flex; align-items: center; gap: 0.45rem; transition: all 0.2s; box-shadow: var(--shadow-sm);">
+                                <i class="fa-solid fa-hand-pointer"></i> Tự Chọn 2 Chủ Đề
+                            </button>
+                            <button type="button" class="btn" onclick="openFullPartExamModal()" style="background: linear-gradient(135deg, #ef4444, #dc2626); color: white; border: none; font-weight: 800; font-size: 0.95rem; padding: 0.8rem 1.5rem; border-radius: 50px; cursor: pointer; box-shadow: 0 4px 15px rgba(239, 68, 68, 0.35); white-space: nowrap; display: flex; align-items: center; gap: 0.45rem; transition: transform 0.2s;">
+                                <i class="fa-solid fa-shuffle"></i> Ghép Ngẫu Nhiên (180s)
+                            </button>
+                        </div>
                     </div>
 
                     <!-- Topic Selector Bar -->
@@ -18578,13 +18583,16 @@
                             </div>
                         </div>
 
-                        <!-- 2 Lựa chọn phương thức chọn chủ đề -->
+                        <!-- 3 Lựa chọn phương thức chọn chủ đề -->
                         <div class="topic-mode-container">
                             <button type="button" id="topic-mode-manual-btn" class="topic-mode-btn active" onclick="setTopicSelectionMode('manual')">
                                 <i class="fa-solid fa-hand-pointer"></i> 🎯 Tự chọn 1 chủ đề nói
                             </button>
                             <button type="button" id="topic-mode-random-btn" class="topic-mode-btn" onclick="setTopicSelectionMode('random')">
                                 <i class="fa-solid fa-shuffle"></i> 🎲 Chọn ngẫu nhiên 1 chủ đề
+                            </button>
+                            <button type="button" id="topic-mode-pair-btn" class="topic-mode-btn" onclick="setTopicSelectionMode('pair')">
+                                <i class="fa-solid fa-layer-group"></i> ⏱️ Ghép 2 chủ đề (Thi 180s)
                             </button>
                         </div>
 
@@ -18655,6 +18663,115 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- PANEL 3: CHỌN 2 CHỦ ĐỀ ĐỂ THỰC HÀNH CHUNG 180S -->
+                        <div id="topic-pair-panel" class="fade-in" style="display: none;">
+                            <div style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.06), rgba(99, 102, 241, 0.05)); border: 2px dashed rgba(239, 68, 68, 0.35); border-radius: 18px; padding: 1.5rem; text-align: center;">
+                                <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 1.15rem; font-weight: 800; color: #dc2626; margin-bottom: 0.4rem;">
+                                    <i class="fa-solid fa-layer-group"></i> CHỌN 2 CHỦ ĐỀ ĐỂ THỰC HÀNH CHUNG TRONG 180 GIÂY
+                                </div>
+                                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.25rem; max-width: 650px; margin-left: auto; margin-right: auto;">
+                                    Mô phỏng chuẩn đề thi VSTEP Speaking Part 1: Trả lời liên tục 6 câu hỏi (3 câu/chủ đề) trong vòng 3 phút (180s) có đồng hồ đếm ngược và ghi âm bài làm.
+                                </p>
+
+                                <!-- 2 Dropdown Selectors -->
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1rem; max-width: 820px; margin: 0 auto 1.25rem; text-align: left;">
+                                    <!-- Chủ đề 1 -->
+                                    <div style="background: var(--bg-card); border: 2px solid rgba(67, 97, 238, 0.35); border-radius: 14px; padding: 1rem 1.2rem; box-shadow: var(--shadow-sm);">
+                                        <label for="practice-pair-topic1-select" style="display: flex; align-items: center; gap: 0.4rem; font-weight: 800; font-size: 0.92rem; color: var(--primary); margin-bottom: 0.5rem;">
+                                            <i class="fa-solid fa-flag"></i> CHỦ ĐỀ THỨ NHẤT (CÂU 1 - 3):
+                                        </label>
+                                        <select id="practice-pair-topic1-select" onchange="onPairTopicChange(1)" style="width: 100%; padding: 0.75rem 1rem; border-radius: 10px; border: 1.5px solid var(--border); background: var(--bg-body); color: var(--text-main); font-weight: 700; font-size: 0.95rem; cursor: pointer; outline: none;">
+                                            <option value="1" selected>🎯 Topic 01: Let's talk about hobbies</option>
+                                            <option value="2">🎯 Topic 02: Let's talk about video games</option>
+                                            <option value="3">🎯 Topic 03: Let's talk about books</option>
+                                            <option value="4">🎯 Topic 04: Let's talk about listening to the radio</option>
+                                            <option value="5" disabled>🔒 Topic 05: Let's talk about music (Sắp cập nhật)</option>
+                                            <option value="6" disabled>🔒 Topic 06: Let's talk about musical instruments (Sắp cập nhật)</option>
+                                            <option value="7" disabled>🔒 Topic 07: Let's talk about restaurants (Sắp cập nhật)</option>
+                                            <option value="8" disabled>🔒 Topic 08: Let's talk about fast food restaurants (Sắp cập nhật)</option>
+                                            <option value="9" disabled>🔒 Topic 09: Let's talk about cooking (Sắp cập nhật)</option>
+                                            <option value="10" disabled>🔒 Topic 10: Let's talk about the cooking class (Sắp cập nhật)</option>
+                                            <option value="11" disabled>🔒 Topic 11: Let's talk about health (Sắp cập nhật)</option>
+                                            <option value="12" disabled>🔒 Topic 12: Let's talk about health (part 2) (Sắp cập nhật)</option>
+                                            <option value="13" disabled>🔒 Topic 13: Talk about your favorite day of the week (Sắp cập nhật)</option>
+                                            <option value="14" disabled>🔒 Topic 14: Let's talk about an evening walk (Sắp cập nhật)</option>
+                                            <option value="15" disabled>🔒 Topic 15: Let's talk about shopping habits (Sắp cập nhật)</option>
+                                            <option value="16" disabled>🔒 Topic 16: Let's talk about prices and shopping habits (Sắp cập nhật)</option>
+                                            <option value="17" disabled>🔒 Topic 17: Let's talk about traveling (Sắp cập nhật)</option>
+                                            <option value="18" disabled>🔒 Topic 18: Let's talk about holidays (Sắp cập nhật)</option>
+                                            <option value="19" disabled>🔒 Topic 19: Let's talk about schools (Sắp cập nhật)</option>
+                                            <option value="20" disabled>🔒 Topic 20: Let's talk about learning English (Sắp cập nhật)</option>
+                                            <option value="21" disabled>🔒 Topic 21: Let's talk about studying English on the Internet (Sắp cập nhật)</option>
+                                            <option value="22" disabled>🔒 Topic 22: Let's talk about using mobile phones (Sắp cập nhật)</option>
+                                            <option value="23" disabled>🔒 Topic 23: Let's talk about your dream job (Sắp cập nhật)</option>
+                                            <option value="24" disabled>🔒 Topic 24: Let's talk about transportation (Sắp cập nhật)</option>
+                                            <option value="25" disabled>🔒 Topic 25: Let's talk about planes (Sắp cập nhật)</option>
+                                            <option value="26" disabled>🔒 Topic 26: Let's talk about traffic problems (Sắp cập nhật)</option>
+                                            <option value="27" disabled>🔒 Topic 27: Let's talk about your hometown (Sắp cập nhật)</option>
+                                            <option value="28" disabled>🔒 Topic 28: Let's talk about neighbors (Sắp cập nhật)</option>
+                                            <option value="29" disabled>🔒 Topic 29: Let's talk about a room in your house (Sắp cập nhật)</option>
+                                            <option value="30" disabled>🔒 Topic 30: Let's talk about childhood (Sắp cập nhật)</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Chủ đề 2 -->
+                                    <div style="background: var(--bg-card); border: 2px solid rgba(16, 185, 129, 0.35); border-radius: 14px; padding: 1rem 1.2rem; box-shadow: var(--shadow-sm);">
+                                        <label for="practice-pair-topic2-select" style="display: flex; align-items: center; gap: 0.4rem; font-weight: 800; font-size: 0.92rem; color: #059669; margin-bottom: 0.5rem;">
+                                            <i class="fa-solid fa-flag-checkered"></i> CHỦ ĐỀ THỨ HAI (CÂU 4 - 6):
+                                        </label>
+                                        <select id="practice-pair-topic2-select" onchange="onPairTopicChange(2)" style="width: 100%; padding: 0.75rem 1rem; border-radius: 10px; border: 1.5px solid var(--border); background: var(--bg-body); color: var(--text-main); font-weight: 700; font-size: 0.95rem; cursor: pointer; outline: none;">
+                                            <option value="1">🎯 Topic 01: Let's talk about hobbies</option>
+                                            <option value="2" selected>🎯 Topic 02: Let's talk about video games</option>
+                                            <option value="3">🎯 Topic 03: Let's talk about books</option>
+                                            <option value="4">🎯 Topic 04: Let's talk about listening to the radio</option>
+                                            <option value="5" disabled>🔒 Topic 05: Let's talk about music (Sắp cập nhật)</option>
+                                            <option value="6" disabled>🔒 Topic 06: Let's talk about musical instruments (Sắp cập nhật)</option>
+                                            <option value="7" disabled>🔒 Topic 07: Let's talk about restaurants (Sắp cập nhật)</option>
+                                            <option value="8" disabled>🔒 Topic 08: Let's talk about fast food restaurants (Sắp cập nhật)</option>
+                                            <option value="9" disabled>🔒 Topic 09: Let's talk about cooking (Sắp cập nhật)</option>
+                                            <option value="10" disabled>🔒 Topic 10: Let's talk about the cooking class (Sắp cập nhật)</option>
+                                            <option value="11" disabled>🔒 Topic 11: Let's talk about health (Sắp cập nhật)</option>
+                                            <option value="12" disabled>🔒 Topic 12: Let's talk about health (part 2) (Sắp cập nhật)</option>
+                                            <option value="13" disabled>🔒 Topic 13: Talk about your favorite day of the week (Sắp cập nhật)</option>
+                                            <option value="14" disabled>🔒 Topic 14: Let's talk about an evening walk (Sắp cập nhật)</option>
+                                            <option value="15" disabled>🔒 Topic 15: Let's talk about shopping habits (Sắp cập nhật)</option>
+                                            <option value="16" disabled>🔒 Topic 16: Let's talk about prices and shopping habits (Sắp cập nhật)</option>
+                                            <option value="17" disabled>🔒 Topic 17: Let's talk about traveling (Sắp cập nhật)</option>
+                                            <option value="18" disabled>🔒 Topic 18: Let's talk about holidays (Sắp cập nhật)</option>
+                                            <option value="19" disabled>🔒 Topic 19: Let's talk about schools (Sắp cập nhật)</option>
+                                            <option value="20" disabled>🔒 Topic 20: Let's talk about learning English (Sắp cập nhật)</option>
+                                            <option value="21" disabled>🔒 Topic 21: Let's talk about studying English on the Internet (Sắp cập nhật)</option>
+                                            <option value="22" disabled>🔒 Topic 22: Let's talk about using mobile phones (Sắp cập nhật)</option>
+                                            <option value="23" disabled>🔒 Topic 23: Let's talk about your dream job (Sắp cập nhật)</option>
+                                            <option value="24" disabled>🔒 Topic 24: Let's talk about transportation (Sắp cập nhật)</option>
+                                            <option value="25" disabled>🔒 Topic 25: Let's talk about planes (Sắp cập nhật)</option>
+                                            <option value="26" disabled>🔒 Topic 26: Let's talk about traffic problems (Sắp cập nhật)</option>
+                                            <option value="27" disabled>🔒 Topic 27: Let's talk about your hometown (Sắp cập nhật)</option>
+                                            <option value="28" disabled>🔒 Topic 28: Let's talk about neighbors (Sắp cập nhật)</option>
+                                            <option value="29" disabled>🔒 Topic 29: Let's talk about a room in your house (Sắp cập nhật)</option>
+                                            <option value="30" disabled>🔒 Topic 30: Let's talk about childhood (Sắp cập nhật)</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- Action Buttons -->
+                                <div style="display: flex; align-items: center; justify-content: center; gap: 0.75rem; flex-wrap: wrap;">
+                                    <button type="button" class="btn" onclick="swapPairTopics()" style="background: var(--bg-card); border: 1.5px solid var(--border); color: var(--text-main); font-weight: 700; font-size: 0.92rem; padding: 0.75rem 1.25rem; border-radius: 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem;">
+                                        <i class="fa-solid fa-right-left"></i> Hoán đổi 2 chủ đề
+                                    </button>
+                                    <button type="button" class="btn" onclick="randomizePairTopics()" style="background: var(--bg-card); border: 1.5px solid #8b5cf6; color: #7c3aed; font-weight: 700; font-size: 0.92rem; padding: 0.75rem 1.25rem; border-radius: 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem;">
+                                        <i class="fa-solid fa-shuffle"></i> Bốc ngẫu nhiên 2 chủ đề
+                                    </button>
+                                    <button type="button" class="btn" onclick="startPairExamFromPanel()" style="background: linear-gradient(135deg, #ef4444, #dc2626); color: white; border: none; font-weight: 800; font-size: 1.05rem; padding: 0.85rem 2.2rem; border-radius: 50px; cursor: pointer; box-shadow: 0 6px 18px rgba(239, 68, 68, 0.35); display: inline-flex; align-items: center; gap: 0.5rem; transition: transform 0.2s;">
+                                        <i class="fa-solid fa-play"></i> Bắt Đầu Thi Thử 180s
+                                    </button>
+                                </div>
+
+                                <!-- Dynamic Preview of 6 Questions of Both Topics -->
+                                <div id="pair-topics-preview" style="max-width: 900px; margin: 1.25rem auto 0;"></div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Topic Content Stage -->
@@ -18666,6 +18783,6 @@
 </main>
 </div>
 <script src="audio/manifest.js"></script>
-<script src="script.js?v=20260924_17"></script>
+<script src="script.js?v=20260924_18"></script>
 </body>
 </html>

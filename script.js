@@ -4304,21 +4304,156 @@ window.switchPracticeTopic = (topicId) => {
 window.setTopicSelectionMode = (mode) => {
     const manualBtn = document.getElementById('topic-mode-manual-btn');
     const randomBtn = document.getElementById('topic-mode-random-btn');
+    const pairBtn = document.getElementById('topic-mode-pair-btn');
     const manualPanel = document.getElementById('topic-manual-panel');
     const randomPanel = document.getElementById('topic-random-panel');
+    const pairPanel = document.getElementById('topic-pair-panel');
+
+    if (manualBtn) manualBtn.classList.toggle('active', mode === 'manual');
+    if (randomBtn) randomBtn.classList.toggle('active', mode === 'random');
+    if (pairBtn) pairBtn.classList.toggle('active', mode === 'pair');
+
+    if (manualPanel) manualPanel.style.display = mode === 'manual' ? 'block' : 'none';
+    if (randomPanel) randomPanel.style.display = mode === 'random' ? 'block' : 'none';
+    if (pairPanel) pairPanel.style.display = mode === 'pair' ? 'block' : 'none';
 
     if (mode === 'manual') {
-        if (manualBtn) manualBtn.classList.add('active');
-        if (randomBtn) randomBtn.classList.remove('active');
-        if (manualPanel) manualPanel.style.display = 'block';
-        if (randomPanel) randomPanel.style.display = 'none';
-    } else {
-        if (manualBtn) manualBtn.classList.remove('active');
-        if (randomBtn) randomBtn.classList.add('active');
-        if (manualPanel) manualPanel.style.display = 'none';
-        if (randomPanel) randomPanel.style.display = 'block';
+        const selectEl = document.getElementById('practice-topic-select');
+        const tid = selectEl ? parseInt(selectEl.value) : 1;
+        renderPracticeTopic(tid);
+    } else if (mode === 'random') {
         pickRandomPracticeTopic();
+    } else if (mode === 'pair') {
+        initPairTopicPanel();
     }
+};
+
+window.initPairTopicPanel = () => {
+    const labelEl = document.getElementById('current-topic-label');
+    if (labelEl) labelEl.textContent = `Ghép 2 chủ đề (180s)`;
+    updatePairPreview();
+};
+
+window.onPairTopicChange = (changedWhich) => {
+    const s1 = document.getElementById('practice-pair-topic1-select');
+    const s2 = document.getElementById('practice-pair-topic2-select');
+    if (!s1 || !s2) return;
+
+    let v1 = parseInt(s1.value);
+    let v2 = parseInt(s2.value);
+
+    if (v1 === v2) {
+        const available = practiceTopicsData.map(t => t.id);
+        const others = available.filter(id => id !== (changedWhich === 1 ? v1 : v2));
+        if (others.length > 0) {
+            if (changedWhich === 1) {
+                s2.value = String(others[0]);
+            } else {
+                s1.value = String(others[0]);
+            }
+        }
+    }
+    updatePairPreview();
+};
+
+window.swapPairTopics = () => {
+    const s1 = document.getElementById('practice-pair-topic1-select');
+    const s2 = document.getElementById('practice-pair-topic2-select');
+    if (!s1 || !s2) return;
+    const val1 = s1.value;
+    const val2 = s2.value;
+    s1.value = val2;
+    s2.value = val1;
+    updatePairPreview();
+};
+
+window.randomizePairTopics = () => {
+    const available = practiceTopicsData.map(t => t.id);
+    if (available.length < 2) return;
+    const rand1 = available[Math.floor(Math.random() * available.length)];
+    const remain = available.filter(id => id !== rand1);
+    const rand2 = remain[Math.floor(Math.random() * remain.length)];
+
+    const s1 = document.getElementById('practice-pair-topic1-select');
+    const s2 = document.getElementById('practice-pair-topic2-select');
+    if (s1) s1.value = String(rand1);
+    if (s2) s2.value = String(rand2);
+    updatePairPreview();
+
+    if (typeof confetti === 'function') {
+        try {
+            confetti({
+                particleCount: 40,
+                spread: 60,
+                origin: { y: 0.3 }
+            });
+        } catch (e) {}
+    }
+};
+
+window.startPairExamFromPanel = () => {
+    const s1 = document.getElementById('practice-pair-topic1-select');
+    const s2 = document.getElementById('practice-pair-topic2-select');
+    const t1Id = s1 ? parseInt(s1.value) : 1;
+    const t2Id = s2 ? parseInt(s2.value) : 2;
+    openFullTopicExamModal(t1Id, 180, t2Id);
+};
+
+window.updatePairPreview = () => {
+    const s1 = document.getElementById('practice-pair-topic1-select');
+    const s2 = document.getElementById('practice-pair-topic2-select');
+    const previewContainer = document.getElementById('pair-topics-preview');
+    if (!s1 || !s2 || !previewContainer) return;
+
+    const t1Id = parseInt(s1.value) || 1;
+    const t2Id = parseInt(s2.value) || 2;
+
+    const t1 = practiceTopicsData.find(t => t.id === t1Id) || practiceTopicsData[0];
+    const t2 = practiceTopicsData.find(t => t.id === t2Id) || practiceTopicsData[1] || practiceTopicsData[0];
+
+    const q1List = t1.questions.map(q => `
+        <div style="background: var(--bg-card); border-radius: 8px; padding: 0.65rem 0.85rem; border: 1px solid var(--border); margin-bottom: 0.5rem; font-size: 0.92rem; font-weight: 600; color: var(--text-main); text-align: left;">
+            <span style="color: var(--primary); font-weight: 800; margin-right: 0.35rem;">Câu ${q.qNum}:</span> ${q.question}
+        </div>
+    `).join('');
+
+    const q2List = t2.questions.map(q => `
+        <div style="background: var(--bg-card); border-radius: 8px; padding: 0.65rem 0.85rem; border: 1px solid var(--border); margin-bottom: 0.5rem; font-size: 0.92rem; font-weight: 600; color: var(--text-main); text-align: left;">
+            <span style="color: #059669; font-weight: 800; margin-right: 0.35rem;">Câu ${q.qNum}:</span> ${q.question}
+        </div>
+    `).join('');
+
+    previewContainer.innerHTML = `
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; text-align: left;">
+            <!-- Topic 1 Preview -->
+            <div style="background: rgba(67, 97, 238, 0.04); border: 2px solid rgba(67, 97, 238, 0.25); border-radius: 14px; padding: 1rem 1.25rem;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1.5px solid rgba(67, 97, 238, 0.2);">
+                    <span style="font-weight: 800; color: var(--primary); font-size: 0.95rem; display: flex; align-items: center; gap: 0.4rem;">
+                        <i class="fa-solid fa-flag"></i> PHẦN 1: ${t1.title}
+                    </span>
+                    <span style="font-size: 0.78rem; font-weight: 700; color: var(--primary); background: rgba(67, 97, 238, 0.1); padding: 0.15rem 0.5rem; border-radius: 6px;">3 câu</span>
+                </div>
+                <div style="font-size: 0.85rem; color: var(--text-muted); font-style: italic; margin-bottom: 0.65rem;">
+                    🗣️ Câu dẫn: "${t1.introText || t1.intro || ''}"
+                </div>
+                ${q1List}
+            </div>
+
+            <!-- Topic 2 Preview -->
+            <div style="background: rgba(16, 185, 129, 0.04); border: 2px solid rgba(16, 185, 129, 0.25); border-radius: 14px; padding: 1rem 1.25rem;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1.5px solid rgba(16, 185, 129, 0.2);">
+                    <span style="font-weight: 800; color: #059669; font-size: 0.95rem; display: flex; align-items: center; gap: 0.4rem;">
+                        <i class="fa-solid fa-flag-checkered"></i> PHẦN 2: ${t2.title}
+                    </span>
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #059669; background: rgba(16, 185, 129, 0.1); padding: 0.15rem 0.5rem; border-radius: 6px;">3 câu</span>
+                </div>
+                <div style="font-size: 0.85rem; color: var(--text-muted); font-style: italic; margin-bottom: 0.65rem;">
+                    🗣️ Câu dẫn: "${t2.introText || t2.intro || ''}"
+                </div>
+                ${q2List}
+            </div>
+        </div>
+    `;
 };
 
 window.pickRandomPracticeTopic = () => {
@@ -4871,6 +5006,10 @@ window.renderExamQuestionsHtml = () => {
             </div>
         `).join('');
 
+        const isRec = window._fullExamTimer.isRecording;
+        const topicOptions1 = practiceTopicsData.map(t => `<option value="${t.id}" ${t.id === t1.id ? 'selected' : ''}>${t.title}</option>`).join('');
+        const topicOptions2 = practiceTopicsData.map(t => `<option value="${t.id}" ${t.id === t2.id ? 'selected' : ''}>${t.title}</option>`).join('');
+
         if (questionsContainer) {
             questionsContainer.innerHTML = `
                 <div style="font-size: 0.95rem; font-weight: 800; color: #ef4444; margin-bottom: 0.85rem; display: flex; align-items: center; gap: 0.4rem;">
@@ -4879,24 +5018,34 @@ window.renderExamQuestionsHtml = () => {
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1rem; margin-bottom: 0.5rem;">
                     <!-- Topic 1 -->
                     <div style="background: var(--bg-body); border-radius: 14px; padding: 1.1rem; border: 2px solid rgba(67, 97, 238, 0.35);">
-                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 2px solid rgba(67, 97, 238, 0.2);">
-                            <span style="font-weight: 800; color: var(--primary); font-size: 0.95rem; display: flex; align-items: center; gap: 0.4rem;">
-                                <i class="fa-solid fa-flag"></i> PHẦN 1: ${t1.title}
-                            </span>
-                            <span style="font-size: 0.78rem; font-weight: 700; color: var(--primary); background: rgba(67, 97, 238, 0.1); padding: 0.2rem 0.5rem; border-radius: 6px;">3 câu</span>
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 2px solid rgba(67, 97, 238, 0.2); flex-wrap: wrap; gap: 0.5rem;">
+                            <div style="display: flex; align-items: center; gap: 0.4rem; font-weight: 800; color: var(--primary); font-size: 0.95rem;">
+                                <i class="fa-solid fa-flag"></i> PHẦN 1:
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.4rem; flex: 1; justify-content: flex-end;">
+                                <select ${isRec ? 'disabled' : ''} onchange="changeExamTopic(1, this.value)" title="Chọn chủ đề thứ nhất" style="max-width: 250px; padding: 0.35rem 0.6rem; border-radius: 8px; border: 1.5px solid var(--primary); font-weight: 700; font-size: 0.86rem; background: var(--bg-card); color: var(--text-main); cursor: pointer; outline: none;">
+                                    ${topicOptions1}
+                                </select>
+                                <span style="font-size: 0.78rem; font-weight: 700; color: var(--primary); background: rgba(67, 97, 238, 0.1); padding: 0.2rem 0.5rem; border-radius: 6px; white-space: nowrap;">3 câu</span>
+                            </div>
                         </div>
                         ${q1Html}
                     </div>
 
                     <!-- Topic 2 -->
                     <div style="background: var(--bg-body); border-radius: 14px; padding: 1.1rem; border: 2px solid rgba(16, 185, 129, 0.35);">
-                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 2px solid rgba(16, 185, 129, 0.2);">
-                            <span style="font-weight: 800; color: #059669; font-size: 0.95rem; display: flex; align-items: center; gap: 0.4rem;">
-                                <i class="fa-solid fa-flag-checkered"></i> PHẦN 2: ${t2.title}
-                            </span>
-                            <button type="button" onclick="randomizeTopic2InExam()" style="background: var(--bg-card); border: 1px solid #10b981; color: #059669; font-size: 0.78rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 0.3rem;" title="Bốc ngẫu nhiên chủ đề thứ 2 khác">
-                                <i class="fa-solid fa-shuffle"></i> Đổi Chủ Đề 2
-                            </button>
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 2px solid rgba(16, 185, 129, 0.2); flex-wrap: wrap; gap: 0.5rem;">
+                            <div style="display: flex; align-items: center; gap: 0.4rem; font-weight: 800; color: #059669; font-size: 0.95rem;">
+                                <i class="fa-solid fa-flag-checkered"></i> PHẦN 2:
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.4rem; flex: 1; justify-content: flex-end;">
+                                <select ${isRec ? 'disabled' : ''} onchange="changeExamTopic(2, this.value)" title="Chọn chủ đề thứ hai" style="max-width: 240px; padding: 0.35rem 0.6rem; border-radius: 8px; border: 1.5px solid #10b981; font-weight: 700; font-size: 0.86rem; background: var(--bg-card); color: var(--text-main); cursor: pointer; outline: none;">
+                                    ${topicOptions2}
+                                </select>
+                                <button type="button" onclick="randomizeTopic2InExam()" ${isRec ? 'disabled' : ''} style="background: var(--bg-card); border: 1px solid #10b981; color: #059669; font-size: 0.78rem; font-weight: 700; padding: 0.25rem 0.55rem; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 0.3rem; white-space: nowrap;" title="Bốc ngẫu nhiên chủ đề thứ 2 khác">
+                                    <i class="fa-solid fa-shuffle"></i> Đổi ngẫu nhiên
+                                </button>
+                            </div>
                         </div>
                         ${q2Html}
                     </div>
@@ -4928,6 +5077,27 @@ window.renderExamQuestionsHtml = () => {
             `;
         }
     }
+};
+
+window.changeExamTopic = (which, newIdStr) => {
+    if (window._fullExamTimer.isRecording) return;
+    const newId = parseInt(newIdStr);
+    if (isNaN(newId)) return;
+
+    if (which === 1) {
+        window._fullExamState.topic1Id = newId;
+        if (window._fullExamState.topic2Id === newId) {
+            const others = practiceTopicsData.filter(t => t.id !== newId);
+            if (others.length > 0) window._fullExamState.topic2Id = others[0].id;
+        }
+    } else {
+        window._fullExamState.topic2Id = newId;
+        if (window._fullExamState.topic1Id === newId) {
+            const others = practiceTopicsData.filter(t => t.id !== newId);
+            if (others.length > 0) window._fullExamState.topic1Id = others[0].id;
+        }
+    }
+    renderExamQuestionsHtml();
 };
 
 window.randomizeTopic2InExam = () => {
