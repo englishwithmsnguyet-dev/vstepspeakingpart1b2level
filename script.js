@@ -3513,13 +3513,13 @@ const practiceTopicsData = [
                 formula: `<div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 1 (Nêu một sở thích tiêu biểu & lý do):</div>
                     <div class="topic-formula-text">
-                        → One of my favorite hobbies is <span class="formula-bracket-hl">[V-ing / danh từ]</span> because I find it both <span class="formula-bracket-hl">[2 tính từ]</span>. It allows me to <span class="formula-bracket-hl">[lợi ích 1]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích 2]</span>.
+                        → One of my favorite hobbies is <span class="formula-bracket-hl">[sở thích - V-ing / danh từ]</span> because I find it both <span class="formula-bracket-hl">[tính từ 1]</span> and <span class="formula-bracket-hl">[tính từ 2]</span>. It allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
                     </div>
                 </div>
                 <div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 2 (Nêu thói quen trong thời gian rảnh & các hoạt động phong phú):</div>
                     <div class="topic-formula-text">
-                        → In my spare time, I tend to <span class="formula-bracket-hl">[Vo]</span> because it allows me to <span class="formula-bracket-hl">[lợi ích 1]</span>. Occasionally, I also <span class="formula-bracket-hl">[Vo]</span>, which gives me an opportunity to <span class="formula-bracket-hl">[lợi ích 2]</span>.
+                        → In my spare time, I tend to <span class="formula-bracket-hl">[hoạt động - Vo]</span> because it allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span>. Sometimes, I also <span class="formula-bracket-hl">[hoạt động - Vo]</span>, which gives me an opportunity to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
                     </div>
                 </div>`,
                 vocabGroups: [
@@ -3535,13 +3535,23 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        title: "✨ [Cặp 2 tính từ mô tả hoạt động]:",
+                        title: "✨ [Kho tính từ mô tả (Học viên chọn 2 tính từ kết hợp với 'and')]:",
                         items: [
-                            { en: "entertaining and educational", vn: "vừa giải trí vừa mang tính giáo dục" },
-                            { en: "relaxing and refreshing", vn: "thư thái và làm tươi mới tinh thần" },
-                            { en: "physically demanding and rewarding", vn: "đòi hỏi thể lực nhưng rất xứng đáng" },
-                            { en: "fun and creative", vn: "vui vẻ và giàu tính sáng tạo" },
-                            { en: "inspiring and thought-provoking", vn: "truyền cảm hứng và khơi gợi tư duy" }
+                            { en: "entertaining", vn: "mang tính giải trí cao" },
+                            { en: "educational", vn: "giàu tính giáo dục" },
+                            { en: "relaxing", vn: "thư thái / thư giãn" },
+                            { en: "refreshing", vn: "sảng khoái / tươi mới" },
+                            { en: "creative", vn: "giàu tính sáng tạo" },
+                            { en: "rewarding", vn: "bổ ích / rất xứng đáng" },
+                            { en: "inspiring", vn: "truyền cảm hứng mạnh mẽ" },
+                            { en: "thought-provoking", vn: "khơi gợi tư duy sâu sắc" },
+                            { en: "fascinating", vn: "lôi cuốn / hấp dẫn" },
+                            { en: "challenging", vn: "đầy thử thách" },
+                            { en: "meaningful", vn: "giàu ý nghĩa nhân văn" },
+                            { en: "enjoyable", vn: "thú vị / mang lại niềm vui" },
+                            { en: "motivating", vn: "tạo nhiều động lực" },
+                            { en: "healthy", vn: "lành mạnh cho thể chất & tinh thần" },
+                            { en: "practical", vn: "thiết thực và có ích" }
                         ]
                     },
                     {
@@ -3558,8 +3568,8 @@ const practiceTopicsData = [
                     },
                     {
                         label: "Bài mẫu Cách 2 (Chơi cầu lông & Du lịch khám phá)",
-                        text: "In my spare time, I tend to play badminton because it allows me to stay in good shape. Occasionally, I also travel to new destinations, which gives me an opportunity to experience different cultures.",
-                        formatted: `→ In my spare time, I tend to <span class="sub-hl">play badminton</span> because it allows me to <span class="sub-hl">stay in good shape</span>. Occasionally, I also <span class="sub-hl">travel to new destinations</span>, which gives me an opportunity to <span class="sub-hl">experience different cultures</span>.`
+                        text: "In my spare time, I tend to play badminton because it allows me to stay in good shape. Sometimes, I also travel to new destinations, which gives me an opportunity to experience different cultures.",
+                        formatted: `→ In my spare time, I tend to <span class="sub-hl">play badminton</span> because it allows me to <span class="sub-hl">stay in good shape</span>. Sometimes, I also <span class="sub-hl">travel to new destinations</span>, which gives me an opportunity to <span class="sub-hl">experience different cultures</span>.`
                     }
                 ]
             },
@@ -3570,13 +3580,13 @@ const practiceTopicsData = [
                 formula: `<div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 1 (Thực hiện cùng bạn bè / người thân vì có chung sở thích):</div>
                     <div class="topic-formula-text">
-                        → I often <span class="formula-bracket-hl">[Vo]</span> with my <span class="formula-bracket-hl">[đối tượng]</span> because we have similar interests. I find it much more <span class="formula-bracket-hl">[tính từ so sánh hơn]</span> when doing it together, and it allows us to <span class="formula-bracket-hl">[lợi ích: strengthen our bond / share enjoyable moments]</span>.
+                        → I often <span class="formula-bracket-hl">[hoạt động - Vo]</span> with my <span class="formula-bracket-hl">[đối tượng]</span> because we have similar interests. I find it much more <span class="formula-bracket-hl">[tính từ so sánh hơn]</span> when doing it together, and it allows us to <span class="formula-bracket-hl">[lợi ích - Vo]</span>.
                     </div>
                 </div>
                 <div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 2 (Thích thực hiện một mình để tìm sự yên bình & tự do nhịp độ):</div>
                     <div class="topic-formula-text">
-                        → Although my friends sometimes invite me to join them, I usually prefer <span class="formula-bracket-hl">[V-ing]</span> alone because I find it more <span class="formula-bracket-hl">[peaceful / flexible]</span>. It gives me a chance to <span class="formula-bracket-hl">[clear my mind]</span> and proceed at my own pace.
+                        → Although my friends sometimes invite me to join them, I usually prefer <span class="formula-bracket-hl">[hoạt động - V-ing]</span> alone because I find it more <span class="formula-bracket-hl">[tính từ mô tả]</span>. It gives me a chance to <span class="formula-bracket-hl">[lợi ích - Vo]</span> and proceed at my own pace.
                     </div>
                 </div>`,
                 vocabGroups: [
@@ -3628,13 +3638,13 @@ const practiceTopicsData = [
                 formula: `<div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 1 (Cấu trúc nhượng bộ dù bận rộn vẫn dành thời gian chăm sóc bản thân):</div>
                     <div class="topic-formula-text">
-                        → Although I have a hectic schedule, I still try to dedicate about <span class="formula-bracket-hl">[khoảng thời gian]</span> to <span class="formula-bracket-hl">[V-ing]</span> every day/week because it allows me to <span class="formula-bracket-hl">[lợi ích 1]</span> and <span class="formula-bracket-hl">[lợi ích 2]</span>. It also makes me feel <span class="formula-bracket-hl">[tính từ cảm xúc]</span>.
+                        → Although I have a hectic schedule, I still try to dedicate about <span class="formula-bracket-hl">[khoảng thời gian]</span> to <span class="formula-bracket-hl">[hoạt động - V-ing]</span> every day/week because it allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>. It also makes me feel <span class="formula-bracket-hl">[tính từ cảm xúc]</span>.
                     </div>
                 </div>
                 <div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 2 (Phân chia thời gian giữa ngày thường và cuối tuần):</div>
                     <div class="topic-formula-text">
-                        → On weekdays, I can only spare about <span class="formula-bracket-hl">[thời gian ngắn]</span> to <span class="formula-bracket-hl">[Vo]</span>. However, on weekends, I usually spend several hours on it because it gives me an opportunity to <span class="formula-bracket-hl">[lợi ích]</span>.
+                        → On weekdays, I can only spare about <span class="formula-bracket-hl">[khoảng thời gian]</span> to <span class="formula-bracket-hl">[hoạt động - Vo]</span>. However, on weekends, I usually spend several hours on it because it gives me an opportunity to <span class="formula-bracket-hl">[lợi ích - Vo]</span>.
                     </div>
                 </div>`,
                 vocabGroups: [
@@ -3690,15 +3700,15 @@ const practiceTopicsData = [
                 question: "What video game do you often play?",
                 qType: "Wh-question: What video game do you often play?",
                 formula: `<div class="topic-formula-row">
-                    <div class="topic-formula-title">- Cách 1 (Nêu tên game yêu thích kèm cặp 2 tính từ B2):</div>
+                    <div class="topic-formula-title">- Cách 1 (Nêu tên game yêu thích kèm 2 tính từ B2):</div>
                     <div class="topic-formula-text">
-                        → One of my favorite video games is <span class="formula-bracket-hl">[tên game]</span> because I find it both <span class="formula-bracket-hl">[2 tính từ]</span>. It allows me to <span class="formula-bracket-hl">[lợi ích 1]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích 2]</span>.
+                        → One of my favorite video games is <span class="formula-bracket-hl">[tên trò chơi]</span> because I find it both <span class="formula-bracket-hl">[tính từ 1]</span> and <span class="formula-bracket-hl">[tính từ 2]</span>. It allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
                     </div>
                 </div>
                 <div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 2 (Nêu thiết bị chơi và mục đích thư giãn trí tuệ):</div>
                     <div class="topic-formula-text">
-                        → Whenever I want to unwind, I tend to play <span class="formula-bracket-hl">[tên game]</span> on my <span class="formula-bracket-hl">[thiết bị]</span>. It offers an engaging experience and allows me to <span class="formula-bracket-hl">[lợi ích]</span>.
+                        → Whenever I want to unwind, I tend to play <span class="formula-bracket-hl">[tên trò chơi]</span> on my <span class="formula-bracket-hl">[thiết bị]</span>. It offers an engaging experience and allows me to <span class="formula-bracket-hl">[lợi ích - Vo]</span>.
                     </div>
                 </div>`,
                 vocabGroups: [
@@ -3714,12 +3724,17 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        title: "✨ [Cặp 2 tính từ mô tả game]:",
+                        title: "✨ [Kho tính từ mô tả game (Học viên chọn 2 tính từ kết hợp với 'and')]:",
                         items: [
-                            { en: "entertaining and mentally stimulating", vn: "vừa giải trí vừa kích thích tư duy" },
-                            { en: "fascinating and competitive", vn: "hấp dẫn và đầy tính cạnh tranh" },
-                            { en: "relaxing and creative", vn: "thư thái và khơi gợi sức sáng tạo" },
-                            { en: "thrilling and engaging", vn: "hồi hộp và cuốn hút" }
+                            { en: "entertaining", vn: "mang tính giải trí cao" },
+                            { en: "mentally stimulating", vn: "kích thích tư duy não bộ" },
+                            { en: "fascinating", vn: "lôi cuốn / cuốn hút" },
+                            { en: "competitive", vn: "đầy tính cạnh tranh" },
+                            { en: "relaxing", vn: "thư thái / giải tỏa căng thẳng" },
+                            { en: "creative", vn: "khơi gợi sức sáng tạo" },
+                            { en: "thrilling", vn: "hồi hộp / kịch tính" },
+                            { en: "engaging", vn: "hấp dẫn / thu hút" },
+                            { en: "challenging", vn: "đầy thử thách trí tuệ" }
                         ]
                     },
                     {
@@ -3752,13 +3767,13 @@ const practiceTopicsData = [
                 formula: `<div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 1 (Cấu trúc B2 với effective way to & gives me a chance to):</div>
                     <div class="topic-formula-text">
-                        → I’m really into playing this game because it’s an effective way to <span class="formula-bracket-hl">[lợi ích 1]</span>. Besides that, it gives me a chance to <span class="formula-bracket-hl">[lợi ích 2]</span>.
+                        → I’m really into playing this game because it’s an effective way to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span>. Besides that, it gives me a chance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
                     </div>
                 </div>
                 <div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 2 (Nêu cảm xúc thư thái & nâng cao kỹ năng phối hợp đồng đội):</div>
                     <div class="topic-formula-text">
-                        → The primary reason is that playing this game makes me feel completely <span class="formula-bracket-hl">[tính từ cảm xúc]</span>. Moreover, it allows me to <span class="formula-bracket-hl">[lợi ích phối hợp/rèn luyện]</span>, which is very valuable in my life.
+                        → The primary reason is that playing this game makes me feel completely <span class="formula-bracket-hl">[tính từ cảm xúc]</span>. Moreover, it allows me to <span class="formula-bracket-hl">[lợi ích - Vo]</span>, which is very valuable in my life.
                     </div>
                 </div>`,
                 vocabGroups: [
@@ -3798,13 +3813,13 @@ const practiceTopicsData = [
                 formula: `<div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 1 (Lựa chọn dứt khoát 1 phương án kèm tính từ so sánh hơn B2):</div>
                     <div class="topic-formula-text">
-                        → Personally, I prefer playing video games <span class="formula-bracket-hl">[with friends / alone]</span> because I find it much more <span class="formula-bracket-hl">[tính từ so sánh hơn]</span>. It allows <span class="formula-bracket-hl">[me / us]</span> to <span class="formula-bracket-hl">[lợi ích 1]</span> and gives <span class="formula-bracket-hl">[me / us]</span> a chance to <span class="formula-bracket-hl">[lợi ích 2]</span>.
+                        → Personally, I prefer playing video games <span class="formula-bracket-hl">[lựa chọn: with friends / alone]</span> because I find it much more <span class="formula-bracket-hl">[tính từ so sánh hơn]</span>. It allows <span class="formula-bracket-hl">[me / us]</span> to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives <span class="formula-bracket-hl">[me / us]</span> a chance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
                     </div>
                 </div>
                 <div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 2 (Cấu trúc nhượng bộ Although - Đánh giá cao cả hai nhưng nghiêng về một bên):</div>
                     <div class="topic-formula-text">
-                        → Although playing <span class="formula-bracket-hl">[alone / with friends]</span> has its own merits, I still lean towards playing <span class="formula-bracket-hl">[with friends / alone]</span> because it is far more <span class="formula-bracket-hl">[tính từ so sánh hơn]</span>. It allows <span class="formula-bracket-hl">[me / us]</span> to <span class="formula-bracket-hl">[lợi ích]</span>.
+                        → Although playing <span class="formula-bracket-hl">[phương án nhượng bộ: alone / with friends]</span> has its own merits, I still lean towards playing <span class="formula-bracket-hl">[phương án lựa chọn: with friends / alone]</span> because it is far more <span class="formula-bracket-hl">[tính từ so sánh hơn]</span>. It allows <span class="formula-bracket-hl">[me / us]</span> to <span class="formula-bracket-hl">[lợi ích - Vo]</span>.
                     </div>
                 </div>`,
                 vocabGroups: [
@@ -3861,13 +3876,13 @@ const practiceTopicsData = [
                 formula: `<div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 1 (Nêu cuốn sách yêu thích nhất & 2 tính từ học thuật B2):</div>
                     <div class="topic-formula-text">
-                        → One of my all-time favorite books is <span class="formula-bracket-hl">[tên sách]</span> because I find it both <span class="formula-bracket-hl">[2 tính từ]</span>. It allows me to <span class="formula-bracket-hl">[lợi ích 1]</span> and gives me an opportunity to <span class="formula-bracket-hl">[lợi ích 2]</span>.
+                        → One of my all-time favorite books is <span class="formula-bracket-hl">[tên cuốn sách]</span> because I find it both <span class="formula-bracket-hl">[tính từ 1]</span> and <span class="formula-bracket-hl">[tính từ 2]</span>. It allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives me an opportunity to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
                     </div>
                 </div>
                 <div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 2 (Khẳng định đam mê với thể loại sách, rồi nêu tác phẩm tâm đắc):</div>
                     <div class="topic-formula-text">
-                        → To be honest, I have a strong passion for reading <span class="formula-bracket-hl">[thể loại sách]</span>, and the book that impresses me the most is <span class="formula-bracket-hl">[tên sách]</span>. It offers profound insights and helps me <span class="formula-bracket-hl">[lợi ích]</span>.
+                        → To be honest, I have a strong passion for reading <span class="formula-bracket-hl">[thể loại sách]</span>, and the book that impresses me the most is <span class="formula-bracket-hl">[tên cuốn sách]</span>. It offers profound insights and helps me <span class="formula-bracket-hl">[lợi ích - Vo]</span>.
                     </div>
                 </div>`,
                 vocabGroups: [
@@ -3882,12 +3897,17 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        title: "✨ [Cặp 2 tính từ mô tả sách B2]:",
+                        title: "✨ [Kho tính từ mô tả sách (Học viên chọn 2 tính từ kết hợp với 'and')]:",
                         items: [
-                            { en: "inspiring and thought-provoking", vn: "truyền cảm hứng và khơi gợi suy ngẫm sâu sắc" },
-                            { en: "fascinating and educational", vn: "lôi cuốn và giàu tính giáo dục" },
-                            { en: "meaningful and eye-opening", vn: "đầy ý nghĩa và mở mang tầm mắt" },
-                            { en: "captivating and motivational", vn: "cuốn hút và tạo động lực to lớn" }
+                            { en: "inspiring", vn: "truyền cảm hứng mạnh mẽ" },
+                            { en: "thought-provoking", vn: "khơi gợi suy ngẫm sâu sắc" },
+                            { en: "fascinating", vn: "hấp dẫn / lôi cuốn" },
+                            { en: "educational", vn: "giàu giá trị giáo dục" },
+                            { en: "meaningful", vn: "đầy ý nghĩa và giá trị nhân văn" },
+                            { en: "eye-opening", vn: "mở mang tầm mắt" },
+                            { en: "captivating", vn: "cuốn hút không thể rời mắt" },
+                            { en: "motivational", vn: "tạo động lực to lớn" },
+                            { en: "practical", vn: "thiết thực / có tính ứng dụng cao" }
                         ]
                     },
                     {
@@ -3920,13 +3940,13 @@ const practiceTopicsData = [
                 formula: `<div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 1 (Lựa chọn dứt khoát 1 loại sách & đưa ra lý do thuyết phục):</div>
                     <div class="topic-formula-text">
-                        → Personally, I prefer reading <span class="formula-bracket-hl">[paper books / e-books]</span> because I find them much more <span class="formula-bracket-hl">[tính từ so sánh hơn]</span>. They allow me to <span class="formula-bracket-hl">[lợi ích 1]</span> and give me a chance to <span class="formula-bracket-hl">[lợi ích 2]</span>.
+                        → Personally, I prefer reading <span class="formula-bracket-hl">[lựa chọn: paper books / e-books]</span> because I find them much more <span class="formula-bracket-hl">[tính từ so sánh hơn]</span>. They allow me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and give me a chance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
                     </div>
                 </div>
                 <div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 2 (Cân bằng cả hai - Mỗi loại đều sở hữu lợi ích riêng biệt):</div>
                     <div class="topic-formula-text">
-                        → In my opinion, both mediums offer distinct benefits. Paper books help me <span class="formula-bracket-hl">[lợi ích 1: bảo vệ mắt/tập trung]</span>, whereas e-books allow me to <span class="formula-bracket-hl">[lợi ích 2: tiện lợi mang theo]</span> whenever I am on the go.
+                        → In my opinion, both mediums offer distinct benefits. Paper books help me <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span>, whereas e-books allow me to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span> whenever I am on the go.
                     </div>
                 </div>`,
                 vocabGroups: [
@@ -3976,13 +3996,13 @@ const practiceTopicsData = [
                 formula: `<div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 1 (Nêu các thể loại phổ biến kèm lý do hấp dẫn thanh thiếu niên):</div>
                     <div class="topic-formula-text">
-                        → I believe most teenagers in my country are big fans of <span class="formula-bracket-hl">[thể loại 1]</span> and <span class="formula-bracket-hl">[thể loại 2]</span> because they find them <span class="formula-bracket-hl">[tính từ]</span>. These genres allow them to <span class="formula-bracket-hl">[lợi ích 1]</span> and give them an opportunity to <span class="formula-bracket-hl">[lợi ích 2]</span>.
+                        → I believe most teenagers in my country are big fans of <span class="formula-bracket-hl">[thể loại 1]</span> and <span class="formula-bracket-hl">[thể loại 2]</span> because they find them <span class="formula-bracket-hl">[tính từ mô tả]</span>. These genres allow them to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and give them an opportunity to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
                     </div>
                 </div>
                 <div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 2 (Phân nhóm đa dạng: vừa đọc giải trí vừa đọc phát triển bản thân):</div>
                     <div class="topic-formula-text">
-                        → From my perspective, while many teenagers read <span class="formula-bracket-hl">[thể loại giải trí]</span> to relax, an increasing number also read <span class="formula-bracket-hl">[thể loại kỹ năng]</span>. These books allow them to <span class="formula-bracket-hl">[lợi ích]</span>.
+                        → From my perspective, while many teenagers read <span class="formula-bracket-hl">[thể loại giải trí]</span> to relax, an increasing number also read <span class="formula-bracket-hl">[thể loại kỹ năng]</span>. These books allow them to <span class="formula-bracket-hl">[lợi ích - Vo]</span>.
                     </div>
                 </div>`,
                 vocabGroups: [
@@ -4040,13 +4060,13 @@ const practiceTopicsData = [
                 formula: `<div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 1 (Có - Thường xuyên nghe khi di chuyển hoặc làm việc nhà):</div>
                     <div class="topic-formula-text">
-                        → Sure. I often listen to the radio <span class="formula-bracket-hl">[thời điểm/tần suất]</span> whenever I have free time. It allows me to <span class="formula-bracket-hl">[lợi ích 1]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích 2]</span>.
+                        → Sure. I often listen to the radio <span class="formula-bracket-hl">[thời điểm / tần suất]</span> whenever I have free time. It allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
                     </div>
                 </div>
                 <div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 2 (Không - Hiếm khi nghe radio truyền thống, ưu tiên nền tảng nhạc số/podcast):</div>
                     <div class="topic-formula-text">
-                        → Not really. I rarely listen to traditional radio because I prefer digital platforms like <span class="formula-bracket-hl">[Spotify / podcasts]</span>. It allows me to <span class="formula-bracket-hl">[lợi ích: nghe theo yêu cầu/tránh quảng cáo]</span>.
+                        → Not really. I rarely listen to traditional radio because I prefer digital platforms like <span class="formula-bracket-hl">[nền tảng số: Spotify / podcasts]</span>. It allows me to <span class="formula-bracket-hl">[lợi ích - Vo]</span>.
                     </div>
                 </div>`,
                 vocabGroups: [
@@ -4089,13 +4109,13 @@ const practiceTopicsData = [
                 formula: `<div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 1 (Nêu kênh radio phổ biến trong nước & lợi ích thực tế):</div>
                     <div class="topic-formula-text">
-                        → One of my favorite radio channels is <span class="formula-bracket-hl">[tên kênh]</span> because I find it very <span class="formula-bracket-hl">[tính từ]</span>. It allows me to stay updated on <span class="formula-bracket-hl">[thông tin]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích: tránh kẹt xe/thư giãn]</span>.
+                        → One of my favorite radio channels is <span class="formula-bracket-hl">[tên kênh phát thanh]</span> because I find it very <span class="formula-bracket-hl">[tính từ mô tả]</span>. It allows me to stay updated on <span class="formula-bracket-hl">[thông tin quan tâm]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích - Vo]</span>.
                     </div>
                 </div>
                 <div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 2 (Nêu đài phát thanh quốc tế / luyện tiếng Anh chuẩn B2):</div>
                     <div class="topic-formula-text">
-                        → To be honest, I regularly tune in to <span class="formula-bracket-hl">[BBC World Service / VOA]</span> because it is extremely <span class="formula-bracket-hl">[educational / informative]</span>. It allows me to hone my English listening skills and gives me an opportunity to keep abreast of global news.
+                        → To be honest, I regularly tune in to <span class="formula-bracket-hl">[tên kênh quốc tế]</span> because it is extremely <span class="formula-bracket-hl">[tính từ mô tả]</span>. It allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives me an opportunity to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
                     </div>
                 </div>`,
                 vocabGroups: [
@@ -4146,13 +4166,13 @@ const practiceTopicsData = [
                 formula: `<div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 1 (Cấu trúc brings us a number of significant benefits):</div>
                     <div class="topic-formula-text">
-                        → Listening to the radio brings us a number of significant benefits. For example, it allows us to <span class="formula-bracket-hl">[lợi ích 1]</span> and gives us a chance to <span class="formula-bracket-hl">[lợi ích 2: thư giãn không hại mắt]</span>.
+                        → Listening to the radio brings us a number of significant benefits. For example, it allows us to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives us a chance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
                     </div>
                 </div>
                 <div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 2 (Lợi thế giúp người nghe đa nhiệm multitasking vượt trội):</div>
                     <div class="topic-formula-text">
-                        → In my view, the biggest advantage of listening to the radio is that it enables listeners to multitask. It allows us to <span class="formula-bracket-hl">[lợi ích]</span> while driving or doing household chores.
+                        → In my view, the biggest advantage of listening to the radio is that it enables listeners to multitask. It allows us to <span class="formula-bracket-hl">[lợi ích - Vo]</span> while driving or doing household chores.
                     </div>
                 </div>`,
                 vocabGroups: [
