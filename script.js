@@ -334,10 +334,52 @@ document.addEventListener('DOMContentLoaded', () => {
     window.finishLogin = () => {
         const val = state.studentName || studentInput.value.trim();
         displayName.textContent = val;
+        const roleLabel = userProfile?.querySelector('.label');
+        if (roleLabel) {
+            roleLabel.textContent = state.userRole === 'teacher' ? 'Giáo viên' : 'Học viên • Lớp B212';
+        }
         userProfile.classList.remove('hidden');
         welcomeModal.style.opacity = '0';
         setTimeout(() => welcomeModal.classList.add('hidden'), 300);
+
+        try {
+            sessionStorage.setItem('vstep_student_name', state.studentName);
+            sessionStorage.setItem('vstep_student_class', state.studentClass || 'B212');
+            sessionStorage.setItem('vstep_user_role', state.userRole || 'student');
+        } catch (e) {}
+
+        if (typeof window.applyClassPermissions === 'function') {
+            window.applyClassPermissions();
+        }
     };
+
+    // Restore login session if available
+    try {
+        const savedName = sessionStorage.getItem('vstep_student_name');
+        const savedClass = sessionStorage.getItem('vstep_student_class');
+        const savedRole = sessionStorage.getItem('vstep_user_role');
+        if (savedName && savedClass) {
+            state.studentName = savedName;
+            state.studentClass = savedClass;
+            state.userRole = savedRole || 'student';
+            state.accessLevel = savedRole === 'teacher' ? 'FULL' : 'B212';
+            window._currentUserRole = state.userRole;
+            window._currentClass = state.studentClass;
+            if (welcomeModal) welcomeModal.classList.add('hidden');
+            if (displayName) displayName.textContent = savedName;
+            if (userProfile) {
+                userProfile.classList.remove('hidden');
+                const roleLabel = userProfile.querySelector('.label');
+                if (roleLabel) roleLabel.textContent = savedRole === 'teacher' ? 'Giáo viên' : 'Học viên • Lớp B212';
+            }
+        } else {
+            window._currentUserRole = 'student';
+            window._currentClass = 'B212';
+        }
+    } catch (e) {
+        window._currentUserRole = 'student';
+        window._currentClass = 'B212';
+    }
 
     const enterRoom = () => {
         const nameVal = studentInput.value.trim();
@@ -358,7 +400,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (isTeacher) {
             state.studentName = 'Cô Nguyệt';
+            state.studentClass = 'GV';
+            state.userRole = 'teacher';
             state.accessLevel = 'FULL';
+            window._currentUserRole = 'teacher';
+            window._currentClass = 'GV';
         } else if (formattedClass === 'B212') {
             // Check student list for class B212
             const matchedStudent = validStudentsB212.find(s => {
@@ -371,7 +417,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
             state.studentName = matchedStudent;
-            state.accessLevel = 'FULL';
+            state.studentClass = 'B212';
+            state.userRole = 'student';
+            state.accessLevel = 'B212';
+            window._currentUserRole = 'student';
+            window._currentClass = 'B212';
         } else {
             loginError.textContent = 'Mã lớp không hợp lệ. Vui lòng nhập đúng lớp B212!';
             loginError.style.display = 'block';
@@ -4295,6 +4345,87 @@ const practiceTopicsData = [
 ];
 
 // ==========================================================================
+// TOPIC PERMISSIONS & ACCESS CONTROL (CLASS B212 vs TEACHER)
+// ==========================================================================
+window.isTopicUnlocked = (topicId) => {
+    const tid = parseInt(topicId);
+    if (window._currentUserRole === 'teacher') {
+        return practiceTopicsData.some(t => t.id === tid);
+    }
+    // Class B212 only has access to Topic 1 and Topic 2
+    return tid === 1 || tid === 2;
+};
+
+window.getAllowedTopicIds = () => {
+    if (window._currentUserRole === 'teacher') {
+        return practiceTopicsData.map(t => t.id);
+    }
+    // For B212: only topic 1 and topic 2
+    return [1, 2];
+};
+
+window.getAllowedTopicsData = () => {
+    const allowedIds = window.getAllowedTopicIds();
+    return practiceTopicsData.filter(t => allowedIds.includes(t.id));
+};
+
+window.updateTopicSelectDropdowns = () => {
+    const isTeacher = window._currentUserRole === 'teacher';
+    const selects = [
+        document.getElementById('practice-topic-select'),
+        document.getElementById('practice-pair-topic1-select'),
+        document.getElementById('practice-pair-topic2-select')
+    ];
+
+    selects.forEach((sel) => {
+        if (!sel) return;
+        const currentVal = sel.value;
+        sel.querySelectorAll('option').forEach(opt => {
+            const val = parseInt(opt.value);
+            if (val === 1 || val === 2) {
+                opt.disabled = false;
+                if (val === 1) opt.textContent = "🎯 Topic 01: Let's talk about hobbies";
+                if (val === 2) opt.textContent = "🎯 Topic 02: Let's talk about video games";
+            } else if (val === 3 || val === 4) {
+                if (isTeacher) {
+                    opt.disabled = false;
+                    if (val === 3) opt.textContent = "🎯 Topic 03: Let's talk about books";
+                    if (val === 4) opt.textContent = "🎯 Topic 04: Let's talk about listening to the radio";
+                } else {
+                    opt.disabled = true;
+                    if (val === 3) opt.textContent = "🔒 Topic 03: Let's talk about books (Chưa mở cho lớp B212)";
+                    if (val === 4) opt.textContent = "🔒 Topic 04: Let's talk about listening to the radio (Chưa mở cho lớp B212)";
+                }
+            } else if (val >= 5) {
+                opt.disabled = true;
+            }
+        });
+        if (!isTeacher && (currentVal === '3' || currentVal === '4')) {
+            if (sel.id === 'practice-pair-topic2-select') {
+                sel.value = "2";
+            } else {
+                sel.value = "1";
+            }
+        }
+    });
+};
+
+window.applyClassPermissions = () => {
+    window.updateTopicSelectDropdowns();
+    const currentTopicSelect = document.getElementById('practice-topic-select');
+    if (currentTopicSelect) {
+        const currentId = parseInt(currentTopicSelect.value);
+        if (!window.isTopicUnlocked(currentId)) {
+            currentTopicSelect.value = "1";
+            renderPracticeTopic(1);
+        }
+    }
+    if (typeof updatePairPreview === 'function') {
+        updatePairPreview();
+    }
+};
+
+// ==========================================================================
 // TOPIC SELECTION & RENDERING CONTROLLER
 // ==========================================================================
 window.switchPracticeTopic = (topicId) => {
@@ -4342,8 +4473,18 @@ window.onPairTopicChange = (changedWhich) => {
     let v1 = parseInt(s1.value);
     let v2 = parseInt(s2.value);
 
+    // Ensure choices are unlocked
+    if (!window.isTopicUnlocked(v1)) {
+        v1 = 1;
+        s1.value = "1";
+    }
+    if (!window.isTopicUnlocked(v2)) {
+        v2 = 2;
+        s2.value = "2";
+    }
+
     if (v1 === v2) {
-        const available = practiceTopicsData.map(t => t.id);
+        const available = window.getAllowedTopicIds();
         const others = available.filter(id => id !== (changedWhich === 1 ? v1 : v2));
         if (others.length > 0) {
             if (changedWhich === 1) {
@@ -4368,7 +4509,7 @@ window.swapPairTopics = () => {
 };
 
 window.randomizePairTopics = () => {
-    const available = practiceTopicsData.map(t => t.id);
+    const available = window.getAllowedTopicIds();
     if (available.length < 2) return;
     const rand1 = available[Math.floor(Math.random() * available.length)];
     const remain = available.filter(id => id !== rand1);
@@ -4394,8 +4535,10 @@ window.randomizePairTopics = () => {
 window.startPairExamFromPanel = () => {
     const s1 = document.getElementById('practice-pair-topic1-select');
     const s2 = document.getElementById('practice-pair-topic2-select');
-    const t1Id = s1 ? parseInt(s1.value) : 1;
-    const t2Id = s2 ? parseInt(s2.value) : 2;
+    let t1Id = s1 ? parseInt(s1.value) : 1;
+    let t2Id = s2 ? parseInt(s2.value) : 2;
+    if (!window.isTopicUnlocked(t1Id)) t1Id = 1;
+    if (!window.isTopicUnlocked(t2Id)) t2Id = 2;
     openFullTopicExamModal(t1Id, 180, t2Id);
 };
 
@@ -4405,8 +4548,16 @@ window.updatePairPreview = () => {
     const previewContainer = document.getElementById('pair-topics-preview');
     if (!s1 || !s2 || !previewContainer) return;
 
-    const t1Id = parseInt(s1.value) || 1;
-    const t2Id = parseInt(s2.value) || 2;
+    let t1Id = parseInt(s1.value) || 1;
+    let t2Id = parseInt(s2.value) || 2;
+    if (!window.isTopicUnlocked(t1Id)) {
+        t1Id = 1;
+        s1.value = "1";
+    }
+    if (!window.isTopicUnlocked(t2Id)) {
+        t2Id = 2;
+        s2.value = "2";
+    }
 
     const t1 = practiceTopicsData.find(t => t.id === t1Id) || practiceTopicsData[0];
     const t2 = practiceTopicsData.find(t => t.id === t2Id) || practiceTopicsData[1] || practiceTopicsData[0];
@@ -4457,7 +4608,7 @@ window.updatePairPreview = () => {
 };
 
 window.pickRandomPracticeTopic = () => {
-    const available = practiceTopicsData.map(t => t.id);
+    const available = window.getAllowedTopicIds();
     if (!available || available.length === 0) return;
 
     const selectEl = document.getElementById('practice-topic-select');
@@ -4488,15 +4639,42 @@ window.pickRandomPracticeTopic = () => {
 function renderPracticeTopic(topicId) {
     const container = document.getElementById('practice-topic-content');
     if (!container) return;
+
+    const selectEl = document.getElementById('practice-topic-select');
+    if (selectEl) selectEl.value = String(topicId);
+
+    if (!window.isTopicUnlocked(topicId)) {
+        const labelEl = document.getElementById('current-topic-label');
+        if (labelEl) labelEl.textContent = `Topic ${String(topicId).padStart(2, '0')} (Khoá)`;
+        container.innerHTML = `
+            <div class="f-card-clean fade-in" style="margin-bottom: 2rem; text-align: center; padding: 3.5rem 1.5rem; background: var(--bg-card); border: 2px dashed rgba(245, 158, 11, 0.45); border-radius: 20px;">
+                <div style="width: 80px; height: 80px; margin: 0 auto 1.25rem; background: rgba(245, 158, 11, 0.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid rgba(245, 158, 11, 0.35);">
+                    <i class="fa-solid fa-lock" style="font-size: 2.2rem; color: #d97706;"></i>
+                </div>
+                <h2 style="font-size: 1.4rem; font-weight: 800; color: #b45309; margin-bottom: 0.6rem;">
+                    CHỦ ĐỀ ĐANG KHOÁ (LỚP B212)
+                </h2>
+                <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 580px; margin: 0 auto 1.75rem; line-height: 1.65;">
+                    Hiện tại lớp <strong>B212</strong> chỉ mở <strong>2 chủ đề đầu tiên (Topic 01 & Topic 02)</strong> để các bạn tập trung luyện tập chuyên sâu. Các chủ đề tiếp theo sẽ được mở theo lịch học của cô!
+                </p>
+                <div style="display: flex; justify-content: center; gap: 0.85rem; flex-wrap: wrap;">
+                    <button type="button" class="btn" onclick="renderPracticeTopic(1)" style="background: var(--primary); color: white; padding: 0.8rem 1.6rem; border-radius: 12px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3);">
+                        <i class="fa-solid fa-arrow-left"></i> Luyện tập Topic 01
+                    </button>
+                    <button type="button" class="btn" onclick="renderPracticeTopic(2)" style="background: #059669; color: white; padding: 0.8rem 1.6rem; border-radius: 12px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);">
+                        Luyện tập Topic 02 <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        `;
+        return;
+    }
     
     const topic = practiceTopicsData.find(t => t.id === topicId) || practiceTopicsData[0];
     if (!topic) return;
 
     const labelEl = document.getElementById('current-topic-label');
     if (labelEl) labelEl.textContent = `Topic ${String(topic.id).padStart(2, '0')} / 60`;
-
-    const selectEl = document.getElementById('practice-topic-select');
-    if (selectEl) selectEl.value = String(topic.id);
 
     const randomDisplayEl = document.getElementById('random-topic-title-display');
     if (randomDisplayEl) randomDisplayEl.textContent = topic.title;
@@ -5007,8 +5185,9 @@ window.renderExamQuestionsHtml = () => {
         `).join('');
 
         const isRec = window._fullExamTimer.isRecording;
-        const topicOptions1 = practiceTopicsData.map(t => `<option value="${t.id}" ${t.id === t1.id ? 'selected' : ''}>${t.title}</option>`).join('');
-        const topicOptions2 = practiceTopicsData.map(t => `<option value="${t.id}" ${t.id === t2.id ? 'selected' : ''}>${t.title}</option>`).join('');
+        const allowedTopics = window.getAllowedTopicsData();
+        const topicOptions1 = allowedTopics.map(t => `<option value="${t.id}" ${t.id === t1.id ? 'selected' : ''}>${t.title}</option>`).join('');
+        const topicOptions2 = allowedTopics.map(t => `<option value="${t.id}" ${t.id === t2.id ? 'selected' : ''}>${t.title}</option>`).join('');
 
         if (questionsContainer) {
             questionsContainer.innerHTML = `
@@ -5082,18 +5261,19 @@ window.renderExamQuestionsHtml = () => {
 window.changeExamTopic = (which, newIdStr) => {
     if (window._fullExamTimer.isRecording) return;
     const newId = parseInt(newIdStr);
-    if (isNaN(newId)) return;
+    if (isNaN(newId) || !window.isTopicUnlocked(newId)) return;
 
+    const allowed = window.getAllowedTopicsData();
     if (which === 1) {
         window._fullExamState.topic1Id = newId;
         if (window._fullExamState.topic2Id === newId) {
-            const others = practiceTopicsData.filter(t => t.id !== newId);
+            const others = allowed.filter(t => t.id !== newId);
             if (others.length > 0) window._fullExamState.topic2Id = others[0].id;
         }
     } else {
         window._fullExamState.topic2Id = newId;
         if (window._fullExamState.topic1Id === newId) {
-            const others = practiceTopicsData.filter(t => t.id !== newId);
+            const others = allowed.filter(t => t.id !== newId);
             if (others.length > 0) window._fullExamState.topic1Id = others[0].id;
         }
     }
@@ -5103,12 +5283,13 @@ window.changeExamTopic = (which, newIdStr) => {
 window.randomizeTopic2InExam = () => {
     if (window._fullExamTimer.isRecording) return;
     const t1Id = window._fullExamState.topic1Id;
-    const candidates = practiceTopicsData.filter(t => t.id !== t1Id && t.id !== window._fullExamState.topic2Id);
+    const allowed = window.getAllowedTopicsData();
+    const candidates = allowed.filter(t => t.id !== t1Id && t.id !== window._fullExamState.topic2Id);
     if (candidates.length > 0) {
         const nextT2 = candidates[Math.floor(Math.random() * candidates.length)];
         window._fullExamState.topic2Id = nextT2.id;
     } else {
-        const other = practiceTopicsData.find(t => t.id !== t1Id);
+        const other = allowed.find(t => t.id !== t1Id);
         if (other) window._fullExamState.topic2Id = other.id;
     }
     renderExamQuestionsHtml();
@@ -5116,12 +5297,14 @@ window.randomizeTopic2InExam = () => {
 
 window.openFullTopicExamModal = (topicId, initialSeconds = 90, topic2Id = null) => {
     stopAllActiveRecordings();
-    const t1 = practiceTopicsData.find(t => t.id === topicId) || practiceTopicsData[0];
+    if (!window.isTopicUnlocked(topicId)) topicId = 1;
+    const allowed = window.getAllowedTopicsData();
+    const t1 = allowed.find(t => t.id === topicId) || allowed[0];
     if (!t1) return;
 
-    let t2 = topic2Id ? practiceTopicsData.find(t => t.id === topic2Id) : null;
+    let t2 = topic2Id ? allowed.find(t => t.id === topic2Id) : null;
     if (!t2 || t2.id === t1.id) {
-        const others = practiceTopicsData.filter(t => t.id !== t1.id);
+        const others = allowed.filter(t => t.id !== t1.id);
         t2 = others[Math.floor(Math.random() * others.length)] || t1;
     }
 
@@ -5223,14 +5406,20 @@ window.openFullTopicExamModal = (topicId, initialSeconds = 90, topic2Id = null) 
 };
 
 window.openFullPartExamModal = (preferredTopic1Id = null) => {
+    const allowed = window.getAllowedTopicsData();
     let t1Id = preferredTopic1Id;
-    if (!t1Id) {
-        const randIdx = Math.floor(Math.random() * practiceTopicsData.length);
-        t1Id = practiceTopicsData[randIdx].id;
+    if (!t1Id || !window.isTopicUnlocked(t1Id)) {
+        const randIdx = Math.floor(Math.random() * allowed.length);
+        t1Id = allowed[randIdx].id;
     }
-    const otherCandidates = practiceTopicsData.filter(t => t.id !== t1Id);
-    const rand2Idx = Math.floor(Math.random() * otherCandidates.length);
-    const t2Id = otherCandidates[rand2Idx]?.id || practiceTopicsData[0].id;
+    const otherCandidates = allowed.filter(t => t.id !== t1Id);
+    let t2Id = otherCandidates[0]?.id;
+    if (otherCandidates.length > 1) {
+        const rand2Idx = Math.floor(Math.random() * otherCandidates.length);
+        t2Id = otherCandidates[rand2Idx].id;
+    } else if (!t2Id) {
+        t2Id = allowed[0].id;
+    }
 
     openFullTopicExamModal(t1Id, 180, t2Id);
 };
@@ -5443,12 +5632,14 @@ window.resetFullTopicRecording = () => {
     if (wave) wave.classList.remove('active');
 };
 
-// Auto-initialize topic 1 on load
+// Auto-initialize topic 1 and permissions on load
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
+        if (typeof updateTopicSelectDropdowns === 'function') updateTopicSelectDropdowns();
         if (typeof renderPracticeTopic === 'function') renderPracticeTopic(1);
     });
 } else {
+    if (typeof updateTopicSelectDropdowns === 'function') updateTopicSelectDropdowns();
     if (typeof renderPracticeTopic === 'function') renderPracticeTopic(1);
 }
 
