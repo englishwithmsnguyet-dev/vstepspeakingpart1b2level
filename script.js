@@ -4701,6 +4701,401 @@ const practiceTopicsData = [
                 ]
             }
         ]
+    },
+    {
+        id: 7,
+        title: "Chủ đề 07: Let's talk about restaurants",
+        introText: "Let’s talk about restaurants.",
+        questions: [
+            {
+                qNum: 1,
+                question: "What restaurant do you often go to? Why do you go there?",
+                qType: "Wh-question: What restaurant do you often go to? Why do you go there?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Nhà hàng quen thuộc - Không gian ấm cúng & ẩm thực tinh tế):</div>
+                    <div class="topic-formula-text">
+                        → <u>Whenever I have the opportunity to dine out, I tend to visit</u> <span class="formula-bracket-hl">[loại nhà hàng / tên quán]</span> near my <span class="formula-bracket-hl">[địa điểm]</span> because I find its ambience both <span class="formula-bracket-hl">[tính từ 1]</span> and <span class="formula-bracket-hl">[tính từ 2]</span>. Dining there allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Quán ăn yêu thích - Thực đơn phong phú & giá cả hợp lý):</div>
+                    <div class="topic-formula-text">
+                        → <u>One of my all-time favorite restaurants is</u> <span class="formula-bracket-hl">[loại nhà hàng / tên quán]</span> located near my <span class="formula-bracket-hl">[địa điểm]</span>. It offers <span class="formula-bracket-hl">[điểm nổi bật]</span>, which allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives me an opportunity to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc diễn đạt thói quen & lựa chọn]:",
+                        items: [
+                            { en: "Whenever I have the opportunity to dine out, I tend to visit", vn: "Mỗi khi có dịp đi ăn bên ngoài, tôi thường ghé đến..." },
+                            { en: "One of my all-time favorite restaurants is", vn: "Một trong những nhà hàng tôi thích nhất từ trước đến nay là..." },
+                            { en: "I have a particular preference for", vn: "Tôi có niềm yêu thích đặc biệt dành cho..." },
+                            { en: "My go-to dining spot is", vn: "Địa điểm ăn uống quen thuộc / quán ruột của tôi là..." }
+                        ]
+                    },
+                    {
+                        title: "🍽️ [Loại hình quán ăn & Vị trí]:",
+                        items: [
+                            { en: "a cozy Vietnamese restaurant", vn: "quán ăn ẩm thực Việt ấm cúng" },
+                            { en: "a local seafood eatery", vn: "quán hải sản tươi sống địa phương" },
+                            { en: "a traditional noodle house", vn: "quán bún / phở truyền thống" },
+                            { en: "a vibrant BBQ and hotpot bistro", vn: "quán nướng và lẩu sôi động" },
+                            { en: "near my residence / workplace", vn: "gần nơi cư trú / nơi làm việc của tôi" }
+                        ]
+                    },
+                    {
+                        title: "✨ [Kho tính từ mô tả nhà hàng B2]:",
+                        items: [
+                            { en: "welcoming and elegant", vn: "hiếu khách và tao nhã / lịch sự" },
+                            { en: "spacious and comfortable", vn: "rộng rãi và thoải mái" },
+                            { en: "cozy and tranquil", vn: "ấm cúng và yên bình" },
+                            { en: "scrumptious and wholesome", vn: "thơm ngon hảo hạng và lành mạnh" },
+                            { en: "attentive and courteous", vn: "chu đáo tận tình và lịch sự (phục vụ)" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>unwind after an exhausting workday, socialize with friends, strengthen family bonding...</em>).`
+                    },
+                    {
+                        title: "🍷 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Đi ăn ngoài]:",
+                        items: [
+                            { en: "savor mouth-watering culinary delights", vn: "thưởng thức những món ăn ngon miệng tuyệt hảo" },
+                            { en: "enjoy a peaceful dining atmosphere", vn: "tận hưởng bầu không khí ăn uống yên bình" },
+                            { en: "strengthen family bonding over meals", vn: "thắt chặt sự gắn kết gia đình qua bữa ăn" },
+                            { en: "explore diverse gastronomic specialties", vn: "khám phá nhiều món ngon đặc sản phong phú" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Quán ăn Việt ấm cúng gần nhà - Món ăn ngon & Gắn kết gia đình)",
+                        text: "Whenever I have the opportunity to dine out, I tend to visit a cozy Vietnamese restaurant near my residence because I find its ambience both welcoming and elegant. Dining there allows me to savor mouth-watering culinary delights and gives me a chance to strengthen family bonding over delicious meals.",
+                        formatted: `→ <u>Whenever I have the opportunity to dine out, I tend to visit</u> <span class="sub-hl">a cozy Vietnamese restaurant near my residence</span> because I find its ambience both <span class="sub-hl">welcoming and elegant</span>. Dining there allows me to <span class="sub-hl">savor mouth-watering culinary delights</span> and gives me a chance to <span class="sub-hl">strengthen family bonding over delicious meals</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Quán hải sản gần nơi làm việc - Thực đơn đa dạng & Giao lưu đồng nghiệp)",
+                        text: "One of my all-time favorite restaurants is a local seafood eatery located near my workplace. It offers a remarkably diverse menu at affordable prices, which allows me to unwind after an exhausting workday and gives me an opportunity to socialize with my colleagues.",
+                        formatted: `→ <u>One of my all-time favorite restaurants is</u> <span class="sub-hl">a local seafood eatery located near my workplace</span>. It offers <span class="sub-hl">a remarkably diverse menu at affordable prices</span>, which allows me to <span class="sub-hl">unwind after an exhausting workday</span> and gives me an opportunity to <span class="sub-hl">socialize with my colleagues</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 2,
+                question: "What types of food are served at that restaurant?",
+                qType: "Wh-question: What types of food are served at that restaurant?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Đặc sản truyền thống Việt Nam với hương vị đậm đà):</div>
+                    <div class="topic-formula-text">
+                        → That restaurant specializes in <span class="formula-bracket-hl">[loại hình ẩm thực]</span>, featuring iconic specialties such as <span class="formula-bracket-hl">[món 1]</span> and <span class="formula-bracket-hl">[món 2]</span>. All the dishes are exceptionally <span class="formula-bracket-hl">[tính từ 1]</span> and <span class="formula-bracket-hl">[tính từ 2]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Thực đơn hải sản tươi sống và phương pháp chế biến tinh tế):</div>
+                    <div class="topic-formula-text">
+                        → They offer an extensive selection of <span class="formula-bracket-hl">[loại món ăn]</span>, including <span class="formula-bracket-hl">[món 1]</span> and <span class="formula-bracket-hl">[món 2]</span>. What impresses me most is that every ingredient is <span class="formula-bracket-hl">[tính từ]</span>, which guarantees <span class="formula-bracket-hl">[giá trị mang lại]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🍲 [Món ăn & Ẩm thực đặc sắc]:",
+                        items: [
+                            { en: "traditional Vietnamese delicacies", vn: "các món đặc sản ẩm thực thuần Việt" },
+                            { en: "fragrant beef noodle soup", vn: "phở bò thơm lừng đậm đà" },
+                            { en: "crispy traditional spring rolls", vn: "nem rán / chả giò giòn rụm" },
+                            { en: "savory charcoal-grilled pork with noodles", vn: "bún chả nướng than hoa thơm lừng" },
+                            { en: "steamed tiger prawns with lemongrass", vn: "tôm sú hấp sả thơm nồng" },
+                            { en: "simmered fish in a clay pot", vn: "cá kho tộ đậm đà thơm ngậy" }
+                        ]
+                    },
+                    {
+                        title: "✨ [Tính từ mô tả hương vị & chất lượng]:",
+                        items: [
+                            { en: "flavorful and authentic", vn: "đậm đà hương vị và chuẩn vị truyền thống" },
+                            { en: "freshly sourced and well-seasoned", vn: "nguyên liệu tươi sạch và nêm nếm khéo léo" },
+                            { en: "crispy on the exterior", vn: "giòn tan ở lớp vỏ bên ngoài" },
+                            { en: "nutritious and hygienic", vn: "bổ dưỡng và đảm bảo vệ sinh" }
+                        ]
+                    },
+                    {
+                        title: "🌿 [Lợi ích khi dùng bữa]:",
+                        items: [
+                            { en: "guarantees food safety and freshness", vn: "đảm bảo an toàn thực phẩm và độ tươi ngon" },
+                            { en: "offers a memorable gastronomic experience", vn: "mang đến trải nghiệm ẩm thực đáng nhớ" },
+                            { en: "caters to varied nutritional preferences", vn: "đáp ứng nhu cầu dinh dưỡng đa dạng" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Món ăn truyền thống - Phở bò và nem rán chuẩn vị)",
+                        text: "That restaurant specializes in traditional Vietnamese delicacies, featuring iconic specialties such as fragrant beef noodle soup and crispy spring rolls. All the dishes are exceptionally flavorful and authentic, which offers diners a memorable gastronomic experience.",
+                        formatted: `→ That restaurant specializes in <span class="sub-hl">traditional Vietnamese delicacies</span>, featuring iconic specialties such as <span class="sub-hl">fragrant beef noodle soup and crispy spring rolls</span>. All the dishes are exceptionally <span class="sub-hl">flavorful and authentic</span>, which offers diners <span class="sub-hl">a memorable gastronomic experience</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Hải sản tươi sống - Tôm hấp sả và cá kho tộ đậm đà)",
+                        text: "They offer an extensive selection of fresh seafood dishes, including steamed tiger prawns with lemongrass and savory clay-pot fish. What impresses me most is that every ingredient is freshly sourced and well-seasoned, which guarantees food safety and exceptional taste.",
+                        formatted: `→ They offer an extensive selection of <span class="sub-hl">fresh seafood dishes</span>, including <span class="sub-hl">steamed tiger prawns with lemongrass and savory clay-pot fish</span>. What impresses me most is that every ingredient is <span class="sub-hl">freshly sourced and well-seasoned</span>, which guarantees <span class="sub-hl">food safety and exceptional taste</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 3,
+                question: "Do you like all the dishes there?",
+                qType: "Choice question: Do you like all the dishes there?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Hài lòng với hầu hết các món - Hương vị hợp khẩu vị tuyệt đối):</div>
+                    <div class="topic-formula-text">
+                        → Generally speaking, <u>I relish almost every dish on their menu</u> because the seasoning caters perfectly to my palate, particularly <span class="formula-bracket-hl">[món yêu thích nhất]</span>. However, I tend to avoid <span class="formula-bracket-hl">[món không hợp]</span> because it's slightly <span class="formula-bracket-hl">[tính từ]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Khen ngợi chất lượng chung nhưng ưu tiên món thanh đạm dễ tiêu):</div>
+                    <div class="topic-formula-text">
+                        → While the vast majority of their offerings are outstanding, <u>I have a selective preference</u>. I consistently opt for <span class="formula-bracket-hl">[món thanh nhẹ]</span>, as it allows me to <span class="formula-bracket-hl">[lợi ích - Vo]</span> without feeling <span class="formula-bracket-hl">[cảm giác tiêu cực]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc diễn đạt khẩu vị & sự chọn lọc]:",
+                        items: [
+                            { en: "I relish almost every dish on their menu", vn: "Tôi thưởng thức ngon lành hầu hết các món trên menu" },
+                            { en: "caters perfectly to my palate", vn: "phù hợp và chiều lòng khẩu vị của tôi một cách hoàn hảo" },
+                            { en: "I have a selective preference for", vn: "Tôi có sự ưu tiên lựa chọn có chọn lọc đối với..." },
+                            { en: "consistently opt for", vn: "luôn luôn ưu tiên lựa chọn..." }
+                        ]
+                    },
+                    {
+                        title: "🍽️ [Tính từ mô tả khẩu vị & món ăn]:",
+                        items: [
+                            { en: "richly flavored yet balanced", vn: "đậm đà hương vị nhưng vẫn hài hòa cân đối" },
+                            { en: "overly spicy or greasy", vn: "quá cay hoặc quá nhiều dầu mỡ" },
+                            { en: "wholesome and light", vn: "thanh đạm và nhẹ nhàng cho cơ thể" },
+                            { en: "gentle on the digestion", vn: "dễ tiêu hóa và êm bụng" }
+                        ]
+                    },
+                    {
+                        title: "🥗 [Món ăn thanh đạm & Lợi ích]:",
+                        items: [
+                            { en: "lighter options like steamed vegetables", vn: "các lựa chọn thanh nhẹ như rau hấp" },
+                            { en: "nourishing chicken soup", vn: "súp gà giàu dưỡng chất bồi bổ" },
+                            { en: "avoid feeling excessively bloated", vn: "tránh cảm giác bị đầy hơi ậm ạch khó chịu" },
+                            { en: "maintain a balanced digestive system", vn: "giữ cho hệ tiêu hóa luôn khỏe mạnh cân bằng" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Hợp khẩu vị hầu hết mọi món - Tránh món quá cay)",
+                        text: "Generally speaking, I relish almost every dish on their menu because the culinary seasoning caters perfectly to my palate, particularly their signature beef noodles. However, I usually avoid overly spicy dishes because they can be slightly harsh on my stomach.",
+                        formatted: `→ Generally speaking, <u>I relish almost every dish on their menu</u> because the culinary seasoning <span class="sub-hl">caters perfectly to my palate</span>, particularly their signature <span class="sub-hl">beef noodles</span>. However, I usually avoid <span class="sub-hl">overly spicy dishes</span> because they can be slightly harsh on my stomach.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Ưu tiên món thanh nhẹ - Rau hấp và súp gà dễ tiêu)",
+                        text: "While the vast majority of their offerings are outstanding, I have a selective preference. I consistently opt for lighter options like steamed vegetables and chicken soup, as it allows me to enjoy a wholesome meal without feeling excessively bloated.",
+                        formatted: `→ While the vast majority of their offerings are outstanding, <u>I have a selective preference</u>. I consistently opt for <span class="sub-hl">lighter options like steamed vegetables and chicken soup</span>, as it allows me to <span class="sub-hl">enjoy a wholesome meal without feeling excessively bloated</span>.`
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: 8,
+        title: "Chủ đề 08: Let's talk about fast food restaurants",
+        introText: "Let’s talk about fast food restaurants.",
+        questions: [
+            {
+                qNum: 1,
+                question: "Have you ever been to a fast food restaurant?",
+                qType: "Have you ever question: Have you ever been to a fast food restaurant?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Đã từng đến - Thỉnh thoảng tụ tập bạn bè vì tiện lợi & nhanh chóng):</div>
+                    <div class="topic-formula-text">
+                        → Yes, occasionally. <u>Whenever I'm pressed for time or hanging out with my friends</u>, I drop by <span class="formula-bracket-hl">[tên chuỗi cửa hàng]</span> because it is both <span class="formula-bracket-hl">[tính từ 1]</span> and <span class="formula-bracket-hl">[tính từ 2]</span>. It allows us to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives us a chance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Hiếm khi - Ưu tiên cơm nhà vì sức khỏe và tiết kiệm):</div>
+                    <div class="topic-formula-text">
+                        → Yes, but only once in a blue moon. Nowadays, <u>I consciously prioritize wholesome home-cooked meals</u> because they are far more <span class="formula-bracket-hl">[tính từ]</span>. Preparing food at home allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives me an opportunity to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc diễn đạt thói quen & tần suất]:",
+                        items: [
+                            { en: "Whenever I'm pressed for time or hanging out with my friends", vn: "Bất cứ khi nào tôi eo hẹp thời gian hoặc đi chơi cùng bạn..." },
+                            { en: "only once in a blue moon", vn: "cực kỳ hiếm khi / năm thì mười họa" },
+                            { en: "I consciously prioritize wholesome home-cooked meals", vn: "Tôi chủ động ưu tiên các bữa cơm nhà lành mạnh" },
+                            { en: "drop by a fast food outlet", vn: "ghé vào một cửa hàng thức ăn nhanh" }
+                        ]
+                    },
+                    {
+                        title: "🍟 [Chuỗi cửa hàng thức ăn nhanh]:",
+                        items: [
+                            { en: "popular chains like KFC or Lotteria", vn: "các chuỗi nổi tiếng như KFC hoặc Lotteria" },
+                            { en: "McDonald's or Burger King", vn: "chuỗi cửa hàng McDonald's hoặc Burger King" },
+                            { en: "quick-service pizza outlets", vn: "các cửa hàng pizza phục vụ nhanh" }
+                        ]
+                    },
+                    {
+                        title: "✨ [Tính từ mô tả dịch vụ & bữa ăn]:",
+                        items: [
+                            { en: "convenient and time-saving", vn: "tiện lợi và tiết kiệm thời gian" },
+                            { en: "accessible and affordable", vn: "dễ tiếp cận và giá cả vừa phải" },
+                            { en: "nutritious and hygienic", vn: "bổ dưỡng và đảm bảo vệ sinh (cơm nhà)" },
+                            { en: "wholesome", vn: "lành mạnh và tốt cho sức khỏe" }
+                        ]
+                    },
+                    {
+                        title: "🥗 [Lợi ích khi dùng bữa]:",
+                        items: [
+                            { en: "grab a quick bite on busy days", vn: "ăn nhanh lót dạ trong những ngày bận rộn" },
+                            { en: "catch up with friends in a lively atmosphere", vn: "trò chuyện hàn huyên cùng bạn bè trong không khí sôi động" },
+                            { en: "control calorie intake effectively", vn: "kiểm soát lượng calo nạp vào hiệu quả" },
+                            { en: "save substantial living expenses", vn: "tiết kiệm được đáng kể chi phí sinh hoạt" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Thỉnh thoảng đi KFC cùng bạn - Tiện lợi & Bắt kịp câu chuyện)",
+                        text: "Yes, occasionally. Whenever I'm pressed for time or hanging out with my friends, I drop by KFC because it is both convenient and time-saving. It allows us to grab a quick bite and gives us a chance to catch up in a lively atmosphere.",
+                        formatted: `→ Yes, occasionally. <u>Whenever I'm pressed for time or hanging out with my friends</u>, I drop by <span class="sub-hl">KFC</span> because it is both <span class="sub-hl">convenient and time-saving</span>. It allows us to <span class="sub-hl">grab a quick bite</span> and gives us a chance to <span class="sub-hl">catch up in a lively atmosphere</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Hiếm khi đi - Ưu tiên cơm nhà dinh dưỡng & Tiết kiệm chi phí)",
+                        text: "Yes, but only once in a blue moon. Nowadays, I consciously prioritize wholesome home-cooked meals because they are far more nutritious and hygienic. Preparing food at home allows me to control calories and gives me an opportunity to save substantial expenses.",
+                        formatted: `→ Yes, but <u>only once in a blue moon</u>. Nowadays, <u>I consciously prioritize wholesome home-cooked meals</u> because they are far more <span class="sub-hl">nutritious and hygienic</span>. Preparing food at home allows me to <span class="sub-hl">control calories</span> and gives me an opportunity to <span class="sub-hl">save substantial expenses</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 2,
+                question: "What is your favorite fast food?",
+                qType: "Wh-question: What is your favorite fast food?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Món khoái khẩu - Hương vị giòn rụm & giải tỏa căng thẳng):</div>
+                    <div class="topic-formula-text">
+                        → <u>I'm an absolute fan of</u> <span class="formula-bracket-hl">[tên món ăn]</span> because I find its texture both <span class="formula-bracket-hl">[tính từ 1]</span> and <span class="formula-bracket-hl">[tính từ 2]</span>. Savoring it allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Món ăn lý tưởng để chia sẻ cùng bạn bè dịp tụ họp):</div>
+                    <div class="topic-formula-text">
+                        → Without hesitation, <u>my top pick would be</u> <span class="formula-bracket-hl">[tên món ăn]</span>. It is exceptionally <span class="formula-bracket-hl">[tính từ]</span>, which makes it ideal for sharing with friends to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc diễn đạt niềm đam mê món ăn]:",
+                        items: [
+                            { en: "I'm an absolute fan of", vn: "Tôi là một tín đồ tuyệt đối của..." },
+                            { en: "Without hesitation, my top pick would be", vn: "Không chút do dự, lựa chọn hàng đầu của tôi sẽ là..." },
+                            { en: "Nothing compares to the pleasure of enjoying", vn: "Không gì sánh bằng cảm giác tuyệt vời khi thưởng thức..." }
+                        ]
+                    },
+                    {
+                        title: "🍗 [Món ăn nhanh hấp dẫn]:",
+                        items: [
+                            { en: "crispy golden fried chicken", vn: "gà rán vàng ươm giòn rụm" },
+                            { en: "stuffed-crust cheese pizza", vn: "pizza viền phô mai béo ngậy thơm lừng" },
+                            { en: "succulent beef burger with caramelized onions", vn: "burger bò mọng nước kèm hành tây xào thơm" },
+                            { en: "seasoned French fries with garlic mayo", vn: "khoai tây chiên lắc gia vị chấm sốt béo ngậy" }
+                        ]
+                    },
+                    {
+                        title: "✨ [Tính từ mô tả hương vị & độ ngon B2]:",
+                        items: [
+                            { en: "crunchy and delightfully juicy", vn: "giòn tan và mọng nước đầy mê hoặc" },
+                            { en: "scrumptious and richly seasoned", vn: "thơm ngon hảo hạng và tẩm ướp đậm đà" },
+                            { en: "piping hot and flavorful", vn: "nóng hổi vừa thổi vừa ăn và đậm vị" },
+                            { en: "irresistible", vn: "hấp dẫn không thể cưỡng lại" }
+                        ]
+                    },
+                    {
+                        title: "🎉 [Lợi ích cảm xúc & Tinh thần]:",
+                        items: [
+                            { en: "satisfy my comfort food cravings", vn: "thỏa mãn cơn thèm món ăn khoái khẩu" },
+                            { en: "instantly uplift my spirits after stressful exams", vn: "ngay lập tức vực dậy tinh thần sau các kỳ thi căng thẳng" },
+                            { en: "foster joyful bonding moments with friends", vn: "tạo nên những giây phút gắn kết vui tươi bên bạn bè" },
+                            { en: "celebrate pleasant weekend gatherings", vn: "kỷ niệm những buổi tụ họp cuối tuần ấm áp" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Gà rán giòn rụm - Thỏa mãn cơn thèm & Vực dậy tinh thần)",
+                        text: "I'm an absolute fan of crispy golden fried chicken because I find its texture both crunchy and delightfully juicy. Savoring it allows me to satisfy my comfort food cravings and gives me a chance to instantly uplift my spirits after stressful exams.",
+                        formatted: `→ <u>I'm an absolute fan of</u> <span class="sub-hl">crispy golden fried chicken</span> because I find its texture both <span class="sub-hl">crunchy and delightfully juicy</span>. Savoring it allows me to <span class="sub-hl">satisfy my comfort food cravings</span> and gives me a chance to <span class="sub-hl">instantly uplift my spirits after stressful exams</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Pizza phô mai - Đậm đà thơm ngậy & Gắn kết bạn bè)",
+                        text: "Without hesitation, my top pick would be hot cheese pizza. It is exceptionally scrumptious and richly seasoned, which makes it ideal for sharing with friends to foster bonding moments and celebrate pleasant weekend gatherings.",
+                        formatted: `→ Without hesitation, <u>my top pick would be</u> <span class="sub-hl">hot cheese pizza</span>. It is exceptionally <span class="sub-hl">scrumptious and richly seasoned</span>, which makes it ideal for sharing with friends to <span class="sub-hl">foster bonding moments and celebrate pleasant weekend gatherings</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 3,
+                question: "Is it healthy to eat fast food?",
+                qType: "Is it healthy question: Is it healthy to eat fast food?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Khẳng định tác hại lớn đến sức khỏe - Nhiều chất béo xấu & calo rỗng):</div>
+                    <div class="topic-formula-text">
+                        → Definitely not. From a nutritional standpoint, <u>frequent consumption of fast food poses severe health risks</u> because it is laden with <span class="formula-bracket-hl">[chất béo / phụ gia độc hại]</span>. It can lead to <span class="formula-bracket-hl">[tác hại 1]</span> and significantly increases the risk of <span class="formula-bracket-hl">[tác hại 2]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Cấu trúc nhượng bộ tương phản - Tiện lợi tức thì nhưng hại lâu dài):</div>
+                    <div class="topic-formula-text">
+                        → Although fast food is undeniably convenient and tasty, <u>it is detrimental to long-term well-being</u>. Therefore, it is advisable to <span class="formula-bracket-hl">[biện pháp lành mạnh]</span> in order to <span class="formula-bracket-hl">[lợi ích - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "⚠️ [Thành phần có hại trong fast food]:",
+                        items: [
+                            { en: "saturated fats and excessive sodium", vn: "chất béo bão hòa và lượng muối natri dư thừa" },
+                            { en: "refined sugars and chemical additives", vn: "đường tinh luyện và các chất phụ gia hóa học" },
+                            { en: "empty calories lacking essential vitamins", vn: "lượng calo rỗng thiếu hụt các vitamin thiết yếu" },
+                            { en: "trans fats and deep-frying oils", vn: "chất béo chuyển hóa và dầu mỡ chiên đi chiên lại" }
+                        ]
+                    },
+                    {
+                        title: "⚡ [Tác hại nghiêm trọng đối với sức khỏe]:",
+                        items: [
+                            { en: "rapid weight gain and obesity", vn: "tăng cân nhanh chóng và béo phì" },
+                            { en: "cardiovascular diseases and hypertension", vn: "các bệnh tim mạch và cao huyết áp" },
+                            { en: "elevated cholesterol and blood sugar levels", vn: "tăng lượng mỡ máu cholesterol và đường huyết" },
+                            { en: "chronic digestive complications", vn: "các biến chứng rối loạn tiêu hóa mãn tính" }
+                        ]
+                    },
+                    {
+                        title: "🥦 [Biện pháp & Lối sống lành mạnh B2]:",
+                        items: [
+                            { en: "prioritize nutrient-rich home-cooked meals", vn: "ưu tiên các bữa cơm nhà tự nấu giàu dưỡng chất" },
+                            { en: "maintain optimal metabolic health", vn: "duy trì sức khỏe trao đổi chất ở trạng thái tối ưu" },
+                            { en: "prevent chronic lifestyle-related illnesses", vn: "phòng ngừa các bệnh lý mãn tính do lối sống" },
+                            { en: "embrace a wholesome Mediterranean-style diet", vn: "áp dụng chế độ ăn uống lành mạnh phong phú rau xanh" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Khẳng định nguy hại - Nhiều mỡ xấu và muối, gây béo phì & bệnh tim)",
+                        text: "Definitely not. From a nutritional standpoint, frequent consumption of fast food poses severe health risks because it is laden with saturated fats and excessive sodium. Overeating fast food can lead to rapid weight gain and significantly increases the risk of cardiovascular diseases.",
+                        formatted: `→ Definitely not. From a nutritional standpoint, <u>frequent consumption of fast food poses severe health risks</u> because it is laden with <span class="sub-hl">saturated fats and excessive sodium</span>. Overeating fast food can lead to <span class="sub-hl">rapid weight gain</span> and significantly increases the risk of <span class="sub-hl">cardiovascular diseases</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Cấu trúc tương phản Although - Ưu tiên cơm nhà để duy trì sức khỏe)",
+                        text: "Although fast food is undeniably convenient and tasty, it is detrimental to long-term well-being. Therefore, it is advisable to prioritize nutrient-rich home-cooked meals in order to maintain optimal fitness and prevent chronic lifestyle illnesses.",
+                        formatted: `→ Although fast food is undeniably convenient and tasty, <u>it is detrimental to long-term well-being</u>. Therefore, it is advisable to <span class="sub-hl">prioritize nutrient-rich home-cooked meals</span> in order to <span class="sub-hl">maintain optimal fitness and prevent chronic lifestyle illnesses</span>.`
+                    }
+                ]
+            }
+        ]
     }
 ];
 
@@ -4712,16 +5107,16 @@ window.isTopicUnlocked = (topicId) => {
     if (window._currentUserRole === 'teacher') {
         return practiceTopicsData.some(t => t.id === tid);
     }
-    // Unlocked topics 1 to 6
-    return tid >= 1 && tid <= 6;
+    // Unlocked topics 1 to 8
+    return tid >= 1 && tid <= 8;
 };
 
 window.getAllowedTopicIds = () => {
     if (window._currentUserRole === 'teacher') {
         return practiceTopicsData.map(t => t.id);
     }
-    // Unlocked topics 1 to 6
-    return [1, 2, 3, 4, 5, 6];
+    // Unlocked topics 1 to 8
+    return [1, 2, 3, 4, 5, 6, 7, 8];
 };
 
 window.getAllowedTopicsData = () => {
@@ -4742,7 +5137,7 @@ window.updateTopicSelectDropdowns = () => {
         const currentVal = sel.value;
         sel.querySelectorAll('option').forEach(opt => {
             const val = parseInt(opt.value);
-            if (val >= 1 && val <= 6) {
+            if (val >= 1 && val <= 8) {
                 opt.disabled = false;
                 if (val === 1) opt.textContent = "🎯 Topic 01: Let's talk about hobbies";
                 if (val === 2) opt.textContent = "🎯 Topic 02: Let's talk about video games";
@@ -4750,11 +5145,13 @@ window.updateTopicSelectDropdowns = () => {
                 if (val === 4) opt.textContent = "🎯 Topic 04: Let's talk about listening to the radio";
                 if (val === 5) opt.textContent = "🎯 Topic 05: Let's talk about music";
                 if (val === 6) opt.textContent = "🎯 Topic 06: Let's talk about musical instruments";
-            } else if (val >= 7) {
+                if (val === 7) opt.textContent = "🎯 Topic 07: Let's talk about restaurants";
+                if (val === 8) opt.textContent = "🎯 Topic 08: Let's talk about fast food restaurants";
+            } else if (val >= 9) {
                 opt.disabled = true;
             }
         });
-        if (!isTeacher && parseInt(currentVal) > 6) {
+        if (!isTeacher && parseInt(currentVal) > 8) {
             if (sel.id === 'practice-pair-topic2-select') {
                 sel.value = "2";
             } else {
@@ -5009,7 +5406,7 @@ function renderPracticeTopic(topicId) {
                     CHỦ ĐỀ ĐANG KHOÁ (CHỜ CẬP NHẬT)
                 </h2>
                 <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 580px; margin: 0 auto 1.75rem; line-height: 1.65;">
-                    Hiện tại hệ thống đã mở <strong>6 chủ đề đầu tiên (Topic 01 đến Topic 06)</strong> để các bạn luyện tập. Các chủ đề tiếp theo đang được cập nhật và sẽ mở theo lịch học của cô!
+                    Hiện tại hệ thống đã mở <strong>8 chủ đề đầu tiên (Topic 01 đến Topic 08)</strong> để các bạn luyện tập. Các chủ đề tiếp theo đang được cập nhật và sẽ mở theo lịch học của cô!
                 </p>
                 <div style="display: flex; justify-content: center; gap: 0.65rem; flex-wrap: wrap;">
                     <button type="button" class="btn" onclick="renderPracticeTopic(1)" style="background: var(--primary); color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(67, 97, 238, 0.25);">
@@ -5029,6 +5426,12 @@ function renderPracticeTopic(topicId) {
                     </button>
                     <button type="button" class="btn" onclick="renderPracticeTopic(6)" style="background: #0284c7; color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);">
                         Topic 06
+                    </button>
+                    <button type="button" class="btn" onclick="renderPracticeTopic(7)" style="background: #0d9488; color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(13, 148, 136, 0.25);">
+                        Topic 07
+                    </button>
+                    <button type="button" class="btn" onclick="renderPracticeTopic(8)" style="background: #e11d48; color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(225, 29, 72, 0.25);">
+                        Topic 08
                     </button>
                 </div>
             </div>
