@@ -5866,6 +5866,398 @@ const practiceTopicsData = [
                 ]
             }
         ]
+    },
+    {
+        id: 13,
+        title: "Chủ đề 13: Talk about your favorite day of the week",
+        introText: "Let’s talk about your favorite day of the week.",
+        questions: [
+            {
+                qNum: 1,
+                question: "What’s your favorite day of the week?",
+                qType: "Wh-question: What is your favorite [noun]?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Thứ Bảy / Cuối tuần - Ngủ nướng tự do, nghỉ ngơi sau tuần bận rộn):</div>
+                    <div class="topic-formula-text">
+                        → Without doubt, <u>my absolute favorite day of the week is Saturday</u> because I can <span class="formula-bracket-hl">[hoạt động tự do - Vo]</span>. It gives me plenty of time to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and allows me to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Thứ Sáu - Cuối tuần cận kề, tâm trạng phấn khởi hoàn thành nốt công việc):</div>
+                    <div class="topic-formula-text">
+                        → Personally, <u>I look forward to Friday the most</u> because the weekend is just around the corner. It's a wonderful day that allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> while <span class="formula-bracket-hl">[lợi ích 2 - V-ing]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc bày tỏ ngày yêu thích & Cảm xúc]:",
+                        items: [
+                            { en: "my absolute favorite day of the week is Saturday", vn: "ngày tôi yêu thích nhất trong tuần chắc chắn là thứ Bảy" },
+                            { en: "I look forward to Friday the most", vn: "tôi mong chờ ngày thứ Sáu nhất" },
+                            { en: "the weekend is just around the corner", vn: "kỳ nghỉ cuối tuần đã cận kề ngay trước mắt" },
+                            { en: "it gives me plenty of time to [Vo]", vn: "nó mang lại cho tôi nhiều thời gian để..." }
+                        ]
+                    },
+                    {
+                        title: "🗓️ [Hoạt động tự do & Tâm trạng vui tươi]:",
+                        items: [
+                            { en: "sleep in without any alarm", vn: "ngủ nướng thoải mái không cần báo thức" },
+                            { en: "wake up at my own pace", vn: "thức dậy ung dung theo nhịp điệu của riêng mình" },
+                            { en: "finish weekly deadlines", vn: "hoàn tất các hạn chót trong tuần" },
+                            { en: "staying in a cheerful and excited mood", vn: "duy trì tâm trạng vui tươi và hào hứng" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>unwind after an exhausting week, recharge my batteries, clear my mind...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Tự do & Tái tạo]:",
+                        items: [
+                            { en: "take full control of my schedule", vn: "chủ động làm chủ toàn bộ thời gian biểu của bản thân" },
+                            { en: "catch up on my favorite hobbies", vn: "dành trọn thời gian cho các sở thích yêu thích" },
+                            { en: "step away from hectic routines", vn: "tạm gác lại những guồng quay bận rộn thường ngày" },
+                            { en: "enjoy peaceful personal moments", vn: "tận hưởng những giây phút cá nhân thật bình yên" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Thứ Bảy - Ngủ nướng tự do, xả stress và nạp lại năng lượng sau tuần dài)",
+                        text: "Without doubt, my absolute favorite day of the week is Saturday because I can sleep in without any alarm. It gives me plenty of time to unwind after an exhausting week and allows me to recharge my batteries.",
+                        formatted: `→ Without doubt, <u>my absolute favorite day of the week is Saturday</u> because I can <span class="sub-hl">sleep in without any alarm</span>. It gives me plenty of time to <span class="sub-hl">unwind after an exhausting week</span> and allows me to <span class="sub-hl">recharge my batteries</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Thứ Sáu - Cuối tuần cận kề, hoàn thành công việc với tâm trạng hân hoan)",
+                        text: "Personally, I look forward to Friday the most because the weekend is just around the corner. It's a wonderful day that allows me to finish weekly deadlines while staying in a cheerful and excited mood.",
+                        formatted: `→ Personally, <u>I look forward to Friday the most</u> because <span class="sub-hl">the weekend is just around the corner</span>. It's a wonderful day that allows me to <span class="sub-hl">finish weekly deadlines</span> while <span class="sub-hl">staying in a cheerful and excited mood</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 2,
+                question: "What do you often do on that day? Why?",
+                qType: "Wh-question: What do you often do on [time]? Why?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Ra ngoài cà phê tụ tập cùng bạn thân - Giảm căng thẳng, chia sẻ niềm vui):</div>
+                    <div class="topic-formula-text">
+                        → On this day, <u>I make a point of hanging out with my close friends</u> at <span class="formula-bracket-hl">[địa điểm thư giãn]</span>. Catching up with them allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Ở nhà nấu món ngon & xem phim cùng gia đình - Tận hưởng không gian ấm cúng, bình yên):</div>
+                    <div class="topic-formula-text">
+                        → Most of the time, <u>I prefer staying at home to</u> <span class="formula-bracket-hl">[hoạt động tại nhà 1 - Vo]</span> and <span class="formula-bracket-hl">[hoạt động tại nhà 2 - Vo]</span>. It's an ideal way to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc thói quen & Ưu tiên ngày nghỉ]:",
+                        items: [
+                            { en: "make a point of hanging out with close friends", vn: "luôn chủ động dành thời gian tụ tập cùng bạn thân" },
+                            { en: "catch up with them", vn: "gặp gỡ hàn huyên, cập nhật cuộc sống cùng nhau" },
+                            { en: "prefer staying at home to [Vo]", vn: "thích ở nhà để làm gì hơn" },
+                            { en: "it's an ideal way to [Vo]", vn: "đó là cách thức lý tưởng để..." }
+                        ]
+                    },
+                    {
+                        title: "☕ [Không gian thư giãn & Hoạt động gia đình]:",
+                        items: [
+                            { en: "a cozy coffee shop", vn: "một quán cà phê ấm cúng" },
+                            { en: "a peaceful riverside cafe", vn: "quán cà phê yên ả ven sông" },
+                            { en: "cook delicious meals from scratch", vn: "tự tay nấu các bữa ăn ngon tại nhà" },
+                            { en: "watch captivating movies with my family", vn: "xem những bộ phim hấp dẫn cùng gia đình" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>relieve daily stress, cherish warm moments, foster closer bonds...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Gắn kết & An yên]:",
+                        items: [
+                            { en: "share lots of genuine laughter together", vn: "cùng nhau sẻ chia những tiếng cười chân thành" },
+                            { en: "enjoy a truly peaceful and unhurried atmosphere", vn: "tận hưởng bầu không khí êm đềm, thực sự không vội vã" },
+                            { en: "strengthen family bonding over meals", vn: "thắt chặt tình cảm gia đình qua những mâm cơm" },
+                            { en: "disconnect from work emails and notifications", vn: "ngắt kết nối khỏi email công việc và các thông báo" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Đi cà phê với bạn thân - Giải tỏa stress, sẻ chia tiếng cười và niềm vui)",
+                        text: "On this day, I make a point of hanging out with my close friends at a cozy coffee shop. Catching up with them allows me to relieve daily stress and gives me a chance to share lots of laughter together.",
+                        formatted: `→ On this day, <u>I make a point of hanging out with my close friends</u> at <span class="sub-hl">a cozy coffee shop</span>. Catching up with them allows me to <span class="sub-hl">relieve daily stress</span> and gives me a chance to <span class="sub-hl">share lots of laughter together</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Ở nhà nấu ăn & xem phim cùng gia đình - Lưu giữ khoảnh khắc ấm cúng, thư thái)",
+                        text: "Most of the time, I prefer staying at home to cook delicious meals and watch movies with my family. It's an ideal way to cherish warm moments and enjoy a truly peaceful atmosphere.",
+                        formatted: `→ Most of the time, <u>I prefer staying at home to</u> <span class="sub-hl">cook delicious meals and watch movies with my family</span>. It's an ideal way to <span class="sub-hl">cherish warm moments</span> and <span class="sub-hl">enjoy a truly peaceful atmosphere</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 3,
+                question: "How important is it to have a favorite day of the week?",
+                qType: "Wh-question: How important is it to [verb]?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Có ý nghĩa to lớn - Tạo động lực tinh thần, giúp làm việc hiệu quả suốt tuần):</div>
+                    <div class="topic-formula-text">
+                        → From my perspective, <u>having a favorite day is of great significance</u> because it gives people <span class="formula-bracket-hl">[động lực tinh thần]</span>. It allows us to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and motivates us to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Thiết yếu cho sức khỏe tinh thần - Giúp tái tạo năng lượng, tránh nguy cơ kiệt sức):</div>
+                    <div class="topic-formula-text">
+                        → Without doubt, <u>it's truly essential for our mental well-being</u>. Having a dedicated day to unwind allows people to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and prevents them from <span class="formula-bracket-hl">[nguy cơ kiệt sức - V-ing]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc nhấn mạnh tầm quan trọng]:",
+                        items: [
+                            { en: "having a favorite day is of great significance", vn: "có một ngày yêu thích mang ý nghĩa vô cùng to lớn" },
+                            { en: "it's truly essential for our mental well-being", vn: "điều đó thực sự thiết yếu đối với sức khỏe tinh thần của chúng ta" },
+                            { en: "having a dedicated day to unwind", vn: "có riêng một ngày chuyên để xả hơi thư giãn" },
+                            { en: "prevents them from suffering from burnout", vn: "ngăn họ khỏi bị rơi vào tình trạng kiệt sức" }
+                        ]
+                    },
+                    {
+                        title: "🎯 [Động lực tinh thần & Năng suất làm việc]:",
+                        items: [
+                            { en: "something positive to look forward to", vn: "điều gì đó tích cực đáng để mong ngóng" },
+                            { en: "stay focused and motivated", vn: "giữ vững sự tập trung và động lực" },
+                            { en: "work more productively throughout the week", vn: "làm việc năng suất hơn trong suốt cả tuần" },
+                            { en: "suffer from burnout and severe stress", vn: "bị kiệt sức và căng thẳng nghiêm trọng" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>recharge their energy, stay productive, maintain mental wellness...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Động lực & Cân bằng]:",
+                        items: [
+                            { en: "break the monotony of daily routines", vn: "phá tan sự đơn điệu của các lịch trình lặp lại mỗi ngày" },
+                            { en: "maintain high enthusiasm for long-term goals", vn: "duy trì niềm hứng khởi cao cho các mục tiêu dài hạn" },
+                            { en: "cultivate emotional resilience under pressure", vn: "nuôi dưỡng sức bền cảm xúc khi đối mặt áp lực" },
+                            { en: "give our mind adequate space to refresh", vn: "cho tâm trí đủ không gian cần thiết để làm mới lại" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Ý nghĩa to lớn - Có điểm tựa tinh thần mong ngóng, duy trì động lực và sự tập trung)",
+                        text: "From my perspective, having a favorite day is of great significance because it gives people something positive to look forward to. It allows us to stay focused and motivates us to work more productively throughout the week.",
+                        formatted: `→ From my perspective, <u>having a favorite day is of great significance</u> because it gives people <span class="sub-hl">something positive to look forward to</span>. It allows us to <span class="sub-hl">stay focused</span> and motivates us to <span class="sub-hl">work more productively throughout the week</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Cực kỳ thiết yếu - Cho tâm trí xả hơi, nạp năng lượng và phòng tránh kiệt sức)",
+                        text: "Without doubt, it's truly essential for our mental well-being. Having a dedicated day to unwind allows people to recharge their energy and prevents them from suffering from burnout and severe stress.",
+                        formatted: `→ Without doubt, <u>it's truly essential for our mental well-being</u>. Having a dedicated day to unwind allows people to <span class="sub-hl">recharge their energy</span> and prevents them from <span class="sub-hl">suffering from burnout and severe stress</span>.`
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: 14,
+        title: "Chủ đề 14: Let's talk about an evening walk",
+        introText: "Let’s talk about an evening walk.",
+        questions: [
+            {
+                qNum: 1,
+                question: "Do you often go for a walk in the evening?",
+                qType: "Yes/No: Do you often [Vo]?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Trả lời CÓ - Hình thành thói quen tản bộ sau bữa tối, hỗ trợ tiêu hóa và thư thái đầu óc):</div>
+                    <div class="topic-formula-text">
+                        → Yes, definitely. <u>I make it a daily routine to take an evening stroll</u> around <span class="formula-bracket-hl">[thời điểm / tần suất]</span>. Walking after dinner allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and helps me <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Trả lời HIẾM KHI - Bận rộn công việc buổi tối, chỉ đi dạo cuối tuần để hít thở khí trời):</div>
+                    <div class="topic-formula-text">
+                        → Not as often as I'd like. <u>I'm usually tied up with evening tasks</u>, so I only go walking <span class="formula-bracket-hl">[thời điểm rảnh]</span>. It gives me a great opportunity to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc thói quen & Bận rộn buổi tối]:",
+                        items: [
+                            { en: "make it a daily routine to take an evening stroll", vn: "tạo thành thói quen hằng ngày tản bộ nhẹ nhàng vào buổi tối" },
+                            { en: "tied up with evening tasks", vn: "bận ngập đầu với các công việc / bài vở buổi tối" },
+                            { en: "not as often as I'd like", vn: "không thường xuyên như tôi mong muốn" },
+                            { en: "gives me a great opportunity to [Vo]", vn: "mang đến cho tôi cơ hội tuyệt vời để..." }
+                        ]
+                    },
+                    {
+                        title: "🚶 [Thời điểm & Hoạt động tản bộ]:",
+                        items: [
+                            { en: "almost every day after dinner", vn: "hầu như mỗi ngày sau bữa tối" },
+                            { en: "around eight o'clock in the evening", vn: "khoảng 8 giờ tối" },
+                            { en: "on weekend nights", vn: "vào những buổi tối cuối tuần" },
+                            { en: "heavy workload and deadlines", vn: "khối lượng công việc lớn và hạn chót" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>promote food digestion, clear my mind, ease mental stress...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Không khí & Tiêu hóa]:",
+                        items: [
+                            { en: "breathe in cool and fresh air", vn: "hít thở bầu không khí mát mẻ và trong lành" },
+                            { en: "stretch my muscles after sitting all day", vn: "thư giãn cơ bắp sau cả ngày ngồi làm việc" },
+                            { en: "prevent digestive discomfort after heavy meals", vn: "ngăn ngừa cảm giác đầy bụng sau bữa ăn no" },
+                            { en: "prepare my body for a restful sleep", vn: "chuẩn bị cho cơ thể sẵn sàng cho giấc ngủ trọn vẹn" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Trả lời CÓ - Đi dạo mỗi tối sau bữa ăn, thúc đẩy tiêu hóa và thư thái đầu óc)",
+                        text: "Yes, definitely. I make it a daily routine to take an evening stroll almost every day after dinner. Walking allows me to promote food digestion and helps me clear my mind after long working hours.",
+                        formatted: `→ Yes, definitely. <u>I make it a daily routine to take an evening stroll</u> <span class="sub-hl">almost every day after dinner</span>. Walking allows me to <span class="sub-hl">promote food digestion</span> and helps me <span class="sub-hl">clear my mind after long working hours</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Trả lời HIẾM KHI - Bận làm việc buổi tối, chỉ đi dạo cuối tuần để hít thở khí trời)",
+                        text: "Not as often as I'd like. I'm usually tied up with evening work, so I only go walking on weekend nights. It gives me a great opportunity to breathe in fresh air and ease mental stress.",
+                        formatted: `→ Not as often as I'd like. <u>I'm usually tied up with evening work</u>, so I only go walking <span class="sub-hl">on weekend nights</span>. It gives me a great opportunity to <span class="sub-hl">breathe in fresh air</span> and <span class="sub-hl">ease mental stress</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 2,
+                question: "Where do you often go for a walk?",
+                qType: "Wh-question: Where do you often [Vo]?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Công viên công cộng gần nhà - Nhiều bóng cây xanh và đường tản bộ an toàn, thoáng mát):</div>
+                    <div class="topic-formula-text">
+                        → <u>My go-to spot is a public park located right near my house</u> because it features <span class="formula-bracket-hl">[đặc điểm nổi bật]</span>. Strolling there allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> in a <span class="formula-bracket-hl">[tính từ không gian]</span> environment.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Khu phố yên tĩnh quanh nơi ở - Tiện lợi, không tốn thời gian di chuyển trong khói bụi):</div>
+                    <div class="topic-formula-text">
+                        → Most of the time, <u>I simply walk around my quiet neighborhood</u> because it's exceptionally <span class="formula-bracket-hl">[tính từ]</span>. It allows me to <span class="formula-bracket-hl">[lợi ích - Vo]</span> without having to <span class="formula-bracket-hl">[hành động phiền toái - V-ing]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc diễn đạt địa điểm & Sự tiện lợi]:",
+                        items: [
+                            { en: "my go-to spot is a public park located right near my house", vn: "địa điểm quen thuộc của tôi là một công viên nằm ngay gần nhà" },
+                            { en: "it features lush green trees", vn: "nơi đó có những hàng cây xanh mát rượi" },
+                            { en: "I simply walk around my quiet neighborhood", vn: "tôi chỉ đơn giản đi dạo quanh khu phố yên tĩnh của mình" },
+                            { en: "without having to ride a motorbike", vn: "mà không phải vất vả lái xe máy" }
+                        ]
+                    },
+                    {
+                        title: "🌳 [Không gian công viên & Khu dân cư]:",
+                        items: [
+                            { en: "lush green trees and paved walking trails", vn: "những hàng cây xanh rợp bóng và đường đi bộ lát gạch" },
+                            { en: "well-lit pathways and tranquil surroundings", vn: "những lối đi sáng sủa và không gian xung quanh tĩnh lặng" },
+                            { en: "exceptionally convenient and peaceful", vn: "cực kỳ thuận tiện và thanh bình" },
+                            { en: "ride a motorbike through busy traffic", vn: "lái xe máy qua những làn xe cộ tấp nập" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>enjoy the cool night breeze, stretch my legs, decompress after work...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Cảnh quan & An toàn]:",
+                        items: [
+                            { en: "admire the peaceful evening scenery", vn: "ngắm nhìn khung cảnh buổi tối bình yên" },
+                            { en: "greet familiar and friendly neighbors", vn: "chào hỏi những người hàng xóm quen thuộc, thân thiện" },
+                            { en: "avoid noisy streets and harmful exhaust fumes", vn: "tránh xa đường phố ồn ào và khói bụi độc hại" },
+                            { en: "save commuting time while staying active", vn: "tiết kiệm thời gian đi lại mà vẫn duy trì vận động" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Công viên gần nhà - Nhiều cây xanh, lối đi bộ lát gạch thoáng mát và an toàn)",
+                        text: "My go-to spot is a public park located right near my house because it features lush green trees and paved walking trails. Strolling there allows me to enjoy the cool night breeze in a peaceful and safe environment.",
+                        formatted: `→ <u>My go-to spot is a public park located right near my house</u> because it features <span class="sub-hl">lush green trees and paved walking trails</span>. Strolling there allows me to <span class="sub-hl">enjoy the cool night breeze</span> in a <span class="sub-hl">peaceful and safe environment</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Khu phố yên tĩnh quanh nhà - Cực kỳ tiện lợi, giãn cơ bắp mà không cần đi xa)",
+                        text: "Most of the time, I simply walk around my quiet neighborhood because it's exceptionally convenient. It allows me to stretch my legs and relax without having to ride a motorbike through busy traffic.",
+                        formatted: `→ Most of the time, <u>I simply walk around my quiet neighborhood</u> because it's <span class="sub-hl">exceptionally convenient</span>. It allows me to <span class="sub-hl">stretch my legs and relax</span> without having to <span class="sub-hl">ride a motorbike through busy traffic</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 3,
+                question: "What are the benefits of going for a walk?",
+                qType: "Wh-question: What are the benefits of [V-ing]?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Góc độ thể chất - Đốt cháy calo, cải thiện tuần hoàn và giúp ngủ sâu giấc):</div>
+                    <div class="topic-formula-text">
+                        → From a physical perspective, <u>walking offers tremendous health benefits</u>. First, it allows people to <span class="formula-bracket-hl">[lợi ích thể lực 1 - Vo]</span> and <span class="formula-bracket-hl">[lợi ích thể lực 2 - Vo]</span>. Moreover, it enables them to <span class="formula-bracket-hl">[lợi ích giấc ngủ - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Góc độ tinh thần - Giải tỏa căng thẳng, tĩnh tâm và phục hồi tinh thần sau ngày bận rộn):</div>
+                    <div class="topic-formula-text">
+                        → In terms of mental well-being, <u>an evening walk acts as an effective stress reliever</u>. It allows walkers to <span class="formula-bracket-hl">[lợi ích tinh thần 1 - Vo]</span> while <span class="formula-bracket-hl">[lợi ích tinh thần 2 - V-ing]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc phân tích lợi ích thể chất & Tinh thần]:",
+                        items: [
+                            { en: "from a physical perspective", vn: "xét từ góc độ thể chất" },
+                            { en: "walking offers tremendous health benefits", vn: "đi bộ mang lại những lợi ích sức khỏe to lớn" },
+                            { en: "in terms of mental well-being", vn: "về mặt sức khỏe tinh thần" },
+                            { en: "acts as an effective stress reliever", vn: "đóng vai trò như một phương pháp xả stress hiệu quả" }
+                        ]
+                    },
+                    {
+                        title: "🏃 [Lợi ích thể lực & Tinh thần thư thái]:",
+                        items: [
+                            { en: "burn excess calories and boost metabolism", vn: "đốt cháy calo dư thừa và tăng cường trao đổi chất" },
+                            { en: "improve cardiovascular health and blood circulation", vn: "cải thiện tim mạch và lưu thông máu" },
+                            { en: "fall asleep faster and enjoy deep rest", vn: "chìm vào giấc ngủ nhanh hơn và tận hưởng giấc ngủ sâu" },
+                            { en: "release accumulated tension", vn: "giải tỏa áp lực tinh thần tích tụ" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>strengthen the immune system, clear their minds, bounce back quickly...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Sức khỏe toàn diện]:",
+                        items: [
+                            { en: "alleviate back and joint stiffness", vn: "làm dịu chứng đau mỏi lưng và cứng khớp" },
+                            { en: "lower high blood pressure naturally", vn: "hạ huyết áp cao một cách tự nhiên" },
+                            { en: "restore mental clarity for better creativity", vn: "khôi phục sự minh mẫn giúp sáng tạo tốt hơn" },
+                            { en: "foster a sense of inner tranquility", vn: "nuôi dưỡng cảm giác thanh thản, an yên từ bên trong" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Lợi ích thể chất - Đốt calo, tuần hoàn máu tốt và ngủ sâu giấc hơn vào ban đêm)",
+                        text: "From a physical perspective, walking offers tremendous health benefits. First, it allows people to burn excess calories and improve blood circulation. Moreover, it enables them to fall asleep faster and enjoy deep rest at night.",
+                        formatted: `→ From a physical perspective, <u>walking offers tremendous health benefits</u>. First, it allows people to <span class="sub-hl">burn excess calories and improve blood circulation</span>. Moreover, it enables them to <span class="sub-hl">fall asleep faster and enjoy deep rest at night</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Lợi ích tinh thần - Phương thuốc xả stress hiệu quả, giải tỏa áp lực và thanh lọc tâm trí)",
+                        text: "In terms of mental well-being, an evening walk acts as an effective stress reliever. It allows walkers to release accumulated tension while clearing their minds after a hectic workday.",
+                        formatted: `→ In terms of mental well-being, <u>an evening walk acts as an effective stress reliever</u>. It allows walkers to <span class="sub-hl">release accumulated tension</span> while <span class="sub-hl">clearing their minds after a hectic workday</span>.`
+                    }
+                ]
+            }
+        ]
     }
 ];
 
@@ -5877,16 +6269,16 @@ window.isTopicUnlocked = (topicId) => {
     if (window._currentUserRole === 'teacher') {
         return practiceTopicsData.some(t => t.id === tid);
     }
-    // Unlocked topics 1 to 12
-    return tid >= 1 && tid <= 12;
+    // Unlocked topics 1 to 14
+    return tid >= 1 && tid <= 14;
 };
 
 window.getAllowedTopicIds = () => {
     if (window._currentUserRole === 'teacher') {
         return practiceTopicsData.map(t => t.id);
     }
-    // Unlocked topics 1 to 12
-    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    // Unlocked topics 1 to 14
+    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 };
 
 window.getAllowedTopicsData = () => {
@@ -5907,7 +6299,7 @@ window.updateTopicSelectDropdowns = () => {
         const currentVal = sel.value;
         sel.querySelectorAll('option').forEach(opt => {
             const val = parseInt(opt.value);
-            if (val >= 1 && val <= 12) {
+            if (val >= 1 && val <= 14) {
                 opt.disabled = false;
                 if (val === 1) opt.textContent = "🎯 Topic 01: Let's talk about hobbies";
                 if (val === 2) opt.textContent = "🎯 Topic 02: Let's talk about video games";
@@ -5921,11 +6313,13 @@ window.updateTopicSelectDropdowns = () => {
                 if (val === 10) opt.textContent = "🎯 Topic 10: Let's talk about the cooking class";
                 if (val === 11) opt.textContent = "🎯 Topic 11: Let's talk about health";
                 if (val === 12) opt.textContent = "🎯 Topic 12: Let's talk about health (part 2)";
-            } else if (val >= 13) {
+                if (val === 13) opt.textContent = "🎯 Topic 13: Talk about your favorite day of the week";
+                if (val === 14) opt.textContent = "🎯 Topic 14: Let's talk about an evening walk";
+            } else if (val >= 15) {
                 opt.disabled = true;
             }
         });
-        if (!isTeacher && parseInt(currentVal) > 12) {
+        if (!isTeacher && parseInt(currentVal) > 14) {
             if (sel.id === 'practice-pair-topic2-select') {
                 sel.value = "2";
             } else {
@@ -6180,7 +6574,7 @@ function renderPracticeTopic(topicId) {
                     CHỦ ĐỀ ĐANG KHOÁ (CHỜ CẬP NHẬT)
                 </h2>
                 <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 580px; margin: 0 auto 1.75rem; line-height: 1.65;">
-                    Hiện tại hệ thống đã mở <strong>12 chủ đề đầu tiên (Topic 01 đến Topic 12)</strong> để các bạn luyện tập. Các chủ đề tiếp theo đang được cập nhật và sẽ mở theo lịch học của cô!
+                    Hiện tại hệ thống đã mở <strong>14 chủ đề đầu tiên (Topic 01 đến Topic 14)</strong> để các bạn luyện tập. Các chủ đề tiếp theo đang được cập nhật và sẽ mở theo lịch học của cô!
                 </p>
                 <div style="display: flex; justify-content: center; gap: 0.65rem; flex-wrap: wrap;">
                     <button type="button" class="btn" onclick="renderPracticeTopic(1)" style="background: var(--primary); color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(67, 97, 238, 0.25);">
@@ -6218,6 +6612,12 @@ function renderPracticeTopic(topicId) {
                     </button>
                     <button type="button" class="btn" onclick="renderPracticeTopic(12)" style="background: #0ea5e9; color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25);">
                         Topic 12
+                    </button>
+                    <button type="button" class="btn" onclick="renderPracticeTopic(13)" style="background: #8b5cf6; color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25);">
+                        Topic 13
+                    </button>
+                    <button type="button" class="btn" onclick="renderPracticeTopic(14)" style="background: #14b8a6; color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(20, 184, 166, 0.25);">
+                        Topic 14
                     </button>
                 </div>
             </div>
