@@ -4978,7 +4978,7 @@ const practiceTopicsData = [
                 formula: `<div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 1 (Món khoái khẩu - Hương vị giòn rụm & giải tỏa căng thẳng):</div>
                     <div class="topic-formula-text">
-                        → <u>I'm an absolute fan of</u> <span class="formula-bracket-hl">[tên món ăn]</span> because I find its texture both <span class="formula-bracket-hl">[tính từ 1]</span> and <span class="formula-bracket-hl">[tính từ 2]</span>. Savoring it allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                        → <u>I'm a big fan of</u> <span class="formula-bracket-hl">[tên món ăn]</span> because I find its texture both <span class="formula-bracket-hl">[tính từ 1]</span> and <span class="formula-bracket-hl">[tính từ 2]</span>. Savoring it allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
                     </div>
                 </div>
                 <div class="topic-formula-row">
@@ -4991,7 +4991,7 @@ const practiceTopicsData = [
                     {
                         title: "🌟 [Cấu trúc diễn đạt niềm đam mê món ăn]:",
                         items: [
-                            { en: "I'm an absolute fan of", vn: "Tôi là một tín đồ tuyệt đối của..." },
+                            { en: "I'm a big fan of", vn: "Tôi là một người rất thích / mê (+ V-ing / Danh từ)" },
                             { en: "Without hesitation, my top pick would be", vn: "Không chút do dự, lựa chọn hàng đầu của tôi sẽ là..." },
                             { en: "Nothing compares to the pleasure of enjoying", vn: "Không gì sánh bằng cảm giác tuyệt vời khi thưởng thức..." }
                         ]
@@ -5027,8 +5027,8 @@ const practiceTopicsData = [
                 samples: [
                     {
                         label: "Bài mẫu Cách 1 (Gà rán giòn rụm - Thỏa mãn cơn thèm & Vực dậy tinh thần)",
-                        text: "I'm an absolute fan of crispy golden fried chicken because I find its texture both crunchy and delightfully juicy. Savoring it allows me to satisfy my comfort food cravings and gives me a chance to instantly uplift my spirits after stressful exams.",
-                        formatted: `→ <u>I'm an absolute fan of</u> <span class="sub-hl">crispy golden fried chicken</span> because I find its texture both <span class="sub-hl">crunchy and delightfully juicy</span>. Savoring it allows me to <span class="sub-hl">satisfy my comfort food cravings</span> and gives me a chance to <span class="sub-hl">instantly uplift my spirits after stressful exams</span>.`
+                        text: "I'm a big fan of crispy golden fried chicken because I find its texture both crunchy and delightfully juicy. Savoring it allows me to satisfy my comfort food cravings and gives me a chance to instantly uplift my spirits after stressful exams.",
+                        formatted: `→ <u>I'm a big fan of</u> <span class="sub-hl">crispy golden fried chicken</span> because I find its texture both <span class="sub-hl">crunchy and delightfully juicy</span>. Savoring it allows me to <span class="sub-hl">satisfy my comfort food cravings</span> and gives me a chance to <span class="sub-hl">instantly uplift my spirits after stressful exams</span>.`
                     },
                     {
                         label: "Bài mẫu Cách 2 (Pizza phô mai - Đậm đà thơm ngậy & Gắn kết bạn bè)",
