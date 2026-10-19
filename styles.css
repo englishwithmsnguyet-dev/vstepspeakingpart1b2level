@@ -1109,3 +1109,151 @@ body.dark-theme .topic-q-type-badge {
 .topic-full-exam-close:hover {
     color: #ef4444;
 }
+
+
+/* ========================================================
+   MODERN SIGNATURE LOGIN MODAL (MISS NGUYET)
+   ======================================================== */
+.login-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #2D333B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.login-card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 460px;
+    border-radius: 24px;
+    padding: 40px 32px;
+    text-align: center;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-sizing: border-box;
+    animation: loginFadeIn 0.3s ease-out;
+}
+
+@keyframes loginFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.login-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px auto;
+    box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.35);
+    color: white;
+}
+
+.login-title {
+    font-family: var(--font-heading, "Lora", "Playfair Display", "Roboto Serif", serif);
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: #111827;
+    text-align: center;
+    margin-bottom: 16px;
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.login-subtitle {
+    color: #6B7280;
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    padding: 0 10px;
+    font-family: var(--font-body, system-ui, -apple-system, sans-serif);
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 16px 20px;
+    background-color: #F3F4F6;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: #1F2937;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s, background-color 0.2s, box-shadow 0.2s;
+}
+
+.login-form input#student-class {
+    text-transform: uppercase;
+}
+
+.login-form input:focus {
+    border-color: #5C6DE6;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(92, 109, 230, 0.15);
+}
+
+.login-form input::placeholder {
+    color: #9CA3AF;
+    font-weight: 500;
+}
+
+.login-error {
+    color: #EF4444;
+    font-size: 0.875rem;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    margin: -4px 0 4px 0;
+    line-height: 1.4;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 16px 20px;
+    background-color: #5C6DE6;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    letter-spacing: 0.5px;
+    margin-top: 8px;
+}
+
+.login-btn:hover {
+    background-color: #4B5ACD;
+}
+
+.login-btn:active {
+    transform: scale(0.98);
+}

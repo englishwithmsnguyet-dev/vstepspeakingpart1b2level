@@ -333,7 +333,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.finishLogin = () => {
         const val = state.studentName || studentInput.value.trim();
-        displayName.textContent = val;
+        if (state.userRole === 'teacher') {
+            displayName.innerHTML = '<i class="fa-solid fa-chalkboard-user"></i> Giáo viên: PTMN (GV)';
+        } else {
+            displayName.textContent = val;
+        }
         const roleLabel = userProfile?.querySelector('.label');
         if (roleLabel) {
             roleLabel.textContent = state.userRole === 'teacher' ? 'Giáo viên' : 'Học viên • Lớp B212';
@@ -342,44 +346,25 @@ document.addEventListener('DOMContentLoaded', () => {
         welcomeModal.style.opacity = '0';
         setTimeout(() => welcomeModal.classList.add('hidden'), 300);
 
-        try {
-            sessionStorage.setItem('vstep_student_name', state.studentName);
-            sessionStorage.setItem('vstep_student_class', state.studentClass || 'B212');
-            sessionStorage.setItem('vstep_user_role', state.userRole || 'student');
-        } catch (e) {}
-
         if (typeof window.applyClassPermissions === 'function') {
             window.applyClassPermissions();
         }
     };
 
-    // Restore login session if available
-    try {
-        const savedName = sessionStorage.getItem('vstep_student_name');
-        const savedClass = sessionStorage.getItem('vstep_student_class');
-        const savedRole = sessionStorage.getItem('vstep_user_role');
-        if (savedName && savedClass) {
-            state.studentName = savedName;
-            state.studentClass = savedClass;
-            state.userRole = savedRole || 'student';
-            state.accessLevel = savedRole === 'teacher' ? 'FULL' : 'B212';
-            window._currentUserRole = state.userRole;
-            window._currentClass = state.studentClass;
-            if (welcomeModal) welcomeModal.classList.add('hidden');
-            if (displayName) displayName.textContent = savedName;
-            if (userProfile) {
-                userProfile.classList.remove('hidden');
-                const roleLabel = userProfile.querySelector('.label');
-                if (roleLabel) roleLabel.textContent = savedRole === 'teacher' ? 'Giáo viên' : 'Học viên • Lớp B212';
-            }
-        } else {
-            window._currentUserRole = 'student';
-            window._currentClass = 'B212';
-        }
-    } catch (e) {
-        window._currentUserRole = 'student';
-        window._currentClass = 'B212';
+    // Luôn luôn hiển thị modal đăng nhập mỗi khi tải lại trang / refresh
+    window._currentUserRole = 'student';
+    window._currentClass = 'B212';
+    if (welcomeModal) {
+        welcomeModal.classList.remove('hidden');
+        welcomeModal.style.display = 'flex';
+        welcomeModal.style.opacity = '1';
     }
+    if (userProfile) {
+        userProfile.classList.add('hidden');
+    }
+    if (studentInput) studentInput.value = '';
+    if (studentClassInput) studentClassInput.value = '';
+    if (loginError) loginError.style.display = 'none';
 
     const enterRoom = () => {
         const nameVal = studentInput.value.trim();
@@ -398,8 +383,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const isTeacher = (formattedClass === 'GV' || formattedClass === 'GV2026') && 
                           (normName === 'ptmn' || normName === 'pham thi minh nguyet' || normName === 'minh nguyet');
 
+        if ((formattedClass === 'GV' || formattedClass === 'GV2026') && !isTeacher) {
+            loginError.textContent = 'Mã lớp GV chỉ dành riêng cho tài khoản Giáo viên (PTMN)!';
+            loginError.style.display = 'block';
+            return;
+        }
+
         if (isTeacher) {
-            state.studentName = 'Cô Nguyệt';
+            state.studentName = 'PTMN';
             state.studentClass = 'GV';
             state.userRole = 'teacher';
             state.accessLevel = 'FULL';
@@ -412,7 +403,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             if (!matchedStudent) {
-                loginError.textContent = 'Họ và Tên không thuộc danh sách lớp B212. Vui lòng kiểm tra lại!';
+                loginError.textContent = 'Họ và tên không thuộc danh sách lớp. Vui lòng kiểm tra lại!';
                 loginError.style.display = 'block';
                 return;
             }
@@ -423,7 +414,7 @@ document.addEventListener('DOMContentLoaded', () => {
             window._currentUserRole = 'student';
             window._currentClass = 'B212';
         } else {
-            loginError.textContent = 'Mã lớp không hợp lệ. Vui lòng nhập đúng lớp B212!';
+            loginError.textContent = 'Mã lớp không hợp lệ. Vui lòng kiểm tra lại!';
             loginError.style.display = 'block';
             return;
         }
@@ -4341,6 +4332,375 @@ const practiceTopicsData = [
                 ]
             }
         ]
+    },
+    {
+        id: 5,
+        title: "Chủ đề 05: Let's talk about music",
+        introText: "Let’s talk about music.",
+        questions: [
+            {
+                qNum: 1,
+                question: "What kind of music do you like?",
+                qType: "Wh-question: What kind of music do you like?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Nêu thể loại nhạc yêu thích & 2 tính từ mô tả chuẩn B2):</div>
+                    <div class="topic-formula-text">
+                        → <u>One of my favorite music genres is</u> <span class="formula-bracket-hl">[thể loại nhạc]</span> because I find it both <span class="formula-bracket-hl">[tính từ 1]</span> and <span class="formula-bracket-hl">[tính từ 2]</span>. It allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Cấu trúc linh hoạt tùy theo tâm trạng - It largely depends on my mood):</div>
+                    <div class="topic-formula-text">
+                        → Well, <u>it largely depends on my mood</u>. When I need to unwind, I prefer listening to <span class="formula-bracket-hl">[thể loại nhẹ nhàng]</span> because it allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span>. However, when I lack energy, I listen to <span class="formula-bracket-hl">[thể loại sôi động]</span>, which gives me an opportunity to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc diễn đạt sở thích / đam mê]:",
+                        items: [
+                            { en: "I'm a big fan of", vn: "Tôi là một người rất hâm mộ / cực kỳ mê (+ V-ing / Danh từ)" },
+                            { en: "I'm really into", vn: "Tôi thật sự rất say mê / chuộng (+ V-ing / Danh từ)" },
+                            { en: "I'm really keen on", vn: "Tôi rất hứng thú / say sưa với (+ V-ing / Danh từ)" },
+                            { en: "I have a strong passion for", vn: "Tôi có niềm đam mê mãnh liệt đối với (+ V-ing / Danh từ)" },
+                            { en: "One of my favorite music genres is", vn: "Một trong những dòng nhạc tôi thích nhất là..." },
+                            { en: "I'm particularly fond of", vn: "Tôi đặc biệt yêu thích / chuộng (+ V-ing / Danh từ)" }
+                        ]
+                    },
+                    {
+                        title: "🎵 [Thể loại âm nhạc phổ biến]:",
+                        items: [
+                            { en: "acoustic pop music", vn: "nhạc pop mộc mạc, nhẹ nhàng" },
+                            { en: "classical piano pieces", vn: "nhạc dương cầm cổ điển êm dịu" },
+                            { en: "upbeat EDM and dance tracks", vn: "nhạc điện tử sôi động, giàu năng lượng" },
+                            { en: "lyrical ballads", vn: "nhạc ballad trữ tình, sâu lắng" },
+                            { en: "smooth jazz", vn: "nhạc jazz du dương, thư thái" },
+                            { en: "indie folk music", vn: "nhạc indie folk mộc mạc, đậm chất riêng" }
+                        ]
+                    },
+                    {
+                        title: "✨ [Kho tính từ mô tả âm nhạc]:",
+                        items: [
+                            { en: "soothing and melodic", vn: "êm dịu và du dương" },
+                            { en: "catchy and cheerful", vn: "bắt tai và vui tươi" },
+                            { en: "energetic and uplifting", vn: "tràn đầy năng lượng và phấn chấn" },
+                            { en: "peaceful and relaxing", vn: "bình yên và thư thái" },
+                            { en: "deeply emotional", vn: "giàu cảm xúc sâu sắc" },
+                            { en: "inspiring", vn: "truyền cảm hứng mạnh mẽ" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp linh hoạt các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>unwind after an exhausting day, boost my mood, clear my mind, regain my vitality...</em>).`
+                    },
+                    {
+                        title: "🎧 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Âm nhạc]:",
+                        items: [
+                            { en: "release negative emotions", vn: "giải tỏa cảm xúc tiêu cực" },
+                            { en: "boost my energy levels", vn: "nâng cao mức năng lượng và sự hứng khởi" },
+                            { en: "soothe my nervous system", vn: "xoa dịu hệ thần kinh và tâm trí" },
+                            { en: "immerse myself in poetic lyrics", vn: "đắm chìm trong ca từ giàu chất thơ" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Nhạc pop acoustic - Du dương & Xoa dịu tâm trí)",
+                        text: "One of my favorite music genres is acoustic pop music because I find it both soothing and melodic. It allows me to unwind after an exhausting day and gives me a chance to soothe my nervous system.",
+                        formatted: `→ <u>One of my favorite music genres is</u> <span class="sub-hl">acoustic pop music</span> because I find it both <span class="sub-hl">soothing and melodic</span>. It allows me to <span class="sub-hl">unwind after an exhausting day</span> and gives me a chance to <span class="sub-hl">soothe my nervous system</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Cấu trúc linh hoạt theo tâm trạng: It largely depends on my mood)",
+                        text: "Well, it largely depends on my mood. When I need to unwind, I prefer listening to classical piano pieces because it allows me to clear my mind. However, when I lack energy, I listen to upbeat EDM tracks, which gives me an opportunity to boost my energy levels.",
+                        formatted: `→ Well, <u>it largely depends on my mood</u>. When I need to unwind, I prefer listening to <span class="sub-hl">classical piano pieces</span> because it allows me to <span class="sub-hl">clear my mind</span>. However, when I lack energy, I listen to <span class="sub-hl">upbeat EDM tracks</span>, which gives me an opportunity to <span class="sub-hl">boost my energy levels</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 2,
+                question: "When do you often listen to music?",
+                qType: "Wh-question: When do you often listen to music?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Khẳng định thời điểm cụ thể & lý do thư giãn):</div>
+                    <div class="topic-formula-text">
+                        → I usually listen to music <span class="formula-bracket-hl">[thời điểm cụ thể]</span> because I find it extremely <span class="formula-bracket-hl">[tính từ]</span>. It allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Cấu trúc kết hợp đa nhiệm khi làm việc khác - While + V-ing):</div>
+                    <div class="topic-formula-text">
+                        → In fact, <u>I tend to listen to music while</u> <span class="formula-bracket-hl">[hoạt động - V-ing]</span>. It creates an uplifting atmosphere that allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives me an opportunity to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "⏰ [Thời điểm thích hợp] (Dành cho Cách 1):",
+                        items: [
+                            { en: "in the late evening before going to bed", vn: "vào đêm muộn trước khi đi ngủ" },
+                            { en: "after an intensive study session", vn: "sau một buổi học tập căng thẳng" },
+                            { en: "on peaceful weekend mornings", vn: "vào những buổi sáng cuối tuần yên tĩnh" },
+                            { en: "during my lunch break", vn: "trong giờ nghỉ trưa" }
+                        ]
+                    },
+                    {
+                        title: "🎧 [Hoạt động kết hợp: While + V-ing] (Dành cho Cách 2):",
+                        items: [
+                            { en: "doing household chores", vn: "làm việc nhà (lau dọn, nấu ăn)" },
+                            { en: "commuting on the bus or train", vn: "di chuyển trên xe buýt hoặc tàu hỏa" },
+                            { en: "working out at the fitness center", vn: "tập luyện tại phòng tập thể hình" },
+                            { en: "working on creative design tasks", vn: "làm các dự án thiết kế sáng tạo" }
+                        ]
+                    },
+                    {
+                        title: "✨ [Lợi ích khi nghe nhạc kết hợp]:",
+                        items: [
+                            { en: "drift off into deep sleep easily", vn: "dễ dàng chìm vào giấc ngủ sâu" },
+                            { en: "turn tedious chores into enjoyable moments", vn: "biến việc nhà nhàm chán thành giây phút vui vẻ" },
+                            { en: "maintain high endurance during workouts", vn: "duy trì sức bền dẻo dai khi tập luyện" },
+                            { en: "block out distracting background noise", vn: "ngăn chặn tiếng ồn xung quanh gây xao nhãng" },
+                            { en: "recharge mental batteries", vn: "nạp lại năng lượng cho tâm trí" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Trước khi ngủ - Giải tỏa căng thẳng & Ngủ sâu)",
+                        text: "I usually listen to music in the late evening before going to bed because I find it extremely relaxing. It allows me to release mental tension and gives me a chance to drift off into deep sleep easily.",
+                        formatted: `→ I usually listen to music <span class="sub-hl">in the late evening before going to bed</span> because I find it extremely <span class="sub-hl">relaxing</span>. It allows me to <span class="sub-hl">release mental tension</span> and gives me a chance to <span class="sub-hl">drift off into deep sleep easily</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Cấu trúc kết hợp: Vừa di chuyển hoặc làm việc nhà vừa nghe nhạc)",
+                        text: "In fact, I tend to listen to music while commuting on the bus or doing household chores. It creates an uplifting atmosphere that allows me to block out distracting noise and gives me an opportunity to turn tedious chores into enjoyable moments.",
+                        formatted: `→ In fact, <u>I tend to listen to music while</u> <span class="sub-hl">commuting on the bus or doing household chores</span>. It creates an uplifting atmosphere that allows me to <span class="sub-hl">block out distracting noise</span> and gives me an opportunity to <span class="sub-hl">turn tedious chores into enjoyable moments</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 3,
+                question: "Is music important to you? Why?",
+                qType: "Yes/No Question: Is music important to you? Why?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Khẳng định vai trò thiết yếu không thể thiếu - plays an indispensable role):</div>
+                    <div class="topic-formula-text">
+                        → Yes, absolutely. <u>Music plays an indispensable role in my daily life</u> because it is both <span class="formula-bracket-hl">[tính từ 1]</span> and <span class="formula-bracket-hl">[tính từ 2]</span>. It allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Cấu trúc giả định giàu cảm xúc - I cannot imagine my life without music):</div>
+                    <div class="topic-formula-text">
+                        → Without a doubt, <u>I cannot imagine my life without music</u>. It acts as an incredible emotional therapy that allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives me an opportunity to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "✨ [Tính từ khẳng định giá trị]:",
+                        items: [
+                            { en: "indispensable", vn: "không thể thiếu / tối quan trọng" },
+                            { en: "therapeutic", vn: "mang tính trị liệu tâm hồn" },
+                            { en: "enriching", vn: "làm phong phú đời sống tinh thần" },
+                            { en: "uplifting", vn: "nâng đỡ tinh thần / truyền cảm hứng tích cực" },
+                            { en: "essential", vn: "thiết yếu và cần thiết" }
+                        ]
+                    },
+                    {
+                        title: "🌟 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Giá trị của âm nhạc]:",
+                        items: [
+                            { en: "heal emotional exhaustion and reduce anxiety", vn: "xoa dịu sự kiệt quệ cảm xúc và giảm bớt âu lo" },
+                            { en: "stay motivated in demanding situations", vn: "giữ vững động lực trong những hoàn cảnh khó khăn" },
+                            { en: "foster creative imagination and reflection", vn: "nuôi dưỡng trí tưởng tượng sáng tạo và sự chiêm nghiệm" },
+                            { en: "connect deeply with my inner emotions", vn: "kết nối sâu sắc với thế giới cảm xúc nội tâm" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Vai trò thiết yếu - Trị liệu tinh thần & Giữ vững động lực)",
+                        text: "Yes, absolutely. Music plays an indispensable role in my daily life because it is both therapeutic and uplifting. It allows me to heal emotional exhaustion and gives me a chance to stay motivated in demanding situations.",
+                        formatted: `→ Yes, absolutely. <u>Music plays an indispensable role in my daily life</u> because it is both <span class="sub-hl">therapeutic and uplifting</span>. It allows me to <span class="sub-hl">heal emotional exhaustion</span> and gives me a chance to <span class="sub-hl">stay motivated in demanding situations</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Không thể tưởng tượng cuộc sống thiếu âm nhạc - Trị liệu cảm xúc)",
+                        text: "Without a doubt, I cannot imagine my life without music. It acts as an incredible emotional therapy that allows me to escape from daily pressure and gives me an opportunity to connect deeply with my inner emotions.",
+                        formatted: `→ Without a doubt, <u>I cannot imagine my life without music</u>. It acts as an incredible <span class="sub-hl">emotional therapy</span> that allows me to <span class="sub-hl">escape from daily pressure</span> and gives me an opportunity to <span class="sub-hl">connect deeply with my inner emotions</span>.`
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: 6,
+        title: "Chủ đề 06: Let's talk about musical instruments",
+        introText: "Let’s talk about musical instruments.",
+        questions: [
+            {
+                qNum: 1,
+                question: "Can you play any musical instruments?",
+                qType: "Can you question: Can you play any musical instruments?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Đã biết chơi một nhạc cụ & chia sẻ trải nghiệm bổ ích):</div>
+                    <div class="topic-formula-text">
+                        → Yes, definitely. <u>I have learned to play</u> <span class="formula-bracket-hl">[tên nhạc cụ]</span> for <span class="formula-bracket-hl">[khoảng thời gian]</span> because I find it really <span class="formula-bracket-hl">[tính từ]</span>. Playing it allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Chưa biết chơi nhưng rất mong muốn học nhạc cụ mong ước):</div>
+                    <div class="topic-formula-text">
+                        → To be honest, <u>I haven't had the chance to master any musical instruments yet</u>. However, I have always wanted to take up <span class="formula-bracket-hl">[tên nhạc cụ]</span> because it allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives me an opportunity to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🎻 [Tên các nhạc cụ phổ biến]:",
+                        items: [
+                            { en: "the acoustic guitar", vn: "đàn ghi-ta mộc" },
+                            { en: "the piano", vn: "đàn dương cầm" },
+                            { en: "the violin", vn: "đàn vĩ cầm" },
+                            { en: "the ukulele", vn: "đàn ukulele nhỏ gọn" },
+                            { en: "the drums", vn: "bộ trống sôi động" },
+                            { en: "the flute", vn: "sáo trúc / sáo tây" }
+                        ]
+                    },
+                    {
+                        title: "✨ [Kho tính từ mô tả việc chơi nhạc cụ]:",
+                        items: [
+                            { en: "rewarding", vn: "rất bổ ích và xứng đáng với công sức" },
+                            { en: "mentally stimulating", vn: "kích thích tư duy và não bộ" },
+                            { en: "emotionally fulfilling", vn: "thỏa mãn về mặt cảm xúc tinh thần" },
+                            { en: "challenging yet exciting", vn: "đầy thử thách nhưng vô cùng hào hứng" },
+                            { en: "relaxing", vn: "thư giãn và thanh thản" }
+                        ]
+                    },
+                    {
+                        title: "🎼 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Chơi nhạc cụ]:",
+                        items: [
+                            { en: "express personal feelings musically", vn: "bày tỏ cảm xúc cá nhân qua âm nhạc" },
+                            { en: "improve hand-eye coordination and patience", vn: "rèn luyện sự khéo léo phối hợp tay mắt và tính kiên nhẫn" },
+                            { en: "enter a state of deep relaxation", vn: "tiến vào trạng thái thư thái sâu lắng" },
+                            { en: "stimulate brain neuroplasticity", vn: "kích thích các liên kết thần kinh và sự nhạy bén của não" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Đã biết chơi đàn guitar - Bày tỏ cảm xúc & Giải tỏa áp lực)",
+                        text: "Yes, definitely. I have learned to play the acoustic guitar for a couple of years because I find it really rewarding. Playing it allows me to express my personal feelings and gives me a chance to unwind after stressful study hours.",
+                        formatted: `→ Yes, definitely. <u>I have learned to play</u> <span class="sub-hl">the acoustic guitar</span> for <span class="sub-hl">a couple of years</span> because I find it really <span class="sub-hl">rewarding</span>. Playing it allows me to <span class="sub-hl">express my personal feelings</span> and gives me a chance to <span class="sub-hl">unwind after stressful study hours</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Chưa biết chơi - Mong muốn học piano để rèn tính kiên nhẫn)",
+                        text: "To be honest, I haven't had the chance to master any musical instruments yet. However, I have always wanted to take up the piano because it allows me to improve patience and gives me an opportunity to enter a state of deep relaxation.",
+                        formatted: `→ To be honest, <u>I haven't had the chance to master any musical instruments yet</u>. However, I have always wanted to take up <span class="sub-hl">the piano</span> because it allows me to <span class="sub-hl">improve patience</span> and gives me an opportunity to <span class="sub-hl">enter a state of deep relaxation</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 2,
+                question: "What musical instrument do you like best?",
+                qType: "Wh-question: What musical instrument do you like best?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Nêu nhạc cụ yêu thích nhất & 2 tính từ âm thanh B2):</div>
+                    <div class="topic-formula-text">
+                        → <u>One of my favorite musical instruments is</u> <span class="formula-bracket-hl">[tên nhạc cụ]</span> because I find its sound both <span class="formula-bracket-hl">[tính từ 1]</span> and <span class="formula-bracket-hl">[tính từ 2]</span>. Listening to it allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Bị cuốn hút bởi tính biểu cảm và sự đa năng):</div>
+                    <div class="topic-formula-text">
+                        → Well, <u>I'm particularly fascinated by</u> <span class="formula-bracket-hl">[tên nhạc cụ]</span> due to its rich and versatile sounds. It allows listeners to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives them an opportunity to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc diễn đạt sở thích]:",
+                        items: [
+                            { en: "I'm a big fan of", vn: "Tôi là người rất hâm mộ (+ Tên nhạc cụ)" },
+                            { en: "I'm particularly fascinated by", vn: "Tôi đặc biệt bị cuốn hút bởi (+ Tên nhạc cụ)" },
+                            { en: "One of my favorite musical instruments is", vn: "Một trong những nhạc cụ tôi thích nhất là..." },
+                            { en: "I have a special admiration for", vn: "Tôi có niềm ái mộ đặc biệt dành cho..." }
+                        ]
+                    },
+                    {
+                        title: "🎶 [Tính từ mô tả âm thanh nhạc cụ]:",
+                        items: [
+                            { en: "melodic and soothing", vn: "du dương và êm dịu" },
+                            { en: "powerful and resonant", vn: "mạnh mẽ và vang vọng" },
+                            { en: "versatile and expressive", vn: "đa dạng phong phú và giàu sức biểu cảm" },
+                            { en: "gentle and heart-warming", vn: "nhẹ nhàng và ấm áp" }
+                        ]
+                    },
+                    {
+                        title: "🎵 [Lợi ích khi thưởng thức âm thanh nhạc cụ]:",
+                        items: [
+                            { en: "immerse myself in peaceful melodies", vn: "đắm chìm trong những giai điệu yên ả" },
+                            { en: "soothe nervous feelings after a hectic week", vn: "xoa dịu cảm giác bồn chồn lo âu sau một tuần bận rộn" },
+                            { en: "connect emotionally with beautiful harmonies", vn: "kết nối cảm xúc với những hòa âm tuyệt đẹp" },
+                            { en: "appreciate fine musical craftsmanship", vn: "cảm nhận chiều sâu nghệ thuật âm nhạc tinh tế" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Đàn Piano - Du dương, êm dịu & Đắm chìm thư thái)",
+                        text: "One of my favorite musical instruments is the piano because I find its sound both melodic and soothing. Listening to it allows me to immerse myself in peaceful melodies and gives me a chance to soothe nervous feelings after a hectic week.",
+                        formatted: `→ <u>One of my favorite musical instruments is</u> <span class="sub-hl">the piano</span> because I find its sound both <span class="sub-hl">melodic and soothing</span>. Listening to it allows me to <span class="sub-hl">immerse myself in peaceful melodies</span> and gives me a chance to <span class="sub-hl">soothe nervous feelings after a hectic week</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Đàn Guitar acoustic - Âm thanh mộc mạc & Kết nối cảm xúc)",
+                        text: "Well, I'm particularly fascinated by the acoustic guitar due to its rich and versatile sounds. It allows listeners to connect emotionally with beautiful harmonies and gives them an opportunity to enjoy cozy acoustic evenings.",
+                        formatted: `→ Well, <u>I'm particularly fascinated by</u> <span class="sub-hl">the acoustic guitar</span> due to its <span class="sub-hl">rich and versatile sounds</span>. It allows listeners to <span class="sub-hl">connect emotionally with beautiful harmonies</span> and gives them an opportunity to <span class="sub-hl">enjoy cozy acoustic evenings</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 3,
+                question: "Do you think children should learn to play musical instruments?",
+                qType: "Do you think question: Do you think children should learn to play musical instruments?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Khẳng định tuyệt đối nên học & đưa ra 2 lợi ích phát triển nhân cách):</div>
+                    <div class="topic-formula-text">
+                        → Yes, wholeheartedly. <u>I strongly advocate that children should learn to play a musical instrument</u> because it is both <span class="formula-bracket-hl">[tính từ 1]</span> and <span class="formula-bracket-hl">[tính từ 2]</span> for their development. It allows them to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives them a chance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Cấu trúc đảo ngữ nhấn mạnh lợi ích kép - Not only does it allow children to... but it also...):</div>
+                    <div class="topic-formula-text">
+                        → From my perspective, learning an instrument is of paramount importance for kids. <u>Not only does it allow children to</u> <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span>, <u>but it also gives them an opportunity to</u> <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "✨ [Tính từ mô tả tầm quan trọng]:",
+                        items: [
+                            { en: "beneficial and enriching", vn: "vô cùng có ích và làm giàu đời sống tâm hồn" },
+                            { en: "character-building", vn: "rèn luyện tính cách và nhân phẩm" },
+                            { en: "crucial for cognitive development", vn: "thiết yếu cho sự phát triển nhận thức" },
+                            { en: "constructive", vn: "mang tính xây dựng cao" }
+                        ]
+                    },
+                    {
+                        title: "👶 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Lợi ích cho trẻ em]:",
+                        items: [
+                            { en: "cultivate self-discipline and perseverance", vn: "rèn luyện tính kỷ luật tự giác và sự kiên trì" },
+                            { en: "boost cognitive brain development and memory", vn: "thúc đẩy sự phát triển nhận thức và trí nhớ của não bộ" },
+                            { en: "foster creative imagination and aesthetic appreciation", vn: "nuôi dưỡng trí tưởng tượng sáng tạo và khả năng cảm thụ cái đẹp" },
+                            { en: "develop fine motor skills and hand-eye coordination", vn: "phát triển kỹ năng vận động tinh và sự phối hợp tay mắt" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Ủng hộ nhiệt tình - Rèn luyện tính kỷ luật & Phát triển trí não)",
+                        text: "Yes, wholeheartedly. I strongly advocate that children should learn to play a musical instrument because it is both beneficial and character-building for their development. It allows them to cultivate self-discipline and gives them a chance to boost cognitive brain development.",
+                        formatted: `→ Yes, wholeheartedly. <u>I strongly advocate that children should learn to play a musical instrument</u> because it is both <span class="sub-hl">beneficial and character-building</span> for their development. It allows them to <span class="sub-hl">cultivate self-discipline</span> and gives them a chance to <span class="sub-hl">boost cognitive brain development</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Cấu trúc đảo ngữ: Vừa nuôi dưỡng sáng tạo vừa rèn sự kiên nhẫn)",
+                        text: "From my perspective, learning an instrument is of paramount importance for kids. Not only does it allow children to foster creative imagination, but it also gives them an opportunity to cultivate perseverance and aesthetic appreciation.",
+                        formatted: `→ From my perspective, learning an instrument is of paramount importance for kids. <u>Not only does it allow children to</u> <span class="sub-hl">foster creative imagination</span>, <u>but it also gives them an opportunity to</u> <span class="sub-hl">cultivate perseverance and aesthetic appreciation</span>.`
+                    }
+                ]
+            }
+        ]
     }
 ];
 
@@ -4352,16 +4712,16 @@ window.isTopicUnlocked = (topicId) => {
     if (window._currentUserRole === 'teacher') {
         return practiceTopicsData.some(t => t.id === tid);
     }
-    // Class B212 only has access to Topic 1 and Topic 2
-    return tid === 1 || tid === 2;
+    // Unlocked topics 1 to 6
+    return tid >= 1 && tid <= 6;
 };
 
 window.getAllowedTopicIds = () => {
     if (window._currentUserRole === 'teacher') {
         return practiceTopicsData.map(t => t.id);
     }
-    // For B212: only topic 1 and topic 2
-    return [1, 2];
+    // Unlocked topics 1 to 6
+    return [1, 2, 3, 4, 5, 6];
 };
 
 window.getAllowedTopicsData = () => {
@@ -4382,25 +4742,19 @@ window.updateTopicSelectDropdowns = () => {
         const currentVal = sel.value;
         sel.querySelectorAll('option').forEach(opt => {
             const val = parseInt(opt.value);
-            if (val === 1 || val === 2) {
+            if (val >= 1 && val <= 6) {
                 opt.disabled = false;
                 if (val === 1) opt.textContent = "🎯 Topic 01: Let's talk about hobbies";
                 if (val === 2) opt.textContent = "🎯 Topic 02: Let's talk about video games";
-            } else if (val === 3 || val === 4) {
-                if (isTeacher) {
-                    opt.disabled = false;
-                    if (val === 3) opt.textContent = "🎯 Topic 03: Let's talk about books";
-                    if (val === 4) opt.textContent = "🎯 Topic 04: Let's talk about listening to the radio";
-                } else {
-                    opt.disabled = true;
-                    if (val === 3) opt.textContent = "🔒 Topic 03: Let's talk about books (Chưa mở cho lớp B212)";
-                    if (val === 4) opt.textContent = "🔒 Topic 04: Let's talk about listening to the radio (Chưa mở cho lớp B212)";
-                }
-            } else if (val >= 5) {
+                if (val === 3) opt.textContent = "🎯 Topic 03: Let's talk about books";
+                if (val === 4) opt.textContent = "🎯 Topic 04: Let's talk about listening to the radio";
+                if (val === 5) opt.textContent = "🎯 Topic 05: Let's talk about music";
+                if (val === 6) opt.textContent = "🎯 Topic 06: Let's talk about musical instruments";
+            } else if (val >= 7) {
                 opt.disabled = true;
             }
         });
-        if (!isTeacher && (currentVal === '3' || currentVal === '4')) {
+        if (!isTeacher && parseInt(currentVal) > 6) {
             if (sel.id === 'practice-pair-topic2-select') {
                 sel.value = "2";
             } else {
@@ -4652,17 +5006,29 @@ function renderPracticeTopic(topicId) {
                     <i class="fa-solid fa-lock" style="font-size: 2.2rem; color: #d97706;"></i>
                 </div>
                 <h2 style="font-size: 1.4rem; font-weight: 800; color: #b45309; margin-bottom: 0.6rem;">
-                    CHỦ ĐỀ ĐANG KHOÁ (LỚP B212)
+                    CHỦ ĐỀ ĐANG KHOÁ (CHỜ CẬP NHẬT)
                 </h2>
                 <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 580px; margin: 0 auto 1.75rem; line-height: 1.65;">
-                    Hiện tại lớp <strong>B212</strong> chỉ mở <strong>2 chủ đề đầu tiên (Topic 01 & Topic 02)</strong> để các bạn tập trung luyện tập chuyên sâu. Các chủ đề tiếp theo sẽ được mở theo lịch học của cô!
+                    Hiện tại hệ thống đã mở <strong>6 chủ đề đầu tiên (Topic 01 đến Topic 06)</strong> để các bạn luyện tập. Các chủ đề tiếp theo đang được cập nhật và sẽ mở theo lịch học của cô!
                 </p>
-                <div style="display: flex; justify-content: center; gap: 0.85rem; flex-wrap: wrap;">
-                    <button type="button" class="btn" onclick="renderPracticeTopic(1)" style="background: var(--primary); color: white; padding: 0.8rem 1.6rem; border-radius: 12px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3);">
-                        <i class="fa-solid fa-arrow-left"></i> Luyện tập Topic 01
+                <div style="display: flex; justify-content: center; gap: 0.65rem; flex-wrap: wrap;">
+                    <button type="button" class="btn" onclick="renderPracticeTopic(1)" style="background: var(--primary); color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(67, 97, 238, 0.25);">
+                        Topic 01
                     </button>
-                    <button type="button" class="btn" onclick="renderPracticeTopic(2)" style="background: #059669; color: white; padding: 0.8rem 1.6rem; border-radius: 12px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);">
-                        Luyện tập Topic 02 <i class="fa-solid fa-arrow-right"></i>
+                    <button type="button" class="btn" onclick="renderPracticeTopic(2)" style="background: #059669; color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);">
+                        Topic 02
+                    </button>
+                    <button type="button" class="btn" onclick="renderPracticeTopic(3)" style="background: #8b5cf6; color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25);">
+                        Topic 03
+                    </button>
+                    <button type="button" class="btn" onclick="renderPracticeTopic(4)" style="background: #ea580c; color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);">
+                        Topic 04
+                    </button>
+                    <button type="button" class="btn" onclick="renderPracticeTopic(5)" style="background: #ec4899; color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(236, 72, 153, 0.25);">
+                        Topic 05
+                    </button>
+                    <button type="button" class="btn" onclick="renderPracticeTopic(6)" style="background: #0284c7; color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);">
+                        Topic 06
                     </button>
                 </div>
             </div>
