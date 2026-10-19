@@ -5473,6 +5473,399 @@ const practiceTopicsData = [
                 ]
             }
         ]
+    },
+    {
+        id: 11,
+        title: "Chủ đề 11: Let's talk about health",
+        introText: "Let’s talk about health.",
+        questions: [
+            {
+                qNum: 1,
+                question: "Do you think you are a healthy person? Why?",
+                qType: "Yes/No + Wh-question: Do you think you are a healthy person? Why?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Trả lời CÓ - Duy trì lối sống lành mạnh, ăn uống điều độ và tập thể dục hàng ngày):</div>
+                    <div class="topic-formula-text">
+                        → Yes, definitely. <u>I consider myself a healthy person</u> because I always maintain a <span class="formula-bracket-hl">[lối sống lành mạnh]</span>. Sticking to <span class="formula-bracket-hl">[thói quen tốt]</span> allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and helps me <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Trả lời CHƯA HẲN - Do công việc/học tập bận rộn nên thức khuya, đang nỗ lực cải thiện):</div>
+                    <div class="topic-formula-text">
+                        → To be honest, <u>I wouldn't say I'm completely healthy</u> because I have a <span class="formula-bracket-hl">[lịch trình bận rộn]</span>, which leads to <span class="formula-bracket-hl">[thói quen chưa tốt]</span>. However, I am making an effort to <span class="formula-bracket-hl">[hành động cải thiện - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc trả lời đánh giá bản thân]:",
+                        items: [
+                            { en: "I consider myself a healthy person", vn: "Tôi tự thấy mình là một người khỏe mạnh" },
+                            { en: "I wouldn't say I'm completely healthy", vn: "Tôi không dám nói là mình hoàn toàn khỏe mạnh" },
+                            { en: "maintain a healthy and active lifestyle", vn: "duy trì lối sống lành mạnh và năng động" },
+                            { en: "make an effort to improve my daily habits", vn: "nỗ lực cải thiện các thói quen hàng ngày" }
+                        ]
+                    },
+                    {
+                        title: "✨ [Lối sống & Thói quen sức khỏe]:",
+                        items: [
+                            { en: "a balanced and nutritious diet", vn: "chế độ ăn uống cân bằng và giàu dinh dưỡng" },
+                            { en: "regular physical workouts", vn: "các buổi rèn luyện thể chất đều đặn" },
+                            { en: "a demanding work schedule", vn: "lịch trình công việc dày đặc, nhiều áp lực" },
+                            { en: "staying up late quite often", vn: "thức khuya khá thường xuyên" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>boost my stamina, stay energetic throughout the day, sleep much better at night...</em>).`
+                    },
+                    {
+                        title: "🏃 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Sức khỏe]:",
+                        items: [
+                            { en: "strengthen my immune system", vn: "tăng cường hệ thống miễn dịch của cơ thể" },
+                            { en: "recharge my battery after a long day", vn: "nạp lại năng lượng sau một ngày dài" },
+                            { en: "sleep much better at night", vn: "ngủ ngon và sâu giấc hơn vào ban đêm" },
+                            { en: "avoid feeling tired and lethargic", vn: "tránh cảm giác uể oải và mệt mỏi trong ngày" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Trả lời CÓ - Lối sống lành mạnh, ăn uống điều độ & tập thể dục)",
+                        text: "Yes, definitely. I consider myself a healthy person because I always maintain a healthy and active lifestyle. Sticking to a balanced diet and exercising regularly allows me to boost my stamina and helps me stay energetic throughout the day.",
+                        formatted: `→ Yes, definitely. <u>I consider myself a healthy person</u> because I always maintain a <span class="sub-hl">healthy and active lifestyle</span>. Sticking to a <span class="sub-hl">balanced diet and exercising regularly</span> allows me to <span class="sub-hl">boost my stamina</span> and helps me <span class="sub-hl">stay energetic throughout the day</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Trả lời CHƯA HẲN - Lịch làm việc dày đặc, thức khuya & đang nỗ lực cải thiện)",
+                        text: "To be honest, I wouldn't say I'm completely healthy because I have a demanding work schedule, which leads to staying up late quite often. However, I am making an effort to sleep earlier and eat more green vegetables.",
+                        formatted: `→ To be honest, <u>I wouldn't say I'm completely healthy</u> because I have a <span class="sub-hl">demanding work schedule</span>, which leads to <span class="sub-hl">staying up late quite often</span>. However, I am making an effort to <span class="sub-hl">sleep earlier and eat more green vegetables</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 2,
+                question: "What do you do to maintain good health and a fit body?",
+                qType: "Wh-question: What do you do to maintain [noun]?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Tập gym/chạy bộ đều đặn & Hạn chế đồ ngọt để giữ dáng thon gọn):</div>
+                    <div class="topic-formula-text">
+                        → In order to stay healthy and fit, <u>I make it a rule to</u> <span class="formula-bracket-hl">[hoạt động thể thao]</span> on a regular basis. In addition, I try to <span class="formula-bracket-hl">[thói quen ăn uống]</span> because it allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Uống nhiều nước & Ngủ đủ 8 tiếng để tái tạo năng lượng và thanh thản đầu óc):</div>
+                    <div class="topic-formula-text">
+                        → Personally, <u>I focus on building healthy daily habits</u>, especially <span class="formula-bracket-hl">[thói quen 1 - V-ing]</span> and <span class="formula-bracket-hl">[thói quen 2 - V-ing]</span>. These positive routines help me <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> while <span class="formula-bracket-hl">[lợi ích 2 - V-ing]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc nêu thói quen rèn luyện]:",
+                        items: [
+                            { en: "I make it a rule to", vn: "Tôi luôn đặt thành nguyên tắc phải..." },
+                            { en: "I focus on building healthy daily habits", vn: "Tôi tập trung xây dựng các thói quen lành mạnh mỗi ngày" },
+                            { en: "on a regular basis", vn: "một cách đều đặn, thường xuyên" },
+                            { en: "as an effective way to stay in shape", vn: "như một phương pháp hữu hiệu để giữ dáng" }
+                        ]
+                    },
+                    {
+                        title: "✨ [Thói quen tập luyện & Dinh dưỡng]:",
+                        items: [
+                            { en: "work out at the gym", vn: "tập luyện thể hình tại phòng gym" },
+                            { en: "go jogging in the local park", vn: "chạy bộ trong công viên gần nhà" },
+                            { en: "cut down on sugary drinks and fast food", vn: "cắt giảm đồ uống nhiều đường và đồ ăn nhanh" },
+                            { en: "drink plenty of water throughout the day", vn: "uống nhiều nước đều đặn trong ngày" },
+                            { en: "get eight hours of sound sleep every night", vn: "ngủ đủ 8 tiếng ngủ sâu giấc mỗi đêm" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>burn excess calories, stay in good shape, recharge my energy, relieve stress...</em>).`
+                    },
+                    {
+                        title: "🍎 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Giữ dáng & Sức khỏe]:",
+                        items: [
+                            { en: "maintain an ideal body weight", vn: "duy trì mức cân nặng lý tưởng và săn chắc" },
+                            { en: "enhance my physical stamina", vn: "nâng cao sức bền thể lực của bản thân" },
+                            { en: "cleanse the body and refresh the skin", vn: "thanh lọc cơ thể và nuôi dưỡng làn da tươi tắn" },
+                            { en: "keep my mind calm and clear", vn: "giữ cho đầu óc luôn thanh thản và sáng suốt" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Tập gym đều đặn, cắt giảm đồ ngọt để đốt calo & giữ vóc dáng)",
+                        text: "In order to stay healthy and fit, I make it a rule to work out at the gym on a regular basis. In addition, I try to cut down on sugary drinks and eat clean food because it allows me to burn excess calories and gives me a chance to stay in good shape.",
+                        formatted: `→ In order to stay healthy and fit, <u>I make it a rule to</u> <span class="sub-hl">work out at the gym</span> on a regular basis. In addition, I try to <span class="sub-hl">cut down on sugary drinks and eat clean food</span> because it allows me to <span class="sub-hl">burn excess calories</span> and gives me a chance to <span class="sub-hl">stay in good shape</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Uống nhiều nước, ngủ sâu 8 tiếng mỗi đêm để nạp năng lượng & thư thái đầu óc)",
+                        text: "Personally, I focus on building healthy daily habits, especially drinking plenty of water and getting eight hours of sound sleep every night. These positive routines help me recharge my energy while keeping my mind calm and clear.",
+                        formatted: `→ Personally, <u>I focus on building healthy daily habits</u>, especially <span class="sub-hl">drinking plenty of water</span> and <span class="sub-hl">getting eight hours of sound sleep every night</span>. These positive routines help me <span class="sub-hl">recharge my energy</span> while <span class="sub-hl">keeping my mind calm and clear</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 3,
+                question: "What do you think are the benefits of good health?",
+                qType: "Wh-question: What do you think are the benefits of [noun]?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Làm việc năng suất cao & Dành trọn thời gian quý giá bên người thân):</div>
+                    <div class="topic-formula-text">
+                        → From my perspective, <u>having good health brings countless benefits</u>. First of all, it allows people to <span class="formula-bracket-hl">[lợi ích công việc - Vo]</span> without feeling exhausted. Furthermore, it gives us the energy to <span class="formula-bracket-hl">[lợi ích cuộc sống - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Phòng ngừa bệnh tật nghiêm trọng, tiết kiệm viện phí & Tinh thần luôn vui tươi, lạc quan):</div>
+                    <div class="topic-formula-text">
+                        → Without a doubt, <u>good health is our greatest asset</u> because it helps us <span class="formula-bracket-hl">[lợi ích phòng bệnh - Vo]</span> and <span class="formula-bracket-hl">[lợi ích tài chính - Vo]</span>. It also enables us to maintain a <span class="formula-bracket-hl">[tính từ tinh thần]</span> mindset every single day.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc mở đầu nhận định về sức khỏe]:",
+                        items: [
+                            { en: "having good health brings countless benefits", vn: "có sức khỏe tốt mang lại vô số lợi ích" },
+                            { en: "good health is our greatest asset", vn: "sức khỏe tốt là tài sản quý giá nhất của chúng ta" },
+                            { en: "without feeling easily exhausted", vn: "mà không bị kiệt sức nhanh chóng" },
+                            { en: "every single day", vn: "mỗi một ngày trong cuộc đời" }
+                        ]
+                    },
+                    {
+                        title: "✨ [Lợi ích công việc & Tinh thần]:",
+                        items: [
+                            { en: "work and study with high productivity", vn: "làm việc và học tập với năng suất cao" },
+                            { en: "avoid serious illnesses", vn: "phòng tránh những căn bệnh nghiêm trọng" },
+                            { en: "save medical expenses", vn: "tiết kiệm chi phí khám chữa bệnh" },
+                            { en: "positive and cheerful mindset", vn: "tâm lý tích cực và vui vẻ" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>spend quality time with loved ones, enjoy life to the fullest, maintain high productivity...</em>).`
+                    },
+                    {
+                        title: "💼 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Giá trị của sức khỏe]:",
+                        items: [
+                            { en: "pursue long-term career aspirations", vn: "theo đuổi những ước mơ và mục tiêu sự nghiệp dài hạn" },
+                            { en: "reduce anxiety and mental fatigue", vn: "giảm bớt lo âu và sự mỏi mệt về mặt tinh thần" },
+                            { en: "live a long, fulfilling, and independent life", vn: "sống một cuộc đời dài lâu, trọn vẹn và tự lập" },
+                            { en: "cope effectively with daily pressures", vn: "đương đầu hiệu quả với những áp lực cuộc sống thường ngày" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Làm việc năng suất cao & Dành thời gian trọn vẹn bên người thân)",
+                        text: "From my perspective, having good health brings countless benefits. First of all, it allows people to work and study with high productivity without feeling easily exhausted. Furthermore, it gives us the energy to spend quality time with loved ones and enjoy life to the fullest.",
+                        formatted: `→ From my perspective, <u>having good health brings countless benefits</u>. First of all, it allows people to <span class="sub-hl">work and study with high productivity</span> without feeling easily exhausted. Furthermore, it gives us the energy to <span class="sub-hl">spend quality time with loved ones</span> and <span class="sub-hl">enjoy life to the fullest</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Tránh bệnh nghiêm trọng, tiết kiệm viện phí & Tinh thần luôn vui vẻ tích cực)",
+                        text: "Without a doubt, good health is our greatest asset because it helps us avoid serious illnesses and save medical expenses. It also enables us to maintain a positive and cheerful mindset every single day.",
+                        formatted: `→ Without a doubt, <u>good health is our greatest asset</u> because it helps us <span class="sub-hl">avoid serious illnesses</span> and <span class="sub-hl">save medical expenses</span>. It also enables us to maintain a <span class="sub-hl">positive and cheerful mindset</span> every single day.`
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: 12,
+        title: "Chủ đề 12: Let's talk about health (part 2)",
+        introText: "Let’s talk about health.",
+        questions: [
+            {
+                qNum: 1,
+                question: "Do you often get sick?",
+                qType: "Yes/No: Do you often [Vo]?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Trả lời HIẾM KHI - Hệ miễn dịch tốt nhờ chăm tập thể thao và ăn uống lành mạnh):</div>
+                    <div class="topic-formula-text">
+                        → Fortunately, <u>I rarely get sick</u> because I have a <span class="formula-bracket-hl">[thể trạng / hệ miễn dịch]</span>. Sticking to <span class="formula-bracket-hl">[thói quen tốt]</span> allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and prevents me from <span class="formula-bracket-hl">[nguy cơ mắc bệnh - V-ing]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Trả lời THỈNH THOẢNG - Cảm nhẹ khi thời tiết đổi mùa, nhanh khỏi nhờ nghỉ ngơi & uống nước ấm):</div>
+                    <div class="topic-formula-text">
+                        → To be honest, <u>I only come down with minor illnesses once in a while</u>, especially <span class="formula-bracket-hl">[thời điểm / lý do]</span>. However, I usually recover within a couple of days by <span class="formula-bracket-hl">[hành động tự chăm sóc - V-ing]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc tần suất mắc bệnh]:",
+                        items: [
+                            { en: "Fortunately, I rarely get sick", vn: "May mắn thay, tôi rất hiếm khi bị ốm đau" },
+                            { en: "I only come down with minor illnesses once in a while", vn: "Tôi chỉ thỉnh thoảng mắc vài bệnh nhẹ" },
+                            { en: "I usually recover within a couple of days", vn: "Tôi thường bình phục chỉ trong vòng vài ngày" },
+                            { en: "prevents me from catching seasonal colds", vn: "ngăn tôi khỏi bị nhiễm cảm lạnh theo mùa" }
+                        ]
+                    },
+                    {
+                        title: "✨ [Thể trạng & Biểu hiện ốm nhẹ]:",
+                        items: [
+                            { en: "strong immune system", vn: "hệ miễn dịch khỏe mạnh" },
+                            { en: "regular exercise and healthy eating", vn: "tập thể dục đều đặn và ăn uống lành mạnh" },
+                            { en: "when the weather changes drastically", vn: "khi thời tiết thay đổi đột ngột / giao mùa" },
+                            { en: "resting properly and drinking warm lemon water", vn: "nghỉ ngơi hợp lý và uống nước chanh ấm" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>maintain good health, stay resilient, bounce back quickly...</em>).`
+                    },
+                    {
+                        title: "🛡️ [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Đề kháng & Bình phục]:",
+                        items: [
+                            { en: "fight off common seasonal viruses", vn: "chống lại các virus cảm cúm theo mùa thông thường" },
+                            { en: "avoid taking unnecessary antibiotics", vn: "tránh việc phải dùng thuốc kháng sinh không cần thiết" },
+                            { en: "regain physical strength in no time", vn: "phục hồi thể lực lại rất nhanh chóng" },
+                            { en: "keep my daily routine uninterrupted", vn: "giữ cho lịch trình sinh hoạt và làm việc không bị gián đoạn" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Trả lời HIẾM KHI - Hệ miễn dịch khỏe, tập thể dục & ăn uống điều độ)",
+                        text: "Fortunately, I rarely get sick because I have a strong immune system. Sticking to regular exercise and healthy eating allows me to stay resilient and prevents me from catching seasonal colds.",
+                        formatted: `→ Fortunately, <u>I rarely get sick</u> because I have a <span class="sub-hl">strong immune system</span>. Sticking to <span class="sub-hl">regular exercise and healthy eating</span> allows me to <span class="sub-hl">stay resilient</span> and prevents me from <span class="sub-hl">catching seasonal colds</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Trả lời THỈNH THOẢNG - Cảm nhẹ khi đổi mùa, nhanh khỏi nhờ nghỉ ngơi & uống nước chanh ấm)",
+                        text: "To be honest, I only come down with minor illnesses once in a while, especially when the weather changes drastically. However, I usually recover within a couple of days by resting properly, drinking warm lemon water, and taking light medicine.",
+                        formatted: `→ To be honest, <u>I only come down with minor illnesses once in a while</u>, especially <span class="sub-hl">when the weather changes drastically</span>. However, I usually recover within a couple of days by <span class="sub-hl">resting properly, drinking warm lemon water, and taking light medicine</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 2,
+                question: "Do you often go to the doctor?",
+                qType: "Yes/No: Do you often [Vo]?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Chỉ đi khi thật sự cần thiết / ốm nặng - Bình thường tự nghỉ ngơi uống nước ấm tại nhà):</div>
+                    <div class="topic-formula-text">
+                        → Generally speaking, <u>I only visit the doctor when it is really necessary</u>, such as when I feel <span class="formula-bracket-hl">[tình trạng ốm nặng]</span>. For minor health issues, I prefer to <span class="formula-bracket-hl">[hành động tự chăm sóc - Vo]</span> because it allows my body to <span class="formula-bracket-hl">[lợi ích - Vo]</span> naturally.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Đi khám định kỳ 6 tháng/lần - Tầm soát bệnh sớm và nhận lời khuyên y tế):</div>
+                    <div class="topic-formula-text">
+                        → Yes, <u>I make a point of seeing the doctor</u> <span class="formula-bracket-hl">[tần suất]</span> for a comprehensive health check-up. This proactive habit helps me <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives me useful medical guidance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc thói quen thăm khám y tế]:",
+                        items: [
+                            { en: "I only visit the doctor when it is really necessary", vn: "Tôi chỉ đi khám bác sĩ khi thực sự cần thiết" },
+                            { en: "I make a point of seeing the doctor", vn: "Tôi luôn chủ động đi khám bác sĩ định kỳ..." },
+                            { en: "for a comprehensive health check-up", vn: "để kiểm tra sức khỏe tổng quát toàn diện" },
+                            { en: "gives me peace of mind", vn: "mang lại sự an tâm tuyệt đối cho bản thân" }
+                        ]
+                    },
+                    {
+                        title: "✨ [Tình trạng sức khỏe & Khám định kỳ]:",
+                        items: [
+                            { en: "seriously unwell or have a high fever", vn: "ốm nặng hoặc bị sốt cao" },
+                            { en: "rest at home and drink plenty of warm water", vn: "nghỉ ngơi tại nhà và uống nhiều nước ấm" },
+                            { en: "every six months / once a year", vn: "mỗi 6 tháng một lần / mỗi năm một lần" },
+                            { en: "detect potential illnesses early", vn: "phát hiện sớm các mầm bệnh hoặc vấn đề tiềm ẩn" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>protect my long-term well-being, heal naturally, feel completely reassured...</em>).`
+                    },
+                    {
+                        title: "🩺 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Chăm sóc y tế]:",
+                        items: [
+                            { en: "monitor key health indicators", vn: "theo dõi các chỉ số sức khỏe trọng yếu của cơ thể" },
+                            { en: "prevent minor symptoms from becoming severe", vn: "ngăn chặn các triệu chứng nhẹ diễn biến nghiêm trọng" },
+                            { en: "receive professional lifestyle advice", vn: "nhận được những lời khuyên điều chỉnh lối sống từ bác sĩ" },
+                            { en: "avoid the health risks of self-medication", vn: "tránh các rủi ro nguy hiểm khi tự ý dùng thuốc sai cách" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Chỉ đi khi ốm nặng - Bình thường nghỉ ngơi uống nước ấm để cơ thể tự hồi phục)",
+                        text: "Generally speaking, I only visit the doctor when it is really necessary, such as when I feel seriously unwell or have a high fever. For minor health issues, I prefer to rest at home and drink plenty of warm water, which allows my body to heal naturally.",
+                        formatted: `→ Generally speaking, <u>I only visit the doctor when it is really necessary</u>, such as when I feel <span class="sub-hl">seriously unwell or have a high fever</span>. For minor health issues, I prefer to <span class="sub-hl">rest at home and drink plenty of warm water</span>, which allows my body to <span class="sub-hl">heal naturally</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Khám tổng quát 6 tháng/lần - Phát hiện bệnh sớm & Bảo vệ sức khỏe dài hạn)",
+                        text: "Yes, I make a point of seeing the doctor every six months for a comprehensive health check-up. This proactive habit helps me detect potential illnesses early and gives me useful medical guidance to protect my long-term well-being.",
+                        formatted: `→ Yes, <u>I make a point of seeing the doctor</u> <span class="sub-hl">every six months for a comprehensive health check-up</span>. This proactive habit helps me <span class="sub-hl">detect potential illnesses early</span> and gives me useful medical guidance to <span class="sub-hl">protect my long-term well-being</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 3,
+                question: "Do you think people care more about their health nowadays? Why?",
+                qType: "Yes/No + Wh-question: Do you think people [verb] nowadays? Why?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Trả lời CÓ - Do ô nhiễm môi trường & dịch bệnh nên tích cực ăn sạch, tập luyện):</div>
+                    <div class="topic-formula-text">
+                        → Yes, definitely. <u>People are noticeably more health-conscious today</u> because of growing concerns about <span class="formula-bracket-hl">[mối lo ngại]</span>. As a result, they actively <span class="formula-bracket-hl">[hành động bảo vệ sức khỏe]</span> in order to <span class="formula-bracket-hl">[lợi ích - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Trả lời CÓ - Áp lực xã hội hiện đại khiến mọi người đầu tư cho gym & dinh dưỡng):</div>
+                    <div class="topic-formula-text">
+                        → Yes, absolutely. <u>In this fast-paced modern society</u>, people increasingly realize that <span class="formula-bracket-hl">[quan niệm sức khỏe]</span>. Therefore, many people invest in <span class="formula-bracket-hl">[khoản đầu tư sức khỏe]</span>, which enables them to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc phân tích xu hướng xã hội]:",
+                        items: [
+                            { en: "People are noticeably more health-conscious today", vn: "Mọi người ngày nay có ý thức về sức khỏe rõ rệt hơn" },
+                            { en: "In this fast-paced modern society", vn: "Trong xã hội hiện đại với nhịp sống hối hả này" },
+                            { en: "health is our most valuable asset", vn: "sức khỏe là tài sản giá trị nhất của chúng ta" },
+                            { en: "invest time and money in wellness", vn: "đầu tư thời gian và tiền bạc vào chăm sóc sức khỏe" }
+                        ]
+                    },
+                    {
+                        title: "✨ [Xu hướng chăm sóc sức khỏe hiện đại]:",
+                        items: [
+                            { en: "environmental pollution and new diseases", vn: "ô nhiễm môi trường và các dịch bệnh mới" },
+                            { en: "choose organic food and exercise regularly", vn: "chọn thực phẩm hữu cơ và tập thể thao đều đặn" },
+                            { en: "gym memberships and nutritious meals", vn: "thẻ thành viên phòng gym và các bữa ăn giàu dưỡng chất" },
+                            { en: "cope with work stress and avoid burnout", vn: "đối phó với căng thẳng công việc và tránh kiệt sức" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>strengthen their immune system, cope with work stress, enjoy a happier lifestyle...</em>).`
+                    },
+                    {
+                        title: "🧘 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Ý thức sức khỏe cộng đồng]:",
+                        items: [
+                            { en: "adopt a proactive preventive mindset", vn: "hình thành tư duy phòng ngừa bệnh tật chủ động" },
+                            { en: "balance demanding careers with physical wellness", vn: "cân bằng sự nghiệp bận rộn với sức khỏe thể chất" },
+                            { en: "enhance overall quality of life and longevity", vn: "nâng cao chất lượng cuộc sống nói chung và kéo dài tuổi thọ" },
+                            { en: "inspire family members to adopt clean habits", vn: "truyền cảm hứng cho các thành viên trong gia đình sống sạch" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Trả lời CÓ - Quan ngại ô nhiễm & dịch bệnh nên chuộng ăn sạch, tập thể dục)",
+                        text: "Yes, definitely. People are noticeably more health-conscious today because of growing concerns about environmental pollution and new diseases. As a result, they actively choose organic food and exercise regularly in order to strengthen their immune system.",
+                        formatted: `→ Yes, definitely. <u>People are noticeably more health-conscious today</u> because of growing concerns about <span class="sub-hl">environmental pollution and new diseases</span>. As a result, they actively <span class="sub-hl">choose organic food and exercise regularly</span> in order to <span class="sub-hl">strengthen their immune system</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Trả lời CÓ - Sức khỏe là tài sản quý giá nhất, đầu tư phòng gym & ăn uống lành mạnh)",
+                        text: "Yes, absolutely. In this fast-paced modern society, people increasingly realize that health is our most valuable asset. Therefore, many people invest in gym memberships and nutritious meals, which enables them to cope with work stress and enjoy a happier lifestyle.",
+                        formatted: `→ Yes, absolutely. <u>In this fast-paced modern society</u>, people increasingly realize that <span class="sub-hl">health is our most valuable asset</span>. Therefore, many people invest in <span class="sub-hl">gym memberships and nutritious meals</span>, which enables them to <span class="sub-hl">cope with work stress</span> and <span class="sub-hl">enjoy a happier lifestyle</span>.`
+                    }
+                ]
+            }
+        ]
     }
 ];
 
@@ -5484,16 +5877,16 @@ window.isTopicUnlocked = (topicId) => {
     if (window._currentUserRole === 'teacher') {
         return practiceTopicsData.some(t => t.id === tid);
     }
-    // Unlocked topics 1 to 10
-    return tid >= 1 && tid <= 10;
+    // Unlocked topics 1 to 12
+    return tid >= 1 && tid <= 12;
 };
 
 window.getAllowedTopicIds = () => {
     if (window._currentUserRole === 'teacher') {
         return practiceTopicsData.map(t => t.id);
     }
-    // Unlocked topics 1 to 10
-    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    // Unlocked topics 1 to 12
+    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 };
 
 window.getAllowedTopicsData = () => {
@@ -5514,7 +5907,7 @@ window.updateTopicSelectDropdowns = () => {
         const currentVal = sel.value;
         sel.querySelectorAll('option').forEach(opt => {
             const val = parseInt(opt.value);
-            if (val >= 1 && val <= 10) {
+            if (val >= 1 && val <= 12) {
                 opt.disabled = false;
                 if (val === 1) opt.textContent = "🎯 Topic 01: Let's talk about hobbies";
                 if (val === 2) opt.textContent = "🎯 Topic 02: Let's talk about video games";
@@ -5526,11 +5919,13 @@ window.updateTopicSelectDropdowns = () => {
                 if (val === 8) opt.textContent = "🎯 Topic 08: Let's talk about fast food restaurants";
                 if (val === 9) opt.textContent = "🎯 Topic 09: Let's talk about cooking";
                 if (val === 10) opt.textContent = "🎯 Topic 10: Let's talk about the cooking class";
-            } else if (val >= 11) {
+                if (val === 11) opt.textContent = "🎯 Topic 11: Let's talk about health";
+                if (val === 12) opt.textContent = "🎯 Topic 12: Let's talk about health (part 2)";
+            } else if (val >= 13) {
                 opt.disabled = true;
             }
         });
-        if (!isTeacher && parseInt(currentVal) > 10) {
+        if (!isTeacher && parseInt(currentVal) > 12) {
             if (sel.id === 'practice-pair-topic2-select') {
                 sel.value = "2";
             } else {
@@ -5785,7 +6180,7 @@ function renderPracticeTopic(topicId) {
                     CHỦ ĐỀ ĐANG KHOÁ (CHỜ CẬP NHẬT)
                 </h2>
                 <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 580px; margin: 0 auto 1.75rem; line-height: 1.65;">
-                    Hiện tại hệ thống đã mở <strong>10 chủ đề đầu tiên (Topic 01 đến Topic 10)</strong> để các bạn luyện tập. Các chủ đề tiếp theo đang được cập nhật và sẽ mở theo lịch học của cô!
+                    Hiện tại hệ thống đã mở <strong>12 chủ đề đầu tiên (Topic 01 đến Topic 12)</strong> để các bạn luyện tập. Các chủ đề tiếp theo đang được cập nhật và sẽ mở theo lịch học của cô!
                 </p>
                 <div style="display: flex; justify-content: center; gap: 0.65rem; flex-wrap: wrap;">
                     <button type="button" class="btn" onclick="renderPracticeTopic(1)" style="background: var(--primary); color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(67, 97, 238, 0.25);">
@@ -5817,6 +6212,12 @@ function renderPracticeTopic(topicId) {
                     </button>
                     <button type="button" class="btn" onclick="renderPracticeTopic(10)" style="background: #6366f1; color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);">
                         Topic 10
+                    </button>
+                    <button type="button" class="btn" onclick="renderPracticeTopic(11)" style="background: #10b981; color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);">
+                        Topic 11
+                    </button>
+                    <button type="button" class="btn" onclick="renderPracticeTopic(12)" style="background: #0ea5e9; color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25);">
+                        Topic 12
                     </button>
                 </div>
             </div>
