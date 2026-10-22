@@ -6322,8 +6322,8 @@ const practiceTopicsData = [
                     },
                     {
                         label: "Bài mẫu Cách 2 (Trả lời HIẾM KHI - Chỉ mua khi hết đồ, đặt online để tránh đông đúc và tiết kiệm thời gian)",
-                        text: "To be honest, I rarely go window-shopping because I only make a purchase when running out of essential supplies. Instead, I prefer ordering items via e-commerce platforms, which enables me to avoid crowded stores and save precious time.",
-                        formatted: `→ To be honest, <u>I rarely go window-shopping</u> because I only make a purchase when <span class="sub-hl">running out of essential supplies</span>. Instead, I prefer <span class="sub-hl">ordering items via e-commerce platforms</span>, which enables me to <span class="sub-hl">avoid crowded stores</span> and <span class="sub-hl">save precious time</span>.`
+                        text: "To be honest, I rarely go window-shopping because I only make a purchase when running out of essential supplies. Instead, I prefer ordering items via e-commerce platforms, so I can avoid crowded stores and save precious time.",
+                        formatted: `→ To be honest, <u>I rarely go window-shopping</u> because I only make a purchase when <span class="sub-hl">running out of essential supplies</span>. Instead, I prefer <span class="sub-hl">ordering items via e-commerce platforms</span>, so I can <span class="sub-hl">avoid crowded stores</span> and <span class="sub-hl">save precious time</span>.`
                     }
                 ]
             },
@@ -6334,7 +6334,7 @@ const practiceTopicsData = [
                 formula: `<div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 1 (Đi cùng mẹ/gia đình - Cùng lựa chọn thực phẩm dinh dưỡng và gắn kết tình cảm gia đình):</div>
                     <div class="topic-formula-text">
-                        → Most of the time, <u>I truly enjoy going shopping with my mother</u>. We make a habit of <span class="formula-bracket-hl">[hành động cùng nhau]</span>, which allows us to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives us a chance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                        → Most of the time, <u>I truly enjoy going shopping with my mother</u>. We make a habit of <span class="formula-bracket-hl">[hành động cùng nhau]</span>. This allows us to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
                     </div>
                 </div>
                 <div class="topic-formula-row">
@@ -6380,8 +6380,8 @@ const practiceTopicsData = [
                 samples: [
                     {
                         label: "Bài mẫu Cách 1 (Đi cùng mẹ - Cùng chọn nguyên liệu bổ dưỡng và gắn kết tình cảm qua những câu chuyện)",
-                        text: "Most of the time, I truly enjoy going shopping with my mother. We make a habit of picking out nutritious ingredients together, which allows us to strengthen family bonds and gives us a chance to share lovely everyday stories.",
-                        formatted: `→ Most of the time, <u>I truly enjoy going shopping with my mother</u>. We make a habit of <span class="sub-hl">picking out nutritious ingredients together</span>, which allows us to <span class="sub-hl">strengthen family bonds</span> and gives us a chance to <span class="sub-hl">share lovely everyday stories</span>.`
+                        text: "Most of the time, I truly enjoy going shopping with my mother. We make a habit of picking out nutritious ingredients together. This allows us to strengthen family bonds and share lovely everyday stories.",
+                        formatted: `→ Most of the time, <u>I truly enjoy going shopping with my mother</u>. We make a habit of <span class="sub-hl">picking out nutritious ingredients together</span>. This allows us to <span class="sub-hl">strengthen family bonds</span> and <span class="sub-hl">share lovely everyday stories</span>.`
                     },
                     {
                         label: "Bài mẫu Cách 2 (Đi cùng bạn thân - Nhận lời khuyên phối đồ hữu ích và nâng cao tâm trạng)",
@@ -6536,7 +6536,7 @@ const practiceTopicsData = [
                 <div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 2 (Trả lời CÓ - Lạm phát buộc phải đắn đo, so sánh giá nhiều nơi và săn mã giảm giá):</div>
                     <div class="topic-formula-text">
-                        → Yes, without doubt. <u>Price inflation forces me to think twice</u> before tapping my card. I actively <span class="formula-bracket-hl">[hành động so sánh]</span>, which allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                        → Yes, without doubt. <u>Price inflation forces me to think twice</u> before tapping my card. I actively <span class="formula-bracket-hl">[hành động so sánh]</span>, so I can <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
                     </div>
                 </div>`,
                 vocabGroups: [
@@ -6581,8 +6581,8 @@ const practiceTopicsData = [
                     },
                     {
                         label: "Bài mẫu Cách 2 (Trả lời CÓ - Lạm phát buộc phải suy nghĩ kỹ, so sánh nhiều nền tảng và săn mã giảm giá)",
-                        text: "Yes, without doubt. Price inflation forces me to think twice before tapping my card. I actively compare deals across multiple platforms and hunt for promotion codes, which allows me to cut living expenses and maintain a comfortable lifestyle.",
-                        formatted: `→ Yes, without doubt. <u>Price inflation forces me to think twice</u> before tapping my card. I actively <span class="sub-hl">compare deals across multiple platforms</span> and hunt for promotion codes, which allows me to <span class="sub-hl">cut living expenses</span> and <span class="sub-hl">maintain a comfortable lifestyle</span>.`
+                        text: "Yes, without doubt. Price inflation forces me to think twice before tapping my card. I actively compare deals across multiple platforms and hunt for promotion codes, so I can cut living expenses and maintain a comfortable lifestyle.",
+                        formatted: `→ Yes, without doubt. <u>Price inflation forces me to think twice</u> before tapping my card. I actively <span class="sub-hl">compare deals across multiple platforms</span> and hunt for promotion codes, so I can <span class="sub-hl">cut living expenses</span> and <span class="sub-hl">maintain a comfortable lifestyle</span>.`
                     }
                 ]
             },
@@ -6599,7 +6599,7 @@ const practiceTopicsData = [
                 <div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 2 (Trả lời ĐỒNG Ý PHẦN LỚN - Tiền nào của nấy, hàng cao cấp dùng chất liệu tốt, tinh xảo và bảo hành chu đáo):</div>
                     <div class="topic-formula-text">
-                        → To a large extent, yes. <u>You usually get what you pay for</u> when buying high-end merchandise. Manufacturers invest heavily in <span class="formula-bracket-hl">[yếu tố chất lượng]</span>, which ensures <span class="formula-bracket-hl">[lợi ích trải nghiệm 1]</span> and provides <span class="formula-bracket-hl">[lợi ích bảo hành 2]</span>.
+                        → To a large extent, yes. <u>You usually get what you pay for</u> when buying high-end merchandise. Manufacturers invest heavily in <span class="formula-bracket-hl">[yếu tố chất lượng]</span>. This ensures <span class="formula-bracket-hl">[lợi ích trải nghiệm 1]</span> and provides <span class="formula-bracket-hl">[lợi ích bảo hành 2]</span>.
                     </div>
                 </div>`,
                 vocabGroups: [
@@ -6644,8 +6644,8 @@ const practiceTopicsData = [
                     },
                     {
                         label: "Bài mẫu Cách 2 (Trả lời ĐỒNG Ý PHẦN LỚN - Tiền nào của nấy, hàng cao cấp có chất liệu tốt, gia công tinh xảo và bảo hành chu đáo)",
-                        text: "To a large extent, yes. You usually get what you pay for when buying high-end merchandise. Manufacturers invest heavily in premium materials and rigorous craftsmanship, which ensures a longer lifespan and provides peace of mind with exceptional customer support.",
-                        formatted: `→ To a large extent, yes. <u>You usually get what you pay for</u> when buying high-end merchandise. Manufacturers invest heavily in <span class="sub-hl">premium materials and rigorous craftsmanship</span>, which ensures <span class="sub-hl">a longer lifespan</span> and provides <span class="sub-hl">peace of mind with exceptional customer support</span>.`
+                        text: "To a large extent, yes. You usually get what you pay for when buying high-end merchandise. Manufacturers invest heavily in premium materials and rigorous craftsmanship. This ensures a longer lifespan and provides peace of mind with exceptional customer support.",
+                        formatted: `→ To a large extent, yes. <u>You usually get what you pay for</u> when buying high-end merchandise. Manufacturers invest heavily in <span class="sub-hl">premium materials and rigorous craftsmanship</span>. This ensures <span class="sub-hl">a longer lifespan</span> and provides <span class="sub-hl">peace of mind with exceptional customer support</span>.`
                     }
                 ]
             }
@@ -6669,7 +6669,7 @@ const practiceTopicsData = [
                 <div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 2 (Trả lời KHÔNG - Dễ bị say xe trên những chuyến đi dài, chuộng kỳ nghỉ tại gia yên tĩnh):</div>
                     <div class="topic-formula-text">
-                        → Honestly, not really. <u>I easily suffer from severe motion sickness</u> on long journeys, which leaves me totally exhausted. Therefore, I prefer <span class="formula-bracket-hl">[hình thức nghỉ ngơi tại nhà]</span>, which allows me to <span class="formula-bracket-hl">[lợi ích - Vo]</span> peacefully.
+                        → Honestly, not really. <u>I easily suffer from severe motion sickness</u> on long journeys, and that makes me feel exhausted. Therefore, I prefer <span class="formula-bracket-hl">[hình thức nghỉ ngơi tại nhà]</span>. This way, I can <span class="formula-bracket-hl">[lợi ích - Vo]</span> peacefully.
                     </div>
                 </div>`,
                 vocabGroups: [
@@ -6714,8 +6714,8 @@ const practiceTopicsData = [
                     },
                     {
                         label: "Bài mẫu Cách 2 (Trả lời KHÔNG - Hay bị say tàu xe đường dài, thích kỳ nghỉ tại nhà yên tĩnh để xả hơi)",
-                        text: "Honestly, not really. I easily suffer from severe motion sickness on long journeys, which leaves me totally exhausted. Therefore, I prefer enjoying quiet staycations at home, which allows me to unwind without any traveling stress peacefully.",
-                        formatted: `→ Honestly, not really. <u>I easily suffer from severe motion sickness</u> on long journeys, which leaves me totally exhausted. Therefore, I prefer <span class="sub-hl">enjoying quiet staycations at home</span>, which allows me to <span class="sub-hl">unwind without any traveling stress</span> peacefully.`
+                        text: "Honestly, not really. I easily suffer from severe motion sickness on long journeys, and that makes me feel exhausted. Therefore, I prefer enjoying quiet staycations at home. This way, I can unwind without any traveling stress peacefully.",
+                        formatted: `→ Honestly, not really. <u>I easily suffer from severe motion sickness</u> on long journeys, and that makes me feel exhausted. Therefore, I prefer <span class="sub-hl">enjoying quiet staycations at home</span>. This way, I can <span class="sub-hl">unwind without any traveling stress</span> peacefully.`
                     }
                 ]
             },
@@ -6928,7 +6928,7 @@ const practiceTopicsData = [
                 <div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 2 (Không thích lắm - Ngày lễ các điểm du lịch quá tải, chen chúc, giá cả tăng vọt gây mệt mỏi):</div>
                     <div class="topic-formula-text">
-                        → To be honest, <u>I have mixed feelings about major holidays</u>. Popular tourist attractions are consistently <span class="formula-bracket-hl">[thực trạng quá tải]</span>, which turns relaxing trips into <span class="formula-bracket-hl">[trải nghiệm mệt mỏi]</span>.
+                        → To be honest, <u>I have mixed feelings about major holidays</u>. Popular tourist attractions are consistently <span class="formula-bracket-hl">[thực trạng quá tải]</span>, so relaxing trips easily become <span class="formula-bracket-hl">[trải nghiệm mệt mỏi]</span>.
                     </div>
                 </div>`,
                 vocabGroups: [
@@ -6973,8 +6973,8 @@ const practiceTopicsData = [
                     },
                     {
                         label: "Bài mẫu Cách 2 (Không hẳn thích - Điểm du lịch ngày lễ đông nghịt, giá cả đắt đỏ biến chuyến đi thành mệt mỏi)",
-                        text: "To be honest, I have mixed feelings about major holidays. Popular tourist attractions are consistently packed with noisy crowds and sky-high prices, which turns relaxing trips into exhausting ordeals.",
-                        formatted: `→ To be honest, <u>I have mixed feelings about major holidays</u>. Popular tourist attractions are consistently <span class="sub-hl">packed with noisy crowds and sky-high prices</span>, which turns relaxing trips into <span class="sub-hl">exhausting ordeals</span>.`
+                        text: "To be honest, I have mixed feelings about major holidays. Popular tourist attractions are consistently packed with noisy crowds and sky-high prices, so relaxing trips easily become exhausting ordeals.",
+                        formatted: `→ To be honest, <u>I have mixed feelings about major holidays</u>. Popular tourist attractions are consistently <span class="sub-hl">packed with noisy crowds and sky-high prices</span>, so relaxing trips easily become <span class="sub-hl">exhausting ordeals</span>.`
                     }
                 ]
             },
@@ -6985,7 +6985,7 @@ const practiceTopicsData = [
                 formula: `<div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 1 (Về quê đoàn tụ với cha mẹ, cùng nấu các mâm cơm cổ truyền và thăm viếng họ hàng):</div>
                     <div class="topic-formula-text">
-                        → In my country, <u>the vast majority of people choose to return to their hometowns</u>. They place high value on <span class="formula-bracket-hl">[hoạt động truyền thống 1 - V-ing]</span>, which helps <span class="formula-bracket-hl">[lợi ích gắn kết 2 - Vo]</span>.
+                        → In my country, <u>the vast majority of people choose to return to their hometowns</u>. They place high value on <span class="formula-bracket-hl">[hoạt động truyền thống 1 - V-ing]</span>, and this helps <span class="formula-bracket-hl">[lợi ích gắn kết 2 - Vo]</span>.
                     </div>
                 </div>
                 <div class="topic-formula-row">
@@ -7031,8 +7031,8 @@ const practiceTopicsData = [
                 samples: [
                     {
                         label: "Bài mẫu Cách 1 (Về quê sum họp gia đình - Nấu mâm cỗ truyền thống, giữ gìn nét đẹp văn hóa qua các thế hệ)",
-                        text: "In my country, the vast majority of people choose to return to their hometowns. They place high value on preparing traditional feasts and visiting ancestral graves, which helps preserve core cultural traditions across generations.",
-                        formatted: `→ In my country, <u>the vast majority of people choose to return to their hometowns</u>. They place high value on <span class="sub-hl">preparing traditional feasts and visiting ancestral graves</span>, which helps <span class="sub-hl">preserve core cultural traditions across generations</span>.`
+                        text: "In my country, the vast majority of people choose to return to their hometowns. They place high value on preparing traditional feasts and visiting ancestral graves, and this helps preserve core cultural traditions across generations.",
+                        formatted: `→ In my country, <u>the vast majority of people choose to return to their hometowns</u>. They place high value on <span class="sub-hl">preparing traditional feasts and visiting ancestral graves</span>, and this helps <span class="sub-hl">preserve core cultural traditions across generations</span>.`
                     },
                     {
                         label: "Bài mẫu Cách 2 (Đi nghỉ dưỡng biển/núi - Xả stress khỏi công việc bộn bề và hòa mình vào không khí lễ hội sôi động)",
@@ -7055,13 +7055,13 @@ const practiceTopicsData = [
                 formula: `<div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 1 (Trường công lập gần nhà - Thầy cô tận tâm, học phí phải chăng, xây dựng nền tảng học vấn và bạn bè gắn bó):</div>
                     <div class="topic-formula-text">
-                        → When I was younger, <u>I attended a well-regarded public school located close to my house</u>. It provided <span class="formula-bracket-hl">[ưu điểm môi trường học]</span>, which enabled me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                        → When I was younger, <u>I attended a well-regarded public school located close to my house</u>. It had <span class="formula-bracket-hl">[ưu điểm môi trường học]</span>, so I could <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
                     </div>
                 </div>
                 <div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 2 (Trường tư thục hiện đại - Cơ sở vật chất tối tân, hoạt động ngoại khóa năng động, phát triển tư duy phản biện):</div>
                     <div class="topic-formula-text">
-                        → Throughout my childhood, <u>I was enrolled in a modern private school</u>. It offered <span class="formula-bracket-hl">[tiện ích học tập hiện đại]</span>, which gave me an ideal environment to <span class="formula-bracket-hl">[lợi ích phát triển 1 - Vo]</span> and <span class="formula-bracket-hl">[lợi ích kỹ năng 2 - Vo]</span>.
+                        → Throughout my childhood, <u>I was enrolled in a modern private school</u>. It offered <span class="formula-bracket-hl">[tiện ích học tập hiện đại]</span>. That really helped me <span class="formula-bracket-hl">[lợi ích phát triển 1 - Vo]</span> and <span class="formula-bracket-hl">[lợi ích kỹ năng 2 - Vo]</span>.
                     </div>
                 </div>`,
                 vocabGroups: [
@@ -7070,8 +7070,8 @@ const practiceTopicsData = [
                         items: [
                             { en: "attended a well-regarded public school located close to my house", vn: "từng theo học một trường công lập danh tiếng nằm gần nhà" },
                             { en: "was enrolled in a modern private school", vn: "được ghi danh vào một trường tư thục hiện đại" },
-                            { en: "enabled me to build solid academic foundations", vn: "giúp tôi xây dựng nền tảng học thuật vững chắc" },
-                            { en: "gave me an ideal environment to develop critical thinking", vn: "tạo cho tôi môi trường lý tưởng để phát triển tư duy phản biện" }
+                            { en: "helped me build solid academic foundations", vn: "giúp tôi xây dựng nền tảng học thuật vững chắc" },
+                            { en: "really helped me develop critical thinking", vn: "thực sự giúp tôi phát triển tư duy phản biện" }
                         ]
                     },
                     {
@@ -7101,13 +7101,13 @@ const practiceTopicsData = [
                 samples: [
                     {
                         label: "Bài mẫu Cách 1 (Trường công lập gần nhà - Thầy cô tận tâm, học phí hợp lý, xây nền tảng học vấn và bạn bè gắn bó)",
-                        text: "When I was younger, I attended a well-regarded public school located close to my house. It provided dedicated teachers and affordable tuition fees, which enabled me to build solid academic foundations and form lifelong friendships.",
-                        formatted: `→ When I was younger, <u>I attended a well-regarded public school located close to my house</u>. It provided <span class="sub-hl">dedicated teachers and affordable tuition fees</span>, which enabled me to <span class="sub-hl">build solid academic foundations and form lifelong friendships</span>.`
+                        text: "When I was younger, I attended a well-regarded public school located close to my house. It had dedicated teachers and affordable tuition fees, so I could build solid academic foundations and form lifelong friendships.",
+                        formatted: `→ When I was younger, <u>I attended a well-regarded public school located close to my house</u>. It had <span class="sub-hl">dedicated teachers and affordable tuition fees</span>, so I could <span class="sub-hl">build solid academic foundations and form lifelong friendships</span>.`
                     },
                     {
                         label: "Bài mẫu Cách 2 (Trường tư thục hiện đại - Cơ sở vật chất tối tân, ngoại khóa năng động, rèn tư duy phản biện và tự lập)",
-                        text: "Throughout my childhood, I was enrolled in a modern private school. It offered state-of-the-art facilities and dynamic extracurricular activities, which gave me an ideal environment to develop critical thinking and become much more independent.",
-                        formatted: `→ Throughout my childhood, <u>I was enrolled in a modern private school</u>. It offered <span class="sub-hl">state-of-the-art facilities and dynamic extracurricular activities</span>, which gave me an ideal environment to <span class="sub-hl">develop critical thinking and become much more independent</span>.`
+                        text: "Throughout my childhood, I was enrolled in a modern private school. It offered state-of-the-art facilities and dynamic extracurricular activities. That really helped me develop critical thinking and become much more independent.",
+                        formatted: `→ Throughout my childhood, <u>I was enrolled in a modern private school</u>. It offered <span class="sub-hl">state-of-the-art facilities and dynamic extracurricular activities</span>. That really helped me <span class="sub-hl">develop critical thinking and become much more independent</span>.`
                     }
                 ]
             },
@@ -7118,13 +7118,13 @@ const practiceTopicsData = [
                 formula: `<div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 1 (Thích trường công lập - Học phí hợp lý, giảm bớt gánh nặng tài chính, tạo cơ hội học tập bình đẳng):</div>
                     <div class="topic-formula-text">
-                        → Personally, <u>I lean towards public schools mainly because of their affordability</u>. Low tuition fees help families <span class="formula-bracket-hl">[lợi ích tài chính - Vo]</span> while providing students with <span class="formula-bracket-hl">[giá trị xã hội bình đẳng]</span>.
+                        → Personally, <u>I lean towards public schools mainly because of their affordability</u>. Low tuition fees help families <span class="formula-bracket-hl">[lợi ích tài chính - Vo]</span>, and students get <span class="formula-bracket-hl">[giá trị xã hội bình đẳng]</span>.
                     </div>
                 </div>
                 <div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 2 (Thích trường tư thục - Sĩ số lớp nhỏ, giáo viên quan tâm chu đáo sát sao, phòng học đa phương tiện tiên tiến):</div>
                     <div class="topic-formula-text">
-                        → Without doubt, <u>I have a strong preference for private institutions</u> because of their student-centered approach. They maintain <span class="formula-bracket-hl">[ưu điểm quy mô & cơ sở]</span>, which enables learners to <span class="formula-bracket-hl">[lợi ích phát triển - Vo]</span>.
+                        → Without doubt, <u>I have a strong preference for private institutions</u> because of their student-centered approach. They maintain <span class="formula-bracket-hl">[ưu điểm quy mô & cơ sở]</span>, so students can <span class="formula-bracket-hl">[lợi ích phát triển - Vo]</span>.
                     </div>
                 </div>`,
                 vocabGroups: [
@@ -7164,13 +7164,13 @@ const practiceTopicsData = [
                 samples: [
                     {
                         label: "Bài mẫu Cách 1 (Thích trường công lập - Chi phí dễ thở, giảm áp lực tiền bạc, tiếp xúc bạn bè từ mọi hoàn cảnh xã hội)",
-                        text: "Personally, I lean towards public schools mainly because of their affordability. Low tuition fees help families reduce financial strain while providing students with equal educational opportunities to interact with peers from diverse backgrounds.",
-                        formatted: `→ Personally, <u>I lean towards public schools mainly because of their affordability</u>. Low tuition fees help families <span class="sub-hl">reduce financial strain</span> while providing students with <span class="sub-hl">equal educational opportunities to interact with peers from diverse backgrounds</span>.`
+                        text: "Personally, I lean towards public schools mainly because of their affordability. Low tuition fees help families reduce financial strain, and students get equal educational opportunities to interact with peers from diverse backgrounds.",
+                        formatted: `→ Personally, <u>I lean towards public schools mainly because of their affordability</u>. Low tuition fees help families <span class="sub-hl">reduce financial strain</span>, and students get <span class="sub-hl">equal educational opportunities to interact with peers from diverse backgrounds</span>.`
                     },
                     {
                         label: "Bài mẫu Cách 2 (Thích trường tư thục - Sĩ số nhỏ, phòng học hiện đại, được thầy cô kèm cặp sát sao và tiến bộ nhanh)",
-                        text: "Without doubt, I have a strong preference for private institutions because of their student-centered approach. They maintain smaller class sizes and advanced multimedia classrooms, which enables learners to receive personalized mentorship and flourish academically.",
-                        formatted: `→ Without doubt, <u>I have a strong preference for private institutions</u> because of their student-centered approach. They maintain <span class="sub-hl">smaller class sizes and advanced multimedia classrooms</span>, which enables learners to <span class="sub-hl">receive personalized mentorship and flourish academically</span>.`
+                        text: "Without doubt, I have a strong preference for private institutions because of their student-centered approach. They maintain smaller class sizes and advanced multimedia classrooms, so students can receive personalized mentorship and flourish academically.",
+                        formatted: `→ Without doubt, <u>I have a strong preference for private institutions</u> because of their student-centered approach. They maintain <span class="sub-hl">smaller class sizes and advanced multimedia classrooms</span>, so students can <span class="sub-hl">receive personalized mentorship and flourish academically</span>.`
                     }
                 ]
             },
@@ -7251,13 +7251,13 @@ const practiceTopicsData = [
                 formula: `<div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 1 (Khá áp lực & khô khan - Nặng về ngữ pháp, bài thi trên giấy, ít cơ hội luyện nói bộc phát):</div>
                     <div class="topic-formula-text">
-                        → Looking back, <u>learning English at school was relatively dry and demanding for me</u>. The curriculum placed heavy emphasis on <span class="formula-bracket-hl">[phương pháp truyền thống cũ]</span>, which left students with <span class="formula-bracket-hl">[thiếu hụt kỹ năng nói]</span>.
+                        → Looking back, <u>learning English at school was relatively dry and demanding for me</u>. The curriculum focused heavily on <span class="formula-bracket-hl">[phương pháp truyền thống cũ]</span>, so we had almost no chance to <span class="formula-bracket-hl">[thiếu hụt kỹ năng nói - Vo]</span>.
                     </div>
                 </div>
                 <div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 2 (Hào hứng & lôi cuốn - Thầy cô lồng ghép bài hát, trò chơi và đóng vai, tự tin nói không sợ sai):</div>
                     <div class="topic-formula-text">
-                        → Fortunately, <u>I had a wonderfully engaging experience with English during my school years</u>. My enthusiastic teachers frequently incorporated <span class="formula-bracket-hl">[phương pháp giảng dạy sinh động]</span>, which motivated me to <span class="formula-bracket-hl">[lợi ích cảm xúc - Vo]</span>.
+                        → Fortunately, <u>I had a wonderfully engaging experience with English during my school years</u>. My enthusiastic teachers frequently used <span class="formula-bracket-hl">[phương pháp giảng dạy sinh động]</span>, so I felt really motivated to <span class="formula-bracket-hl">[lợi ích cảm xúc - Vo]</span>.
                     </div>
                 </div>`,
                 vocabGroups: [
@@ -7267,7 +7267,7 @@ const practiceTopicsData = [
                             { en: "learning English at school was relatively dry and demanding for me", vn: "việc học tiếng Anh ở trường thời đó khá khô khan và nặng nề với tôi" },
                             { en: "placed heavy emphasis on complex grammar rules and written exams", vn: "đặt trọng tâm lớn vào các quy tắc ngữ pháp phức tạp và các bài thi viết" },
                             { en: "had a wonderfully engaging experience with English", vn: "đã có một trải nghiệm học tiếng Anh vô cùng cuốn hút" },
-                            { en: "motivated me to participate actively without fear of making mistakes", vn: "thôi thúc tôi hăng hái tham gia mà không hề sợ mắc lỗi" }
+                            { en: "felt really motivated to participate actively without fear of making mistakes", vn: "thực sự cảm thấy có động lực để hăng hái tham gia mà không sợ mắc lỗi" }
                         ]
                     },
                     {
@@ -7297,13 +7297,13 @@ const practiceTopicsData = [
                 samples: [
                     {
                         label: "Bài mẫu Cách 1 (Khá áp lực & khô khan - Chú trọng ngữ pháp và bài thi trên giấy, thiếu cơ hội luyện nói bộc phát)",
-                        text: "Looking back, learning English at school was relatively dry and demanding for me. The curriculum placed heavy emphasis on complex grammar rules and written exams, which left students with very little opportunity to practice spontaneous speaking.",
-                        formatted: `→ Looking back, <u>learning English at school was relatively dry and demanding for me</u>. The curriculum placed heavy emphasis on <span class="sub-hl">complex grammar rules and written exams</span>, which left students with <span class="sub-hl">very little opportunity to practice spontaneous speaking</span>.`
+                        text: "Looking back, learning English at school was relatively dry and demanding for me. The curriculum focused heavily on complex grammar rules and written exams, so we had almost no chance to practice spontaneous speaking.",
+                        formatted: `→ Looking back, <u>learning English at school was relatively dry and demanding for me</u>. The curriculum focused heavily on <span class="sub-hl">complex grammar rules and written exams</span>, so we had almost no chance to <span class="sub-hl">practice spontaneous speaking</span>.`
                     },
                     {
                         label: "Bài mẫu Cách 2 (Hào hứng & cuốn hút - Thầy cô lồng ghép bài hát, trò chơi và đóng vai, tự tin nói không sợ sai)",
-                        text: "Fortunately, I had a wonderfully engaging experience with English during my school years. My enthusiastic teachers frequently incorporated catchy songs, interactive games, and role-plays, which motivated me to participate actively without fear of making mistakes.",
-                        formatted: `→ Fortunately, <u>I had a wonderfully engaging experience with English during my school years</u>. My enthusiastic teachers frequently incorporated <span class="sub-hl">catchy songs, interactive games, and role-plays</span>, which motivated me to <span class="sub-hl">participate actively without fear of making mistakes</span>.`
+                        text: "Fortunately, I had a wonderfully engaging experience with English during my school years. My enthusiastic teachers frequently used catchy songs, interactive games, and role-plays, so I felt really motivated to participate actively without fear of making mistakes.",
+                        formatted: `→ Fortunately, <u>I had a wonderfully engaging experience with English during my school years</u>. My enthusiastic teachers frequently used <span class="sub-hl">catchy songs, interactive games, and role-plays</span>, so I felt really motivated to <span class="sub-hl">participate actively without fear of making mistakes</span>.`
                     }
                 ]
             },
@@ -7314,7 +7314,7 @@ const practiceTopicsData = [
                 formula: `<div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 1 (Đắm chìm truyền thông - Xem phim có phụ đề tiếng Anh, nghe podcast hằng ngày tiếp thu thành ngữ tự nhiên):</div>
                     <div class="topic-formula-text">
-                        → Over the years, <u>I've relied heavily on media immersion to acquire English naturally</u>. I regularly <span class="formula-bracket-hl">[phương pháp tiếp xúc truyền thông - Vo]</span>, which allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> while <span class="formula-bracket-hl">[lợi ích 2 - V-ing]</span>.
+                        → Over the years, <u>I've relied heavily on media immersion to acquire English naturally</u>. I regularly <span class="formula-bracket-hl">[phương pháp tiếp xúc truyền thông - Vo]</span>. This helps me <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span> at the same time.
                     </div>
                 </div>
                 <div class="topic-formula-row">
@@ -7360,8 +7360,8 @@ const practiceTopicsData = [
                 samples: [
                     {
                         label: "Bài mẫu Cách 1 (Đắm chìm truyền thông - Xem phim phụ đề tiếng Anh, nghe podcast hằng ngày tiếp thu thành ngữ tự nhiên)",
-                        text: "Over the years, I've relied heavily on media immersion to acquire English naturally. I regularly stream TV shows with English subtitles and listen to daily podcasts, which allows me to absorb authentic idioms while sharpening my listening comprehension effortlessly.",
-                        formatted: `→ Over the years, <u>I've relied heavily on media immersion to acquire English naturally</u>. I regularly <span class="sub-hl">stream TV shows with English subtitles and listen to daily podcasts</span>, which allows me to <span class="sub-hl">absorb authentic idioms while sharpening my listening comprehension effortlessly</span>.`
+                        text: "Over the years, I've relied heavily on media immersion to acquire English naturally. I regularly stream TV shows with English subtitles and listen to daily podcasts. This helps me absorb authentic idioms and sharpen my listening comprehension effortlessly.",
+                        formatted: `→ Over the years, <u>I've relied heavily on media immersion to acquire English naturally</u>. I regularly <span class="sub-hl">stream TV shows with English subtitles and listen to daily podcasts</span>. This helps me <span class="sub-hl">absorb authentic idioms and sharpen my listening comprehension effortlessly</span>.`
                     },
                     {
                         label: "Bài mẫu Cách 2 (Dùng app & Kỹ thuật Shadowing - Nhại lại và ghi âm giọng nói hằng ngày, tự sửa lỗi phát âm và tăng độ lưu loát)",
@@ -7383,7 +7383,7 @@ const practiceTopicsData = [
                 <div class="topic-formula-row">
                     <div class="topic-formula-title">- Cách 2 (Kỹ năng Nghe - Người bản xứ nuốt âm nối từ và dùng ngữ điệu địa phương, rất khó bắt kịp trong thời gian thực):</div>
                     <div class="topic-formula-text">
-                        → To me, <u>listening comprehension poses the steepest challenge</u> for non-native learners. In real life, speakers frequently <span class="formula-bracket-hl">[đặc tính ngôn ngữ nói tự nhiên]</span>, which makes it hard to <span class="formula-bracket-hl">[khó khăn bắt kịp - Vo]</span>.
+                        → To me, <u>listening comprehension poses the steepest challenge</u> for non-native learners. In real life, speakers frequently <span class="formula-bracket-hl">[đặc tính ngôn ngữ nói tự nhiên]</span>, so it's really hard to <span class="formula-bracket-hl">[khó khăn bắt kịp - Vo]</span>.
                     </div>
                 </div>`,
                 vocabGroups: [
@@ -7428,8 +7428,8 @@ const practiceTopicsData = [
                     },
                     {
                         label: "Bài mẫu Cách 2 (Kỹ năng Nghe - Người bản xứ nuốt âm nối từ và dùng ngữ điệu địa phương, rất khó bắt kịp trong thời gian thực)",
-                        text: "To me, listening comprehension poses the steepest challenge for non-native learners. In real life, speakers frequently blend words together and use diverse regional accents, which makes it hard to process spoken information in real time.",
-                        formatted: `→ To me, <u>listening comprehension poses the steepest challenge</u> for non-native learners. In real life, speakers frequently <span class="sub-hl">blend words together and use diverse regional accents</span>, which makes it hard to <span class="sub-hl">process spoken information in real time</span>.`
+                        text: "To me, listening comprehension poses the steepest challenge for non-native learners. In real life, speakers frequently blend words together and use diverse regional accents, so it's really hard to process spoken information in real time.",
+                        formatted: `→ To me, <u>listening comprehension poses the steepest challenge</u> for non-native learners. In real life, speakers frequently <span class="sub-hl">blend words together and use diverse regional accents</span>, so it's really hard to <span class="sub-hl">process spoken information in real time</span>.`
                     }
                 ]
             }
