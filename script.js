@@ -8635,6 +8635,423 @@ const practiceTopicsData = [
             }
         ]
     }
+    ,
+    {
+        id: 27,
+        title: "Chủ đề 27: Let's talk about your hometown",
+        introText: "Let’s talk about your hometown.",
+        questions: [
+            {
+                qNum: 1,
+                question: "Where is your hometown?",
+                qType: "Wh-question: Where is your hometown?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Thành phố ven biển miền Trung - Gió biển trong lành, hải sản ngon rẻ và người dân hiếu khách):</div>
+                    <div class="topic-formula-text">
+                        → My hometown is <u>Da Nang, a bustling coastal city in central Vietnam</u>. Living near the coast allows me to <span class="formula-bracket-hl">[lợi ích thiên nhiên 1 - Vo]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích trải nghiệm 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Một tỉnh yên bình ở đồng bằng sông Cửu Long - Cách TP.HCM khoảng 2 tiếng, không gian thư thái):</div>
+                    <div class="topic-formula-text">
+                        → I was born in <u>a peaceful province in the fertile Mekong Delta, roughly two hours away from Ho Chi Minh City</u>. That serene environment allows me to <span class="formula-bracket-hl">[lợi ích tâm hồn 1 - Vo]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích lối sống 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc giới thiệu vị trí quê hương] (Cách 1 & 2):",
+                        items: [
+                            { en: "a bustling coastal city in central Vietnam", vn: "một thành phố ven biển sầm uất ở miền Trung Việt Nam" },
+                            { en: "a peaceful province in the fertile Mekong Delta", vn: "một tỉnh thành yên bình ở vùng đồng bằng sông Cửu Long màu mỡ" },
+                            { en: "roughly two hours away from", vn: "cách khoảng chừng hai giờ xe chạy từ" },
+                            { en: "escape noisy urban rat races", vn: "thoát khỏi vòng xoáy xô bồ, ồn ã của cuộc sống thành thị" },
+                            { en: "maintain a relaxed lifestyle", vn: "duy trì một lối sống thảnh thơi, nhẹ nhàng" }
+                        ]
+                    },
+                    {
+                        title: "🌊 [Địa danh & Cảnh quan quê hương] (Cách 1 & 2):",
+                        items: [
+                            { en: "breathtaking sandy beaches and rolling waves", vn: "những bãi cát tuyệt đẹp và từng đợt sóng biển dập dềnh" },
+                            { en: "fresh sea breezes daily", vn: "những làn gió biển mát rượi trong lành mỗi ngày" },
+                            { en: "lush tropical fruit orchards", vn: "những vườn cây ăn trái nhiệt đới trĩu quả xanh tươi" },
+                            { en: "scenic riverbanks and green paddy fields", vn: "những bờ sông thơ mộng và cánh đồng lúa xanh mướt" },
+                            { en: "tranquil rural villages", vn: "những ngôi làng quê thanh bình, tĩnh lặng" }
+                        ]
+                    },
+                    {
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        items: [
+                            { en: "📌 Kết hợp không gian sống với sự thư giãn và lối sống lành mạnh:", vn: "Môi trường quê hương trong lành giúp con người tái tạo năng lượng và gắn kết với thiên nhiên. Mời bạn tham khảo thêm bảng <a href=\"javascript:void(0)\" onclick=\"switchTab('benefits')\" style=\"color: var(--primary); font-weight: 700; text-decoration: underline;\">Kho Lợi Ích B2</a> (Mục Môi trường & Sức khỏe tinh thần)." }
+                        ]
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Cảm nhận quê hương]:",
+                        items: [
+                            { en: "enjoy fresh sea breezes daily", vn: "tận hưởng làn gió biển trong lành mỗi ngày" },
+                            { en: "relish delicious seafood at affordable prices", vn: "thưởng thức hải sản tươi ngon với mức giá rất bình dân" },
+                            { en: "escape noisy urban rat races", vn: "tránh xa sự chen chúc và áp lực xô bồ của phố thị" },
+                            { en: "maintain a relaxed lifestyle", vn: "duy trì một nếp sống an nhiên, thư thái" },
+                            { en: "recharge mental batteries over weekends", vn: "sạc lại nguồn năng lượng tinh thần sau những ngày làm việc" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Thành phố ven biển Đà Nẵng - Tận hưởng gió biển trong lành và hải sản tươi ngon giá rẻ - 24 từ)",
+                        text: "My hometown is Da Nang, a bustling coastal city in central Vietnam. Living near the coast allows me to enjoy fresh sea breezes daily and gives me a chance to relish delicious seafood at affordable prices.",
+                        formatted: `→ My hometown is <u>Da Nang, a bustling coastal city in central Vietnam</u>. Living near the coast allows me to <span class="sub-hl">enjoy fresh sea breezes daily</span> and gives me a chance to <span class="sub-hl">relish delicious seafood at affordable prices</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Một tỉnh yên bình ở miền Tây - Tránh xa xô bồ thành thị và duy trì lối sống thảnh thơi - 24 từ)",
+                        text: "I was born in a peaceful province in the fertile Mekong Delta, roughly two hours away from Ho Chi Minh City. That serene environment allows me to escape noisy urban rat races and gives me a chance to maintain a relaxed lifestyle.",
+                        formatted: `→ I was born in <u>a peaceful province in the fertile Mekong Delta, roughly two hours away from Ho Chi Minh City</u>. That serene environment allows me to <span class="sub-hl">escape noisy urban rat races</span> and gives me a chance to <span class="sub-hl">maintain a relaxed lifestyle</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 2,
+                question: "What do you like best about your hometown?",
+                qType: "Wh-question: What do you like best about [noun]?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Bầu không khí thanh bình và nhịp sống chậm - Giúp giải tỏa căng thẳng và sống cân bằng):</div>
+                    <div class="topic-formula-text">
+                        → What I cherish most is <u>the peaceful atmosphere and unhurried pace of life</u>. The tranquil setting allows residents to <span class="formula-bracket-hl">[lợi ích tinh thần 1 - Vo]</span> and gives us a chance to <span class="formula-bracket-hl">[lợi ích sức khỏe 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Sự hiếu khách của người dân và ẩm thực đậm đà - Tạo cảm giác gắn bó sâu sắc và thưởng thức món ngon):</div>
+                    <div class="topic-formula-text">
+                        → Above all, <u>I genuinely adore the warm hospitality of locals and flavorful traditional cuisine</u>. That caring community allows me to <span class="formula-bracket-hl">[lợi ích gắn kết 1 - Vo]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích ẩm thực 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc ca ngợi điểm nổi bật của quê hương] (Cách 1 & 2):",
+                        items: [
+                            { en: "what I cherish most is", vn: "điều mà tôi trân quý và yêu thích nhất chính là" },
+                            { en: "the unhurried pace of life", vn: "nhịp sống thong thả, không vội vã" },
+                            { en: "decompress from daily pressure", vn: "xả bớt những áp lực và căng thẳng thường nhật" },
+                            { en: "warm hospitality of locals", vn: "lòng hiếu khách ấm áp, nhiệt tình của người dân địa phương" },
+                            { en: "flavorful traditional cuisine", vn: "nền ẩm thực truyền thống đậm đà hương vị" }
+                        ]
+                    },
+                    {
+                        title: "🌾 [Nét đẹp con người & Môi trường sống] (Cách 1 & 2):",
+                        items: [
+                            { en: "tranquil, pollution-free atmosphere", vn: "bầu không khí thanh tĩnh, hoàn toàn không ô nhiễm" },
+                            { en: "welcoming and kind-hearted neighbors", vn: "những người hàng xóm niềm nở và tốt bụng" },
+                            { en: "wholesome farm-to-table dishes", vn: "những món ăn sạch lành theo phong cách từ nông trại tới bàn ăn" },
+                            { en: "strong sense of communal solidarity", vn: "tinh thần gắn kết và đoàn kết cộng đồng keo sơn" },
+                            { en: "soothing natural landscapes", vn: "những phong cảnh thiên nhiên êm đềm dịu mắt" }
+                        ]
+                    },
+                    {
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        items: [
+                            { en: "📌 Kết hợp cảm xúc bình an và tình yêu quê hương:", vn: "Tình cảm gắn bó với quê hương xuất phát từ con người và ẩm thực. Hãy khám phá bảng <a href=\"javascript:void(0)\" onclick=\"switchTab('benefits')\" style=\"color: var(--primary); font-weight: 700; text-decoration: underline;\">Kho Lợi Ích B2</a> (Mục Cảm xúc tích cực & Ẩm thực truyền thống)." }
+                        ]
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Điểm thu hút ở quê hương]:",
+                        items: [
+                            { en: "decompress from daily pressure", vn: "giải tỏa mọi áp lực, căng thẳng của công việc hằng ngày" },
+                            { en: "lead healthy, balanced lives", vn: "xây dựng cuộc sống lành mạnh và cân bằng hơn" },
+                            { en: "feel a profound sense of belonging", vn: "cảm nhận sâu sắc cảm giác gắn bó thân thuộc như ở nhà" },
+                            { en: "savor authentic culinary delicacies", vn: "thưởng thức những món ăn đặc sản truyền thống chuẩn vị" },
+                            { en: "breathe genuinely crisp, clean air", vn: "hít thở bầu không khí thực sự trong lành, mát rượi" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Không khí thanh bình và nhịp sống chậm - Giúp giải tỏa áp lực và sống khỏe mạnh cân bằng - 23 từ)",
+                        text: "What I cherish most is the peaceful atmosphere and unhurried pace of life. The tranquil setting allows residents to decompress from daily pressure and gives us a chance to lead healthy, balanced lives.",
+                        formatted: `→ What I cherish most is <u>the peaceful atmosphere and unhurried pace of life</u>. The tranquil setting allows residents to <span class="sub-hl">decompress from daily pressure</span> and gives us a chance to <span class="sub-hl">lead healthy, balanced lives</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Con người hiếu khách và ẩm thực đậm đà - Tạo cảm giác gắn bó sâu sắc và thưởng thức đặc sản chuẩn vị - 24 từ)",
+                        text: "Above all, I genuinely adore the warm hospitality of locals and flavorful traditional cuisine. That caring community allows me to feel a profound sense of belonging and gives me a chance to savor authentic culinary delicacies.",
+                        formatted: `→ Above all, <u>I genuinely adore the warm hospitality of locals and flavorful traditional cuisine</u>. That caring community allows me to <span class="sub-hl">feel a profound sense of belonging</span> and gives me a chance to <span class="sub-hl">savor authentic culinary delicacies</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 3,
+                question: "What can visitors do in your hometown?",
+                qType: "Wh-question: What can visitors do in your hometown?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Khám phá bãi biển tuyệt đẹp và chùa chiền cổ kính - Mở rộng hiểu biết văn hóa và chụp ảnh lưu niệm):</div>
+                    <div class="topic-formula-text">
+                        → Travelers can <u>explore picturesque sandy beaches and explore historic ancient pagodas</u>. Touring these scenic landmarks allows visitors to <span class="formula-bracket-hl">[lợi ích văn hóa 1 - Vo]</span> and gives them a chance to <span class="formula-bracket-hl">[lợi ích nhiếp ảnh 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Đi chợ đêm nhộn nhịp và thưởng thức ẩm thực đường phố - Thỏa mãn vị giác và trò chuyện với người dân):</div>
+                    <div class="topic-formula-text">
+                        → I highly recommend <u>visiting bustling night markets and sampling regional street delicacies</u>. Strolling through the vibrant food stalls allows tourists to <span class="formula-bracket-hl">[lợi ích vị giác 1 - Vo]</span> and gives them a chance to <span class="formula-bracket-hl">[lợi ích tương tác 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc gợi ý trải nghiệm cho du khách] (Cách 1 & 2):",
+                        items: [
+                            { en: "explore picturesque sandy beaches", vn: "khám phá những bãi biển cát trắng đẹp như tranh vẽ" },
+                            { en: "historic ancient pagodas", vn: "những ngôi chùa cổ kính mang đậm dấu ấn lịch sử" },
+                            { en: "broaden cultural knowledge", vn: "mở rộng vốn hiểu biết về lịch sử và văn hóa địa phương" },
+                            { en: "bustling night markets and food stalls", vn: "những khu chợ đêm nhộn nhịp và các quầy ẩm thực đầy sắc màu" },
+                            { en: "delight their taste buds", vn: "thỏa mãn và kích thích vị giác với các món ngon" }
+                        ]
+                    },
+                    {
+                        title: "🏮 [Điểm đến & Hoạt động du lịch thú vị] (Cách 1 & 2):",
+                        items: [
+                            { en: "capture stunning vacation photographs", vn: "chụp những bức ảnh kỷ niệm du lịch tuyệt đẹp" },
+                            { en: "sample authentic crispy pancakes and noodle soups", vn: "nếm thử món bánh xèo giòn rụm và các món bún phở truyền thống" },
+                            { en: "rent motorbikes to explore scenic coastal passes", vn: "thuê xe máy để vi vu qua những con đèo ven biển ngoạn mục" },
+                            { en: "take boat tours along poetic rivers", vn: "đi thuyền ngắm cảnh dọc theo những dòng sông thơ mộng" },
+                            { en: "interact with welcoming local vendors", vn: "giao lưu trò chuyện với những tiểu thương niềm nở mến khách" }
+                        ]
+                    },
+                    {
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        items: [
+                            { en: "📌 Tối ưu hóa trải nghiệm du lịch và giao lưu văn hóa:", vn: "Du lịch quê hương giúp du khách mở mang tầm mắt và tận hưởng những trải nghiệm đáng nhớ. Hãy ghé xem bảng <a href=\"javascript:void(0)\" onclick=\"switchTab('benefits')\" style=\"color: var(--primary); font-weight: 700; text-decoration: underline;\">Kho Lợi Ích B2</a> (Mục Trải nghiệm du lịch & Mở rộng kiến thức)." }
+                        ]
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Trải nghiệm du khách]:",
+                        items: [
+                            { en: "broaden their cultural knowledge", vn: "mở rộng hiểu biết văn hóa và phong tục tập quán" },
+                            { en: "capture stunning vacation photographs", vn: "chụp lại những tấm hình nghỉ dưỡng lung linh đáng nhớ" },
+                            { en: "delight their taste buds", vn: "chiều chuộng và làm say đắm vị giác của bản thân" },
+                            { en: "interact with welcoming local vendors", vn: "giao lưu và cảm nhận sự thân tình của người bán hàng bản địa" },
+                            { en: "purchase unique handmade souvenirs", vn: "mua sắm các món quà lưu niệm thủ công mỹ nghệ độc đáo" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Khám phá bãi biển đẹp và chùa cổ kính - Mở rộng hiểu biết văn hóa và chụp ảnh kỷ niệm tuyệt đẹp - 24 từ)",
+                        text: "Travelers can explore picturesque sandy beaches and explore historic ancient pagodas. Touring these scenic landmarks allows visitors to broaden their cultural knowledge and gives them a chance to capture stunning vacation photographs.",
+                        formatted: `→ Travelers can <u>explore picturesque sandy beaches and explore historic ancient pagodas</u>. Touring these scenic landmarks allows visitors to <span class="sub-hl">broaden their cultural knowledge</span> and gives them a chance to <span class="sub-hl">capture stunning vacation photographs</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Ghé chợ đêm sôi động và nếm món đường phố - Thỏa mãn vị giác và giao lưu với người bán hàng thân thiện - 24 từ)",
+                        text: "I highly recommend visiting bustling night markets and sampling regional street delicacies. Strolling through the vibrant food stalls allows tourists to delight their taste buds and gives them a chance to interact with welcoming local vendors.",
+                        formatted: `→ I highly recommend <u>visiting bustling night markets and sampling regional street delicacies</u>. Strolling through the vibrant food stalls allows tourists to <span class="sub-hl">delight their taste buds</span> and gives them a chance to <span class="sub-hl">interact with welcoming local vendors</span>.`
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: 28,
+        title: "Chủ đề 28: Let's talk about neighbors",
+        introText: "Let’s talk about neighbors.",
+        questions: [
+            {
+                qNum: 1,
+                question: "Do you know the people who live next door to you?",
+                qType: "Yes/No: Do you know the people who live next door to you?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Biết rất rõ - Sống cạnh nhau hơn mười năm, giữ gìn sự hòa hợp và học hỏi từ các bậc cao niên):</div>
+                    <div class="topic-formula-text">
+                        → Yes, I do. <u>My family has lived next door to them for over a decade</u>. Maintaining friendly relations allows us to <span class="formula-bracket-hl">[lợi ích gắn bó 1 - Vo]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích sẻ chia 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Chỉ biết xã giao - Mọi người bận rộn với công việc, ít có thời gian trò chuyện hay tụ tập):</div>
+                    <div class="topic-formula-text">
+                        → Honestly speaking, <u>I only know them on a casual acquaintance level</u>. Everyone is occupied with demanding jobs, so that busy routine doesn't allow us to <span class="formula-bracket-hl">[hạn chế giao lưu 1 - Vo]</span> and gives us few chances to <span class="formula-bracket-hl">[hạn chế gắn kết 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc diễn tả mối quan hệ với láng giềng] (Cách 1 & 2):",
+                        items: [
+                            { en: "have lived next door to them for over a decade", vn: "đã sống cạnh nhà họ suốt hơn một thập kỷ qua" },
+                            { en: "foster strong community solidarity", vn: "xây đắp tình đoàn kết xóm giềng bền vững, khăng khít" },
+                            { en: "learn from experienced elders", vn: "học hỏi nhiều kinh nghiệm quý báu từ các bậc cao niên" },
+                            { en: "on a casual acquaintance level", vn: "chỉ ở mức độ quen biết xã giao chào hỏi thông thường" },
+                            { en: "occupied with demanding jobs", vn: "bận rộn bù đầu với các công việc đòi hỏi nhiều thời gian" }
+                        ]
+                    },
+                    {
+                        title: "🏘️ [Tính cách hàng xóm & Nếp sống] (Cách 1 & 2):",
+                        items: [
+                            { en: "warm-hearted and considerate neighbors", vn: "những người láng giềng có trái tim nhân hậu và biết quan tâm" },
+                            { en: "respectful and peaceful surroundings", vn: "không gian sống tôn trọng lẫn nhau và vô cùng yên bình" },
+                            { en: "exchange pleasant greetings in elevators", vn: "chào hỏi vui vẻ, lịch sự khi chạm mặt trong thang máy" },
+                            { en: "hectic corporate schedules", vn: "lịch trình làm việc bận rộn tại các văn phòng công ty" },
+                            { en: "cherish private family boundaries", vn: "rất coi trọng không gian riêng tư của mỗi gia đình" }
+                        ]
+                    },
+                    {
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        items: [
+                            { en: "📌 Kết nối tình làng nghĩa xóm với sự hỗ trợ xã hội:", vn: "Mối quan hệ hài hòa với hàng xóm mang lại sự tương trợ và an toàn trong cuộc sống. Hãy xem bảng <a href=\"javascript:void(0)\" onclick=\"switchTab('benefits')\" style=\"color: var(--primary); font-weight: 700; text-decoration: underline;\">Kho Lợi Ích B2</a> (Mục Kỹ năng xã hội & Gắn kết cộng đồng)." }
+                        ]
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Quan hệ láng giềng]:",
+                        items: [
+                            { en: "foster strong community solidarity", vn: "thúc đẩy tinh thần đoàn kết tình làng nghĩa xóm" },
+                            { en: "learn from experienced elders", vn: "học hỏi từ các bậc tiền bối và người lớn tuổi trong khu phố" },
+                            { en: "chat regularly about daily topics", vn: "thường xuyên trò chuyện rôm rả về những chủ đề cuộc sống" },
+                            { en: "hang out after work", vn: "gặp gỡ, giao lưu thư giãn sau giờ làm việc" },
+                            { en: "create a safe living environment for children", vn: "tạo dựng một môi trường sống an toàn cho con trẻ vui đùa" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Biết rất rõ - Sống cạnh nhau hơn mười năm, vun đắp đoàn kết xóm giềng và học hỏi người lớn tuổi - 23 từ)",
+                        text: "Yes, I do. My family has lived next door to them for over a decade. Maintaining friendly relations allows us to foster strong community solidarity and gives me a chance to learn from experienced elders.",
+                        formatted: `→ Yes, I do. <u>My family has lived next door to them for over a decade</u>. Maintaining friendly relations allows us to <span class="sub-hl">foster strong community solidarity</span> and gives me a chance to <span class="sub-hl">learn from experienced elders</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Chỉ biết xã giao - Công việc bận rộn khiến ít có thời gian trò chuyện hay tụ tập sau giờ làm - 24 từ)",
+                        text: "Honestly speaking, I only know them on a casual acquaintance level. Everyone is occupied with demanding jobs, so that busy routine doesn't allow us to chat regularly and gives us few chances to hang out after work.",
+                        formatted: `→ Honestly speaking, <u>I only know them on a casual acquaintance level</u>. Everyone is occupied with demanding jobs, so that busy routine doesn't allow us to <span class="sub-hl">chat regularly</span> and gives us few chances to <span class="sub-hl">hang out after work</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 2,
+                question: "Do you get along with your neighbors? How?",
+                qType: "Yes/No + Wh-question: Do you get along with your neighbors? How?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Rất hòa thuận - Thường chia sẻ hoa quả và ngồi uống trà nói chuyện, gắn kết tình cảm):</div>
+                    <div class="topic-formula-text">
+                        → Yes, we get along harmoniously. <u>We frequently share homegrown fruits and chat on the front porch</u>. This kind neighborliness allows us to <span class="formula-bracket-hl">[lợi ích tinh thần 1 - Vo]</span> and gives us a chance to <span class="formula-bracket-hl">[lợi ích gắn kết 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Lịch thiệp và tôn trọng không gian riêng - Không làm phiền nhau, tránh xung đột và nghỉ ngơi yên tĩnh):</div>
+                    <div class="topic-formula-text">
+                        → We maintain a polite and civil relationship. <u>Everyone prioritizes personal privacy and quietness</u>. That mutual respect allows residents to <span class="formula-bracket-hl">[lợi ích riêng tư 1 - Vo]</span> and gives each household a chance to <span class="formula-bracket-hl">[lợi ích nghỉ ngơi 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc mô tả sự hòa thuận với hàng xóm] (Cách 1 & 2):",
+                        items: [
+                            { en: "get along harmoniously", vn: "sống chan hòa và hòa thuận cùng nhau" },
+                            { en: "share homegrown fruits and chat on the porch", vn: "chia sẻ trái cây nhà trồng và trò chuyện trước hiên" },
+                            { en: "kind neighborliness", vn: "tình làng nghĩa xóm tử tế, chân thành" },
+                            { en: "maintain a polite and civil relationship", vn: "duy trì một mối quan hệ lịch thiệp và văn minh" },
+                            { en: "prioritize personal privacy and quietness", vn: "ưu tiên cao sự riêng tư cá nhân và sự yên tĩnh" }
+                        ]
+                    },
+                    {
+                        title: "🤝 [Hành vi gắn kết & Tôn trọng lẫn nhau] (Cách 1 & 2):",
+                        items: [
+                            { en: "exchange warm seasonal delicacies", vn: "trao gửi những món quà quê theo mùa ấm áp" },
+                            { en: "build enduring mutual trust", vn: "xây đắp niềm tin cậy lâu bền dành cho nhau" },
+                            { en: "keep noise down during late hours", vn: "giữ gìn trật tự và hạn chế gây ồn vào các giờ muộn" },
+                            { en: "avoid unnecessary neighborhood conflicts", vn: "tránh được những mâu thuẫn hay xích mích không đáng có" },
+                            { en: "enjoy peaceful rest after work", vn: "tận hưởng thời gian nghỉ ngơi thư thái sau giờ làm việc" }
+                        ]
+                    },
+                    {
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        items: [
+                            { en: "📌 Kết hợp sự hòa thuận với không gian sống bình an:", vn: "Hàng xóm văn minh giúp ngôi nhà thực sự là chốn nghỉ ngơi thoải mái. Hãy truy cập bảng <a href=\"javascript:void(0)\" onclick=\"switchTab('benefits')\" style=\"color: var(--primary); font-weight: 700; text-decoration: underline;\">Kho Lợi Ích B2</a> (Mục Cân bằng cuộc sống & Không gian sống an lành)." }
+                        ]
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Giao hảo láng giềng]:",
+                        items: [
+                            { en: "brighten our evenings", vn: "thắp sáng và làm rộn rã thêm những buổi tối ấm cúng" },
+                            { en: "build enduring mutual trust", vn: "gầy dựng sự tin tưởng gắn bó keo sơn lâu dài" },
+                            { en: "avoid unnecessary neighborhood conflicts", vn: "ngăn ngừa những mâu thuẫn lặt vặt giữa các gia đình" },
+                            { en: "enjoy peaceful rest", vn: "thưởng thức sự nghỉ ngơi thanh tĩnh, trọn vẹn" },
+                            { en: "receive timely emergency assistance", vn: "nhận được sự trợ giúp ứng cứu kịp thời khi có việc khẩn cấp" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Rất hòa thuận - Chia sẻ hoa quả và trò chuyện, làm buổi tối thêm vui và tạo niềm tin - 24 từ)",
+                        text: "Yes, we get along harmoniously. We frequently share homegrown fruits and chat on the front porch. This kind neighborliness allows us to brighten our evenings and gives us a chance to build enduring mutual trust.",
+                        formatted: `→ Yes, we get along harmoniously. <u>We frequently share homegrown fruits and chat on the front porch</u>. This kind neighborliness allows us to <span class="sub-hl">brighten our evenings</span> and gives us a chance to <span class="sub-hl">build enduring mutual trust</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Lịch thiệp và văn minh - Tôn trọng sự riêng tư giúp tránh va chạm và nghỉ ngơi thanh bình - 23 từ)",
+                        text: "We maintain a polite and civil relationship. Everyone prioritizes personal privacy and quietness. That mutual respect allows residents to avoid unnecessary neighborhood conflicts and gives each household a chance to enjoy peaceful rest.",
+                        formatted: `→ We maintain a polite and civil relationship. <u>Everyone prioritizes personal privacy and quietness</u>. That mutual respect allows residents to <span class="sub-hl">avoid unnecessary neighborhood conflicts</span> and gives each household a chance to <span class="sub-hl">enjoy peaceful rest</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 3,
+                question: "Are your neighbors helpful?",
+                qType: "Yes/No: Are your neighbors helpful?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Rất hay giúp đỡ - Sẵn lòng trông nom nhà cửa và nhận bưu phẩm giúp khi đi vắng, an tâm du lịch):</div>
+                    <div class="topic-formula-text">
+                        → Yes, they're remarkably helpful and dependable. <u>Whenever my family goes on vacation, they willingly watch our house and receive parcels</u>. Having such considerate neighbors allows me to <span class="formula-bracket-hl">[lợi ích an tâm 1 - Vo]</span> and gives us a chance to <span class="formula-bracket-hl">[lợi ích tình cảm 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Tự lực và khép kín - Căn hộ chung cư hiện đại ưa chuộng tự giải quyết việc riêng và tập trung mục tiêu cá nhân):</div>
+                    <div class="topic-formula-text">
+                        → Not really, because <u>most residents in modern apartment complexes prefer self-reliance and privacy</u>. While we rarely ask for favors, keeping our distance allows people to <span class="formula-bracket-hl">[lợi ích tự lập 1 - Vo]</span> and gives us a chance to <span class="formula-bracket-hl">[lợi ích tập trung 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc đánh giá mức độ tương trợ của láng giềng] (Cách 1 & 2):",
+                        items: [
+                            { en: "remarkably helpful and dependable", vn: "cực kỳ nhiệt tình giúp đỡ và rất đáng tin cậy" },
+                            { en: "willingly watch our house and receive parcels", vn: "sẵn lòng trông chừng nhà cửa và nhận bưu phẩm chuyển phát giúp" },
+                            { en: "travel with total peace of mind", vn: "đi du lịch xa nhà trong tâm thế hoàn toàn an tâm" },
+                            { en: "prefer self-reliance and privacy", vn: "ưu tiên tính tự lập tự chủ và tôn trọng không gian riêng" },
+                            { en: "handle household affairs independently", vn: "tự giải quyết các công việc gia đình một cách độc lập" }
+                        ]
+                    },
+                    {
+                        title: "📦 [Hành động tương trợ & Tinh thần tương thân tương ái] (Cách 1 & 2):",
+                        items: [
+                            { en: "keep a watchful eye on our premises", vn: "để mắt trông nom nhà cửa giúp gia đình tôi" },
+                            { en: "water house plants during extended trips", vn: "tưới cây hoa trong những chuyến đi xa nhiều ngày" },
+                            { en: "reciprocate sincere support", vn: "đền đáp lại sự giúp đỡ chân tình mỗi khi họ cần" },
+                            { en: "lend helpful tools for home repairs", vn: "cho mượn dụng cụ tiện ích để sửa chữa đồ đạc" },
+                            { en: "focus on personal goals without distraction", vn: "tập trung vào các mục tiêu cá nhân mà không bị phân tâm" }
+                        ]
+                    },
+                    {
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        items: [
+                            { en: "📌 Kết nối sự tin cậy với sự an tâm trong cuộc sống:", vn: "Có láng giềng tốt bụng giúp giải tỏa nỗi lo âu khi vắng nhà. Hãy xem bảng <a href=\"javascript:void(0)\" onclick=\"switchTab('benefits')\" style=\"color: var(--primary); font-weight: 700; text-decoration: underline;\">Kho Lợi Ích B2</a> (Mục An tâm & Tinh thần hỗ trợ)." }
+                        ]
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Lợi ích tương trợ hàng xóm]:",
+                        items: [
+                            { en: "travel with total peace of mind", vn: "đi du lịch hoặc công tác mà lòng luôn an tâm tuyệt đối" },
+                            { en: "reciprocate sincere support", vn: "sẵn sàng đáp lại sự tương trợ chân tình khi hàng xóm cần" },
+                            { en: "handle household affairs independently", vn: "tự quán xuyến các việc trong nhà một cách độc lập" },
+                            { en: "focus on personal goals", vn: "chuyên tâm vào các kế hoạch học tập và làm việc của bản thân" },
+                            { en: "safeguard property against burglary", vn: "bảo vệ tài sản và chống trộm cắp đột nhập hiệu quả" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Rất hay giúp đỡ - Trông nhà và nhận bưu phẩm giúp, an tâm đi du lịch và sẵn sàng giúp lại - 24 từ)",
+                        text: "Yes, they're remarkably helpful and dependable. Whenever my family goes on vacation, they willingly watch our house and receive parcels. Having such considerate neighbors allows me to travel with total peace of mind and gives us a chance to reciprocate sincere support.",
+                        formatted: `→ Yes, they're remarkably helpful and dependable. <u>Whenever my family goes on vacation, they willingly watch our house and receive parcels</u>. Having such considerate neighbors allows me to <span class="sub-hl">travel with total peace of mind</span> and gives us a chance to <span class="sub-hl">reciprocate sincere support</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Tự lực và khép kín - Sống chung cư ưa chuộng độc lập giải quyết việc nhà và tập trung mục tiêu riêng - 24 từ)",
+                        text: "Not really, because most residents in modern apartment complexes prefer self-reliance and privacy. While we rarely ask for favors, keeping our distance allows people to handle household affairs independently and gives us a chance to focus on personal goals.",
+                        formatted: `→ Not really, because <u>most residents in modern apartment complexes prefer self-reliance and privacy</u>. While we rarely ask for favors, keeping our distance allows people to <span class="sub-hl">handle household affairs independently</span> and gives us a chance to <span class="sub-hl">focus on personal goals</span>.`
+                    }
+                ]
+            }
+        ]
+    }
 
 ];
 
@@ -8646,16 +9063,16 @@ window.isTopicUnlocked = (topicId) => {
     if (window._currentUserRole === 'teacher') {
         return practiceTopicsData.some(t => t.id === tid);
     }
-    // Unlocked topics 1 to 26
-    return tid >= 1 && tid <= 26;
+    // Unlocked topics 1 to 28
+    return tid >= 1 && tid <= 28;
 };
 
 window.getAllowedTopicIds = () => {
     if (window._currentUserRole === 'teacher') {
         return practiceTopicsData.map(t => t.id);
     }
-    // Unlocked topics 1 to 26
-    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26];
+    // Unlocked topics 1 to 28
+    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28];
 };
 
 window.getAllowedTopicsData = () => {
@@ -8676,7 +9093,7 @@ window.updateTopicSelectDropdowns = () => {
         const currentVal = sel.value;
         sel.querySelectorAll('option').forEach(opt => {
             const val = parseInt(opt.value);
-            if (val >= 1 && val <= 26) {
+            if (val >= 1 && val <= 28) {
                 opt.disabled = false;
                 if (val === 1) opt.textContent = "🎯 Topic 01: Let's talk about hobbies";
                 if (val === 2) opt.textContent = "🎯 Topic 02: Let's talk about video games";
@@ -8704,11 +9121,13 @@ window.updateTopicSelectDropdowns = () => {
                 if (val === 24) opt.textContent = "🎯 Topic 24: Let's talk about transportation";
                 if (val === 25) opt.textContent = "🎯 Topic 25: Let's talk about planes";
                 if (val === 26) opt.textContent = "🎯 Topic 26: Let's talk about traffic problems";
-            } else if (val >= 27) {
+                if (val === 27) opt.textContent = "🎯 Topic 27: Let's talk about your hometown";
+                if (val === 28) opt.textContent = "🎯 Topic 28: Let's talk about neighbors";
+            } else if (val >= 29) {
                 opt.disabled = true;
             }
         });
-        if (!isTeacher && parseInt(currentVal) > 26) {
+        if (!isTeacher && parseInt(currentVal) > 28) {
             if (sel.id === 'practice-pair-topic2-select') {
                 sel.value = "2";
             } else {
@@ -8963,7 +9382,7 @@ function renderPracticeTopic(topicId) {
                     CHỦ ĐỀ ĐANG KHOÁ (CHỜ CẬP NHẬT)
                 </h2>
                 <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 580px; margin: 0 auto 1.75rem; line-height: 1.65;">
-                    Hiện tại hệ thống đã mở <strong>26 chủ đề đầu tiên (Topic 01 đến Topic 26)</strong> để các bạn luyện tập. Các chủ đề tiếp theo đang được cập nhật và sẽ mở theo lịch học của cô!
+                    Hiện tại hệ thống đã mở <strong>28 chủ đề đầu tiên (Topic 01 đến Topic 28)</strong> để các bạn luyện tập. Các chủ đề tiếp theo đang được cập nhật và sẽ mở theo lịch học của cô!
                 </p>
                 <div style="display: flex; justify-content: center; gap: 0.65rem; flex-wrap: wrap;">
                     <button type="button" class="btn" onclick="renderPracticeTopic(1)" style="background: var(--primary); color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(67, 97, 238, 0.25);">
@@ -9043,6 +9462,12 @@ function renderPracticeTopic(topicId) {
                     </button>
                     <button type="button" class="btn" onclick="renderPracticeTopic(26)" style="background: #e11d48; color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(225, 29, 72, 0.25);">
                         Topic 26
+                    </button>
+                    <button type="button" class="btn" onclick="renderPracticeTopic(27)" style="background: #059669; color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(5, 150, 105, 0.25);">
+                        Topic 27
+                    </button>
+                    <button type="button" class="btn" onclick="renderPracticeTopic(28)" style="background: #8b5cf6; color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25);">
+                        Topic 28
                     </button>
                 </div>
             </div>
