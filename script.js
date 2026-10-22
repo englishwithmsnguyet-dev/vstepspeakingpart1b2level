@@ -7434,6 +7434,398 @@ const practiceTopicsData = [
                 ]
             }
         ]
+    },
+    {
+        id: 21,
+        title: "Chủ đề 21: Let's talk about studying English on the Internet",
+        introText: "Let’s talk about studying English on the Internet.",
+        questions: [
+            {
+                qNum: 1,
+                question: "Do you study English on the Internet?",
+                qType: "Yes/No: Do you study [subject] on the Internet?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Trả lời CÓ - Học qua các kênh YouTube và app thông minh, cải thiện phát âm và vốn từ vựng):</div>
+                    <div class="topic-formula-text">
+                        → Yes, definitely. <u>I study English online on a regular basis</u>. I usually follow <span class="formula-bracket-hl">[kênh học trực tuyến]</span>. It allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Trả lời KHÔNG - Dễ mất tập trung trên mạng xã hội, chuộng học lớp trực tiếp để tương tác với thầy cô):</div>
+                    <div class="topic-formula-text">
+                        → Honestly, not really. <u>I tend to get easily distracted by social media notifications</u>. Therefore, I prefer <span class="formula-bracket-hl">[hình thức học trực tiếp - V-ing]</span> because it gives me a chance to <span class="formula-bracket-hl">[lợi ích tương tác - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc thói quen học trực tuyến & Tương tác lớp học]:",
+                        items: [
+                            { en: "study English online on a regular basis", vn: "học tiếng Anh trên mạng một cách đều đặn thường xuyên" },
+                            { en: "tend to get easily distracted by social media notifications", vn: "có xu hướng dễ bị xao nhãng bởi các thông báo mạng xã hội" },
+                            { en: "it allows me to improve my pronunciation", vn: "nó cho phép tôi cải thiện khả năng phát âm của mình" },
+                            { en: "gives me a chance to interact face-to-face with teachers", vn: "mang lại cho tôi cơ hội tương tác trực tiếp với thầy cô" }
+                        ]
+                    },
+                    {
+                        title: "🌐 [Kênh học trực tuyến & Hình thức lớp học]:",
+                        items: [
+                            { en: "educational YouTube channels and language apps", vn: "các kênh YouTube mang tính giáo dục và ứng dụng học ngôn ngữ" },
+                            { en: "free interactive learning websites and podcasts", vn: "các trang web học tập tương tác miễn phí và podcast" },
+                            { en: "attending traditional classroom lessons", vn: "tham gia vào các lớp học truyền thống trực tiếp" },
+                            { en: "joining communicative speaking clubs at local centers", vn: "tham gia các câu lạc bộ luyện nói tại các trung tâm địa phương" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>expand vocabulary range, sharpen communication skills, boost confidence...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Kỹ năng & Tương tác]:",
+                        items: [
+                            { en: "expand everyday vocabulary and colloquial phrases", vn: "mở rộng vốn từ vựng đời thường và các cụm từ giao tiếp thông dụng" },
+                            { en: "interact face-to-face with native teachers", vn: "tương tác trực diện mặt đối mặt với giáo viên bản ngữ" },
+                            { en: "receive immediate feedback on spoken errors", vn: "nhận phản hồi sửa lỗi phát âm và ngữ pháp ngay tức thì" },
+                            { en: "stay fully focused in a disciplined environment", vn: "duy trì sự tập trung tối đa trong một môi trường có tính kỷ luật cao" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Trả lời CÓ - Học qua kênh YouTube & app, cải thiện phát âm và mở rộng từ vựng)",
+                        text: "Yes, definitely. I study English online on a regular basis. I usually follow educational YouTube channels and language apps. It allows me to improve my pronunciation and gives me a chance to expand my everyday vocabulary.",
+                        formatted: `→ Yes, definitely. <u>I study English online on a regular basis</u>. I usually follow <span class="sub-hl">educational YouTube channels and language apps</span>. It allows me to <span class="sub-hl">improve my pronunciation</span> and gives me a chance to <span class="sub-hl">expand my everyday vocabulary</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Trả lời KHÔNG - Dễ bị xao nhãng bởi mạng xã hội, thích học trực tiếp để tương tác với thầy cô)",
+                        text: "Honestly, not really. I tend to get easily distracted by social media notifications. Therefore, I prefer attending traditional classroom lessons because it gives me a chance to interact face-to-face with native teachers.",
+                        formatted: `→ Honestly, not really. <u>I tend to get easily distracted by social media notifications</u>. Therefore, I prefer <span class="sub-hl">attending traditional classroom lessons</span> because it gives me a chance to <span class="sub-hl">interact face-to-face with native teachers</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 2,
+                question: "What do you like about studying English online?",
+                qType: "Wh-question: What do you like about studying English online?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Tính linh hoạt tối đa - Học mọi lúc mọi nơi, tự điều chỉnh tốc độ học phù hợp với lịch trình bận rộn):</div>
+                    <div class="topic-formula-text">
+                        → What I appreciate most is <u>the incredible flexibility of online learning</u>. It allows me to <span class="formula-bracket-hl">[thời gian & địa điểm linh hoạt - Vo]</span> and gives me a chance to <span class="formula-bracket-hl">[tự do điều chỉnh tốc độ - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Kho tài liệu phong phú, miễn phí - Đa dạng bài giảng video và podcast, không tốn học phí đắt đỏ):</div>
+                    <div class="topic-formula-text">
+                        → In my view, <u>the rich variety of free digital materials is the biggest plus</u>. There are countless <span class="formula-bracket-hl">[nguồn học liệu số phong phú]</span>. This allows me to <span class="formula-bracket-hl">[lợi ích tiếp thu - Vo]</span> without <span class="formula-bracket-hl">[chi phí đắt đỏ - V-ing]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc đánh giá ưu điểm học trực tuyến]:",
+                        items: [
+                            { en: "the incredible flexibility of online learning", vn: "sự linh hoạt tuyệt vời của việc học trực tuyến" },
+                            { en: "the rich variety of free digital materials is the biggest plus", vn: "sự phong phú của tài liệu số miễn phí là điểm cộng lớn nhất" },
+                            { en: "allows me to review bite-sized lessons anytime and anywhere", vn: "cho phép tôi xem lại các bài học ngắn gọn mọi lúc mọi nơi" },
+                            { en: "gives me a chance to study at my own pace", vn: "mang lại cơ hội để tôi học theo tốc độ riêng của chính mình" }
+                        ]
+                    },
+                    {
+                        title: "🌐 [Ưu điểm linh hoạt & Nguồn học liệu đa dạng]:",
+                        items: [
+                            { en: "engaging video lectures and authentic podcasts", vn: "các bài giảng video lôi cuốn và podcast từ người bản xứ chuẩn đời thực" },
+                            { en: "interactive exercises with immediate automated scoring", vn: "bài tập tương tác với tính năng chấm điểm tự động tức thì" },
+                            { en: "review bite-sized lessons during daily commutes", vn: "ôn tập các bài học ngắn trong lúc di chuyển hàng ngày" },
+                            { en: "revisit difficult grammar points multiple times", vn: "xem lại các điểm ngữ pháp khó nhiều lần tùy thích" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>maximize time efficiency, optimize learning curve, acquire natural phrasing...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Chủ động & Tiết kiệm]:",
+                        items: [
+                            { en: "study at my own comfortable pace", vn: "học theo nhịp độ tự nhiên và thoải mái của riêng mình" },
+                            { en: "absorb real-life English without paying high tuition fees", vn: "tiếp thu tiếng Anh đời thực mà không phải chi trả học phí đắt đỏ" },
+                            { en: "tailor learning content to personal interests", vn: "điều chỉnh nội dung học tập theo sở thích cá nhân" },
+                            { en: "eliminate exhausting travel time to distant centers", vn: "xóa bỏ thời gian đi lại mệt mỏi tới các trung tâm ở xa" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Sự linh hoạt - Tự học mọi lúc mọi nơi, điều chỉnh tốc độ học phù hợp với bản thân)",
+                        text: "What I appreciate most is the incredible flexibility of online learning. It allows me to review bite-sized lessons anytime and anywhere, and it gives me a chance to study at my own pace.",
+                        formatted: `→ What I appreciate most is <u>the incredible flexibility of online learning</u>. It allows me to <span class="sub-hl">review bite-sized lessons anytime and anywhere</span>, and it gives me a chance to <span class="sub-hl">study at my own pace</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Tài liệu phong phú & miễn phí - Bài giảng và podcast đa dạng, không tốn học phí đắt đỏ)",
+                        text: "In my view, the rich variety of free digital materials is the biggest plus. There are countless engaging video lectures and authentic podcasts. This allows me to absorb real-life English without paying high tuition fees.",
+                        formatted: `→ In my view, <u>the rich variety of free digital materials is the biggest plus</u>. There are countless <span class="sub-hl">engaging video lectures and authentic podcasts</span>. This allows me to <span class="sub-hl">absorb real-life English</span> without <span class="sub-hl">paying high tuition fees</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 3,
+                question: "How often do you use the Internet to learn English?",
+                qType: "Frequency Wh-question: How often do you use the Internet to learn English?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Học hằng ngày - Dành khoảng 30 phút mỗi tối để nghe podcast và ôn flashcard, duy trì phản xạ):</div>
+                    <div class="topic-formula-text">
+                        → I make it a point to <u>use the Internet for English practice almost every day</u>. I usually spend <span class="formula-bracket-hl">[khoảng thời gian mỗi tối]</span>. It gives me a chance to <span class="formula-bracket-hl">[hoạt động rèn luyện 1 - Vo]</span> and helps me <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Ba đến bốn lần mỗi tuần - Những ngày bận rộn thì tranh thủ làm bài đố nhanh 10 phút để giữ đà học):</div>
+                    <div class="topic-formula-text">
+                        → On average, <u>I log on to study about three or four times a week</u>. On hectic days, I only spend <span class="formula-bracket-hl">[khoảng thời gian ngắn]</span> to <span class="formula-bracket-hl">[hoạt động ôn tập nhanh - Vo]</span>. This allows me to <span class="formula-bracket-hl">[mục tiêu duy trì - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc thể hiện tần suất & Quản lý thời gian học]:",
+                        items: [
+                            { en: "make it a point to use the Internet almost every day", vn: "đặt mục tiêu/tạo thói quen sử dụng Internet hầu như mỗi ngày" },
+                            { en: "on average, I log on to study three or four times a week", vn: "tính trung bình, tôi đăng nhập để học khoảng 3 đến 4 lần một tuần" },
+                            { en: "it gives me a chance to listen to English podcasts", vn: "nó mang lại cho tôi cơ hội để nghe podcast tiếng Anh" },
+                            { en: "this allows me to keep my learning momentum", vn: "điều này cho phép tôi giữ vững đà học tập của mình" }
+                        ]
+                    },
+                    {
+                        title: "🌐 [Tần suất & Hoạt động rèn luyện]:",
+                        items: [
+                            { en: "about thirty minutes every evening", vn: "khoảng ba mươi phút mỗi buổi tối" },
+                            { en: "ten minutes to review digital flashcards", vn: "mười phút để xem lại thẻ từ vựng điện tử" },
+                            { en: "listen to conversational podcasts and news stories", vn: "nghe các mẩu tin tức và podcast đàm thoại" },
+                            { en: "do quick interactive quizzes during lunch breaks", vn: "làm các bài trắc nghiệm nhanh trong giờ nghỉ trưa" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>maintain sharp memory, build consistent study habits, prevent knowledge loss...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Duy trì thói quen]:",
+                        items: [
+                            { en: "maintain conversational reflexes in daily life", vn: "duy trì phản xạ đối thoại linh hoạt trong đời sống hàng ngày" },
+                            { en: "keep my learning momentum without feeling overwhelmed", vn: "giữ vững nhịp độ học tập mà không cảm thấy bị quá tải" },
+                            { en: "reinforce newly acquired expressions gradually", vn: "củng cố dần dần các cách diễn đạt vừa mới tiếp thu" },
+                            { en: "build a strong discipline of independent learning", vn: "rèn luyện tính kỷ luật tự giác cao trong việc tự học" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Học hằng ngày - Dành 30 phút mỗi tối nghe podcast và duy trì phản xạ giao tiếp)",
+                        text: "I make it a point to use the Internet for English practice almost every day. I usually spend about thirty minutes every evening. It gives me a chance to listen to English podcasts and helps me maintain conversational reflexes.",
+                        formatted: `→ I make it a point to <u>use the Internet for English practice almost every day</u>. I usually spend <span class="sub-hl">about thirty minutes every evening</span>. It gives me a chance to <span class="sub-hl">listen to English podcasts</span> and helps me <span class="sub-hl">maintain conversational reflexes</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Ba đến bốn lần mỗi tuần - Những ngày bận rộn chỉ ôn flashcard 10 phút để giữ đà học)",
+                        text: "On average, I log on to study about three or four times a week. On hectic days, I only spend ten minutes to review digital flashcards. This allows me to keep my learning momentum without feeling overwhelmed.",
+                        formatted: `→ On average, <u>I log on to study about three or four times a week</u>. On hectic days, I only spend <span class="sub-hl">ten minutes</span> to <span class="sub-hl">review digital flashcards</span>. This allows me to <span class="sub-hl">keep my learning momentum without feeling overwhelmed</span>.`
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: 22,
+        title: "Chủ đề 22: Let's talk about using mobile phones",
+        introText: "Let’s talk about using mobile phones.",
+        questions: [
+            {
+                qNum: 1,
+                question: "How often do you use your mobile phone?",
+                qType: "Frequency Wh-question: How often do you use your mobile phone?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Dùng thường xuyên cả ngày - Thiết bị không thể thiếu cho công việc và liên lạc gia đình):</div>
+                    <div class="topic-formula-text">
+                        → To be honest, <u>I use my mobile phone constantly throughout the day</u>. It's an indispensable tool because it allows me to <span class="formula-bracket-hl">[nhu cầu liên lạc 1 - Vo]</span> and helps me <span class="formula-bracket-hl">[nhu cầu công việc 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Dùng có chừng mực - Chủ động giới hạn thời gian màn hình, cất máy trước khi ngủ để tránh mỏi mắt):</div>
+                    <div class="topic-formula-text">
+                        → I check my phone quite often, but <u>I actively try to limit my daily screen time</u>. I usually <span class="formula-bracket-hl">[hành động giới hạn - Vo]</span>. This allows me to <span class="formula-bracket-hl">[lợi ích sức khỏe 1 - Vo]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc thói quen dùng điện thoại & Kiểm soát thời gian]:",
+                        items: [
+                            { en: "use my mobile phone constantly throughout the day", vn: "sử dụng điện thoại liên tục trong suốt cả ngày" },
+                            { en: "it's an indispensable tool because it allows me to...", vn: "nó là công cụ không thể thiếu vì cho phép tôi..." },
+                            { en: "actively try to limit my daily screen time", vn: "chủ động cố gắng giới hạn thời gian nhìn màn hình mỗi ngày" },
+                            { en: "this allows me to prevent eye strain and sleep better", vn: "điều này cho phép tôi ngăn ngừa mỏi mắt và ngủ ngon hơn" }
+                        ]
+                    },
+                    {
+                        title: "📲 [Mục đích sử dụng & Thói quen lành mạnh]:",
+                        items: [
+                            { en: "handle daily work tasks and coordinate schedules", vn: "xử lý các đầu việc hàng ngày và điều phối lịch trình" },
+                            { en: "keep in touch with my family and close friends", vn: "giữ liên lạc thường xuyên với gia đình và bạn bè thân thiết" },
+                            { en: "turn off non-essential notifications during focus hours", vn: "tắt các thông báo không cần thiết trong những giờ cần tập trung" },
+                            { en: "put digital devices away at least thirty minutes before bed", vn: "cất các thiết bị số đi ít nhất 30 phút trước giờ ngủ" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>maintain physical health, ensure restful sleep, boost productivity...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Cân bằng công nghệ]:",
+                        items: [
+                            { en: "prevent severe eye strain and digital fatigue", vn: "ngăn ngừa tình trạng mỏi mắt nghiêm trọng và kiệt sức do thiết bị số" },
+                            { en: "avoid mindless scrolling on social media feeds", vn: "tránh việc lướt mạng xã hội một cách vô thức, lãng phí thời gian" },
+                            { en: "stay readily accessible for urgent work matters", vn: "luôn sẵn sàng tiếp nhận và phản hồi các vấn đề công việc khẩn cấp" },
+                            { en: "foster deeper face-to-face conversations with family", vn: "thúc đẩy những cuộc trò chuyện trực tiếp sâu sắc hơn bên gia đình" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Dùng thường xuyên cả ngày - Công cụ thiết yếu cho công việc và giữ liên lạc gia đình)",
+                        text: "To be honest, I use my mobile phone constantly throughout the day. It's an indispensable tool because it allows me to handle daily work tasks and helps me keep in touch with my family and friends.",
+                        formatted: `→ To be honest, <u>I use my mobile phone constantly throughout the day</u>. It's an indispensable tool because it allows me to <span class="sub-hl">handle daily work tasks</span> and helps me <span class="sub-hl">keep in touch with my family and friends</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Dùng có chừng mực - Tắt thông báo và cất máy trước khi ngủ để tránh mỏi mắt)",
+                        text: "I check my phone quite often, but I actively try to limit my daily screen time. I usually turn off non-essential notifications and put it away before bed. This allows me to prevent eye strain and gives me a chance to sleep much better.",
+                        formatted: `→ I check my phone quite often, but <u>I actively try to limit my daily screen time</u>. I usually <span class="sub-hl">turn off non-essential notifications and put it away before bed</span>. This allows me to <span class="sub-hl">prevent eye strain</span> and gives me a chance to <span class="sub-hl">sleep much better</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 2,
+                question: "What do you mostly use your phone for?",
+                qType: "Wh-question: What do you mostly use your phone for?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Giải trí thư giãn - Nghe nhạc, xem clip ngắn hài hước để xả stress sau giờ làm việc):</div>
+                    <div class="topic-formula-text">
+                        → Primarily, <u>I rely on my smartphone for leisure and relaxation</u>. I frequently <span class="formula-bracket-hl">[hoạt động giải trí - Vo]</span>. It allows me to <span class="formula-bracket-hl">[lợi ích xả stress 1 - Vo]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích tâm trạng 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Phục vụ học tập và công việc - Tra cứu tài liệu, check email và ghi chú lịch trình):</div>
+                    <div class="topic-formula-text">
+                        → Most of the time, <u>I utilize my phone as a productivity tool for work and study</u>. I often <span class="formula-bracket-hl">[hoạt động hiệu suất - Vo]</span>. This allows me to <span class="formula-bracket-hl">[lợi ích quản lý 1 - Vo]</span> and helps me <span class="formula-bracket-hl">[lợi ích hiệu quả 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc miêu tả mục đích sử dụng điện thoại]:",
+                        items: [
+                            { en: "rely on my smartphone for leisure and relaxation", vn: "phụ thuộc vào điện thoại thông minh để giải trí và thư giãn" },
+                            { en: "utilize my phone as a productivity tool for work and study", vn: "tận dụng điện thoại như một công cụ tăng hiệu suất cho công việc và học tập" },
+                            { en: "it allows me to unwind after hectic working hours", vn: "nó cho phép tôi xả hơi thư giãn sau những giờ làm việc căng thẳng" },
+                            { en: "gives me a chance to boost my mood", vn: "mang lại cho tôi cơ hội nâng cao tâm trạng vui tươi" }
+                        ]
+                    },
+                    {
+                        title: "📲 [Nội dung giải trí & Ứng dụng công việc]:",
+                        items: [
+                            { en: "stream upbeat music and watch entertaining short videos", vn: "nghe nhạc sôi động và xem các video ngắn mang tính giải trí" },
+                            { en: "check urgent emails and look up academic materials", vn: "kiểm tra email khẩn cấp và tra cứu các tài liệu học thuật" },
+                            { en: "manage calendar reminders and to-do lists", vn: "quản lý các nhắc nhở lịch trình và danh sách việc cần làm" },
+                            { en: "chat with teammates about shared projects", vn: "trò chuyện trao đổi với đồng đội về các dự án chung" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>relieve mental exhaustion, streamline daily workflow, optimize personal time...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Hiệu năng & Tâm trạng]:",
+                        items: [
+                            { en: "clear mind of work-related worries temporarily", vn: "tạm thời gạt bỏ khỏi đầu những lo âu liên quan đến công việc" },
+                            { en: "keep all important documents right at fingertips", vn: "giữ mọi tài liệu quan trọng ngay trong tầm tay" },
+                            { en: "coordinate collaborative tasks without delays", vn: "phối hợp các nhiệm vụ nhóm mà không bị đình trệ" },
+                            { en: "stay on top of tight project deadlines", vn: "luôn làm chủ và hoàn thành kịp các hạn chót dự án gắt gao" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Giải trí thư giãn - Nghe nhạc vui tươi và xem video ngắn giải tỏa căng thẳng sau giờ làm)",
+                        text: "Primarily, I rely on my smartphone for leisure and relaxation. I frequently stream upbeat music and watch entertaining short videos. It allows me to unwind after hectic working hours and gives me a chance to boost my mood.",
+                        formatted: `→ Primarily, <u>I rely on my smartphone for leisure and relaxation</u>. I frequently <span class="sub-hl">stream upbeat music and watch entertaining short videos</span>. It allows me to <span class="sub-hl">unwind after hectic working hours</span> and gives me a chance to <span class="sub-hl">boost my mood</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Phục vụ học tập & công việc - Check email khẩn và tra tài liệu giúp quản lý công việc trôi chảy)",
+                        text: "Most of the time, I utilize my phone as a productivity tool for work and study. I often check urgent emails and look up academic materials. This allows me to manage my daily schedule smoothly and helps me stay organized.",
+                        formatted: `→ Most of the time, <u>I utilize my phone as a productivity tool for work and study</u>. I often <span class="sub-hl">check urgent emails and look up academic materials</span>. This allows me to <span class="sub-hl">manage my daily schedule smoothly</span> and helps me <span class="sub-hl">stay organized</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 3,
+                question: "Do you think students should use mobile phones at school?",
+                qType: "Yes/No: Do you think students should [verb]?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Nên dùng nhưng cần quy tắc nghiêm ngặt - Dùng tra cứu tài liệu bài học và làm câu đố tương tác dưới sự giám sát của thầy cô):</div>
+                    <div class="topic-formula-text">
+                        → In my opinion, <u>students should be allowed to use phones, but only under strict supervision</u>. Phones allow learners to <span class="formula-bracket-hl">[hoạt động học tập - Vo]</span> and give them a chance to <span class="formula-bracket-hl">[lợi ích tương tác - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Không nên dùng - Điện thoại gây xao nhãng nghiêm trọng, học sinh không thể tập trung nghe giảng):</div>
+                    <div class="topic-formula-text">
+                        → Personally, <u>I don't think students should bring mobile phones into classrooms</u>. Mobile devices easily cause <span class="formula-bracket-hl">[tác hại mất tập trung]</span>, so students can't <span class="formula-bracket-hl">[hậu quả tiếp thu - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc bày tỏ quan điểm về quy định học đường]:",
+                        items: [
+                            { en: "should be allowed to use phones, but only under strict supervision", vn: "nên được phép dùng điện thoại, nhưng chỉ dưới sự giám sát nghiêm ngặt" },
+                            { en: "don't think students should bring mobile phones into classrooms", vn: "không nghĩ rằng học sinh nên mang điện thoại vào phòng học" },
+                            { en: "phones allow learners to search for reference materials quickly", vn: "điện thoại cho phép người học tìm kiếm tài liệu tham khảo nhanh chóng" },
+                            { en: "give them a chance to participate in interactive quizzes", vn: "mang lại cho các em cơ hội tham gia vào các câu đố tương tác" }
+                        ]
+                    },
+                    {
+                        title: "📲 [Công cụ học tập số & Rủi ro xao nhãng]:",
+                        items: [
+                            { en: "search for reference materials and digital textbooks", vn: "tìm kiếm tài liệu tham khảo và sách giáo khoa điện tử" },
+                            { en: "participate in engaging online quiz competitions", vn: "tham gia vào các cuộc thi đố vui trực tuyến đầy lôi cuốn" },
+                            { en: "incessant social media alerts and mobile gaming", vn: "các chuông báo mạng xã hội liên hồi và việc chơi game trên điện thoại" },
+                            { en: "struggle to pay attention during complex lectures", vn: "chật vật trong việc chú ý nghe giảng trong các bài học phức tạp" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>enhance academic engagement, foster digital literacy, cultivate deep concentration...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Giáo dục & Tập trung]:",
+                        items: [
+                            { en: "absorb key concepts effectively during lectures", vn: "tiếp thu các khái niệm cốt lõi một cách hiệu quả trong bài giảng" },
+                            { en: "develop responsible digital citizenship from school ages", vn: "phát triển ý thức công dân số có trách nhiệm ngay từ lứa tuổi học sinh" },
+                            { en: "prevent cheating during paper exams and quizzes", vn: "ngăn ngừa hành vi gian lận trong các bài kiểm tra trên giấy và bài đố" },
+                            { en: "maintain an orderly and productive classroom atmosphere", vn: "duy trì bầu không khí lớp học nề nếp, trật tự và hiệu quả" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Nên dùng dưới sự giám sát - Tra cứu tài liệu và làm trắc nghiệm giúp giờ học sinh động)",
+                        text: "In my opinion, students should be allowed to use phones, but only under strict supervision. Phones allow learners to search for reference materials quickly and give them a chance to participate in interactive class quizzes.",
+                        formatted: `→ In my opinion, <u>students should be allowed to use phones, but only under strict supervision</u>. Phones allow learners to <span class="sub-hl">search for reference materials quickly</span> and give them a chance to <span class="sub-hl">participate in interactive class quizzes</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Không nên dùng - Điện thoại gây xao nhãng nặng, học sinh không thể tập trung tiếp thu bài giảng)",
+                        text: "Personally, I don't think students should bring mobile phones into classrooms. Mobile devices easily cause major distractions, so students can't focus on lectures or absorb key concepts effectively.",
+                        formatted: `→ Personally, <u>I don't think students should bring mobile phones into classrooms</u>. Mobile devices easily cause <span class="sub-hl">major distractions</span>, so students can't <span class="sub-hl">focus on lectures or absorb key concepts effectively</span>.`
+                    }
+                ]
+            }
+        ]
     }
 ];
 
@@ -7445,16 +7837,16 @@ window.isTopicUnlocked = (topicId) => {
     if (window._currentUserRole === 'teacher') {
         return practiceTopicsData.some(t => t.id === tid);
     }
-    // Unlocked topics 1 to 20
-    return tid >= 1 && tid <= 20;
+    // Unlocked topics 1 to 22
+    return tid >= 1 && tid <= 22;
 };
 
 window.getAllowedTopicIds = () => {
     if (window._currentUserRole === 'teacher') {
         return practiceTopicsData.map(t => t.id);
     }
-    // Unlocked topics 1 to 20
-    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+    // Unlocked topics 1 to 22
+    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22];
 };
 
 window.getAllowedTopicsData = () => {
@@ -7475,7 +7867,7 @@ window.updateTopicSelectDropdowns = () => {
         const currentVal = sel.value;
         sel.querySelectorAll('option').forEach(opt => {
             const val = parseInt(opt.value);
-            if (val >= 1 && val <= 20) {
+            if (val >= 1 && val <= 22) {
                 opt.disabled = false;
                 if (val === 1) opt.textContent = "🎯 Topic 01: Let's talk about hobbies";
                 if (val === 2) opt.textContent = "🎯 Topic 02: Let's talk about video games";
@@ -7497,11 +7889,13 @@ window.updateTopicSelectDropdowns = () => {
                 if (val === 18) opt.textContent = "🎯 Topic 18: Let's talk about holidays";
                 if (val === 19) opt.textContent = "🎯 Topic 19: Let's talk about schools";
                 if (val === 20) opt.textContent = "🎯 Topic 20: Let's talk about learning English";
-            } else if (val >= 21) {
+                if (val === 21) opt.textContent = "🎯 Topic 21: Let's talk about studying English on the Internet";
+                if (val === 22) opt.textContent = "🎯 Topic 22: Let's talk about using mobile phones";
+            } else if (val >= 23) {
                 opt.disabled = true;
             }
         });
-        if (!isTeacher && parseInt(currentVal) > 20) {
+        if (!isTeacher && parseInt(currentVal) > 22) {
             if (sel.id === 'practice-pair-topic2-select') {
                 sel.value = "2";
             } else {
@@ -7756,7 +8150,7 @@ function renderPracticeTopic(topicId) {
                     CHỦ ĐỀ ĐANG KHOÁ (CHỜ CẬP NHẬT)
                 </h2>
                 <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 580px; margin: 0 auto 1.75rem; line-height: 1.65;">
-                    Hiện tại hệ thống đã mở <strong>20 chủ đề đầu tiên (Topic 01 đến Topic 20)</strong> để các bạn luyện tập. Các chủ đề tiếp theo đang được cập nhật và sẽ mở theo lịch học của cô!
+                    Hiện tại hệ thống đã mở <strong>22 chủ đề đầu tiên (Topic 01 đến Topic 22)</strong> để các bạn luyện tập. Các chủ đề tiếp theo đang được cập nhật và sẽ mở theo lịch học của cô!
                 </p>
                 <div style="display: flex; justify-content: center; gap: 0.65rem; flex-wrap: wrap;">
                     <button type="button" class="btn" onclick="renderPracticeTopic(1)" style="background: var(--primary); color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(67, 97, 238, 0.25);">
@@ -7818,6 +8212,12 @@ function renderPracticeTopic(topicId) {
                     </button>
                     <button type="button" class="btn" onclick="renderPracticeTopic(20)" style="background: #059669; color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(5, 150, 105, 0.25);">
                         Topic 20
+                    </button>
+                    <button type="button" class="btn" onclick="renderPracticeTopic(21)" style="background: #7c3aed; color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(124, 58, 237, 0.25);">
+                        Topic 21
+                    </button>
+                    <button type="button" class="btn" onclick="renderPracticeTopic(22)" style="background: #ea580c; color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);">
+                        Topic 22
                     </button>
                 </div>
             </div>
