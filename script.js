@@ -6258,6 +6258,398 @@ const practiceTopicsData = [
                 ]
             }
         ]
+    },
+    {
+        id: 15,
+        title: "Chủ đề 15: Let's talk about shopping habits",
+        introText: "Let’s talk about shopping habits.",
+        questions: [
+            {
+                qNum: 1,
+                question: "Do you often go shopping?",
+                qType: "Yes/No: Do you often [Vo]?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Trả lời CÓ - Đi mua sắm cuối tuần, xả hơi và sắm thực phẩm tươi & nhu yếu phẩm):</div>
+                    <div class="topic-formula-text">
+                        → Yes, definitely. <u>I make a point of going shopping on weekends</u> to purchase <span class="formula-bracket-hl">[mặt hàng thiết yếu]</span>. It gives me a great opportunity to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and helps me <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Trả lời HIẾM KHI - Chỉ mua khi thực sự cần thiết, ưu tiên sàn TMĐT để tiết kiệm thời gian):</div>
+                    <div class="topic-formula-text">
+                        → To be honest, <u>I rarely go window-shopping</u> because I only make a purchase when <span class="formula-bracket-hl">[nhu cầu cấp thiết]</span>. Instead, I prefer <span class="formula-bracket-hl">[hình thức mua sắm trực tuyến]</span>, which enables me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc tần suất & Phương thức mua sắm]:",
+                        items: [
+                            { en: "make a point of going shopping on weekends", vn: "luôn chủ động dành thời gian đi mua sắm vào cuối tuần" },
+                            { en: "rarely go window-shopping", vn: "hiếm khi đi ngắm đồ dạo phố không mục đích" },
+                            { en: "order items via e-commerce platforms", vn: "đặt hàng qua các sàn thương mại điện tử" },
+                            { en: "which enables me to save precious time", vn: "điều này giúp tôi tiết kiệm thời gian quý báu" }
+                        ]
+                    },
+                    {
+                        title: "🛒 [Mặt hàng & Trải nghiệm mua sắm]:",
+                        items: [
+                            { en: "fresh groceries and household essentials", vn: "thực phẩm tươi sống và nhu yếu phẩm gia đình" },
+                            { en: "running out of essential supplies", vn: "khi đã cạn kiệt các đồ dùng thiết yếu" },
+                            { en: "avoid crowded stores and checkout queues", vn: "tránh cửa hàng đông đúc và xếp hàng thanh toán" },
+                            { en: "convenient door-to-door delivery", vn: "giao hàng tận nơi vô cùng tiện lợi" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>clear my mind, unwind after a demanding workweek, save precious time...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Tiện ích & Thông minh]:",
+                        items: [
+                            { en: "hunt for exclusive digital discount vouchers", vn: "săn các mã giảm giá độc quyền trên mạng" },
+                            { en: "inspect item quality firsthand", vn: "tự tay kiểm tra chất lượng sản phẩm trực tiếp" },
+                            { en: "keep daily household operations running smoothly", vn: "giữ cho sinh hoạt gia đình luôn diễn ra suôn sẻ" },
+                            { en: "avoid impulse buying under store marketing pressure", vn: "tránh mua sắm bốc đồng dưới áp lực tiếp thị tại quầy" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Trả lời CÓ - Mua sắm cuối tuần, mua đồ tươi sống và thư giãn sau tuần làm việc)",
+                        text: "Yes, definitely. I make a point of going shopping on weekends to purchase fresh groceries and household essentials. It gives me a great opportunity to clear my mind and helps me unwind after a demanding workweek.",
+                        formatted: `→ Yes, definitely. <u>I make a point of going shopping on weekends</u> to purchase <span class="sub-hl">fresh groceries and household essentials</span>. It gives me a great opportunity to <span class="sub-hl">clear my mind</span> and helps me <span class="sub-hl">unwind after a demanding workweek</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Trả lời HIẾM KHI - Chỉ mua khi hết đồ, đặt online để tránh đông đúc và tiết kiệm thời gian)",
+                        text: "To be honest, I rarely go window-shopping because I only make a purchase when running out of essential supplies. Instead, I prefer ordering items via e-commerce platforms, which enables me to avoid crowded stores and save precious time.",
+                        formatted: `→ To be honest, <u>I rarely go window-shopping</u> because I only make a purchase when <span class="sub-hl">running out of essential supplies</span>. Instead, I prefer <span class="sub-hl">ordering items via e-commerce platforms</span>, which enables me to <span class="sub-hl">avoid crowded stores</span> and <span class="sub-hl">save precious time</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 2,
+                question: "In your free time, who do you often go shopping with?",
+                qType: "Wh-question: Who do you often go shopping with?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Đi cùng mẹ/gia đình - Cùng lựa chọn thực phẩm dinh dưỡng và gắn kết tình cảm gia đình):</div>
+                    <div class="topic-formula-text">
+                        → Most of the time, <u>I truly enjoy going shopping with my mother</u>. We make a habit of <span class="formula-bracket-hl">[hành động cùng nhau]</span>, which allows us to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives us a chance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Đi cùng bạn thân - Nhận những lời khuyên thời trang đắt giá và cải thiện tâm trạng):</div>
+                    <div class="topic-formula-text">
+                        → Whenever I have spare time, <u>I prefer going shopping with my close friends</u>. Not only do they offer <span class="formula-bracket-hl">[lợi ích tư vấn]</span>, but they also help me <span class="formula-bracket-hl">[lợi ích tinh thần - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc thể hiện sở thích đi cùng bạn bè & Người thân]:",
+                        items: [
+                            { en: "truly enjoy going shopping with my mother", vn: "thực sự rất thích đi mua sắm cùng mẹ" },
+                            { en: "make a habit of picking out fresh ingredients", vn: "tạo thói quen cùng chọn mua nguyên liệu tươi ngon" },
+                            { en: "whenever I have spare time, I prefer...", vn: "bất cứ khi nào có thời gian rảnh, tôi thích..." },
+                            { en: "not only do they offer..., but they also...", vn: "họ không chỉ đưa ra... mà còn..." }
+                        ]
+                    },
+                    {
+                        title: "👭 [Đồng hành & Tương tác mua sắm]:",
+                        items: [
+                            { en: "pick out nutritious ingredients together", vn: "cùng nhau lựa chọn các nguyên liệu giàu dinh dưỡng" },
+                            { en: "share lovely everyday stories", vn: "tâm sự những mẩu chuyện đời thường đáng yêu" },
+                            { en: "honest fashion advice and styling tips", vn: "những lời khuyên thời trang chân thành và mẹo phối đồ" },
+                            { en: "lift my spirits through delightful conversations", vn: "vực dậy tinh thần qua những cuộc trò chuyện rôm rả" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>strengthen family bonds, foster closer friendships, relieve daily fatigue...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Gắn kết & Tư vấn]:",
+                        items: [
+                            { en: "prevent buying ill-fitting clothes", vn: "tránh mua phải những bộ trang phục không vừa vặn" },
+                            { en: "share the burden of carrying heavy groceries", vn: "chia sẻ gánh nặng xách những túi đồ nặng" },
+                            { en: "cherish meaningful quality time with loved ones", vn: "trân trọng khoảng thời gian chất lượng bên người thân yêu" },
+                            { en: "enjoy discovering new brands together", vn: "thích thú khám phá những nhãn hàng mới cùng nhau" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Đi cùng mẹ - Cùng chọn nguyên liệu bổ dưỡng và gắn kết tình cảm qua những câu chuyện)",
+                        text: "Most of the time, I truly enjoy going shopping with my mother. We make a habit of picking out nutritious ingredients together, which allows us to strengthen family bonds and gives us a chance to share lovely everyday stories.",
+                        formatted: `→ Most of the time, <u>I truly enjoy going shopping with my mother</u>. We make a habit of <span class="sub-hl">picking out nutritious ingredients together</span>, which allows us to <span class="sub-hl">strengthen family bonds</span> and gives us a chance to <span class="sub-hl">share lovely everyday stories</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Đi cùng bạn thân - Nhận lời khuyên phối đồ hữu ích và nâng cao tâm trạng)",
+                        text: "Whenever I have spare time, I prefer going shopping with my close friends. Not only do they offer honest fashion advice, but they also help me lift my spirits through delightful conversations.",
+                        formatted: `→ Whenever I have spare time, <u>I prefer going shopping with my close friends</u>. Not only do they offer <span class="sub-hl">honest fashion advice</span>, but they also help me <span class="sub-hl">lift my spirits through delightful conversations</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 3,
+                question: "Do you think that you spend too much money on shopping?",
+                qType: "Yes/No: Do you think that you [verb]?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Trả lời KHÔNG - Tuân thủ nghiêm ngặt danh sách mua sắm, tránh mua bốc đồng và quản lý tốt ngân sách):</div>
+                    <div class="topic-formula-text">
+                        → No, definitely not. <u>I strictly stick to a well-planned shopping list</u> whenever I buy things. This disciplined habit prevents me from <span class="formula-bracket-hl">[nguy cơ chi tiêu - V-ing]</span> and allows me to <span class="formula-bracket-hl">[lợi ích tài chính - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Trả lời ĐÔI KHI - Thỉnh thoảng bị cám dỗ bởi khuyến mãi lớn, nhưng đang chủ động kiểm soát chi tiêu):</div>
+                    <div class="topic-formula-text">
+                        → To be honest, <u>I occasionally spend a bit more than intended</u>, especially when seduced by <span class="formula-bracket-hl">[yếu tố kích cầu]</span>. However, I'm taking active steps to <span class="formula-bracket-hl">[hành động kiểm soát - Vo]</span> so that I can <span class="formula-bracket-hl">[mục tiêu tài chính - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc kỷ luật chi tiêu & Tự đánh giá]:",
+                        items: [
+                            { en: "strictly stick to a well-planned shopping list", vn: "tuân thủ nghiêm ngặt danh sách mua sắm đã lên kế hoạch" },
+                            { en: "prevents me from making impulse purchases", vn: "ngăn tôi khỏi việc mua sắm bốc đồng" },
+                            { en: "occasionally spend a bit more than intended", vn: "thỉnh thoảng chi tiêu nhiều hơn một chút so với dự tính" },
+                            { en: "taking active steps to track daily expenses", vn: "đang thực hiện các bước chủ động để theo dõi chi tiêu hằng ngày" }
+                        ]
+                    },
+                    {
+                        title: "💳 [Tài chính & Cám dỗ bán hàng]:",
+                        items: [
+                            { en: "disciplined financial habits", vn: "thói quen tài chính có tính kỷ luật cao" },
+                            { en: "seduced by massive promotional sales", vn: "bị cám dỗ bởi các đợt đại hạ giá khuyến mãi" },
+                            { en: "manage my monthly budget effectively", vn: "quản lý ngân sách hằng tháng một cách hiệu quả" },
+                            { en: "maintain financial security for the future", vn: "duy trì sự an toàn và vững vàng tài chính cho tương lai" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>manage my budget effectively, build a solid emergency fund, achieve financial independence...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Quản lý tiền bạc]:",
+                        items: [
+                            { en: "avoid falling into unnecessary credit card debt", vn: "tránh rơi vào nợ nần thẻ tín dụng không đáng có" },
+                            { en: "distinguish between genuine needs and fleeting desires", vn: "phân biệt rõ giữa nhu cầu thiết yếu và ham muốn nhất thời" },
+                            { en: "allocate more funds for self-development courses", vn: "dành thêm ngân sách cho các khóa học phát triển bản thân" },
+                            { en: "cultivate long-term smart saving habits", vn: "nuôi dưỡng thói quen tích lũy tiết kiệm thông minh lâu dài" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Trả lời KHÔNG - Luôn lên danh sách trước để tránh mua bốc đồng và quản lý tốt ngân sách)",
+                        text: "No, definitely not. I strictly stick to a well-planned shopping list whenever I buy things. This disciplined habit prevents me from making impulse purchases and allows me to manage my monthly budget effectively.",
+                        formatted: `→ No, definitely not. <u>I strictly stick to a well-planned shopping list</u> whenever I buy things. This disciplined habit prevents me from <span class="sub-hl">making impulse purchases</span> and allows me to <span class="sub-hl">manage my monthly budget effectively</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Trả lời ĐÔI KHI - Đôi khi chi quá tay vì các đợt giảm giá lớn, đang nỗ lực kiểm soát)",
+                        text: "To be honest, I occasionally spend a bit more than intended, especially when seduced by massive promotional sales. However, I'm taking active steps to track daily expenses so that I can maintain financial security for the future.",
+                        formatted: `→ To be honest, <u>I occasionally spend a bit more than intended</u>, especially when seduced by <span class="sub-hl">massive promotional sales</span>. However, I'm taking active steps to <span class="sub-hl">track daily expenses</span> so that I can <span class="sub-hl">maintain financial security for the future</span>.`
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: 16,
+        title: "Chủ đề 16: Let's talk about prices and shopping habits",
+        introText: "Let’s talk about prices and shopping habits.",
+        questions: [
+            {
+                qNum: 1,
+                question: "Do you usually check the price before buying something? Why or why not?",
+                qType: "Yes/No + Wh-question: Do you usually check the price before buying something? Why or why not?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Trả lời CÓ - So sánh các nhãn hàng để tối ưu hóa đồng tiền kiếm được và không bị hớ):</div>
+                    <div class="topic-formula-text">
+                        → Yes, absolutely. <u>Checking price tags is a non-negotiable rule for me</u> before making any purchase. It enables me to <span class="formula-bracket-hl">[hành động thông minh 1 - Vo]</span> and helps me <span class="formula-bracket-hl">[lợi ích tài chính 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Trả lời TÙY MÓN - Đồ ăn rẻ mua ngay không đắn đo, đồ công nghệ cao cấp mới tìm hiểu kỹ):</div>
+                    <div class="topic-formula-text">
+                        → Well, <u>it largely depends on the value of the product</u>. While I don't hesitate to purchase <span class="formula-bracket-hl">[mặt hàng thường nhật giá rẻ]</span>, I make sure to <span class="formula-bracket-hl">[hành động cân nhắc - Vo]</span> whenever buying <span class="formula-bracket-hl">[mặt hàng đắt đỏ]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc nguyên tắc mua sắm & Phân loại giá trị]:",
+                        items: [
+                            { en: "checking price tags is a non-negotiable rule for me", vn: "kiểm tra thẻ giá là nguyên tắc bất di bất dịch của tôi" },
+                            { en: "it largely depends on the value of the product", vn: "điều đó phần lớn phụ thuộc vào giá trị của món hàng" },
+                            { en: "while I don't hesitate to purchase...", vn: "trong khi tôi không ngần ngại mua sắm..." },
+                            { en: "make sure to conduct thorough research", vn: "luôn đảm bảo tìm hiểu, nghiên cứu cẩn trọng" }
+                        ]
+                    },
+                    {
+                        title: "🏷️ [So sánh giá & Danh mục hàng hóa]:",
+                        items: [
+                            { en: "compare different brands and retailers", vn: "so sánh giữa các thương hiệu và nhà bán lẻ khác nhau" },
+                            { en: "optimize my hard-earned money without overpaying", vn: "tối ưu hóa đồng tiền mồ hôi công sức mà không bị trả hớ" },
+                            { en: "daily groceries and small snacks", vn: "thực phẩm hằng ngày và các món ăn vặt nhỏ" },
+                            { en: "high-end electronics or designer clothes", vn: "thiết bị điện tử cao cấp hoặc quần áo thiết kế đắt tiền" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>manage finances wisely, avoid financial strain, secure better value for money...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Quyết định thông minh]:",
+                        items: [
+                            { en: "spot deceptive price markups during sales", vn: "nhận diện được các chiêu trò thổi giá ảo trong mùa giảm giá" },
+                            { en: "make conscious and rational purchase choices", vn: "đưa ra những quyết định mua sắm tỉnh táo, có tính toán" },
+                            { en: "find the best balance between price and quality", vn: "tìm được điểm cân bằng tốt nhất giữa giá cả và chất lượng" },
+                            { en: "prevent buyers' remorse after shopping", vn: "ngăn ngừa cảm giác hối hận của người mua sau khi sắm đồ" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Trả lời CÓ - Kiểm tra giá là nguyên tắc bất di bất dịch, so sánh thương hiệu để không bị mua hớ)",
+                        text: "Yes, absolutely. Checking price tags is a non-negotiable rule for me before making any purchase. It enables me to compare different brands and helps me optimize my hard-earned money without overpaying.",
+                        formatted: `→ Yes, absolutely. <u>Checking price tags is a non-negotiable rule for me</u> before making any purchase. It enables me to <span class="sub-hl">compare different brands</span> and helps me <span class="sub-hl">optimize my hard-earned money without overpaying</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Trả lời TÙY MÓN - Đồ ăn nhỏ mua ngay, đồ công nghệ đắt tiền luôn nghiên cứu kỹ lưỡng)",
+                        text: "Well, it largely depends on the value of the product. While I don't hesitate to purchase daily groceries and small snacks, I make sure to conduct thorough research whenever buying high-end electronics or designer clothes.",
+                        formatted: `→ Well, <u>it largely depends on the value of the product</u>. While I don't hesitate to purchase <span class="sub-hl">daily groceries and small snacks</span>, I make sure to <span class="sub-hl">conduct thorough research</span> whenever buying <span class="sub-hl">high-end electronics or designer clothes</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 2,
+                question: "With the increase in prices, do you think more carefully before making a purchase? Why?",
+                qType: "Yes/No + Wh-question: With the increase in prices, do you think more carefully? Why?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Trả lời CÓ - Chi phí sinh hoạt leo thang, ưu tiên nhu yếu phẩm và cắt giảm chi tiêu xa xỉ để lập quỹ dự phòng):</div>
+                    <div class="topic-formula-text">
+                        → Yes, definitely. <u>Given the continuous rise in living costs</u>, I've become much more cautious with my spending. I prioritize <span class="formula-bracket-hl">[nhu cầu thiết yếu]</span> while cutting down on <span class="formula-bracket-hl">[khoản chi xa xỉ]</span> so that I can <span class="formula-bracket-hl">[mục tiêu an toàn - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Trả lời CÓ - Lạm phát buộc phải đắn đo, so sánh giá nhiều nơi và săn mã giảm giá):</div>
+                    <div class="topic-formula-text">
+                        → Yes, without doubt. <u>Price inflation forces me to think twice</u> before tapping my card. I actively <span class="formula-bracket-hl">[hành động so sánh]</span>, which allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc ứng phó bão giá & Thắt chặt chi tiêu]:",
+                        items: [
+                            { en: "given the continuous rise in living costs", vn: "xét trong bối cảnh chi phí sinh hoạt liên tục tăng cao" },
+                            { en: "I've become much more cautious with my spending", vn: "tôi đã trở nên cẩn trọng hơn rất nhiều trong chi tiêu" },
+                            { en: "price inflation forces me to think twice", vn: "lạm phát giá cả buộc tôi phải suy nghĩ đắn đo kỹ càng" },
+                            { en: "hunt for promotion codes and seasonal discounts", vn: "săn lùng các mã khuyến mãi và giảm giá theo mùa" }
+                        ]
+                    },
+                    {
+                        title: "📈 [Lạm phát & Quản lý ngân sách]:",
+                        items: [
+                            { en: "basic necessities and nutritious food", vn: "các nhu yếu phẩm cơ bản và thực phẩm dinh dưỡng" },
+                            { en: "cut down on non-essential entertainment and luxury goods", vn: "cắt giảm chi tiêu giải trí không cần thiết và hàng xa xỉ" },
+                            { en: "build a solid financial safety net", vn: "xây dựng một tấm lưới bảo vệ tài chính vững chắc" },
+                            { en: "maintain a comfortable and stress-free lifestyle", vn: "duy trì một lối sống thoải mái, không vướng bận âu lo" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>cut living expenses, overcome inflation challenges, build financial resilience...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Ứng phó lạm phát]:",
+                        items: [
+                            { en: "cushion against unexpected medical emergencies", vn: "tạo tấm đệm dự phòng trước các sự cố y tế bất ngờ" },
+                            { en: "curb reckless consumption habits", vn: "kìm hãm những thói quen tiêu dùng bừa bãi, vô độ" },
+                            { en: "master the art of frugal living without sacrificing quality", vn: "nắm vững nghệ thuật sống tiết kiệm mà không giảm chất lượng sống" },
+                            { en: "strengthen personal financial discipline", vn: "tăng cường tính kỷ luật tài chính cá nhân" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Trả lời CÓ - Chi phí sinh hoạt tăng cao, ưu tiên nhu yếu phẩm và cắt giảm đồ xa xỉ để lập quỹ dự phòng)",
+                        text: "Yes, definitely. Given the continuous rise in living costs, I've become much more cautious with my spending. I prioritize basic necessities while cutting down on luxury goods so that I can build a financial safety net.",
+                        formatted: `→ Yes, definitely. <u>Given the continuous rise in living costs</u>, I've become much more cautious with my spending. I prioritize <span class="sub-hl">basic necessities</span> while cutting down on <span class="sub-hl">luxury goods</span> so that I can <span class="sub-hl">build a financial safety net</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Trả lời CÓ - Lạm phát buộc phải suy nghĩ kỹ, so sánh nhiều nền tảng và săn mã giảm giá)",
+                        text: "Yes, without doubt. Price inflation forces me to think twice before tapping my card. I actively compare deals across multiple platforms and hunt for promotion codes, which allows me to cut living expenses and maintain a comfortable lifestyle.",
+                        formatted: `→ Yes, without doubt. <u>Price inflation forces me to think twice</u> before tapping my card. I actively <span class="sub-hl">compare deals across multiple platforms</span> and hunt for promotion codes, which allows me to <span class="sub-hl">cut living expenses</span> and <span class="sub-hl">maintain a comfortable lifestyle</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 3,
+                question: "Do you think expensive products always have better quality? Why or why not?",
+                qType: "Yes/No + Wh-question: Do you think expensive products always have better quality? Why or why not?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Trả lời KHÔNG HẲN - Giá cao thường do chi phí quảng cáo và giá trị thương hiệu, đồ tầm trung vẫn rất tốt):</div>
+                    <div class="topic-formula-text">
+                        → Not necessarily. <u>A premium price tag doesn't always guarantee superior quality</u> because much of the cost comes from <span class="formula-bracket-hl">[nguyên nhân đẩy giá]</span>. In reality, many reasonably priced products still offer <span class="formula-bracket-hl">[giá trị thực tế]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Trả lời ĐỒNG Ý PHẦN LỚN - Tiền nào của nấy, hàng cao cấp dùng chất liệu tốt, tinh xảo và bảo hành chu đáo):</div>
+                    <div class="topic-formula-text">
+                        → To a large extent, yes. <u>You usually get what you pay for</u> when buying high-end merchandise. Manufacturers invest heavily in <span class="formula-bracket-hl">[yếu tố chất lượng]</span>, which ensures <span class="formula-bracket-hl">[lợi ích trải nghiệm 1]</span> and provides <span class="formula-bracket-hl">[lợi ích bảo hành 2]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc đánh giá mối liên hệ giữa giá cả & Chất lượng]:",
+                        items: [
+                            { en: "a premium price tag doesn't always guarantee superior quality", vn: "mức giá đắt đỏ không phải lúc nào cũng bảo đảm chất lượng vượt trội" },
+                            { en: "in reality, many reasonably priced products still offer...", vn: "trong thực tế, nhiều sản phẩm giá vừa phải vẫn mang lại..." },
+                            { en: "you usually get what you pay for", vn: "tiền nào của nấy / bạn thường nhận được đúng giá trị với số tiền bỏ ra" },
+                            { en: "manufacturers invest heavily in...", vn: "các nhà sản xuất đầu tư rất mạnh tay vào..." }
+                        ]
+                    },
+                    {
+                        title: "⭐ [Thương hiệu vs Chất lượng thực tế]:",
+                        items: [
+                            { en: "heavy advertising campaigns and brand prestige", vn: "các chiến dịch quảng cáo rầm rộ và uy tín thương hiệu" },
+                            { en: "outstanding durability and high performance", vn: "độ bền bỉ vượt trội và hiệu năng cao" },
+                            { en: "premium materials and rigorous craftsmanship", vn: "chất liệu cao cấp cùng tay nghề gia công tỉ mỉ, chuẩn xác" },
+                            { en: "peace of mind with exceptional customer support", vn: "sự yên tâm tuyệt đối với dịch vụ chăm sóc khách hàng xuất sắc" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>ensure a longer product lifespan, maximize cost-efficiency, avoid deceptive marketing traps...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Giá trị tiêu dùng]:",
+                        items: [
+                            { en: "deliver a smoother user experience in daily life", vn: "mang lại trải nghiệm sử dụng êm ái hơn trong đời sống hằng ngày" },
+                            { en: "protect consumers against counterfeit and defective goods", vn: "bảo vệ người tiêu dùng khỏi hàng giả và hàng lỗi" },
+                            { en: "retain higher resale value over time", vn: "giữ được giá trị bán lại tốt hơn theo thời gian" },
+                            { en: "reflect personal aesthetic taste and social status", vn: "phản ánh gu thẩm mỹ cá nhân và vị thế xã hội" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Trả lời KHÔNG HẲN - Giá đắt do quảng cáo và tên tuổi thương hiệu, đồ tầm trung vẫn có độ bền xuất sắc)",
+                        text: "Not necessarily. A premium price tag doesn't always guarantee superior quality because much of the cost comes from heavy advertising campaigns and brand prestige. In reality, many reasonably priced products still offer outstanding durability and high performance.",
+                        formatted: `→ Not necessarily. <u>A premium price tag doesn't always guarantee superior quality</u> because much of the cost comes from <span class="sub-hl">heavy advertising campaigns and brand prestige</span>. In reality, many reasonably priced products still offer <span class="sub-hl">outstanding durability and high performance</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Trả lời ĐỒNG Ý PHẦN LỚN - Tiền nào của nấy, hàng cao cấp có chất liệu tốt, gia công tinh xảo và bảo hành chu đáo)",
+                        text: "To a large extent, yes. You usually get what you pay for when buying high-end merchandise. Manufacturers invest heavily in premium materials and rigorous craftsmanship, which ensures a longer lifespan and provides peace of mind with exceptional customer support.",
+                        formatted: `→ To a large extent, yes. <u>You usually get what you pay for</u> when buying high-end merchandise. Manufacturers invest heavily in <span class="sub-hl">premium materials and rigorous craftsmanship</span>, which ensures <span class="sub-hl">a longer lifespan</span> and provides <span class="sub-hl">peace of mind with exceptional customer support</span>.`
+                    }
+                ]
+            }
+        ]
     }
 ];
 
@@ -6269,16 +6661,16 @@ window.isTopicUnlocked = (topicId) => {
     if (window._currentUserRole === 'teacher') {
         return practiceTopicsData.some(t => t.id === tid);
     }
-    // Unlocked topics 1 to 14
-    return tid >= 1 && tid <= 14;
+    // Unlocked topics 1 to 16
+    return tid >= 1 && tid <= 16;
 };
 
 window.getAllowedTopicIds = () => {
     if (window._currentUserRole === 'teacher') {
         return practiceTopicsData.map(t => t.id);
     }
-    // Unlocked topics 1 to 14
-    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+    // Unlocked topics 1 to 16
+    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 };
 
 window.getAllowedTopicsData = () => {
@@ -6299,7 +6691,7 @@ window.updateTopicSelectDropdowns = () => {
         const currentVal = sel.value;
         sel.querySelectorAll('option').forEach(opt => {
             const val = parseInt(opt.value);
-            if (val >= 1 && val <= 14) {
+            if (val >= 1 && val <= 16) {
                 opt.disabled = false;
                 if (val === 1) opt.textContent = "🎯 Topic 01: Let's talk about hobbies";
                 if (val === 2) opt.textContent = "🎯 Topic 02: Let's talk about video games";
@@ -6315,11 +6707,13 @@ window.updateTopicSelectDropdowns = () => {
                 if (val === 12) opt.textContent = "🎯 Topic 12: Let's talk about health (part 2)";
                 if (val === 13) opt.textContent = "🎯 Topic 13: Talk about your favorite day of the week";
                 if (val === 14) opt.textContent = "🎯 Topic 14: Let's talk about an evening walk";
-            } else if (val >= 15) {
+                if (val === 15) opt.textContent = "🎯 Topic 15: Let's talk about shopping habits";
+                if (val === 16) opt.textContent = "🎯 Topic 16: Let's talk about prices and shopping habits";
+            } else if (val >= 17) {
                 opt.disabled = true;
             }
         });
-        if (!isTeacher && parseInt(currentVal) > 14) {
+        if (!isTeacher && parseInt(currentVal) > 16) {
             if (sel.id === 'practice-pair-topic2-select') {
                 sel.value = "2";
             } else {
@@ -6574,7 +6968,7 @@ function renderPracticeTopic(topicId) {
                     CHỦ ĐỀ ĐANG KHOÁ (CHỜ CẬP NHẬT)
                 </h2>
                 <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 580px; margin: 0 auto 1.75rem; line-height: 1.65;">
-                    Hiện tại hệ thống đã mở <strong>14 chủ đề đầu tiên (Topic 01 đến Topic 14)</strong> để các bạn luyện tập. Các chủ đề tiếp theo đang được cập nhật và sẽ mở theo lịch học của cô!
+                    Hiện tại hệ thống đã mở <strong>16 chủ đề đầu tiên (Topic 01 đến Topic 16)</strong> để các bạn luyện tập. Các chủ đề tiếp theo đang được cập nhật và sẽ mở theo lịch học của cô!
                 </p>
                 <div style="display: flex; justify-content: center; gap: 0.65rem; flex-wrap: wrap;">
                     <button type="button" class="btn" onclick="renderPracticeTopic(1)" style="background: var(--primary); color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(67, 97, 238, 0.25);">
@@ -6618,6 +7012,12 @@ function renderPracticeTopic(topicId) {
                     </button>
                     <button type="button" class="btn" onclick="renderPracticeTopic(14)" style="background: #14b8a6; color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(20, 184, 166, 0.25);">
                         Topic 14
+                    </button>
+                    <button type="button" class="btn" onclick="renderPracticeTopic(15)" style="background: #f97316; color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(249, 115, 22, 0.25);">
+                        Topic 15
+                    </button>
+                    <button type="button" class="btn" onclick="renderPracticeTopic(16)" style="background: #06b6d4; color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(6, 182, 212, 0.25);">
+                        Topic 16
                     </button>
                 </div>
             </div>
