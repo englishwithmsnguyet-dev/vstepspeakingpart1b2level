@@ -6650,6 +6650,398 @@ const practiceTopicsData = [
                 ]
             }
         ]
+    },
+    {
+        id: 17,
+        title: "Chủ đề 17: Let's talk about traveling",
+        introText: "Let’s talk about traveling.",
+        questions: [
+            {
+                qNum: 1,
+                question: "Do you like travelling?",
+                qType: "Yes/No: Do you like [noun/V-ing]?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Trả lời CÓ - Đam mê du lịch, khám phá nền văn hóa mới và mở mang tầm mắt):</div>
+                    <div class="topic-formula-text">
+                        → Yes, definitely. <u>I'm an avid traveler</u> because exploring new destinations allows me to <span class="formula-bracket-hl">[hoạt động trải nghiệm - Vo]</span>. It gives me a great opportunity to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Trả lời KHÔNG - Dễ bị say xe trên những chuyến đi dài, chuộng kỳ nghỉ tại gia yên tĩnh):</div>
+                    <div class="topic-formula-text">
+                        → Honestly, not really. <u>I easily suffer from severe motion sickness</u> on long journeys, which leaves me totally exhausted. Therefore, I prefer <span class="formula-bracket-hl">[hình thức nghỉ ngơi tại nhà]</span>, which allows me to <span class="formula-bracket-hl">[lợi ích - Vo]</span> peacefully.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc bày tỏ sở thích du lịch & Cảm giác cá nhân]:",
+                        items: [
+                            { en: "I'm an avid traveler", vn: "tôi là một người có niềm đam mê du lịch mãnh liệt" },
+                            { en: "immerse myself in local cultures", vn: "hòa mình trọn vẹn vào các nền văn hóa địa phương" },
+                            { en: "suffer from severe motion sickness", vn: "bị chứng say tàu xe nghiêm trọng" },
+                            { en: "enjoy quiet staycations at home", vn: "tận hưởng những kỳ nghỉ tại gia thanh bình" }
+                        ]
+                    },
+                    {
+                        title: "✈️ [Trải nghiệm khám phá & Trạng thái di chuyển]:",
+                        items: [
+                            { en: "breathtaking natural landscapes", vn: "những danh lam thắng cảnh thiên nhiên đẹp ngỡ ngàng" },
+                            { en: "authentic regional cuisines", vn: "các món ăn đặc sản vùng miền chuẩn vị" },
+                            { en: "exhausting long-haul flights and bus rides", vn: "những chuyến bay hay chuyến xe đường dài mệt mỏi" },
+                            { en: "reconnect with inner peace", vn: "kết nối lại với sự bình yên trong tâm hồn" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>broaden my horizons, recharge my batteries, relieve daily stress...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Khám phá & Trải nghiệm]:",
+                        items: [
+                            { en: "step out of my comfort zone", vn: "bước ra khỏi vùng an toàn của bản thân" },
+                            { en: "gain deeper cultural appreciation", vn: "thấu hiểu và trân trọng sâu sắc hơn nét đẹp văn hóa" },
+                            { en: "capture memorable travel photographs", vn: "ghi lại những bức ảnh kỷ niệm du lịch tuyệt đẹp" },
+                            { en: "avoid hectic transit delays and jet lag", vn: "tránh được sự chậm trễ chuyển tiếp mệt mỏi và chứng lệch múi giờ" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Trả lời CÓ - Khám phá điểm đến mới, hòa mình vào văn hóa bản địa và mở mang tầm mắt)",
+                        text: "Yes, definitely. I'm an avid traveler because exploring new destinations allows me to immerse myself in local cultures. It gives me a great opportunity to broaden my horizons and recharge my batteries after long workdays.",
+                        formatted: `→ Yes, definitely. <u>I'm an avid traveler</u> because exploring new destinations allows me to <span class="sub-hl">immerse myself in local cultures</span>. It gives me a great opportunity to <span class="sub-hl">broaden my horizons</span> and <span class="sub-hl">recharge my batteries after long workdays</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Trả lời KHÔNG - Hay bị say tàu xe đường dài, thích kỳ nghỉ tại nhà yên tĩnh để xả hơi)",
+                        text: "Honestly, not really. I easily suffer from severe motion sickness on long journeys, which leaves me totally exhausted. Therefore, I prefer enjoying quiet staycations at home, which allows me to unwind without any traveling stress peacefully.",
+                        formatted: `→ Honestly, not really. <u>I easily suffer from severe motion sickness</u> on long journeys, which leaves me totally exhausted. Therefore, I prefer <span class="sub-hl">enjoying quiet staycations at home</span>, which allows me to <span class="sub-hl">unwind without any traveling stress</span> peacefully.`
+                    }
+                ]
+            },
+            {
+                qNum: 2,
+                question: "Do you like to travel alone or in a group?",
+                qType: "Choice question: Do you like to travel [alone] or [in a group]?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Đi theo nhóm - Chia sẻ chi phí, hỗ trợ lẫn nhau và nhân đôi niềm vui cùng bạn bè/gia đình):</div>
+                    <div class="topic-formula-text">
+                        → Personally, <u>I lean towards traveling in a group</u> with my close friends or family. Exploring places together enables us to <span class="formula-bracket-hl">[hành động hỗ trợ 1 - Vo]</span> while <span class="formula-bracket-hl">[lợi ích gắn kết 2 - V-ing]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Đi một mình - Toàn quyền quyết định lịch trình, không phụ thuộc và tự do trải nghiệm theo nhịp riêng):</div>
+                    <div class="topic-formula-text">
+                        → Without doubt, <u>I'm much more drawn to solo traveling</u> because it gives me absolute freedom. I can <span class="formula-bracket-hl">[sự chủ động - Vo]</span> without having to <span class="formula-bracket-hl">[sự gò bó - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc lựa chọn hình thức du lịch]:",
+                        items: [
+                            { en: "lean towards traveling in a group", vn: "có xu hướng nghiêng về việc đi du lịch theo nhóm" },
+                            { en: "drawn to solo traveling", vn: "bị cuốn hút bởi việc đi du lịch một mình" },
+                            { en: "tailor the itinerary to my own liking", vn: "tự thiết kế lịch trình hoàn toàn theo ý thích cá nhân" },
+                            { en: "compromise with other people's preferences", vn: "phải thỏa hiệp với sở thích của người khác" }
+                        ]
+                    },
+                    {
+                        title: "👥 [Đồng hành & Tự do khám phá]:",
+                        items: [
+                            { en: "split travel expenses and accommodation costs", vn: "chia đều chi phí đi lại và tiền phòng ở" },
+                            { en: "unforgettable shared memories", vn: "những kỷ niệm chung khó quên" },
+                            { en: "spontaneous detours and flexible pace", vn: "những chuyến rẽ hướng ngẫu hứng và nhịp độ linh hoạt" },
+                            { en: "foster self-reliance and independence", vn: "nuôi dưỡng sự tự lực và tính độc lập" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>strengthen interpersonal bonds, boost self-confidence, enjoy personal freedom...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Đi nhóm & Đi đơn]:",
+                        items: [
+                            { en: "ensure safety and security in unfamiliar areas", vn: "đảm bảo an toàn và an ninh ở những vùng đất xa lạ" },
+                            { en: "take candid photos of each other effortlessly", vn: "chụp những bức ảnh tự nhiên cho nhau một cách dễ dàng" },
+                            { en: "disconnect from social obligations completely", vn: "hoàn toàn ngắt kết nối khỏi các nghĩa vụ xã giao" },
+                            { en: "make new local friends more easily on the road", vn: "dễ dàng kết thêm bạn mới địa phương trên đường đi" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Đi theo nhóm bạn thân/gia đình - Chia sẻ chi phí và lưu giữ những kỷ niệm đẹp cùng nhau)",
+                        text: "Personally, I lean towards traveling in a group with my close friends or family. Exploring places together enables us to split travel expenses while creating unforgettable shared memories through mutual support.",
+                        formatted: `→ Personally, <u>I lean towards traveling in a group</u> with my close friends or family. Exploring places together enables us to <span class="sub-hl">split travel expenses</span> while <span class="sub-hl">creating unforgettable shared memories through mutual support</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Đi một mình - Tự do tuyệt đối, thiết kế lịch trình theo ý mình mà không cần thỏa hiệp)",
+                        text: "Without doubt, I'm much more drawn to solo traveling because it gives me absolute freedom. I can tailor the itinerary to my own liking without having to compromise with other people's preferences.",
+                        formatted: `→ Without doubt, <u>I'm much more drawn to solo traveling</u> because it gives me absolute freedom. I can <span class="sub-hl">tailor the itinerary to my own liking</span> without having to <span class="sub-hl">compromise with other people's preferences</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 3,
+                question: "In which season do you prefer to travel?",
+                qType: "Wh-question: In which season do you prefer to travel?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Mùa thu - Thời tiết se lạnh, dịu mát, cảnh sắc lãng mạn và tránh mùa cao điểm đông đúc):</div>
+                    <div class="topic-formula-text">
+                        → In my opinion, <u>autumn is hands down the best time to travel</u> because the weather is pleasantly mild. It allows travelers to <span class="formula-bracket-hl">[hoạt động ngoài trời - Vo]</span> without <span class="formula-bracket-hl">[sự khó chịu - V-ing]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Mùa hè - Nắng rực rỡ, lý tưởng cho các chuyến nghỉ dưỡng biển và tham gia thể thao dưới nước):</div>
+                    <div class="topic-formula-text">
+                        → Personally, <u>I have a strong preference for summer trips</u> because of the bright sunshine. It creates ideal conditions to <span class="formula-bracket-hl">[hoạt động biển 1 - Vo]</span> and <span class="formula-bracket-hl">[hoạt động biển 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc bày tỏ thời điểm du lịch yêu thích]:",
+                        items: [
+                            { en: "autumn is hands down the best time to travel", vn: "mùa thu chắc chắn là thời điểm tuyệt vời nhất để du lịch" },
+                            { en: "have a strong preference for summer trips", vn: "đặc biệt yêu thích những chuyến đi vào mùa hè" },
+                            { en: "creates ideal conditions to [Vo]", vn: "tạo điều kiện lý tưởng để làm gì" },
+                            { en: "without suffering from scorching heat", vn: "mà không phải chịu đựng cái nóng gay gắt" }
+                        ]
+                    },
+                    {
+                        title: "☀️ [Thời tiết & Trải nghiệm theo mùa]:",
+                        items: [
+                            { en: "pleasantly mild and crisp air", vn: "không khí mát mẻ, dễ chịu và thanh mát" },
+                            { en: "long scenic walks and nature exploration", vn: "những chuyến tản bộ ngắm cảnh dài và khám phá thiên nhiên" },
+                            { en: "refreshing coastal waters and sandy beaches", vn: "làn nước biển mát lành và những bãi cát trắng" },
+                            { en: "exciting water sports like scuba diving and surfing", vn: "các môn thể thao dưới nước hấp dẫn như lặn biển và lướt sóng" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>boost vitality, connect with nature, escape scorching weather...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Theo mùa]:",
+                        items: [
+                            { en: "take advantage of off-peak travel discounts", vn: "tận dụng các ưu đãi giảm giá mùa du lịch thấp điểm" },
+                            { en: "capture stunning golden foliage landscapes", vn: "chụp những khung cảnh lá vàng rực rỡ tuyệt mỹ" },
+                            { en: "replenish natural vitamin D under the sun", vn: "bổ sung vitamin D tự nhiên dưới ánh nắng chan hòa" },
+                            { en: "avoid tourist congestion at famous landmarks", vn: "tránh được cảnh ùn ứ du khách tại các danh lam thắng cảnh" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Mùa thu - Tiết trời dịu mát, tản bộ ngắm cảnh mà không lo nắng gắt hay mưa bão)",
+                        text: "In my opinion, autumn is hands down the best time to travel because the weather is pleasantly mild. It allows travelers to enjoy long scenic walks without suffering from scorching heat or sudden downpours.",
+                        formatted: `→ In my opinion, <u>autumn is hands down the best time to travel</u> because the weather is pleasantly mild. It allows travelers to <span class="sub-hl">enjoy long scenic walks</span> without <span class="sub-hl">suffering from scorching heat or sudden downpours</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Mùa hè - Nắng ấm rực rỡ, lý tưởng để tắm biển và tham gia thể thao dưới nước)",
+                        text: "Personally, I have a strong preference for summer trips because of the bright sunshine. It creates ideal conditions to dive into refreshing coastal waters and take part in exciting water sports.",
+                        formatted: `→ Personally, <u>I have a strong preference for summer trips</u> because of the bright sunshine. It creates ideal conditions to <span class="sub-hl">dive into refreshing coastal waters</span> and <span class="sub-hl">take part in exciting water sports</span>.`
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: 18,
+        title: "Chủ đề 18: Let's talk about holidays",
+        introText: "Let’s talk about holidays.",
+        questions: [
+            {
+                qNum: 1,
+                question: "Where did you go on your last holiday?",
+                qType: "Past Wh-question: Where did you go on your last holiday?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Đi du lịch biển Đà Nẵng cùng gia đình - Tận hưởng biển xanh, hải sản tươi và gắn kết tình cảm):</div>
+                    <div class="topic-formula-text">
+                        → On my last vacation, <u>I took a four-day trip to Da Nang with my family</u>. We made the most of our stay by <span class="formula-bracket-hl">[hoạt động nghỉ dưỡng 1 - V-ing]</span> and <span class="formula-bracket-hl">[hoạt động nghỉ dưỡng 2 - V-ing]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Về quê thăm ông bà và đại gia đình - Không gian thanh bình, tách biệt khỏi sự ngột ngạt của đô thị):</div>
+                    <div class="topic-formula-text">
+                        → During my recent holiday, <u>I headed back to my peaceful countryside hometown</u> to visit my grandparents. It was a wonderful opportunity to <span class="formula-bracket-hl">[hoạt động sum vầy 1 - Vo]</span> and <span class="formula-bracket-hl">[lợi ích tĩnh dưỡng 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc kể về kỳ nghỉ gần nhất]:",
+                        items: [
+                            { en: "took a four-day trip to [destination] with family", vn: "đã có một chuyến đi bốn ngày tới... cùng gia đình" },
+                            { en: "made the most of our stay by [V-ing]", vn: "tận dụng tối đa chuyến đi bằng cách..." },
+                            { en: "headed back to my peaceful countryside hometown", vn: "đã quay trở về quê hương nông thôn yên bình của mình" },
+                            { en: "gather around cozy home-cooked meals", vn: "quây quần bên những mâm cơm gia đình ấm cúng" }
+                        ]
+                    },
+                    {
+                        title: "🏖️ [Nghỉ dưỡng biển & Sum họp miền quê]:",
+                        items: [
+                            { en: "stroll along pristine beaches", vn: "tản bộ dọc theo những bãi biển nguyên sơ, trong lành" },
+                            { en: "savor fresh seafood at seaside restaurants", vn: "thưởng thức hải sản tươi ngon tại nhà hàng ven biển" },
+                            { en: "escape the suffocating hustle of the city", vn: "thoát khỏi sự xô bồ, ngột ngạt của chốn thành thị" },
+                            { en: "heartwarming conversations with elderly relatives", vn: "những cuộc trò chuyện ấm áp với người thân lớn tuổi" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>strengthen family bonds, recharge energy, find inner peace...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Kỷ niệm & Tĩnh dưỡng]:",
+                        items: [
+                            { en: "breathe in crisp unpolluted country air", vn: "hít thở bầu không khí làng quê trong lành, không khói bụi" },
+                            { en: "strengthen generational connection through storytelling", vn: "thắt chặt sợi dây gắn kết giữa các thế hệ qua những mẩu chuyện xưa" },
+                            { en: "capture candid family portraits for keepsakes", vn: "chụp những bức ảnh gia đình tự nhiên để lưu giữ kỷ niệm" },
+                            { en: "unplug completely from work emails and notifications", vn: "ngắt kết nối hoàn toàn khỏi email và thông báo công việc" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Đi nghỉ mát Đà Nẵng cùng gia đình - Tản bộ bờ biển nguyên sơ và thưởng thức hải sản tươi)",
+                        text: "On my last vacation, I took a four-day trip to Da Nang with my family. We made the most of our stay by strolling along pristine beaches and savoring fresh seafood at lively seaside restaurants.",
+                        formatted: `→ On my last vacation, <u>I took a four-day trip to Da Nang with my family</u>. We made the most of our stay by <span class="sub-hl">strolling along pristine beaches</span> and <span class="sub-hl">savoring fresh seafood at lively seaside restaurants</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Về quê thăm ông bà - Quây quần bên mâm cơm gia đình ấm cúng và tránh xa sự ngột ngạt thành thị)",
+                        text: "During my recent holiday, I headed back to my peaceful countryside hometown to visit my grandparents. It was a wonderful opportunity to gather around cozy home-cooked meals and escape the suffocating hustle of the city.",
+                        formatted: `→ During my recent holiday, <u>I headed back to my peaceful countryside hometown</u> to visit my grandparents. It was a wonderful opportunity to <span class="sub-hl">gather around cozy home-cooked meals</span> and <span class="sub-hl">escape the suffocating hustle of the city</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 2,
+                question: "Do you like holidays?",
+                qType: "Yes/No: Do you like [noun]?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Rất thích kỳ nghỉ - Thời gian quý báu để phục hồi sức khỏe thể chất và nuôi dưỡng tâm hồn):</div>
+                    <div class="topic-formula-text">
+                        → Yes, absolutely. <u>Holidays are vital for our well-being</u> because they give us a well-deserved break from tight deadlines. Having free time allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Không thích lắm - Ngày lễ các điểm du lịch quá tải, chen chúc, giá cả tăng vọt gây mệt mỏi):</div>
+                    <div class="topic-formula-text">
+                        → To be honest, <u>I have mixed feelings about major holidays</u>. Popular tourist attractions are consistently <span class="formula-bracket-hl">[thực trạng quá tải]</span>, which turns relaxing trips into <span class="formula-bracket-hl">[trải nghiệm mệt mỏi]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc quan điểm về ngày nghỉ lễ]:",
+                        items: [
+                            { en: "holidays are vital for our well-being", vn: "những kỳ nghỉ là điều thiết yếu cho sức khỏe và hạnh phúc của chúng ta" },
+                            { en: "give us a well-deserved break from tight deadlines", vn: "mang lại cho ta kỳ nghỉ ngơi xứng đáng sau những hạn chót căng thẳng" },
+                            { en: "I have mixed feelings about major holidays", vn: "tôi có cảm xúc lẫn lộn, không hẳn thích các kỳ nghỉ lễ lớn" },
+                            { en: "turns relaxing trips into exhausting ordeals", vn: "biến những chuyến đi thư giãn thành những trải nghiệm đầy mệt mỏi" }
+                        ]
+                    },
+                    {
+                        title: "🌴 [Tái tạo năng lượng & Quá tải mùa lễ]:",
+                        items: [
+                            { en: "catch up on quality sleep", vn: "ngủ bù cho đủ giấc và sâu giấc" },
+                            { en: "pursue personal passions without feeling rushed", vn: "theo đuổi đam mê cá nhân mà không phải vội vã" },
+                            { en: "packed with noisy crowds and sky-high prices", vn: "chật ních đám đông ồn ào và giá cả trên trời" },
+                            { en: "unreasonable price surges for services", vn: "tình trạng giá dịch vụ bị đẩy lên cao vô lý" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>recharge energy, maintain work-life balance, prevent chronic burnout...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Cân bằng cuộc sống]:",
+                        items: [
+                            { en: "reset mental focus before launching new projects", vn: "cài đặt lại sự tập trung của tâm trí trước khi khởi động dự án mới" },
+                            { en: "spend uninterrupted hours with children and parents", vn: "dành trọn những giờ phút không bị gián đoạn bên con cái và cha mẹ" },
+                            { en: "avoid unnecessary travel expenditures during peak seasons", vn: "tránh các khoản chi tiêu du lịch đắt đỏ không cần thiết trong mùa cao điểm" },
+                            { en: "practice mindfulness and slow living at home", vn: "thực hành chánh niệm và lối sống chậm rãi, bình thản tại gia" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Rất thích - Khoảng nghỉ xứng đáng khỏi deadline, ngủ sâu giấc và theo đuổi đam mê)",
+                        text: "Yes, absolutely. Holidays are vital for our well-being because they give us a well-deserved break from tight deadlines. Having free time allows me to catch up on quality sleep and pursue personal passions without feeling rushed.",
+                        formatted: `→ Yes, absolutely. <u>Holidays are vital for our well-being</u> because they give us a well-deserved break from tight deadlines. Having free time allows me to <span class="sub-hl">catch up on quality sleep</span> and <span class="sub-hl">pursue personal passions without feeling rushed</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Không hẳn thích - Điểm du lịch ngày lễ đông nghịt, giá cả đắt đỏ biến chuyến đi thành mệt mỏi)",
+                        text: "To be honest, I have mixed feelings about major holidays. Popular tourist attractions are consistently packed with noisy crowds and sky-high prices, which turns relaxing trips into exhausting ordeals.",
+                        formatted: `→ To be honest, <u>I have mixed feelings about major holidays</u>. Popular tourist attractions are consistently <span class="sub-hl">packed with noisy crowds and sky-high prices</span>, which turns relaxing trips into <span class="sub-hl">exhausting ordeals</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 3,
+                question: "What do people in your country usually do during holidays?",
+                qType: "Wh-question: What do people usually do during [holiday]?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Về quê đoàn tụ với cha mẹ, cùng nấu các mâm cơm cổ truyền và thăm viếng họ hàng):</div>
+                    <div class="topic-formula-text">
+                        → In my country, <u>the vast majority of people choose to return to their hometowns</u>. They place high value on <span class="formula-bracket-hl">[hoạt động truyền thống 1 - V-ing]</span>, which helps <span class="formula-bracket-hl">[lợi ích gắn kết 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Giới trẻ và các gia đình thành thị chọn đi nghỉ dưỡng ở biển hoặc núi để giải tỏa áp lực):</div>
+                    <div class="topic-formula-text">
+                        → On the other hand, <u>many modern families and young people opt for getaway trips</u> to famous destinations. Taking short vacations allows them to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> while <span class="formula-bracket-hl">[lợi ích 2 - V-ing]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc miêu tả hoạt động cộng đồng trong dịp lễ]:",
+                        items: [
+                            { en: "the vast majority of people choose to return home", vn: "đại đa số người dân đều lựa chọn trở về quê nhà" },
+                            { en: "place high value on preparing traditional feasts", vn: "rất coi trọng việc tự tay chuẩn bị những mâm cỗ truyền thống" },
+                            { en: "opt for getaway trips to coastal cities", vn: "lựa chọn các chuyến đi nghỉ dưỡng tới những thành phố biển" },
+                            { en: "soaking in vibrant festive vibes", vn: "hòa mình trọn vẹn vào bầu không khí lễ hội sôi động" }
+                        ]
+                    },
+                    {
+                        title: "🎉 [Nét đẹp cổ truyền & Nghỉ dưỡng hiện đại]:",
+                        items: [
+                            { en: "preparing traditional feasts and visiting ancestral graves", vn: "chuẩn bị những mâm cỗ truyền thống và đi viếng mộ tổ tiên" },
+                            { en: "preserve core cultural traditions across generations", vn: "bảo tồn các giá trị truyền thống cốt lõi qua các thế hệ" },
+                            { en: "famous coastal cities or mountain retreats", vn: "các thành phố biển nổi tiếng hoặc các khu nghỉ dưỡng trên núi" },
+                            { en: "decompress from hectic work routines", vn: "xả hơi thư giãn khỏi những guồng quay công việc bộn bề" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>strengthen communal spirit, recharge batteries, enrich life experience...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Văn hóa & Du lịch]:",
+                        items: [
+                            { en: "exchange heartfelt well-wishes and lucky money", vn: "trao nhau những lời chúc chân thành và tiền lì xì may mắn" },
+                            { en: "support local tourism and hospitality businesses", vn: "ủng hộ ngành du lịch và dịch vụ lưu trú địa phương" },
+                            { en: "strengthen neighborhood solidarity through community festivals", vn: "thắt chặt tình làng nghĩa xóm qua các lễ hội cộng đồng" },
+                            { en: "gain fresh inspiration for career achievements", vn: "nạp thêm nguồn cảm hứng mới mẻ cho sự nghiệp" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Về quê sum họp gia đình - Nấu mâm cỗ truyền thống, giữ gìn nét đẹp văn hóa qua các thế hệ)",
+                        text: "In my country, the vast majority of people choose to return to their hometowns. They place high value on preparing traditional feasts and visiting ancestral graves, which helps preserve core cultural traditions across generations.",
+                        formatted: `→ In my country, <u>the vast majority of people choose to return to their hometowns</u>. They place high value on <span class="sub-hl">preparing traditional feasts and visiting ancestral graves</span>, which helps <span class="sub-hl">preserve core cultural traditions across generations</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Đi nghỉ dưỡng biển/núi - Xả stress khỏi công việc bộn bề và hòa mình vào không khí lễ hội sôi động)",
+                        text: "On the other hand, many modern families and young people opt for getaway trips to famous coastal cities or mountain retreats. Taking short vacations allows them to decompress from hectic work routines while soaking in vibrant festive vibes.",
+                        formatted: `→ On the other hand, <u>many modern families and young people opt for getaway trips</u> to famous coastal cities or mountain retreats. Taking short vacations allows them to <span class="sub-hl">decompress from hectic work routines</span> while <span class="sub-hl">soaking in vibrant festive vibes</span>.`
+                    }
+                ]
+            }
+        ]
     }
 ];
 
@@ -6661,16 +7053,16 @@ window.isTopicUnlocked = (topicId) => {
     if (window._currentUserRole === 'teacher') {
         return practiceTopicsData.some(t => t.id === tid);
     }
-    // Unlocked topics 1 to 16
-    return tid >= 1 && tid <= 16;
+    // Unlocked topics 1 to 18
+    return tid >= 1 && tid <= 18;
 };
 
 window.getAllowedTopicIds = () => {
     if (window._currentUserRole === 'teacher') {
         return practiceTopicsData.map(t => t.id);
     }
-    // Unlocked topics 1 to 16
-    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+    // Unlocked topics 1 to 18
+    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
 };
 
 window.getAllowedTopicsData = () => {
@@ -6691,7 +7083,7 @@ window.updateTopicSelectDropdowns = () => {
         const currentVal = sel.value;
         sel.querySelectorAll('option').forEach(opt => {
             const val = parseInt(opt.value);
-            if (val >= 1 && val <= 16) {
+            if (val >= 1 && val <= 18) {
                 opt.disabled = false;
                 if (val === 1) opt.textContent = "🎯 Topic 01: Let's talk about hobbies";
                 if (val === 2) opt.textContent = "🎯 Topic 02: Let's talk about video games";
@@ -6709,11 +7101,13 @@ window.updateTopicSelectDropdowns = () => {
                 if (val === 14) opt.textContent = "🎯 Topic 14: Let's talk about an evening walk";
                 if (val === 15) opt.textContent = "🎯 Topic 15: Let's talk about shopping habits";
                 if (val === 16) opt.textContent = "🎯 Topic 16: Let's talk about prices and shopping habits";
-            } else if (val >= 17) {
+                if (val === 17) opt.textContent = "🎯 Topic 17: Let's talk about traveling";
+                if (val === 18) opt.textContent = "🎯 Topic 18: Let's talk about holidays";
+            } else if (val >= 19) {
                 opt.disabled = true;
             }
         });
-        if (!isTeacher && parseInt(currentVal) > 16) {
+        if (!isTeacher && parseInt(currentVal) > 18) {
             if (sel.id === 'practice-pair-topic2-select') {
                 sel.value = "2";
             } else {
@@ -6968,7 +7362,7 @@ function renderPracticeTopic(topicId) {
                     CHỦ ĐỀ ĐANG KHOÁ (CHỜ CẬP NHẬT)
                 </h2>
                 <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 580px; margin: 0 auto 1.75rem; line-height: 1.65;">
-                    Hiện tại hệ thống đã mở <strong>16 chủ đề đầu tiên (Topic 01 đến Topic 16)</strong> để các bạn luyện tập. Các chủ đề tiếp theo đang được cập nhật và sẽ mở theo lịch học của cô!
+                    Hiện tại hệ thống đã mở <strong>18 chủ đề đầu tiên (Topic 01 đến Topic 18)</strong> để các bạn luyện tập. Các chủ đề tiếp theo đang được cập nhật và sẽ mở theo lịch học của cô!
                 </p>
                 <div style="display: flex; justify-content: center; gap: 0.65rem; flex-wrap: wrap;">
                     <button type="button" class="btn" onclick="renderPracticeTopic(1)" style="background: var(--primary); color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(67, 97, 238, 0.25);">
@@ -7018,6 +7412,12 @@ function renderPracticeTopic(topicId) {
                     </button>
                     <button type="button" class="btn" onclick="renderPracticeTopic(16)" style="background: #06b6d4; color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(6, 182, 212, 0.25);">
                         Topic 16
+                    </button>
+                    <button type="button" class="btn" onclick="renderPracticeTopic(17)" style="background: #3b82f6; color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);">
+                        Topic 17
+                    </button>
+                    <button type="button" class="btn" onclick="renderPracticeTopic(18)" style="background: #ec4899; color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(236, 72, 153, 0.25);">
+                        Topic 18
                     </button>
                 </div>
             </div>
