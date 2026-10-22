@@ -7826,6 +7826,398 @@ const practiceTopicsData = [
                 ]
             }
         ]
+    },
+    {
+        id: 23,
+        title: "Chủ đề 23: Let's talk about your dream job",
+        introText: "Let’s talk about your dream job.",
+        questions: [
+            {
+                qNum: 1,
+                question: "What was your dream job when you were a child? Why?",
+                qType: "Past Wh-question: What was your dream job when you were a child? Why?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Giáo viên - Mong muốn giảng dạy, truyền cảm hứng và lan tỏa tri thức hữu ích cho trẻ thơ):</div>
+                    <div class="topic-formula-text">
+                        → When I was a child, <u>I always dreamed of becoming an inspiring teacher</u>. I loved the idea of <span class="formula-bracket-hl">[hoạt động sư phạm - V-ing]</span> because it allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Bác sĩ - Mong muốn khám chữa bệnh và cứu giúp sinh mạng người khác):</div>
+                    <div class="topic-formula-text">
+                        → Throughout my childhood, <u>my ultimate dream was to become a dedicated doctor</u>. I genuinely wanted to <span class="formula-bracket-hl">[mục tiêu y đức - Vo]</span>. That career gives me a chance to <span class="formula-bracket-hl">[lợi ích nhân văn - Vo]</span> and helps me <span class="formula-bracket-hl">[lợi ích cộng đồng - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc hồi tưởng ước mơ nghề nghiệp thời thơ ấu]:",
+                        items: [
+                            { en: "always dreamed of becoming an inspiring teacher", vn: "luôn mơ ước trở thành một người thầy truyền cảm hứng" },
+                            { en: "my ultimate dream was to become a dedicated doctor", vn: "ước mơ lớn nhất của tôi từng là trở thành một bác sĩ tận tâm" },
+                            { en: "allows me to shape young minds", vn: "cho phép tôi uốn nắn và nuôi dưỡng tâm hồn trẻ thơ" },
+                            { en: "gives me a chance to make a positive impact on society", vn: "mang lại cho tôi cơ hội tạo ra tác động tích cực cho xã hội" }
+                        ]
+                    },
+                    {
+                        title: "👩‍🏫 [Lĩnh vực giáo dục & Y tế cao quý]:",
+                        items: [
+                            { en: "sharing knowledge with young learners", vn: "sẻ chia tri thức cùng các thế hệ học trò" },
+                            { en: "cure illnesses and alleviate physical pain", vn: "chữa lành bệnh tật và làm dịu đi những nỗi đau thể xác" },
+                            { en: "save precious lives and support underprivileged patients", vn: "cứu giúp những sinh mạng quý giá và hỗ trợ bệnh nhân có hoàn cảnh khó khăn" },
+                            { en: "foster moral values and intellectual curiosity", vn: "nuôi dưỡng các giá trị đạo đức và niềm đam mê tìm tòi học hỏi" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>find deep fulfillment, contribute to community, unlock potential...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Giá trị nhân văn]:",
+                        items: [
+                            { en: "inspire the next generation of confident learners", vn: "truyền cảm hứng cho thế hệ người học tự tin tiếp theo" },
+                            { en: "gain immense professional satisfaction every day", vn: "gặt hái sự thỏa nguyện nghề nghiệp to lớn mỗi ngày" },
+                            { en: "build profound trust with grateful patients", vn: "gây dựng niềm tin sâu sắc với những bệnh nhân biết ơn" },
+                            { en: "bridge educational gaps for disadvantaged children", vn: "xóa nhòa khoảng cách giáo dục cho trẻ em yếu thế" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Giáo viên - Yêu thích việc chia sẻ tri thức, uốn nắn nhân cách và tạo ảnh hưởng tích cực)",
+                        text: "When I was a child, I always dreamed of becoming an inspiring teacher. I loved the idea of sharing knowledge with young learners because it allows me to shape young minds and gives me a chance to make a positive impact on society.",
+                        formatted: `→ When I was a child, <u>I always dreamed of becoming an inspiring teacher</u>. I loved the idea of <span class="sub-hl">sharing knowledge with young learners</span> because it allows me to <span class="sub-hl">shape young minds</span> and gives me a chance to <span class="sub-hl">make a positive impact on society</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Bác sĩ - Mong muốn chữa bệnh cứu người và hỗ trợ bệnh nhân có hoàn cảnh khó khăn)",
+                        text: "Throughout my childhood, my ultimate dream was to become a dedicated doctor. I genuinely wanted to cure illnesses and alleviate physical pain. That career gives me a chance to save precious lives and helps me support underprivileged patients.",
+                        formatted: `→ Throughout my childhood, <u>my ultimate dream was to become a dedicated doctor</u>. I genuinely wanted to <span class="sub-hl">cure illnesses and alleviate physical pain</span>. That career gives me a chance to <span class="sub-hl">save precious lives</span> and helps me <span class="sub-hl">support underprivileged patients</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 2,
+                question: "Do you have a part-time job on weekends? If yes, what is it? If not, would you like to have one?",
+                qType: "Yes/No + Conditional: Do you have a part-time job on weekends? If not, would you like to have one?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Trả lời CÓ - Làm gia sư bán thời gian cuối tuần, vừa có thu nhập vừa rèn kỹ năng giải quyết vấn đề):</div>
+                    <div class="topic-formula-text">
+                        → Yes, I do. <u>I work as a part-time tutor on weekends</u>. It allows me to <span class="formula-bracket-hl">[lợi ích tài chính - Vo]</span> and gives me a chance to <span class="formula-bracket-hl">[kỹ năng phát triển - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Trả lời CHƯA CÓ NHƯNG RẤT MUỐN - Muốn tích lũy kinh nghiệm thực tế và xây dựng mạng lưới quan hệ):</div>
+                    <div class="topic-formula-text">
+                        → Currently no, but <u>I would love to take on a weekend job in the near future</u>. A part-time position allows me to <span class="formula-bracket-hl">[lợi ích thực tế 1 - Vo]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích quan hệ 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc chia sẻ công việc làm thêm & Nguyện vọng cá nhân]:",
+                        items: [
+                            { en: "work as a part-time tutor on weekends", vn: "làm công việc gia sư bán thời gian vào cuối tuần" },
+                            { en: "would love to take on a weekend job in the near future", vn: "rất muốn nhận một công việc cuối tuần trong tương lai gần" },
+                            { en: "allows me to earn substantial extra income", vn: "cho phép tôi kiếm thêm một khoản thu nhập đáng kể" },
+                            { en: "gives me a chance to hone my communication skills", vn: "mang lại cơ hội để tôi mài giũa kỹ năng giao tiếp của mình" }
+                        ]
+                    },
+                    {
+                        title: "💼 [Công việc bán thời gian & Lợi ích phát triển]:",
+                        items: [
+                            { en: "gain valuable hands-on experience", vn: "tích lũy kinh nghiệm thực tiễn quý báu" },
+                            { en: "build a professional network", vn: "xây dựng một mạng lưới quan hệ công việc chuyên nghiệp" },
+                            { en: "develop practical time management abilities", vn: "rèn luyện khả năng quản lý thời gian thực tế" },
+                            { en: "achieve early financial independence from family", vn: "sớm đạt được sự tự lập tài chính khỏi gia đình" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>boost confidence, expand social network, enhance interpersonal skills...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Kỹ năng nghề nghiệp]:",
+                        items: [
+                            { en: "bridge theoretical knowledge with real-world practice", vn: "nối liền kiến thức lý thuyết với thực tiễn đời sống" },
+                            { en: "master customer service etiquette and conflict resolution", vn: "làm chủ phép xã giao phục vụ khách hàng và giải quyết mâu thuẫn" },
+                            { en: "cushion personal living expenses effortlessly", vn: "trang trải chi phí sinh hoạt cá nhân một cách nhẹ nhàng" },
+                            { en: "sharpen adaptability under fast-paced working pressure", vn: "nâng cao độ thích ứng nhanh nhạy dưới áp lực làm việc khẩn trương" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Trả lời CÓ - Làm gia sư bán thời gian, kiếm thêm thu nhập và rèn kỹ năng giao tiếp)",
+                        text: "Yes, I do. I work as a part-time tutor on weekends. It allows me to earn substantial extra income and gives me a chance to hone my communication and problem-solving skills.",
+                        formatted: `→ Yes, I do. <u>I work as a part-time tutor on weekends</u>. It allows me to <span class="sub-hl">earn substantial extra income</span> and gives me a chance to <span class="sub-hl">hone my communication and problem-solving skills</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Trả lời CHƯA - Muốn nhận việc bán thời gian để tích lũy kinh nghiệm và mở rộng quan hệ)",
+                        text: "Currently no, but I would love to take on a weekend job in the near future. A part-time position allows me to gain valuable hands-on experience and gives me a chance to build a professional network.",
+                        formatted: `→ Currently no, but <u>I would love to take on a weekend job in the near future</u>. A part-time position allows me to <span class="sub-hl">gain valuable hands-on experience</span> and gives me a chance to <span class="sub-hl">build a professional network</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 3,
+                question: "Has your dream job changed over time? Why or why not?",
+                qType: "Present Perfect Yes/No: Has your dream job changed over time? Why or why not?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Trả lời CÓ - Thay đổi theo độ tuổi, hiện tại đam mê công nghệ số và phân tích dữ liệu):</div>
+                    <div class="topic-formula-text">
+                        → Yes, absolutely. <u>My career aspirations have shifted significantly as I matured</u>. Now I'm passionate about <span class="formula-bracket-hl">[lĩnh vực mới]</span> because it allows me to <span class="formula-bracket-hl">[lợi ích sáng tạo 1 - Vo]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích thăng tiến 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Trả lời KHÔNG - Vẫn kiên định với ước mơ dạy tiếng Anh từ thuở ấu thơ):</div>
+                    <div class="topic-formula-text">
+                        → Surprisingly no, <u>my professional goal has remained completely unchanged</u>. I'm still deeply dedicated to <span class="formula-bracket-hl">[lĩnh vực đam mê]</span>. This commitment allows me to <span class="formula-bracket-hl">[động lực theo đuổi 1 - Vo]</span> and gives me a chance to <span class="formula-bracket-hl">[mục tiêu lâu dài 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc diễn đạt sự chuyển dịch định hướng nghề nghiệp]:",
+                        items: [
+                            { en: "my career aspirations have shifted significantly as I matured", vn: "nguyện vọng nghề nghiệp của tôi đã chuyển hướng đáng kể khi tôi trưởng thành hơn" },
+                            { en: "my professional goal has remained completely unchanged", vn: "mục tiêu nghề nghiệp của tôi vẫn giữ nguyên vẹn không hề thay đổi" },
+                            { en: "allows me to express my creativity", vn: "cho phép tôi thỏa sức thể hiện sự sáng tạo của mình" },
+                            { en: "gives me a chance to thrive in a dynamic environment", vn: "mang lại cơ hội để tôi phát triển mạnh mẽ trong môi trường năng động" }
+                        ]
+                    },
+                    {
+                        title: "🎯 [Ngành nghề xu hướng & Cam kết kiên định]:",
+                        items: [
+                            { en: "digital marketing and data analytics", vn: "tiếp thị số và phân tích dữ liệu" },
+                            { en: "artificial intelligence and software engineering", vn: "trí tuệ nhân tạo và kỹ thuật phần mềm" },
+                            { en: "deeply dedicated to teaching English", vn: "gắn bó và cống hiến sâu sắc cho sự nghiệp dạy tiếng Anh" },
+                            { en: "thrive in a fast-paced corporate workplace", vn: "phát triển rực rỡ trong môi trường doanh nghiệp nhịp độ nhanh" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>open up career opportunities, foster personal growth, unlock full potential...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Tầm nhìn sự nghiệp]:",
+                        items: [
+                            { en: "align career choices with emerging market demands", vn: "điều chỉnh lựa chọn nghề nghiệp phù hợp với nhu cầu thị trường đang lên" },
+                            { en: "realize my long-standing childhood dream", vn: "hiện thực hóa ước mơ ấp ủ từ thuở ấu thơ" },
+                            { en: "secure promising promotions and competitive salaries", vn: "đạt được những cơ hội thăng tiến triển vọng và mức lương cạnh tranh" },
+                            { en: "build a meaningful career that reflects my authentic identity", vn: "xây dựng một sự nghiệp ý nghĩa phản chiếu đúng con người thật của mình" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Trả lời CÓ - Thay đổi theo độ tuổi, chuyển sang đam mê tiếp thị số và phân tích dữ liệu)",
+                        text: "Yes, absolutely. My career aspirations have shifted significantly as I matured. Now I'm passionate about digital marketing and data analytics because it allows me to express my creativity and gives me a chance to thrive in a dynamic corporate environment.",
+                        formatted: `→ Yes, absolutely. <u>My career aspirations have shifted significantly as I matured</u>. Now I'm passionate about <span class="sub-hl">digital marketing and data analytics</span> because it allows me to <span class="sub-hl">express my creativity</span> and gives me a chance to <span class="sub-hl">thrive in a dynamic corporate environment</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Trả lời KHÔNG - Vẫn kiên định với ước mơ dạy tiếng Anh từ thuở nhỏ và nỗ lực theo đuổi)",
+                        text: "Surprisingly no, my professional goal has remained completely unchanged. I'm still deeply dedicated to teaching English. This commitment allows me to stay focused on my academic pursuits and gives me a chance to realize my childhood dream.",
+                        formatted: `→ Surprisingly no, <u>my professional goal has remained completely unchanged</u>. I'm still deeply dedicated to <span class="sub-hl">teaching English</span>. This commitment allows me to <span class="sub-hl">stay focused on my academic pursuits</span> and gives me a chance to <span class="sub-hl">realize my childhood dream</span>.`
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: 24,
+        title: "Chủ đề 24: Let's talk about transportation",
+        introText: "Let’s talk about transportation.",
+        questions: [
+            {
+                qNum: 1,
+                question: "How do you usually travel to school/work?",
+                qType: "Wh-question: How do you usually travel to [place]?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Đi xe máy - Linh hoạt, dễ luồn lách qua các con hẻm và cắt giảm thời gian di chuyển giờ cao điểm):</div>
+                    <div class="topic-formula-text">
+                        → On daily commutes, <u>my go-to means of transport is definitely my motorbike</u>. It's exceptionally nimble because it allows me to <span class="formula-bracket-hl">[ưu điểm luồn lách 1 - Vo]</span> and helps me <span class="formula-bracket-hl">[tiết kiệm thời gian 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Đi xe buýt công cộng - Tiết kiệm chi phí xăng xe, an toàn và có thời gian thư giãn đọc sách):</div>
+                    <div class="topic-formula-text">
+                        → Most of the time, <u>I opt for public buses for my daily travels</u>. Taking the bus allows me to <span class="formula-bracket-hl">[lợi ích tài chính 1 - Vo]</span> and gives me a chance to <span class="formula-bracket-hl">[lợi ích thư giãn 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc lựa chọn phương tiện di chuyển hằng ngày]:",
+                        items: [
+                            { en: "my go-to means of transport is definitely my motorbike", vn: "phương tiện di chuyển ưu tiên hàng đầu của tôi chắc chắn là xe máy" },
+                            { en: "opt for public buses for my daily travels", vn: "chọn đi xe buýt công cộng cho các chuyến đi lại hằng ngày" },
+                            { en: "it allows me to navigate narrow alleys easily", vn: "nó cho phép tôi luồn lách qua các ngõ hẻm nhỏ một cách dễ dàng" },
+                            { en: "gives me a chance to relax or read books", vn: "mang lại cho tôi cơ hội thư giãn hoặc đọc sách" }
+                        ]
+                    },
+                    {
+                        title: "🛵 [Xe máy & Giao thông công cộng]:",
+                        items: [
+                            { en: "navigate narrow alleys and avoid traffic jams", vn: "luồn lách qua các con hẻm nhỏ và tránh tắc đường" },
+                            { en: "cut commuting time during rush hours", vn: "cắt giảm thời gian đi lại trong giờ cao điểm" },
+                            { en: "save on fuel expenses and parking fees", vn: "tiết kiệm chi phí xăng xe và tiền gửi xe" },
+                            { en: "avoid exposure to harsh weather and air pollution", vn: "tránh tiếp xúc với thời tiết khắc nghiệt và ô nhiễm không khí" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>maximize time efficiency, reduce travel fatigue, cut living expenses...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Giao thông đô thị]:",
+                        items: [
+                            { en: "maintain complete flexibility in personal schedules", vn: "duy trì sự linh hoạt hoàn toàn trong lịch trình cá nhân" },
+                            { en: "travel comfortably in air-conditioned bus cabins", vn: "di chuyển dễ chịu trong các khoang xe buýt có máy lạnh mát mẻ" },
+                            { en: "reduce individual carbon footprint on urban roads", vn: "giảm bớt lượng phát thải carbon cá nhân trên đường phố đô thị" },
+                            { en: "bypass stressful driving in torrential rains", vn: "không phải chịu cảnh lái xe căng thẳng dưới trời mưa tầm tã" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Đi xe máy - Di chuyển nhanh nhạy, luồn lách qua ngõ nhỏ và tiết kiệm thời gian giờ cao điểm)",
+                        text: "On daily commutes, my go-to means of transport is definitely my motorbike. It's exceptionally nimble because it allows me to navigate narrow alleys easily and helps me cut commuting time during rush hours.",
+                        formatted: `→ On daily commutes, <u>my go-to means of transport is definitely my motorbike</u>. It's exceptionally nimble because it allows me to <span class="sub-hl">navigate narrow alleys easily</span> and helps me <span class="sub-hl">cut commuting time during rush hours</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Đi xe buýt - Tiết kiệm tiền xăng và có thời gian thư giãn đọc sách trên xe)",
+                        text: "Most of the time, I opt for public buses for my daily travels. Taking the bus allows me to save on fuel expenses and gives me a chance to relax or read books without worrying about chaotic traffic.",
+                        formatted: `→ Most of the time, <u>I opt for public buses for my daily travels</u>. Taking the bus allows me to <span class="sub-hl">save on fuel expenses</span> and gives me a chance to <span class="sub-hl">relax or read books without worrying about chaotic traffic</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 2,
+                question: "What is your favorite type of transportation? Why?",
+                qType: "Wh-question: What is your favorite type of transportation? Why?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Tàu điện đô thị / Tàu hỏa - Đúng giờ, tránh hoàn toàn tắc đường và tận hưởng toa tàu máy lạnh hiện đại):</div>
+                    <div class="topic-formula-text">
+                        → Without doubt, <u>metro trains are my absolute favorite mode of travel</u>. Urban railways allow commuters to <span class="formula-bracket-hl">[ưu điểm lịch trình 1 - Vo]</span> and give us a chance to <span class="formula-bracket-hl">[trải nghiệm tiện nghi 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Xe đạp - Rèn luyện cơ chân nâng cao sức khỏe và bảo vệ môi trường nhờ giảm khí thải):</div>
+                    <div class="topic-formula-text">
+                        → Personally, <u>I have a special passion for cycling</u>. Riding a bicycle allows me to <span class="formula-bracket-hl">[lợi ích thể chất 1 - Vo]</span> and helps me <span class="formula-bracket-hl">[lợi ích môi trường 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc bày tỏ sự yêu thích phương tiện giao thông]:",
+                        items: [
+                            { en: "metro trains are my absolute favorite mode of travel", vn: "tàu điện metro là phương thức di chuyển yêu thích nhất của tôi" },
+                            { en: "have a special passion for cycling", vn: "có niềm đam mê đặc biệt với việc đạp xe" },
+                            { en: "allow commuters to travel punctually", vn: "cho phép người đi làm di chuyển đúng giờ giấc" },
+                            { en: "gives us a chance to enjoy modern carriages", vn: "mang lại cho chúng ta cơ hội tận hưởng các toa tàu hiện đại" }
+                        ]
+                    },
+                    {
+                        title: "🚆 [Tàu điện hiện đại & Xe đạp sinh thái]:",
+                        items: [
+                            { en: "travel punctually without traffic congestion", vn: "di chuyển chuẩn giờ giấc mà không lo tắc nghẽn giao thông" },
+                            { en: "modern, air-conditioned carriages with high safety", vn: "các toa tàu hiện đại, trang bị điều hòa với độ an toàn cao" },
+                            { en: "exercise leg muscles and build cardiovascular fitness", vn: "rèn luyện cơ chân và nâng cao sức khỏe tim mạch" },
+                            { en: "protect the environment by reducing harmful emissions", vn: "bảo vệ môi trường bằng cách cắt giảm khí thải độc hại" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>boost physical endurance, embrace eco-friendly lifestyle, minimize commuting stress...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Tiện nghi & Môi trường]:",
+                        items: [
+                            { en: "enjoy smooth high-speed travel across cities", vn: "tận hưởng chuyến đi êm ái với tốc độ cao xuyên thành phố" },
+                            { en: "burn excess calories naturally during daily routines", vn: "đốt cháy calo dư thừa một cách tự nhiên trong sinh hoạt hàng ngày" },
+                            { en: "contribute to greener and cleaner urban air", vn: "đóng góp vào bầu không khí đô thị xanh hơn và sạch hơn" },
+                            { en: "avoid the noise and fumes of packed motor roads", vn: "tránh được tiếng ồn và khói bụi của những con đường chật cứng xe cộ" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Tàu điện metro - Di chuyển chuẩn giờ không lo tắc đường, tận hưởng toa tàu mát lạnh)",
+                        text: "Without doubt, metro trains are my absolute favorite mode of travel. Urban railways allow commuters to travel punctually without traffic congestion and give us a chance to enjoy modern, air-conditioned carriages.",
+                        formatted: `→ Without doubt, <u>metro trains are my absolute favorite mode of travel</u>. Urban railways allow commuters to <span class="sub-hl">travel punctually without traffic congestion</span> and give us a chance to <span class="sub-hl">enjoy modern, air-conditioned carriages</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Xe đạp - Rèn luyện sức khỏe cơ bắp và bảo vệ môi trường nhờ giảm phát thải)",
+                        text: "Personally, I have a special passion for cycling. Riding a bicycle allows me to exercise my leg muscles and helps me protect the environment by reducing harmful emissions.",
+                        formatted: `→ Personally, <u>I have a special passion for cycling</u>. Riding a bicycle allows me to <span class="sub-hl">exercise my leg muscles</span> and helps me <span class="sub-hl">protect the environment by reducing harmful emissions</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 3,
+                question: "Do you think public transportation in your country is good? Why or why not?",
+                qType: "Yes/No + Wh-question: Do you think public transportation in your country is good? Why or why not?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Tương đối tốt & đang cải thiện nhanh - Có nhiều xe buýt điện và tuyến metro mới hiện đại):</div>
+                    <div class="topic-formula-text">
+                        → In my opinion, <u>public transport in my country is reasonably good and improving rapidly</u>. The government has rolled out <span class="formula-bracket-hl">[hệ thống xe công cộng mới]</span>. This allows citizens to <span class="formula-bracket-hl">[lợi ích trải nghiệm 1 - Vo]</span> and gives us a chance to <span class="formula-bracket-hl">[lợi ích môi trường 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Chưa thật sự tốt - Mạng lưới xe buýt thường quá tải vào giờ cao điểm và hay bị trễ chuyến):</div>
+                    <div class="topic-formula-text">
+                        → Frankly speaking, <u>our public transportation still leaves a lot to be desired</u>. Bus networks are often <span class="formula-bracket-hl">[nhược điểm hệ thống]</span>, so it doesn't give passengers a chance to <span class="formula-bracket-hl">[nhu cầu cơ bản - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc đánh giá chất lượng giao thông công cộng]:",
+                        items: [
+                            { en: "public transport is reasonably good and improving rapidly", vn: "giao thông công cộng khá tốt và đang cải thiện nhanh chóng" },
+                            { en: "still leaves a lot to be desired", vn: "vẫn còn nhiều điều chưa như ý / cần cải thiện rất nhiều" },
+                            { en: "this allows citizens to travel comfortably", vn: "điều này cho phép người dân đi lại một cách thoải mái" },
+                            { en: "doesn't give passengers a chance to commute reliably", vn: "không mang lại cơ hội để hành khách đi lại một cách đáng tin cậy" }
+                        ]
+                    },
+                    {
+                        title: "🚍 [Hạ tầng xe buýt điện & Thực trạng giao thông]:",
+                        items: [
+                            { en: "eco-friendly electric buses and modern metro lines", vn: "các xe buýt điện thân thiện môi trường và tuyến metro hiện đại" },
+                            { en: "overcrowded and suffer from frequent delays", vn: "quá đông đúc và thường xuyên bị trễ chuyến" },
+                            { en: "subsidized ticket prices for students and seniors", vn: "giá vé được trợ giá cho học sinh sinh viên và người cao tuổi" },
+                            { en: "insufficient route coverage in suburban neighborhoods", vn: "độ bao phủ các tuyến đường còn chưa đủ ở vùng ngoại ô" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>promote sustainable living, improve civic mobility, alleviate urban bottlenecks...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Đô thị & Bền vững]:",
+                        items: [
+                            { en: "alleviate severe traffic congestion on main roads", vn: "giảm nhẹ tình trạng tắc nghẽn giao thông nghiêm trọng trên các trục đường chính" },
+                            { en: "commute reliably during peak working hours", vn: "đi lại một cách đáng tin cậy, chuẩn giờ trong các khung giờ cao điểm" },
+                            { en: "provide affordable mobility for low-income commuters", vn: "mang lại khả năng di chuyển vừa túi tiền cho người lao động thu nhập thấp" },
+                            { en: "transition towards green and sustainable smart cities", vn: "chuyển dịch hướng tới các thành phố thông minh xanh và bền vững" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Khá tốt & Đang phát triển - Triển khai xe buýt điện và metro, đi lại dễ chịu và không khí sạch hơn)",
+                        text: "In my opinion, public transport in my country is reasonably good and improving rapidly. The government has rolled out eco-friendly electric buses and modern metro lines. This allows citizens to travel comfortably and gives us a chance to enjoy cleaner urban air.",
+                        formatted: `→ In my opinion, <u>public transport in my country is reasonably good and improving rapidly</u>. The government has rolled out <span class="sub-hl">eco-friendly electric buses and modern metro lines</span>. This allows citizens to <span class="sub-hl">travel comfortably</span> and gives us a chance to <span class="sub-hl">enjoy cleaner urban air</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Chưa tốt lắm - Tuyến xe buýt thường quá tải và trễ giờ, không đảm bảo việc đi lại chuẩn giờ)",
+                        text: "Frankly speaking, our public transportation still leaves a lot to be desired. Bus networks are often overcrowded and suffer from frequent delays, so it doesn't give passengers a chance to commute reliably on busy days.",
+                        formatted: `→ Frankly speaking, <u>our public transportation still leaves a lot to be desired</u>. Bus networks are often <span class="sub-hl">overcrowded and suffer from frequent delays</span>, so it doesn't give passengers a chance to <span class="sub-hl">commute reliably on busy days</span>.`
+                    }
+                ]
+            }
+        ]
     }
 ];
 
@@ -7837,16 +8229,16 @@ window.isTopicUnlocked = (topicId) => {
     if (window._currentUserRole === 'teacher') {
         return practiceTopicsData.some(t => t.id === tid);
     }
-    // Unlocked topics 1 to 22
-    return tid >= 1 && tid <= 22;
+    // Unlocked topics 1 to 24
+    return tid >= 1 && tid <= 24;
 };
 
 window.getAllowedTopicIds = () => {
     if (window._currentUserRole === 'teacher') {
         return practiceTopicsData.map(t => t.id);
     }
-    // Unlocked topics 1 to 22
-    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22];
+    // Unlocked topics 1 to 24
+    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
 };
 
 window.getAllowedTopicsData = () => {
@@ -7867,7 +8259,7 @@ window.updateTopicSelectDropdowns = () => {
         const currentVal = sel.value;
         sel.querySelectorAll('option').forEach(opt => {
             const val = parseInt(opt.value);
-            if (val >= 1 && val <= 22) {
+            if (val >= 1 && val <= 24) {
                 opt.disabled = false;
                 if (val === 1) opt.textContent = "🎯 Topic 01: Let's talk about hobbies";
                 if (val === 2) opt.textContent = "🎯 Topic 02: Let's talk about video games";
@@ -7891,11 +8283,13 @@ window.updateTopicSelectDropdowns = () => {
                 if (val === 20) opt.textContent = "🎯 Topic 20: Let's talk about learning English";
                 if (val === 21) opt.textContent = "🎯 Topic 21: Let's talk about studying English on the Internet";
                 if (val === 22) opt.textContent = "🎯 Topic 22: Let's talk about using mobile phones";
-            } else if (val >= 23) {
+                if (val === 23) opt.textContent = "🎯 Topic 23: Let's talk about your dream job";
+                if (val === 24) opt.textContent = "🎯 Topic 24: Let's talk about transportation";
+            } else if (val >= 25) {
                 opt.disabled = true;
             }
         });
-        if (!isTeacher && parseInt(currentVal) > 22) {
+        if (!isTeacher && parseInt(currentVal) > 24) {
             if (sel.id === 'practice-pair-topic2-select') {
                 sel.value = "2";
             } else {
@@ -8150,7 +8544,7 @@ function renderPracticeTopic(topicId) {
                     CHỦ ĐỀ ĐANG KHOÁ (CHỜ CẬP NHẬT)
                 </h2>
                 <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 580px; margin: 0 auto 1.75rem; line-height: 1.65;">
-                    Hiện tại hệ thống đã mở <strong>22 chủ đề đầu tiên (Topic 01 đến Topic 22)</strong> để các bạn luyện tập. Các chủ đề tiếp theo đang được cập nhật và sẽ mở theo lịch học của cô!
+                    Hiện tại hệ thống đã mở <strong>24 chủ đề đầu tiên (Topic 01 đến Topic 24)</strong> để các bạn luyện tập. Các chủ đề tiếp theo đang được cập nhật và sẽ mở theo lịch học của cô!
                 </p>
                 <div style="display: flex; justify-content: center; gap: 0.65rem; flex-wrap: wrap;">
                     <button type="button" class="btn" onclick="renderPracticeTopic(1)" style="background: var(--primary); color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(67, 97, 238, 0.25);">
@@ -8218,6 +8612,12 @@ function renderPracticeTopic(topicId) {
                     </button>
                     <button type="button" class="btn" onclick="renderPracticeTopic(22)" style="background: #ea580c; color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);">
                         Topic 22
+                    </button>
+                    <button type="button" class="btn" onclick="renderPracticeTopic(23)" style="background: #06b6d4; color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(6, 182, 212, 0.25);">
+                        Topic 23
+                    </button>
+                    <button type="button" class="btn" onclick="renderPracticeTopic(24)" style="background: #2563eb; color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);">
+                        Topic 24
                     </button>
                 </div>
             </div>
