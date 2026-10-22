@@ -8218,7 +8218,424 @@ const practiceTopicsData = [
                 ]
             }
         ]
+    }    ,
+    {
+        id: 25,
+        title: "Chủ đề 25: Let's talk about planes",
+        introText: "Let’s talk about planes.",
+        questions: [
+            {
+                qNum: 1,
+                question: "Have you ever travelled by plane?",
+                qType: "Present Perfect Yes/No: Have you ever travelled by plane?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Đã từng bay đi du lịch Đà Nẵng cùng gia đình - Tiết kiệm thời gian và ngắm cảnh mây trời tuyệt đẹp):</div>
+                    <div class="topic-formula-text">
+                        → Yes, I have. <u>I took a domestic flight to <span class="formula-bracket-hl">[điểm đến du lịch]</span> with my <span class="formula-bracket-hl">[đối tượng]</span> last year</u>. That journey allows me to <span class="formula-bracket-hl">[lợi ích thời gian 1 - Vo]</span> and gives me a chance to <span class="formula-bracket-hl">[trải nghiệm ngắm cảnh 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Chưa từng bay, thường đi tàu hỏa - Rất muốn sớm trải nghiệm một chuyến bay để mở mang tầm mắt):</div>
+                    <div class="topic-formula-text">
+                        → Actually no, <u>I haven't had the chance to travel by plane yet</u>. I usually rely on <span class="formula-bracket-hl">[phương tiện quen thuộc]</span>, but I'd love to take a flight soon because it allows me to <span class="formula-bracket-hl">[lợi ích di chuyển 1 - Vo]</span> and gives me a chance to <span class="formula-bracket-hl">[mục tiêu trải nghiệm 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc diễn đạt trải nghiệm chuyến bay] (Cách 1 & 2):",
+                        items: [
+                            { en: "take a domestic flight to", vn: "đi một chuyến bay nội địa tới" },
+                            { en: "haven't had the chance to travel by plane yet", vn: "vẫn chưa có cơ hội được đi du lịch bằng máy bay" },
+                            { en: "rely on passenger trains", vn: "thường xuyên phụ thuộc vào tàu hỏa chở khách" },
+                            { en: "take a flight soon", vn: "sớm thực hiện một chuyến bay trải nghiệm" },
+                            { en: "reach distant destinations quickly", vn: "đặt chân tới những điểm đến xa xôi một cách nhanh chóng" }
+                        ]
+                    },
+                    {
+                        title: "✈️ [Điểm đến & Trải nghiệm bay] (Cách 1 & 2):",
+                        items: [
+                            { en: "Da Nang coastal city", vn: "thành phố biển Đà Nẵng" },
+                            { en: "Phu Quoc island resort", vn: "khu nghỉ dưỡng đảo Phú Quốc" },
+                            { en: "breathtaking cloudscapes from above", vn: "khung cảnh mây trời ngoạn mục nhìn từ trên cao" },
+                            { en: "long-distance sleeper buses", vn: "những chiếc xe khách giường nằm đường dài" },
+                            { en: "smooth takeoff and landing", vn: "quá trình cất cánh và hạ cánh vô cùng êm ả" }
+                        ]
+                    },
+                    {
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        items: [
+                            { en: "📌 Kết hợp các cụm từ chỉ sự nhanh chóng và khám phá từ Bảng Lợi Ích:", vn: "Di chuyển bằng đường hàng không giúp rút ngắn hành trình và tạo cơ hội ngắm nhìn thế giới từ trên cao. Bạn có thể nhấn vào <a href=\"javascript:void(0)\" onclick=\"switchTab('benefits')\" style=\"color: var(--primary); font-weight: 700; text-decoration: underline;\">Kho Lợi Ích B2</a> để chọn thêm các ý tưởng nâng cao về Tối ưu thời gian & Trải nghiệm du lịch." }
+                        ]
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Hàng không & Trải nghiệm di chuyển]:",
+                        items: [
+                            { en: "save substantial travel time", vn: "tiết kiệm được một lượng thời gian di chuyển đáng kể" },
+                            { en: "admire breathtaking cloudscapes from above", vn: "chiêm ngưỡng những tầng mây ngoạn mục từ trên độ cao ngàn mét" },
+                            { en: "reach distant destinations quickly", vn: "nhanh chóng đặt chân tới các vùng đất xa xôi" },
+                            { en: "broaden my travel horizons", vn: "mở rộng tầm nhìn du lịch và hiểu biết thực tế về thế giới" },
+                            { en: "avoid exhausting road fatigue", vn: "tránh được sự uể oải, mệt mỏi rã rời của những chuyến xe đường bộ dài ngày" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Đã bay đi Đà Nẵng cùng gia đình - Tiết kiệm thời gian và ngắm cảnh mây trời tuyệt đẹp - 24 từ)",
+                        text: "Yes, I have. I took a domestic flight to Da Nang with my family last year. That journey allows me to save substantial travel time and gives me a chance to admire breathtaking cloudscapes from above.",
+                        formatted: `→ Yes, I have. <u>I took a domestic flight to Da Nang with my family last year</u>. That journey allows me to <span class="sub-hl">save substantial travel time</span> and gives me a chance to <span class="sub-hl">admire breathtaking cloudscapes from above</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Chưa từng bay, thường đi tàu hỏa - Muốn sớm trải nghiệm bay để đi xa nhanh và mở mang tầm mắt - 24 từ)",
+                        text: "Actually no, I haven't had the chance to travel by plane yet. I usually rely on passenger trains, but I'd love to take a flight soon because it allows me to reach distant destinations quickly and gives me a chance to broaden my travel horizons.",
+                        formatted: `→ Actually no, <u>I haven't had the chance to travel by plane yet</u>. I usually rely on passenger trains, but I'd love to take a flight soon because it allows me to <span class="sub-hl">reach distant destinations quickly</span> and gives me a chance to <span class="sub-hl">broaden my travel horizons</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 2,
+                question: "Is the plane service good in your country?",
+                qType: "Yes/No: Is the plane service good in your country?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Rất tốt & Chuyên nghiệp - Tiếp viên chu đáo, ki-ốt check-in hiện đại giúp tiết kiệm thời gian chờ):</div>
+                    <div class="topic-formula-text">
+                        → In my experience, <u>domestic aviation services are exceptionally good and professional</u>. Flight attendants are attentive, and modern airports provide <span class="formula-bracket-hl">[tiện ích dịch vụ]</span>. This allows passengers to <span class="formula-bracket-hl">[lợi ích thủ tục 1 - Vo]</span> and gives us a chance to <span class="formula-bracket-hl">[lợi ích thư giãn 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Khá tốt nhưng đôi khi bị hoãn chuyến vào dịp lễ - Các hãng đang nâng cấp đội bay để mang lại sự tiện nghi):</div>
+                    <div class="topic-formula-text">
+                        → Generally speaking, <u>airline services are quite decent, though flight delays still happen during peak holidays</u>. However, carriers are upgrading their fleets. This allows travelers to <span class="formula-bracket-hl">[lợi ích tiện nghi 1 - Vo]</span> and gives them a chance to <span class="formula-bracket-hl">[lợi ích trải nghiệm 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc đánh giá chất lượng dịch vụ hàng không] (Cách 1 & 2):",
+                        items: [
+                            { en: "domestic aviation services", vn: "các dịch vụ hàng không nội địa" },
+                            { en: "exceptionally good and professional", vn: "đặc biệt chất lượng và phong cách làm việc chuyên nghiệp" },
+                            { en: "flight delays still happen during peak holidays", vn: "tình trạng chậm chuyến vẫn xảy ra vào các kỳ nghỉ lễ cao điểm" },
+                            { en: "carriers are upgrading their fleets", vn: "các hãng hàng không đang tích cực nâng cấp đội tàu bay hiện đại" },
+                            { en: "experience smoother long-haul flights", vn: "trải nghiệm những chuyến bay đường dài êm ái hơn hẳn" }
+                        ]
+                    },
+                    {
+                        title: "🛫 [Tiện ích sân bay & Trải nghiệm khoang bay] (Cách 1 & 2):",
+                        items: [
+                            { en: "attentive and courteous flight crew", vn: "đội ngũ tiếp viên chu đáo và vô cùng lịch thiệp" },
+                            { en: "online check-in kiosks", vn: "các quầy ki-ốt tự làm thủ tục check-in trực tuyến" },
+                            { en: "spacious legroom and comfortable seats", vn: "chỗ để chân rộng rãi và ghế ngồi êm ái" },
+                            { en: "modern departure lounges", vn: "các phòng chờ khởi hành tiện nghi và sạch đẹp" },
+                            { en: "tasty complimentary in-flight meals", vn: "những suất ăn nhẹ miễn phí ngon miệng trên máy bay" }
+                        ]
+                    },
+                    {
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        items: [
+                            { en: "📌 Tối ưu hóa sự tiện nghi và năng suất thời gian:", vn: "Chất lượng dịch vụ hàng không tốt giúp hành khách giảm bớt căng thẳng và tận hưởng hành trình suôn sẻ. Mời bạn ghé xem bảng <a href=\"javascript:void(0)\" onclick=\"switchTab('benefits')\" style=\"color: var(--primary); font-weight: 700; text-decoration: underline;\">Kho Lợi Ích B2</a> (Mục Tiện nghi & Tối ưu thời gian)." }
+                        ]
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Dịch vụ & Tiện nghi hàng không]:",
+                        items: [
+                            { en: "bypass long airport queues", vn: "bỏ qua các hàng xếp hàng dài đằng đẵng ở sân bay" },
+                            { en: "relax peacefully before boarding", vn: "nghỉ ngơi thư giãn thanh thản trước khi lên máy bay" },
+                            { en: "enjoy spacious legroom", vn: "tận hưởng khoảng để chân rộng rãi thoải mái trên suốt chuyến bay" },
+                            { en: "experience smoother long-haul flights", vn: "trải qua những chặng bay đường dài êm ái, ít xóc nảy" },
+                            { en: "receive timely travel updates", vn: "nhận được các thông tin cập nhật hành trình kịp thời, chính xác" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Rất tốt & Chuyên nghiệp - Tiếp viên chu đáo, ki-ốt check-in giúp tránh hàng chờ và thư giãn trước khi bay - 24 từ)",
+                        text: "In my experience, domestic aviation services are exceptionally good and professional. Flight attendants are attentive, and modern airports provide online check-in kiosks. This allows passengers to bypass long airport queues and gives us a chance to relax peacefully before boarding.",
+                        formatted: `→ In my experience, <u>domestic aviation services are exceptionally good and professional</u>. Flight attendants are attentive, and modern airports provide online check-in kiosks. This allows passengers to <span class="sub-hl">bypass long airport queues</span> and gives us a chance to <span class="sub-hl">relax peacefully before boarding</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Khá tốt nhưng đôi khi hoãn chuyến - Các hãng nâng cấp đội bay, chỗ để chân rộng và bay êm ái - 24 từ)",
+                        text: "Generally speaking, airline services are quite decent, though flight delays still happen during peak holidays. However, carriers are upgrading their fleets. This allows travelers to enjoy spacious legroom and gives them a chance to experience smoother long-haul flights.",
+                        formatted: `→ Generally speaking, <u>airline services are quite decent, though flight delays still happen during peak holidays</u>. However, carriers are upgrading their fleets. This allows travelers to <span class="sub-hl">enjoy spacious legroom</span> and gives them a chance to <span class="sub-hl">experience smoother long-haul flights</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 3,
+                question: "Why do some people prefer travelling by plane?",
+                qType: "Wh-question: Why do some people prefer travelling by plane?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Nhanh nhất và an toàn nhất - Vượt ngàn cây số trong vài giờ, tối ưu hóa kỳ nghỉ):</div>
+                    <div class="topic-formula-text">
+                        → Many travelers prefer flying because <u>it's by far the fastest and safest mode of transport</u>. Boarding an airplane allows people to <span class="formula-bracket-hl">[lợi ích thời gian 1 - Vo]</span> and gives them a chance to <span class="formula-bracket-hl">[lợi ích lịch trình 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Tiện nghi và tránh say xe - Khoang điều hòa mát mẻ, ghế ngả lưng êm ái):</div>
+                    <div class="topic-formula-text">
+                        → In my view, <u>people favor air travel due to its superior comfort and convenience</u>. Flying allows passengers to <span class="formula-bracket-hl">[lợi ích thể chất 1 - Vo]</span> and gives them a chance to <span class="formula-bracket-hl">[lợi ích thư giãn 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc nêu ưu thế của phương tiện máy bay] (Cách 1 & 2):",
+                        items: [
+                            { en: "by far the fastest and safest mode of transport", vn: "phương tiện di chuyển nhanh chóng và an toàn vượt trội nhất" },
+                            { en: "favor air travel due to superior comfort", vn: "ưa chuộng đi máy bay nhờ độ tiện nghi và thoải mái vượt bậc" },
+                            { en: "cross thousands of kilometers in hours", vn: "vượt qua hàng nghìn cây số chỉ trong vài tiếng ngắn ngủi" },
+                            { en: "maximize precious holiday schedules", vn: "tối ưu hóa tối đa quỹ thời gian quý giá của kỳ nghỉ" },
+                            { en: "avoid severe motion sickness", vn: "tránh được cảm giác say xe nôn nao mệt lử" }
+                        ]
+                    },
+                    {
+                        title: "☁️ [Đặc điểm tiện nghi khoang bay] (Cách 1 & 2):",
+                        items: [
+                            { en: "climate-controlled cabins", vn: "khoang hành khách điều hòa nhiệt độ lý tưởng, mát lành" },
+                            { en: "reclining ergonomic seats", vn: "ghế ngồi công thái học có khả năng ngả lưng thư giãn" },
+                            { en: "panoramic aerial views", vn: "tầm nhìn toàn cảnh ngoạn mục từ trên không gian bao la" },
+                            { en: "punctual flight itineraries", vn: "các lịch trình chuyến bay đúng giờ và chuẩn xác" },
+                            { en: "hassle-free long-distance travel", vn: "trải nghiệm du hành đường dài thảnh thơi, không chút phiền toái" }
+                        ]
+                    },
+                    {
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        items: [
+                            { en: "📌 Kết hợp sức khỏe thể chất và hiệu suất chuyến đi:", vn: "Đi máy bay bảo toàn thể lực và giúp người đi du lịch hay công tác tràn đầy năng lượng. Hãy mở bảng <a href=\"javascript:void(0)\" onclick=\"switchTab('benefits')\" style=\"color: var(--primary); font-weight: 700; text-decoration: underline;\">Kho Lợi Ích B2</a> (Mục Sức khỏe & Năng suất hành trình)." }
+                        ]
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Lợi ích hàng không vượt trội]:",
+                        items: [
+                            { en: "cross thousands of kilometers in hours", vn: "vượt qua hàng ngàn cây số chỉ sau vài giờ bay" },
+                            { en: "maximize their precious holiday schedules", vn: "tận dụng trọn vẹn từng khoảnh khắc quý giá của kỳ nghỉ dưỡng" },
+                            { en: "avoid severe motion sickness", vn: "tránh hoàn toàn cảm giác say xe, say sóng khó chịu" },
+                            { en: "rest comfortably in climate-controlled cabins", vn: "nghỉ ngơi tĩnh dưỡng thoải mái trong khoang máy bay mát mẻ" },
+                            { en: "arrive energized at destinations", vn: "đặt chân tới điểm đến trong tâm thế dồi dào năng lượng" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Nhanh và an toàn nhất - Vượt ngàn cây số trong vài giờ và tận dụng tối đa kỳ nghỉ - 22 từ)",
+                        text: "Many travelers prefer flying because it's by far the fastest and safest mode of transport. Boarding an airplane allows people to cross thousands of kilometers in hours and gives them a chance to maximize their precious holiday schedules.",
+                        formatted: `→ Many travelers prefer flying because <u>it's by far the fastest and safest mode of transport</u>. Boarding an airplane allows people to <span class="sub-hl">cross thousands of kilometers in hours</span> and gives them a chance to <span class="sub-hl">maximize their precious holiday schedules</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Tiện nghi và không say xe - Tránh say xe và nghỉ ngơi trong khoang điều hòa dễ chịu - 22 từ)",
+                        text: "In my view, people favor air travel due to its superior comfort and convenience. Flying allows passengers to avoid severe motion sickness and gives them a chance to rest comfortably in climate-controlled cabins.",
+                        formatted: `→ In my view, <u>people favor air travel due to its superior comfort and convenience</u>. Flying allows passengers to <span class="sub-hl">avoid severe motion sickness</span> and gives them a chance to <span class="sub-hl">rest comfortably in climate-controlled cabins</span>.`
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: 26,
+        title: "Chủ đề 26: Let's talk about traffic problems",
+        introText: "Let’s talk about traffic problems.",
+        questions: [
+            {
+                qNum: 1,
+                question: "What are some common traffic problems in your city?",
+                qType: "Wh-question: What are some common [noun] in your city?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Ùn tắc nghiêm trọng giờ cao điểm do lượng xe máy quá lớn trên các ngõ đường chật hẹp):</div>
+                    <div class="topic-formula-text">
+                        → In my city, <u>the most pressing issue is severe gridlock during rush hours</u>. Thousands of motorbikes flood narrow streets, so this situation doesn't allow commuters to <span class="formula-bracket-hl">[khó khăn di chuyển 1 - Vo]</span> and gives them no chance to <span class="formula-bracket-hl">[khó khăn giờ giấc 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Khói bụi ô nhiễm và ý thức chấp hành luật kém - Lái xe vượt đèn đỏ khiến người đi bộ gặp nguy hiểm):</div>
+                    <div class="topic-formula-text">
+                        → Aside from congestion, <u>our metropolitan area struggles with heavy vehicular emissions and poor road compliance</u>. Reckless drivers often <span class="formula-bracket-hl">[hành vi vi phạm]</span>. That behavior doesn't allow pedestrians to <span class="formula-bracket-hl">[mất an toàn 1 - Vo]</span> and gives them few chances to <span class="formula-bracket-hl">[ảnh hưởng hô hấp 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc miêu tả vấn nạn giao thông đô thị] (Cách 1 & 2):",
+                        items: [
+                            { en: "the most pressing issue is severe gridlock", vn: "vấn đề nhức nhối nhất chính là tình trạng kẹt xe nghiêm trọng" },
+                            { en: "flood narrow streets", vn: "tràn ngập khắp các ngõ phố chật hẹp" },
+                            { en: "struggles with heavy vehicular emissions", vn: "vật lộn với lượng khí thải phương tiện giao thông dày đặc" },
+                            { en: "poor road compliance", vn: "ý thức chấp hành luật an toàn giao thông còn rất kém" },
+                            { en: "doesn't allow commuters to move smoothly", vn: "khiến người tham gia giao thông không thể di chuyển thông thoáng" }
+                        ]
+                    },
+                    {
+                        title: "🚦 [Vấn đề giao thông & Hành vi vi phạm] (Cách 1 & 2):",
+                        items: [
+                            { en: "bottlenecks at major intersections", vn: "các nút thắt cổ chai ùn ứ tại các ngã tư lớn" },
+                            { en: "reckless driving and running red lights", vn: "hành vi lái xe ẩu và cố tình vượt đèn đỏ" },
+                            { en: "riding motorbikes on pedestrian pavements", vn: "chạy xe máy leo lên vỉa hè dành cho người đi bộ" },
+                            { en: "dense exhaust fumes and fine dust", vn: "khói xả đặc quẹt và bụi mịn độc hại mù mịt" },
+                            { en: "frequent road collisions and tailbacks", vn: "các vụ va chạm đường bộ thường xuyên và hàng dài xe ùn ứ" }
+                        ]
+                    },
+                    {
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        items: [
+                            { en: "📌 Đối chiếu để làm nổi bật nhu cầu cải thiện môi trường sống:", vn: "Nêu bật các vấn đề giao thông giúp khẳng định tầm quan trọng của không gian sống trong lành và an toàn. Mời bạn ghé xem bảng <a href=\"javascript:void(0)\" onclick=\"switchTab('benefits')\" style=\"color: var(--primary); font-weight: 700; text-decoration: underline;\">Kho Lợi Ích B2</a> (Mục Môi trường & Đời sống đô thị)." }
+                        ]
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Vấn nạn giao thông đô thị]:",
+                        items: [
+                            { en: "move smoothly through urban corridors", vn: "di chuyển êm thuận qua các hành lang đô thị" },
+                            { en: "reach workplaces on schedule", vn: "đến nơi làm việc đúng giờ giấc quy định" },
+                            { en: "cross streets safely without anxiety", vn: "băng qua đường một cách an toàn không chút âu lo" },
+                            { en: "breathe fresh air during peak commutes", vn: "hít thở không khí trong lành khi di chuyển giờ cao điểm" },
+                            { en: "reduce daily commuting frustration", vn: "giảm bớt cảm giác bực bội ức chế khi đi lại mỗi ngày" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Kẹt xe nghiêm trọng giờ cao điểm - Xe máy ngập đường hẹp, không thể đi lại êm thuận và trễ giờ làm - 24 từ)",
+                        text: "In my city, the most pressing issue is severe gridlock during rush hours. Thousands of motorbikes flood narrow streets, so this situation doesn't allow commuters to move smoothly and gives them no chance to reach workplaces on schedule.",
+                        formatted: `→ In my city, <u>the most pressing issue is severe gridlock during rush hours</u>. Thousands of motorbikes flood narrow streets, so this situation doesn't allow commuters to <span class="sub-hl">move smoothly</span> and gives them no chance to <span class="sub-hl">reach workplaces on schedule</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Khói xe ô nhiễm và vượt đèn đỏ - Người đi bộ không thể qua đường an toàn và không có không khí sạch - 23 từ)",
+                        text: "Aside from congestion, our metropolitan area struggles with heavy vehicular emissions and poor road compliance. Reckless drivers often run red lights. That behavior doesn't allow pedestrians to cross streets safely and gives them few chances to breathe fresh air.",
+                        formatted: `→ Aside from congestion, <u>our metropolitan area struggles with heavy vehicular emissions and poor road compliance</u>. Reckless drivers often run red lights. That behavior doesn't allow pedestrians to <span class="sub-hl">cross streets safely</span> and gives them few chances to <span class="sub-hl">breathe fresh air</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 2,
+                question: "How do traffic problems affect daily life where you live?",
+                qType: "Wh-question: How do [noun] affect daily life?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Lãng phí thời gian, gây căng thẳng mệt mỏi và làm tụt giảm năng suất làm việc):</div>
+                    <div class="topic-formula-text">
+                        → Traffic bottlenecks severely disrupt our daily routines. Being stuck in traffic allows stress to <span class="formula-bracket-hl">[tác động tâm lý - Vo]</span> and doesn't give commuters a chance to <span class="formula-bracket-hl">[ảnh hưởng năng suất - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Tổn hại nghiêm trọng đến sức khỏe đường hô hấp do liên tục hít phải khói bụi độc hại):</div>
+                    <div class="topic-formula-text">
+                        → Unquestionably, <u>chronic congestion poses grave risks to public health</u>. Inhaling toxic exhaust fumes allows airborne pollutants to <span class="formula-bracket-hl">[ảnh hưởng thể chất - Vo]</span> and gives vulnerable residents few chances to <span class="formula-bracket-hl">[hệ lụy sức khỏe - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc nêu ảnh hưởng tiêu cực của tắc đường] (Cách 1 & 2):",
+                        items: [
+                            { en: "traffic bottlenecks severely disrupt our daily routines", vn: "những điểm nghẽn giao thông làm đảo lộn nghiêm trọng nhịp sống thường nhật" },
+                            { en: "being stuck in traffic", vn: "việc bị kẹt cứng trong dòng xe cộ ùn tắc" },
+                            { en: "drain our mental energy", vn: "bào mòn và làm cạn kiệt năng lượng tinh thần của chúng ta" },
+                            { en: "chronic congestion poses grave risks to public health", vn: "nạn kẹt xe kinh niên đặt ra những rủi ro cực lớn cho sức khỏe cộng đồng" },
+                            { en: "inhaling toxic exhaust fumes", vn: "việc hít phải những luồng khói thải độc hại từ ống xả" }
+                        ]
+                    },
+                    {
+                        title: "😷 [Tác động tinh thần & Bệnh lý hô hấp] (Cách 1 & 2):",
+                        items: [
+                            { en: "irritation, fatigue, and road rage", vn: "sự bực tức, mệt mỏi và cơn thịnh nộ cáu gắt trên đường" },
+                            { en: "miss crucial morning appointments", vn: "bị lỡ mất những cuộc hẹn quan trọng vào buổi sáng" },
+                            { en: "airborne pollutants and fine particulate matter", vn: "các chất ô nhiễm bay trong không khí và bụi mịn PM2.5" },
+                            { en: "damage respiratory systems", vn: "gây tổn hại nghiêm trọng đến hệ thống hô hấp" },
+                            { en: "chronic coughing and throat allergies", vn: "chứng ho dai dẳng mãn tính và viêm dị ứng đường thở" }
+                        ]
+                    },
+                    {
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        items: [
+                            { en: "📌 Nhận diện tác động để tìm giải pháp bảo vệ sức khỏe và cân bằng cuộc sống:", vn: "Hiểu rõ ảnh hưởng tiêu cực của giao thông giúp người học biết cách điều chỉnh thời gian và giữ gìn thể lực. Mời bạn tham khảo thêm bảng <a href=\"javascript:void(0)\" onclick=\"switchTab('benefits')\" style=\"color: var(--primary); font-weight: 700; text-decoration: underline;\">Kho Lợi Ích B2</a> (Mục Sức khỏe & Cân bằng cuộc sống)." }
+                        ]
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Tác động giao thông đến đời sống]:",
+                        items: [
+                            { en: "drain our mental energy", vn: "làm cạn kiệt tinh thần và sinh lực của chúng ta" },
+                            { en: "maintain high workplace productivity", vn: "duy trì được năng suất và sự tập trung cao trong công việc" },
+                            { en: "damage respiratory systems", vn: "gây hư tổn các phế nang và đường hô hấp" },
+                            { en: "avoid chronic coughing or lung ailments", vn: "tránh được tình trạng ho mãn tính hay những chứng bệnh về phổi" },
+                            { en: "preserve precious quality time with family", vn: "bảo toàn được khoảng thời gian sum họp quý báu bên gia đình" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Lãng phí thời gian và mệt mỏi - Bị kẹt xe làm cạn kiệt tinh thần và không thể duy trì năng suất cao - 22 từ)",
+                        text: "Traffic bottlenecks severely disrupt our daily routines. Being stuck in traffic allows stress to drain our mental energy and doesn't give commuters a chance to maintain high workplace productivity.",
+                        formatted: `→ Traffic bottlenecks severely disrupt our daily routines. Being stuck in traffic allows stress to <span class="sub-hl">drain our mental energy</span> and doesn't give commuters a chance to <span class="sub-hl">maintain high workplace productivity</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Nguy hại sức khỏe - Khói bụi độc hại làm tổn thương hệ hô hấp và gây bệnh phổi mãn tính - 23 từ)",
+                        text: "Unquestionably, chronic congestion poses grave risks to public health. Inhaling toxic exhaust fumes allows airborne pollutants to damage respiratory systems and gives vulnerable residents few chances to avoid chronic coughing or lung ailments.",
+                        formatted: `→ Unquestionably, <u>chronic congestion poses grave risks to public health</u>. Inhaling toxic exhaust fumes allows airborne pollutants to <span class="sub-hl">damage respiratory systems</span> and gives vulnerable residents few chances to <span class="sub-hl">avoid chronic coughing or lung ailments</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 3,
+                question: "What solutions do you think could help reduce traffic congestion?",
+                qType: "Wh-question: What solutions do you think could help [verb]?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Đầu tư mạnh vào giao thông công cộng như metro và xe buýt xanh - Giảm phụ thuộc xe cá nhân và giải tỏa đường sá):</div>
+                    <div class="topic-formula-text">
+                        → To tackle congestion, <u>authorities must invest heavily in modern public transit like metro systems</u>. Expanding green bus routes allows citizens to <span class="formula-bracket-hl">[lợi ích đi lại 1 - Vo]</span> and gives urban centers a chance to <span class="formula-bracket-hl">[lợi ích đô thị 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Mở rộng đường và phạt thật nghiêm bằng camera giám sát - Xử phạt nhanh và răn đe người tham gia giao thông tuân thủ luật):</div>
+                    <div class="topic-formula-text">
+                        → Another practical solution is to <u>widen key roadways and enforce stricter traffic fines using surveillance cameras</u>. Smart traffic management allows police to <span class="formula-bracket-hl">[lợi ích kiểm soát 1 - Vo]</span> and gives motorists a strong incentive to <span class="formula-bracket-hl">[hành vi tuân thủ 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc đề xuất giải pháp giảm ùn tắc] (Cách 1 & 2):",
+                        items: [
+                            { en: "authorities must invest heavily in modern public transit", vn: "chính quyền cần phải đầu tư mạnh mẽ vào hệ thống vận tải công cộng hiện đại" },
+                            { en: "expanding green bus routes", vn: "việc mở rộng các tuyến xe buýt xanh thân thiện môi trường" },
+                            { en: "commute without private vehicles", vn: "đi lại hằng ngày mà không cần lệ thuộc vào xe cá nhân" },
+                            { en: "widen key roadways and enforce stricter fines", vn: "mở rộng các tuyến đường huyết mạch và tăng nặng mức xử phạt" },
+                            { en: "smart traffic management", vn: "hệ thống điều hành và quản lý giao thông thông minh" }
+                        ]
+                    },
+                    {
+                        title: "🚇 [Hạ tầng giao thông & Biện pháp quản lý] (Cách 1 & 2):",
+                        items: [
+                            { en: "subsidized metro and electric bus tickets", vn: "vé tàu điện và xe buýt điện được nhà nước trợ giá" },
+                            { en: "automated surveillance cameras", vn: "hệ thống camera giám sát tự động để phạt nguội" },
+                            { en: "construct elevated highways and overpasses", vn: "xây dựng thêm các đường cao tốc trên cao và cầu vượt ngã tư" },
+                            { en: "penalize reckless drivers efficiently", vn: "xử phạt những người lái xe ẩu một cách nhanh chóng và nghiêm minh" },
+                            { en: "obey traffic rules strictly", vn: "tự giác tuân thủ nghiêm ngặt các quy định luật giao thông" }
+                        ]
+                    },
+                    {
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        items: [
+                            { en: "📌 Kết nối giải pháp với sự phát triển bền vững và an sinh xã hội:", vn: "Cải thiện giao thông giúp đô thị phát triển bền vững và tiết kiệm hàng triệu giờ lao động. Mời bạn xem bảng <a href=\"javascript:void(0)\" onclick=\"switchTab('benefits')\" style=\"color: var(--primary); font-weight: 700; text-decoration: underline;\">Kho Lợi Ích B2</a> (Mục Phát triển xã hội & Tiết kiệm thời gian)." }
+                        ]
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Giải pháp giao thông hiệu quả]:",
+                        items: [
+                            { en: "commute without private vehicles", vn: "đi lại dễ dàng mà không cần dùng đến phương tiện cá nhân" },
+                            { en: "declutter crowded roads significantly", vn: "giải tỏa áp lực và làm thông thoáng đường sá đáng kể" },
+                            { en: "penalize reckless drivers efficiently", vn: "xử phạt răn đe người vi phạm một cách chính xác, minh bạch" },
+                            { en: "obey traffic rules strictly", vn: "chấp hành nghiêm túc quy tắc an toàn giao thông" },
+                            { en: "foster a civilized commuting culture", vn: "xây dựng một nét văn hóa giao thông văn minh, lịch sự" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Đầu tư giao thông công cộng - Đi xe buýt xanh không cần xe riêng và giải tỏa đường sá đáng kể - 23 từ)",
+                        text: "To tackle congestion, authorities must invest heavily in modern public transit like metro systems. Expanding green bus routes allows citizens to commute without private vehicles and gives urban centers a chance to declutter crowded roads significantly.",
+                        formatted: `→ To tackle congestion, <u>authorities must invest heavily in modern public transit like metro systems</u>. Expanding green bus routes allows citizens to <span class="sub-hl">commute without private vehicles</span> and gives urban centers a chance to <span class="sub-hl">declutter crowded roads significantly</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Mở rộng đường và phạt qua camera - Xử phạt nhanh và tạo động lực chấp hành luật nghiêm túc - 24 từ)",
+                        text: "Another practical solution is to widen key roadways and enforce stricter traffic fines using surveillance cameras. Smart traffic management allows police to penalize reckless drivers efficiently and gives motorists a strong incentive to obey traffic rules strictly.",
+                        formatted: `→ Another practical solution is to <u>widen key roadways and enforce stricter traffic fines using surveillance cameras</u>. Smart traffic management allows police to <span class="sub-hl">penalize reckless drivers efficiently</span> and gives motorists a strong incentive to <span class="sub-hl">obey traffic rules strictly</span>.`
+                    }
+                ]
+            }
+        ]
     }
+
 ];
 
 // ==========================================================================
@@ -8229,16 +8646,16 @@ window.isTopicUnlocked = (topicId) => {
     if (window._currentUserRole === 'teacher') {
         return practiceTopicsData.some(t => t.id === tid);
     }
-    // Unlocked topics 1 to 24
-    return tid >= 1 && tid <= 24;
+    // Unlocked topics 1 to 26
+    return tid >= 1 && tid <= 26;
 };
 
 window.getAllowedTopicIds = () => {
     if (window._currentUserRole === 'teacher') {
         return practiceTopicsData.map(t => t.id);
     }
-    // Unlocked topics 1 to 24
-    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
+    // Unlocked topics 1 to 26
+    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26];
 };
 
 window.getAllowedTopicsData = () => {
@@ -8259,7 +8676,7 @@ window.updateTopicSelectDropdowns = () => {
         const currentVal = sel.value;
         sel.querySelectorAll('option').forEach(opt => {
             const val = parseInt(opt.value);
-            if (val >= 1 && val <= 24) {
+            if (val >= 1 && val <= 26) {
                 opt.disabled = false;
                 if (val === 1) opt.textContent = "🎯 Topic 01: Let's talk about hobbies";
                 if (val === 2) opt.textContent = "🎯 Topic 02: Let's talk about video games";
@@ -8285,11 +8702,13 @@ window.updateTopicSelectDropdowns = () => {
                 if (val === 22) opt.textContent = "🎯 Topic 22: Let's talk about using mobile phones";
                 if (val === 23) opt.textContent = "🎯 Topic 23: Let's talk about your dream job";
                 if (val === 24) opt.textContent = "🎯 Topic 24: Let's talk about transportation";
-            } else if (val >= 25) {
+                if (val === 25) opt.textContent = "🎯 Topic 25: Let's talk about planes";
+                if (val === 26) opt.textContent = "🎯 Topic 26: Let's talk about traffic problems";
+            } else if (val >= 27) {
                 opt.disabled = true;
             }
         });
-        if (!isTeacher && parseInt(currentVal) > 24) {
+        if (!isTeacher && parseInt(currentVal) > 26) {
             if (sel.id === 'practice-pair-topic2-select') {
                 sel.value = "2";
             } else {
@@ -8544,7 +8963,7 @@ function renderPracticeTopic(topicId) {
                     CHỦ ĐỀ ĐANG KHOÁ (CHỜ CẬP NHẬT)
                 </h2>
                 <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 580px; margin: 0 auto 1.75rem; line-height: 1.65;">
-                    Hiện tại hệ thống đã mở <strong>24 chủ đề đầu tiên (Topic 01 đến Topic 24)</strong> để các bạn luyện tập. Các chủ đề tiếp theo đang được cập nhật và sẽ mở theo lịch học của cô!
+                    Hiện tại hệ thống đã mở <strong>26 chủ đề đầu tiên (Topic 01 đến Topic 26)</strong> để các bạn luyện tập. Các chủ đề tiếp theo đang được cập nhật và sẽ mở theo lịch học của cô!
                 </p>
                 <div style="display: flex; justify-content: center; gap: 0.65rem; flex-wrap: wrap;">
                     <button type="button" class="btn" onclick="renderPracticeTopic(1)" style="background: var(--primary); color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(67, 97, 238, 0.25);">
@@ -8618,6 +9037,12 @@ function renderPracticeTopic(topicId) {
                     </button>
                     <button type="button" class="btn" onclick="renderPracticeTopic(24)" style="background: #2563eb; color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);">
                         Topic 24
+                    </button>
+                    <button type="button" class="btn" onclick="renderPracticeTopic(25)" style="background: #0d9488; color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(13, 148, 136, 0.25);">
+                        Topic 25
+                    </button>
+                    <button type="button" class="btn" onclick="renderPracticeTopic(26)" style="background: #e11d48; color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(225, 29, 72, 0.25);">
+                        Topic 26
                     </button>
                 </div>
             </div>
