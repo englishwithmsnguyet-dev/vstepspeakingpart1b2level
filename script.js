@@ -7042,6 +7042,398 @@ const practiceTopicsData = [
                 ]
             }
         ]
+    },
+    {
+        id: 19,
+        title: "Chủ đề 19: Let's talk about schools",
+        introText: "Let’s talk about schools.",
+        questions: [
+            {
+                qNum: 1,
+                question: "What type of school did you attend when you were younger?",
+                qType: "Past Wh-question: What type of school did you attend when you were younger?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Trường công lập gần nhà - Thầy cô tận tâm, học phí phải chăng, xây dựng nền tảng học vấn và bạn bè gắn bó):</div>
+                    <div class="topic-formula-text">
+                        → When I was younger, <u>I attended a well-regarded public school located close to my house</u>. It provided <span class="formula-bracket-hl">[ưu điểm môi trường học]</span>, which enabled me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Trường tư thục hiện đại - Cơ sở vật chất tối tân, hoạt động ngoại khóa năng động, phát triển tư duy phản biện):</div>
+                    <div class="topic-formula-text">
+                        → Throughout my childhood, <u>I was enrolled in a modern private school</u>. It offered <span class="formula-bracket-hl">[tiện ích học tập hiện đại]</span>, which gave me an ideal environment to <span class="formula-bracket-hl">[lợi ích phát triển 1 - Vo]</span> and <span class="formula-bracket-hl">[lợi ích kỹ năng 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc miêu tả trường học thời niên thiếu]:",
+                        items: [
+                            { en: "attended a well-regarded public school located close to my house", vn: "từng theo học một trường công lập danh tiếng nằm gần nhà" },
+                            { en: "was enrolled in a modern private school", vn: "được ghi danh vào một trường tư thục hiện đại" },
+                            { en: "enabled me to build solid academic foundations", vn: "giúp tôi xây dựng nền tảng học thuật vững chắc" },
+                            { en: "gave me an ideal environment to develop critical thinking", vn: "tạo cho tôi môi trường lý tưởng để phát triển tư duy phản biện" }
+                        ]
+                    },
+                    {
+                        title: "🏫 [Loại trường học & Tiện ích giáo dục]:",
+                        items: [
+                            { en: "dedicated teachers and affordable tuition fees", vn: "đội ngũ giáo viên tận tâm và mức học phí vừa phải" },
+                            { en: "state-of-the-art facilities and dynamic extracurricular activities", vn: "cơ sở vật chất tối tân và các hoạt động ngoại khóa năng động" },
+                            { en: "spacious classrooms equipped with smart projectors", vn: "các phòng học rộng rãi được trang bị máy chiếu thông minh" },
+                            { en: "bilingual curriculum with native foreign teachers", vn: "chương trình học song ngữ với giáo viên bản xứ" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>foster creativity, broaden horizons, build strong connections...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Giá trị học đường]:",
+                        items: [
+                            { en: "build solid academic foundations", vn: "xây dựng nền tảng kiến thức học thuật vững chắc" },
+                            { en: "form lifelong friendships with caring classmates", vn: "xây dựng tình bạn gắn bó cả đời với bạn bè thân thiết" },
+                            { en: "develop critical thinking and problem-solving abilities", vn: "rèn luyện tư duy phản biện và khả năng giải quyết vấn đề" },
+                            { en: "become much more independent and self-disciplined", vn: "trở nên tự lập và có tính kỷ luật bản thân cao hơn rất nhiều" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Trường công lập gần nhà - Thầy cô tận tâm, học phí hợp lý, xây nền tảng học vấn và bạn bè gắn bó)",
+                        text: "When I was younger, I attended a well-regarded public school located close to my house. It provided dedicated teachers and affordable tuition fees, which enabled me to build solid academic foundations and form lifelong friendships.",
+                        formatted: `→ When I was younger, <u>I attended a well-regarded public school located close to my house</u>. It provided <span class="sub-hl">dedicated teachers and affordable tuition fees</span>, which enabled me to <span class="sub-hl">build solid academic foundations and form lifelong friendships</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Trường tư thục hiện đại - Cơ sở vật chất tối tân, ngoại khóa năng động, rèn tư duy phản biện và tự lập)",
+                        text: "Throughout my childhood, I was enrolled in a modern private school. It offered state-of-the-art facilities and dynamic extracurricular activities, which gave me an ideal environment to develop critical thinking and become much more independent.",
+                        formatted: `→ Throughout my childhood, <u>I was enrolled in a modern private school</u>. It offered <span class="sub-hl">state-of-the-art facilities and dynamic extracurricular activities</span>, which gave me an ideal environment to <span class="sub-hl">develop critical thinking and become much more independent</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 2,
+                question: "Do you prefer public or private schools? Why?",
+                qType: "Choice question: Do you prefer [public] or [private] schools? Why?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Thích trường công lập - Học phí hợp lý, giảm bớt gánh nặng tài chính, tạo cơ hội học tập bình đẳng):</div>
+                    <div class="topic-formula-text">
+                        → Personally, <u>I lean towards public schools mainly because of their affordability</u>. Low tuition fees help families <span class="formula-bracket-hl">[lợi ích tài chính - Vo]</span> while providing students with <span class="formula-bracket-hl">[giá trị xã hội bình đẳng]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Thích trường tư thục - Sĩ số lớp nhỏ, giáo viên quan tâm chu đáo sát sao, phòng học đa phương tiện tiên tiến):</div>
+                    <div class="topic-formula-text">
+                        → Without doubt, <u>I have a strong preference for private institutions</u> because of their student-centered approach. They maintain <span class="formula-bracket-hl">[ưu điểm quy mô & cơ sở]</span>, which enables learners to <span class="formula-bracket-hl">[lợi ích phát triển - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc nêu quan điểm lựa chọn trường học]:",
+                        items: [
+                            { en: "lean towards public schools mainly because of their affordability", vn: "thiên về trường công lập chủ yếu nhờ tính hợp lý về học phí" },
+                            { en: "have a strong preference for private institutions", vn: "đặc biệt yêu thích các tổ chức giáo dục tư thục" },
+                            { en: "reduce financial strain on household budgets", vn: "giảm bớt gánh nặng tài chính cho ngân sách gia đình" },
+                            { en: "receive personalized mentorship from dedicated teachers", vn: "nhận được sự cố vấn và kèm cặp tận tình cho từng cá nhân" }
+                        ]
+                    },
+                    {
+                        title: "🏫 [Ưu điểm trường công & trường tư]:",
+                        items: [
+                            { en: "equal educational opportunities for children from diverse backgrounds", vn: "cơ hội giáo dục bình đẳng cho con em từ mọi hoàn cảnh khác nhau" },
+                            { en: "smaller class sizes and advanced multimedia classrooms", vn: "quy mô lớp học nhỏ hơn cùng các phòng học đa phương tiện tiên tiến" },
+                            { en: "well-standardized national curriculum", vn: "chương trình học quốc gia có chuẩn mực và kiểm định nghiêm ngặt" },
+                            { en: "comprehensive pastoral care and tailored support", vn: "sự chăm sóc chu đáo toàn diện và hỗ trợ cá nhân hóa" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>boost confidence, enhance interpersonal skills, expand social network...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Tài chính & Cá nhân hóa]:",
+                        items: [
+                            { en: "reduce financial strain on household budgets", vn: "giảm nhẹ áp lực tài chính đối với các chi tiêu sinh hoạt gia đình" },
+                            { en: "interact with peers from diverse socio-economic backgrounds", vn: "tiếp xúc và hòa nhập với bạn bè từ nhiều tầng lớp xã hội phong phú" },
+                            { en: "receive personalized mentorship and flourish academically", vn: "được quan tâm kèm cặp sát sao và phát triển vượt bậc trong học tập" },
+                            { en: "gain early exposure to cutting-edge technology in classes", vn: "sớm được tiếp cận với công nghệ giảng dạy hiện đại ngay trên lớp" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Thích trường công lập - Chi phí dễ thở, giảm áp lực tiền bạc, tiếp xúc bạn bè từ mọi hoàn cảnh xã hội)",
+                        text: "Personally, I lean towards public schools mainly because of their affordability. Low tuition fees help families reduce financial strain while providing students with equal educational opportunities to interact with peers from diverse backgrounds.",
+                        formatted: `→ Personally, <u>I lean towards public schools mainly because of their affordability</u>. Low tuition fees help families <span class="sub-hl">reduce financial strain</span> while providing students with <span class="sub-hl">equal educational opportunities to interact with peers from diverse backgrounds</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Thích trường tư thục - Sĩ số nhỏ, phòng học hiện đại, được thầy cô kèm cặp sát sao và tiến bộ nhanh)",
+                        text: "Without doubt, I have a strong preference for private institutions because of their student-centered approach. They maintain smaller class sizes and advanced multimedia classrooms, which enables learners to receive personalized mentorship and flourish academically.",
+                        formatted: `→ Without doubt, <u>I have a strong preference for private institutions</u> because of their student-centered approach. They maintain <span class="sub-hl">smaller class sizes and advanced multimedia classrooms</span>, which enables learners to <span class="sub-hl">receive personalized mentorship and flourish academically</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 3,
+                question: "In the future, which type of school do you think will become more common, and why?",
+                qType: "Prediction Wh-question: Which type of school will become more common, and why?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Trường tư thục & song ngữ bùng nổ - Đời sống nâng cao, phụ huynh đầu tư chương trình quốc tế để con tự tin hội nhập):</div>
+                    <div class="topic-formula-text">
+                        → Looking ahead, <u>I foresee that private and bilingual schools will become increasingly prevalent</u>. As living standards rise, modern parents are more willing to invest in <span class="formula-bracket-hl">[yếu tố giáo dục cao cấp]</span> to give their children <span class="formula-bracket-hl">[lợi thế tương lai]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Trường công lập giữ vị thế chủ đạo - Nhà nước hiện đại hóa hạ tầng, chất lượng cao phục vụ toàn dân):</div>
+                    <div class="topic-formula-text">
+                        → From my perspective, <u>public schools will definitely remain the mainstream choice</u> in our society. The government continues to <span class="formula-bracket-hl">[hành động đầu tư của nhà nước - Vo]</span> so that quality education remains <span class="formula-bracket-hl">[tính chất dễ tiếp cận]</span> for every citizen.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc dự đoán xu hướng giáo dục tương lai]:",
+                        items: [
+                            { en: "foresee that private and bilingual schools will become increasingly prevalent", vn: "dự đoán rằng trường tư thục và song ngữ sẽ ngày càng trở nên thịnh hành" },
+                            { en: "will definitely remain the mainstream choice in our society", vn: "chắc chắn sẽ tiếp tục là sự lựa chọn chủ đạo trong xã hội" },
+                            { en: "give their children a competitive edge in global workplaces", vn: "mang lại cho con cái lợi thế cạnh tranh vượt trội tại thị trường việc làm toàn cầu" },
+                            { en: "remain accessible and affordable for every citizen", vn: "tiếp tục duy trì khả năng tiếp cận thuận tiện với mức phí hợp túi tiền cho mọi người dân" }
+                        ]
+                    },
+                    {
+                        title: "🏫 [Xu hướng giáo dục tương lai & Đầu tư công]:",
+                        items: [
+                            { en: "internationally recognized curriculums and immersive English environments", vn: "các khung chương trình được công nhận quốc tế và môi trường đắm chìm tiếng Anh" },
+                            { en: "modernize public school infrastructure and integrate digital learning tools", vn: "hiện đại hóa hạ tầng trường công và tích hợp các công cụ học tập số hóa" },
+                            { en: "expanding middle-class families with higher disposable incomes", vn: "các gia đình trung lưu ngày càng mở rộng với mức thu nhập khả dụng cao hơn" },
+                            { en: "state-funded educational reforms and subsidized school fees", vn: "các cải cách giáo dục từ ngân sách nhà nước và học phí được hỗ trợ trợ cấp" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>open up career opportunities, foster independence, promote social mobility...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Tầm nhìn tương lai]:",
+                        items: [
+                            { en: "gain a competitive edge in global workplaces", vn: "có được lợi thế cạnh tranh trong môi trường làm việc toàn cầu" },
+                            { en: "adapt quickly to technological transformations", vn: "thích ứng nhanh chóng với những chuyển biến công nghệ" },
+                            { en: "ensure equal educational rights across remote and urban areas", vn: "đảm bảo quyền tiếp cận giáo dục bình đẳng giữa vùng sâu vùng xa và thành thị" },
+                            { en: "foster well-rounded civic awareness among young citizens", vn: "nuôi dưỡng nhận thức công dân toàn diện trong giới trẻ" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Trường tư thục & song ngữ bùng nổ - Đời sống nâng cao, phụ huynh đầu tư bằng cấp quốc tế cho con)",
+                        text: "Looking ahead, I foresee that private and bilingual schools will become increasingly prevalent. As living standards rise, modern parents are more willing to invest in international curriculums to give their children a competitive edge in global workplaces.",
+                        formatted: `→ Looking ahead, <u>I foresee that private and bilingual schools will become increasingly prevalent</u>. As living standards rise, modern parents are more willing to invest in <span class="sub-hl">international curriculums</span> to give their children <span class="sub-hl">a competitive edge in global workplaces</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Trường công lập giữ vị thế chủ đạo - Nhà nước số hóa học đường, giáo dục chất lượng cho mọi người dân)",
+                        text: "From my perspective, public schools will definitely remain the mainstream choice in our society. The government continues to modernize public school infrastructure and integrate digital learning tools so that quality education remains accessible and affordable for every citizen.",
+                        formatted: `→ From my perspective, <u>public schools will definitely remain the mainstream choice</u> in our society. The government continues to <span class="sub-hl">modernize public school infrastructure and integrate digital learning tools</span> so that quality education remains <span class="sub-hl">accessible and affordable for every citizen</span>.`
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: 20,
+        title: "Chủ đề 20: Let's talk about learning English",
+        introText: "Let’s talk about learning English.",
+        questions: [
+            {
+                qNum: 1,
+                question: "What was learning English like for you at school when you were younger?",
+                qType: "Past Wh-question: What was learning English like for you at school?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Khá áp lực & khô khan - Nặng về ngữ pháp, bài thi trên giấy, ít cơ hội luyện nói bộc phát):</div>
+                    <div class="topic-formula-text">
+                        → Looking back, <u>learning English at school was relatively dry and demanding for me</u>. The curriculum placed heavy emphasis on <span class="formula-bracket-hl">[phương pháp truyền thống cũ]</span>, which left students with <span class="formula-bracket-hl">[thiếu hụt kỹ năng nói]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Hào hứng & lôi cuốn - Thầy cô lồng ghép bài hát, trò chơi và đóng vai, tự tin nói không sợ sai):</div>
+                    <div class="topic-formula-text">
+                        → Fortunately, <u>I had a wonderfully engaging experience with English during my school years</u>. My enthusiastic teachers frequently incorporated <span class="formula-bracket-hl">[phương pháp giảng dạy sinh động]</span>, which motivated me to <span class="formula-bracket-hl">[lợi ích cảm xúc - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc hồi tưởng trải nghiệm học tiếng Anh thời đi học]:",
+                        items: [
+                            { en: "learning English at school was relatively dry and demanding for me", vn: "việc học tiếng Anh ở trường thời đó khá khô khan và nặng nề với tôi" },
+                            { en: "placed heavy emphasis on complex grammar rules and written exams", vn: "đặt trọng tâm lớn vào các quy tắc ngữ pháp phức tạp và các bài thi viết" },
+                            { en: "had a wonderfully engaging experience with English", vn: "đã có một trải nghiệm học tiếng Anh vô cùng cuốn hút" },
+                            { en: "motivated me to participate actively without fear of making mistakes", vn: "thôi thúc tôi hăng hái tham gia mà không hề sợ mắc lỗi" }
+                        ]
+                    },
+                    {
+                        title: "📖 [Phương pháp giảng dạy truyền thống & Tương tác hiện đại]:",
+                        items: [
+                            { en: "complex grammar rules and memorizing lengthy vocabulary lists", vn: "các cấu trúc ngữ pháp phức tạp và việc học vẹt danh sách từ vựng dài" },
+                            { en: "rote memorization and standardized paper tests", vn: "lối học thuộc lòng máy móc và các bài kiểm tra trắc nghiệm trên giấy" },
+                            { en: "catchy songs, interactive games, and role-plays", vn: "những bài hát bắt tai, trò chơi tương tác và hoạt động đóng vai" },
+                            { en: "supportive peer discussions and communicative simulations", vn: "các buổi thảo luận cởi mở giữa bạn bè và mô phỏng giao tiếp thực tế" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>spark curiosity, boost language confidence, unlock potential...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Cảm xúc & Kỹ năng học tập]:",
+                        items: [
+                            { en: "practice spontaneous speaking with classmates", vn: "rèn luyện phản xạ nói tự nhiên, bộc phát cùng bạn học" },
+                            { en: "participate actively without fear of making mistakes", vn: "tích cực tham gia phát biểu mà không hề e ngại mắc sai lầm" },
+                            { en: "develop natural phonetic reflexes from early ages", vn: "hình thành phản xạ ngữ âm tự nhiên ngay từ khi còn nhỏ" },
+                            { en: "turn tedious grammar lessons into enjoyable games", vn: "biến những bài học ngữ pháp khô khan thành các trò chơi thú vị" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Khá áp lực & khô khan - Chú trọng ngữ pháp và bài thi trên giấy, thiếu cơ hội luyện nói bộc phát)",
+                        text: "Looking back, learning English at school was relatively dry and demanding for me. The curriculum placed heavy emphasis on complex grammar rules and written exams, which left students with very little opportunity to practice spontaneous speaking.",
+                        formatted: `→ Looking back, <u>learning English at school was relatively dry and demanding for me</u>. The curriculum placed heavy emphasis on <span class="sub-hl">complex grammar rules and written exams</span>, which left students with <span class="sub-hl">very little opportunity to practice spontaneous speaking</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Hào hứng & cuốn hút - Thầy cô lồng ghép bài hát, trò chơi và đóng vai, tự tin nói không sợ sai)",
+                        text: "Fortunately, I had a wonderfully engaging experience with English during my school years. My enthusiastic teachers frequently incorporated catchy songs, interactive games, and role-plays, which motivated me to participate actively without fear of making mistakes.",
+                        formatted: `→ Fortunately, <u>I had a wonderfully engaging experience with English during my school years</u>. My enthusiastic teachers frequently incorporated <span class="sub-hl">catchy songs, interactive games, and role-plays</span>, which motivated me to <span class="sub-hl">participate actively without fear of making mistakes</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 2,
+                question: "What methods have you used to learn English?",
+                qType: "Present Perfect Wh-question: What methods have you used to learn English?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Đắm chìm truyền thông - Xem phim có phụ đề tiếng Anh, nghe podcast hằng ngày tiếp thu thành ngữ tự nhiên):</div>
+                    <div class="topic-formula-text">
+                        → Over the years, <u>I've relied heavily on media immersion to acquire English naturally</u>. I regularly <span class="formula-bracket-hl">[phương pháp tiếp xúc truyền thông - Vo]</span>, which allows me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> while <span class="formula-bracket-hl">[lợi ích 2 - V-ing]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Dùng app thông minh & Kỹ thuật Shadowing - Nhại lại và ghi âm giọng nói hằng ngày, tự sửa lỗi phát âm):</div>
+                    <div class="topic-formula-text">
+                        → In addition to traditional study, <u>I make good use of language apps and self-practice techniques</u>. Practicing <span class="formula-bracket-hl">[thói quen tự luyện tập]</span> enables me to <span class="formula-bracket-hl">[lợi ích 1 - Vo]</span> and <span class="formula-bracket-hl">[lợi ích 2 - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc miêu tả phương pháp học tiếng Anh hiện đại]:",
+                        items: [
+                            { en: "relied heavily on media immersion to acquire English naturally", vn: "phụ thuộc nhiều vào việc đắm chìm trong phương tiện truyền thông để tiếp thu tiếng Anh một cách tự nhiên" },
+                            { en: "make good use of language apps and self-practice techniques", vn: "tận dụng hiệu quả các ứng dụng ngôn ngữ và kỹ thuật tự luyện tập" },
+                            { en: "absorb authentic idioms used by native speakers", vn: "thẩm thấu các thành ngữ đời thực mà người bản xứ hay dùng" },
+                            { en: "spot pronunciation errors and speak with much greater fluency", vn: "phát hiện ra các lỗi phát âm và nói với độ lưu loát cao hơn rất nhiều" }
+                        ]
+                    },
+                    {
+                        title: "📖 [Công cụ & Kỹ thuật luyện tập ngôn ngữ]:",
+                        items: [
+                            { en: "stream TV shows with English subtitles and listen to daily podcasts", vn: "xem phim bộ kèm phụ đề tiếng Anh và nghe podcast hàng ngày" },
+                            { en: "shadowing authentic dialogues and recording my own voice", vn: "luyện kỹ thuật nhại theo các đoạn đối thoại thực tế và ghi âm lại giọng của mình" },
+                            { en: "utilize spaced repetition flashcard applications", vn: "sử dụng các ứng dụng thẻ từ vựng lặp lại ngắt quãng thông minh" },
+                            { en: "participate in virtual language exchange communities", vn: "tham gia vào các cộng đồng trao đổi ngôn ngữ trên không gian mạng" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>sharpen communication skills, expand vocabulary range, enhance listening comprehension...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Phản xạ & Tự tin]:",
+                        items: [
+                            { en: "absorb authentic idioms while sharpening listening comprehension effortlessly", vn: "thẩm thấu các thành ngữ đời thực đồng thời rèn luyện kỹ năng nghe hiểu nhẹ nhàng" },
+                            { en: "spot pronunciation errors and speak with much greater fluency", vn: "tự phát hiện lỗi phát âm và nói chuyện với độ lưu loát vượt trội" },
+                            { en: "train conversational muscle memory through daily repetition", vn: "rèn luyện phản xạ phát âm cơ miệng thông qua việc lặp lại hàng ngày" },
+                            { en: "overcome self-consciousness when conversing in professional settings", vn: "vượt qua sự e dè, thiếu tự tin khi trò chuyện trong môi trường chuyên nghiệp" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Đắm chìm truyền thông - Xem phim phụ đề tiếng Anh, nghe podcast hằng ngày tiếp thu thành ngữ tự nhiên)",
+                        text: "Over the years, I've relied heavily on media immersion to acquire English naturally. I regularly stream TV shows with English subtitles and listen to daily podcasts, which allows me to absorb authentic idioms while sharpening my listening comprehension effortlessly.",
+                        formatted: `→ Over the years, <u>I've relied heavily on media immersion to acquire English naturally</u>. I regularly <span class="sub-hl">stream TV shows with English subtitles and listen to daily podcasts</span>, which allows me to <span class="sub-hl">absorb authentic idioms while sharpening my listening comprehension effortlessly</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Dùng app & Kỹ thuật Shadowing - Nhại lại và ghi âm giọng nói hằng ngày, tự sửa lỗi phát âm và tăng độ lưu loát)",
+                        text: "In addition to traditional study, I make good use of language apps and self-practice techniques. Practicing shadowing and recording my own voice every day enables me to spot pronunciation errors and speak with much greater fluency.",
+                        formatted: `→ In addition to traditional study, <u>I make good use of language apps and self-practice techniques</u>. Practicing <span class="sub-hl">shadowing and recording my own voice every day</span> enables me to <span class="sub-hl">spot pronunciation errors and speak with much greater fluency</span>.`
+                    }
+                ]
+            },
+            {
+                qNum: 3,
+                question: "In your opinion, what is the most difficult skill in learning English?",
+                qType: "Superlative Wh-question: What is the most difficult skill in learning English?",
+                formula: `<div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 1 (Kỹ năng Nói - Đòi hỏi phản xạ nhanh dưới áp lực, người học dễ ngắc ngứ khi nói chuyện với người bản xứ):</div>
+                    <div class="topic-formula-text">
+                        → From my perspective, <u>speaking is undeniably the most daunting aspect of language learning</u>. It requires <span class="formula-bracket-hl">[yêu cầu phản xạ cao]</span>, so many learners <span class="formula-bracket-hl">[rào cản tâm lý - Vo]</span> when <span class="formula-bracket-hl">[hoàn cảnh giao tiếp - V-ing]</span>.
+                    </div>
+                </div>
+                <div class="topic-formula-row">
+                    <div class="topic-formula-title">- Cách 2 (Kỹ năng Nghe - Người bản xứ nuốt âm nối từ và dùng ngữ điệu địa phương, rất khó bắt kịp trong thời gian thực):</div>
+                    <div class="topic-formula-text">
+                        → To me, <u>listening comprehension poses the steepest challenge</u> for non-native learners. In real life, speakers frequently <span class="formula-bracket-hl">[đặc tính ngôn ngữ nói tự nhiên]</span>, which makes it hard to <span class="formula-bracket-hl">[khó khăn bắt kịp - Vo]</span>.
+                    </div>
+                </div>`,
+                vocabGroups: [
+                    {
+                        title: "🌟 [Cấu trúc bày tỏ độ khó của kỹ năng tiếng Anh]:",
+                        items: [
+                            { en: "speaking is undeniably the most daunting aspect of language learning", vn: "kỹ năng nói không thể phủ nhận là khía cạnh đáng sợ và thử thách nhất trong việc học ngôn ngữ" },
+                            { en: "listening comprehension poses the steepest challenge", vn: "khả năng nghe hiểu đặt ra thử thách chông gai và nan giải nhất" },
+                            { en: "freeze up and hesitate when conversing with native speakers", vn: "bị đơ người và ngập ngừng ngắc ngứ khi trò chuyện với người bản xứ" },
+                            { en: "process spoken information in real time", vn: "xử lý thông tin lời nói ngay trong thời gian thực" }
+                        ]
+                    },
+                    {
+                        title: "📖 [Rào cản khi Nói & Đặc tính ngôn ngữ Nghe tự nhiên]:",
+                        items: [
+                            { en: "instant reaction and accurate phrasing under pressure", vn: "phản xạ tức thì và việc diễn đạt câu từ chính xác dưới áp lực thời gian" },
+                            { en: "blend words together and use diverse regional accents", vn: "nuốt âm, nối các từ lại với nhau và dùng nhiều ngữ điệu vùng miền phong phú" },
+                            { en: "fast speech rates and informal slang expressions", vn: "tốc độ nói nhanh và các từ lóng giao tiếp thân mật" },
+                            { en: "fear of negative evaluation and grammatical perfectionism", vn: "nỗi sợ bị người khác đánh giá và chủ nghĩa cầu toàn về ngữ pháp" }
+                        ]
+                    },
+                    {
+                        type: "note",
+                        title: "⭐ [Kho Lợi Ích B2]:",
+                        note: `Kết hợp các cụm từ đắt giá tại <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Bảng Lợi Ích</button> (Ví dụ: <em>boost confidence, master communication skills, overcome psychological barriers...</em>).`
+                    },
+                    {
+                        title: "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Vượt qua rào cản]:",
+                        items: [
+                            { en: "overcome the psychological barrier of making mistakes", vn: "vượt qua rào cản tâm lý sợ phạm sai sót khi giao tiếp" },
+                            { en: "decode rapid connected speech in everyday conversations", vn: "giải mã chuỗi âm thanh nối nhanh trong các cuộc hội thoại đời thường" },
+                            { en: "deliver thoughts cohesively without awkward pauses", vn: "trình bày suy nghĩ một cách mạch lạc mà không bị ngập ngừng khó xử" },
+                            { en: "adapt smoothly to diverse native accents and dialects", vn: "thích ứng nhịp nhàng với nhiều chất giọng bản xứ và phương ngữ khác nhau" }
+                        ]
+                    }
+                ],
+                samples: [
+                    {
+                        label: "Bài mẫu Cách 1 (Kỹ năng Nói - Phản xạ tức thì dưới áp lực, người học dễ đơ và ngắc ngứ khi nói chuyện với người bản xứ)",
+                        text: "From my perspective, speaking is undeniably the most daunting aspect of language learning. It requires instant reaction and accurate phrasing under pressure, so many learners freeze up and hesitate when conversing with native speakers.",
+                        formatted: `→ From my perspective, <u>speaking is undeniably the most daunting aspect of language learning</u>. It requires <span class="sub-hl">instant reaction and accurate phrasing under pressure</span>, so many learners <span class="sub-hl">freeze up and hesitate when conversing with native speakers</span>.`
+                    },
+                    {
+                        label: "Bài mẫu Cách 2 (Kỹ năng Nghe - Người bản xứ nuốt âm nối từ và dùng ngữ điệu địa phương, rất khó bắt kịp trong thời gian thực)",
+                        text: "To me, listening comprehension poses the steepest challenge for non-native learners. In real life, speakers frequently blend words together and use diverse regional accents, which makes it hard to process spoken information in real time.",
+                        formatted: `→ To me, <u>listening comprehension poses the steepest challenge</u> for non-native learners. In real life, speakers frequently <span class="sub-hl">blend words together and use diverse regional accents</span>, which makes it hard to <span class="sub-hl">process spoken information in real time</span>.`
+                    }
+                ]
+            }
+        ]
     }
 ];
 
@@ -7053,16 +7445,16 @@ window.isTopicUnlocked = (topicId) => {
     if (window._currentUserRole === 'teacher') {
         return practiceTopicsData.some(t => t.id === tid);
     }
-    // Unlocked topics 1 to 18
-    return tid >= 1 && tid <= 18;
+    // Unlocked topics 1 to 20
+    return tid >= 1 && tid <= 20;
 };
 
 window.getAllowedTopicIds = () => {
     if (window._currentUserRole === 'teacher') {
         return practiceTopicsData.map(t => t.id);
     }
-    // Unlocked topics 1 to 18
-    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
+    // Unlocked topics 1 to 20
+    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 };
 
 window.getAllowedTopicsData = () => {
@@ -7083,7 +7475,7 @@ window.updateTopicSelectDropdowns = () => {
         const currentVal = sel.value;
         sel.querySelectorAll('option').forEach(opt => {
             const val = parseInt(opt.value);
-            if (val >= 1 && val <= 18) {
+            if (val >= 1 && val <= 20) {
                 opt.disabled = false;
                 if (val === 1) opt.textContent = "🎯 Topic 01: Let's talk about hobbies";
                 if (val === 2) opt.textContent = "🎯 Topic 02: Let's talk about video games";
@@ -7103,11 +7495,13 @@ window.updateTopicSelectDropdowns = () => {
                 if (val === 16) opt.textContent = "🎯 Topic 16: Let's talk about prices and shopping habits";
                 if (val === 17) opt.textContent = "🎯 Topic 17: Let's talk about traveling";
                 if (val === 18) opt.textContent = "🎯 Topic 18: Let's talk about holidays";
-            } else if (val >= 19) {
+                if (val === 19) opt.textContent = "🎯 Topic 19: Let's talk about schools";
+                if (val === 20) opt.textContent = "🎯 Topic 20: Let's talk about learning English";
+            } else if (val >= 21) {
                 opt.disabled = true;
             }
         });
-        if (!isTeacher && parseInt(currentVal) > 18) {
+        if (!isTeacher && parseInt(currentVal) > 20) {
             if (sel.id === 'practice-pair-topic2-select') {
                 sel.value = "2";
             } else {
@@ -7362,7 +7756,7 @@ function renderPracticeTopic(topicId) {
                     CHỦ ĐỀ ĐANG KHOÁ (CHỜ CẬP NHẬT)
                 </h2>
                 <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 580px; margin: 0 auto 1.75rem; line-height: 1.65;">
-                    Hiện tại hệ thống đã mở <strong>18 chủ đề đầu tiên (Topic 01 đến Topic 18)</strong> để các bạn luyện tập. Các chủ đề tiếp theo đang được cập nhật và sẽ mở theo lịch học của cô!
+                    Hiện tại hệ thống đã mở <strong>20 chủ đề đầu tiên (Topic 01 đến Topic 20)</strong> để các bạn luyện tập. Các chủ đề tiếp theo đang được cập nhật và sẽ mở theo lịch học của cô!
                 </p>
                 <div style="display: flex; justify-content: center; gap: 0.65rem; flex-wrap: wrap;">
                     <button type="button" class="btn" onclick="renderPracticeTopic(1)" style="background: var(--primary); color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(67, 97, 238, 0.25);">
@@ -7418,6 +7812,12 @@ function renderPracticeTopic(topicId) {
                     </button>
                     <button type="button" class="btn" onclick="renderPracticeTopic(18)" style="background: #ec4899; color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(236, 72, 153, 0.25);">
                         Topic 18
+                    </button>
+                    <button type="button" class="btn" onclick="renderPracticeTopic(19)" style="background: #0284c7; color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);">
+                        Topic 19
+                    </button>
+                    <button type="button" class="btn" onclick="renderPracticeTopic(20)" style="background: #059669; color: white; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(5, 150, 105, 0.25);">
+                        Topic 20
                     </button>
                 </div>
             </div>
