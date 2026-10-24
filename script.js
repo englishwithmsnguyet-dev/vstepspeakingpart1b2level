@@ -321,6 +321,10 @@ document.addEventListener('DOMContentLoaded', () => {
         "Nguyễn Thị Chúc Yến"
     ];
 
+    const validStudentsB2 = [
+        "Gia Tuệ"
+    ];
+
     const normalizeStr = (str) => {
         return (str || '')
             .normalize('NFD')
@@ -340,7 +344,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         const roleLabel = userProfile?.querySelector('.label');
         if (roleLabel) {
-            roleLabel.textContent = state.userRole === 'teacher' ? 'Giáo viên' : 'Học viên • Lớp B212';
+            roleLabel.textContent = state.userRole === 'teacher' ? 'Giáo viên' : `Học viên • Lớp ${state.studentClass || 'B212'}`;
         }
         userProfile.classList.remove('hidden');
         welcomeModal.style.opacity = '0';
@@ -413,6 +417,24 @@ document.addEventListener('DOMContentLoaded', () => {
             state.accessLevel = 'B212';
             window._currentUserRole = 'student';
             window._currentClass = 'B212';
+        } else if (formattedClass === 'B2') {
+            // Check student list for class B2
+            const matchedStudent = validStudentsB2.find(s => {
+                const target = normalizeStr(s);
+                return normName === target || normName.endsWith(' ' + target);
+            });
+
+            if (!matchedStudent) {
+                loginError.textContent = 'Họ và tên không thuộc danh sách lớp. Vui lòng kiểm tra lại!';
+                loginError.style.display = 'block';
+                return;
+            }
+            state.studentName = matchedStudent;
+            state.studentClass = 'B2';
+            state.userRole = 'student';
+            state.accessLevel = 'B2';
+            window._currentUserRole = 'student';
+            window._currentClass = 'B2';
         } else {
             loginError.textContent = 'Mã lớp không hợp lệ. Vui lòng kiểm tra lại!';
             loginError.style.display = 'block';
