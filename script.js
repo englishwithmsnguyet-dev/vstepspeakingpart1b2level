@@ -557,7 +557,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const ynFormulas = [
         {
                 "title": "1. Do you often [hoạt động – Vo]?",
-                "formula": "→ Sure. I often <strong>[hoạt động – Vo]</strong> <strong>[thời gian]</strong> whenever I have free time. It allows me to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>.",
+                "formula": "<div style='margin-bottom: 8px;'><strong>- Cách 1 (Trả lời YES):</strong> → Sure. I often <strong>[hoạt động – Vo]</strong> <strong>[thời gian]</strong> whenever I have free time. It allows me to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>.</div><div><strong>- Cách 2 (Trả lời NO):</strong> → Honestly, not really. I rarely <strong>[hoạt động – Vo]</strong> because I have a busy schedule. Instead, I prefer to <strong>[hoạt động khác – Vo]</strong> to <strong>[lợi ích]</strong>.</div>",
                 "examples": [
                         {
                                 "q": "Do you often <span class='sub-hl'>play sports</span>?",
@@ -591,8 +591,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                 ],
                 "exQ": "Do you often <span class='sub-hl'>play sports</span>?",
-                "exA": "→ Sure. I often play sports in the afternoon whenever I have free time. It allows me to relax after a busy day and stay healthy.",
-                "exAFormatted": "→ Sure. I often <span class=\"sub-hl\">play sports</span> <span class=\"sub-hl\">in the afternoon</span> whenever I have free time. It allows me to <span class=\"sub-hl\">relax after a busy day</span> and <span class=\"sub-hl\">stay healthy</span>.",
+                "exA": "Sure. I often play sports in the afternoon whenever I have free time. It allows me to relax after a busy day and stay healthy. OR Honestly, not really. I rarely play sports because I have a busy study schedule. Instead, I prefer to listen to music at home to unwind after a stressful day.",
+                "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Trả lời YES):</div>→ Sure. I often <span class=\"sub-hl\">play sports</span> <span class=\"sub-hl\">in the afternoon</span> whenever I have free time. It allows me to <span class=\"sub-hl\">relax after a busy day</span> and <span class=\"sub-hl\">stay healthy</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Trả lời NO):</div>→ Honestly, not really. I rarely <span class=\"sub-hl\">play sports</span> because I have a <span class=\"sub-hl\">busy study schedule</span>. Instead, I prefer to <span class=\"sub-hl\">listen to music at home</span> to <span class=\"sub-hl\">unwind after a stressful day</span>.</div>",
                 "vocab": [
                         {
                                 "type": "time",
@@ -631,13 +631,13 @@ document.addEventListener('DOMContentLoaded', () => {
                                                 "vn": "vào thời gian rảnh rỗi"
                                         },
                                         {
-                                        "en": "after school",
-                                        "vn": "sau giờ học"
-                                },
-                                {
-                                        "en": "after work",
-                                        "vn": "sau giờ làm"
-                                }
+                                                "en": "after school",
+                                                "vn": "sau giờ học"
+                                        },
+                                        {
+                                                "en": "after work",
+                                                "vn": "sau giờ làm"
+                                        }
                                 ]
                         },
                         {
@@ -650,11 +650,23 @@ document.addEventListener('DOMContentLoaded', () => {
                                         }
                                 ]
                         }
+                ],
+                "samples": [
+                        {
+                                "label": "Cách 1 (Trả lời YES)",
+                                "text": "Sure. I often play sports in the afternoon whenever I have free time. It allows me to relax after a busy day and stay healthy.",
+                                "formatted": "→ Sure. I often <span class=\"sub-hl\">play sports</span> <span class=\"sub-hl\">in the afternoon</span> whenever I have free time. It allows me to <span class=\"sub-hl\">relax after a busy day</span> and <span class=\"sub-hl\">stay healthy</span>."
+                        },
+                        {
+                                "label": "Cách 2 (Trả lời NO)",
+                                "text": "Honestly, not really. I rarely play sports because I have a busy study schedule. Instead, I prefer to listen to music at home to unwind after a stressful day.",
+                                "formatted": "→ Honestly, not really. I rarely <span class=\"sub-hl\">play sports</span> because I have a <span class=\"sub-hl\">busy study schedule</span>. Instead, I prefer to <span class=\"sub-hl\">listen to music at home</span> to <span class=\"sub-hl\">unwind after a stressful day</span>."
+                        }
                 ]
         },
         {
                 "title": "2. Do you often [hoạt động 1 – Vo] while [hoạt động 2 – Ving]?",
-                "formula": "→ Not really. I don’t often <strong>[hoạt động 1 – Vo]</strong> while <strong>[hoạt động 2 – Ving]</strong> because I find it difficult to concentrate. Instead, I prefer to focus on one task at a time so that I can <strong>[give it my full attention / complete it more effectively / do it more carefully]</strong>.",
+                "formula": "<div style='margin-bottom: 8px;'><strong>- Cách 1 (Trả lời NO):</strong> → Not really. I don't often <strong>[hoạt động 1 – Vo]</strong> while <strong>[hoạt động 2 – V-ing]</strong> because I find it hard to focus. Instead, I prefer to focus on one task at a time to <strong>[lợi ích]</strong>.</div><div><strong>- Cách 2 (Trả lời YES):</strong> → Yes, I sometimes do. I often <strong>[hoạt động 1 – Vo]</strong> while <strong>[hoạt động 2 – V-ing]</strong> because it makes the task more <strong>[tính từ mô tả]</strong>. It allows me to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>.</div>",
                 "examples": [
                         {
                                 "q": "Do you often <span class='sub-hl'>listen to music</span> while <span class='sub-hl'>doing homework</span>?",
@@ -688,8 +700,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                 ],
                 "exQ": "Do you often <span class='sub-hl'>listen to music</span> while <span class='sub-hl'>doing your homework</span>?",
-                "exA": "→ Not really. I don’t often listen to music while doing my homework because it’s hard for me to focus. I prefer to do one thing at a time to do it better.",
-                "exAFormatted": "→ Not really. I don’t often <span class=\"sub-hl\">listen to music</span> while <span class=\"sub-hl\">doing my homework</span> because <span class=\"sub-hl\">it’s hard for me to focus</span>. I prefer to focus on one task at a time so that I can <span class=\"sub-hl\">complete it more effectively</span>.",
+                "exA": "Not really. I don't often listen to music while doing my homework because it's hard for me to focus. I prefer to do one thing at a time to complete it more effectively. OR Yes, I sometimes do. I often listen to soft acoustic music while doing my homework because it makes studying more enjoyable. It allows me to reduce stress and stay focused.",
+                "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Trả lời NO):</div>→ Not really. I don't often <span class=\"sub-hl\">listen to music</span> while <span class=\"sub-hl\">doing my homework</span> because it's hard for me to focus. I prefer to <span class=\"sub-hl\">do one thing at a time</span> to <span class=\"sub-hl\">complete it more effectively</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Trả lời YES):</div>→ Yes, I sometimes do. I often <span class=\"sub-hl\">listen to soft acoustic music</span> while <span class=\"sub-hl\">doing my homework</span> because it makes studying more <span class=\"sub-hl\">enjoyable</span>. It allows me to <span class=\"sub-hl\">reduce stress</span> and <span class=\"sub-hl\">stay focused</span>.</div>",
                 "vocab": [
                         {
                                 "type": "purpose",
@@ -717,11 +729,23 @@ document.addEventListener('DOMContentLoaded', () => {
                                         }
                                 ]
                         }
+                ],
+                "samples": [
+                        {
+                                "label": "Cách 1 (Trả lời NO)",
+                                "text": "Not really. I don't often listen to music while doing my homework because it's hard for me to focus. I prefer to do one thing at a time to complete it more effectively.",
+                                "formatted": "→ Not really. I don't often <span class=\"sub-hl\">listen to music</span> while <span class=\"sub-hl\">doing my homework</span> because it's hard for me to focus. I prefer to <span class=\"sub-hl\">do one thing at a time</span> to <span class=\"sub-hl\">complete it more effectively</span>."
+                        },
+                        {
+                                "label": "Cách 2 (Trả lời YES)",
+                                "text": "Yes, I sometimes do. I often listen to soft acoustic music while doing my homework because it makes studying more enjoyable. It allows me to reduce stress and stay focused.",
+                                "formatted": "→ Yes, I sometimes do. I often <span class=\"sub-hl\">listen to soft acoustic music</span> while <span class=\"sub-hl\">doing my homework</span> because it makes studying more <span class=\"sub-hl\">enjoyable</span>. It allows me to <span class=\"sub-hl\">reduce stress</span> and <span class=\"sub-hl\">stay focused</span>."
+                        }
                 ]
         },
         {
                 "title": "3. Do you like/love/enjoy [hoạt động – Ving]?",
-                "formula": "→ Yes, I do. I’m really into <strong>[hoạt động – Ving]</strong> because I find it <strong>[tính từ mô tả hoạt động]</strong>. It’s a good way to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>.",
+                "formula": "<div style='margin-bottom: 8px;'><strong>- Cách 1 (Trả lời YES):</strong> → Yes, I do. I'm really into <strong>[hoạt động – V-ing]</strong> because I find it <strong>[tính từ mô tả hoạt động]</strong>. It's a great way to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>.</div><div><strong>- Cách 2 (Trả lời NO):</strong> → Honestly, I'm not very keen on <strong>[hoạt động – V-ing]</strong> because <strong>[lý do]</strong>. Instead, I prefer <strong>[hoạt động khác – V-ing]</strong> because it allows me to <strong>[lợi ích]</strong>.</div>",
                 "examples": [
                         {
                                 "q": "Do you like <span class='sub-hl'>reading books</span>?",
@@ -755,46 +779,46 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                 ],
                 "exQ": "Do you like <span class='sub-hl'>reading books</span>?",
-                "exA": "→ Yes, I do. I’m really into reading books because I find it very interesting. It’s a good way to clear my mind and widen my knowledge.",
-                "exAFormatted": "→ Yes, I do. I’m really into <span class=\"sub-hl\">reading books</span> because I find it <span class=\"sub-hl\">very interesting</span>. It’s a good way to <span class=\"sub-hl\">clear my mind</span> and <span class=\"sub-hl\">widen my knowledge</span>.",
+                "exA": "Yes, I do. I'm really into reading books because I find it very interesting. It's a great way to clear my mind and widen my knowledge. OR Honestly, I'm not very keen on reading books because staring at pages makes my eyes tired. Instead, I prefer listening to podcasts because it allows me to gain useful knowledge comfortably.",
+                "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Trả lời YES):</div>→ Yes, I do. I'm really into <span class=\"sub-hl\">reading books</span> because I find it very <span class=\"sub-hl\">interesting</span>. It's a great way to <span class=\"sub-hl\">clear my mind</span> and <span class=\"sub-hl\">widen my knowledge</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Trả lời NO):</div>→ Honestly, I'm not very keen on <span class=\"sub-hl\">reading books</span> because <span class=\"sub-hl\">staring at pages makes my eyes tired</span>. Instead, I prefer <span class=\"sub-hl\">listening to podcasts</span> because it allows me to <span class=\"sub-hl\">gain useful knowledge comfortably</span>.</div>",
                 "vocab": [
                         {
                                 "type": "adj",
                                 "title": "Tính từ mô tả hoạt động:",
                                 "items": [
-                                                {
-                                                                                                "en": "interesting",
-                                                                                                "vn": "thú vị"
-                                                },
-                                                {
-                                                                                                "en": "exciting",
-                                                                                                "vn": "hào hứng"
-                                                },
-                                                {
-                                                                                                "en": "relaxing",
-                                                                                                "vn": "thư giãn"
-                                                },
-                                                {
-                                                                                                "en": "enjoyable",
-                                                                                                "vn": "thoải mái, thú vị"
-                                                },
-                                                {
-                                                                                                "en": "meaningful",
-                                                                                                "vn": "ý nghĩa"
-                                                },
-                                                {
-                                                                                                "en": "beneficial",
-                                                                                                "vn": "có lợi"
-                                                },
-                                                {
-                                                                                                "en": "entertaining",
-                                                                                                "vn": "mang tính giải trí"
-                                                },
-                                                {
-                                                                                                "en": "fascinating",
-                                                                                                "vn": "lôi cuốn, hấp dẫn"
-                                                }
-]
+                                        {
+                                                "en": "interesting",
+                                                "vn": "thú vị"
+                                        },
+                                        {
+                                                "en": "exciting",
+                                                "vn": "hào hứng"
+                                        },
+                                        {
+                                                "en": "relaxing",
+                                                "vn": "thư giãn"
+                                        },
+                                        {
+                                                "en": "enjoyable",
+                                                "vn": "thoải mái, thú vị"
+                                        },
+                                        {
+                                                "en": "meaningful",
+                                                "vn": "ý nghĩa"
+                                        },
+                                        {
+                                                "en": "beneficial",
+                                                "vn": "có lợi"
+                                        },
+                                        {
+                                                "en": "entertaining",
+                                                "vn": "mang tính giải trí"
+                                        },
+                                        {
+                                                "en": "fascinating",
+                                                "vn": "lôi cuốn, hấp dẫn"
+                                        }
+                                ]
                         },
                         {
                                 "type": "benefit",
@@ -806,11 +830,23 @@ document.addEventListener('DOMContentLoaded', () => {
                                         }
                                 ]
                         }
+                ],
+                "samples": [
+                        {
+                                "label": "Cách 1 (Trả lời YES)",
+                                "text": "Yes, I do. I'm really into reading books because I find it very interesting. It's a great way to clear my mind and widen my knowledge.",
+                                "formatted": "→ Yes, I do. I'm really into <span class=\"sub-hl\">reading books</span> because I find it very <span class=\"sub-hl\">interesting</span>. It's a great way to <span class=\"sub-hl\">clear my mind</span> and <span class=\"sub-hl\">widen my knowledge</span>."
+                        },
+                        {
+                                "label": "Cách 2 (Trả lời NO)",
+                                "text": "Honestly, I'm not very keen on reading books because staring at pages makes my eyes tired. Instead, I prefer listening to podcasts because it allows me to gain useful knowledge comfortably.",
+                                "formatted": "→ Honestly, I'm not very keen on <span class=\"sub-hl\">reading books</span> because <span class=\"sub-hl\">staring at pages makes my eyes tired</span>. Instead, I prefer <span class=\"sub-hl\">listening to podcasts</span> because it allows me to <span class=\"sub-hl\">gain useful knowledge comfortably</span>."
+                        }
                 ]
         },
         {
                 "title": "4. Did you often [hoạt động – V0] when you were a child?",
-                "formula": "→ Sure. I used to <strong>[hoạt động – Vo]</strong> regularly when I was a child because I found it <strong>[tính từ mô tả hoạt động]</strong>. It allowed me to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>.",
+                "formula": "<div style='margin-bottom: 8px;'><strong>- Cách 1 (Trả lời YES):</strong> → Sure. I used to <strong>[hoạt động – Vo]</strong> regularly when I was a child because I found it <strong>[tính từ mô tả hoạt động]</strong>. It allowed me to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>.</div><div><strong>- Cách 2 (Trả lời NO):</strong> → Honestly, not really. When I was a child, I didn't often <strong>[hoạt động – Vo]</strong> because <strong>[lý do]</strong>. Instead, I usually <strong>[hoạt động khác – V2]</strong> to <strong>[lợi ích]</strong>.</div>",
                 "examples": [
                         {
                                 "q": "Did you often <span class='sub-hl'>watch cartoons</span> when you were a child?",
@@ -844,46 +880,46 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                 ],
                 "exQ": "Did you often <span class='sub-hl'>watch cartoons</span> when you were a child?",
-                "exA": "→ Sure. I used to watch cartoons regularly when I was a child because I found it entertaining. It allowed me to enjoy my free time and develop my imagination.",
-                "exAFormatted": "→ Sure. I used to <span class=\"sub-hl\">watch cartoons</span> regularly when I was a child because I found it <span class=\"sub-hl\">entertaining</span>. It allowed me to <span class=\"sub-hl\">enjoy my free time</span> and <span class=\"sub-hl\">develop my imagination</span>.",
+                "exA": "Sure. I used to watch cartoons regularly when I was a child because I found it entertaining. It allowed me to enjoy my free time and develop my imagination. OR Honestly, not really. When I was a child, I didn't often watch cartoons because my parents strictly limited my screen time. Instead, I usually played outdoor games with neighborhood friends to stay active.",
+                "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Trả lời YES):</div>→ Sure. I used to <span class=\"sub-hl\">watch cartoons</span> regularly when I was a child because I found it <span class=\"sub-hl\">entertaining</span>. It allowed me to <span class=\"sub-hl\">enjoy my free time</span> and <span class=\"sub-hl\">develop my imagination</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Trả lời NO):</div>→ Honestly, not really. When I was a child, I didn't often <span class=\"sub-hl\">watch cartoons</span> because <span class=\"sub-hl\">my parents strictly limited my screen time</span>. Instead, I usually <span class=\"sub-hl\">played outdoor games with neighborhood friends</span> to <span class=\"sub-hl\">stay active</span>.</div>",
                 "vocab": [
                         {
                                 "type": "adj",
                                 "title": "Tính từ mô tả hoạt động:",
                                 "items": [
-                                                {
-                                                                                                "en": "interesting",
-                                                                                                "vn": "thú vị"
-                                                },
-                                                {
-                                                                                                "en": "exciting",
-                                                                                                "vn": "hào hứng"
-                                                },
-                                                {
-                                                                                                "en": "relaxing",
-                                                                                                "vn": "thư giãn"
-                                                },
-                                                {
-                                                                                                "en": "enjoyable",
-                                                                                                "vn": "thoải mái, thú vị"
-                                                },
-                                                {
-                                                                                                "en": "meaningful",
-                                                                                                "vn": "ý nghĩa"
-                                                },
-                                                {
-                                                                                                "en": "beneficial",
-                                                                                                "vn": "có lợi"
-                                                },
-                                                {
-                                                                                                "en": "entertaining",
-                                                                                                "vn": "mang tính giải trí"
-                                                },
-                                                {
-                                                                                                "en": "fascinating",
-                                                                                                "vn": "lôi cuốn, hấp dẫn"
-                                                }
-]
+                                        {
+                                                "en": "interesting",
+                                                "vn": "thú vị"
+                                        },
+                                        {
+                                                "en": "exciting",
+                                                "vn": "hào hứng"
+                                        },
+                                        {
+                                                "en": "relaxing",
+                                                "vn": "thư giãn"
+                                        },
+                                        {
+                                                "en": "enjoyable",
+                                                "vn": "thoải mái, thú vị"
+                                        },
+                                        {
+                                                "en": "meaningful",
+                                                "vn": "ý nghĩa"
+                                        },
+                                        {
+                                                "en": "beneficial",
+                                                "vn": "có lợi"
+                                        },
+                                        {
+                                                "en": "entertaining",
+                                                "vn": "mang tính giải trí"
+                                        },
+                                        {
+                                                "en": "fascinating",
+                                                "vn": "lôi cuốn, hấp dẫn"
+                                        }
+                                ]
                         },
                         {
                                 "type": "benefit",
@@ -895,11 +931,23 @@ document.addEventListener('DOMContentLoaded', () => {
                                         }
                                 ]
                         }
+                ],
+                "samples": [
+                        {
+                                "label": "Cách 1 (Trả lời YES)",
+                                "text": "Sure. I used to watch cartoons regularly when I was a child because I found it entertaining. It allowed me to enjoy my free time and develop my imagination.",
+                                "formatted": "→ Sure. I used to <span class=\"sub-hl\">watch cartoons</span> regularly when I was a child because I found it <span class=\"sub-hl\">entertaining</span>. It allowed me to <span class=\"sub-hl\">enjoy my free time</span> and <span class=\"sub-hl\">develop my imagination</span>."
+                        },
+                        {
+                                "label": "Cách 2 (Trả lời NO)",
+                                "text": "Honestly, not really. When I was a child, I didn't often watch cartoons because my parents strictly limited my screen time. Instead, I usually played outdoor games with neighborhood friends to stay active.",
+                                "formatted": "→ Honestly, not really. When I was a child, I didn't often <span class=\"sub-hl\">watch cartoons</span> because <span class=\"sub-hl\">my parents strictly limited my screen time</span>. Instead, I usually <span class=\"sub-hl\">played outdoor games with neighborhood friends</span> to <span class=\"sub-hl\">stay active</span>."
+                        }
                 ]
         },
         {
                 "title": "5. Are you good at [hoạt động – Ving]?",
-                "formula": "<div style='margin-bottom: 8px;'><strong>- Trả lời YES:</strong> → Sure. I'm quite good at <strong>[hoạt động – Ving]</strong> because I’ve practiced it for a long time. It allows me to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>.</div><div><strong>- Trả lời NO:</strong> → Not really. I'm not very good at <strong>[hoạt động – Ving]</strong> because I don't have much experience with it. However, I'm trying to improve by practicing more regularly.</div>",
+                "formula": "<div style='margin-bottom: 8px;'><strong>- Cách 1 (Trả lời YES):</strong> → Sure. I'm quite good at <strong>[hoạt động – V-ing]</strong> because I've practiced it for a long time. It allows me to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>.</div><div><strong>- Cách 2 (Trả lời NO):</strong> → Not really. I'm not very good at <strong>[hoạt động – V-ing]</strong> because I don't have much experience. However, I'm trying to learn it to <strong>[lợi ích]</strong>.</div>",
                 "examples": [
                         {
                                 "q": "Are you good at <span class='sub-hl'>cooking</span>?",
@@ -933,8 +981,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                 ],
                 "exQ": "Are you good at <span class='sub-hl'>cooking</span>?",
-                "exA": "→ I’m quite good at cooking because I've practiced it for a long time. It helps me save money and stay healthy.",
-                "exAFormatted": "→ I’m quite good at <span class=\"sub-hl\">cooking</span> because <span class=\"sub-hl\">I've practiced it for a long time</span>. It allows me to <span class=\"sub-hl\">save money</span> and <span class=\"sub-hl\">stay healthy</span>.",
+                "exA": "Sure. I'm quite good at cooking because I've practiced it for a long time. It allows me to prepare healthy meals at home and save a lot of money. OR Not really. I'm not very good at cooking because I rarely spend time in the kitchen. However, I'm trying to learn simple recipes to take better care of my health.",
+                "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Trả lời YES):</div>→ Sure. I'm quite good at <span class=\"sub-hl\">cooking</span> because <span class=\"sub-hl\">I've practiced it for a long time</span>. It allows me to <span class=\"sub-hl\">prepare healthy meals at home</span> and <span class=\"sub-hl\">save a lot of money</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Trả lời NO):</div>→ Not really. I'm not very good at <span class=\"sub-hl\">cooking</span> because <span class=\"sub-hl\">I rarely spend time in the kitchen</span>. However, I'm trying to learn simple recipes to <span class=\"sub-hl\">take better care of my health</span>.</div>",
                 "vocab": [
                         {
                                 "type": "benefit",
@@ -946,11 +994,23 @@ document.addEventListener('DOMContentLoaded', () => {
                                         }
                                 ]
                         }
+                ],
+                "samples": [
+                        {
+                                "label": "Cách 1 (Trả lời YES)",
+                                "text": "Sure. I'm quite good at cooking because I've practiced it for a long time. It allows me to prepare healthy meals at home and save a lot of money.",
+                                "formatted": "→ Sure. I'm quite good at <span class=\"sub-hl\">cooking</span> because <span class=\"sub-hl\">I've practiced it for a long time</span>. It allows me to <span class=\"sub-hl\">prepare healthy meals at home</span> and <span class=\"sub-hl\">save a lot of money</span>."
+                        },
+                        {
+                                "label": "Cách 2 (Trả lời NO)",
+                                "text": "Not really. I'm not very good at cooking because I rarely spend time in the kitchen. However, I'm trying to learn simple recipes to take better care of my health.",
+                                "formatted": "→ Not really. I'm not very good at <span class=\"sub-hl\">cooking</span> because <span class=\"sub-hl\">I rarely spend time in the kitchen</span>. However, I'm trying to learn simple recipes to <span class=\"sub-hl\">take better care of my health</span>."
+                        }
                 ]
         },
         {
                 "title": "6. Are/Is […] important to you?",
-                "formula": "<div style='margin-bottom: 8px;'><strong>- Trả lời YES:</strong> → Sure. <strong>[chủ đề]</strong> is definitely important to me because it allows me to <strong>[lợi ích 1]</strong>. It also gives me a chance to <strong>[lợi ích 2]</strong>.</div><div><strong>- Trả lời NO:</strong> → Not really. <strong>[chủ đề]</strong> isn’t very important to me because it doesn't play a big role in my daily life. Instead, I prefer to spend my time on <strong>[hoạt động / chủ đề khác]</strong>.</div>",
+                "formula": "<div style='margin-bottom: 8px;'><strong>- Cách 1 (Trả lời YES):</strong> → Sure. <strong>[chủ đề]</strong> is definitely important to me because it allows me to <strong>[lợi ích 1]</strong>. Besides, it gives me a chance to <strong>[lợi ích 2]</strong>.</div><div><strong>- Cách 2 (Trả lời NO):</strong> → Not really. <strong>[chủ đề]</strong> isn't very important to me because <strong>[lý do]</strong>. Instead, I prefer to focus on <strong>[chủ đề khác]</strong> to <strong>[lợi ích]</strong>.</div>",
                 "examples": [
                         {
                                 "q": "Is <span class='sub-hl'>family</span> important to you?",
@@ -984,8 +1044,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                 ],
                 "exQ": "Is <span class='sub-hl'>family</span> important to you?",
-                "exA": "→ Sure. Family is definitely important to me because it allows me to feel supported during difficult times. Besides that, it gives me a chance to learn valuable life lessons.",
-                "exAFormatted": "→ Sure. <span class=\"sub-hl\">Family</span> is definitely important to me because it allows me to <span class=\"sub-hl\">feel supported during difficult times</span>. Besides that, it gives me a chance to <span class=\"sub-hl\">learn valuable life lessons</span>.",
+                "exA": "Sure. Family is definitely important to me because it allows me to feel supported during difficult times. Besides, it gives me a chance to learn valuable life lessons. OR Yes, absolutely. Family plays a vital role in my life because my parents always encourage me whenever I face challenges. It helps me stay confident and overcome any difficulty.",
+                "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Trả lời YES):</div>→ Sure. <span class=\"sub-hl\">Family</span> is definitely important to me because it allows me to <span class=\"sub-hl\">feel supported during difficult times</span>. Besides, it gives me a chance to <span class=\"sub-hl\">learn valuable life lessons</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Trả lời YES - Chỗ dựa tinh thần):</div>→ Yes, absolutely. <span class=\"sub-hl\">Family plays a vital role in my life</span> because my parents always <span class=\"sub-hl\">encourage me whenever I face challenges</span>. It helps me <span class=\"sub-hl\">stay confident and overcome any difficulty</span>.</div>",
                 "vocab": [
                         {
                                 "type": "benefit",
@@ -997,11 +1057,23 @@ document.addEventListener('DOMContentLoaded', () => {
                                         }
                                 ]
                         }
+                ],
+                "samples": [
+                        {
+                                "label": "Cách 1 (Trả lời YES)",
+                                "text": "Sure. Family is definitely important to me because it allows me to feel supported during difficult times. Besides, it gives me a chance to learn valuable life lessons.",
+                                "formatted": "→ Sure. <span class=\"sub-hl\">Family</span> is definitely important to me because it allows me to <span class=\"sub-hl\">feel supported during difficult times</span>. Besides, it gives me a chance to <span class=\"sub-hl\">learn valuable life lessons</span>."
+                        },
+                        {
+                                "label": "Cách 2 (Trả lời YES - Chỗ dựa tinh thần)",
+                                "text": "Yes, absolutely. Family plays a vital role in my life because my parents always encourage me whenever I face challenges. It helps me stay confident and overcome any difficulty.",
+                                "formatted": "→ Yes, absolutely. <span class=\"sub-hl\">Family plays a vital role in my life</span> because my parents always <span class=\"sub-hl\">encourage me whenever I face challenges</span>. It helps me <span class=\"sub-hl\">stay confident and overcome any difficulty</span>."
+                        }
                 ]
         },
         {
                 "title": "7. Have you ever [hoạt động – V3/ed]?",
-                "formula": "<div style='margin-bottom: 8px;'><strong>- Trả lời ĐÃ TỪNG:</strong> → Yes, I <strong>[hoạt động – V2]</strong> a while ago, and I found it <strong>[tính từ mô tả trải nghiệm]</strong>. It allowed me to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>.</div><div><strong>- Trả lời CHƯA TỪNG:</strong> → Not yet. I haven't had the chance to <strong>[hoạt động – V0]</strong> yet. However, I'd love to try it one day because I think it would be a/an <strong>[tính từ mô tả trải nghiệm]</strong> experience.</div>",
+                "formula": "<div style='margin-bottom: 8px;'><strong>- Cách 1 (Trả lời ĐÃ TỪNG):</strong> → Yes, I <strong>[hoạt động – V2]</strong> <strong>[thời gian trong quá khứ]</strong>, and I found it <strong>[tính từ mô tả trải nghiệm]</strong>. It allowed me to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>.</div><div><strong>- Cách 2 (Trả lời CHƯA TỪNG):</strong> → Not yet. I haven't had the chance to <strong>[hoạt động – Vo]</strong> yet because <strong>[lý do]</strong>. However, I'd love to try it in the future because I think it would be a/an <strong>[tính từ]</strong> experience.</div>",
                 "examples": [
                         {
                                 "q": "Have you ever <span class='sub-hl'>attended a live concert</span>?",
@@ -1035,34 +1107,46 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                 ],
                 "exQ": "Have you ever <span class='sub-hl'>attended a live concert</span>?",
-                "exA": "→ Yes, I attended a live concert a few years ago, and I found it really exciting. It allowed me to enjoy live music and experience the amazing atmosphere.",
-                "exAFormatted": "→ Yes, I <span class=\"sub-hl\">attended a live concert</span> a few years ago, and I found it <span class=\"sub-hl\">really exciting</span>. It allowed me to <span class=\"sub-hl\">enjoy live music</span> and <span class=\"sub-hl\">experience the amazing atmosphere</span>.",
+                "exA": "Yes, I attended a live concert two years ago, and I found it really exciting. It allowed me to enjoy live music and create unforgettable memories with my friends. OR Not yet. I haven't had the chance to attend a live concert yet because tickets are usually quite expensive. However, I'd love to go in the future to enjoy the lively atmosphere.",
+                "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Trả lời ĐÃ TỪNG):</div>→ Yes, I <span class=\"sub-hl\">attended a live concert two years ago</span>, and I found it really <span class=\"sub-hl\">exciting</span>. It allowed me to <span class=\"sub-hl\">enjoy live music</span> and <span class=\"sub-hl\">create unforgettable memories with my friends</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Trả lời CHƯA TỪNG):</div>→ Not yet. I haven't had the chance to <span class=\"sub-hl\">attend a live concert yet</span> because <span class=\"sub-hl\">tickets are usually quite expensive</span>. However, I'd love to go in the future to <span class=\"sub-hl\">enjoy the lively atmosphere</span>.</div>",
                 "vocab": [
                         {
                                 "type": "adj",
                                 "title": "Tính từ mô tả trải nghiệm:",
                                 "items": [
-                                                {
-                                                                                                "en": "unforgettable",
-                                                                                                "vn": "khó quên, đáng nhớ"
-                                                },
-                                                {
-                                                                                                "en": "exciting",
-                                                                                                "vn": "hào hứng"
-                                                },
-                                                {
-                                                                                                "en": "wonderful",
-                                                                                                "vn": "tuyệt vời"
-                                                },
-                                                {
-                                                                                                "en": "rewarding",
-                                                                                                "vn": "bổ ích, đáng giá"
-                                                },
-                                                {
-                                                                                                "en": "fascinating",
-                                                                                                "vn": "lôi cuốn, hấp dẫn"
-                                                }
-]
+                                        {
+                                                "en": "unforgettable",
+                                                "vn": "khó quên, đáng nhớ"
+                                        },
+                                        {
+                                                "en": "exciting",
+                                                "vn": "hào hứng"
+                                        },
+                                        {
+                                                "en": "wonderful",
+                                                "vn": "tuyệt vời"
+                                        },
+                                        {
+                                                "en": "rewarding",
+                                                "vn": "bổ ích, đáng giá"
+                                        },
+                                        {
+                                                "en": "fascinating",
+                                                "vn": "lôi cuốn, hấp dẫn"
+                                        }
+                                ]
+                        }
+                ],
+                "samples": [
+                        {
+                                "label": "Cách 1 (Trả lời ĐÃ TỪNG)",
+                                "text": "Yes, I attended a live concert two years ago, and I found it really exciting. It allowed me to enjoy live music and create unforgettable memories with my friends.",
+                                "formatted": "→ Yes, I <span class=\"sub-hl\">attended a live concert two years ago</span>, and I found it really <span class=\"sub-hl\">exciting</span>. It allowed me to <span class=\"sub-hl\">enjoy live music</span> and <span class=\"sub-hl\">create unforgettable memories with my friends</span>."
+                        },
+                        {
+                                "label": "Cách 2 (Trả lời CHƯA TỪNG)",
+                                "text": "Not yet. I haven't had the chance to attend a live concert yet because tickets are usually quite expensive. However, I'd love to go in the future to enjoy the lively atmosphere.",
+                                "formatted": "→ Not yet. I haven't had the chance to <span class=\"sub-hl\">attend a live concert yet</span> because <span class=\"sub-hl\">tickets are usually quite expensive</span>. However, I'd love to go in the future to <span class=\"sub-hl\">enjoy the lively atmosphere</span>."
                         }
                 ]
         }
@@ -1081,6 +1165,29 @@ document.addEventListener('DOMContentLoaded', () => {
         let res = formHtml.replace(/<strong>\s*\[(.*?)\]\s*<\/strong>/g, "[$1]");
         return res.replace(/\[(.*?)\]/g, '<span class="formula-bracket-hl">[$1]</span>');
     };
+
+    window.renderSampleAnswersContent = (d) => {
+        if (d && d.samples && d.samples.length) {
+            return d.samples.map((s, idx) => `
+                <div style="margin-bottom: ${idx === d.samples.length - 1 ? '0' : '1rem'}; padding: 0.85rem 1rem; background: rgba(139, 92, 246, 0.05); border-left: 3px solid #8b5cf6; border-radius: 8px;">
+                    <div style="font-weight: 700; color: #7c3aed; margin-bottom: 0.4rem; font-size: 0.95rem; display: flex; align-items: center; gap: 0.4rem;">
+                        <i class="fa-solid fa-star"></i> ${s.label}:
+                    </div>
+                    <div class="ex-text" style="color:var(--secondary); font-weight:500; font-size:1.02rem; line-height:1.75;">${s.formatted || s.text}</div>
+                    <button class="btn-audio-sample mt-2" onclick="speakText('${s.text.replace(/<[^>]*>/g, '').replace(/→/g, '').replace(/'/g, "\\\'").trim()}')" style="font-size: 0.85rem; padding: 0.35rem 0.85rem; background: #8b5cf6; cursor:pointer;">
+                        <i class="fa-solid fa-volume-high"></i> Nghe Audio ${s.label.split('(')[0].trim()}
+                    </button>
+                </div>
+            `).join('');
+        }
+        return `
+            <div class="ex-text" style="color:var(--secondary); font-weight:500; font-size:1.05rem; line-height:1.8;">${d.exAFormatted || d.exA}</div>
+            <button class="btn-audio-sample mt-2" onclick="speakText('${(d.audio || d.exA || '').replace(/<[^>]*>/g, '').replace(/→/g, '').replace(/'/g, "\\\'").trim()}')">
+                <i class="fa-solid fa-volume-high"></i> Nghe Audio phát âm
+            </button>
+        `;
+    };
+
 
     window.getExamplesBlockHTML = (item) => {
         if (!item || !item.examples || !item.examples.length) return '';
@@ -1201,10 +1308,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <i class="fa-solid fa-eye"></i> Nhấn xem câu trả lời mẫu
                                 </button>
                                 <div class="fade-in" style="display:none; margin-top:0.75rem; padding-top:0.75rem; border-top:1px dashed var(--border);">
-                                    <div class="ex-text" style="color:var(--secondary); font-weight:500; font-size:1.05rem; line-height:1.8;">${d.exAFormatted || d.exA}</div>
-                                    <button class="btn-audio-sample mt-2" onclick="speakText('${d.exA.replace(/<[^>]*>/g, '').replace(/→/g, '').replace(/'/g, "\\'").trim()}')">
-                                        <i class="fa-solid fa-volume-high"></i> Nghe Audio phát âm
-                                    </button>
+                                    ${renderSampleAnswersContent(d)}
                                 </div>
                             </div>
                         </div>
@@ -1231,7 +1335,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const choiceData = {
         "opt1": {
                 "title": "✅ PHƯƠNG ÁN 1 – CHỌN 1 TRONG 2",
-                "form": "→ Personally, I prefer <strong>[lựa chọn – noun/Ving]</strong> because I find it more <strong>[tính từ mô tả lựa chọn]</strong>. It allows me to <strong>[lợi ích 1]</strong> and gives me a chance to <strong>[lợi ích 2]</strong>.",
+                "form": "<div style='margin-bottom: 8px;'><strong>- Cách 1:</strong> → Personally, I prefer <strong>[lựa chọn – noun/V-ing]</strong> because I find it more <strong>[tính từ mô tả lựa chọn]</strong>. It allows me to <strong>[lợi ích 1]</strong> and gives me a chance to <strong>[lợi ích 2]</strong>.</div><div><strong>- Cách 2:</strong> → If I have to choose between the two, I'd definitely go for <strong>[lựa chọn – noun/V-ing]</strong>. It helps me <strong>[lợi ích 1]</strong> and allows me to <strong>[lợi ích 2]</strong>.</div>",
                 "audio": "Personally, I prefer studying in the library because I find it more peaceful. It allows me to concentrate better and gives me a chance to avoid distractions.",
                 "examples": [
                         {
@@ -1266,42 +1370,42 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                 ],
                 "exQ": "Do you prefer <span class='sub-hl'>studying at home</span> or <span class='sub-hl'>in the library</span>?",
-                "exA": "→ Personally, I prefer studying in the library because I find it more peaceful. It allows me to concentrate better and gives me a chance to avoid distractions.",
-                "exAFormatted": "→ Personally, I prefer <span class=\"sub-hl\">studying in the library</span> because I find it more <span class=\"sub-hl\">peaceful</span>. It allows me to <span class=\"sub-hl\">concentrate better</span> and gives me a chance to <span class=\"sub-hl\">avoid distractions</span>.",
+                "exA": "Personally, I prefer studying in the library because I find it more peaceful. It allows me to concentrate better and gives me a chance to avoid distractions. OR If I have to choose between the two, I'd definitely go for studying at home. It helps me save travel time and allows me to study comfortably in my own space.",
+                "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Chọn Thư viện):</div>→ Personally, I prefer <span class=\"sub-hl\">studying in the library</span> because I find it more <span class=\"sub-hl\">peaceful</span>. It allows me to <span class=\"sub-hl\">concentrate better</span> and gives me a chance to <span class=\"sub-hl\">avoid distractions</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Chọn Ở nhà):</div>→ If I have to choose between the two, I'd definitely go for <span class=\"sub-hl\">studying at home</span>. It helps me <span class=\"sub-hl\">save travel time</span> and allows me to <span class=\"sub-hl\">study comfortably in my own space</span>.</div>",
                 "vocab": [
                         {
                                 "type": "adj",
                                 "title": "Tính từ so sánh lựa chọn:",
                                 "items": [
-                                                {
-                                                                                                "en": "convenient",
-                                                                                                "vn": "tiện lợi"
-                                                },
-                                                {
-                                                                                                "en": "peaceful",
-                                                                                                "vn": "yên tĩnh"
-                                                },
-                                                {
-                                                                                                "en": "enjoyable",
-                                                                                                "vn": "thú vị"
-                                                },
-                                                {
-                                                                                                "en": "comfortable",
-                                                                                                "vn": "thoải mái"
-                                                },
-                                                {
-                                                                                                "en": "economical",
-                                                                                                "vn": "tiết kiệm"
-                                                },
-                                                {
-                                                                                                "en": "authentic",
-                                                                                                "vn": "chân thực"
-                                                },
-                                                {
-                                                                                                "en": "dynamic",
-                                                                                                "vn": "năng động"
-                                                }
-]
+                                        {
+                                                "en": "convenient",
+                                                "vn": "tiện lợi"
+                                        },
+                                        {
+                                                "en": "peaceful",
+                                                "vn": "yên tĩnh"
+                                        },
+                                        {
+                                                "en": "enjoyable",
+                                                "vn": "thú vị"
+                                        },
+                                        {
+                                                "en": "comfortable",
+                                                "vn": "thoải mái"
+                                        },
+                                        {
+                                                "en": "economical",
+                                                "vn": "tiết kiệm"
+                                        },
+                                        {
+                                                "en": "authentic",
+                                                "vn": "chân thực"
+                                        },
+                                        {
+                                                "en": "dynamic",
+                                                "vn": "năng động"
+                                        }
+                                ]
                         },
                         {
                                 "type": "benefit",
@@ -1313,11 +1417,23 @@ document.addEventListener('DOMContentLoaded', () => {
                                         }
                                 ]
                         }
+                ],
+                "samples": [
+                        {
+                                "label": "Cách 1 (Chọn Thư viện)",
+                                "text": "Personally, I prefer studying in the library because I find it more peaceful. It allows me to concentrate better and gives me a chance to avoid distractions.",
+                                "formatted": "→ Personally, I prefer <span class=\"sub-hl\">studying in the library</span> because I find it more <span class=\"sub-hl\">peaceful</span>. It allows me to <span class=\"sub-hl\">concentrate better</span> and gives me a chance to <span class=\"sub-hl\">avoid distractions</span>."
+                        },
+                        {
+                                "label": "Cách 2 (Chọn Ở nhà)",
+                                "text": "If I have to choose between the two, I'd definitely go for studying at home. It helps me save travel time and allows me to study comfortably in my own space.",
+                                "formatted": "→ If I have to choose between the two, I'd definitely go for <span class=\"sub-hl\">studying at home</span>. It helps me <span class=\"sub-hl\">save travel time</span> and allows me to <span class=\"sub-hl\">study comfortably in my own space</span>."
+                        }
                 ]
         },
         "opt2": {
                 "title": "✅ PHƯƠNG ÁN 2 – CẢ HAI ĐỀU QUAN TRỌNG",
-                "form": "→ I think both are equally important because they offer different benefits. <strong>[A]</strong> helps me <strong>[lợi ích của A]</strong>, while <strong>[B]</strong> allows me to <strong>[lợi ích của B]</strong>.",
+                "form": "<div style='margin-bottom: 8px;'><strong>- Cách 1:</strong> → I think both are equally important because they offer different benefits. <strong>[A]</strong> helps me <strong>[lợi ích của A]</strong>, while <strong>[B]</strong> allows me to <strong>[lợi ích của B]</strong>.</div><div><strong>- Cách 2:</strong> → In my opinion, it's hard to choose one over the other because both play a vital role. <strong>[A]</strong> is essential to <strong>[lợi ích của A]</strong>, while <strong>[B]</strong> gives me a chance to <strong>[lợi ích của B]</strong>.</div>",
                 "audio": "I think both are equally important because they offer different benefits. Money helps me meet my daily needs, while happiness allows me to enjoy life and maintain good mental health.",
                 "examples": [
                         {
@@ -1352,8 +1468,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                 ],
                 "exQ": "Which is more important, <span class='sub-hl'>money</span> or <span class='sub-hl'>happiness</span>?",
-                "exA": "→ I think both are equally important because they offer different benefits. Money helps me meet my daily needs, while happiness allows me to enjoy life and maintain good mental health.",
-                "exAFormatted": "→ I think both are equally important because they offer different benefits. <span class=\"sub-hl\">Money</span> helps me <span class=\"sub-hl\">meet my daily needs</span>, while <span class=\"sub-hl\">happiness</span> allows me to <span class=\"sub-hl\">enjoy life and maintain good mental health</span>.",
+                "exA": "I think both are equally important because they offer different benefits. Money helps me meet my daily needs, while happiness allows me to enjoy life and maintain good mental health. OR In my opinion, it's hard to choose one over the other because both play a vital role. Money is essential to cover living expenses, while happiness gives me the motivation to keep moving forward.",
+                "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Cân bằng cả hai):</div>→ I think both are equally important because they offer different benefits. <span class=\"sub-hl\">Money</span> helps me <span class=\"sub-hl\">meet my daily needs</span>, while <span class=\"sub-hl\">happiness</span> allows me to <span class=\"sub-hl\">enjoy life and maintain good mental health</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Vai trò tương hỗ):</div>→ In my opinion, it's hard to choose one over the other because both play a vital role. <span class=\"sub-hl\">Money is essential to cover living expenses</span>, while <span class=\"sub-hl\">happiness gives me the motivation to keep moving forward</span>.</div>",
                 "vocab": [
                         {
                                 "type": "benefit",
@@ -1364,6 +1480,18 @@ document.addEventListener('DOMContentLoaded', () => {
                                                 "vn": "👉 (Sử dụng các cụm trong BẢNG LỢI ÍCH B2)"
                                         }
                                 ]
+                        }
+                ],
+                "samples": [
+                        {
+                                "label": "Cách 1 (Cân bằng cả hai)",
+                                "text": "I think both are equally important because they offer different benefits. Money helps me meet my daily needs, while happiness allows me to enjoy life and maintain good mental health.",
+                                "formatted": "→ I think both are equally important because they offer different benefits. <span class=\"sub-hl\">Money</span> helps me <span class=\"sub-hl\">meet my daily needs</span>, while <span class=\"sub-hl\">happiness</span> allows me to <span class=\"sub-hl\">enjoy life and maintain good mental health</span>."
+                        },
+                        {
+                                "label": "Cách 2 (Vai trò tương hỗ)",
+                                "text": "In my opinion, it's hard to choose one over the other because both play a vital role. Money is essential to cover living expenses, while happiness gives me the motivation to keep moving forward.",
+                                "formatted": "→ In my opinion, it's hard to choose one over the other because both play a vital role. <span class=\"sub-hl\">Money is essential to cover living expenses</span>, while <span class=\"sub-hl\">happiness gives me the motivation to keep moving forward</span>."
                         }
                 ]
         }
@@ -1402,10 +1530,7 @@ const renderChoice = (o) => {
                                     <i class="fa-solid fa-eye"></i> Nhấn xem câu trả lời mẫu
                                 </button>
                                 <div class="fade-in" style="display:none; margin-top:0.75rem; padding-top:0.75rem; border-top:1px dashed var(--border);">
-                                    <div class="ex-text" style="color:var(--secondary); font-weight:500; font-size:1.05rem; line-height:1.8;">${d.exAFormatted || d.exA}</div>
-                                    <button class="btn-audio-sample mt-2" onclick="speakText('${d.audio.replace(/<[^>]*>/g, '').replace(/'/g, "\\'")}')">
-                                        <i class="fa-solid fa-volume-high"></i> Nghe Audio phát âm
-                                    </button>
+                                    ${renderSampleAnswersContent(d)}
                                 </div>
                             </div>
                         </div>
@@ -1433,7 +1558,7 @@ const renderChoice = (o) => {
         "what": [
                 {
                         "title": "1. What do you often do [thời gian]?",
-                        "formula": "<div style='margin-bottom: 8px;'><strong>- Cách 1:</strong> → I tend to <strong>[hoạt động – Vo]</strong> <strong>[thời gian]</strong> because I find it <strong>[tính từ mô tả hoạt động]</strong>. It allows me to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>.</div><div><strong>- Cách 2:</strong> → I usually <strong>[hoạt động 1 – Vo]</strong> <strong>[thời gian]</strong> because it allows me to <strong>[lợi ích 1]</strong>. Sometimes, I also <strong>[hoạt động 2 – Vo]</strong>, which gives me a chance to <strong>[lợi ích 2]</strong>.</div>",
+                        "formula": "<div style='margin-bottom: 8px;'><strong>- Cách 1 (1 hoạt động chính):</strong> → I tend to <strong>[hoạt động – Vo]</strong> <strong>[thời gian]</strong> because I find it <strong>[tính từ mô tả hoạt động]</strong>. It allows me to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>.</div><div><strong>- Cách 2 (2 hoạt động kết hợp):</strong> → I usually <strong>[hoạt động 1 – Vo]</strong> <strong>[thời gian]</strong> because it allows me to <strong>[lợi ích 1]</strong>. Sometimes, I also <strong>[hoạt động 2 – Vo]</strong> so that I can <strong>[lợi ích 2]</strong>.</div>",
                         "examples": [
                                 {
                                         "q": "What do you often do <span class='sub-hl'>in the evening</span>?",
@@ -1467,8 +1592,8 @@ const renderChoice = (o) => {
                                 }
                         ],
                         "exQ": "What do you often do <span class='sub-hl'>in the evening</span>?",
-                        "exA": "→ I tend to watch movies in the evening because I find it relaxing. It allows me to broaden my knowledge and clear my mind.",
-                        "exAFormatted": "→ I tend to <span class=\"sub-hl\">watch movies</span> <span class=\"sub-hl\">in the evening</span> because I find it <span class=\"sub-hl\">relaxing</span>. It allows me to <span class=\"sub-hl\">broaden my knowledge</span> and <span class=\"sub-hl\">clear my mind</span>.",
+                        "exA": "I tend to watch movies in the evening because I find it relaxing. It allows me to broaden my knowledge and clear my mind. OR I usually read books in the evening because it allows me to widen my knowledge. Sometimes, I also listen to music so that I can relax after a busy day.",
+                        "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Xem phim):</div>→ I tend to <span class=\"sub-hl\">watch movies</span> <span class=\"sub-hl\">in the evening</span> because I find it <span class=\"sub-hl\">relaxing</span>. It allows me to <span class=\"sub-hl\">broaden my knowledge</span> and <span class=\"sub-hl\">clear my mind</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Đọc sách và nghe nhạc):</div>→ I usually <span class=\"sub-hl\">read books</span> <span class=\"sub-hl\">in the evening</span> because it allows me to <span class=\"sub-hl\">widen my knowledge</span>. Sometimes, I also <span class=\"sub-hl\">listen to music</span> so that I can <span class=\"sub-hl\">relax after a busy day</span>.</div>",
                         "vocab": [
                                 {
                                         "type": "time",
@@ -1507,53 +1632,53 @@ const renderChoice = (o) => {
                                                         "vn": "vào thời gian rảnh rỗi"
                                                 },
                                                 {
-                                        "en": "after school",
-                                        "vn": "sau giờ học"
-                                },
-                                {
-                                        "en": "after work",
-                                        "vn": "sau giờ làm"
-                                }
+                                                        "en": "after school",
+                                                        "vn": "sau giờ học"
+                                                },
+                                                {
+                                                        "en": "after work",
+                                                        "vn": "sau giờ làm"
+                                                }
                                         ]
                                 },
                                 {
-                                "type": "adj",
-                                "title": "Tính từ mô tả hoạt động:",
-                                "items": [
+                                        "type": "adj",
+                                        "title": "Tính từ mô tả hoạt động:",
+                                        "items": [
                                                 {
-                                                                                                "en": "interesting",
-                                                                                                "vn": "thú vị"
+                                                        "en": "interesting",
+                                                        "vn": "thú vị"
                                                 },
                                                 {
-                                                                                                "en": "exciting",
-                                                                                                "vn": "hào hứng"
+                                                        "en": "exciting",
+                                                        "vn": "hào hứng"
                                                 },
                                                 {
-                                                                                                "en": "relaxing",
-                                                                                                "vn": "thư giãn"
+                                                        "en": "relaxing",
+                                                        "vn": "thư giãn"
                                                 },
                                                 {
-                                                                                                "en": "enjoyable",
-                                                                                                "vn": "thoải mái, thú vị"
+                                                        "en": "enjoyable",
+                                                        "vn": "thoải mái, thú vị"
                                                 },
                                                 {
-                                                                                                "en": "meaningful",
-                                                                                                "vn": "ý nghĩa"
+                                                        "en": "meaningful",
+                                                        "vn": "ý nghĩa"
                                                 },
                                                 {
-                                                                                                "en": "beneficial",
-                                                                                                "vn": "có lợi"
+                                                        "en": "beneficial",
+                                                        "vn": "có lợi"
                                                 },
                                                 {
-                                                                                                "en": "entertaining",
-                                                                                                "vn": "mang tính giải trí"
+                                                        "en": "entertaining",
+                                                        "vn": "mang tính giải trí"
                                                 },
                                                 {
-                                                                                                "en": "fascinating",
-                                                                                                "vn": "lôi cuốn, hấp dẫn"
+                                                        "en": "fascinating",
+                                                        "vn": "lôi cuốn, hấp dẫn"
                                                 }
-]
-                        },
+                                        ]
+                                },
                                 {
                                         "type": "benefit",
                                         "title": "Cụm Lợi ích:",
@@ -1564,11 +1689,23 @@ const renderChoice = (o) => {
                                                 }
                                         ]
                                 }
+                        ],
+                        "samples": [
+                                {
+                                        "label": "Cách 1 (Xem phim)",
+                                        "text": "I tend to watch movies in the evening because I find it relaxing. It allows me to broaden my knowledge and clear my mind.",
+                                        "formatted": "→ I tend to <span class=\"sub-hl\">watch movies</span> <span class=\"sub-hl\">in the evening</span> because I find it <span class=\"sub-hl\">relaxing</span>. It allows me to <span class=\"sub-hl\">broaden my knowledge</span> and <span class=\"sub-hl\">clear my mind</span>."
+                                },
+                                {
+                                        "label": "Cách 2 (Đọc sách và nghe nhạc)",
+                                        "text": "I usually read books in the evening because it allows me to widen my knowledge. Sometimes, I also listen to music so that I can relax after a busy day.",
+                                        "formatted": "→ I usually <span class=\"sub-hl\">read books</span> <span class=\"sub-hl\">in the evening</span> because it allows me to <span class=\"sub-hl\">widen my knowledge</span>. Sometimes, I also <span class=\"sub-hl\">listen to music</span> so that I can <span class=\"sub-hl\">relax after a busy day</span>."
+                                }
                         ]
                 },
                 {
                         "title": "2. What do you often do to [mục đích]?",
-                        "formula": "→ I often <strong>[hoạt động 1 – Vo]</strong> to <strong>[mục đích]</strong> because it’s an effective way to <strong>[lợi ích 1]</strong>. I also try to <strong>[hoạt động 2 – Vo]</strong> because it allows me to <strong>[lợi ích 2]</strong>.",
+                        "formula": "<div style='margin-bottom: 8px;'><strong>- Cách 1 (Kết hợp 2 thói quen):</strong> → I often <strong>[hoạt động 1 – Vo]</strong> to <strong>[mục đích]</strong> because it's an effective way to <strong>[lợi ích 1]</strong>. I also try to <strong>[hoạt động 2 – Vo]</strong> because it allows me to <strong>[lợi ích 2]</strong>.</div><div><strong>- Cách 2 (Giải pháp hàng đầu):</strong> → To <strong>[mục đích]</strong>, my top priority is to <strong>[hoạt động – Vo]</strong> regularly. It helps me <strong>[lợi ích 1]</strong> and gives me a chance to <strong>[lợi ích 2]</strong>.</div>",
                         "examples": [
                                 {
                                         "q": "What do you often do to <span class='sub-hl'>keep in shape</span>?",
@@ -1602,8 +1739,8 @@ const renderChoice = (o) => {
                                 }
                         ],
                         "exQ": "What do you often do to <span class='sub-hl'>keep in shape</span>?",
-                        "exA": "→ I often exercise to keep in shape because it’s an effective way to burn calories. I also try to have a balanced diet because it allows me to control my weight.",
-                        "exAFormatted": "→ I often <span class=\"sub-hl\">exercise</span> to <span class=\"sub-hl\">keep in shape</span> because it’s an effective way to <span class=\"sub-hl\">burn calories</span>. I also try to <span class=\"sub-hl\">have a balanced diet</span> because it allows me to <span class=\"sub-hl\">control my weight</span>.",
+                        "exA": "I often exercise to keep in shape because it's an effective way to burn calories. I also try to have a balanced diet because it allows me to control my weight. OR To keep in shape, my top priority is to go jogging every morning. It helps me burn excess calories and gives me a chance to boost my overall fitness.",
+                        "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Tập thể dục và ăn uống cân bằng):</div>→ I often <span class=\"sub-hl\">exercise</span> to <span class=\"sub-hl\">keep in shape</span> because it's an effective way to <span class=\"sub-hl\">burn calories</span>. I also try to <span class=\"sub-hl\">have a balanced diet</span> because it allows me to <span class=\"sub-hl\">control my weight</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Chạy bộ buổi sáng):</div>→ To <span class=\"sub-hl\">keep in shape</span>, my top priority is to <span class=\"sub-hl\">go jogging every morning</span>. It helps me <span class=\"sub-hl\">burn excess calories</span> and gives me a chance to <span class=\"sub-hl\">boost my overall fitness</span>.</div>",
                         "vocab": [
                                 {
                                         "type": "benefit",
@@ -1615,11 +1752,23 @@ const renderChoice = (o) => {
                                                 }
                                         ]
                                 }
+                        ],
+                        "samples": [
+                                {
+                                        "label": "Cách 1 (Tập thể dục và ăn uống cân bằng)",
+                                        "text": "I often exercise to keep in shape because it's an effective way to burn calories. I also try to have a balanced diet because it allows me to control my weight.",
+                                        "formatted": "→ I often <span class=\"sub-hl\">exercise</span> to <span class=\"sub-hl\">keep in shape</span> because it's an effective way to <span class=\"sub-hl\">burn calories</span>. I also try to <span class=\"sub-hl\">have a balanced diet</span> because it allows me to <span class=\"sub-hl\">control my weight</span>."
+                                },
+                                {
+                                        "label": "Cách 2 (Chạy bộ buổi sáng)",
+                                        "text": "To keep in shape, my top priority is to go jogging every morning. It helps me burn excess calories and gives me a chance to boost my overall fitness.",
+                                        "formatted": "→ To <span class=\"sub-hl\">keep in shape</span>, my top priority is to <span class=\"sub-hl\">go jogging every morning</span>. It helps me <span class=\"sub-hl\">burn excess calories</span> and gives me a chance to <span class=\"sub-hl\">boost my overall fitness</span>."
+                                }
                         ]
                 },
                 {
                         "title": "3. What do you often do when [tình huống – mệnh đề]?",
-                        "formula": "→ I usually <strong>[hoạt động – Vo]</strong> when <strong>[tình huống]</strong> because I find it a great way to <strong>[lợi ích 1]</strong>. It also allows me to <strong>[lợi ích 2]</strong>, so I can feel <strong>[tính từ cảm xúc]</strong>.",
+                        "formula": "<div style='margin-bottom: 8px;'><strong>- Cách 1:</strong> → I usually <strong>[hoạt động – Vo]</strong> when <strong>[tình huống]</strong> because I find it a great way to <strong>[lợi ích 1]</strong>. It also allows me to <strong>[lợi ích 2]</strong>, so I can feel <strong>[tính từ cảm xúc]</strong>.</div><div><strong>- Cách 2:</strong> → Whenever I <strong>[tình huống]</strong>, I tend to <strong>[hoạt động – Vo]</strong> because it helps me <strong>[lợi ích 1]</strong>. Besides, it gives me a chance to <strong>[lợi ích 2]</strong>.</div>",
                         "examples": [
                                 {
                                         "q": "What do you often do when you <span class='sub-hl'>feel sad</span>?",
@@ -1653,55 +1802,55 @@ const renderChoice = (o) => {
                                 }
                         ],
                         "exQ": "What do you often do when you <span class='sub-hl'>feel sad</span>?",
-                        "exA": "→ I usually listen to music when I feel sad because I find it a great way to improve my mood. It also allows me to forget about my worries, so I can feel more positive.",
-                        "exAFormatted": "→ I usually <span class=\"sub-hl\">listen to music</span> when I <span class=\"sub-hl\">feel sad</span> because I find it a great way to <span class=\"sub-hl\">improve my mood</span>. It also allows me to <span class=\"sub-hl\">forget about my worries</span>, so I can feel <span class=\"sub-hl\">more positive</span>.",
+                        "exA": "I usually listen to music when I feel sad because I find it a great way to improve my mood. It also allows me to forget about my worries, so I can feel more positive. OR Whenever I feel down, I tend to go for a walk in the park because it helps me clear my head. Besides, it gives me a chance to enjoy fresh air and regain my energy.",
+                        "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Nghe nhạc thư giãn):</div>→ I usually <span class=\"sub-hl\">listen to music</span> when I <span class=\"sub-hl\">feel sad</span> because I find it a great way to <span class=\"sub-hl\">improve my mood</span>. It also allows me to <span class=\"sub-hl\">forget about my worries</span>, so I can feel <span class=\"sub-hl\">more positive</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Đi dạo công viên):</div>→ Whenever I <span class=\"sub-hl\">feel down</span>, I tend to <span class=\"sub-hl\">go for a walk in the park</span> because it helps me <span class=\"sub-hl\">clear my head</span>. Besides, it gives me a chance to <span class=\"sub-hl\">enjoy fresh air and regain my energy</span>.</div>",
                         "vocab": [
                                 {
-                                "type": "emotion",
-                                "title": "Tính từ mô tả cảm xúc:",
-                                "items": [
+                                        "type": "emotion",
+                                        "title": "Tính từ mô tả cảm xúc:",
+                                        "items": [
                                                 {
-                                                                                                "en": "relaxed",
-                                                                                                "vn": "thư thái"
+                                                        "en": "relaxed",
+                                                        "vn": "thư thái"
                                                 },
                                                 {
-                                                                                                "en": "refreshed",
-                                                                                                "vn": "sảng khoái"
+                                                        "en": "refreshed",
+                                                        "vn": "sảng khoái"
                                                 },
                                                 {
-                                                                                                "en": "positive",
-                                                                                                "vn": "tích cực"
+                                                        "en": "positive",
+                                                        "vn": "tích cực"
                                                 },
                                                 {
-                                                                                                "en": "energetic",
-                                                                                                "vn": "tràn đầy năng lượng"
+                                                        "en": "energetic",
+                                                        "vn": "tràn đầy năng lượng"
                                                 },
                                                 {
-                                                                                                "en": "comfortable",
-                                                                                                "vn": "dễ chịu"
+                                                        "en": "comfortable",
+                                                        "vn": "dễ chịu"
                                                 },
                                                 {
-                                                                                                "en": "calm",
-                                                                                                "vn": "bình tĩnh, thanh thản"
+                                                        "en": "calm",
+                                                        "vn": "bình tĩnh, thanh thản"
                                                 },
                                                 {
-                                                                                                "en": "productive",
-                                                                                                "vn": "hiệu quả"
+                                                        "en": "productive",
+                                                        "vn": "hiệu quả"
                                                 },
                                                 {
-                                                                                                "en": "motivated",
-                                                                                                "vn": "có động lực"
+                                                        "en": "motivated",
+                                                        "vn": "có động lực"
                                                 },
                                                 {
-                                                                                                "en": "confident",
-                                                                                                "vn": "tự tin"
+                                                        "en": "confident",
+                                                        "vn": "tự tin"
                                                 },
                                                 {
-                                                                                                "en": "satisfied",
-                                                                                                "vn": "hài lòng"
+                                                        "en": "satisfied",
+                                                        "vn": "hài lòng"
                                                 }
-]
-                        },
+                                        ]
+                                },
                                 {
                                         "type": "benefit",
                                         "title": "Cụm Lợi ích:",
@@ -1712,11 +1861,23 @@ const renderChoice = (o) => {
                                                 }
                                         ]
                                 }
+                        ],
+                        "samples": [
+                                {
+                                        "label": "Cách 1 (Nghe nhạc thư giãn)",
+                                        "text": "I usually listen to music when I feel sad because I find it a great way to improve my mood. It also allows me to forget about my worries, so I can feel more positive.",
+                                        "formatted": "→ I usually <span class=\"sub-hl\">listen to music</span> when I <span class=\"sub-hl\">feel sad</span> because I find it a great way to <span class=\"sub-hl\">improve my mood</span>. It also allows me to <span class=\"sub-hl\">forget about my worries</span>, so I can feel <span class=\"sub-hl\">more positive</span>."
+                                },
+                                {
+                                        "label": "Cách 2 (Đi dạo công viên)",
+                                        "text": "Whenever I feel down, I tend to go for a walk in the park because it helps me clear my head. Besides, it gives me a chance to enjoy fresh air and regain my energy.",
+                                        "formatted": "→ Whenever I <span class=\"sub-hl\">feel down</span>, I tend to <span class=\"sub-hl\">go for a walk in the park</span> because it helps me <span class=\"sub-hl\">clear my head</span>. Besides, it gives me a chance to <span class=\"sub-hl\">enjoy fresh air and regain my energy</span>."
+                                }
                         ]
                 },
                 {
                         "title": "4. What kinds of [danh từ] do you like?",
-                        "formula": "→ I’m a big fan of <strong>[2 thể loại]</strong> because I find them very <strong>[tính từ]</strong>. They allow me to <strong>[lợi ích 1]</strong> and give me a chance to <strong>[lợi ích 2]</strong>.",
+                        "formula": "<div style='margin-bottom: 8px;'><strong>- Cách 1:</strong> → I'm a big fan of <strong>[2 thể loại]</strong> because I find them very <strong>[tính từ]</strong>. They allow me to <strong>[lợi ích 1]</strong> and give me a chance to <strong>[lợi ích 2]</strong>.</div><div><strong>- Cách 2:</strong> → Personally, I enjoy <strong>[thể loại 1]</strong> the most because they're <strong>[tính từ]</strong>. Besides, I also like <strong>[thể loại 2]</strong> because they help me <strong>[lợi ích]</strong>.</div>",
                         "examples": [
                                 {
                                         "q": "What kinds of <span class='sub-hl'>movies</span> do you like?",
@@ -1750,47 +1911,47 @@ const renderChoice = (o) => {
                                 }
                         ],
                         "exQ": "What kinds of <span class='sub-hl'>movies</span> do you like?",
-                        "exA": "→ I’m a big fan of action and comedy movies because I find them very interesting. They allow me to relax after a busy day and enjoy my free time.",
-                        "exAFormatted": "→ I’m a big fan of <span class=\"sub-hl\">action and comedy movies</span> because I find them very <span class=\"sub-hl\">interesting</span>. They allow me to <span class=\"sub-hl\">relax after a busy day</span> and <span class=\"sub-hl\">enjoy my free time</span>.",
+                        "exA": "I'm a big fan of action and comedy movies because I find them very interesting. They allow me to relax after a busy day and enjoy my free time. OR Personally, I enjoy comedy movies the most because they're hilarious and uplifting. Besides, I also like documentaries because they help me widen my knowledge about the world.",
+                        "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Phim hành động và hài):</div>→ I'm a big fan of <span class=\"sub-hl\">action and comedy movies</span> because I find them very <span class=\"sub-hl\">interesting</span>. They allow me to <span class=\"sub-hl\">relax after a busy day</span> and <span class=\"sub-hl\">enjoy my free time</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Phim hài và phim tài liệu):</div>→ Personally, I enjoy <span class=\"sub-hl\">comedy movies</span> the most because they're <span class=\"sub-hl\">hilarious and uplifting</span>. Besides, I also like <span class=\"sub-hl\">documentaries</span> because they help me <span class=\"sub-hl\">widen my knowledge about the world</span>.</div>",
                         "vocab": [
                                 {
-                                "type": "adj",
-                                "title": "Tính từ mô tả thể loại:",
-                                "items": [
+                                        "type": "adj",
+                                        "title": "Tính từ mô tả thể loại:",
+                                        "items": [
                                                 {
-                                                                                                "en": "interesting",
-                                                                                                "vn": "thú vị"
+                                                        "en": "interesting",
+                                                        "vn": "thú vị"
                                                 },
                                                 {
-                                                                                                "en": "exciting",
-                                                                                                "vn": "hào hứng"
+                                                        "en": "exciting",
+                                                        "vn": "hào hứng"
                                                 },
                                                 {
-                                                                                                "en": "relaxing",
-                                                                                                "vn": "thư giãn"
+                                                        "en": "relaxing",
+                                                        "vn": "thư giãn"
                                                 },
                                                 {
-                                                                                                "en": "enjoyable",
-                                                                                                "vn": "thoải mái, thú vị"
+                                                        "en": "enjoyable",
+                                                        "vn": "thoải mái, thú vị"
                                                 },
                                                 {
-                                                                                                "en": "meaningful",
-                                                                                                "vn": "ý nghĩa"
+                                                        "en": "meaningful",
+                                                        "vn": "ý nghĩa"
                                                 },
                                                 {
-                                                                                                "en": "beneficial",
-                                                                                                "vn": "có lợi"
+                                                        "en": "beneficial",
+                                                        "vn": "có lợi"
                                                 },
                                                 {
-                                                                                                "en": "entertaining",
-                                                                                                "vn": "mang tính giải trí"
+                                                        "en": "entertaining",
+                                                        "vn": "mang tính giải trí"
                                                 },
                                                 {
-                                                                                                "en": "fascinating",
-                                                                                                "vn": "lôi cuốn, hấp dẫn"
+                                                        "en": "fascinating",
+                                                        "vn": "lôi cuốn, hấp dẫn"
                                                 }
-]
-                        },
+                                        ]
+                                },
                                 {
                                         "type": "benefit",
                                         "title": "Cụm Lợi ích:",
@@ -1801,11 +1962,23 @@ const renderChoice = (o) => {
                                                 }
                                         ]
                                 }
+                        ],
+                        "samples": [
+                                {
+                                        "label": "Cách 1 (Phim hành động và hài)",
+                                        "text": "I'm a big fan of action and comedy movies because I find them very interesting. They allow me to relax after a busy day and enjoy my free time.",
+                                        "formatted": "→ I'm a big fan of <span class=\"sub-hl\">action and comedy movies</span> because I find them very <span class=\"sub-hl\">interesting</span>. They allow me to <span class=\"sub-hl\">relax after a busy day</span> and <span class=\"sub-hl\">enjoy my free time</span>."
+                                },
+                                {
+                                        "label": "Cách 2 (Phim hài và phim tài liệu)",
+                                        "text": "Personally, I enjoy comedy movies the most because they're hilarious and uplifting. Besides, I also like documentaries because they help me widen my knowledge about the world.",
+                                        "formatted": "→ Personally, I enjoy <span class=\"sub-hl\">comedy movies</span> the most because they're <span class=\"sub-hl\">hilarious and uplifting</span>. Besides, I also like <span class=\"sub-hl\">documentaries</span> because they help me <span class=\"sub-hl\">widen my knowledge about the world</span>."
+                                }
                         ]
                 },
                 {
                         "title": "5. What is your favorite [danh từ]?",
-                        "formula": "→ One of my <strong>[danh từ số nhiều]</strong> is <strong>[thứ cụ thể]</strong> because I find it both <strong>[2 tính từ mô tả phù hợp]</strong>. It always makes me feel <strong>[tính từ mô tả cảm xúc]</strong> and helps me <strong>[lợi ích]</strong>.",
+                        "formula": "<div style='margin-bottom: 8px;'><strong>- Cách 1:</strong> → One of my favorite <strong>[danh từ số nhiều]</strong> is <strong>[thứ cụ thể]</strong> because I find it both <strong>[2 tính từ mô tả phù hợp]</strong>. It always makes me feel <strong>[tính từ mô tả cảm xúc]</strong> and helps me <strong>[lợi ích]</strong>.</div><div><strong>- Cách 2:</strong> → If I had to pick just one, I'd say <strong>[thứ cụ thể]</strong> is my absolute favorite. It's really <strong>[tính từ]</strong>, and it allows me to <strong>[lợi ích]</strong>.</div>",
                         "examples": [
                                 {
                                         "q": "What is your favorite <span class='sub-hl'>food</span>?",
@@ -1839,55 +2012,55 @@ const renderChoice = (o) => {
                                 }
                         ],
                         "exQ": "What is your favorite <span class='sub-hl'>food</span>?",
-                        "exA": "→ One of my favorite foods is Vietnamese pho because I find it both delicious and nutritious. It always makes me feel satisfied and helps me stay energized throughout the day.",
-                        "exAFormatted": "→ One of my favorite foods is <span class=\"sub-hl\">Vietnamese pho</span> because I find it both <span class=\"sub-hl\">delicious and nutritious</span>. It always makes me feel <span class=\"sub-hl\">satisfied</span> and helps me <span class=\"sub-hl\">stay energized throughout the day</span>.",
+                        "exA": "One of my favorite foods is Vietnamese pho because I find it both delicious and nutritious. It always makes me feel satisfied and helps me stay energized throughout the day. OR If I had to pick just one, I'd say Vietnamese pho is my absolute favorite. It's really flavorful and comforting, and it allows me to recharge my energy after a long day.",
+                        "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Phở bò truyền thống):</div>→ One of my favorite foods is <span class=\"sub-hl\">Vietnamese pho</span> because I find it both <span class=\"sub-hl\">delicious and nutritious</span>. It always makes me feel <span class=\"sub-hl\">satisfied</span> and helps me <span class=\"sub-hl\">stay energized throughout the day</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Món ăn yêu thích nhất):</div>→ If I had to pick just one, I'd say <span class=\"sub-hl\">Vietnamese pho</span> is my absolute favorite. It's really <span class=\"sub-hl\">flavorful and comforting</span>, and it allows me to <span class=\"sub-hl\">recharge my energy after a long day</span>.</div>",
                         "vocab": [
                                 {
-                                "type": "emotion",
-                                "title": "Tính từ mô tả cảm xúc:",
-                                "items": [
+                                        "type": "emotion",
+                                        "title": "Tính từ mô tả cảm xúc:",
+                                        "items": [
                                                 {
-                                                                                                "en": "relaxed",
-                                                                                                "vn": "thư thái"
+                                                        "en": "relaxed",
+                                                        "vn": "thư thái"
                                                 },
                                                 {
-                                                                                                "en": "refreshed",
-                                                                                                "vn": "sảng khoái"
+                                                        "en": "refreshed",
+                                                        "vn": "sảng khoái"
                                                 },
                                                 {
-                                                                                                "en": "positive",
-                                                                                                "vn": "tích cực"
+                                                        "en": "positive",
+                                                        "vn": "tích cực"
                                                 },
                                                 {
-                                                                                                "en": "energetic",
-                                                                                                "vn": "tràn đầy năng lượng"
+                                                        "en": "energetic",
+                                                        "vn": "tràn đầy năng lượng"
                                                 },
                                                 {
-                                                                                                "en": "comfortable",
-                                                                                                "vn": "dễ chịu"
+                                                        "en": "comfortable",
+                                                        "vn": "dễ chịu"
                                                 },
                                                 {
-                                                                                                "en": "calm",
-                                                                                                "vn": "bình tĩnh, thanh thản"
+                                                        "en": "calm",
+                                                        "vn": "bình tĩnh, thanh thản"
                                                 },
                                                 {
-                                                                                                "en": "productive",
-                                                                                                "vn": "hiệu quả"
+                                                        "en": "productive",
+                                                        "vn": "hiệu quả"
                                                 },
                                                 {
-                                                                                                "en": "motivated",
-                                                                                                "vn": "có động lực"
+                                                        "en": "motivated",
+                                                        "vn": "có động lực"
                                                 },
                                                 {
-                                                                                                "en": "confident",
-                                                                                                "vn": "tự tin"
+                                                        "en": "confident",
+                                                        "vn": "tự tin"
                                                 },
                                                 {
-                                                                                                "en": "satisfied",
-                                                                                                "vn": "hài lòng"
+                                                        "en": "satisfied",
+                                                        "vn": "hài lòng"
                                                 }
-]
-                        },
+                                        ]
+                                },
                                 {
                                         "type": "benefit",
                                         "title": "Cụm Lợi ích:",
@@ -1898,11 +2071,23 @@ const renderChoice = (o) => {
                                                 }
                                         ]
                                 }
+                        ],
+                        "samples": [
+                                {
+                                        "label": "Cách 1 (Phở bò truyền thống)",
+                                        "text": "One of my favorite foods is Vietnamese pho because I find it both delicious and nutritious. It always makes me feel satisfied and helps me stay energized throughout the day.",
+                                        "formatted": "→ One of my favorite foods is <span class=\"sub-hl\">Vietnamese pho</span> because I find it both <span class=\"sub-hl\">delicious and nutritious</span>. It always makes me feel <span class=\"sub-hl\">satisfied</span> and helps me <span class=\"sub-hl\">stay energized throughout the day</span>."
+                                },
+                                {
+                                        "label": "Cách 2 (Món ăn yêu thích nhất)",
+                                        "text": "If I had to pick just one, I'd say Vietnamese pho is my absolute favorite. It's really flavorful and comforting, and it allows me to recharge my energy after a long day.",
+                                        "formatted": "→ If I had to pick just one, I'd say <span class=\"sub-hl\">Vietnamese pho</span> is my absolute favorite. It's really <span class=\"sub-hl\">flavorful and comforting</span>, and it allows me to <span class=\"sub-hl\">recharge my energy after a long day</span>."
+                                }
                         ]
                 },
                 {
                         "title": "6. What are the benefits of [noun/noun phrase/Ving]?",
-                        "formula": "→ <strong>[noun/noun phrase/Ving]</strong> <strong>bring(s)</strong> us a number of benefits. For example, <strong>it allows</strong> / <strong>they allow</strong> us to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>. Moreover, we can <strong>[lợi ích 3]</strong>.",
+                        "formula": "<div style='margin-bottom: 8px;'><strong>- Cách 1:</strong> → <strong>[noun/noun phrase/Ving]</strong> bring(s) us a number of benefits. For example, it allows / they allow us to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>. Moreover, we can <strong>[lợi ích 3]</strong>.</div><div><strong>- Cách 2:</strong> → In my opinion, <strong>[noun/noun phrase/Ving]</strong> offer(s) two main advantages. First, it helps / they help us <strong>[lợi ích 1]</strong>. Second, it's / they're a great way to <strong>[lợi ích 2]</strong>.</div>",
                         "note": "<strong>LƯU Ý VỀ SỐ ÍT &amp; SỐ NHIỀU:</strong><br>• <strong>Danh từ số ít / Danh từ không đếm được / V-ing</strong> (như <em>exercise, reading books, learning English...</em>) ➝ Dùng <strong>brings</strong> và <strong>it allows</strong>.<br>• <strong>Danh từ số nhiều</strong> (như <em>soft skills, extracurricular activities...</em>) ➝ Dùng <strong>bring</strong> và <strong>they allow</strong>.",
                         "examples": [
                                 {
@@ -1937,8 +2122,8 @@ const renderChoice = (o) => {
                                 }
                         ],
                         "exQ": "What are the benefits of <span class='sub-hl'>exercise</span>?",
-                        "exA": "→ Exercise brings us a number of benefits. For example, it allows us to stay healthy and reduce stress. Moreover, we can improve our physical fitness.",
-                        "exAFormatted": "→ <span class=\"sub-hl\">Exercise</span> brings us a number of benefits. For example, it allows us to <span class=\"sub-hl\">stay healthy</span> and <span class=\"sub-hl\">reduce stress</span>. Moreover, we can <span class=\"sub-hl\">improve our physical fitness</span>.",
+                        "exA": "Exercise brings us a number of benefits. For example, it allows us to stay healthy and reduce stress. Moreover, we can improve our physical fitness. OR In my opinion, regular exercise offers two main advantages. First, it helps us stay in good shape. Second, it's a great way to relieve stress and boost our mental health.",
+                        "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Nhiều lợi ích):</div>→ <span class=\"sub-hl\">Exercise</span> brings us a number of benefits. For example, it allows us to <span class=\"sub-hl\">stay healthy</span> and <span class=\"sub-hl\">reduce stress</span>. Moreover, we can <span class=\"sub-hl\">improve our physical fitness</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Hai lợi ích then chốt):</div>→ In my opinion, <span class=\"sub-hl\">regular exercise</span> offers two main advantages. First, it helps us <span class=\"sub-hl\">stay in good shape</span>. Second, it's a great way to <span class=\"sub-hl\">relieve stress and boost our mental health</span>.</div>",
                         "vocab": [
                                 {
                                         "type": "benefit",
@@ -1950,13 +2135,25 @@ const renderChoice = (o) => {
                                                 }
                                         ]
                                 }
+                        ],
+                        "samples": [
+                                {
+                                        "label": "Cách 1 (Nhiều lợi ích)",
+                                        "text": "Exercise brings us a number of benefits. For example, it allows us to stay healthy and reduce stress. Moreover, we can improve our physical fitness.",
+                                        "formatted": "→ <span class=\"sub-hl\">Exercise</span> brings us a number of benefits. For example, it allows us to <span class=\"sub-hl\">stay healthy</span> and <span class=\"sub-hl\">reduce stress</span>. Moreover, we can <span class=\"sub-hl\">improve our physical fitness</span>."
+                                },
+                                {
+                                        "label": "Cách 2 (Hai lợi ích then chốt)",
+                                        "text": "In my opinion, regular exercise offers two main advantages. First, it helps us stay in good shape. Second, it's a great way to relieve stress and boost our mental health.",
+                                        "formatted": "→ In my opinion, <span class=\"sub-hl\">regular exercise</span> offers two main advantages. First, it helps us <span class=\"sub-hl\">stay in good shape</span>. Second, it's a great way to <span class=\"sub-hl\">relieve stress and boost our mental health</span>."
+                                }
                         ]
                 }
         ],
         "who": [
                 {
                         "title": "1. Who’s your favorite [noun – danh từ chỉ người]?",
-                        "formula": "→ I’m a huge fan of <strong>[tên]</strong>. I admire <strong>him/her</strong> because <strong>[lý do chính]</strong>. Besides, <strong>he/she</strong> is very <strong>[2 tính từ mô tả tính cách]</strong>, which I find very impressive.",
+                        "formula": "<div style='margin-bottom: 8px;'><strong>- Cách 1:</strong> → I'm a huge fan of <strong>[tên]</strong>. I admire him/her because <strong>[lý do chính]</strong>. Besides, he/she is very <strong>[2 tính từ mô tả tính cách]</strong>, so I find him/her very impressive.</div><div><strong>- Cách 2:</strong> → My all-time favorite <strong>[danh từ]</strong> is <strong>[tên]</strong>. Not only is he/she <strong>[tính từ 1]</strong>, but he/she also <strong>[hành động / tài năng]</strong>. His/Her work always inspires me to <strong>[lợi ích]</strong>.</div>",
                         "examples": [
                                 {
                                         "q": "Who’s your favorite <span class='sub-hl'>singer</span>?",
@@ -1990,56 +2187,68 @@ const renderChoice = (o) => {
                                 }
                         ],
                         "exQ": "Who’s your favorite <span class='sub-hl'>singer</span>?",
-                        "exA": "→ I’m a huge fan of Justin Bieber. I admire him because he has a beautiful voice. Besides, he is very talented and creative, which I find very impressive.",
-                        "exAFormatted": "→ I’m a huge fan of <span class=\"sub-hl\">Justin Bieber</span>. I admire him because <span class=\"sub-hl\">he has a beautiful voice</span>. Besides, he is very <span class=\"sub-hl\">talented and creative</span>, which I find very impressive.",
+                        "exA": "I'm a huge fan of Justin Bieber. I admire him because he has a beautiful voice. Besides, he's very talented and creative, so I find him very impressive. OR My all-time favorite singer is Justin Bieber. Not only is he gifted with an amazing voice, but he also writes great songs. His music always inspires me to stay positive.",
+                        "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Ngưỡng mộ tài năng):</div>→ I'm a huge fan of <span class=\"sub-hl\">Justin Bieber</span>. I admire him because he has a <span class=\"sub-hl\">beautiful voice</span>. Besides, he's very <span class=\"sub-hl\">talented and creative</span>, so I find him very impressive.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Nguồn cảm hứng âm nhạc):</div>→ My all-time favorite singer is <span class=\"sub-hl\">Justin Bieber</span>. Not only is he gifted with <span class=\"sub-hl\">an amazing voice</span>, but he also <span class=\"sub-hl\">writes great songs</span>. His music always inspires me to <span class=\"sub-hl\">stay positive</span>.</div>",
                         "vocab": [
                                 {
-                                "type": "adj",
-                                "title": "Tính từ mô tả phẩm chất / tính cách:",
-                                "items": [
+                                        "type": "adj",
+                                        "title": "Tính từ mô tả phẩm chất / tính cách:",
+                                        "items": [
                                                 {
-                                                                                                "en": "talented",
-                                                                                                "vn": "tài năng"
+                                                        "en": "talented",
+                                                        "vn": "tài năng"
                                                 },
                                                 {
-                                                                                                "en": "creative",
-                                                                                                "vn": "sáng tạo"
+                                                        "en": "creative",
+                                                        "vn": "sáng tạo"
                                                 },
                                                 {
-                                                                                                "en": "passionate",
-                                                                                                "vn": "đầy đam mê"
+                                                        "en": "passionate",
+                                                        "vn": "đầy đam mê"
                                                 },
                                                 {
-                                                                                                "en": "dedicated",
-                                                                                                "vn": "tận tâm"
+                                                        "en": "dedicated",
+                                                        "vn": "tận tâm"
                                                 },
                                                 {
-                                                                                                "en": "humble",
-                                                                                                "vn": "khiêm tốn"
+                                                        "en": "humble",
+                                                        "vn": "khiêm tốn"
                                                 },
                                                 {
-                                                                                                "en": "kind-hearted",
-                                                                                                "vn": "nhân hậu"
+                                                        "en": "kind-hearted",
+                                                        "vn": "nhân hậu"
                                                 },
                                                 {
-                                                                                                "en": "patient",
-                                                                                                "vn": "kiên nhẫn"
+                                                        "en": "patient",
+                                                        "vn": "kiên nhẫn"
                                                 },
                                                 {
-                                                                                                "en": "supportive",
-                                                                                                "vn": "luôn ủng hộ"
+                                                        "en": "supportive",
+                                                        "vn": "luôn ủng hộ"
                                                 },
                                                 {
-                                                                                                "en": "inspiring",
-                                                                                                "vn": "truyền cảm hứng"
+                                                        "en": "inspiring",
+                                                        "vn": "truyền cảm hứng"
                                                 }
-]
-                        }
+                                        ]
+                                }
+                        ],
+                        "samples": [
+                                {
+                                        "label": "Cách 1 (Ngưỡng mộ tài năng)",
+                                        "text": "I'm a huge fan of Justin Bieber. I admire him because he has a beautiful voice. Besides, he's very talented and creative, so I find him very impressive.",
+                                        "formatted": "→ I'm a huge fan of <span class=\"sub-hl\">Justin Bieber</span>. I admire him because he has a <span class=\"sub-hl\">beautiful voice</span>. Besides, he's very <span class=\"sub-hl\">talented and creative</span>, so I find him very impressive."
+                                },
+                                {
+                                        "label": "Cách 2 (Nguồn cảm hứng âm nhạc)",
+                                        "text": "My all-time favorite singer is Justin Bieber. Not only is he gifted with an amazing voice, but he also writes great songs. His music always inspires me to stay positive.",
+                                        "formatted": "→ My all-time favorite singer is <span class=\"sub-hl\">Justin Bieber</span>. Not only is he gifted with <span class=\"sub-hl\">an amazing voice</span>, but he also <span class=\"sub-hl\">writes great songs</span>. His music always inspires me to <span class=\"sub-hl\">stay positive</span>."
+                                }
                         ]
                 },
                 {
                         "title": "2. Who do you often [hoạt động – Vo] with?",
-                        "formula": "→ I often <strong>[hoạt động – Vo]</strong> with my <strong>[đối tượng phù hợp]</strong> because <strong>[lý do]</strong>. I find it more <strong>[tính từ phù hợp]</strong> when we can share the experience and spend quality time together.",
+                        "formula": "<div style='margin-bottom: 8px;'><strong>- Cách 1:</strong> → I often <strong>[hoạt động – Vo]</strong> with my <strong>[đối tượng phù hợp]</strong> because <strong>[lý do]</strong>. I find it more <strong>[tính từ phù hợp]</strong> when we can share the experience and spend quality time together.</div><div><strong>- Cách 2:</strong> → Most of the time, I <strong>[hoạt động – Vo]</strong> with my <strong>[đối tượng phù hợp]</strong>. We get along really well, and it's a wonderful opportunity for us to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>.</div>",
                         "examples": [
                                 {
                                         "q": "Who do you often <span class='sub-hl'>go shopping</span> with?",
@@ -2073,42 +2282,54 @@ const renderChoice = (o) => {
                                 }
                         ],
                         "exQ": "Who do you often <span class='sub-hl'>go shopping</span> with?",
-                        "exA": "→ I often go shopping with my sister because we have similar interests. I find it more enjoyable when we can help each other choose suitable things and share our opinions.",
-                        "exAFormatted": "→ I often <span class=\"sub-hl\">go shopping</span> with <span class=\"sub-hl\">my sister</span> because <span class=\"sub-hl\">we have similar interests</span>. I find it more <span class=\"sub-hl\">enjoyable</span> when we can help each other choose suitable things and share our opinions.",
+                        "exA": "I often go shopping with my sister because we have similar interests. I find it more enjoyable when we can help each other choose suitable things and spend quality time together. OR Most of the time, I go shopping with my sister. We get along really well, and it's a wonderful opportunity for us to give each other fashion advice and strengthen our bond.",
+                        "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Có cùng sở thích):</div>→ I often <span class=\"sub-hl\">go shopping</span> with my <span class=\"sub-hl\">sister</span> because we have <span class=\"sub-hl\">similar interests</span>. I find it more enjoyable when we can <span class=\"sub-hl\">help each other choose suitable things</span> and spend quality time together.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Hợp tính và tư vấn):</div>→ Most of the time, I go shopping with my <span class=\"sub-hl\">sister</span>. We get along really well, and it's a wonderful opportunity for us to <span class=\"sub-hl\">give each other fashion advice</span> and <span class=\"sub-hl\">strengthen our bond</span>.</div>",
                         "vocab": [
                                 {
-                                "type": "adj",
-                                "title": "Tính từ mô tả trải nghiệm cùng người khác:",
-                                "items": [
+                                        "type": "adj",
+                                        "title": "Tính từ mô tả trải nghiệm cùng người khác:",
+                                        "items": [
                                                 {
-                                                                                                "en": "enjoyable",
-                                                                                                "vn": "thú vị"
+                                                        "en": "enjoyable",
+                                                        "vn": "thú vị"
                                                 },
                                                 {
-                                                                                                "en": "productive",
-                                                                                                "vn": "hiệu quả"
+                                                        "en": "productive",
+                                                        "vn": "hiệu quả"
                                                 },
                                                 {
-                                                                                                "en": "relaxing",
-                                                                                                "vn": "thư giãn"
+                                                        "en": "relaxing",
+                                                        "vn": "thư giãn"
                                                 },
                                                 {
-                                                                                                "en": "memorable",
-                                                                                                "vn": "đáng nhớ"
+                                                        "en": "memorable",
+                                                        "vn": "đáng nhớ"
                                                 },
                                                 {
-                                                                                                "en": "motivating",
-                                                                                                "vn": "tạo động lực"
+                                                        "en": "motivating",
+                                                        "vn": "tạo động lực"
                                                 }
-]
-                        }
+                                        ]
+                                }
+                        ],
+                        "samples": [
+                                {
+                                        "label": "Cách 1 (Có cùng sở thích)",
+                                        "text": "I often go shopping with my sister because we have similar interests. I find it more enjoyable when we can help each other choose suitable things and spend quality time together.",
+                                        "formatted": "→ I often <span class=\"sub-hl\">go shopping</span> with my <span class=\"sub-hl\">sister</span> because we have <span class=\"sub-hl\">similar interests</span>. I find it more enjoyable when we can <span class=\"sub-hl\">help each other choose suitable things</span> and spend quality time together."
+                                },
+                                {
+                                        "label": "Cách 2 (Hợp tính và tư vấn)",
+                                        "text": "Most of the time, I go shopping with my sister. We get along really well, and it's a wonderful opportunity for us to give each other fashion advice and strengthen our bond.",
+                                        "formatted": "→ Most of the time, I go shopping with my <span class=\"sub-hl\">sister</span>. We get along really well, and it's a wonderful opportunity for us to <span class=\"sub-hl\">give each other fashion advice</span> and <span class=\"sub-hl\">strengthen our bond</span>."
+                                }
                         ]
                 }
         ],
         "when": [
                 {
                         "title": "1. When do you often [hoạt động – Vo]?",
-                        "formula": "→ I usually <strong>[hoạt động – Vo]</strong> <strong>[thời gian]</strong> because that’s when I have some free time. I find it a great opportunity to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>.",
+                        "formula": "<div style='margin-bottom: 8px;'><strong>- Cách 1:</strong> → I usually <strong>[hoạt động – Vo]</strong> <strong>[thời gian]</strong> because that's when I have some free time. I find it a great opportunity to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>.</div><div><strong>- Cách 2:</strong> → My favorite time to <strong>[hoạt động – Vo]</strong> is <strong>[thời gian]</strong>. It allows me to <strong>[lợi ích 1]</strong> and helps me <strong>[lợi ích 2]</strong> after a busy day.</div>",
                         "examples": [
                                 {
                                         "q": "When do you often <span class='sub-hl'>listen to music</span>?",
@@ -2142,8 +2363,8 @@ const renderChoice = (o) => {
                                 }
                         ],
                         "exQ": "When do you often <span class='sub-hl'>listen to music</span>?",
-                        "exA": "→ I often listen to music in the evening because that’s when I have some free time. I find it a great opportunity to relax after a busy day and reduce stress.",
-                        "exAFormatted": "→ I often <span class=\"sub-hl\">listen to music</span> <span class=\"sub-hl\">in the evening</span> because that’s when I have some free time. I find it a great opportunity to <span class=\"sub-hl\">relax after a busy day</span> and <span class=\"sub-hl\">reduce stress</span>.",
+                        "exA": "I often listen to music in the evening because that's when I have some free time. I find it a great opportunity to relax after a busy day and reduce stress. OR My favorite time to listen to music is late at night right before going to bed. It allows me to unwind peacefully and helps me fall asleep much faster.",
+                        "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Vào buổi tối):</div>→ I often <span class=\"sub-hl\">listen to music</span> <span class=\"sub-hl\">in the evening</span> because that's when I have some free time. I find it a great opportunity to <span class=\"sub-hl\">relax after a busy day</span> and <span class=\"sub-hl\">reduce stress</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Trước khi đi ngủ):</div>→ My favorite time to listen to music is <span class=\"sub-hl\">late at night right before going to bed</span>. It allows me to <span class=\"sub-hl\">unwind peacefully</span> and helps me <span class=\"sub-hl\">fall asleep much faster</span>.</div>",
                         "vocab": [
                                 {
                                         "type": "time",
@@ -2193,13 +2414,25 @@ const renderChoice = (o) => {
                                                 }
                                         ]
                                 }
+                        ],
+                        "samples": [
+                                {
+                                        "label": "Cách 1 (Vào buổi tối)",
+                                        "text": "I often listen to music in the evening because that's when I have some free time. I find it a great opportunity to relax after a busy day and reduce stress.",
+                                        "formatted": "→ I often <span class=\"sub-hl\">listen to music</span> <span class=\"sub-hl\">in the evening</span> because that's when I have some free time. I find it a great opportunity to <span class=\"sub-hl\">relax after a busy day</span> and <span class=\"sub-hl\">reduce stress</span>."
+                                },
+                                {
+                                        "label": "Cách 2 (Trước khi đi ngủ)",
+                                        "text": "My favorite time to listen to music is late at night right before going to bed. It allows me to unwind peacefully and helps me fall asleep much faster.",
+                                        "formatted": "→ My favorite time to listen to music is <span class=\"sub-hl\">late at night right before going to bed</span>. It allows me to <span class=\"sub-hl\">unwind peacefully</span> and helps me <span class=\"sub-hl\">fall asleep much faster</span>."
+                                }
                         ]
                 }
         ],
         "where": [
                 {
                         "title": "1. Where do you often [hoạt động – Vo]?",
-                        "formula": "→ I usually <strong>[hoạt động – Vo]</strong> <strong>[cụm địa điểm]</strong> because I find it very <strong>[tính từ mô tả địa điểm]</strong>. It allows me to <strong>[lợi ích 1]</strong> and gives me a chance to <strong>[lợi ích 2]</strong>.",
+                        "formula": "<div style='margin-bottom: 8px;'><strong>- Cách 1:</strong> → I usually <strong>[hoạt động – Vo]</strong> <strong>[cụm địa điểm]</strong> because I find it very <strong>[tính từ mô tả địa điểm]</strong>. It allows me to <strong>[lợi ích 1]</strong> and gives me a chance to <strong>[lợi ích 2]</strong>.</div><div><strong>- Cách 2:</strong> → Whenever I want to <strong>[hoạt động – Vo]</strong>, I head to <strong>[cụm địa điểm]</strong>. The atmosphere there is really <strong>[tính từ]</strong>, so it helps me <strong>[lợi ích]</strong>.</div>",
                         "examples": [
                                 {
                                         "q": "Where do you often <span class='sub-hl'>read books</span>?",
@@ -2233,8 +2466,8 @@ const renderChoice = (o) => {
                                 }
                         ],
                         "exQ": "Where do you often <span class='sub-hl'>read books</span>?",
-                        "exA": "→ I often read books in the school library because I find it very quiet. It allows me to focus better and gives me a chance to stay motivated.",
-                        "exAFormatted": "→ I often <span class=\"sub-hl\">read books</span> <span class=\"sub-hl\">in the school library</span> because I find it very <span class=\"sub-hl\">quiet</span>. It allows me to <span class=\"sub-hl\">focus better</span> and gives me a chance to <span class=\"sub-hl\">stay motivated</span>.",
+                        "exA": "I often read books in the school library because I find it very quiet. It allows me to focus better and gives me a chance to stay motivated. OR Whenever I want to read books, I head to a quiet coffee shop near my house. The atmosphere there is really cozy, so it helps me concentrate and enjoy my reading.",
+                        "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Thư viện trường):</div>→ I often <span class=\"sub-hl\">read books</span> <span class=\"sub-hl\">in the school library</span> because I find it very <span class=\"sub-hl\">quiet</span>. It allows me to <span class=\"sub-hl\">focus better</span> and gives me a chance to <span class=\"sub-hl\">stay motivated</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Quán cà phê yên tĩnh):</div>→ Whenever I want to read books, I head to <span class=\"sub-hl\">a quiet coffee shop near my house</span>. The atmosphere there is really <span class=\"sub-hl\">cozy</span>, so it helps me <span class=\"sub-hl\">concentrate and enjoy my reading</span>.</div>",
                         "vocab": [
                                 {
                                         "type": "place",
@@ -2267,50 +2500,62 @@ const renderChoice = (o) => {
                                         ]
                                 },
                                 {
-                                "type": "adj",
-                                "title": "Tính từ mô tả không gian:",
-                                "items": [
+                                        "type": "adj",
+                                        "title": "Tính từ mô tả không gian:",
+                                        "items": [
                                                 {
-                                                                                                "en": "peaceful",
-                                                                                                "vn": "yên bình"
+                                                        "en": "peaceful",
+                                                        "vn": "yên bình"
                                                 },
                                                 {
-                                                                                                "en": "quiet",
-                                                                                                "vn": "yên tĩnh"
+                                                        "en": "quiet",
+                                                        "vn": "yên tĩnh"
                                                 },
                                                 {
-                                                                                                "en": "cozy",
-                                                                                                "vn": "ấm cúng"
+                                                        "en": "cozy",
+                                                        "vn": "ấm cúng"
                                                 },
                                                 {
-                                                                                                "en": "comfortable",
-                                                                                                "vn": "dễ chịu"
+                                                        "en": "comfortable",
+                                                        "vn": "dễ chịu"
                                                 },
                                                 {
-                                                                                                "en": "modern",
-                                                                                                "vn": "hiện đại"
+                                                        "en": "modern",
+                                                        "vn": "hiện đại"
                                                 },
                                                 {
-                                                                                                "en": "convenient",
-                                                                                                "vn": "tiện lợi"
+                                                        "en": "convenient",
+                                                        "vn": "tiện lợi"
                                                 },
                                                 {
-                                                                                                "en": "spacious",
-                                                                                                "vn": "rộng rãi"
+                                                        "en": "spacious",
+                                                        "vn": "rộng rãi"
                                                 },
                                                 {
-                                                                                                "en": "airy",
-                                                                                                "vn": "thoáng mát"
+                                                        "en": "airy",
+                                                        "vn": "thoáng mát"
                                                 }
-]
-                        }
+                                        ]
+                                }
+                        ],
+                        "samples": [
+                                {
+                                        "label": "Cách 1 (Thư viện trường)",
+                                        "text": "I often read books in the school library because I find it very quiet. It allows me to focus better and gives me a chance to stay motivated.",
+                                        "formatted": "→ I often <span class=\"sub-hl\">read books</span> <span class=\"sub-hl\">in the school library</span> because I find it very <span class=\"sub-hl\">quiet</span>. It allows me to <span class=\"sub-hl\">focus better</span> and gives me a chance to <span class=\"sub-hl\">stay motivated</span>."
+                                },
+                                {
+                                        "label": "Cách 2 (Quán cà phê yên tĩnh)",
+                                        "text": "Whenever I want to read books, I head to a quiet coffee shop near my house. The atmosphere there is really cozy, so it helps me concentrate and enjoy my reading.",
+                                        "formatted": "→ Whenever I want to read books, I head to <span class=\"sub-hl\">a quiet coffee shop near my house</span>. The atmosphere there is really <span class=\"sub-hl\">cozy</span>, so it helps me <span class=\"sub-hl\">concentrate and enjoy my reading</span>."
+                                }
                         ]
                 }
         ],
         "why": [
                 {
                         "title": "1. Why do you like [hoạt động – Ving]?",
-                        "formula": "→ I’m really into <strong>[hoạt động – Ving]</strong> because I find it very <strong>[tính từ mô tả hoạt động]</strong>. It allows me to <strong>[lợi ích 1]</strong> and gives me a chance to <strong>[lợi ích 2]</strong>.",
+                        "formula": "<div style='margin-bottom: 8px;'><strong>- Cách 1:</strong> → I'm really into <strong>[hoạt động – Ving]</strong> because I find it very <strong>[tính từ mô tả hoạt động]</strong>. It allows me to <strong>[lợi ích 1]</strong> and gives me a chance to <strong>[lợi ích 2]</strong>.</div><div><strong>- Cách 2:</strong> → The main reason I love <strong>[hoạt động – Ving]</strong> is that it helps me <strong>[lợi ích 1]</strong>. Furthermore, it's also a great way to <strong>[lợi ích 2]</strong>.</div>",
                         "examples": [
                                 {
                                         "q": "Why do you like <span class='sub-hl'>swimming</span>?",
@@ -2344,47 +2589,47 @@ const renderChoice = (o) => {
                                 }
                         ],
                         "exQ": "Why do you like <span class='sub-hl'>swimming</span>?",
-                        "exA": "→ I’m really into swimming because I find it very interesting. It allows me to stay healthy and gives me a chance to clear my mind.",
-                        "exAFormatted": "→ I’m really into <span class=\"sub-hl\">swimming</span> because I find it very <span class=\"sub-hl\">interesting</span>. It allows me to <span class=\"sub-hl\">stay healthy</span> and gives me a chance to <span class=\"sub-hl\">clear my mind</span>.",
+                        "exA": "I'm really into swimming because I find it very refreshing. It allows me to stay healthy and gives me a chance to clear my mind. OR The main reason I love swimming is that it helps me improve my endurance and stay in shape. Furthermore, it's also a great way to release stress on hot summer days.",
+                        "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Sảng khoái và khỏe mạnh):</div>→ I'm really into <span class=\"sub-hl\">swimming</span> because I find it very <span class=\"sub-hl\">refreshing</span>. It allows me to <span class=\"sub-hl\">stay healthy</span> and gives me a chance to <span class=\"sub-hl\">clear my mind</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Sức bền và giải tỏa căng thẳng):</div>→ The main reason I love swimming is that it helps me <span class=\"sub-hl\">improve my endurance and stay in shape</span>. Furthermore, it's also a great way to <span class=\"sub-hl\">release stress on hot summer days</span>.</div>",
                         "vocab": [
                                 {
-                                "type": "adj",
-                                "title": "Tính từ mô tả hoạt động:",
-                                "items": [
+                                        "type": "adj",
+                                        "title": "Tính từ mô tả hoạt động:",
+                                        "items": [
                                                 {
-                                                                                                "en": "interesting",
-                                                                                                "vn": "thú vị"
+                                                        "en": "interesting",
+                                                        "vn": "thú vị"
                                                 },
                                                 {
-                                                                                                "en": "exciting",
-                                                                                                "vn": "hào hứng"
+                                                        "en": "exciting",
+                                                        "vn": "hào hứng"
                                                 },
                                                 {
-                                                                                                "en": "relaxing",
-                                                                                                "vn": "thư giãn"
+                                                        "en": "relaxing",
+                                                        "vn": "thư giãn"
                                                 },
                                                 {
-                                                                                                "en": "enjoyable",
-                                                                                                "vn": "thoải mái, thú vị"
+                                                        "en": "enjoyable",
+                                                        "vn": "thoải mái, thú vị"
                                                 },
                                                 {
-                                                                                                "en": "meaningful",
-                                                                                                "vn": "ý nghĩa"
+                                                        "en": "meaningful",
+                                                        "vn": "ý nghĩa"
                                                 },
                                                 {
-                                                                                                "en": "beneficial",
-                                                                                                "vn": "có lợi"
+                                                        "en": "beneficial",
+                                                        "vn": "có lợi"
                                                 },
                                                 {
-                                                                                                "en": "entertaining",
-                                                                                                "vn": "mang tính giải trí"
+                                                        "en": "entertaining",
+                                                        "vn": "mang tính giải trí"
                                                 },
                                                 {
-                                                                                                "en": "fascinating",
-                                                                                                "vn": "lôi cuốn, hấp dẫn"
+                                                        "en": "fascinating",
+                                                        "vn": "lôi cuốn, hấp dẫn"
                                                 }
-]
-                        },
+                                        ]
+                                },
                                 {
                                         "type": "benefit",
                                         "title": "Cụm Lợi ích:",
@@ -2395,13 +2640,25 @@ const renderChoice = (o) => {
                                                 }
                                         ]
                                 }
+                        ],
+                        "samples": [
+                                {
+                                        "label": "Cách 1 (Sảng khoái và khỏe mạnh)",
+                                        "text": "I'm really into swimming because I find it very refreshing. It allows me to stay healthy and gives me a chance to clear my mind.",
+                                        "formatted": "→ I'm really into <span class=\"sub-hl\">swimming</span> because I find it very <span class=\"sub-hl\">refreshing</span>. It allows me to <span class=\"sub-hl\">stay healthy</span> and gives me a chance to <span class=\"sub-hl\">clear my mind</span>."
+                                },
+                                {
+                                        "label": "Cách 2 (Sức bền và giải tỏa căng thẳng)",
+                                        "text": "The main reason I love swimming is that it helps me improve my endurance and stay in shape. Furthermore, it's also a great way to release stress on hot summer days.",
+                                        "formatted": "→ The main reason I love swimming is that it helps me <span class=\"sub-hl\">improve my endurance and stay in shape</span>. Furthermore, it's also a great way to <span class=\"sub-hl\">release stress on hot summer days</span>."
+                                }
                         ]
                 }
         ],
         "how": [
                 {
                         "title": "1. How do you [go/get/commute/travel] to [địa điểm]?",
-                        "formula": "→ I usually <strong>[go/get/commute/travel]</strong> there by <strong>[phương tiện]</strong>, as it’s very <strong>[2 tính từ mô tả phương tiện]</strong>. That way, I can <strong>[2 lợi ích]</strong>.",
+                        "formula": "<div style='margin-bottom: 8px;'><strong>- Cách 1:</strong> → I usually <strong>[go/get/commute/travel]</strong> there by <strong>[phương tiện]</strong>, as it's very <strong>[2 tính từ mô tả phương tiện]</strong>. That way, I can <strong>[2 lợi ích]</strong>.</div><div><strong>- Cách 2:</strong> → My primary mode of transport to <strong>[địa điểm]</strong> is <strong>[phương tiện]</strong>. It's not only <strong>[tính từ 1]</strong> but also <strong>[tính từ 2]</strong>, so it helps me <strong>[lợi ích]</strong>.</div>",
                         "examples": [
                                 {
                                         "q": "How do you go to school <span class='sub-hl'>every day</span>?",
@@ -2435,8 +2692,8 @@ const renderChoice = (o) => {
                                 }
                         ],
                         "exQ": "How do you go to school <span class='sub-hl'>every day</span>?",
-                        "exA": "→ I usually go to school by motorbike, as it’s very fast and convenient. That way, I can avoid traffic jams and save a lot of time.",
-                        "exAFormatted": "→ I usually go to school by <span class=\"sub-hl\">motorbike</span>, as it’s very <span class=\"sub-hl\">fast and convenient</span>. That way, I can <span class=\"sub-hl\">avoid traffic jams</span> and <span class=\"sub-hl\">save a lot of time</span>.",
+                        "exA": "I usually go to school by motorbike, as it's very fast and convenient. That way, I can avoid traffic jams and save a lot of time. OR My primary mode of transport to school is the electric bus. It's not only economical but also environmentally friendly, so it helps me travel comfortably while saving money.",
+                        "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Đi xe máy):</div>→ I usually go to school by <span class=\"sub-hl\">motorbike</span>, as it's very <span class=\"sub-hl\">fast and convenient</span>. That way, I can <span class=\"sub-hl\">avoid traffic jams</span> and <span class=\"sub-hl\">save a lot of time</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Đi xe buýt điện):</div>→ My primary mode of transport to school is <span class=\"sub-hl\">the electric bus</span>. It's not only <span class=\"sub-hl\">economical</span> but also <span class=\"sub-hl\">environmentally friendly</span>, so it helps me <span class=\"sub-hl\">travel comfortably while saving money</span>.</div>",
                         "vocab": [
                                 {
                                         "type": "transport",
@@ -2455,13 +2712,13 @@ const renderChoice = (o) => {
                                                         "vn": "bằng xe đạp điện"
                                                 },
                                                 {
-                                                "en": "by car",
-                                                "vn": "bằng ô tô"
-                                        },
-                                        {
-                                                "en": "by taxi",
-                                                "vn": "bằng taxi"
-                                        },
+                                                        "en": "by car",
+                                                        "vn": "bằng ô tô"
+                                                },
+                                                {
+                                                        "en": "by taxi",
+                                                        "vn": "bằng taxi"
+                                                },
                                                 {
                                                         "en": "on foot",
                                                         "vn": "đi bộ"
@@ -2469,48 +2726,60 @@ const renderChoice = (o) => {
                                         ]
                                 },
                                 {
-                                "type": "adj",
-                                "title": "Tính từ mô tả phương tiện:",
-                                "items": [
+                                        "type": "adj",
+                                        "title": "Tính từ mô tả phương tiện:",
+                                        "items": [
                                                 {
-                                                                                                "en": "fast",
-                                                                                                "vn": "nhanh chóng"
+                                                        "en": "fast",
+                                                        "vn": "nhanh chóng"
                                                 },
                                                 {
-                                                                                                "en": "convenient",
-                                                                                                "vn": "tiện lợi"
+                                                        "en": "convenient",
+                                                        "vn": "tiện lợi"
                                                 },
                                                 {
-                                                                                                "en": "economical",
-                                                                                                "vn": "tiết kiệm"
+                                                        "en": "economical",
+                                                        "vn": "tiết kiệm"
                                                 },
                                                 {
-                                                                                                "en": "safe",
-                                                                                                "vn": "an toàn"
+                                                        "en": "safe",
+                                                        "vn": "an toàn"
                                                 },
                                                 {
-                                                                                                "en": "flexible",
-                                                                                                "vn": "linh hoạt"
+                                                        "en": "flexible",
+                                                        "vn": "linh hoạt"
                                                 },
                                                 {
-                                                                                                "en": "eco-friendly",
-                                                                                                "vn": "thân thiện với môi trường"
+                                                        "en": "eco-friendly",
+                                                        "vn": "thân thiện với môi trường"
                                                 },
                                                 {
-                                                                                                "en": "healthy",
-                                                                                                "vn": "lành mạnh"
+                                                        "en": "healthy",
+                                                        "vn": "lành mạnh"
                                                 },
                                                 {
-                                                                                                "en": "relaxing",
-                                                                                                "vn": "thư giãn"
+                                                        "en": "relaxing",
+                                                        "vn": "thư giãn"
                                                 }
-]
-                        }
+                                        ]
+                                }
+                        ],
+                        "samples": [
+                                {
+                                        "label": "Cách 1 (Đi xe máy)",
+                                        "text": "I usually go to school by motorbike, as it's very fast and convenient. That way, I can avoid traffic jams and save a lot of time.",
+                                        "formatted": "→ I usually go to school by <span class=\"sub-hl\">motorbike</span>, as it's very <span class=\"sub-hl\">fast and convenient</span>. That way, I can <span class=\"sub-hl\">avoid traffic jams</span> and <span class=\"sub-hl\">save a lot of time</span>."
+                                },
+                                {
+                                        "label": "Cách 2 (Đi xe buýt điện)",
+                                        "text": "My primary mode of transport to school is the electric bus. It's not only economical but also environmentally friendly, so it helps me travel comfortably while saving money.",
+                                        "formatted": "→ My primary mode of transport to school is <span class=\"sub-hl\">the electric bus</span>. It's not only <span class=\"sub-hl\">economical</span> but also <span class=\"sub-hl\">environmentally friendly</span>, so it helps me <span class=\"sub-hl\">travel comfortably while saving money</span>."
+                                }
                         ]
                 },
                 {
                         "title": "2. How often do you [hoạt động – Vo]?",
-                        "formula": "→ Although I have a busy schedule, I still try to <strong>[hoạt động – Vo]</strong> <strong>[tần suất]</strong> because it allows me to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>. Moreover, it makes me feel <strong>[tính từ cảm xúc]</strong>.",
+                        "formula": "<div style='margin-bottom: 8px;'><strong>- Cách 1:</strong> → Although I have a busy schedule, I still try to <strong>[hoạt động – Vo]</strong> <strong>[tần suất]</strong> because it allows me to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>. Moreover, it makes me feel <strong>[tính từ cảm xúc]</strong>.</div><div><strong>- Cách 2:</strong> → I make it a habit to <strong>[hoạt động – Vo]</strong> <strong>[tần suất]</strong>. It's a wonderful way to <strong>[lợi ích 1]</strong>, and it keeps me feeling <strong>[tính từ cảm xúc]</strong>.</div>",
                         "examples": [
                                 {
                                         "q": "How often do you go to the library <span class='sub-hl'>every week</span>?",
@@ -2544,8 +2813,8 @@ const renderChoice = (o) => {
                                 }
                         ],
                         "exQ": "How often do you go to the library <span class='sub-hl'>every week</span>?",
-                        "exA": "→ Although I have a busy schedule, I still try to go to the library twice a week because it allows me to focus better and study more effectively. Moreover, it makes me feel more productive.",
-                        "exAFormatted": "→ Although I have a busy schedule, I still try to <span class=\"sub-hl\">go to the library</span> <span class=\"sub-hl\">twice a week</span> because it allows me to <span class=\"sub-hl\">focus better</span> and <span class=\"sub-hl\">study more effectively</span>. Moreover, it makes me feel <span class=\"sub-hl\">more productive</span>.",
+                        "exA": "Although I have a busy schedule, I still try to go to the library twice a week because it allows me to focus better and study more effectively. Moreover, it makes me feel more productive. OR I make it a habit to go to the library at least twice a week. It's a wonderful way to access useful reference books, and it keeps me feeling motivated in my studies.",
+                        "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (2 lần một tuần):</div>→ Although I have a busy schedule, I still try to <span class=\"sub-hl\">go to the library twice a week</span> because it allows me to <span class=\"sub-hl\">focus better</span> and <span class=\"sub-hl\">study more effectively</span>. Moreover, it makes me feel <span class=\"sub-hl\">more productive</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Thói quen đều đặn):</div>→ I make it a habit to <span class=\"sub-hl\">go to the library at least twice a week</span>. It's a wonderful way to <span class=\"sub-hl\">access useful reference books</span>, and it keeps me feeling <span class=\"sub-hl\">motivated in my studies</span>.</div>",
                         "vocab": [
                                 {
                                         "type": "frequency",
@@ -2578,51 +2847,51 @@ const renderChoice = (o) => {
                                         ]
                                 },
                                 {
-                                "type": "emotion",
-                                "title": "Tính từ mô tả cảm xúc:",
-                                "items": [
+                                        "type": "emotion",
+                                        "title": "Tính từ mô tả cảm xúc:",
+                                        "items": [
                                                 {
-                                                                                                "en": "relaxed",
-                                                                                                "vn": "thư thái"
+                                                        "en": "relaxed",
+                                                        "vn": "thư thái"
                                                 },
                                                 {
-                                                                                                "en": "refreshed",
-                                                                                                "vn": "sảng khoái"
+                                                        "en": "refreshed",
+                                                        "vn": "sảng khoái"
                                                 },
                                                 {
-                                                                                                "en": "positive",
-                                                                                                "vn": "tích cực"
+                                                        "en": "positive",
+                                                        "vn": "tích cực"
                                                 },
                                                 {
-                                                                                                "en": "energetic",
-                                                                                                "vn": "tràn đầy năng lượng"
+                                                        "en": "energetic",
+                                                        "vn": "tràn đầy năng lượng"
                                                 },
                                                 {
-                                                                                                "en": "comfortable",
-                                                                                                "vn": "dễ chịu"
+                                                        "en": "comfortable",
+                                                        "vn": "dễ chịu"
                                                 },
                                                 {
-                                                                                                "en": "calm",
-                                                                                                "vn": "bình tĩnh, thanh thản"
+                                                        "en": "calm",
+                                                        "vn": "bình tĩnh, thanh thản"
                                                 },
                                                 {
-                                                                                                "en": "productive",
-                                                                                                "vn": "hiệu quả"
+                                                        "en": "productive",
+                                                        "vn": "hiệu quả"
                                                 },
                                                 {
-                                                                                                "en": "motivated",
-                                                                                                "vn": "có động lực"
+                                                        "en": "motivated",
+                                                        "vn": "có động lực"
                                                 },
                                                 {
-                                                                                                "en": "confident",
-                                                                                                "vn": "tự tin"
+                                                        "en": "confident",
+                                                        "vn": "tự tin"
                                                 },
                                                 {
-                                                                                                "en": "satisfied",
-                                                                                                "vn": "hài lòng"
+                                                        "en": "satisfied",
+                                                        "vn": "hài lòng"
                                                 }
-]
-                        },
+                                        ]
+                                },
                                 {
                                         "type": "benefit",
                                         "title": "Cụm Lợi ích:",
@@ -2633,11 +2902,23 @@ const renderChoice = (o) => {
                                                 }
                                         ]
                                 }
+                        ],
+                        "samples": [
+                                {
+                                        "label": "Cách 1 (2 lần một tuần)",
+                                        "text": "Although I have a busy schedule, I still try to go to the library twice a week because it allows me to focus better and study more effectively. Moreover, it makes me feel more productive.",
+                                        "formatted": "→ Although I have a busy schedule, I still try to <span class=\"sub-hl\">go to the library twice a week</span> because it allows me to <span class=\"sub-hl\">focus better</span> and <span class=\"sub-hl\">study more effectively</span>. Moreover, it makes me feel <span class=\"sub-hl\">more productive</span>."
+                                },
+                                {
+                                        "label": "Cách 2 (Thói quen đều đặn)",
+                                        "text": "I make it a habit to go to the library at least twice a week. It's a wonderful way to access useful reference books, and it keeps me feeling motivated in my studies.",
+                                        "formatted": "→ I make it a habit to <span class=\"sub-hl\">go to the library at least twice a week</span>. It's a wonderful way to <span class=\"sub-hl\">access useful reference books</span>, and it keeps me feeling <span class=\"sub-hl\">motivated in my studies</span>."
+                                }
                         ]
                 },
                 {
                         "title": "3. How much time do you spend [hoạt động – Ving]?",
-                        "formula": "→ Although I have a busy schedule, I still spend about <strong>[lượng thời gian]</strong> <strong>[hoạt động – Ving]</strong> every day because it allows me to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>. Moreover, it makes me feel more <strong>[tính từ cảm xúc]</strong>.",
+                        "formula": "<div style='margin-bottom: 8px;'><strong>- Cách 1:</strong> → Although I have a busy schedule, I still spend about <strong>[lượng thời gian]</strong> <strong>[hoạt động – Ving]</strong> every day because it allows me to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>. Moreover, it makes me feel more <strong>[tính từ cảm xúc]</strong>.</div><div><strong>- Cách 2:</strong> → On average, I dedicate around <strong>[lượng thời gian]</strong> a day to <strong>[hoạt động – Ving]</strong>. It helps me <strong>[lợi ích 1]</strong> and gives me a chance to <strong>[lợi ích 2]</strong>.</div>",
                         "examples": [
                                 {
                                         "q": "How much time do you spend <span class='sub-hl'>studying English</span>?",
@@ -2671,8 +2952,8 @@ const renderChoice = (o) => {
                                 }
                         ],
                         "exQ": "How much time do you spend <span class='sub-hl'>studying English</span>?",
-                        "exA": "→ Although I have a busy schedule, I still spend about two hours studying English every day because it allows me to enrich my vocabulary and improve my pronunciation. It also makes me feel more confident.",
-                        "exAFormatted": "→ Although I have a busy schedule, I still spend about <span class=\"sub-hl\">two hours</span> <span class=\"sub-hl\">studying English</span> every day because it allows me to <span class=\"sub-hl\">enrich my vocabulary</span> and <span class=\"sub-hl\">improve my pronunciation</span>. It also makes me feel <span class=\"sub-hl\">more confident</span>.",
+                        "exA": "Although I have a busy schedule, I still spend about two hours studying English every day because it allows me to enrich my vocabulary and improve my pronunciation. It also makes me feel more confident. OR On average, I dedicate around two hours a day to practicing English. It helps me improve my speaking fluency and gives me a chance to feel more comfortable communicating with foreigners.",
+                        "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Khoảng 2 tiếng mỗi ngày):</div>→ Although I have a busy schedule, I still spend about <span class=\"sub-hl\">two hours studying English every day</span> because it allows me to <span class=\"sub-hl\">enrich my vocabulary</span> and <span class=\"sub-hl\">improve my pronunciation</span>. It also makes me feel <span class=\"sub-hl\">more confident</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Dành thời gian chuyên tâm):</div>→ On average, I dedicate around <span class=\"sub-hl\">two hours a day</span> to <span class=\"sub-hl\">practicing English</span>. It helps me <span class=\"sub-hl\">improve my speaking fluency</span> and gives me a chance to <span class=\"sub-hl\">feel more comfortable communicating with foreigners</span>.</div>",
                         "vocab": [
                                 {
                                         "type": "duration",
@@ -2701,51 +2982,51 @@ const renderChoice = (o) => {
                                         ]
                                 },
                                 {
-                                "type": "emotion",
-                                "title": "Tính từ mô tả cảm xúc:",
-                                "items": [
+                                        "type": "emotion",
+                                        "title": "Tính từ mô tả cảm xúc:",
+                                        "items": [
                                                 {
-                                                                                                "en": "relaxed",
-                                                                                                "vn": "thư thái"
+                                                        "en": "relaxed",
+                                                        "vn": "thư thái"
                                                 },
                                                 {
-                                                                                                "en": "refreshed",
-                                                                                                "vn": "sảng khoái"
+                                                        "en": "refreshed",
+                                                        "vn": "sảng khoái"
                                                 },
                                                 {
-                                                                                                "en": "positive",
-                                                                                                "vn": "tích cực"
+                                                        "en": "positive",
+                                                        "vn": "tích cực"
                                                 },
                                                 {
-                                                                                                "en": "energetic",
-                                                                                                "vn": "tràn đầy năng lượng"
+                                                        "en": "energetic",
+                                                        "vn": "tràn đầy năng lượng"
                                                 },
                                                 {
-                                                                                                "en": "comfortable",
-                                                                                                "vn": "dễ chịu"
+                                                        "en": "comfortable",
+                                                        "vn": "dễ chịu"
                                                 },
                                                 {
-                                                                                                "en": "calm",
-                                                                                                "vn": "bình tĩnh, thanh thản"
+                                                        "en": "calm",
+                                                        "vn": "bình tĩnh, thanh thản"
                                                 },
                                                 {
-                                                                                                "en": "productive",
-                                                                                                "vn": "hiệu quả"
+                                                        "en": "productive",
+                                                        "vn": "hiệu quả"
                                                 },
                                                 {
-                                                                                                "en": "motivated",
-                                                                                                "vn": "có động lực"
+                                                        "en": "motivated",
+                                                        "vn": "có động lực"
                                                 },
                                                 {
-                                                                                                "en": "confident",
-                                                                                                "vn": "tự tin"
+                                                        "en": "confident",
+                                                        "vn": "tự tin"
                                                 },
                                                 {
-                                                                                                "en": "satisfied",
-                                                                                                "vn": "hài lòng"
+                                                        "en": "satisfied",
+                                                        "vn": "hài lòng"
                                                 }
-]
-                        },
+                                        ]
+                                },
                                 {
                                         "type": "benefit",
                                         "title": "Cụm Lợi ích:",
@@ -2756,11 +3037,23 @@ const renderChoice = (o) => {
                                                 }
                                         ]
                                 }
+                        ],
+                        "samples": [
+                                {
+                                        "label": "Cách 1 (Khoảng 2 tiếng mỗi ngày)",
+                                        "text": "Although I have a busy schedule, I still spend about two hours studying English every day because it allows me to enrich my vocabulary and improve my pronunciation. It also makes me feel more confident.",
+                                        "formatted": "→ Although I have a busy schedule, I still spend about <span class=\"sub-hl\">two hours studying English every day</span> because it allows me to <span class=\"sub-hl\">enrich my vocabulary</span> and <span class=\"sub-hl\">improve my pronunciation</span>. It also makes me feel <span class=\"sub-hl\">more confident</span>."
+                                },
+                                {
+                                        "label": "Cách 2 (Dành thời gian chuyên tâm)",
+                                        "text": "On average, I dedicate around two hours a day to practicing English. It helps me improve my speaking fluency and gives me a chance to feel more comfortable communicating with foreigners.",
+                                        "formatted": "→ On average, I dedicate around <span class=\"sub-hl\">two hours a day</span> to <span class=\"sub-hl\">practicing English</span>. It helps me <span class=\"sub-hl\">improve my speaking fluency</span> and gives me a chance to <span class=\"sub-hl\">feel more comfortable communicating with foreigners</span>."
+                                }
                         ]
                 },
                 {
                         "title": "4. How much money do you spend on [thứ gì đó – noun] every month?",
-                        "formula": "→ I’m still a student, so I try to keep my spending under control. I often spend about <strong>[số tiền]</strong> on <strong>[thứ gì đó]</strong> every month. It allows me to <strong>[lợi ích]</strong> while still saving some money.",
+                        "formula": "<div style='margin-bottom: 8px;'><strong>- Cách 1:</strong> → I'm still a student, so I try to keep my spending under control. I usually spend about <strong>[số tiền]</strong> on <strong>[thứ gì đó]</strong> every month to <strong>[lợi ích]</strong> while still saving some money.</div><div><strong>- Cách 2:</strong> → Generally, I set aside approximately <strong>[số tiền]</strong> each month for <strong>[thứ gì đó]</strong>. It allows me to <strong>[lợi ích]</strong> without breaking the bank.</div>",
                         "examples": [
                                 {
                                         "q": "How much money do you spend on <span class='sub-hl'>clothes</span> every month?",
@@ -2794,21 +3087,21 @@ const renderChoice = (o) => {
                                 }
                         ],
                         "exQ": "How much money do you spend on <span class='sub-hl'>clothes</span> every month?",
-                        "exA": "→ I’m still a student, so I try to keep my spending under control. I only spend about $50 on clothes every month. It allows me to buy the clothes I need while still saving some money.",
-                        "exAFormatted": "→ I’m still a student, so I try to keep my spending under control. I only spend about <span class=\"sub-hl\">$50</span> on <span class=\"sub-hl\">clothes</span> every month. It allows me to <span class=\"sub-hl\">buy the clothes I need</span> while still saving some money.",
+                        "exA": "I'm still a student, so I try to keep my spending under control. I usually spend about fifty dollars on clothes every month to buy the outfits I need while still saving some money. OR Generally, I set aside approximately fifty dollars each month for clothes. It allows me to purchase necessary items for school and daily life without breaking the bank.",
+                        "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Khoảng $50):</div>→ I'm still a student, so I try to keep my spending under control. I usually spend about <span class=\"sub-hl\">fifty dollars</span> on clothes every month to <span class=\"sub-hl\">buy the outfits I need</span> while still saving some money.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Trích ngân sách hợp lý):</div>→ Generally, I set aside approximately <span class=\"sub-hl\">fifty dollars each month</span> for clothes. It allows me to <span class=\"sub-hl\">purchase necessary items for school and daily life</span> without breaking the bank.</div>",
                         "vocab": [
                                 {
                                         "type": "money",
                                         "title": "Cụm Số tiền tham khảo:",
                                         "items": [
                                                 {
-                                                "en": "about $50",
-                                                "vn": "khoảng 50 đô"
-                                        },
-                                        {
-                                                "en": "about 1 million VND",
-                                                "vn": "khoảng 1 triệu VNĐ"
-                                        },
+                                                        "en": "about $50",
+                                                        "vn": "khoảng 50 đô"
+                                                },
+                                                {
+                                                        "en": "about 1 million VND",
+                                                        "vn": "khoảng 1 triệu VNĐ"
+                                                },
                                                 {
                                                         "en": "200,000 VND",
                                                         "vn": "200.000 VNĐ"
@@ -2836,6 +3129,18 @@ const renderChoice = (o) => {
                                                         "vn": "👉 (Sử dụng các cụm trong BẢNG LỢI ÍCH B2)"
                                                 }
                                         ]
+                                }
+                        ],
+                        "samples": [
+                                {
+                                        "label": "Cách 1 (Khoảng $50)",
+                                        "text": "I'm still a student, so I try to keep my spending under control. I usually spend about fifty dollars on clothes every month to buy the outfits I need while still saving some money.",
+                                        "formatted": "→ I'm still a student, so I try to keep my spending under control. I usually spend about <span class=\"sub-hl\">fifty dollars</span> on clothes every month to <span class=\"sub-hl\">buy the outfits I need</span> while still saving some money."
+                                },
+                                {
+                                        "label": "Cách 2 (Trích ngân sách hợp lý)",
+                                        "text": "Generally, I set aside approximately fifty dollars each month for clothes. It allows me to purchase necessary items for school and daily life without breaking the bank.",
+                                        "formatted": "→ Generally, I set aside approximately <span class=\"sub-hl\">fifty dollars each month</span> for clothes. It allows me to <span class=\"sub-hl\">purchase necessary items for school and daily life</span> without breaking the bank."
                                 }
                         ]
                 }
@@ -2885,10 +3190,7 @@ const whShowcase = document.getElementById('wh-showcase');
                                             <i class="fa-solid fa-eye"></i> Nhấn xem câu trả lời mẫu
                                         </button>
                                         <div class="fade-in" style="display:none; margin-top:0.75rem; padding-top:0.75rem; border-top:1px dashed var(--border);">
-                                            <div class="ex-text" style="color:var(--secondary); font-weight:500; font-size:1.05rem; line-height:1.8;">${item.exAFormatted || item.exA}</div>
-                                            <button class="btn-audio-sample mt-2" onclick="speakText('${item.exA.replace(/<[^>]*>/g, '').replace(/→/g, '').replace(/'/g, "\\'").trim()}')">
-                                                <i class="fa-solid fa-volume-high"></i> Nghe Audio phát âm
-                                            </button>
+                                            ${renderSampleAnswersContent(item)}
                                         </div>
                                     </div>
                                 </div>
