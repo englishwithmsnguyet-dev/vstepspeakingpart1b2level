@@ -595,6 +595,16 @@ document.addEventListener('DOMContentLoaded', () => {
         "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Trả lời YES):</div>→ Sure. I often <span class=\"sub-hl\">play sports</span> <span class=\"sub-hl\">in the afternoon</span> whenever I have free time. It allows me to <span class=\"sub-hl\">relax after a busy day</span> and <span class=\"sub-hl\">stay healthy</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Trả lời NO):</div>→ Honestly, not really. I rarely <span class=\"sub-hl\">play sports</span> because I have a <span class=\"sub-hl\">busy study schedule</span>. Instead, I prefer to <span class=\"sub-hl\">listen to music at home</span> to <span class=\"sub-hl\">unwind after a stressful day</span>.</div>",
         "vocab": [
             {
+                "type": "activity",
+                "title": "Cụm Hoạt động:",
+                "items": [
+                    {
+                        "isNote": true,
+                        "vn": "👉 (Sử dụng các cụm trong BẢNG HOẠT ĐỘNG)"
+                    }
+                ]
+            },
+            {
                 "type": "time",
                 "title": "Cụm Thời gian:",
                 "items": [
@@ -707,6 +717,16 @@ document.addEventListener('DOMContentLoaded', () => {
         "exA": "Not really. I don't often listen to music while doing my homework because it's hard for me to focus. I prefer to do one thing at a time to complete it more effectively. OR Yes, I sometimes do. I often listen to soft acoustic music while doing my homework because it makes studying more enjoyable. It allows me to reduce stress and stay focused.",
         "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Trả lời NO):</div>→ Not really. I don't often <span class=\"sub-hl\">listen to music</span> while <span class=\"sub-hl\">doing my homework</span> because it's hard for me to focus. I prefer to <span class=\"sub-hl\">do one thing at a time</span> to <span class=\"sub-hl\">complete it more effectively</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Trả lời YES):</div>→ Yes, I sometimes do. I often <span class=\"sub-hl\">listen to soft acoustic music</span> while <span class=\"sub-hl\">doing my homework</span> because it makes studying more <span class=\"sub-hl\">enjoyable</span>. It allows me to <span class=\"sub-hl\">reduce stress</span> and <span class=\"sub-hl\">stay focused</span>.</div>",
         "vocab": [
+            {
+                "type": "activity",
+                "title": "Cụm Hoạt động:",
+                "items": [
+                    {
+                        "isNote": true,
+                        "vn": "👉 (Sử dụng các cụm trong BẢNG HOẠT ĐỘNG)"
+                    }
+                ]
+            },
             {
                 "type": "benefit",
                 "title": "Cụm Lợi ích:",
@@ -826,6 +846,16 @@ document.addEventListener('DOMContentLoaded', () => {
         "exA": "Yes, I do. I'm really into reading books because I find it very interesting. It's a great way to clear my mind and widen my knowledge. OR Honestly, I'm not very keen on reading books because staring at pages makes my eyes tired. Instead, I prefer listening to podcasts because it allows me to gain useful knowledge comfortably.",
         "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Trả lời YES):</div>→ Yes, I do. I'm really into <span class=\"sub-hl\">reading books</span> because I find it very <span class=\"sub-hl\">interesting</span>. It's a great way to <span class=\"sub-hl\">clear my mind</span> and <span class=\"sub-hl\">widen my knowledge</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Trả lời NO):</div>→ Honestly, I'm not very keen on <span class=\"sub-hl\">reading books</span> because <span class=\"sub-hl\">staring at pages makes my eyes tired</span>. Instead, I prefer <span class=\"sub-hl\">listening to podcasts</span> because it allows me to <span class=\"sub-hl\">gain useful knowledge comfortably</span>.</div>",
         "vocab": [
+            {
+                "type": "activity",
+                "title": "Cụm Hoạt động:",
+                "items": [
+                    {
+                        "isNote": true,
+                        "vn": "👉 (Sử dụng các cụm trong BẢNG HOẠT ĐỘNG)"
+                    }
+                ]
+            },
             {
                 "type": "note",
                 "title": "Ghi chú từ vựng trong câu:",
@@ -992,6 +1022,16 @@ document.addEventListener('DOMContentLoaded', () => {
         "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Trả lời YES):</div>→ Sure. I used to <span class=\"sub-hl\">watch cartoons</span> regularly when I was a child because I found it <span class=\"sub-hl\">entertaining</span>. It allowed me to <span class=\"sub-hl\">enjoy my free time</span> and <span class=\"sub-hl\">develop my imagination</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Trả lời NO):</div>→ Honestly, not really. When I was a child, I didn't often <span class=\"sub-hl\">watch cartoons</span> because <span class=\"sub-hl\">my parents strictly limited my screen time</span>. Instead, I usually <span class=\"sub-hl\">played outdoor games with neighborhood friends</span> to <span class=\"sub-hl\">stay active</span>.</div>",
         "vocab": [
             {
+                "type": "activity",
+                "title": "Cụm Hoạt động:",
+                "items": [
+                    {
+                        "isNote": true,
+                        "vn": "👉 (Sử dụng các cụm trong BẢNG HOẠT ĐỘNG)"
+                    }
+                ]
+            },
+            {
                 "type": "note",
                 "title": "Ghi chú từ vựng trong câu:",
                 "items": [
@@ -1118,6 +1158,16 @@ document.addEventListener('DOMContentLoaded', () => {
         "exA": "Sure. I'm quite good at cooking because I've practiced it for a long time. It allows me to prepare healthy meals at home and save a lot of money. OR Not really. I'm not very good at cooking because I rarely spend time in the kitchen. However, I'm trying to learn simple recipes to take better care of my health.",
         "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Trả lời YES):</div>→ Sure. I'm quite good at <span class=\"sub-hl\">cooking</span> because <span class=\"sub-hl\">I've practiced it for a long time</span>. It allows me to <span class=\"sub-hl\">prepare healthy meals at home</span> and <span class=\"sub-hl\">save a lot of money</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Trả lời NO):</div>→ Not really. I'm not very good at <span class=\"sub-hl\">cooking</span> because <span class=\"sub-hl\">I rarely spend time in the kitchen</span>. However, I'm trying to learn simple recipes to <span class=\"sub-hl\">take better care of my health</span>.</div>",
         "vocab": [
+            {
+                "type": "activity",
+                "title": "Cụm Hoạt động:",
+                "items": [
+                    {
+                        "isNote": true,
+                        "vn": "👉 (Sử dụng các cụm trong BẢNG HOẠT ĐỘNG)"
+                    }
+                ]
+            },
             {
                 "type": "note",
                 "title": "Cụm từ hay:",
@@ -1335,6 +1385,16 @@ document.addEventListener('DOMContentLoaded', () => {
         "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Trả lời ĐÃ TỪNG):</div>→ Yes, I <span class=\"sub-hl\">attended a live concert two years ago</span>, and I found it really <span class=\"sub-hl\">exciting</span>. It allowed me to <span class=\"sub-hl\">enjoy live music</span> and <span class=\"sub-hl\">create unforgettable memories with my friends</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Trả lời CHƯA TỪNG):</div>→ Not yet. I haven't had the chance to <span class=\"sub-hl\">attend a live concert yet</span> because <span class=\"sub-hl\">tickets are usually quite expensive</span>. However, I'd love to go in the future to <span class=\"sub-hl\">enjoy the lively atmosphere</span>.</div>",
         "vocab": [
             {
+                "type": "activity",
+                "title": "Cụm Hoạt động:",
+                "items": [
+                    {
+                        "isNote": true,
+                        "vn": "👉 (Sử dụng các cụm trong BẢNG HOẠT ĐỘNG)"
+                    }
+                ]
+            },
+            {
                 "type": "benefit",
                 "title": "Cụm Lợi ích:",
                 "items": [
@@ -1401,6 +1461,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
     }
 ];
+
 
 
 
@@ -1481,15 +1542,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div style="display: flex; flex-direction: column; gap: 1rem; font-size: 0.92rem; line-height: 1.6;">`;
 
         item.vocab.forEach(group => {
-            const isBlue = group.type === 'benefit';
-            const col = isBlue ? '#2563eb' : '#059669';
-            const bg = isBlue ? 'rgba(59, 130, 246, 0.06)' : 'rgba(16, 185, 129, 0.06)';
-            const border = isBlue ? 'rgba(59, 130, 246, 0.25)' : 'rgba(16, 185, 129, 0.25)';
+            const isBenefit = group.type === 'benefit';
+            const isActivity = group.type === 'activity';
+
+            let col = '#059669';
+            let bg = 'rgba(16, 185, 129, 0.06)';
+            let border = 'rgba(16, 185, 129, 0.25)';
             let icon = 'fa-solid fa-lightbulb';
-            if (group.type === 'benefit') icon = 'fa-solid fa-star';
-            else if (group.type === 'time') icon = 'fa-regular fa-clock';
-            else if (group.type === 'emotion') icon = 'fa-solid fa-face-smile';
-            else if (group.type === 'activity') icon = 'fa-solid fa-wand-magic-sparkles';
+
+            if (isBenefit) {
+                col = '#2563eb';
+                bg = 'rgba(59, 130, 246, 0.06)';
+                border = 'rgba(59, 130, 246, 0.25)';
+                icon = 'fa-solid fa-star';
+            } else if (isActivity) {
+                col = '#d97706';
+                bg = 'rgba(217, 119, 6, 0.06)';
+                border = 'rgba(217, 119, 6, 0.25)';
+                icon = 'fa-solid fa-person-running';
+            } else if (group.type === 'time') {
+                icon = 'fa-regular fa-clock';
+            } else if (group.type === 'emotion') {
+                icon = 'fa-solid fa-face-smile';
+            }
             if (group.icon) icon = group.icon;
 
             html += `
@@ -1498,9 +1573,16 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div style="color: var(--text-main); display: flex; flex-direction: column; gap: 0.5rem;">`;
             group.items.forEach(pair => {
                 if (pair.isNote) {
+                    let noteContent = pair.vn;
+                    if (!noteContent.includes('<button') && !noteContent.includes('<a')) {
+                        noteContent = noteContent
+                            .replace(/BẢNG HOẠT ĐỘNG/g, '<button type="button" onclick="switchTab(\'activities\')" style="background:none; border:none; padding:0; color:inherit; font-weight:800; text-decoration:underline; cursor:pointer; font-size:inherit; font-family:inherit;"><i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.82em;"></i> BẢNG HOẠT ĐỘNG</button>')
+                            .replace(/BẢNG LỢI ÍCH B2/g, '<button type="button" onclick="switchTab(\'benefits\')" style="background:none; border:none; padding:0; color:inherit; font-weight:800; text-decoration:underline; cursor:pointer; font-size:inherit; font-family:inherit;"><i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.82em;"></i> BẢNG LỢI ÍCH B2</button>')
+                            .replace(/BẢNG LỢI ÍCH(?! B2)/g, '<button type="button" onclick="switchTab(\'benefits\')" style="background:none; border:none; padding:0; color:inherit; font-weight:800; text-decoration:underline; cursor:pointer; font-size:inherit; font-family:inherit;"><i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.82em;"></i> BẢNG LỢI ÍCH B2</button>');
+                    }
                     html += `
                             <div style="font-style: italic; color: #64748b; font-weight: 500; display: flex; align-items: center; padding: 0.25rem 0;">
-                                ${pair.vn}
+                                ${noteContent}
                             </div>`;
                 } else {
                     html += `
@@ -1944,6 +2026,16 @@ const renderChoice = (o) => {
             "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Xem phim):</div>→ I tend to <span class=\"sub-hl\">watch movies</span> <span class=\"sub-hl\">in the evening</span> because I find it <span class=\"sub-hl\">relaxing</span>. It allows me to <span class=\"sub-hl\">broaden my knowledge</span> and <span class=\"sub-hl\">clear my mind</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Đọc sách và nghe nhạc):</div>→ I usually <span class=\"sub-hl\">read books</span> <span class=\"sub-hl\">in the evening</span> because it allows me to <span class=\"sub-hl\">widen my knowledge</span>. Sometimes, I also <span class=\"sub-hl\">listen to music</span> so that I can <span class=\"sub-hl\">relax after a busy day</span>.</div>",
             "vocab": [
                 {
+                    "type": "activity",
+                    "title": "Cụm Hoạt động:",
+                    "items": [
+                        {
+                            "isNote": true,
+                            "vn": "👉 (Sử dụng các cụm trong BẢNG HOẠT ĐỘNG)"
+                        }
+                    ]
+                },
+                {
                     "type": "time",
                     "title": "Cụm Thời gian:",
                     "items": [
@@ -2165,6 +2257,10 @@ const renderChoice = (o) => {
                         {
                             "en": "read books",
                             "vn": "đọc sách"
+                        },
+                        {
+                            "isNote": true,
+                            "vn": "👉 (Sử dụng thêm các cụm trong BẢNG HOẠT ĐỘNG)"
                         }
                     ]
                 },
@@ -2306,6 +2402,10 @@ const renderChoice = (o) => {
                         {
                             "en": "play games",
                             "vn": "chơi game"
+                        },
+                        {
+                            "isNote": true,
+                            "vn": "👉 (Sử dụng thêm các cụm trong BẢNG HOẠT ĐỘNG)"
                         }
                     ]
                 },
@@ -3118,6 +3218,16 @@ const renderChoice = (o) => {
             "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Có cùng sở thích):</div>→ I often <span class=\"sub-hl\">go shopping</span> with my <span class=\"sub-hl\">sister</span> because we have <span class=\"sub-hl\">similar interests</span>. I find it more enjoyable when we can <span class=\"sub-hl\">help each other choose suitable things</span> and spend quality time together.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Hợp tính và tư vấn):</div>→ Most of the time, I go shopping with my <span class=\"sub-hl\">sister</span>. We get along really well, and it's a wonderful opportunity for us to <span class=\"sub-hl\">give each other fashion advice</span> and <span class=\"sub-hl\">strengthen our bond</span>.</div>",
             "vocab": [
                 {
+                    "type": "activity",
+                    "title": "Cụm Hoạt động:",
+                    "items": [
+                        {
+                            "isNote": true,
+                            "vn": "👉 (Sử dụng các cụm trong BẢNG HOẠT ĐỘNG)"
+                        }
+                    ]
+                },
+                {
                     "type": "note",
                     "title": "💡 Gợi ý [Lý do] (Reasons):",
                     "items": [
@@ -3260,6 +3370,16 @@ const renderChoice = (o) => {
             "exA": "I often listen to music in the evening because that's when I have some free time. I find it a great opportunity to relax after a busy day and reduce stress. OR My favorite time to listen to music is late at night right before going to bed. It allows me to unwind peacefully and helps me fall asleep much faster.",
             "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Vào buổi tối):</div>→ I often <span class=\"sub-hl\">listen to music</span> <span class=\"sub-hl\">in the evening</span> because that's when I have some free time. I find it a great opportunity to <span class=\"sub-hl\">relax after a busy day</span> and <span class=\"sub-hl\">reduce stress</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Trước khi đi ngủ):</div>→ My favorite time to listen to music is <span class=\"sub-hl\">late at night right before going to bed</span>. It allows me to <span class=\"sub-hl\">unwind peacefully</span> and helps me <span class=\"sub-hl\">fall asleep much faster</span>.</div>",
             "vocab": [
+                {
+                    "type": "activity",
+                    "title": "Cụm Hoạt động:",
+                    "items": [
+                        {
+                            "isNote": true,
+                            "vn": "👉 (Sử dụng các cụm trong BẢNG HOẠT ĐỘNG)"
+                        }
+                    ]
+                },
                 {
                     "type": "time",
                     "title": "Cụm Thời gian:",
@@ -3405,6 +3525,16 @@ const renderChoice = (o) => {
             "exA": "I often read books in the school library because I find it very quiet. It allows me to focus better and gives me a chance to stay motivated. OR Whenever I want to read books, I head to a quiet coffee shop near my house. The atmosphere there is really cozy, so it helps me concentrate and enjoy my reading.",
             "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Thư viện trường):</div>→ I often <span class=\"sub-hl\">read books</span> <span class=\"sub-hl\">in the school library</span> because I find it very <span class=\"sub-hl\">quiet</span>. It allows me to <span class=\"sub-hl\">focus better</span> and gives me a chance to <span class=\"sub-hl\">stay motivated</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Quán cà phê yên tĩnh):</div>→ Whenever I want to read books, I head to <span class=\"sub-hl\">a quiet coffee shop near my house</span>. The atmosphere there is really <span class=\"sub-hl\">cozy</span>, so it helps me <span class=\"sub-hl\">concentrate and enjoy my reading</span>.</div>",
             "vocab": [
+                {
+                    "type": "activity",
+                    "title": "Cụm Hoạt động:",
+                    "items": [
+                        {
+                            "isNote": true,
+                            "vn": "👉 (Sử dụng các cụm trong BẢNG HOẠT ĐỘNG)"
+                        }
+                    ]
+                },
                 {
                     "type": "note",
                     "title": "📍 Cụm địa điểm:",
@@ -3618,6 +3748,16 @@ const renderChoice = (o) => {
             "exA": "I'm really into swimming because I find it very refreshing. It allows me to stay healthy and gives me a chance to clear my mind. OR The main reason I love swimming is that it helps me improve my endurance and stay in shape. Furthermore, it's also a great way to release stress on hot summer days.",
             "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Sảng khoái và khỏe mạnh):</div>→ I'm really into <span class=\"sub-hl\">swimming</span> because I find it very <span class=\"sub-hl\">refreshing</span>. It allows me to <span class=\"sub-hl\">stay healthy</span> and gives me a chance to <span class=\"sub-hl\">clear my mind</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Sức bền và giải tỏa căng thẳng):</div>→ The main reason I love swimming is that it helps me <span class=\"sub-hl\">improve my endurance and stay in shape</span>. Furthermore, it's also a great way to <span class=\"sub-hl\">release stress on hot summer days</span>.</div>",
             "vocab": [
+                {
+                    "type": "activity",
+                    "title": "Cụm Hoạt động:",
+                    "items": [
+                        {
+                            "isNote": true,
+                            "vn": "👉 (Sử dụng các cụm trong BẢNG HOẠT ĐỘNG)"
+                        }
+                    ]
+                },
                 {
                     "type": "activity",
                     "title": "Tính từ mô tả hoạt động:",
@@ -3977,6 +4117,16 @@ const renderChoice = (o) => {
             "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (2 lần một tuần):</div>→ Although I have a busy schedule, I still try to <span class=\"sub-hl\">go to the library twice a week</span> because it allows me to <span class=\"sub-hl\">focus better</span> and <span class=\"sub-hl\">study more effectively</span>. Moreover, it makes me feel <span class=\"sub-hl\">more productive</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Thói quen đều đặn):</div>→ I make it a habit to <span class=\"sub-hl\">go to the library at least twice a week</span>. It's a wonderful way to <span class=\"sub-hl\">access useful reference books</span>, and it keeps me feeling <span class=\"sub-hl\">motivated in my studies</span>.</div>",
             "vocab": [
                 {
+                    "type": "activity",
+                    "title": "Cụm Hoạt động:",
+                    "items": [
+                        {
+                            "isNote": true,
+                            "vn": "👉 (Sử dụng các cụm trong BẢNG HOẠT ĐỘNG)"
+                        }
+                    ]
+                },
+                {
                     "type": "benefit",
                     "title": "Cụm Lợi ích:",
                     "items": [
@@ -4155,6 +4305,16 @@ const renderChoice = (o) => {
             "exA": "Although I have a busy schedule, I still spend about two hours studying English every day because it allows me to enrich my vocabulary and improve my pronunciation. It also makes me feel more confident. OR On average, I dedicate around two hours a day to practicing English. It helps me improve my speaking fluency and gives me a chance to feel more comfortable communicating with foreigners.",
             "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Khoảng 2 tiếng mỗi ngày):</div>→ Although I have a busy schedule, I still spend about <span class=\"sub-hl\">two hours studying English every day</span> because it allows me to <span class=\"sub-hl\">enrich my vocabulary</span> and <span class=\"sub-hl\">improve my pronunciation</span>. It also makes me feel <span class=\"sub-hl\">more confident</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Dành thời gian chuyên tâm):</div>→ On average, I dedicate around <span class=\"sub-hl\">two hours a day</span> to <span class=\"sub-hl\">practicing English</span>. It helps me <span class=\"sub-hl\">improve my speaking fluency</span> and gives me a chance to <span class=\"sub-hl\">feel more comfortable communicating with foreigners</span>.</div>",
             "vocab": [
+                {
+                    "type": "activity",
+                    "title": "Cụm Hoạt động:",
+                    "items": [
+                        {
+                            "isNote": true,
+                            "vn": "👉 (Sử dụng các cụm trong BẢNG HOẠT ĐỘNG)"
+                        }
+                    ]
+                },
                 {
                     "type": "time",
                     "title": "⏳ Lượng thời gian:",
@@ -4404,6 +4564,7 @@ const renderChoice = (o) => {
         }
     ]
 };
+
 
 
 const whShowcase = document.getElementById('wh-showcase');
