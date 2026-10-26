@@ -1701,6 +1701,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.saveStudentProgress = () => {
         try {
+            if (typeof localStorage === 'undefined') return;
             window._studentProgress.lastUpdated = new Date().toISOString();
             window._studentProgress.studentName = state.studentName || 'Khách';
             window._studentProgress.studentClass = state.studentClass || 'B212';
@@ -1717,6 +1718,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.loadStudentProgress = (studentName, studentClass) => {
         try {
+            if (typeof localStorage === 'undefined') return;
             const key = window.getProgressStorageKey(studentName);
             const saved = localStorage.getItem(key);
             if (saved) {
@@ -2431,6 +2433,19 @@ document.addEventListener('DOMContentLoaded', () => {
     window.startWheelTimerRecording = (type) => window.startTimedPractice(type, 'wheel', 25);
     window.stopWheelTimerRecording = (type) => window.stopTimedPractice(type, 'wheel');
     window.resetWheelTimerRecording = (type) => window.resetTimedPractice(type, 'wheel', 25);
+
+    const formatTitleHighlight = window.formatTitleHighlight;
+    const formatFormulaHighlight = window.formatFormulaHighlight;
+    const renderSampleAnswersContent = window.renderSampleAnswersContent;
+    const getExamplesBlockHTML = window.getExamplesBlockHTML;
+    const getSuggestionsHTML = window.getSuggestionsHTML;
+    const getExampleTimerHTML = window.getExampleTimerHTML;
+    const startExampleTimerRecording = window.startExampleTimerRecording;
+    const stopExampleTimerRecording = window.stopExampleTimerRecording;
+    const resetExampleTimerRecording = window.resetExampleTimerRecording;
+    const startWheelTimerRecording = window.startWheelTimerRecording;
+    const stopWheelTimerRecording = window.stopWheelTimerRecording;
+    const resetWheelTimerRecording = window.resetWheelTimerRecording;
 
     const ynStage = document.getElementById('yn-stage');
     const ynNumEl = document.getElementById('yn-current-num');
@@ -5409,7 +5424,7 @@ const whShowcase = document.getElementById('wh-showcase');
         const list = whBank[cat] || [];
         whShowcase.innerHTML = `
             <div class="wh-grid fade-in" style="grid-template-columns: 1fr; gap: 1.5rem;">
-                ${list.map(item => `
+                ${list.map((item, idx) => `
                     <div class="f-card-clean" style="max-width:100%; margin:0; background:var(--bg-card); padding:1.5rem; border-radius:20px; border:1px solid var(--border); box-shadow:var(--shadow-sm);">
                         <div class="f-title" style="margin-bottom:1.5rem;">${formatTitleHighlight(item.title)}</div>
                         ${getExamplesBlockHTML(item)}
@@ -5535,136 +5550,143 @@ const whShowcase = document.getElementById('wh-showcase');
     // Random Practice Selector
     
     window.spinWheel = (type) => {
-        let pool = [];
-        let qEl, hintEl, btn;
+        try {
+            let pool = [];
+            let qEl, hintEl, btn;
 
-        if (type === 'wh') {
-            const safeWhBank = typeof whBank !== 'undefined' ? whBank : {};
-            const whValues = Object.values(safeWhBank);
-            // Fallback for browsers that don't support .flat()
-            pool = whValues.flat ? whValues.flat() : whValues.reduce((acc, val) => acc.concat(val), []);
-            qEl = document.getElementById('wheel-q');
-            hintEl = document.getElementById('wheel-hint');
-            btn = document.getElementById('spin-btn');
-        } else if (type === 'yn') {
-            pool = typeof ynFormulas !== 'undefined' ? ynFormulas : [];
-            qEl = document.getElementById('wheel-q-yn');
-            hintEl = document.getElementById('wheel-hint-yn');
-            btn = document.getElementById('spin-btn-yn');
-        } else if (type === 'choice') {
-            const safeChoiceData = typeof choiceData !== 'undefined' ? choiceData : {};
-            const choiceValues = Object.values(safeChoiceData);
-            pool = choiceValues.flat ? choiceValues.flat() : choiceValues.reduce((acc, val) => acc.concat(val), []);
-            qEl = document.getElementById('wheel-q-choice');
-            hintEl = document.getElementById('wheel-hint-choice');
-            btn = document.getElementById('spin-btn-choice');
-        }
+            if (type === 'wh') {
+                const safeWhBank = typeof whBank !== 'undefined' ? whBank : {};
+                const whValues = Object.values(safeWhBank);
+                pool = whValues.flat ? whValues.flat() : whValues.reduce((acc, val) => acc.concat(val), []);
+                qEl = document.getElementById('wheel-q');
+                hintEl = document.getElementById('wheel-hint');
+                btn = document.getElementById('spin-btn');
+            } else if (type === 'yn') {
+                pool = typeof ynFormulas !== 'undefined' ? ynFormulas : [];
+                qEl = document.getElementById('wheel-q-yn');
+                hintEl = document.getElementById('wheel-hint-yn');
+                btn = document.getElementById('spin-btn-yn');
+            } else if (type === 'choice') {
+                const safeChoiceData = typeof choiceData !== 'undefined' ? choiceData : {};
+                const choiceValues = Object.values(safeChoiceData);
+                pool = choiceValues.flat ? choiceValues.flat() : choiceValues.reduce((acc, val) => acc.concat(val), []);
+                qEl = document.getElementById('wheel-q-choice');
+                hintEl = document.getElementById('wheel-hint-choice');
+                btn = document.getElementById('spin-btn-choice');
+            }
 
-        if (!pool || pool.length === 0 || !qEl || !btn) return;
+            if (!pool || pool.length === 0 || !qEl || !btn) {
+                console.warn('spinWheel: pool or element missing', { poolLen: pool ? pool.length : 0, qEl: !!qEl, btn: !!btn });
+                return;
+            }
 
-        // Flatten the pool to include ALL examples as individual questions
-        let flattenedPool = [];
-        let choiceMap = {};
+            // Flatten the pool to include ALL examples as individual questions
+            let flattenedPool = [];
+            let choiceMap = {};
 
-        pool.forEach(item => {
-            if (item.examples && item.examples.length > 0) {
-                item.examples.forEach(ex => {
-                    let cleanQ = ex.q.replace(/<[^>]*>/g, '').trim();
-                    
-                    if (type === 'choice') {
-                        if (choiceMap[cleanQ]) {
-                            // Combine Cách 1 and Cách 2
-                            let existing = choiceMap[cleanQ];
-                            let f1 = existing.exAFormatted;
-                            let f2 = ex.f;
-                            
-                            existing.exAFormatted = `<div style="margin-bottom: 12px;"><div style="color:#2563eb; font-weight:bold; margin-bottom:4px;">🎯 CÁCH 1 (Chọn 1 trong 2):</div>${f1}</div><div><div style="color:#16a34a; font-weight:bold; margin-bottom:4px;">🎯 CÁCH 2 (Cả 2 đều quan trọng):</div>${f2}</div>`;
-                            existing.exA = existing.exA + " OR " + ex.a;
-                            // Clear formula since it varies by Cách
-                            existing.formula = "Hãy tham khảo 2 cách trả lời mẫu bên dưới.";
+            pool.forEach(item => {
+                if (item.examples && item.examples.length > 0) {
+                    item.examples.forEach(ex => {
+                        let cleanQ = (ex.q || '').replace(/<[^>]*>/g, '').trim();
+                        
+                        if (type === 'choice') {
+                            if (choiceMap[cleanQ]) {
+                                // Combine Cách 1 and Cách 2
+                                let existing = choiceMap[cleanQ];
+                                let f1 = existing.exAFormatted;
+                                let f2 = ex.f;
+                                
+                                existing.exAFormatted = `<div style="margin-bottom: 12px;"><div style="color:#2563eb; font-weight:bold; margin-bottom:4px;">🎯 CÁCH 1 (Chọn 1 trong 2):</div>${f1}</div><div><div style="color:#16a34a; font-weight:bold; margin-bottom:4px;">🎯 CÁCH 2 (Cả 2 đều quan trọng):</div>${f2}</div>`;
+                                existing.exA = existing.exA + " OR " + ex.a;
+                                existing.formula = "Hãy tham khảo 2 cách trả lời mẫu bên dưới.";
+                            } else {
+                                let newEx = { 
+                                    ...item, 
+                                    exQ: ex.q, 
+                                    originalQ: item.exQ || item.title,
+                                    exAFormatted: ex.f, 
+                                    exA: ex.a 
+                                };
+                                choiceMap[cleanQ] = newEx;
+                                flattenedPool.push(newEx);
+                            }
                         } else {
-                            let newEx = { 
+                            flattenedPool.push({ 
                                 ...item, 
                                 exQ: ex.q, 
                                 originalQ: item.exQ || item.title,
                                 exAFormatted: ex.f, 
                                 exA: ex.a 
-                            };
-                            choiceMap[cleanQ] = newEx;
-                            flattenedPool.push(newEx);
+                            });
                         }
-                    } else {
-                        flattenedPool.push({ 
-                            ...item, 
-                            exQ: ex.q, 
-                            originalQ: item.exQ || item.title,
-                            exAFormatted: ex.f, 
-                            exA: ex.a 
-                        });
-                    }
-                });
-            } else {
-                flattenedPool.push(item);
-            }
-        });
-        pool = flattenedPool;
-
-        btn.disabled = true;
-        let c = 0;
-        const int = setInterval(() => {
-            const rand = pool[Math.floor(Math.random() * pool.length)];
-            if (rand) {
-                qEl.textContent = (rand.exQ || rand.title || "Câu hỏi ngẫu nhiên").replace(/<[^>]*>/g, '');
-            }
-            c++;
-            if (c > 10) {
-                clearInterval(int);
-                const final = pool[Math.floor(Math.random() * pool.length)];
-                if (final) {
-                    qEl.innerHTML = `<div style="display:flex; align-items:center; justify-content:center; gap:0.75rem; text-align:left;"><i class="fa-solid fa-microphone" style="color:#f59e0b; flex-shrink:0; font-size:1.5rem;"></i> <span>"${final.exQ || final.title || ''}"</span></div>`;
-                    if (hintEl) {
-                        hintEl.innerHTML = `
-                            <div class="hint-toggle-btn" style="cursor:pointer; display:inline-flex; align-items:center; gap:0.5rem; font-weight:600; color:#d97706; padding:0.25rem 0;" onclick="this.nextElementSibling.style.display='block'; this.style.display='none';">
-                                <i class="fa-solid fa-lightbulb"></i> GỢI Ý (Nhấp để xem)
-                            </div>
-                            <div class="hint-content fade-in" style="display:none; margin-top:0.5rem; font-size:1.05rem; line-height:1.6; text-align: left;">
-                                <div style="margin-bottom: 0.75rem;">
-                                    <strong style="color: #059669;">💡 Áp dụng Cấu trúc:</strong><br/> 
-                                    <div style="background: rgba(16, 185, 129, 0.05); padding: 0.75rem; border-left: 3px solid #10b981; margin-top: 0.5rem; border-radius: 4px;">
-                                        ${final.formula || ''}
-                                    </div>
-                                </div>
-                                <div>
-                                    <strong style="color: #64748b; font-size: 0.95em;">📝 Tham khảo câu mẫu:</strong><br/> 
-                                    <div style="color: #64748b; font-size: 0.95em; margin-top: 0.25rem; font-style: italic;">
-                                        ${final.exAFormatted || `"${final.exA || ''}"`}
-                                    </div>
-                                </div>
-                            </div>
-                        `;
-                        hintEl.classList.remove('hidden');
-                    }
-                    speakText((final.exQ || final.title || '').replace(/<[^>]*>/g, ''));
-                    
-                    const recordBox = document.getElementById('record-box-' + type);
-                    if (recordBox) {
-                        recordBox.style.display = 'block';
-                        if (typeof resetWheelTimerRecording === 'function') resetWheelTimerRecording(type);
-                        const playback = document.getElementById('audio-playback-' + type);
-                        if(playback) { playback.style.display = 'none'; playback.src = ''; }
-                        const submitBtn = document.getElementById('btn-submit-' + type);
-                        if(submitBtn) { submitBtn.style.display = 'none'; }
-                        const btnRecord = document.getElementById('btn-record-' + type);
-                        if(btnRecord) {
-                            btnRecord.innerHTML = '<i class="fa-solid fa-microphone"></i> Bắt đầu Ghi âm';
-                            btnRecord.style.background = '#ef4444';
-                            btnRecord.style.boxShadow = '0 4px 10px rgba(239,68,68,0.3)';
-                        }
-                    }
+                    });
+                } else {
+                    flattenedPool.push(item);
                 }
-                btn.disabled = false;
-            }
-        }, 60);
+            });
+            pool = flattenedPool;
+
+            btn.disabled = true;
+            let c = 0;
+            const int = setInterval(() => {
+                const rand = pool[Math.floor(Math.random() * pool.length)];
+                if (rand) {
+                    qEl.textContent = (rand.exQ || rand.title || "Câu hỏi ngẫu nhiên").replace(/<[^>]*>/g, '');
+                }
+                c++;
+                if (c > 10) {
+                    clearInterval(int);
+                    const final = pool[Math.floor(Math.random() * pool.length)];
+                    if (final) {
+                        qEl.innerHTML = `<div style="display:flex; align-items:center; justify-content:center; gap:0.75rem; text-align:left;"><i class="fa-solid fa-microphone" style="color:#f59e0b; flex-shrink:0; font-size:1.5rem;"></i> <span>"${final.exQ || final.title || ''}"</span></div>`;
+                        if (hintEl) {
+                            hintEl.innerHTML = `
+                                <div class="hint-toggle-btn" style="cursor:pointer; display:inline-flex; align-items:center; gap:0.5rem; font-weight:600; color:#d97706; padding:0.25rem 0;" onclick="this.nextElementSibling.style.display='block'; this.style.display='none';">
+                                    <i class="fa-solid fa-lightbulb"></i> GỢI Ý (Nhấp để xem)
+                                </div>
+                                <div class="hint-content fade-in" style="display:none; margin-top:0.5rem; font-size:1.05rem; line-height:1.6; text-align: left;">
+                                    <div style="margin-bottom: 0.75rem;">
+                                        <strong style="color: #059669;">💡 Áp dụng Cấu trúc:</strong><br/> 
+                                        <div style="background: rgba(16, 185, 129, 0.05); padding: 0.75rem; border-left: 3px solid #10b981; margin-top: 0.5rem; border-radius: 4px;">
+                                            ${final.formula || ''}
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <strong style="color: #64748b; font-size: 0.95em;">📝 Tham khảo câu mẫu:</strong><br/> 
+                                        <div style="color: #64748b; font-size: 0.95em; margin-top: 0.25rem; font-style: italic;">
+                                            ${final.exAFormatted || `"${final.exA || ''}"`}
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                            hintEl.classList.remove('hidden');
+                        }
+                        speakText((final.exQ || final.title || '').replace(/<[^>]*>/g, ''));
+                        
+                        const recordBox = document.getElementById('record-box-' + type);
+                        if (recordBox) {
+                            recordBox.style.display = 'block';
+                            if (typeof resetWheelTimerRecording === 'function') resetWheelTimerRecording(type);
+                            const playback = document.getElementById('audio-playback-' + type);
+                            if(playback) { playback.style.display = 'none'; playback.src = ''; }
+                            const submitBtn = document.getElementById('btn-submit-' + type);
+                            if(submitBtn) { submitBtn.style.display = 'none'; }
+                            const btnRecord = document.getElementById('btn-record-' + type);
+                            if(btnRecord) {
+                                btnRecord.innerHTML = '<i class="fa-solid fa-microphone"></i> Bắt đầu Ghi âm';
+                                btnRecord.style.background = '#ef4444';
+                                btnRecord.style.boxShadow = '0 4px 10px rgba(239,68,68,0.3)';
+                            }
+                        }
+                    }
+                    btn.disabled = false;
+                }
+            }, 60);
+        } catch(err) {
+            console.error('Error in spinWheel:', err);
+            const btn = document.getElementById(type === 'wh' ? 'spin-btn' : `spin-btn-${type}`);
+            if (btn) btn.disabled = false;
+        }
     };
 
     if ('speechSynthesis' in window) {
