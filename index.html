@@ -14,7 +14,7 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
 <!-- Canvas Confetti -->
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
-<link href="styles.css?v=20261026_6" rel="stylesheet"/>
+<link href="styles.css?v=20261027_1" rel="stylesheet"/>
 <script>
         window.onerror = function(msg, url, lineNo, columnNo, error) {
             console.error("Window error: ", msg, url, lineNo, error);
@@ -149,8 +149,8 @@
 <span style="font-weight:700;">Sao lưu tiến độ</span>
 <span id="header-progress-count" style="background:#10b981; color:#fff; font-size:0.72rem; padding:2px 7px; border-radius:12px; font-weight:800; margin-left:2px;">0/60</span>
 </button>
-<button class="icon-btn" id="voice-mode-toggle" title="Đổi chế độ giọng đọc" style="font-size:0.82rem; font-weight:600; padding:0 0.65rem; width:auto; border-radius:8px; display:flex; align-items:center; gap:0.35rem; border:1px solid var(--border); background:var(--bg-card); color:var(--text-main); cursor:pointer;">
-<i class="fa-solid fa-microphone-lines" style="color:var(--primary);"></i> <span id="voice-mode-label">Giọng Gốc</span>
+<button class="icon-btn" id="voice-mode-toggle" title="Chế độ giọng đọc: Giọng Nữ Studio" style="font-size:0.82rem; font-weight:700; padding:0 0.75rem; width:auto; border-radius:10px; display:flex; align-items:center; gap:0.4rem; border:1.5px solid rgba(139, 92, 246, 0.4); background:rgba(139, 92, 246, 0.1); color:#7c3aed; cursor:pointer; height:38px;">
+<i class="fa-solid fa-microphone-lines" style="color:#7c3aed;"></i> <span id="voice-mode-label">Giọng Nữ Studio</span>
 </button>
 <button class="icon-btn" id="theme-toggle" title="Đổi màu giao diện"><i class="fa-solid fa-moon"></i></button>
 <button class="icon-btn active" id="audio-toggle" title="Bật/Tắt âm thanh phát âm"><i class="fa-solid fa-volume-high"></i></button>
@@ -182,54 +182,27 @@
 </div>
 </div>
 
-<!-- Khung So sánh & Nghe thử 2 giọng đọc mẫu -->
-<div class="voice-comparison-banner" style="margin: 1.25rem 0; padding: 1.25rem 1.5rem; background: linear-gradient(135deg, rgba(67, 97, 238, 0.08), rgba(139, 92, 246, 0.08)); border-radius: 14px; border: 1.5px solid rgba(67, 97, 238, 0.25); box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
-    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.85rem;">
-        <div style="display: flex; align-items: center; gap: 0.65rem;">
-            <span style="font-size: 1.4rem;">🎙️</span>
+<!-- Khung Giọng đọc chuẩn phòng thu (Đã chọn Giọng B: Nữ Studio) -->
+<div class="voice-comparison-banner" style="margin: 1.25rem 0; padding: 1.15rem 1.45rem; background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(16, 185, 129, 0.08)); border-radius: 14px; border: 1.5px solid rgba(139, 92, 246, 0.35); box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.85rem;">
+        <div style="display: flex; align-items: center; gap: 0.85rem;">
+            <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(139, 92, 246, 0.15); display: flex; align-items: center; justify-content: center; font-size: 1.35rem; color: #7c3aed; flex-shrink: 0;">
+                <i class="fa-solid fa-microphone-lines"></i>
+            </div>
             <div>
-                <h4 style="margin: 0; font-size: 1.05rem; color: var(--primary); font-weight: 700;">NGHE THỬ &amp; LỰA CHỌN GIỌNG ĐỌC MẪU</h4>
-                <p style="margin: 0.2rem 0 0 0; font-size: 0.86rem; color: var(--text-muted);">Bấm nghe thử cả 2 giọng đọc câu mẫu bên dưới và chọn giọng bạn thấy tự nhiên nhất:</p>
+                <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;">
+                    <h4 style="margin: 0; font-size: 1.05rem; color: #7c3aed; font-weight: 800;">GIỌNG ĐỌC MẪU: Giọng B – Nữ Phòng Thu Studio (Neural AI)</h4>
+                    <span style="background: #10b981; color: white; font-size: 0.72rem; padding: 2px 8px; border-radius: 12px; font-weight: 700; display: inline-flex; align-items: center; gap: 0.25rem;"><i class="fa-solid fa-circle-check"></i> ĐANG SỬ DỤNG</span>
+                </div>
+                <p style="margin: 0.25rem 0 0 0; font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">
+                    Giọng đọc AI phòng thu chuẩn bản ngữ (Ava Nữ Neural), phát âm dày ấm, tự nhiên và ổn định trên mọi thiết bị.
+                </p>
             </div>
         </div>
-        <div id="current-voice-badge" style="padding: 0.35rem 0.85rem; border-radius: 20px; font-size: 0.82rem; font-weight: 700; background: #4361ee; color: white;">
-            Đang dùng: Giọng Gốc Máy Tính
-        </div>
-    </div>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.85rem; margin-top: 0.5rem;">
-        <!-- Option A -->
-        <div style="background: var(--bg-card); padding: 1rem 1.15rem; border-radius: 10px; border: 1.5px solid rgba(67, 97, 238, 0.3); display: flex; flex-direction: column; gap: 0.5rem;">
-            <div style="font-weight: 700; color: #4361ee; font-size: 0.95rem; display: flex; align-items: center; gap: 0.4rem;">
-                <i class="fa-solid fa-laptop"></i> Giọng A: Gốc Máy Tính (Năng động)
-            </div>
-            <div style="font-size: 0.83rem; color: var(--text-muted); line-height: 1.5;">
-                Giọng đọc trình duyệt gốc máy tính (pitch 1.25), phát âm trẻ trung, đọc mượt và linh hoạt tự nhiên.
-            </div>
-            <div style="display: flex; gap: 0.5rem; margin-top: 0.25rem;">
-                <button type="button" class="btn-audio-sample" style="flex: 1; justify-content: center; background: #4361ee; cursor: pointer;" onclick="previewVoice('classic')">
-                    <i class="fa-solid fa-play"></i> Nghe thử Giọng A
-                </button>
-                <button type="button" class="btn-audio-sample" style="background: #10b981; padding: 0.5rem 0.85rem; cursor: pointer;" onclick="setVoiceMode('classic')" title="Chọn giọng này làm mặc định">
-                    <i class="fa-solid fa-check"></i> Chọn
-                </button>
-            </div>
-        </div>
-        <!-- Option B -->
-        <div style="background: var(--bg-card); padding: 1rem 1.15rem; border-radius: 10px; border: 1.5px solid rgba(139, 92, 246, 0.3); display: flex; flex-direction: column; gap: 0.5rem;">
-            <div style="font-weight: 700; color: #8b5cf6; font-size: 0.95rem; display: flex; align-items: center; gap: 0.4rem;">
-                <i class="fa-solid fa-compact-disc"></i> Giọng B: Phòng Thu Studio (Neural MP3)
-            </div>
-            <div style="font-size: 0.83rem; color: var(--text-muted); line-height: 1.5;">
-                File thu âm MP3 AI phòng thu (Ava Nữ &amp; Guy Nam), chuẩn bản ngữ, âm thanh dày và ổn định trên mọi thiết bị.
-            </div>
-            <div style="display: flex; gap: 0.5rem; margin-top: 0.25rem;">
-                <button type="button" class="btn-audio-sample" style="flex: 1; justify-content: center; background: #8b5cf6; cursor: pointer;" onclick="previewVoice('studio')">
-                    <i class="fa-solid fa-play"></i> Nghe thử Giọng B
-                </button>
-                <button type="button" class="btn-audio-sample" style="background: #10b981; padding: 0.5rem 0.85rem; cursor: pointer;" onclick="setVoiceMode('studio')" title="Chọn giọng này làm mặc định">
-                    <i class="fa-solid fa-check"></i> Chọn
-                </button>
-            </div>
+        <div>
+            <button type="button" class="btn-audio-sample" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed); cursor: pointer; padding: 0.6rem 1.25rem; font-size: 0.9rem; font-weight: 700; box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3); border-radius: 10px;" onclick="previewVoice('studio')" title="Bấm để nghe thử câu mẫu giọng nữ">
+                <i class="fa-solid fa-play"></i> Nghe thử Giọng Nữ Studio
+            </button>
         </div>
     </div>
 </div>
@@ -19005,7 +18978,7 @@
 </main>
 </div>
 <script src="audio/manifest.js"></script>
-<script src="script.js?v=20261026_6"></script>
+<script src="script.js?v=20261027_1"></script>
 
 <!-- =========================================================
      MODAL: SAO LƯU & QUẢN LÝ TIẾN ĐỘ HỌC TẬP

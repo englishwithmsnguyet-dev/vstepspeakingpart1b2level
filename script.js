@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
         isDark: false,
         ynIndex: 0,
         selectedVoiceURI: null,
-        unlockedTabs: {}
+        unlockedTabs: {},
+        voiceMode: 'studio'
     };
 
     // DOM References
@@ -173,21 +174,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 bestVoice = voices.find(v => v.voiceURI === state.selectedVoiceURI);
             }
             if (!bestVoice) {
-                const preferredNames = [
-                    "Microsoft Guy",
-                    "Google UK English Male",
-                    "Google US English Male",
-                    "Alex",
-                    "Daniel",
+                const preferredFemaleNames = [
+                    "Microsoft Ava Online (Natural)",
+                    "Microsoft Jenny Online (Natural)",
+                    "Microsoft Aria Online (Natural)",
+                    "Ava (Premium)",
+                    "Ava (Enhanced)",
+                    "Ava",
                     "Google US English",
-                    "Samantha"
+                    "Samantha (Enhanced)",
+                    "Samantha",
+                    "Victoria",
+                    "Karen",
+                    "Moira",
+                    "Fiona",
+                    "Tessa",
+                    "Microsoft Zira"
                 ];
-                for (let name of preferredNames) {
-                    bestVoice = voices.find(v => v.name && v.name.includes(name));
+                for (let name of preferredFemaleNames) {
+                    bestVoice = voices.find(v => v.name && v.name.toLowerCase().includes(name.toLowerCase()));
                     if (bestVoice) break;
                 }
                 if (!bestVoice) {
-                    bestVoice = voices.find(v => v.lang && (v.lang.startsWith("en-US") || v.lang.startsWith("en-GB")) && v.name && v.name.includes("Male"));
+                    bestVoice = voices.find(v => v.lang && (v.lang.startsWith("en-US") || v.lang.startsWith("en-GB") || v.lang.startsWith("en")) && (v.name.toLowerCase().includes("female") || !v.name.toLowerCase().includes("male")));
                 }
                 if (!bestVoice) {
                     bestVoice = voices.find(v => v.lang && (v.lang.startsWith("en-US") || v.lang.startsWith("en-GB")));
@@ -203,8 +212,8 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 utt.lang = 'en-US';
             }
-            utt.rate = 1.0; // Tốc độ chuẩn ban đầu
-            utt.pitch = 1.25; // Cao độ sáng, trẻ trung, năng động gốc trên máy tính
+            utt.rate = 0.96; // Tốc độ chuẩn tự nhiên, dễ nghe
+            utt.pitch = 1.0; // Cao độ tự nhiên, ấm áp của giọng nữ
             
             utt.onend = () => { window._activeUtterance = null; };
             utt.onerror = () => { window._activeUtterance = null; };
@@ -218,12 +227,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Global AI Speech - Hỗ trợ cả 2 chế độ (Giọng Gốc Máy Tính & Giọng Phòng Thu Studio)
+    // Global AI Speech - Hỗ trợ cả 2 chế độ (Ưu tiên Giọng B: Nữ Phòng Thu Studio)
     window._currentAudio = null;
     window.speakText = (txt, forcedMode) => {
         if (!state.isAudio) return;
 
-        const mode = forcedMode || state.voiceMode;
+        const mode = forcedMode || state.voiceMode || 'studio';
         let cleanTxt = (txt || '').replace(/<[^>]*>/g, '').replace(/^→\s*/, '').replace(/[\r\n]+/g, ' ').trim();
         if (!cleanTxt) return;
 
@@ -255,12 +264,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Chế độ 'classic' (Mặc định) hoặc fallback
+        // Fallback sang TTS Giọng Nữ
         speakClassicTTS(cleanTxt);
     };
 
     // Hàm Nghe Thử & Chọn Chế Độ Giọng
-    window.previewVoice = (mode) => {
+    window.previewVoice = (mode = 'studio') => {
         const sampleSentence = "Sure. I often play sports in the afternoon whenever I have free time. It allows me to relax after a busy day and stay healthy.";
         window.speakText(sampleSentence, mode);
     };
@@ -277,12 +286,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentVoiceBadge = document.getElementById('current-voice-badge');
 
     const updateVoiceUI = () => {
-        const mode = state.voiceMode;
+        const mode = state.voiceMode || 'studio';
         if (voiceModeLabel) {
-            voiceModeLabel.textContent = mode === 'studio' ? 'Giọng Studio' : 'Giọng Gốc';
+            voiceModeLabel.textContent = mode === 'studio' ? 'Giọng Nữ Studio' : 'Giọng Gốc';
         }
         if (currentVoiceBadge) {
-            currentVoiceBadge.textContent = mode === 'studio' ? 'Đang dùng: Giọng Phòng Thu Studio' : 'Đang dùng: Giọng Gốc Máy Tính';
+            currentVoiceBadge.textContent = mode === 'studio' ? 'Đang dùng: Giọng B – Nữ Phòng Thu Studio' : 'Đang dùng: Giọng Gốc Máy Tính';
             currentVoiceBadge.style.background = mode === 'studio' ? '#8b5cf6' : '#4361ee';
         }
     };
