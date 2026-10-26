@@ -14,7 +14,7 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
 <!-- Canvas Confetti -->
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
-<link href="styles.css?v=20261027_1" rel="stylesheet"/>
+<link href="styles.css?v=20261027_3" rel="stylesheet"/>
 <script>
         window.onerror = function(msg, url, lineNo, columnNo, error) {
             console.error("Window error: ", msg, url, lineNo, error);
@@ -66,19 +66,19 @@
 <span class="label">Student</span>
 <strong id="display-name">Guest</strong>
 </div>
-<div class="sidebar-progress-widget" id="sidebar-progress-widget" onclick="openProgressBackupModal()" title="Nhấn để mở Bảng Sao lưu & Thống kê tiến độ">
-    <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.78rem; font-weight:700; color:var(--text-main); margin-bottom:0.35rem;">
-        <span><i class="fa-solid fa-chart-line" style="color:var(--primary);"></i> Tiến độ học:</span>
-        <span id="sidebar-progress-percent" style="color:#059669; font-weight:800;">0%</span>
-    </div>
-    <div style="background:var(--border); height:6px; border-radius:3px; overflow:hidden;">
-        <div id="sidebar-progress-bar" style="background:linear-gradient(90deg, #4361ee, #10b981); height:100%; width:0%; transition:width 0.4s ease;"></div>
-    </div>
-    <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.4rem; font-size:0.72rem; color:var(--text-muted);">
-        <span id="sidebar-progress-topics">0 / 60 chủ đề</span>
-        <span style="color:#10b981; font-weight:700; display:flex; align-items:center; gap:0.25rem;"><i class="fa-solid fa-cloud"></i> Sao lưu</span>
-    </div>
 </div>
+<div class="sidebar-progress-widget hidden" id="sidebar-progress-widget" onclick="openProgressBackupModal()" title="Nhấn để mở Bảng Sao lưu & Thống kê tiến độ">
+    <div class="sp-header">
+        <span class="sp-title"><i class="fa-solid fa-chart-line"></i> Tiến độ học tập:</span>
+        <span id="sidebar-progress-percent" class="sp-percent">0%</span>
+    </div>
+    <div class="sp-bar-track">
+        <div id="sidebar-progress-bar" class="sp-bar-fill"></div>
+    </div>
+    <div class="sp-footer">
+        <span id="sidebar-progress-topics"><i class="fa-solid fa-circle-check"></i> 0 / 60 chủ đề</span>
+        <span class="sp-backup-badge"><i class="fa-solid fa-cloud-arrow-up"></i> Sao lưu</span>
+    </div>
 </div>
 <div class="menu-label">LESSON CONTENTS</div>
 <ul class="nav-list">
@@ -18978,7 +18978,7 @@
 </main>
 </div>
 <script src="audio/manifest.js"></script>
-<script src="script.js?v=20261027_2"></script>
+<script src="script.js?v=20261027_3"></script>
 
 <!-- =========================================================
      MODAL: SAO LƯU & QUẢN LÝ TIẾN ĐỘ HỌC TẬP

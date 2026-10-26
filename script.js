@@ -356,6 +356,8 @@ document.addEventListener('DOMContentLoaded', () => {
             roleLabel.textContent = state.userRole === 'teacher' ? 'Giáo viên' : `Học viên • Lớp ${state.studentClass || 'B212'}`;
         }
         userProfile.classList.remove('hidden');
+        const sidebarProg = document.getElementById('sidebar-progress-widget');
+        if (sidebarProg) sidebarProg.classList.remove('hidden');
         welcomeModal.style.opacity = '0';
         setTimeout(() => welcomeModal.classList.add('hidden'), 300);
 
@@ -378,6 +380,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (userProfile) {
         userProfile.classList.add('hidden');
     }
+    const sidebarProgInit = document.getElementById('sidebar-progress-widget');
+    if (sidebarProgInit) sidebarProgInit.classList.add('hidden');
     if (studentInput) studentInput.value = '';
     if (studentClassInput) studentClassInput.value = '';
     if (loginError) loginError.style.display = 'none';
