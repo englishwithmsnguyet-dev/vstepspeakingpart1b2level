@@ -557,7 +557,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const ynFormulas = [
     {
         "title": "1. Do you often [hoạt động – Vo]?",
-        "formula": "<div style='margin-bottom: 8px;'><strong>- Cách 1 (Trả lời YES):</strong> → Sure. I often <strong>[hoạt động – Vo]</strong> <strong>[thời gian]</strong> whenever I have free time. It allows me to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>.</div><div><strong>- Cách 2 (Trả lời NO):</strong> → Honestly, not really. I rarely <strong>[hoạt động – Vo]</strong> because I have a busy schedule. Instead, I prefer to <strong>[hoạt động khác – Vo]</strong> to <strong>[lợi ích]</strong>.</div>",
+        "formula": "<div style='margin-bottom: 8px;'><strong>- Cách 1 (Trả lời YES):</strong> → Sure. I often <strong>[hoạt động – Vo]</strong> <strong>[thời gian]</strong> whenever I have free time. It allows me to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>.</div><div><strong>- Cách 2 (Trả lời NO):</strong> → Not really. I rarely <strong>[hoạt động – Vo]</strong> because I have a busy schedule. Instead, I prefer to <strong>[hoạt động khác – Vo]</strong> to <strong>[lợi ích]</strong>.</div>",
         "examples": [
             {
                 "q": "Do you often <span class='sub-hl'>play sports</span>?",
@@ -591,8 +591,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         ],
         "exQ": "Do you often <span class='sub-hl'>play sports</span>?",
-        "exA": "Sure. I often play sports in the afternoon whenever I have free time. It allows me to relax after a busy day and stay healthy. OR Honestly, not really. I rarely play sports because I have a busy study schedule. Instead, I prefer to listen to music at home to unwind after a stressful day.",
-        "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Trả lời YES):</div>→ Sure. I often <span class=\"sub-hl\">play sports</span> <span class=\"sub-hl\">in the afternoon</span> whenever I have free time. It allows me to <span class=\"sub-hl\">relax after a busy day</span> and <span class=\"sub-hl\">stay healthy</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Trả lời NO):</div>→ Honestly, not really. I rarely <span class=\"sub-hl\">play sports</span> because I have a <span class=\"sub-hl\">busy study schedule</span>. Instead, I prefer to <span class=\"sub-hl\">listen to music at home</span> to <span class=\"sub-hl\">unwind after a stressful day</span>.</div>",
+        "exA": "Sure. I often play sports in the afternoon whenever I have free time. It allows me to relax after a busy day and stay healthy. OR Not really. I rarely play sports because I have a busy study schedule. Instead, I prefer to listen to music at home to unwind after a stressful day.",
+        "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Trả lời YES):</div>→ Sure. I often <span class=\"sub-hl\">play sports</span> <span class=\"sub-hl\">in the afternoon</span> whenever I have free time. It allows me to <span class=\"sub-hl\">relax after a busy day</span> and <span class=\"sub-hl\">stay healthy</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Trả lời NO):</div>→ Not really. I rarely <span class=\"sub-hl\">play sports</span> because I have a <span class=\"sub-hl\">busy study schedule</span>. Instead, I prefer to <span class=\"sub-hl\">listen to music at home</span> to <span class=\"sub-hl\">unwind after a stressful day</span>.</div>",
         "vocab": [
             {
                 "type": "activity",
@@ -673,8 +673,8 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             {
                 "label": "Cách 2 (Trả lời NO)",
-                "text": "Honestly, not really. I rarely play sports because I have a busy study schedule. Instead, I prefer to listen to music at home to unwind after a stressful day.",
-                "formatted": "→ Honestly, not really. I rarely <span class=\"sub-hl\">play sports</span> because I have a <span class=\"sub-hl\">busy study schedule</span>. Instead, I prefer to <span class=\"sub-hl\">listen to music at home</span> to <span class=\"sub-hl\">unwind after a stressful day</span>."
+                "text": "Not really. I rarely play sports because I have a busy study schedule. Instead, I prefer to listen to music at home to unwind after a stressful day.",
+                "formatted": "→ Not really. I rarely <span class=\"sub-hl\">play sports</span> because I have a <span class=\"sub-hl\">busy study schedule</span>. Instead, I prefer to <span class=\"sub-hl\">listen to music at home</span> to <span class=\"sub-hl\">unwind after a stressful day</span>."
             }
         ]
     },
@@ -1014,7 +1014,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
         "title": "4. Did you often [hoạt động – V0] when you were a child?",
-        "formula": "<div style='margin-bottom: 8px;'><strong>- Cách 1 (Trả lời YES):</strong> → Sure. I used to <strong>[hoạt động – Vo]</strong> regularly when I was a child because I found it <strong>[tính từ mô tả hoạt động]</strong>. It allowed me to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>.</div><div><strong>- Cách 2 (Trả lời NO):</strong> → Honestly, not really. When I was a child, I didn't often <strong>[hoạt động – Vo]</strong> because <strong>[lý do]</strong>. Instead, I usually <strong>[hoạt động khác – V2]</strong> to <strong>[lợi ích]</strong>.</div>",
+        "formula": "<div style='margin-bottom: 8px;'><strong>- Cách 1 (Trả lời YES):</strong> → Sure. I used to <strong>[hoạt động – Vo]</strong> regularly when I was a child because I found it <strong>[tính từ mô tả hoạt động]</strong>. It allowed me to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>.</div><div><strong>- Cách 2 (Trả lời NO):</strong> → Not really. When I was a child, I didn't often <strong>[hoạt động – Vo]</strong> because <strong>[lý do]</strong>. Instead, I usually <strong>[hoạt động khác – V2]</strong> to <strong>[lợi ích]</strong>.</div>",
         "examples": [
             {
                 "q": "Did you often <span class='sub-hl'>watch cartoons</span> when you were a child?",
@@ -1048,8 +1048,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         ],
         "exQ": "Did you often <span class='sub-hl'>watch cartoons</span> when you were a child?",
-        "exA": "Sure. I used to watch cartoons regularly when I was a child because I found it entertaining. It allowed me to enjoy my free time and develop my imagination. OR Honestly, not really. When I was a child, I didn't often watch cartoons because my parents strictly limited my screen time. Instead, I usually played outdoor games with neighborhood friends to stay active.",
-        "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Trả lời YES):</div>→ Sure. I used to <span class=\"sub-hl\">watch cartoons</span> regularly when I was a child because I found it <span class=\"sub-hl\">entertaining</span>. It allowed me to <span class=\"sub-hl\">enjoy my free time</span> and <span class=\"sub-hl\">develop my imagination</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Trả lời NO):</div>→ Honestly, not really. When I was a child, I didn't often <span class=\"sub-hl\">watch cartoons</span> because <span class=\"sub-hl\">my parents strictly limited my screen time</span>. Instead, I usually <span class=\"sub-hl\">played outdoor games with neighborhood friends</span> to <span class=\"sub-hl\">stay active</span>.</div>",
+        "exA": "Sure. I used to watch cartoons regularly when I was a child because I found it entertaining. It allowed me to enjoy my free time and develop my imagination. OR Not really. When I was a child, I didn't often watch cartoons because my parents strictly limited my screen time. Instead, I usually played outdoor games with neighborhood friends to stay active.",
+        "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Trả lời YES):</div>→ Sure. I used to <span class=\"sub-hl\">watch cartoons</span> regularly when I was a child because I found it <span class=\"sub-hl\">entertaining</span>. It allowed me to <span class=\"sub-hl\">enjoy my free time</span> and <span class=\"sub-hl\">develop my imagination</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Trả lời NO):</div>→ Not really. When I was a child, I didn't often <span class=\"sub-hl\">watch cartoons</span> because <span class=\"sub-hl\">my parents strictly limited my screen time</span>. Instead, I usually <span class=\"sub-hl\">played outdoor games with neighborhood friends</span> to <span class=\"sub-hl\">stay active</span>.</div>",
         "vocab": [
             {
                 "type": "activity",
@@ -1144,8 +1144,8 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             {
                 "label": "Cách 2 (Trả lời NO)",
-                "text": "Honestly, not really. When I was a child, I didn't often watch cartoons because my parents strictly limited my screen time. Instead, I usually played outdoor games with neighborhood friends to stay active.",
-                "formatted": "→ Honestly, not really. When I was a child, I didn't often <span class=\"sub-hl\">watch cartoons</span> because <span class=\"sub-hl\">my parents strictly limited my screen time</span>. Instead, I usually <span class=\"sub-hl\">played outdoor games with neighborhood friends</span> to <span class=\"sub-hl\">stay active</span>."
+                "text": "Not really. When I was a child, I didn't often watch cartoons because my parents strictly limited my screen time. Instead, I usually played outdoor games with neighborhood friends to stay active.",
+                "formatted": "→ Not really. When I was a child, I didn't often <span class=\"sub-hl\">watch cartoons</span> because <span class=\"sub-hl\">my parents strictly limited my screen time</span>. Instead, I usually <span class=\"sub-hl\">played outdoor games with neighborhood friends</span> to <span class=\"sub-hl\">stay active</span>."
             }
         ]
     },
@@ -13607,7 +13607,7 @@ const practiceTopicsData = [
                 "qNum": 1,
                 "question": "Do you like travelling?",
                 "qType": "Yes/No: Do you like [noun/V-ing]?",
-                "formula": "<div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 1 (Trả lời CÓ - Đam mê du lịch, khám phá nền văn hóa mới và mở mang tầm mắt):</div>\n                    <div class=\"topic-formula-text\">\n                        → Yes, definitely. <u>I'm an avid traveler</u> because exploring new destinations allows me to <span class=\"formula-bracket-hl\">[hoạt động trải nghiệm - Vo]</span>. It gives me a great opportunity to <span class=\"formula-bracket-hl\">[lợi ích 1 - Vo]</span> and <span class=\"formula-bracket-hl\">[lợi ích 2 - Vo]</span>.\n                    </div>\n                </div>\n                <div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 2 (Trả lời KHÔNG - Dễ bị say xe trên những chuyến đi dài, chuộng kỳ nghỉ tại gia yên tĩnh):</div>\n                    <div class=\"topic-formula-text\">\n                        → Honestly, not really. <u>I easily suffer from severe motion sickness</u> on long journeys, and that makes me feel exhausted. Therefore, I prefer <span class=\"formula-bracket-hl\">[hình thức nghỉ ngơi tại nhà]</span>. This way, I can <span class=\"formula-bracket-hl\">[lợi ích - Vo]</span> peacefully.\n                    </div>\n                </div>",
+                "formula": "<div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 1 (Trả lời CÓ - Đam mê du lịch, khám phá nền văn hóa mới và mở mang tầm mắt):</div>\n                    <div class=\"topic-formula-text\">\n                        → Yes, definitely. <u>I'm an avid traveler</u> because exploring new destinations allows me to <span class=\"formula-bracket-hl\">[hoạt động trải nghiệm - Vo]</span>. It gives me a great opportunity to <span class=\"formula-bracket-hl\">[lợi ích 1 - Vo]</span> and <span class=\"formula-bracket-hl\">[lợi ích 2 - Vo]</span>.\n                    </div>\n                </div>\n                <div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 2 (Trả lời KHÔNG - Dễ bị say xe trên những chuyến đi dài, chuộng kỳ nghỉ tại gia yên tĩnh):</div>\n                    <div class=\"topic-formula-text\">\n                        → Not really. <u>I easily suffer from severe motion sickness</u> on long journeys, and that makes me feel exhausted. Therefore, I prefer <span class=\"formula-bracket-hl\">[hình thức nghỉ ngơi tại nhà]</span>. This way, I can <span class=\"formula-bracket-hl\">[lợi ích - Vo]</span> peacefully.\n                    </div>\n                </div>",
                 "vocabGroups": [
                     {
                         "title": "✈️ [Hoạt động trải nghiệm khi du lịch] (Cách 1):",
@@ -13774,8 +13774,8 @@ const practiceTopicsData = [
                     },
                     {
                         "label": "Bài mẫu Cách 2 (Trả lời KHÔNG - Hay bị say tàu xe đường dài, thích kỳ nghỉ tại nhà yên tĩnh để xả hơi)",
-                        "text": "Honestly, not really. I easily suffer from severe motion sickness on long journeys, and that makes me feel exhausted. Therefore, I prefer enjoying quiet staycations at home. This way, I can unwind without any traveling stress peacefully.",
-                        "formatted": "→ Honestly, not really. <u>I easily suffer from severe motion sickness</u> on long journeys, and that makes me feel exhausted. Therefore, I prefer <span class=\"sub-hl\">enjoying quiet staycations at home</span>. This way, I can <span class=\"sub-hl\">unwind without any traveling stress</span> peacefully."
+                        "text": "Not really. I easily suffer from severe motion sickness on long journeys, and that makes me feel exhausted. Therefore, I prefer enjoying quiet staycations at home. This way, I can unwind without any traveling stress peacefully.",
+                        "formatted": "→ Not really. <u>I easily suffer from severe motion sickness</u> on long journeys, and that makes me feel exhausted. Therefore, I prefer <span class=\"sub-hl\">enjoying quiet staycations at home</span>. This way, I can <span class=\"sub-hl\">unwind without any traveling stress</span> peacefully."
                     }
                 ]
             },
@@ -15710,7 +15710,7 @@ const practiceTopicsData = [
                 "qNum": 1,
                 "question": "Do you study English on the Internet?",
                 "qType": "Yes/No: Do you study [subject] on the Internet?",
-                "formula": "<div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 1 (Trả lời CÓ - Học qua các kênh YouTube và app thông minh, cải thiện phát âm và vốn từ vựng):</div>\n                    <div class=\"topic-formula-text\">\n                        → Yes, definitely. <u>I study English online on a regular basis</u>. I usually follow <span class=\"formula-bracket-hl\">[kênh học trực tuyến]</span>. It allows me to <span class=\"formula-bracket-hl\">[lợi ích 1 - Vo]</span> and gives me a chance to <span class=\"formula-bracket-hl\">[lợi ích 2 - Vo]</span>.\n                    </div>\n                </div>\n                <div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 2 (Trả lời KHÔNG - Dễ mất tập trung trên mạng xã hội, chuộng học lớp trực tiếp để tương tác với thầy cô):</div>\n                    <div class=\"topic-formula-text\">\n                        → Honestly, not really. <u>I tend to get easily distracted by social media notifications</u>. Therefore, I prefer <span class=\"formula-bracket-hl\">[hình thức học trực tiếp - V-ing]</span> because it gives me a chance to <span class=\"formula-bracket-hl\">[lợi ích tương tác - Vo]</span>.\n                    </div>\n                </div>",
+                "formula": "<div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 1 (Trả lời CÓ - Học qua các kênh YouTube và app thông minh, cải thiện phát âm và vốn từ vựng):</div>\n                    <div class=\"topic-formula-text\">\n                        → Yes, definitely. <u>I study English online on a regular basis</u>. I usually follow <span class=\"formula-bracket-hl\">[kênh học trực tuyến]</span>. It allows me to <span class=\"formula-bracket-hl\">[lợi ích 1 - Vo]</span> and gives me a chance to <span class=\"formula-bracket-hl\">[lợi ích 2 - Vo]</span>.\n                    </div>\n                </div>\n                <div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 2 (Trả lời KHÔNG - Dễ mất tập trung trên mạng xã hội, chuộng học lớp trực tiếp để tương tác với thầy cô):</div>\n                    <div class=\"topic-formula-text\">\n                        → Not really. <u>I tend to get easily distracted by social media notifications</u>. Therefore, I prefer <span class=\"formula-bracket-hl\">[hình thức học trực tiếp - V-ing]</span> because it gives me a chance to <span class=\"formula-bracket-hl\">[lợi ích tương tác - Vo]</span>.\n                    </div>\n                </div>",
                 "vocabGroups": [
                     {
                         "title": "🌐 [Kênh học trực tuyến] (Cách 1):",
@@ -15889,8 +15889,8 @@ const practiceTopicsData = [
                     },
                     {
                         "label": "Bài mẫu Cách 2 (Trả lời KHÔNG - Dễ bị xao nhãng bởi mạng xã hội, thích học trực tiếp để tương tác với thầy cô)",
-                        "text": "Honestly, not really. I tend to get easily distracted by social media notifications. Therefore, I prefer attending traditional classroom lessons because it gives me a chance to interact face-to-face with native teachers.",
-                        "formatted": "→ Honestly, not really. <u>I tend to get easily distracted by social media notifications</u>. Therefore, I prefer <span class=\"sub-hl\">attending traditional classroom lessons</span> because it gives me a chance to <span class=\"sub-hl\">interact face-to-face with native teachers</span>."
+                        "text": "Not really. I tend to get easily distracted by social media notifications. Therefore, I prefer attending traditional classroom lessons because it gives me a chance to interact face-to-face with native teachers.",
+                        "formatted": "→ Not really. <u>I tend to get easily distracted by social media notifications</u>. Therefore, I prefer <span class=\"sub-hl\">attending traditional classroom lessons</span> because it gives me a chance to <span class=\"sub-hl\">interact face-to-face with native teachers</span>."
                     }
                 ]
             },
@@ -27186,7 +27186,7 @@ const practiceTopicsData = [
                 "qNum": 1,
                 "question": "Are you a family person?",
                 "qType": "Yes/No Question: Are you a family person?",
-                "formula": "<div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 1 (Trả lời CÓ - Gia đình luôn là ưu tiên số một):</div>\n                    <div class=\"topic-formula-text\">\n                        → Yes, I definitely am. <u>My family always comes first in my life</u>. Whenever I have free time, I love <span class=\"formula-bracket-hl\">[hoạt động cùng gia đình - V-ing]</span> because it helps me <span class=\"formula-bracket-hl\">[lợi ích 1 - Vo]</span> and <span class=\"formula-bracket-hl\">[lợi ích 2 - Vo]</span>.\n                    </div>\n                </div>\n                <div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 2 (Trả lời KHÔNG HẲN - Sống khá độc lập và tập trung sự nghiệp):</div>\n                    <div class=\"topic-formula-text\">\n                        → Honestly, not really. Even though I love my parents very much, <u>I'm quite an independent person</u>. I spend most of my time <span class=\"formula-bracket-hl\">[hoạt động cá nhân - V-ing]</span> to <span class=\"formula-bracket-hl\">[lợi ích - Vo]</span>.\n                    </div>\n                </div>",
+                "formula": "<div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 1 (Trả lời CÓ - Gia đình luôn là ưu tiên số một):</div>\n                    <div class=\"topic-formula-text\">\n                        → Yes, I definitely am. <u>My family always comes first in my life</u>. Whenever I have free time, I love <span class=\"formula-bracket-hl\">[hoạt động cùng gia đình - V-ing]</span> because it helps me <span class=\"formula-bracket-hl\">[lợi ích 1 - Vo]</span> and <span class=\"formula-bracket-hl\">[lợi ích 2 - Vo]</span>.\n                    </div>\n                </div>\n                <div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 2 (Trả lời KHÔNG HẲN - Sống khá độc lập và tập trung sự nghiệp):</div>\n                    <div class=\"topic-formula-text\">\n                        → Not really. Even though I love my parents very much, <u>I'm quite an independent person</u>. I spend most of my time <span class=\"formula-bracket-hl\">[hoạt động cá nhân - V-ing]</span> to <span class=\"formula-bracket-hl\">[lợi ích - Vo]</span>.\n                    </div>\n                </div>",
                 "vocabGroups": [
                     {
                         "title": "👨‍👩‍👦 [Hoạt động gia đình] (Cách 1):",
@@ -27269,8 +27269,8 @@ const practiceTopicsData = [
                     },
                     {
                         "label": "Bài mẫu Cách 2 (Không hẳn - Sống khá độc lập, dành nhiều thời gian xây dựng sự nghiệp và mở rộng quan hệ)",
-                        "text": "Honestly, not really. Even though I love my parents very much, I'm quite an independent person. I spend most of my time building my professional career and hanging out with my friends to broaden my social network.",
-                        "formatted": "→ Honestly, not really. Even though I love my parents very much, <u>I'm quite an independent person</u>. I spend most of my time <span class=\"sub-hl\">building my professional career and hanging out with my friends</span> to <span class=\"sub-hl\">broaden my social network</span>."
+                        "text": "Not really. Even though I love my parents very much, I'm quite an independent person. I spend most of my time building my professional career and hanging out with my friends to broaden my social network.",
+                        "formatted": "→ Not really. Even though I love my parents very much, <u>I'm quite an independent person</u>. I spend most of my time <span class=\"sub-hl\">building my professional career and hanging out with my friends</span> to <span class=\"sub-hl\">broaden my social network</span>."
                     }
                 ]
             },
@@ -29846,7 +29846,7 @@ const practiceTopicsData = [
                 "qNum": 1,
                 "question": "Do you usually carry a bag when you go out?",
                 "qType": "Mẫu 1 (Yes/No Question): Do you usually [Vo]?",
-                "formula": "<div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 1 (Luôn mang theo ba lô hoặc túi đeo chéo khi ra ngoài):</div>\n                    <div class=\"topic-formula-text\">\n                        → Yes, <u>I always do</u>. Whenever I go out for school or work, I usually carry <span class=\"formula-bracket-hl\">[loại túi]</span> because it helps me <span class=\"formula-bracket-hl\">[lợi ích - Vo]</span>.\n                    </div>\n                </div>\n                <div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 2 (Không mang khi đi gần vì thấy vướng víu):</div>\n                    <div class=\"topic-formula-text\">\n                        → Honestly, <u>not really for short trips</u>. Carrying a bag sometimes feels quite bulky, so I just <span class=\"formula-bracket-hl\">[thói quen thay thế - Vo]</span> to move around more comfortably.\n                    </div>\n                </div>",
+                "formula": "<div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 1 (Luôn mang theo ba lô hoặc túi đeo chéo khi ra ngoài):</div>\n                    <div class=\"topic-formula-text\">\n                        → Yes, <u>I always do</u>. Whenever I go out for school or work, I usually carry <span class=\"formula-bracket-hl\">[loại túi]</span> because it helps me <span class=\"formula-bracket-hl\">[lợi ích - Vo]</span>.\n                    </div>\n                </div>\n                <div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 2 (Không mang khi đi gần vì thấy vướng víu):</div>\n                    <div class=\"topic-formula-text\">\n                        → <u>Not really for short trips</u>. Carrying a bag sometimes feels quite bulky, so I just <span class=\"formula-bracket-hl\">[thói quen thay thế - Vo]</span> to move around more comfortably.\n                    </div>\n                </div>",
                 "vocabGroups": [
                     {
                         "title": "🎒 [Loại túi thường dùng] (Cách 1):",
@@ -29945,8 +29945,8 @@ const practiceTopicsData = [
                     },
                     {
                         "label": "Bài mẫu Cách 2 (Không mang khi đi gần vì thấy vướng víu, chỉ bỏ điện thoại và chìa khóa vào túi quần)",
-                        "text": "Honestly, not really for short trips. Carrying a bag sometimes feels quite bulky, so I just put my smartphone, keys, and wallet directly into my pockets to move around more comfortably.",
-                        "formatted": "→ Honestly, <u>not really for short trips</u>. Carrying a bag sometimes feels quite bulky, so I just <span class=\"sub-hl\">put my smartphone, keys, and wallet directly into my pockets</span> to move around more comfortably."
+                        "text": "Not really for short trips. Carrying a bag sometimes feels quite bulky, so I just put my smartphone, keys, and wallet directly into my pockets to move around more comfortably.",
+                        "formatted": "→ <u>Not really for short trips</u>. Carrying a bag sometimes feels quite bulky, so I just <span class=\"sub-hl\">put my smartphone, keys, and wallet directly into my pockets</span> to move around more comfortably."
                     }
                 ]
             },
