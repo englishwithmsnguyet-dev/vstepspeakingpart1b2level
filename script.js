@@ -1634,6 +1634,263 @@ document.addEventListener('DOMContentLoaded', () => {
         return html;
     };
 
+    
+    // ==========================================================================
+    // THEORY & RANDOM PRACTICE - 25S TIMED AUDIO RECORDER ENGINE
+    // ==========================================================================
+    window._timedPracticeState = {};
+    window._timedPracticeActiveId = null;
+    window._timedPracticeActivePrefix = null;
+
+    window.getExampleTimerHTML = (uniqueId) => {
+        return `
+            <div class="theory-timed-practice-box" style="margin: 0.85rem 0 1rem 0; padding: 1rem 1.25rem; background: rgba(139, 92, 246, 0.04); border: 1.5px dashed rgba(139, 92, 246, 0.35); border-radius: 14px;">
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
+                    <div style="font-weight: 700; color: #7c3aed; font-size: 0.95rem; display: flex; align-items: center; gap: 0.45rem;">
+                        <i class="fa-solid fa-stopwatch"></i> CHẾ ĐỘ CANH GIỜ NÓI 25S:
+                    </div>
+                    <span id="ex-phase-badge-${uniqueId}" class="topic-exam-phase-badge" style="font-size: 0.82rem;">⏱️ Sẵn sàng luyện nói</span>
+                </div>
+
+                <div class="topic-exam-body" style="gap: 1rem;">
+                    <div class="topic-exam-timer-wrap">
+                        <div id="ex-digits-${uniqueId}" class="topic-exam-digits" style="font-size: 2.1rem; min-width: 105px; color: #7c3aed;">00:25</div>
+                        <div id="ex-wave-${uniqueId}" class="topic-mic-wave">
+                            <div class="topic-mic-bar"></div>
+                            <div class="topic-mic-bar"></div>
+                            <div class="topic-mic-bar"></div>
+                            <div class="topic-mic-bar"></div>
+                            <div class="topic-mic-bar"></div>
+                            <div class="topic-mic-bar"></div>
+                            <div class="topic-mic-bar"></div>
+                            <div class="topic-mic-bar"></div>
+                            <span style="font-size: 0.78rem; font-weight: 700; color: #ef4444; margin-left: 0.25rem;">
+                                <span class="topic-recording-dot"></span> ĐANG THU ÂM
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="topic-exam-actions">
+                        <button type="button" id="btn-ex-start-${uniqueId}" class="btn-exam-rec start" onclick="startExampleTimerRecording('${uniqueId}')" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed); box-shadow: 0 4px 12px rgba(124, 58, 237, 0.35); padding: 0.55rem 1.25rem; font-size: 0.9rem;">
+                            <i class="fa-solid fa-microphone"></i> Bắt đầu canh giờ 25s & Ghi âm
+                        </button>
+                        <button type="button" id="btn-ex-stop-${uniqueId}" class="btn-exam-rec stop" onclick="stopExampleTimerRecording('${uniqueId}')" style="display: none; padding: 0.55rem 1.25rem; font-size: 0.9rem;">
+                            <i class="fa-solid fa-square"></i> Dừng nói
+                        </button>
+                        <button type="button" id="btn-ex-reset-${uniqueId}" class="btn-exam-rec reset" onclick="resetExampleTimerRecording('${uniqueId}')" style="display: none; padding: 0.55rem 1.25rem; font-size: 0.9rem;">
+                            <i class="fa-solid fa-rotate-left"></i> Luyện lại
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Playback Box -->
+                <div id="ex-playback-box-${uniqueId}" class="topic-exam-playback" style="display: none; margin-top: 0.85rem; padding-top: 0.85rem;">
+                    <audio id="ex-audio-player-${uniqueId}" controls class="topic-exam-audio-player"></audio>
+                    <a id="btn-download-ex-${uniqueId}" class="btn-exam-download" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+                        <i class="fa-solid fa-download"></i> Tải bài nói (.webm)
+                    </a>
+                </div>
+            </div>
+        `;
+    };
+
+    window.startTimedPractice = async (id, prefix, duration = 25) => {
+        if (typeof stopAllActiveRecordings === 'function') stopAllActiveRecordings();
+        if (window._timedPracticeActiveId && window._timedPracticeActiveId !== id) {
+            window.stopTimedPractice(window._timedPracticeActiveId, window._timedPracticeActivePrefix);
+        }
+        window._timedPracticeActiveId = id;
+        window._timedPracticeActivePrefix = prefix;
+
+        const timerObj = {
+            totalTime: duration,
+            timeLeft: duration,
+            isRecording: false,
+            chunks: [],
+            stream: null,
+            recorder: null,
+            interval: null,
+            blobUrl: null
+        };
+        window._timedPracticeState[id] = timerObj;
+
+        const digitsEl = document.getElementById(`${prefix}-digits-${id}`);
+        const badgeEl = document.getElementById(`${prefix}-phase-badge-${id}`);
+        const waveEl = document.getElementById(`${prefix}-wave-${id}`);
+        const startBtn = document.getElementById(`btn-${prefix}-start-${id}`);
+        const stopBtn = document.getElementById(`btn-${prefix}-stop-${id}`);
+        const resetBtn = document.getElementById(`btn-${prefix}-reset-${id}`);
+        const playbackBox = document.getElementById(`${prefix}-playback-box-${id}`);
+        const playerEl = document.getElementById(`${prefix === 'wheel' ? 'audio-playback' : 'ex-audio-player'}-${id}`);
+        const downloadBtn = document.getElementById(`btn-download-${prefix}-${id}`);
+
+        if (playbackBox) playbackBox.style.display = 'none';
+        if (digitsEl) {
+            digitsEl.textContent = `00:${String(duration).padStart(2, '0')}`;
+            digitsEl.classList.remove('warning', 'danger');
+        }
+
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            timerObj.stream = stream;
+
+            let options = { mimeType: 'audio/webm' };
+            if (typeof MediaRecorder !== 'undefined' && MediaRecorder.isTypeSupported) {
+                if (!MediaRecorder.isTypeSupported('audio/webm') && MediaRecorder.isTypeSupported('audio/mp4')) {
+                    options = { mimeType: 'audio/mp4' };
+                }
+            }
+
+            const recorder = new MediaRecorder(stream, options);
+            timerObj.recorder = recorder;
+            timerObj.chunks = [];
+
+            recorder.ondataavailable = (e) => {
+                if (e.data && e.data.size > 0) {
+                    timerObj.chunks.push(e.data);
+                }
+            };
+
+            recorder.onstop = () => {
+                const blob = new Blob(timerObj.chunks, { type: recorder.mimeType || 'audio/webm' });
+                if (timerObj.blobUrl) URL.revokeObjectURL(timerObj.blobUrl);
+                timerObj.blobUrl = URL.createObjectURL(blob);
+
+                if (playerEl) {
+                    playerEl.src = timerObj.blobUrl;
+                }
+                if (downloadBtn) {
+                    downloadBtn.href = timerObj.blobUrl;
+                    const student = (document.getElementById('display-name')?.textContent || 'HocVien').trim().replace(/\s+/g, '_');
+                    downloadBtn.download = `VSTEP_Speaking_25s_${id}_${student}.webm`;
+                }
+                if (playbackBox) playbackBox.style.display = 'flex';
+
+                if (badgeEl) {
+                    badgeEl.className = 'topic-exam-phase-badge done';
+                    badgeEl.innerHTML = '<i class="fa-solid fa-circle-check"></i> Đã hoàn thành 25s';
+                }
+                if (startBtn) startBtn.style.display = 'none';
+                if (stopBtn) stopBtn.style.display = 'none';
+                if (resetBtn) resetBtn.style.display = 'inline-flex';
+                if (waveEl) waveEl.classList.remove('active');
+            };
+
+            if (typeof playExamDoubleBeep === 'function') playExamDoubleBeep();
+
+            recorder.start();
+            timerObj.isRecording = true;
+
+            if (badgeEl) {
+                badgeEl.className = 'topic-exam-phase-badge recording';
+                badgeEl.innerHTML = '<span class="topic-recording-dot"></span> Đang đếm ngược & thu âm...';
+            }
+            if (waveEl) waveEl.classList.add('active');
+            if (startBtn) startBtn.style.display = 'none';
+            if (stopBtn) stopBtn.style.display = 'inline-flex';
+            if (resetBtn) resetBtn.style.display = 'none';
+
+            timerObj.interval = setInterval(() => {
+                timerObj.timeLeft--;
+                const cur = timerObj.timeLeft;
+
+                if (digitsEl) {
+                    const mm = String(Math.floor(cur / 60)).padStart(2, '0');
+                    const ss = String(cur % 60).padStart(2, '0');
+                    digitsEl.textContent = `${mm}:${ss}`;
+
+                    if (cur <= 5 && cur > 0) {
+                        digitsEl.classList.add('danger');
+                    } else if (cur <= 10) {
+                        digitsEl.classList.add('warning');
+                    }
+                }
+
+                if (cur <= 0) {
+                    if (typeof playExamTimeUpChime === 'function') playExamTimeUpChime();
+                    window.stopTimedPractice(id, prefix);
+                }
+            }, 1000);
+
+        } catch (err) {
+            console.warn('Microphone access error:', err);
+            alert('⚠️ Không thể truy cập Microphone! Vui lòng cho phép quyền truy cập micro trong trình duyệt.');
+        }
+    };
+
+    window.stopTimedPractice = (id, prefix) => {
+        const timerObj = window._timedPracticeState[id];
+        if (!timerObj) return;
+
+        if (timerObj.interval) {
+            clearInterval(timerObj.interval);
+            timerObj.interval = null;
+        }
+
+        if (!timerObj.isRecording) {
+            const startBtn = document.getElementById(`btn-${prefix}-start-${id}`);
+            const stopBtn = document.getElementById(`btn-${prefix}-stop-${id}`);
+            const resetBtn = document.getElementById(`btn-${prefix}-reset-${id}`);
+            const waveEl = document.getElementById(`${prefix}-wave-${id}`);
+            if (startBtn) startBtn.style.display = 'none';
+            if (stopBtn) stopBtn.style.display = 'none';
+            if (resetBtn) resetBtn.style.display = 'inline-flex';
+            if (waveEl) waveEl.classList.remove('active');
+            return;
+        }
+
+        timerObj.isRecording = false;
+        if (timerObj.recorder && timerObj.recorder.state !== 'inactive') {
+            try { timerObj.recorder.stop(); } catch(e) {}
+        }
+        if (timerObj.stream) {
+            try { timerObj.stream.getTracks().forEach(t => t.stop()); } catch(e) {}
+            timerObj.stream = null;
+        }
+        if (window._timedPracticeActiveId === id) {
+            window._timedPracticeActiveId = null;
+        }
+    };
+
+    window.resetTimedPractice = (id, prefix, duration = 25) => {
+        window.stopTimedPractice(id, prefix);
+        const timerObj = window._timedPracticeState[id] || {};
+        timerObj.timeLeft = duration;
+        timerObj.totalTime = duration;
+
+        const digitsEl = document.getElementById(`${prefix}-digits-${id}`);
+        const badgeEl = document.getElementById(`${prefix}-phase-badge-${id}`);
+        const startBtn = document.getElementById(`btn-${prefix}-start-${id}`);
+        const stopBtn = document.getElementById(`btn-${prefix}-stop-${id}`);
+        const resetBtn = document.getElementById(`btn-${prefix}-reset-${id}`);
+        const playbackBox = document.getElementById(`${prefix}-playback-box-${id}`);
+        const waveEl = document.getElementById(`${prefix}-wave-${id}`);
+
+        if (digitsEl) {
+            digitsEl.textContent = `00:${String(duration).padStart(2, '0')}`;
+            digitsEl.classList.remove('warning', 'danger');
+        }
+        if (badgeEl) {
+            badgeEl.className = 'topic-exam-phase-badge';
+            badgeEl.innerHTML = '⏱️ Sẵn sàng luyện nói';
+        }
+        if (startBtn) startBtn.style.display = 'inline-flex';
+        if (stopBtn) stopBtn.style.display = 'none';
+        if (resetBtn) resetBtn.style.display = 'none';
+        if (playbackBox) playbackBox.style.display = 'none';
+        if (waveEl) waveEl.classList.remove('active');
+    };
+
+    // Helper wrappers for example questions
+    window.startExampleTimerRecording = (uniqueId) => window.startTimedPractice(uniqueId, 'ex', 25);
+    window.stopExampleTimerRecording = (uniqueId) => window.stopTimedPractice(uniqueId, 'ex');
+    window.resetExampleTimerRecording = (uniqueId) => window.resetTimedPractice(uniqueId, 'ex', 25);
+
+    // Helper wrappers for random practice wheels
+    window.startWheelTimerRecording = (type) => window.startTimedPractice(type, 'wheel', 25);
+    window.stopWheelTimerRecording = (type) => window.stopTimedPractice(type, 'wheel');
+    window.resetWheelTimerRecording = (type) => window.resetTimedPractice(type, 'wheel', 25);
+
     const ynStage = document.getElementById('yn-stage');
     const ynNumEl = document.getElementById('yn-current-num');
 
@@ -1667,6 +1924,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <div class="ex-label" style="font-size:1.1rem; color:var(--text-main); margin-bottom:0.75rem; text-transform:none;">
                                 ❓ Câu hỏi: <strong>${d.exQ}</strong>
                             </div>
+                            ${getExampleTimerHTML('yn-' + state.ynIndex)}
                             <div style="margin-top:0.75rem;">
                                 <button class="btn-audio-sample" style="background:#8b5cf6; margin-bottom:0.5rem; cursor:pointer;" onclick="toggleSampleAnswer(this)">
                                     <i class="fa-solid fa-eye"></i> Nhấn xem câu trả lời mẫu
@@ -1986,6 +2244,7 @@ const renderChoice = (o) => {
                             <div class="ex-label" style="font-size:1.1rem; color:var(--text-main); margin-bottom:0.75rem; text-transform:none;">
                                 ❓ Câu hỏi: <strong>${d.exQ}</strong>
                             </div>
+                            ${getExampleTimerHTML('choice-' + (typeof o !== 'undefined' ? o : 'opt1'))}
                             <div style="margin-top:0.75rem;">
                                 <button class="btn-audio-sample" style="background:#8b5cf6; margin-bottom:0.5rem; cursor:pointer;" onclick="toggleSampleAnswer(this)">
                                     <i class="fa-solid fa-eye"></i> Nhấn xem câu trả lời mẫu
@@ -4636,6 +4895,7 @@ const whShowcase = document.getElementById('wh-showcase');
                                     <div class="ex-label" style="font-size:1.1rem; color:var(--text-main); margin-bottom:0.75rem; text-transform:none;">
                                         ❓ Câu hỏi: <strong>${item.exQ}</strong>
                                     </div>
+                                    ${getExampleTimerHTML('wh-' + cat + '-' + idx)}
                                     <div style="margin-top:0.75rem;">
                                         <button class="btn-audio-sample" style="background:#8b5cf6; margin-bottom:0.5rem; cursor:pointer;" onclick="toggleSampleAnswer(this)">
                                             <i class="fa-solid fa-eye"></i> Nhấn xem câu trả lời mẫu
@@ -4848,6 +5108,7 @@ const whShowcase = document.getElementById('wh-showcase');
                     const recordBox = document.getElementById('record-box-' + type);
                     if (recordBox) {
                         recordBox.style.display = 'block';
+                        if (typeof resetWheelTimerRecording === 'function') resetWheelTimerRecording(type);
                         const playback = document.getElementById('audio-playback-' + type);
                         if(playback) { playback.style.display = 'none'; playback.src = ''; }
                         const submitBtn = document.getElementById('btn-submit-' + type);
@@ -31468,6 +31729,9 @@ function stopAllActiveRecordings() {
     }
     if (window._fullExamTimer && window._fullExamTimer.isRecording) {
         stopFullTopicRecording();
+    }
+    if (window._timedPracticeActiveId) {
+        window.stopTimedPractice(window._timedPracticeActiveId, window._timedPracticeActivePrefix);
     }
 }
 

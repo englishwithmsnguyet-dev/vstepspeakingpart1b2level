@@ -418,14 +418,52 @@
                                         Nhấp "Chọn Câu Hỏi Ngẫu Nhiên" để bắt đầu thực hành
                                     </div>
 <div class="hint-screen hidden" id="wheel-hint-yn"></div>
-<div class="record-box fade-in" id="record-box-yn" style="display:none; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px dashed var(--border); text-align:center;">
-<div style="font-weight:600; color:var(--text-main); margin-bottom:1rem;">🎙️ Thực hành đọc câu trả lời của bạn</div>
-<button class="btn" id="btn-record-yn" onclick="toggleRecording('yn')" style="background:#ef4444; color:white; border-radius:50px; padding: 0.75rem 2rem; font-size:1.1rem; border:none; box-shadow:0 4px 10px rgba(239,68,68,0.3); transition:all 0.3s;">
-<i class="fa-solid fa-microphone"></i> Bắt đầu Ghi âm
-                                        </button>
-<div id="recording-status-yn" style="display:none; color:#ef4444; font-weight:bold; margin-top:1rem; animation: pulse 1.5s infinite;">Đang ghi âm... (Bấm nút Dừng để kết thúc)</div>
-<audio controls="" id="audio-playback-yn" style="display:none; margin-top:1.5rem; width:100%; height:40px; border-radius:50px;"></audio>
-<button class="btn btn-submit-audio fade-in" id="btn-submit-yn" onclick="submitAudio('yn')" style="display:none; margin-top:1rem; background:linear-gradient(135deg, #10b981, #059669); color:white; border-radius:50px; padding: 0.75rem 2rem; font-size:1.1rem; border:none; box-shadow:0 4px 10px rgba(16,185,129,0.3); width: 100%;"><i class="fa-solid fa-download"></i> Tải xuống để lưu trữ</button>
+<div class="record-box fade-in" id="record-box-yn" style="display:none; margin-top: 1.5rem; padding: 1.25rem 1.35rem; background: var(--bg-card); border: 2px dashed rgba(239, 68, 68, 0.45); border-radius: 16px; box-shadow: 0 4px 12px rgba(239, 68, 68, 0.08); text-align:left;">
+    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px dashed var(--border);">
+        <div style="font-weight: 800; color: #dc2626; font-size: 1.05rem; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fa-solid fa-stopwatch"></i> CHẾ ĐỘ CANH GIỜ NÓI 25S:
+        </div>
+        <span id="wheel-phase-badge-yn" class="topic-exam-phase-badge">⏱️ Sẵn sàng trả lời</span>
+    </div>
+
+    <div class="topic-exam-body" style="justify-content: center; gap: 1.25rem;">
+        <div class="topic-exam-timer-wrap">
+            <div id="wheel-digits-yn" class="topic-exam-digits" style="font-size: 2.5rem; min-width: 120px;">00:25</div>
+            <div id="wheel-wave-yn" class="topic-mic-wave">
+                <div class="topic-mic-bar"></div>
+                <div class="topic-mic-bar"></div>
+                <div class="topic-mic-bar"></div>
+                <div class="topic-mic-bar"></div>
+                <div class="topic-mic-bar"></div>
+                <div class="topic-mic-bar"></div>
+                <div class="topic-mic-bar"></div>
+                <div class="topic-mic-bar"></div>
+                <span style="font-size: 0.78rem; font-weight: 700; color: #ef4444; margin-left: 0.25rem;">
+                    <span class="topic-recording-dot"></span> ĐANG THU ÂM
+                </span>
+            </div>
+        </div>
+
+        <div class="topic-exam-actions">
+            <button type="button" id="btn-wheel-start-yn" class="btn-exam-rec start" onclick="startWheelTimerRecording('yn')">
+                <i class="fa-solid fa-microphone"></i> Bắt đầu canh giờ 25s & Ghi âm
+            </button>
+            <button type="button" id="btn-wheel-stop-yn" class="btn-exam-rec stop" onclick="stopWheelTimerRecording('yn')" style="display: none;">
+                <i class="fa-solid fa-square"></i> Dừng bài nói
+            </button>
+            <button type="button" id="btn-wheel-reset-yn" class="btn-exam-rec reset" onclick="resetWheelTimerRecording('yn')" style="display: none;">
+                <i class="fa-solid fa-rotate-left"></i> Luyện lại
+            </button>
+        </div>
+    </div>
+
+    <!-- Playback Box -->
+    <div id="wheel-playback-box-yn" class="topic-exam-playback" style="display: none; justify-content: center; margin-top: 1rem;">
+        <audio id="audio-playback-yn" controls class="topic-exam-audio-player"></audio>
+        <a id="btn-download-wheel-yn" class="btn-exam-download" download="VSTEP_Speaking_YN_25s.webm">
+            <i class="fa-solid fa-download"></i> Tải bài nói (.webm)
+        </a>
+    </div>
 </div>
 </div>
 <div class="arena-buttons">
@@ -519,14 +557,52 @@
                                 Nhấp "Chọn Câu Hỏi Ngẫu Nhiên" để bắt đầu thực hành
                             </div>
 <div class="hint-screen hidden" id="wheel-hint-choice"></div>
-<div class="record-box fade-in" id="record-box-choice" style="display:none; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px dashed var(--border); text-align:center;">
-<div style="font-weight:600; color:var(--text-main); margin-bottom:1rem;">🎙️ Thực hành đọc câu trả lời của bạn</div>
-<button class="btn" id="btn-record-choice" onclick="toggleRecording('choice')" style="background:#ef4444; color:white; border-radius:50px; padding: 0.75rem 2rem; font-size:1.1rem; border:none; box-shadow:0 4px 10px rgba(239,68,68,0.3); transition:all 0.3s;">
-<i class="fa-solid fa-microphone"></i> Bắt đầu Ghi âm
-                                </button>
-<div id="recording-status-choice" style="display:none; color:#ef4444; font-weight:bold; margin-top:1rem; animation: pulse 1.5s infinite;">Đang ghi âm... (Bấm nút Dừng để kết thúc)</div>
-<audio controls="" id="audio-playback-choice" style="display:none; margin-top:1.5rem; width:100%; height:40px; border-radius:50px;"></audio>
-<button class="btn btn-submit-audio fade-in" id="btn-submit-choice" onclick="submitAudio('choice')" style="display:none; margin-top:1rem; background:linear-gradient(135deg, #10b981, #059669); color:white; border-radius:50px; padding: 0.75rem 2rem; font-size:1.1rem; border:none; box-shadow:0 4px 10px rgba(16,185,129,0.3); width: 100%;"><i class="fa-solid fa-download"></i> Tải xuống để lưu trữ</button>
+<div class="record-box fade-in" id="record-box-choice" style="display:none; margin-top: 1.5rem; padding: 1.25rem 1.35rem; background: var(--bg-card); border: 2px dashed rgba(239, 68, 68, 0.45); border-radius: 16px; box-shadow: 0 4px 12px rgba(239, 68, 68, 0.08); text-align:left;">
+    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px dashed var(--border);">
+        <div style="font-weight: 800; color: #dc2626; font-size: 1.05rem; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fa-solid fa-stopwatch"></i> CHẾ ĐỘ CANH GIỜ NÓI 25S:
+        </div>
+        <span id="wheel-phase-badge-choice" class="topic-exam-phase-badge">⏱️ Sẵn sàng trả lời</span>
+    </div>
+
+    <div class="topic-exam-body" style="justify-content: center; gap: 1.25rem;">
+        <div class="topic-exam-timer-wrap">
+            <div id="wheel-digits-choice" class="topic-exam-digits" style="font-size: 2.5rem; min-width: 120px;">00:25</div>
+            <div id="wheel-wave-choice" class="topic-mic-wave">
+                <div class="topic-mic-bar"></div>
+                <div class="topic-mic-bar"></div>
+                <div class="topic-mic-bar"></div>
+                <div class="topic-mic-bar"></div>
+                <div class="topic-mic-bar"></div>
+                <div class="topic-mic-bar"></div>
+                <div class="topic-mic-bar"></div>
+                <div class="topic-mic-bar"></div>
+                <span style="font-size: 0.78rem; font-weight: 700; color: #ef4444; margin-left: 0.25rem;">
+                    <span class="topic-recording-dot"></span> ĐANG THU ÂM
+                </span>
+            </div>
+        </div>
+
+        <div class="topic-exam-actions">
+            <button type="button" id="btn-wheel-start-choice" class="btn-exam-rec start" onclick="startWheelTimerRecording('choice')">
+                <i class="fa-solid fa-microphone"></i> Bắt đầu canh giờ 25s & Ghi âm
+            </button>
+            <button type="button" id="btn-wheel-stop-choice" class="btn-exam-rec stop" onclick="stopWheelTimerRecording('choice')" style="display: none;">
+                <i class="fa-solid fa-square"></i> Dừng bài nói
+            </button>
+            <button type="button" id="btn-wheel-reset-choice" class="btn-exam-rec reset" onclick="resetWheelTimerRecording('choice')" style="display: none;">
+                <i class="fa-solid fa-rotate-left"></i> Luyện lại
+            </button>
+        </div>
+    </div>
+
+    <!-- Playback Box -->
+    <div id="wheel-playback-box-choice" class="topic-exam-playback" style="display: none; justify-content: center; margin-top: 1rem;">
+        <audio id="audio-playback-choice" controls class="topic-exam-audio-player"></audio>
+        <a id="btn-download-wheel-choice" class="btn-exam-download" download="VSTEP_Speaking_CHOICE_25s.webm">
+            <i class="fa-solid fa-download"></i> Tải bài nói (.webm)
+        </a>
+    </div>
 </div>
 </div>
 <div class="arena-buttons">
@@ -719,14 +795,52 @@
                                 Nhấp "Chọn Câu Hỏi Ngẫu Nhiên" để bắt đầu thực hành
                             </div>
 <div class="hint-screen hidden" id="wheel-hint"></div>
-<div class="record-box fade-in" id="record-box-wh" style="display:none; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px dashed var(--border); text-align:center;">
-<div style="font-weight:600; color:var(--text-main); margin-bottom:1rem;">🎙️ Thực hành đọc câu trả lời của bạn</div>
-<button class="btn" id="btn-record-wh" onclick="toggleRecording('wh')" style="background:#ef4444; color:white; border-radius:50px; padding: 0.75rem 2rem; font-size:1.1rem; border:none; box-shadow:0 4px 10px rgba(239,68,68,0.3); transition:all 0.3s;">
-<i class="fa-solid fa-microphone"></i> Bắt đầu Ghi âm
-                                </button>
-<div id="recording-status-wh" style="display:none; color:#ef4444; font-weight:bold; margin-top:1rem; animation: pulse 1.5s infinite;">Đang ghi âm... (Bấm nút Dừng để kết thúc)</div>
-<audio controls="" id="audio-playback-wh" style="display:none; margin-top:1.5rem; width:100%; height:40px; border-radius:50px;"></audio>
-<button class="btn btn-submit-audio fade-in" id="btn-submit-wh" onclick="submitAudio('wh')" style="display:none; margin-top:1rem; background:linear-gradient(135deg, #10b981, #059669); color:white; border-radius:50px; padding: 0.75rem 2rem; font-size:1.1rem; border:none; box-shadow:0 4px 10px rgba(16,185,129,0.3); width: 100%;"><i class="fa-solid fa-download"></i> Tải xuống để lưu trữ</button>
+<div class="record-box fade-in" id="record-box-wh" style="display:none; margin-top: 1.5rem; padding: 1.25rem 1.35rem; background: var(--bg-card); border: 2px dashed rgba(239, 68, 68, 0.45); border-radius: 16px; box-shadow: 0 4px 12px rgba(239, 68, 68, 0.08); text-align:left;">
+    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px dashed var(--border);">
+        <div style="font-weight: 800; color: #dc2626; font-size: 1.05rem; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fa-solid fa-stopwatch"></i> CHẾ ĐỘ CANH GIỜ NÓI 25S:
+        </div>
+        <span id="wheel-phase-badge-wh" class="topic-exam-phase-badge">⏱️ Sẵn sàng trả lời</span>
+    </div>
+
+    <div class="topic-exam-body" style="justify-content: center; gap: 1.25rem;">
+        <div class="topic-exam-timer-wrap">
+            <div id="wheel-digits-wh" class="topic-exam-digits" style="font-size: 2.5rem; min-width: 120px;">00:25</div>
+            <div id="wheel-wave-wh" class="topic-mic-wave">
+                <div class="topic-mic-bar"></div>
+                <div class="topic-mic-bar"></div>
+                <div class="topic-mic-bar"></div>
+                <div class="topic-mic-bar"></div>
+                <div class="topic-mic-bar"></div>
+                <div class="topic-mic-bar"></div>
+                <div class="topic-mic-bar"></div>
+                <div class="topic-mic-bar"></div>
+                <span style="font-size: 0.78rem; font-weight: 700; color: #ef4444; margin-left: 0.25rem;">
+                    <span class="topic-recording-dot"></span> ĐANG THU ÂM
+                </span>
+            </div>
+        </div>
+
+        <div class="topic-exam-actions">
+            <button type="button" id="btn-wheel-start-wh" class="btn-exam-rec start" onclick="startWheelTimerRecording('wh')">
+                <i class="fa-solid fa-microphone"></i> Bắt đầu canh giờ 25s & Ghi âm
+            </button>
+            <button type="button" id="btn-wheel-stop-wh" class="btn-exam-rec stop" onclick="stopWheelTimerRecording('wh')" style="display: none;">
+                <i class="fa-solid fa-square"></i> Dừng bài nói
+            </button>
+            <button type="button" id="btn-wheel-reset-wh" class="btn-exam-rec reset" onclick="resetWheelTimerRecording('wh')" style="display: none;">
+                <i class="fa-solid fa-rotate-left"></i> Luyện lại
+            </button>
+        </div>
+    </div>
+
+    <!-- Playback Box -->
+    <div id="wheel-playback-box-wh" class="topic-exam-playback" style="display: none; justify-content: center; margin-top: 1rem;">
+        <audio id="audio-playback-wh" controls class="topic-exam-audio-player"></audio>
+        <a id="btn-download-wheel-wh" class="btn-exam-download" download="VSTEP_Speaking_WH_25s.webm">
+            <i class="fa-solid fa-download"></i> Tải bài nói (.webm)
+        </a>
+    </div>
 </div>
 </div>
 <div class="arena-buttons">
@@ -18873,6 +18987,6 @@
 </main>
 </div>
 <script src="audio/manifest.js"></script>
-<script src="script.js?v=20261026_4"></script>
+<script src="script.js?v=20261026_5"></script>
 </body>
 </html>
