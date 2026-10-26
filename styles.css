@@ -1416,3 +1416,263 @@ body.dark-theme .sp-bar-track {
     from { transform: translateY(100px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
 }
+
+/* ==========================================================================
+   FAVORITE BENEFITS & REVIEW SYSTEM STYLES
+   ========================================================================== */
+.benefits-sticky-toolbar {
+    position: sticky;
+    top: 70px;
+    z-index: 85;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    border: 1.5px solid var(--border);
+    border-radius: 16px;
+    padding: 0.85rem 1.25rem;
+    margin: 1rem 0 1.5rem 0;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    transition: all 0.25s ease;
+}
+body.dark-theme .benefits-sticky-toolbar {
+    background: rgba(21, 28, 47, 0.95);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+.benefits-toolbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.fav-count-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--text-main);
+    flex-wrap: wrap;
+}
+.fav-label {
+    letter-spacing: 0.3px;
+}
+.fav-count-num {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #d97706;
+    background: rgba(245, 158, 11, 0.15);
+    padding: 0.1rem 0.6rem;
+    border-radius: 8px;
+    border: 1.5px solid rgba(245, 158, 11, 0.4);
+    min-width: 28px;
+    text-align: center;
+    display: inline-block;
+}
+body.dark-theme .fav-count-num {
+    color: #fbbf24;
+    background: rgba(245, 158, 11, 0.25);
+    border-color: rgba(245, 158, 11, 0.6);
+}
+.fav-count-total {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+.filter-btn-group {
+    display: flex;
+    gap: 0.35rem;
+    background: var(--bg-body);
+    padding: 0.3rem;
+    border-radius: 12px;
+    border: 1.5px solid var(--border);
+}
+.btn-filter-fav {
+    padding: 0.5rem 1rem;
+    border-radius: 9px;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+.btn-filter-fav:hover {
+    color: var(--text-main);
+}
+.btn-filter-fav.active {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 2px 8px rgba(67, 97, 238, 0.25);
+}
+.btn-filter-fav#btn-filter-fav.active {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+    box-shadow: 0 3px 10px rgba(245, 158, 11, 0.35);
+}
+.btn-quick-practice {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    padding: 0.65rem 1.25rem;
+    border-radius: 12px;
+    border: none;
+    font-weight: 800;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-quick-practice:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(16, 185, 129, 0.45);
+}
+
+/* Benefit Card Interactive Enhancements */
+.benefit-card {
+    background: var(--bg-card);
+    padding: 1.15rem 1.25rem;
+    border-radius: 14px;
+    border: 1.5px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    user-select: none;
+}
+.benefit-card:hover {
+    border-color: rgba(245, 158, 11, 0.55);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+.benefit-card.is-favorite {
+    border: 2px solid #f59e0b !important;
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.09), rgba(234, 179, 8, 0.04)) !important;
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.22) !important;
+}
+body.dark-theme .benefit-card.is-favorite {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.18), rgba(234, 179, 8, 0.08)) !important;
+    border-color: #f59e0b !important;
+}
+.benefit-card-content {
+    flex: 1;
+    min-width: 0;
+    padding-right: 0.65rem;
+}
+.benefit-card-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+.benefit-star-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    border: 1.5px solid var(--border);
+    background: var(--bg-body);
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.benefit-star-btn:hover {
+    color: #f59e0b;
+    border-color: #f59e0b;
+    transform: scale(1.12);
+}
+.benefit-card.is-favorite .benefit-star-btn {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+    border-color: #d97706;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
+}
+.benefit-fav-tag {
+    display: none;
+    margin-top: 0.45rem;
+    font-size: 0.74rem;
+    font-weight: 800;
+    color: #b45309;
+    background: rgba(245, 158, 11, 0.16);
+    padding: 0.2rem 0.55rem;
+    border-radius: 6px;
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    width: fit-content;
+    align-items: center;
+    gap: 0.35rem;
+    animation: fadeInTag 0.2s ease;
+}
+@keyframes fadeInTag {
+    from { opacity: 0; transform: translateY(-3px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+body.dark-theme .benefit-fav-tag {
+    color: #fde68a;
+    background: rgba(245, 158, 11, 0.25);
+    border-color: rgba(245, 158, 11, 0.5);
+}
+.benefit-card.is-favorite .benefit-fav-tag {
+    display: inline-flex;
+}
+
+/* Review dataset selector pills */
+.btn-review-dataset {
+    padding: 0.6rem 1.25rem;
+    border-radius: 50px;
+    border: 1.5px solid var(--border);
+    background: var(--bg-body);
+    color: var(--text-muted);
+    font-weight: 700;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+.btn-review-dataset:hover {
+    border-color: var(--primary);
+    color: var(--text-main);
+}
+.btn-review-dataset.active {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+    border-color: #d97706;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.35);
+}
+.btn-review-dataset#btn-dataset-all.active {
+    background: linear-gradient(135deg, #4361ee, #3a0ca3);
+    color: white;
+    border-color: #3a0ca3;
+    box-shadow: 0 4px 12px rgba(67, 97, 238, 0.35);
+}
+
+/* Favorite Benefit Suggestion Pill for 60 Topics Practice */
+.fav-benefit-pill {
+    cursor: pointer;
+    background: var(--bg-card);
+    border: 1.5px solid rgba(245, 158, 11, 0.45);
+    border-radius: 8px;
+    padding: 0.4rem 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+}
+.fav-benefit-pill:hover {
+    transform: translateY(-2px);
+    border-color: #f59e0b;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25);
+}

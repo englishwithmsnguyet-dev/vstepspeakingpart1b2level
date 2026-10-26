@@ -14,7 +14,7 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
 <!-- Canvas Confetti -->
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
-<link href="styles.css?v=20261027_3" rel="stylesheet"/>
+<link href="styles.css?v=20261027_4" rel="stylesheet"/>
 <script>
         window.onerror = function(msg, url, lineNo, columnNo, error) {
             console.error("Window error: ", msg, url, lineNo, error);
@@ -849,6 +849,44 @@
 <h2>BẢNG LỢI ÍCH</h2>
 <p>Danh sách đầy đủ các cụm từ chỉ lợi ích được biên soạn, phân loại theo từng nhóm chủ đề. Nhấp vào loa để nghe phát âm.</p>
 </div>
+
+<!-- STICKY TOOLBAR: CHỌN CỤM YÊU THÍCH & TRẢ BÀI -->
+<div class="benefits-sticky-toolbar" id="benefits-sticky-toolbar">
+  <div class="benefits-toolbar-content">
+    <div class="benefits-toolbar-left">
+      <div class="fav-count-badge">
+        <i class="fa-solid fa-star" style="color:#f59e0b; font-size:1.15rem;"></i>
+        <span class="fav-label">CỤM TỪ YÊU THÍCH ĐÃ CHỌN ĐỂ TRẢ BÀI:</span>
+        <strong id="fav-benefits-count" class="fav-count-num">0</strong>
+        <span class="fav-count-total">/ <span id="total-benefits-count">84</span> cụm</span>
+      </div>
+    </div>
+    <div class="benefits-toolbar-center">
+      <div class="filter-btn-group">
+        <button type="button" class="btn-filter-fav active" id="btn-filter-all" onclick="setBenefitsFilter('all')">
+          <i class="fa-solid fa-list-ul"></i> Tất cả (<span id="btn-count-all">84</span>)
+        </button>
+        <button type="button" class="btn-filter-fav" id="btn-filter-fav" onclick="setBenefitsFilter('favorites')">
+          <i class="fa-solid fa-star"></i> Chỉ xem đã chọn (<span id="btn-count-fav">0</span>)
+        </button>
+      </div>
+    </div>
+    <div class="benefits-toolbar-right">
+      <button type="button" class="btn-quick-practice" onclick="scrollToBenefitsReview()" title="Cuộn nhanh xuống Góc Trả Bài">
+        <i class="fa-solid fa-graduation-cap"></i> TRẢ BÀI NGAY <i class="fa-solid fa-arrow-down"></i>
+      </button>
+    </div>
+  </div>
+  <!-- Empty State when filtering to favorites with 0 selected -->
+  <div id="benefits-empty-fav-message" style="display: none; padding: 1.25rem; margin-top: 0.75rem; background: rgba(245, 158, 11, 0.08); border: 1.5px dashed #f59e0b; border-radius: 12px; text-align: center;">
+    <div style="font-size: 1.3rem; margin-bottom: 0.35rem;">⭐</div>
+    <div style="font-weight: 700; color: #b45309; font-size: 1.05rem; margin-bottom: 0.35rem;">Bạn chưa chọn cụm từ yêu thích nào!</div>
+    <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 0.85rem;">Nhấp vào biểu tượng <strong>⭐</strong> hoặc bấm trực tiếp vào bất kỳ thẻ cụm từ nào để chọn cụm bạn muốn học và trả bài.</p>
+    <button type="button" class="btn" onclick="setBenefitsFilter('all')" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 0.5rem 1.25rem; border-radius: 8px; font-weight: 700; border: none; cursor: pointer;">
+      <i class="fa-solid fa-arrow-left"></i> Xem tất cả cụm từ
+    </button>
+  </div>
+</div>
 <div style="padding-bottom: 2rem;">
 <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--primary); border-bottom: 2px solid var(--primary); padding-bottom: 0.5rem; display: inline-block;">LỢI ÍCH GIẢI TRÍ</h3>
 <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
@@ -1618,9 +1656,21 @@
 </div>
 <div id="review-section" style="margin-top: 3rem; padding-top: 2rem; border-top: 2px dashed var(--border);">
 <div class="section-intro">
-<h2 style="color: var(--primary);"><i class="fa-solid fa-gamepad"></i> GÓC ÔN TẬP TỪ VỰNG</h2>
-<p>Chọn một trò chơi bên dưới để kiểm tra trí nhớ của bạn!</p>
+<h2 style="color: var(--primary);"><i class="fa-solid fa-graduation-cap"></i> GÓC TRẢ BÀI & KIỂM TRA TRÍ NHỚ</h2>
+<p>Hệ thống tự động sử dụng danh sách cụm từ yêu thích của bạn để kiểm tra và trả bài!</p>
 </div>
+
+<!-- Dataset Selector: Các cụm đã chọn vs Tất cả cụm -->
+<div class="review-dataset-selector" style="display: flex; justify-content: center; align-items: center; gap: 0.75rem; margin-bottom: 1.75rem; flex-wrap: wrap;">
+  <span style="font-weight: 700; font-size: 0.92rem; color: var(--text-muted);"><i class="fa-solid fa-sliders"></i> Dữ liệu trả bài:</span>
+  <button type="button" class="btn-review-dataset active" id="btn-dataset-fav" onclick="setReviewDatasetMode('favorites')">
+    <i class="fa-solid fa-star" style="color: #f59e0b;"></i> Các cụm yêu thích đã chọn (<span id="review-dataset-fav-count">0</span> cụm)
+  </button>
+  <button type="button" class="btn-review-dataset" id="btn-dataset-all" onclick="setReviewDatasetMode('all')">
+    <i class="fa-solid fa-book-open"></i> Tất cả 84 cụm
+  </button>
+</div>
+
 <div class="game-menu" style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 2rem; flex-wrap: wrap;">
 <button class="btn" onclick="startReviewGame('flashcards', 'benefits')" style="background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; border:none; box-shadow: 0 4px 10px rgba(59,130,246,0.3);"><i class="fa-solid fa-clone"></i> Lật Thẻ</button>
 <button class="btn" onclick="startReviewGame('matching', 'benefits')" style="background: linear-gradient(135deg, #10b981, #059669); color: white; border:none; box-shadow: 0 4px 10px rgba(16,185,129,0.3);"><i class="fa-solid fa-link"></i> Nối Từ</button>
@@ -18978,7 +19028,7 @@
 </main>
 </div>
 <script src="audio/manifest.js"></script>
-<script src="script.js?v=20261027_3"></script>
+<script src="script.js?v=20261027_4"></script>
 
 <!-- =========================================================
      MODAL: SAO LƯU & QUẢN LÝ TIẾN ĐỘ HỌC TẬP

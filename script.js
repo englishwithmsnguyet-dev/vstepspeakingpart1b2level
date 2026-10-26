@@ -1665,6 +1665,7 @@ document.addEventListener('DOMContentLoaded', () => {
         createdAt: new Date().toISOString(),
         lastUpdated: new Date().toISOString(),
         completedTopics: [],
+        favoriteBenefits: [],
         topicDetails: {},
         theoryDetails: {
             yesNo: {},
@@ -1734,6 +1735,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         studentName: studentName || parsed.studentName,
                         studentClass: studentClass || parsed.studentClass,
                         completedTopics: Array.isArray(parsed.completedTopics) ? parsed.completedTopics : [],
+                        favoriteBenefits: Array.isArray(parsed.favoriteBenefits) ? parsed.favoriteBenefits : (window._studentProgress.favoriteBenefits || []),
                         topicDetails: parsed.topicDetails || {},
                         theoryDetails: parsed.theoryDetails || { yesNo: {}, choice: {}, wh: {}, wheels: { yn: 0, choice: 0, wh: 0 } },
                         stats: parsed.stats || { totalRecordings: 0, totalExams: 0 }
@@ -1744,12 +1746,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 window._studentProgress.studentClass = studentClass || 'B212';
                 window._studentProgress.createdAt = new Date().toISOString();
                 window._studentProgress.completedTopics = [];
+                window._studentProgress.favoriteBenefits = [];
                 window._studentProgress.topicDetails = {};
             }
         } catch (e) {
             console.warn('Could not load progress from localStorage:', e);
         }
         window.updateProgressUI();
+        if (typeof window.updateBenefitsFavoriteUI === 'function') {
+            window.updateBenefitsFavoriteUI();
+        }
     };
 
     window.isTopicCompleted = (topicId) => {
@@ -2131,6 +2137,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ...window._studentProgress,
             ...parsed,
             completedTopics: compTopics,
+            favoriteBenefits: Array.isArray(parsed.favoriteBenefits) ? parsed.favoriteBenefits : (window._studentProgress.favoriteBenefits || []),
             topicDetails: parsed.topicDetails || {},
             theoryDetails: parsed.theoryDetails || { yesNo: {}, choice: {}, wh: {}, wheels: { yn: 0, choice: 0, wh: 0 } },
             stats: parsed.stats || { totalRecordings: 0, totalExams: 0 },
@@ -2139,6 +2146,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         window.saveStudentProgress();
         window.updateTopicSelectDropdowns();
+        if (typeof window.updateBenefitsFavoriteUI === 'function') {
+            window.updateBenefitsFavoriteUI();
+        }
 
         const currentSelect = document.getElementById('practice-topic-select');
         if (currentSelect) {
@@ -2162,11 +2172,15 @@ document.addEventListener('DOMContentLoaded', () => {
     window.confirmResetProgress = () => {
         if (confirm('⚠️ BẠN CÓ CHẮC CHẮN MUỐN XÓA TOÀN BỘ TIẾN ĐỘ HỌC TẬP KHÔNG?\n\nToàn bộ chủ đề đã hoàn thành và số lượt thu âm sẽ được đặt lại về 0 để bạn luyện lại từ đầu. Hãy tải file sao lưu trước nếu bạn muốn lưu lại!')) {
             window._studentProgress.completedTopics = [];
+            window._studentProgress.favoriteBenefits = [];
             window._studentProgress.topicDetails = {};
             window._studentProgress.theoryDetails = { yesNo: {}, choice: {}, wh: {}, wheels: { yn: 0, choice: 0, wh: 0 } };
             window._studentProgress.stats = { totalRecordings: 0, totalExams: 0 };
             window.saveStudentProgress();
             window.updateTopicSelectDropdowns();
+            if (typeof window.updateBenefitsFavoriteUI === 'function') {
+                window.updateBenefitsFavoriteUI();
+            }
 
             const currentSelect = document.getElementById('practice-topic-select');
             if (currentSelect) {
@@ -2181,6 +2195,286 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
         window.loadStudentProgress('Khách', 'B212');
     } catch(e) {}
+
+    // ==========================================================================
+    // FAVORITE BENEFITS & REVIEW SYSTEM
+    // ==========================================================================
+    window._benefitsFilter = 'all'; // 'all' | 'favorites'
+    window._reviewDatasetMode = 'favorites'; // 'favorites' | 'all'
+
+    window.getFavoriteBenefits = () => {
+        if (!window._studentProgress || !Array.isArray(window._studentProgress.favoriteBenefits)) {
+            if (window._studentProgress) window._studentProgress.favoriteBenefits = [];
+            return [];
+        }
+        return window._studentProgress.favoriteBenefits;
+    };
+
+    window.isBenefitFavorite = (en) => {
+        if (!en) return false;
+        const clean = en.trim().toLowerCase();
+        const favs = window.getFavoriteBenefits();
+        return favs.some(item => (typeof item === 'string' ? item : item.en).trim().toLowerCase() === clean);
+    };
+
+    window.toggleBenefitFavorite = (en, vn) => {
+        if (!en) return;
+        const cleanEn = en.trim();
+        const cleanVn = (vn || '').trim();
+        if (!Array.isArray(window._studentProgress.favoriteBenefits)) {
+            window._studentProgress.favoriteBenefits = [];
+        }
+
+        const favs = window._studentProgress.favoriteBenefits;
+        const idx = favs.findIndex(item => (typeof item === 'string' ? item : item.en).trim().toLowerCase() === cleanEn.toLowerCase());
+
+        let isNowFav = false;
+        if (idx === -1) {
+            favs.push({ en: cleanEn, vn: cleanVn });
+            isNowFav = true;
+            window.showProgressToast(`⭐ Đã thêm "${cleanEn}" vào cụm yêu thích trả bài!`, 'fa-solid fa-star', 'warn');
+            if (typeof confetti === 'function') {
+                try {
+                    confetti({
+                        particleCount: 25,
+                        spread: 50,
+                        origin: { y: 0.4 }
+                    });
+                } catch(e) {}
+            }
+        } else {
+            favs.splice(idx, 1);
+            isNowFav = false;
+            window.showProgressToast(`Đã bỏ chọn cụm "${cleanEn}".`, 'fa-solid fa-rotate-left', 'warn');
+        }
+
+        window.saveStudentProgress();
+        window.updateBenefitsFavoriteUI();
+
+        // Refresh topic practice suggestions if currently on practice topic tab
+        const currentSel = document.getElementById('practice-topic-select');
+        if (currentSel && typeof renderPracticeTopic === 'function') {
+            const curTopicId = parseInt(currentSel.value);
+            if (curTopicId) renderPracticeTopic(curTopicId);
+        }
+    };
+
+    window.setBenefitsFilter = (mode) => {
+        window._benefitsFilter = mode;
+        const btnAll = document.getElementById('btn-filter-all');
+        const btnFav = document.getElementById('btn-filter-fav');
+        if (btnAll) btnAll.classList.toggle('active', mode === 'all');
+        if (btnFav) btnFav.classList.toggle('active', mode === 'favorites');
+        window.updateBenefitsFavoriteUI();
+    };
+
+    window.setReviewDatasetMode = (mode) => {
+        window._reviewDatasetMode = mode;
+        const btnFav = document.getElementById('btn-dataset-fav');
+        const btnAll = document.getElementById('btn-dataset-all');
+        if (btnFav) btnFav.classList.toggle('active', mode === 'favorites');
+        if (btnAll) btnAll.classList.toggle('active', mode === 'all');
+        const count = mode === 'favorites' ? window.getFavoriteBenefits().length : (window._totalBenefitsCount || 84);
+        window.showProgressToast(`Đã chọn dữ liệu trả bài: ${mode === 'favorites' ? `Các cụm yêu thích (${count} cụm)` : 'Tất cả 84 cụm'}`, 'fa-solid fa-sliders');
+    };
+
+    window.scrollToBenefitsReview = () => {
+        const sec = document.getElementById('review-section');
+        if (sec) {
+            sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
+
+    window.updateBenefitsFavoriteUI = () => {
+        const favs = window.getFavoriteBenefits();
+        const favCount = favs.length;
+
+        // Update toolbar counters
+        const favCountEl = document.getElementById('fav-benefits-count');
+        const btnFavCountEl = document.getElementById('btn-count-fav');
+        const reviewFavCountEl = document.getElementById('review-dataset-fav-count');
+        if (favCountEl) favCountEl.textContent = favCount;
+        if (btnFavCountEl) btnFavCountEl.textContent = favCount;
+        if (reviewFavCountEl) reviewFavCountEl.textContent = favCount;
+
+        // Total count
+        const totalCount = window._totalBenefitsCount || 84;
+        const totalCountEl = document.getElementById('total-benefits-count');
+        const btnCountAllEl = document.getElementById('btn-count-all');
+        if (totalCountEl) totalCountEl.textContent = totalCount;
+        if (btnCountAllEl) btnCountAllEl.textContent = totalCount;
+
+        // Update each benefit card
+        const cards = document.querySelectorAll('#benefits .benefit-card');
+        cards.forEach(card => {
+            const en = card.dataset.en;
+            const isFav = window.isBenefitFavorite(en);
+            
+            card.classList.toggle('is-favorite', isFav);
+            
+            const starIcon = card.querySelector('.benefit-star-btn i');
+            if (starIcon) {
+                if (isFav) {
+                    starIcon.className = 'fa-solid fa-star';
+                } else {
+                    starIcon.className = 'fa-regular fa-star';
+                }
+            }
+
+            // Filtering visibility
+            if (window._benefitsFilter === 'favorites') {
+                if (isFav) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            } else {
+                card.style.display = 'flex';
+            }
+        });
+
+        // Hide category sections in favorites mode if no items are visible
+        const grids = document.querySelectorAll('#benefits div[style*="display:grid"], #benefits div[style*="display: grid"]');
+        grids.forEach(grid => {
+            const heading = grid.previousElementSibling;
+            if (window._benefitsFilter === 'favorites') {
+                const visibleInGrid = Array.from(grid.children).some(c => c.style.display !== 'none');
+                grid.style.display = visibleInGrid ? 'grid' : 'none';
+                if (heading && heading.tagName && heading.tagName.toLowerCase() === 'h3') {
+                    heading.style.display = visibleInGrid ? 'inline-block' : 'none';
+                }
+            } else {
+                grid.style.display = 'grid';
+                if (heading && heading.tagName && heading.tagName.toLowerCase() === 'h3') {
+                    heading.style.display = 'inline-block';
+                }
+            }
+        });
+
+        // Empty state in favorites filter
+        const emptyMsg = document.getElementById('benefits-empty-fav-message');
+        if (emptyMsg) {
+            emptyMsg.style.display = (window._benefitsFilter === 'favorites' && favCount === 0) ? 'block' : 'none';
+        }
+
+        // Auto switch review dataset mode button state
+        const btnFav = document.getElementById('btn-dataset-fav');
+        const btnAll = document.getElementById('btn-dataset-all');
+        if (btnFav && btnAll) {
+            btnFav.classList.toggle('active', window._reviewDatasetMode === 'favorites');
+            btnAll.classList.toggle('active', window._reviewDatasetMode === 'all');
+        }
+    };
+
+    window.initBenefitsFavoriteCards = () => {
+        const benefitsTab = document.getElementById('benefits');
+        if (!benefitsTab) return;
+
+        const grids = benefitsTab.querySelectorAll('div[style*="display:grid"], div[style*="display: grid"]');
+        let totalCards = 0;
+
+        grids.forEach(grid => {
+            Array.from(grid.children).forEach(card => {
+                const strong = card.querySelector('strong');
+                const speakerBtn = card.querySelector('.icon-btn');
+                if (!strong || !speakerBtn) return;
+
+                totalCards++;
+                const en = strong.textContent.trim();
+                const vnEl = strong.nextElementSibling || card.querySelector('div:not(:has(strong))') || card.querySelector('div > div');
+                const vn = vnEl ? vnEl.textContent.trim() : '';
+
+                card.classList.add('benefit-card');
+                card.dataset.en = en;
+                card.dataset.vn = vn;
+
+                // Stop propagation on speaker button so clicking speaker only plays audio
+                speakerBtn.onclick = (e) => {
+                    e.stopPropagation();
+                    window.speakText(en);
+                };
+
+                // Add star button and selected badge if not present
+                if (!card.querySelector('.benefit-star-btn')) {
+                    const actionsDiv = document.createElement('div');
+                    actionsDiv.className = 'benefit-card-actions';
+
+                    const starBtn = document.createElement('button');
+                    starBtn.type = 'button';
+                    starBtn.className = 'benefit-star-btn';
+                    starBtn.title = 'Chọn làm cụm yêu thích để trả bài';
+                    starBtn.innerHTML = '<i class="fa-regular fa-star"></i>';
+                    starBtn.onclick = (e) => {
+                        e.stopPropagation();
+                        window.toggleBenefitFavorite(en, vn);
+                    };
+
+                    speakerBtn.parentNode.insertBefore(actionsDiv, speakerBtn);
+                    actionsDiv.appendChild(starBtn);
+                    actionsDiv.appendChild(speakerBtn);
+
+                    const contentDiv = card.firstElementChild;
+                    if (contentDiv && contentDiv !== actionsDiv) {
+                        contentDiv.classList.add('benefit-card-content');
+                        
+                        const tag = document.createElement('span');
+                        tag.className = 'benefit-fav-tag';
+                        tag.innerHTML = '<i class="fa-solid fa-circle-check"></i> Đã chọn để trả bài';
+                        contentDiv.appendChild(tag);
+                    }
+
+                    // Card click toggles favorite
+                    card.onclick = (e) => {
+                        window.toggleBenefitFavorite(en, vn);
+                    };
+                }
+            });
+        });
+
+        window._totalBenefitsCount = totalCards || 84;
+        window.updateBenefitsFavoriteUI();
+    };
+
+    window.getFavoriteBenefitsSuggestionHTML = () => {
+        const favs = window.getFavoriteBenefits();
+        if (!favs || favs.length === 0) {
+            return `
+                <div style="margin-top: 0.75rem; background: rgba(245, 158, 11, 0.06); border: 1.5px dashed rgba(245, 158, 11, 0.4); border-radius: 12px; padding: 0.85rem 1rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.6rem;">
+                    <div style="font-size: 0.88rem; color: var(--text-main); line-height: 1.5;">
+                        <strong style="color: #d97706;"><i class="fa-solid fa-star"></i> Cụm từ yêu thích của bạn:</strong> 
+                        <span style="color: var(--text-muted);">Bạn chưa chọn cụm yêu thích nào trong Bảng Lợi Ích.</span>
+                    </div>
+                    <button type="button" onclick="switchTab('benefits')" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white; border: none; padding: 0.4rem 0.85rem; border-radius: 8px; font-weight: 700; font-size: 0.82rem; cursor: pointer; display: inline-flex; align-items: center; gap: 0.35rem; box-shadow: 0 2px 6px rgba(245, 158, 11, 0.3);">
+                        <i class="fa-solid fa-star"></i> Chọn cụm yêu thích ngay ➜
+                    </button>
+                </div>
+            `;
+        }
+
+        const pillsHtml = favs.map(it => `
+            <div class="fav-benefit-pill" onclick="speakText('${it.en.replace(/'/g, "\\'")}')" title="Nhấn để nghe phát âm" style="cursor: pointer; background: var(--bg-card); border: 1.5px solid rgba(245, 158, 11, 0.45); border-radius: 8px; padding: 0.4rem 0.75rem; display: inline-flex; align-items: center; gap: 0.5rem; transition: transform 0.15s, box-shadow 0.15s; box-shadow: 0 2px 5px rgba(0,0,0,0.04);">
+                <i class="fa-solid fa-volume-high" style="color: #f59e0b; font-size: 0.82rem;"></i>
+                <strong style="color: #d97706; font-size: 0.92rem;">${it.en}</strong>
+                <span style="color: var(--text-muted); font-size: 0.82rem;">(${it.vn})</span>
+            </div>
+        `).join('');
+
+        return `
+            <div style="margin-top: 0.85rem; background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(234, 179, 8, 0.03)); border: 1.5px solid rgba(245, 158, 11, 0.35); border-radius: 12px; padding: 0.95rem 1.15rem;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.65rem; flex-wrap: wrap; gap: 0.4rem;">
+                    <span style="font-weight: 800; color: #b45309; font-size: 0.9rem; display: flex; align-items: center; gap: 0.4rem;">
+                        <i class="fa-solid fa-star" style="color: #f59e0b;"></i> CÁC CỤM TỪ YÊU THÍCH BẠN ĐÃ CHỌN (${favs.length} cụm):
+                    </span>
+                    <button type="button" onclick="switchTab('benefits')" style="background: none; border: none; padding: 0; color: #d97706; font-weight: 700; font-size: 0.82rem; cursor: pointer; text-decoration: underline;">
+                        Thêm / Đổi cụm khác trong Bảng Lợi Ích ➜
+                    </button>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                    ${pillsHtml}
+                </div>
+            </div>
+        `;
+    };
 
     window._timedPracticeState = {};
     window._timedPracticeActiveId = null;
@@ -5768,10 +6062,19 @@ const whShowcase = document.getElementById('wh-showcase');
     let reviewWords = [];
     
     function extractReviewWords(tabId) {
+        if (tabId === 'benefits' && window._reviewDatasetMode === 'favorites') {
+            const favs = window.getFavoriteBenefits();
+            if (favs && favs.length > 0) {
+                return [...favs];
+            } else {
+                window.showProgressToast('⚠️ Bạn chưa chọn cụm từ yêu thích nào! Hệ thống tự động dùng tất cả các cụm.', 'fa-solid fa-circle-exclamation', 'warn');
+                window.setReviewDatasetMode('all');
+            }
+        }
         let currentWords = [];
         const cards = document.querySelectorAll('#' + tabId + ' .icon-btn');
         cards.forEach(btn => {
-            const container = btn.parentElement;
+            const container = btn.closest('.benefit-card') || btn.parentElement.parentElement || btn.parentElement;
             const enEl = container.querySelector('.vocab-en') || container.querySelector('strong');
             const vnEl = container.querySelector('.vocab-vn') || (enEl ? enEl.nextElementSibling : null);
             if (enEl && vnEl) {
@@ -5813,10 +6116,12 @@ const whShowcase = document.getElementById('wh-showcase');
             if (currentIndex >= words.length) {
                 sfx.win();
                 shootConfetti();
+                const isFavMode = tabId === 'benefits' && window._reviewDatasetMode === 'favorites';
+                const successTitle = isFavMode ? `🎉 Xuất sắc! Bạn đã trả bài xong ${words.length} cụm từ yêu thích của mình!` : `Tuyệt vời! Bạn đã ôn xong tất cả các từ.`;
                 container.innerHTML = `
                     <div class="fade-in" style="text-align:center; padding: 2rem;">
                         <i class="fa-solid fa-trophy" style="font-size:4rem; color:#f59e0b; margin-bottom:1rem;"></i>
-                        <h3 style="font-size:1.5rem; margin-bottom:1rem;">Tuyệt vời! Bạn đã ôn xong tất cả các từ.</h3>
+                        <h3 style="font-size:1.5rem; margin-bottom:1rem; color:var(--text-main);">${successTitle}</h3>
                         <button class="btn btn-primary" onclick="startReviewGame('flashcards', '${tabId}')"><i class="fa-solid fa-rotate-right"></i> Ôn tập lại</button>
                     </div>
                 `;
@@ -5861,7 +6166,7 @@ const whShowcase = document.getElementById('wh-showcase');
     }
 
     function initMatchingGame(allWords, container, tabId) {
-        let pool = [...allWords].sort(() => 0.5 - Math.random()).slice(0, 6);
+        let pool = [...allWords].sort(() => 0.5 - Math.random()).slice(0, Math.min(allWords.length, 6));
         let items = [];
         pool.forEach((w, i) => {
             items.push({ id: i, text: w.en, type: 'en', word: w });
@@ -5871,7 +6176,7 @@ const whShowcase = document.getElementById('wh-showcase');
         
         container.innerHTML = `
             <div class="fade-in" style="display:flex; justify-content:space-between; margin-bottom:1.5rem; align-items:center; flex-wrap:wrap; gap:1rem;">
-                <div style="font-weight:bold; color:var(--text-main); font-size:1.1rem;"><i class="fa-solid fa-link" style="color:var(--primary);"></i> Ghép các cặp từ tương ứng</div>
+                <div style="font-weight:bold; color:var(--text-main); font-size:1.1rem;"><i class="fa-solid fa-link" style="color:var(--primary);"></i> Ghép các cặp từ tương ứng (${pool.length} cặp)</div>
                 <button class="btn btn-secondary" onclick="startReviewGame('matching', '${tabId}')" style="padding: 0.5rem 1rem; font-size: 0.9rem;"><i class="fa-solid fa-rotate-right"></i> Bài mới</button>
             </div>
             <div class="matching-grid fade-in" id="match-grid"></div>
@@ -5907,14 +6212,16 @@ const whShowcase = document.getElementById('wh-showcase');
                             selectedItem = null;
                             matchedCount++;
                             animating = false;
-                            if (matchedCount === 6) {
+                            if (matchedCount === pool.length) {
                                 sfx.win();
                                 shootConfetti();
+                                const isFavMode = tabId === 'benefits' && window._reviewDatasetMode === 'favorites';
+                                const successTitle = isFavMode ? `🎉 Xuất sắc! Bạn đã trả bài xong ${pool.length} cặp từ yêu thích của mình!` : `Hoàn thành xuất sắc!`;
                                 setTimeout(() => {
                                     container.innerHTML = `
                                         <div class="fade-in" style="text-align:center; padding: 2rem;">
                                             <i class="fa-solid fa-star" style="font-size:4rem; color:#f59e0b; margin-bottom:1rem;"></i>
-                                            <h3 style="font-size:1.5rem; margin-bottom:1rem;">Hoàn thành xuất sắc!</h3>
+                                            <h3 style="font-size:1.5rem; margin-bottom:1rem; color:var(--text-main);">${successTitle}</h3>
                                             <button class="btn btn-primary" onclick="startReviewGame('matching', '${tabId}')"><i class="fa-solid fa-play"></i> Chơi tiếp</button>
                                         </div>
                                     `;
@@ -5941,7 +6248,7 @@ const whShowcase = document.getElementById('wh-showcase');
     }
 
     function initQuizGame(allWords, container, tabId) {
-        let words = [...allWords].sort(() => 0.5 - Math.random()).slice(0, 10);
+        let words = [...allWords].sort(() => 0.5 - Math.random()).slice(0, Math.min(allWords.length, 10));
         let currentIndex = 0;
         let score = 0;
         
@@ -5949,10 +6256,12 @@ const whShowcase = document.getElementById('wh-showcase');
             if (currentIndex >= words.length) {
                 sfx.win();
                 shootConfetti();
+                const isFavMode = tabId === 'benefits' && window._reviewDatasetMode === 'favorites';
+                const successTitle = isFavMode ? `🎉 Xuất sắc! Bạn đã trả bài xong ${words.length} cụm từ yêu thích của mình!` : `Hoàn thành Quiz!`;
                 container.innerHTML = `
                     <div class="fade-in" style="text-align:center; padding: 2rem;">
                         <i class="fa-solid fa-award" style="font-size:4rem; color:#10b981; margin-bottom:1rem;"></i>
-                        <h3 style="font-size:1.5rem; margin-bottom:0.5rem;">Hoàn thành Quiz!</h3>
+                        <h3 style="font-size:1.5rem; margin-bottom:0.5rem; color:var(--text-main);">${successTitle}</h3>
                         <p style="font-size:1.2rem; margin-bottom:1.5rem;">Bạn đạt <strong style="color:var(--primary); font-size:1.5rem;">${score} / ${words.length}</strong> điểm.</p>
                         <button class="btn btn-primary" onclick="startReviewGame('quiz', '${tabId}')"><i class="fa-solid fa-rotate-right"></i> Làm lại</button>
                     </div>
@@ -6015,7 +6324,7 @@ const whShowcase = document.getElementById('wh-showcase');
     }
 
     function initSpellingGame(allWords, container, tabId) {
-        let words = [...allWords].sort(() => 0.5 - Math.random()).slice(0, 10);
+        let words = [...allWords].sort(() => 0.5 - Math.random()).slice(0, Math.min(allWords.length, 10));
         let currentIndex = 0;
         let score = 0;
         
@@ -6023,10 +6332,12 @@ const whShowcase = document.getElementById('wh-showcase');
             if (currentIndex >= words.length) {
                 sfx.win();
                 shootConfetti();
+                const isFavMode = tabId === 'benefits' && window._reviewDatasetMode === 'favorites';
+                const successTitle = isFavMode ? `🎉 Xuất sắc! Bạn đã trả bài xong ${words.length} cụm từ yêu thích của mình!` : `Hoàn thành Thử Thách Gõ Từ!`;
                 container.innerHTML = `
                     <div class="fade-in" style="text-align:center; padding: 2rem;">
                         <i class="fa-solid fa-medal" style="font-size:4rem; color:#ec4899; margin-bottom:1rem;"></i>
-                        <h3 style="font-size:1.5rem; margin-bottom:0.5rem;">Hoàn thành Thử Thách Gõ Từ!</h3>
+                        <h3 style="font-size:1.5rem; margin-bottom:0.5rem; color:var(--text-main);">${successTitle}</h3>
                         <p style="font-size:1.2rem; margin-bottom:1.5rem;">Bạn gõ đúng <strong style="color:var(--primary); font-size:1.5rem;">${score} / ${words.length}</strong> từ.</p>
                         <button class="btn btn-primary" onclick="startReviewGame('spelling', '${tabId}')"><i class="fa-solid fa-rotate-right"></i> Làm lại</button>
                     </div>
@@ -32078,6 +32389,9 @@ function renderPracticeTopic(topicId) {
         let vocabHtml = '';
         q.vocabGroups.forEach(vg => {
             if (vg.type === 'note' || vg.note) {
+                const isBenefitNote = ((vg.title && (vg.title.toLowerCase().includes('lợi ích') || vg.title.toLowerCase().includes('kho lợi ích'))) || 
+                                       (vg.note && (vg.note.toLowerCase().includes('bảng lợi ích') || vg.note.toLowerCase().includes('kho lợi ích'))));
+
                 vocabHtml += `
                     <div style="margin-bottom: 1.25rem; background: rgba(67, 97, 238, 0.05); border-left: 4px solid var(--primary); padding: 0.85rem 1.15rem; border-radius: 12px; border: 1px solid rgba(67, 97, 238, 0.15); border-left-width: 4px;">
                         <div style="font-weight: 800; font-size: 0.95rem; color: var(--primary); margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.4rem;">
@@ -32086,6 +32400,7 @@ function renderPracticeTopic(topicId) {
                         <div style="font-size: 0.95rem; line-height: 1.65; color: var(--text-main);">
                             ${vg.note}
                         </div>
+                        ${isBenefitNote && typeof window.getFavoriteBenefitsSuggestionHTML === 'function' ? window.getFavoriteBenefitsSuggestionHTML() : ''}
                     </div>
                 `;
             } else if (vg.items && vg.items.length > 0) {
@@ -33009,14 +33324,16 @@ window.resetFullTopicRecording = () => {
     if (wave) wave.classList.remove('active');
 };
 
-// Auto-initialize topic 1 and permissions on load
+// Auto-initialize topic 1, permissions, and benefits favorites on load
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
         if (typeof updateTopicSelectDropdowns === 'function') updateTopicSelectDropdowns();
         if (typeof renderPracticeTopic === 'function') renderPracticeTopic(1);
+        if (typeof initBenefitsFavoriteCards === 'function') initBenefitsFavoriteCards();
     });
 } else {
     if (typeof updateTopicSelectDropdowns === 'function') updateTopicSelectDropdowns();
     if (typeof renderPracticeTopic === 'function') renderPracticeTopic(1);
+    if (typeof initBenefitsFavoriteCards === 'function') initBenefitsFavoriteCards();
 }
 
