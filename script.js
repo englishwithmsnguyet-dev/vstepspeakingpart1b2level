@@ -680,7 +680,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
         "title": "2. Do you often [hoạt động 1 – Vo] while [hoạt động 2 – Ving]?",
-        "formula": "<div style='margin-bottom: 8px;'><strong>- Cách 1 (Trả lời NO):</strong> → Not really. I don't often <strong>[hoạt động 1 – Vo]</strong> while <strong>[hoạt động 2 – V-ing]</strong> because I find it hard to focus. Instead, I prefer to focus on one task at a time to <strong>[lợi ích]</strong>.</div><div><strong>- Cách 2 (Trả lời YES):</strong> → Yes, I sometimes do. I often <strong>[hoạt động 1 – Vo]</strong> while <strong>[hoạt động 2 – V-ing]</strong> because it makes the task more <strong>[tính từ mô tả]</strong>. It allows me to <strong>[lợi ích 1]</strong> and <strong>[lợi ích 2]</strong>.</div>",
+        "formula": "<div style='margin-bottom: 8px;'><strong>- Cách 1 (Trả lời NO):</strong> → Not really. I don't often <strong>[hoạt động 1 – Vo]</strong> while <strong>[hoạt động 2 – V-ing]</strong> because I find it hard to focus. Instead, I prefer to focus on one task at a time to <strong>[lợi ích]</strong>.</div><div><strong>- Cách 2 (Trả lời YES):</strong> → Yes, I sometimes do. I often <strong>[hoạt động 1 – Vo]</strong> while <strong>[hoạt động 2 – V-ing]</strong> because it doesn't affect my concentration. Instead, it makes the task more <strong>[tính từ mô tả]</strong>.</div>",
         "examples": [
             {
                 "q": "Do you often <span class='sub-hl'>listen to music</span> while <span class='sub-hl'>doing homework</span>?",
@@ -714,8 +714,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         ],
         "exQ": "Do you often <span class='sub-hl'>listen to music</span> while <span class='sub-hl'>doing your homework</span>?",
-        "exA": "Not really. I don't often listen to music while doing my homework because it's hard for me to focus. I prefer to do one thing at a time to complete it more effectively. OR Yes, I sometimes do. I often listen to soft acoustic music while doing my homework because it makes studying more enjoyable. It allows me to reduce stress and stay focused.",
-        "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Trả lời NO):</div>→ Not really. I don't often <span class=\"sub-hl\">listen to music</span> while <span class=\"sub-hl\">doing my homework</span> because it's hard for me to focus. I prefer to <span class=\"sub-hl\">do one thing at a time</span> to <span class=\"sub-hl\">complete it more effectively</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Trả lời YES):</div>→ Yes, I sometimes do. I often <span class=\"sub-hl\">listen to soft acoustic music</span> while <span class=\"sub-hl\">doing my homework</span> because it makes studying more <span class=\"sub-hl\">enjoyable</span>. It allows me to <span class=\"sub-hl\">reduce stress</span> and <span class=\"sub-hl\">stay focused</span>.</div>",
+        "exA": "Not really. I don't often listen to music while doing my homework because it's hard for me to focus. I prefer to do one thing at a time to complete it more effectively. OR Yes, I sometimes do. I often listen to soft acoustic music while doing my homework because it doesn't affect my concentration. Instead, it makes the task more enjoyable.",
+        "exAFormatted": "<div style=\"margin-bottom: 8px;\"><div style=\"color:#2563eb; font-weight:bold; margin-bottom:4px;\">🎯 Cách 1 (Trả lời NO):</div>→ Not really. I don't often <span class=\"sub-hl\">listen to music</span> while <span class=\"sub-hl\">doing my homework</span> because it's hard for me to focus. I prefer to <span class=\"sub-hl\">do one thing at a time</span> to <span class=\"sub-hl\">complete it more effectively</span>.</div><div><div style=\"color:#16a34a; font-weight:bold; margin-bottom:4px;\">🎯 Cách 2 (Trả lời YES):</div>→ Yes, I sometimes do. I often <span class=\"sub-hl\">listen to soft acoustic music</span> while <span class=\"sub-hl\">doing my homework</span> because it doesn't affect my concentration. Instead, it makes the task more <span class=\"sub-hl\">enjoyable</span>.</div>",
         "vocab": [
             {
                 "type": "activity",
@@ -792,6 +792,36 @@ document.addEventListener('DOMContentLoaded', () => {
                         "vn": "tiếp thu thông tin tốt hơn"
                     }
                 ]
+            },
+            {
+                "type": "adj",
+                "title": "Tính từ mô tả (Cách 2):",
+                "items": [
+                    {
+                        "en": "enjoyable",
+                        "vn": "thú vị, thư thái"
+                    },
+                    {
+                        "en": "relaxing",
+                        "vn": "thư giãn"
+                    },
+                    {
+                        "en": "interesting",
+                        "vn": "thú vị, cuốn hút"
+                    },
+                    {
+                        "en": "productive",
+                        "vn": "hiệu quả"
+                    },
+                    {
+                        "en": "exciting",
+                        "vn": "hào hứng"
+                    },
+                    {
+                        "en": "fun and pleasant",
+                        "vn": "vui vẻ và dễ chịu"
+                    }
+                ]
             }
         ],
         "samples": [
@@ -802,8 +832,8 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             {
                 "label": "Cách 2 (Trả lời YES)",
-                "text": "Yes, I sometimes do. I often listen to soft acoustic music while doing my homework because it makes studying more enjoyable. It allows me to reduce stress and stay focused.",
-                "formatted": "→ Yes, I sometimes do. I often <span class=\"sub-hl\">listen to soft acoustic music</span> while <span class=\"sub-hl\">doing my homework</span> because it makes studying more <span class=\"sub-hl\">enjoyable</span>. It allows me to <span class=\"sub-hl\">reduce stress</span> and <span class=\"sub-hl\">stay focused</span>."
+                "text": "Yes, I sometimes do. I often listen to soft acoustic music while doing my homework because it doesn't affect my concentration. Instead, it makes the task more enjoyable.",
+                "formatted": "→ Yes, I sometimes do. I often <span class=\"sub-hl\">listen to soft acoustic music</span> while <span class=\"sub-hl\">doing my homework</span> because it doesn't affect my concentration. Instead, it makes the task more <span class=\"sub-hl\">enjoyable</span>."
             }
         ]
     },
@@ -1461,6 +1491,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
     }
 ];
+
 
 
 
