@@ -353,6 +353,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (typeof window.applyClassPermissions === 'function') {
             window.applyClassPermissions();
         }
+        if (typeof window.loadStudentProgress === 'function') {
+            window.loadStudentProgress(state.studentName, state.studentClass);
+        }
     };
 
     // Luôn luôn hiển thị modal đăng nhập mỗi khi tải lại trang / refresh
@@ -1638,6 +1641,532 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================================
     // THEORY & RANDOM PRACTICE - 25S TIMED AUDIO RECORDER ENGINE
     // ==========================================================================
+    
+    // ==========================================================================
+    // LEARNING PROGRESS TRACKER & BACKUP/RESTORE SYSTEM
+    // ==========================================================================
+    window._studentProgress = {
+        version: 1,
+        studentName: 'Khách',
+        studentClass: 'B212',
+        createdAt: new Date().toISOString(),
+        lastUpdated: new Date().toISOString(),
+        completedTopics: [],
+        topicDetails: {},
+        theoryDetails: {
+            yesNo: {},
+            choice: {},
+            wh: {},
+            wheels: { yn: 0, choice: 0, wh: 0 }
+        },
+        stats: {
+            totalRecordings: 0,
+            totalExams: 0
+        }
+    };
+
+    window.showProgressToast = (msg, icon = 'fa-solid fa-circle-check', type = 'success') => {
+        let toast = document.getElementById('vstep-progress-toast');
+        if (!toast) {
+            toast = document.createElement('div');
+            toast.id = 'vstep-progress-toast';
+            toast.className = 'progress-toast';
+            document.body.appendChild(toast);
+        }
+        const color = type === 'error' ? '#ef4444' : (type === 'warn' ? '#f59e0b' : '#10b981');
+        toast.style.borderLeftColor = color;
+        toast.innerHTML = `<i class="${icon}" style="color: ${color}; font-size: 1.25rem;"></i> <span>${msg}</span>`;
+        toast.style.display = 'flex';
+
+        if (window._toastTimeout) clearTimeout(window._toastTimeout);
+        window._toastTimeout = setTimeout(() => {
+            if (toast) toast.style.display = 'none';
+        }, 3400);
+    };
+
+    window.getProgressStorageKey = (name = null) => {
+        const student = name || (state.studentName || 'Khách');
+        const norm = (student || '').trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]/g, '_');
+        return `vstep_progress_${norm}`;
+    };
+
+    window.saveStudentProgress = () => {
+        try {
+            window._studentProgress.lastUpdated = new Date().toISOString();
+            window._studentProgress.studentName = state.studentName || 'Khách';
+            window._studentProgress.studentClass = state.studentClass || 'B212';
+            
+            const key = window.getProgressStorageKey();
+            localStorage.setItem(key, JSON.stringify(window._studentProgress));
+            localStorage.setItem('vstep_progress_latest_key', key);
+            
+            window.updateProgressUI();
+        } catch (e) {
+            console.warn('Could not save progress to localStorage:', e);
+        }
+    };
+
+    window.loadStudentProgress = (studentName, studentClass) => {
+        try {
+            const key = window.getProgressStorageKey(studentName);
+            const saved = localStorage.getItem(key);
+            if (saved) {
+                const parsed = JSON.parse(saved);
+                if (parsed && typeof parsed === 'object') {
+                    window._studentProgress = {
+                        ...window._studentProgress,
+                        ...parsed,
+                        studentName: studentName || parsed.studentName,
+                        studentClass: studentClass || parsed.studentClass,
+                        completedTopics: Array.isArray(parsed.completedTopics) ? parsed.completedTopics : [],
+                        topicDetails: parsed.topicDetails || {},
+                        theoryDetails: parsed.theoryDetails || { yesNo: {}, choice: {}, wh: {}, wheels: { yn: 0, choice: 0, wh: 0 } },
+                        stats: parsed.stats || { totalRecordings: 0, totalExams: 0 }
+                    };
+                }
+            } else {
+                window._studentProgress.studentName = studentName || 'Khách';
+                window._studentProgress.studentClass = studentClass || 'B212';
+                window._studentProgress.createdAt = new Date().toISOString();
+                window._studentProgress.completedTopics = [];
+                window._studentProgress.topicDetails = {};
+            }
+        } catch (e) {
+            console.warn('Could not load progress from localStorage:', e);
+        }
+        window.updateProgressUI();
+    };
+
+    window.isTopicCompleted = (topicId) => {
+        const tid = parseInt(topicId);
+        return window._studentProgress && Array.isArray(window._studentProgress.completedTopics) && window._studentProgress.completedTopics.includes(tid);
+    };
+
+    window.toggleTopicCompleted = (topicId, silent = false) => {
+        const tid = parseInt(topicId);
+        if (!tid) return;
+        if (!Array.isArray(window._studentProgress.completedTopics)) {
+            window._studentProgress.completedTopics = [];
+        }
+
+        const idx = window._studentProgress.completedTopics.indexOf(tid);
+        let isNowCompleted = false;
+
+        if (idx === -1) {
+            window._studentProgress.completedTopics.push(tid);
+            window._studentProgress.completedTopics.sort((a, b) => a - b);
+            if (!window._studentProgress.topicDetails[tid]) {
+                window._studentProgress.topicDetails[tid] = {};
+            }
+            window._studentProgress.topicDetails[tid].completed = true;
+            window._studentProgress.topicDetails[tid].completedAt = new Date().toISOString();
+            isNowCompleted = true;
+
+            if (!silent) {
+                if (typeof confetti === 'function') {
+                    try {
+                        confetti({
+                            particleCount: 70,
+                            spread: 80,
+                            origin: { y: 0.35 }
+                        });
+                    } catch (e) {}
+                }
+                window.showProgressToast(`🎉 Chúc mừng! Bạn đã hoàn thành Chủ đề ${String(tid).padStart(2, '0')}!`, 'fa-solid fa-circle-check');
+            }
+        } else {
+            window._studentProgress.completedTopics.splice(idx, 1);
+            if (window._studentProgress.topicDetails[tid]) {
+                window._studentProgress.topicDetails[tid].completed = false;
+            }
+            isNowCompleted = false;
+
+            if (!silent) {
+                window.showProgressToast(`Đã bỏ đánh dấu hoàn thành Chủ đề ${String(tid).padStart(2, '0')}.`, 'fa-solid fa-rotate-left', 'warn');
+            }
+        }
+
+        window.saveStudentProgress();
+        window.updateTopicCompleteButton(tid);
+        window.updateTopicSelectDropdowns();
+        window.renderModalTopicsGrid();
+    };
+
+    window.updateTopicCompleteButton = (topicId) => {
+        const btn = document.getElementById(`btn-toggle-topic-${topicId}`);
+        if (!btn) return;
+        const isComp = window.isTopicCompleted(topicId);
+        if (isComp) {
+            btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+            btn.style.color = '#ffffff';
+            btn.style.boxShadow = '0 4px 12px rgba(16, 185, 129, 0.35)';
+            btn.innerHTML = '<i class="fa-solid fa-circle-check"></i> ĐÃ HOÀN THÀNH ✅';
+        } else {
+            btn.style.background = 'rgba(16, 185, 129, 0.12)';
+            btn.style.color = '#059669';
+            btn.style.boxShadow = 'none';
+            btn.innerHTML = '<i class="fa-regular fa-circle-check"></i> Đánh dấu đã hoàn thành';
+        }
+    };
+
+    window.recordQuestionPracticed = (topicId, qNum) => {
+        const tid = parseInt(topicId);
+        if (!tid) return;
+
+        if (!window._studentProgress.topicDetails[tid]) {
+            window._studentProgress.topicDetails[tid] = { questions: {} };
+        }
+        if (!window._studentProgress.topicDetails[tid].questions) {
+            window._studentProgress.topicDetails[tid].questions = {};
+        }
+
+        const qObj = window._studentProgress.topicDetails[tid].questions[qNum] || { count: 0 };
+        qObj.count = (qObj.count || 0) + 1;
+        qObj.practiced = true;
+        qObj.lastPracticed = new Date().toISOString();
+        window._studentProgress.topicDetails[tid].questions[qNum] = qObj;
+
+        window._studentProgress.stats.totalRecordings = (window._studentProgress.stats.totalRecordings || 0) + 1;
+
+        // Auto mark topic completed if questions 1, 2, 3 all practiced at least once
+        const qs = window._studentProgress.topicDetails[tid].questions;
+        if (qs[1] && qs[1].practiced && qs[2] && qs[2].practiced && qs[3] && qs[3].practiced) {
+            if (!window.isTopicCompleted(tid)) {
+                window.toggleTopicCompleted(tid, false);
+                return;
+            }
+        }
+
+        window.saveStudentProgress();
+    };
+
+    window.recordExamPracticed = (topic1Id, topic2Id = null) => {
+        const t1 = parseInt(topic1Id);
+        if (t1) {
+            if (!window._studentProgress.topicDetails[t1]) window._studentProgress.topicDetails[t1] = {};
+            window._studentProgress.topicDetails[t1].singleExams = (window._studentProgress.topicDetails[t1].singleExams || 0) + 1;
+            if (!window.isTopicCompleted(t1)) window.toggleTopicCompleted(t1, true);
+        }
+        if (topic2Id) {
+            const t2 = parseInt(topic2Id);
+            if (t2) {
+                if (!window._studentProgress.topicDetails[t2]) window._studentProgress.topicDetails[t2] = {};
+                window._studentProgress.topicDetails[t2].fullExams = (window._studentProgress.topicDetails[t2].fullExams || 0) + 1;
+                if (!window.isTopicCompleted(t2)) window.toggleTopicCompleted(t2, true);
+            }
+        }
+
+        window._studentProgress.stats.totalExams = (window._studentProgress.stats.totalExams || 0) + 1;
+        window._studentProgress.stats.totalRecordings = (window._studentProgress.stats.totalRecordings || 0) + 1;
+        window.saveStudentProgress();
+    };
+
+    window.recordTheoryPracticed = (id, prefix) => {
+        if (!window._studentProgress.theoryDetails) {
+            window._studentProgress.theoryDetails = { yesNo: {}, choice: {}, wh: {}, wheels: { yn: 0, choice: 0, wh: 0 } };
+        }
+        if (prefix === 'wheel') {
+            const cur = window._studentProgress.theoryDetails.wheels[id] || 0;
+            window._studentProgress.theoryDetails.wheels[id] = cur + 1;
+        } else {
+            window._studentProgress.theoryDetails[id] = (window._studentProgress.theoryDetails[id] || 0) + 1;
+        }
+        window._studentProgress.stats.totalRecordings = (window._studentProgress.stats.totalRecordings || 0) + 1;
+        window.saveStudentProgress();
+    };
+
+    window.updateProgressUI = () => {
+        const totalCompleted = (window._studentProgress.completedTopics || []).length;
+        const percent = Math.round((totalCompleted / 60) * 100);
+
+        // Header pill
+        const headerCount = document.getElementById('header-progress-count');
+        if (headerCount) headerCount.textContent = `${totalCompleted}/60`;
+
+        // Sidebar widget
+        const sidePercent = document.getElementById('sidebar-progress-percent');
+        const sideBar = document.getElementById('sidebar-progress-bar');
+        const sideTopics = document.getElementById('sidebar-progress-topics');
+        if (sidePercent) sidePercent.textContent = `${percent}%`;
+        if (sideBar) sideBar.style.width = `${percent}%`;
+        if (sideTopics) sideTopics.textContent = `${totalCompleted} / 60 chủ đề`;
+
+        // Modal stats
+        const modalName = document.getElementById('progress-modal-student-name');
+        const modalClass = document.getElementById('progress-modal-student-class');
+        const modalUpdated = document.getElementById('progress-modal-last-updated');
+        if (modalName) modalName.textContent = window._studentProgress.studentName || 'Khách';
+        if (modalClass) modalClass.textContent = window._studentProgress.studentClass || 'B212';
+        if (modalUpdated) {
+            try {
+                const d = new Date(window._studentProgress.lastUpdated);
+                modalUpdated.textContent = d.toLocaleTimeString('vi-VN') + ' ' + d.toLocaleDateString('vi-VN');
+            } catch(e) {
+                modalUpdated.textContent = 'Vừa xong';
+            }
+        }
+
+        const statComp = document.getElementById('stat-completed-topics');
+        const statPercent = document.getElementById('stat-completed-percent');
+        const statRec = document.getElementById('stat-total-recordings');
+        const statEx = document.getElementById('stat-mock-exams');
+        const statRank = document.getElementById('stat-student-rank');
+        const statLvl = document.getElementById('stat-student-level');
+
+        if (statComp) statComp.textContent = `${totalCompleted} / 60`;
+        if (statPercent) statPercent.textContent = `${percent}% giáo trình`;
+        if (statRec) statRec.textContent = window._studentProgress.stats.totalRecordings || 0;
+        if (statEx) statEx.textContent = window._studentProgress.stats.totalExams || 0;
+
+        let rankTitle = '🌱 Khởi động';
+        let rankDesc = 'Dưới 15 chủ đề';
+        if (totalCompleted >= 55) {
+            rankTitle = '👑 Bậc Thầy VSTEP B2';
+            rankDesc = 'Xuất sắc! Đã sẵn sàng thi thật';
+        } else if (totalCompleted >= 40) {
+            rankTitle = '🏆 Chuyên gia B2';
+            rankDesc = 'Kiến thức vững chắc';
+        } else if (totalCompleted >= 25) {
+            rankTitle = '⚡ Bứt phá';
+            rankDesc = 'Tiến độ học tập rất tốt';
+        } else if (totalCompleted >= 10) {
+            rankTitle = '🔥 Tăng tốc';
+            rankDesc = 'Đang duy trì thói quen tốt';
+        }
+        if (statRank) statRank.textContent = rankTitle;
+        if (statLvl) statLvl.textContent = rankDesc;
+
+        // Modal progress bar
+        const modalBar = document.getElementById('modal-progress-bar-fill');
+        const modalBarTxt = document.getElementById('modal-bar-percent');
+        if (modalBar) modalBar.style.width = `${percent}%`;
+        if (modalBarTxt) modalBarTxt.textContent = `${percent}%`;
+
+        window.renderModalTopicsGrid();
+    };
+
+    window.renderModalTopicsGrid = () => {
+        const grid = document.getElementById('modal-topics-grid');
+        if (!grid) return;
+        
+        let html = '';
+        for (let i = 1; i <= 60; i++) {
+            const isComp = window.isTopicCompleted(i);
+            const topicDetail = window._studentProgress.topicDetails && window._studentProgress.topicDetails[i];
+            const hasPractice = topicDetail && topicDetail.questions && Object.keys(topicDetail.questions).length > 0;
+            
+            let statusClass = '';
+            let icon = '';
+            if (isComp) {
+                statusClass = 'completed';
+                icon = '<i class="fa-solid fa-check"></i>';
+            } else if (hasPractice) {
+                statusClass = 'in-progress';
+                icon = '<i class="fa-solid fa-spinner"></i>';
+            } else {
+                icon = `<span style="opacity:0.6;">T${String(i).padStart(2, '0')}</span>`;
+            }
+
+            html += `
+                <div class="progress-grid-btn ${statusClass}" onclick="jumpToTopicFromModal(${i})" title="Topic ${i}: ${isComp ? 'Đã hoàn thành' : (hasPractice ? 'Đang luyện tập' : 'Chưa luyện')}">
+                    <span>${i}</span>
+                    <span style="font-size:0.65rem; margin-top:2px;">${icon}</span>
+                </div>
+            `;
+        }
+        grid.innerHTML = html;
+    };
+
+    window.jumpToTopicFromModal = (topicId) => {
+        closeProgressBackupModal();
+        const navPractice = document.querySelector('[data-target="practice-topics"]');
+        if (navPractice) navPractice.click();
+        setTimeout(() => {
+            if (typeof renderPracticeTopic === 'function') {
+                renderPracticeTopic(topicId);
+            }
+        }, 150);
+    };
+
+    window.openProgressBackupModal = () => {
+        window.updateProgressUI();
+        const overlay = document.getElementById('progress-backup-overlay');
+        if (overlay) overlay.style.display = 'flex';
+    };
+
+    window.closeProgressBackupModal = () => {
+        const overlay = document.getElementById('progress-backup-overlay');
+        if (overlay) overlay.style.display = 'none';
+    };
+
+    window.exportProgressJSON = () => {
+        try {
+            window._studentProgress.lastExported = new Date().toISOString();
+            const dataStr = JSON.stringify(window._studentProgress, null, 2);
+            const blob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            
+            const student = (state.studentName || 'HocVien').trim().replace(/\s+/g, '_');
+            const now = new Date();
+            const dateStr = `${now.getFullYear()}${String(now.getMonth()+1).padStart(2,'0')}${String(now.getDate()).padStart(2,'0')}_${String(now.getHours()).padStart(2,'0')}${String(now.getMinutes()).padStart(2,'0')}`;
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `VSTEP_Speaking_B2_TienDo_${student}_${dateStr}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            window.showProgressToast('✅ Đã tải file sao lưu thành công! Hãy lưu file vào Google Drive hoặc Zalo nhé!', 'fa-solid fa-file-arrow-down');
+        } catch (e) {
+            console.error('Export progress error:', e);
+            alert('⚠️ Có lỗi xảy ra khi tạo file sao lưu: ' + e.message);
+        }
+    };
+
+    window.copyProgressCode = () => {
+        try {
+            const dataStr = JSON.stringify(window._studentProgress);
+            const b64 = btoa(unescape(encodeURIComponent(dataStr)));
+            const fullCode = `VSTEP_B2_BACKUP::${b64}`;
+            
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(fullCode).then(() => {
+                    window.showProgressToast('📋 Đã sao chép mã sao lưu vào bộ nhớ tạm!', 'fa-solid fa-copy');
+                }).catch(() => {
+                    prompt('Vui lòng sao chép mã sao lưu này:', fullCode);
+                });
+            } else {
+                prompt('Vui lòng sao chép mã sao lưu này:', fullCode);
+            }
+        } catch (e) {
+            console.error('Copy progress code error:', e);
+            alert('⚠️ Có lỗi xảy ra khi tạo mã sao lưu: ' + e.message);
+        }
+    };
+
+    window.togglePasteCodeArea = () => {
+        const area = document.getElementById('paste-code-section');
+        if (area) {
+            area.style.display = area.style.display === 'none' ? 'block' : 'none';
+            if (area.style.display === 'block') {
+                const txt = document.getElementById('progress-code-textarea');
+                if (txt) txt.focus();
+            }
+        }
+    };
+
+    window.handleProgressFileSelect = (event) => {
+        const file = event.target.files && event.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            try {
+                const content = e.target.result;
+                const parsed = JSON.parse(content);
+                window.applyRestoredProgress(parsed);
+                event.target.value = '';
+            } catch (err) {
+                alert('⚠️ File sao lưu không hợp lệ hoặc bị lỗi định dạng: ' + err.message);
+            }
+        };
+        reader.readAsText(file);
+    };
+
+    window.importProgressFromCode = () => {
+        const txt = document.getElementById('progress-code-textarea');
+        if (!txt || !txt.value.trim()) {
+            alert('Vui lòng dán chuỗi mã sao lưu vào ô nhập!');
+            return;
+        }
+        let raw = txt.value.trim();
+        if (raw.startsWith('VSTEP_B2_BACKUP::')) {
+            raw = raw.replace('VSTEP_B2_BACKUP::', '');
+            try {
+                const jsonStr = decodeURIComponent(escape(atob(raw)));
+                const parsed = JSON.parse(jsonStr);
+                window.applyRestoredProgress(parsed);
+                window.togglePasteCodeArea();
+                txt.value = '';
+            } catch(e) {
+                alert('⚠️ Mã sao lưu không đúng định dạng! Vui lòng kiểm tra lại.');
+            }
+        } else {
+            try {
+                const parsed = JSON.parse(raw);
+                window.applyRestoredProgress(parsed);
+                window.togglePasteCodeArea();
+                txt.value = '';
+            } catch(e) {
+                alert('⚠️ Mã sao lưu không đúng định dạng! Vui lòng kiểm tra lại.');
+            }
+        }
+    };
+
+    window.applyRestoredProgress = (parsed) => {
+        if (!parsed || typeof parsed !== 'object') {
+            alert('⚠️ Dữ liệu sao lưu không hợp lệ!');
+            return;
+        }
+
+        const compTopics = Array.isArray(parsed.completedTopics) ? parsed.completedTopics : [];
+        window._studentProgress = {
+            ...window._studentProgress,
+            ...parsed,
+            completedTopics: compTopics,
+            topicDetails: parsed.topicDetails || {},
+            theoryDetails: parsed.theoryDetails || { yesNo: {}, choice: {}, wh: {}, wheels: { yn: 0, choice: 0, wh: 0 } },
+            stats: parsed.stats || { totalRecordings: 0, totalExams: 0 },
+            lastUpdated: new Date().toISOString()
+        };
+
+        window.saveStudentProgress();
+        window.updateTopicSelectDropdowns();
+
+        const currentSelect = document.getElementById('practice-topic-select');
+        if (currentSelect) {
+            window.updateTopicCompleteButton(parseInt(currentSelect.value));
+        }
+
+        if (typeof confetti === 'function') {
+            try {
+                confetti({
+                    particleCount: 100,
+                    spread: 90,
+                    origin: { y: 0.3 }
+                });
+            } catch(e) {}
+        }
+
+        window.showProgressToast(`🎉 Đã khôi phục thành công! Đã hoàn thành ${compTopics.length}/60 chủ đề.`, 'fa-solid fa-cloud-arrow-down');
+        window.updateProgressUI();
+    };
+
+    window.confirmResetProgress = () => {
+        if (confirm('⚠️ BẠN CÓ CHẮC CHẮN MUỐN XÓA TOÀN BỘ TIẾN ĐỘ HỌC TẬP KHÔNG?\n\nToàn bộ chủ đề đã hoàn thành và số lượt thu âm sẽ được đặt lại về 0 để bạn luyện lại từ đầu. Hãy tải file sao lưu trước nếu bạn muốn lưu lại!')) {
+            window._studentProgress.completedTopics = [];
+            window._studentProgress.topicDetails = {};
+            window._studentProgress.theoryDetails = { yesNo: {}, choice: {}, wh: {}, wheels: { yn: 0, choice: 0, wh: 0 } };
+            window._studentProgress.stats = { totalRecordings: 0, totalExams: 0 };
+            window.saveStudentProgress();
+            window.updateTopicSelectDropdowns();
+
+            const currentSelect = document.getElementById('practice-topic-select');
+            if (currentSelect) {
+                window.updateTopicCompleteButton(parseInt(currentSelect.value));
+            }
+            window.showProgressToast('🔄 Đã làm mới toàn bộ tiến độ học tập.', 'fa-solid fa-rotate-left', 'warn');
+            window.updateProgressUI();
+        }
+    };
+
+    // Initial load for progress system
+    try {
+        window.loadStudentProgress('Khách', 'B212');
+    } catch(e) {}
+
     window._timedPracticeState = {};
     window._timedPracticeActiveId = null;
     window._timedPracticeActivePrefix = null;
@@ -1769,6 +2298,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (badgeEl) {
                     badgeEl.className = 'topic-exam-phase-badge done';
                     badgeEl.innerHTML = '<i class="fa-solid fa-circle-check"></i> Đã hoàn thành 25s';
+                }
+                if (typeof window.recordTheoryPracticed === 'function') {
+                    window.recordTheoryPracticed(id, prefix);
                 }
                 if (startBtn) startBtn.style.display = 'none';
                 if (stopBtn) stopBtn.style.display = 'none';
@@ -31124,7 +31656,8 @@ window.updateTopicSelectDropdowns = () => {
             if (topicObj && window.isTopicUnlocked(val)) {
                 opt.disabled = false;
                 const cleanName = topicObj.title.replace(/^Chủ đề \d+:\s*/i, '');
-                opt.textContent = `🎯 Topic ${String(val).padStart(2, '0')}: ${cleanName}`;
+                const isCompleted = typeof window.isTopicCompleted === 'function' && window.isTopicCompleted(val);
+                opt.textContent = `${isCompleted ? '✅' : '🎯'} Topic ${String(val).padStart(2, '0')}: ${cleanName}${isCompleted ? ' (Đã xong)' : ''}`;
             }
         });
     });
@@ -31494,6 +32027,9 @@ function renderPracticeTopic(topicId) {
                         <button class="btn-audio-sample" onclick="openFullPartExamModal(${topic.id})" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed); box-shadow: 0 4px 12px rgba(139, 92, 246, 0.35);" title="Thi thử chuẩn Part 1: Chủ đề này ghép cùng 1 chủ đề khác trong 3 phút">
                             <i class="fa-solid fa-layer-group"></i> Thi Thử Cả Part 1 (2 Chủ Đề - 180s)
                         </button>
+                        <button type="button" id="btn-toggle-topic-${topic.id}" class="btn-audio-sample" onclick="toggleTopicCompleted(${topic.id})" style="background: ${typeof window.isTopicCompleted === 'function' && window.isTopicCompleted(topic.id) ? 'linear-gradient(135deg, #10b981, #059669)' : 'rgba(16, 185, 129, 0.12)'}; color: ${typeof window.isTopicCompleted === 'function' && window.isTopicCompleted(topic.id) ? '#ffffff' : '#059669'}; border: 1.5px solid #10b981; box-shadow: ${typeof window.isTopicCompleted === 'function' && window.isTopicCompleted(topic.id) ? '0 4px 12px rgba(16, 185, 129, 0.35)' : 'none'}; font-weight: 800;" title="Đánh dấu đã hoàn thành chủ đề này">
+                            <i class="fa-solid ${typeof window.isTopicCompleted === 'function' && window.isTopicCompleted(topic.id) ? 'fa-circle-check' : 'fa-circle'}"></i> ${typeof window.isTopicCompleted === 'function' && window.isTopicCompleted(topic.id) ? 'ĐÃ HOÀN THÀNH ✅' : 'Đánh dấu đã hoàn thành'}
+                        </button>
                     </div>
                 </div>
                 <div style="font-size: 1.05rem; color: var(--text-main); line-height: 1.7; font-style: italic; background: var(--bg-card); padding: 0.85rem 1.25rem; border-radius: 12px; border: 1px dashed var(--border);">
@@ -31808,6 +32344,11 @@ window.startTopicQuestionRecording = async (qNum) => {
             if (badge) {
                 badge.className = 'topic-exam-phase-badge done';
                 badge.innerHTML = '<i class="fa-solid fa-circle-check"></i> Đã hoàn thành bài nói';
+            }
+            const currentSel = document.getElementById('practice-topic-select');
+            const tid = currentSel ? parseInt(currentSel.value) : 1;
+            if (typeof window.recordQuestionPracticed === 'function') {
+                window.recordQuestionPracticed(tid, qNum);
             }
 
             const startBtn = document.getElementById(`btn-topic-start-${qNum}`);

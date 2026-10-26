@@ -1257,3 +1257,77 @@ body.dark-theme .topic-q-type-badge {
 .login-btn:active {
     transform: scale(0.98);
 }
+
+/* ==========================================================================
+   LEARNING PROGRESS & BACKUP SYSTEM STYLES
+   ========================================================================== */
+.sidebar-progress-widget {
+    margin: 0.85rem 0.5rem 0.5rem 0.5rem;
+    padding: 0.75rem 0.95rem;
+    background: linear-gradient(135deg, rgba(67, 97, 238, 0.06), rgba(16, 185, 129, 0.06));
+    border: 1.5px solid rgba(16, 185, 129, 0.25);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+.sidebar-progress-widget:hover {
+    background: linear-gradient(135deg, rgba(67, 97, 238, 0.1), rgba(16, 185, 129, 0.12));
+    border-color: #10b981;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+}
+.progress-grid-btn {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    border: 1px solid var(--border);
+    background: var(--bg-body);
+    color: var(--text-muted);
+    padding: 0.25rem;
+}
+.progress-grid-btn:hover {
+    transform: scale(1.08);
+    z-index: 2;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+.progress-grid-btn.completed {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    border-color: #059669;
+    box-shadow: 0 2px 6px rgba(16, 185, 129, 0.25);
+}
+.progress-grid-btn.in-progress {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+    border-color: #d97706;
+}
+.progress-toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: #1e293b;
+    color: #ffffff;
+    padding: 0.95rem 1.45rem;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    z-index: 999999;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-left: 5px solid #10b981;
+    animation: toastSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    max-width: 90vw;
+}
+@keyframes toastSlideUp {
+    from { transform: translateY(100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
