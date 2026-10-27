@@ -679,6 +679,32 @@ document.addEventListener('DOMContentLoaded', () => {
                         "vn": "👉 (Sử dụng các cụm trong BẢNG LỢI ÍCH B2)"
                     }
                 ]
+            },
+            {
+                "type": "note",
+                "title": "Ghi chú từ vựng trong câu:",
+                "items": [
+                    {
+                        "en": "whenever I have free time",
+                        "vn": "bất cứ khi nào tôi có thời gian rảnh"
+                    },
+                    {
+                        "en": "allows me to",
+                        "vn": "cho phép tôi..."
+                    },
+                    {
+                        "en": "rarely",
+                        "vn": "hiếm khi"
+                    },
+                    {
+                        "en": "busy schedule",
+                        "vn": "lịch trình bận rộn"
+                    },
+                    {
+                        "en": "Instead, I prefer to",
+                        "vn": "thay vào đó, tôi thích... hơn"
+                    }
+                ]
             }
         ],
         "samples": [
@@ -749,7 +775,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "items": [
                     {
                         "isNote": true,
-                        "vn": "👉 (Sử dụng các cụm trong BẢNG LỢI ÍCH)"
+                        "vn": "👉 (Sử dụng các cụm trong BẢNG LỢI ÍCH B2)"
                     }
                 ]
             },
@@ -758,28 +784,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 "title": "Ghi chú từ vựng trong câu:",
                 "items": [
                     {
-                        "en": "affect my concentration",
-                        "vn": "ảnh hưởng đến sự tập trung của tôi"
+                        "en": "find it hard to focus",
+                        "vn": "cảm thấy khó tập trung"
                     },
                     {
-                        "en": "hard",
-                        "vn": "khó khăn"
+                        "en": "focus on one task at a time",
+                        "vn": "tập trung vào từng việc một"
                     },
                     {
-                        "en": "prefer",
+                        "en": "doesn't affect my concentration",
+                        "vn": "không ảnh hưởng đến sự tập trung của tôi"
+                    },
+                    {
+                        "en": "prefer to",
                         "vn": "thích hơn / ưu tiên hơn"
                     },
                     {
-                        "en": "focus better",
-                        "vn": "tập trung tốt hơn"
-                    },
-                    {
-                        "en": "do it better",
-                        "vn": "làm tốt hơn"
-                    },
-                    {
-                        "en": "do it more carefully",
-                        "vn": "làm cẩn thận hơn"
+                        "en": "makes the task more...",
+                        "vn": "làm cho công việc trở nên... hơn"
                     }
                 ]
             },
@@ -903,12 +925,38 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             {
+                "type": "benefit",
+                "title": "Cụm Lợi ích:",
+                "items": [
+                    {
+                        "isNote": true,
+                        "vn": "👉 (Sử dụng các cụm trong BẢNG LỢI ÍCH B2)"
+                    }
+                ]
+            },
+            {
                 "type": "note",
                 "title": "Ghi chú từ vựng trong câu:",
                 "items": [
                     {
                         "en": "really into",
                         "vn": "rất thích / đam mê"
+                    },
+                    {
+                        "en": "It's a great way to",
+                        "vn": "đó là một cách tuyệt vời để..."
+                    },
+                    {
+                        "en": "not very keen on",
+                        "vn": "không hào hứng / không thích lắm"
+                    },
+                    {
+                        "en": "Instead, I prefer",
+                        "vn": "thay vào đó, tôi thích... hơn"
+                    },
+                    {
+                        "en": "allows me to",
+                        "vn": "cho phép tôi..."
                     }
                 ]
             },
@@ -1084,6 +1132,26 @@ document.addEventListener('DOMContentLoaded', () => {
                     {
                         "en": "used to",
                         "vn": "đã từng / thường làm trong quá khứ"
+                    },
+                    {
+                        "en": "didn't use to",
+                        "vn": "trước đây không thường làm..."
+                    },
+                    {
+                        "en": "when I was younger",
+                        "vn": "khi tôi còn nhỏ / trẻ hơn"
+                    },
+                    {
+                        "en": "allowed me to",
+                        "vn": "đã cho phép tôi..."
+                    },
+                    {
+                        "en": "Instead, I usually",
+                        "vn": "thay vào đó, tôi thường..."
+                    },
+                    {
+                        "en": "helped me",
+                        "vn": "đã giúp tôi..."
                     }
                 ]
             },
@@ -1216,23 +1284,31 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             {
                 "type": "note",
-                "title": "Cụm từ hay:",
+                "title": "Ghi chú từ vựng trong câu:",
                 "items": [
                     {
                         "en": "quite good at",
                         "vn": "khá giỏi về..."
                     },
                     {
-                        "en": "practice a lot",
-                        "vn": "luyện tập rất nhiều"
+                        "en": "practiced it for a long time",
+                        "vn": "đã luyện tập việc đó trong một thời gian dài"
                     },
                     {
-                        "en": "rarely do it",
-                        "vn": "hiếm khi làm"
+                        "en": "not very good at",
+                        "vn": "không giỏi lắm về..."
                     },
                     {
-                        "en": "spend time on other things",
-                        "vn": "dành thời gian cho việc khác"
+                        "en": "don't have much experience",
+                        "vn": "không có nhiều kinh nghiệm"
+                    },
+                    {
+                        "en": "trying to learn it to",
+                        "vn": "đang cố gắng học việc đó để..."
+                    },
+                    {
+                        "en": "allows me to",
+                        "vn": "cho phép tôi..."
                     }
                 ]
             },
@@ -1280,7 +1356,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             {
                 "type": "benefit",
-                "title": "Cụm Lợi ích (Khi trả lời YES):",
+                "title": "Cụm Lợi ích:",
                 "items": [
                     {
                         "isNote": true,
@@ -1353,27 +1429,31 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             {
                 "type": "note",
-                "title": "Ghi chú từ vựng:",
+                "title": "Ghi chú từ vựng trong câu:",
                 "items": [
                     {
-                        "en": "important to me",
-                        "vn": "quan trọng đối với tôi"
+                        "en": "definitely important to me",
+                        "vn": "chắc chắn rất quan trọng đối với tôi"
+                    },
+                    {
+                        "en": "allows me to",
+                        "vn": "cho phép tôi..."
+                    },
+                    {
+                        "en": "gives me a chance to",
+                        "vn": "mang lại cho tôi cơ hội để..."
+                    },
+                    {
+                        "en": "isn't very important to me",
+                        "vn": "không quan trọng lắm đối với tôi"
+                    },
+                    {
+                        "en": "Instead, I prefer to focus on",
+                        "vn": "thay vào đó, tôi thích tập trung vào... hơn"
                     },
                     {
                         "en": "doesn't affect my daily life much",
                         "vn": "không ảnh hưởng nhiều đến cuộc sống hàng ngày"
-                    },
-                    {
-                        "en": "prefer to focus on other things",
-                        "vn": "thích tập trung vào những thứ khác hơn"
-                    },
-                    {
-                        "en": "improve my health",
-                        "vn": "cải thiện sức khỏe"
-                    },
-                    {
-                        "en": "have a better life",
-                        "vn": "có cuộc sống tốt đẹp hơn"
                     }
                 ]
             }
@@ -1446,7 +1526,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 "items": [
                     {
                         "isNote": true,
-                        "vn": "👉 (Sử dụng các cụm trong BẢNG LỢI ÍCH)"
+                        "vn": "👉 (Sử dụng các cụm trong BẢNG LỢI ÍCH B2)"
+                    }
+                ]
+            },
+            {
+                "type": "note",
+                "title": "Ghi chú từ vựng trong câu:",
+                "items": [
+                    {
+                        "en": "found it + adj",
+                        "vn": "thấy nó... (ví dụ: found it exciting)"
+                    },
+                    {
+                        "en": "allowed me to",
+                        "vn": "đã cho phép tôi..."
+                    },
+                    {
+                        "en": "haven't had the chance to ... yet",
+                        "vn": "vẫn chưa có cơ hội làm..."
+                    },
+                    {
+                        "en": "I'd love to try it in the future",
+                        "vn": "tôi rất muốn thử làm trong tương lai"
+                    },
+                    {
+                        "en": "it would be a/an ... experience",
+                        "vn": "đó sẽ là một trải nghiệm..."
                     }
                 ]
             },
@@ -2945,12 +3051,32 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             {
-                "type": "benefit",
-                "title": "Cụm Lợi ích:",
+                "type": "note",
+                "title": "Ghi chú từ vựng trong câu:",
                 "items": [
                     {
-                        "isNote": true,
-                        "vn": "👉 (Sử dụng các cụm trong BẢNG LỢI ÍCH B2)"
+                        "en": "Personally, I prefer",
+                        "vn": "cá nhân tôi thích... hơn"
+                    },
+                    {
+                        "en": "find it more + adj",
+                        "vn": "thấy nó... hơn (ví dụ: more peaceful)"
+                    },
+                    {
+                        "en": "gives me a chance to",
+                        "vn": "cho tôi cơ hội để..."
+                    },
+                    {
+                        "en": "If I have to choose between the two",
+                        "vn": "nếu phải chọn giữa hai phương án"
+                    },
+                    {
+                        "en": "I'd definitely go for",
+                        "vn": "tôi chắc chắn sẽ chọn..."
+                    },
+                    {
+                        "en": "allows me to",
+                        "vn": "cho phép tôi..."
                     }
                 ]
             },
@@ -3082,49 +3208,35 @@ document.addEventListener('DOMContentLoaded', () => {
         "vocab": [
             {
                 "type": "note",
-                "title": "Cụm từ cố định:",
+                "title": "Ghi chú từ vựng trong câu:",
                 "items": [
                     {
-                        "en": "hard to choose",
-                        "vn": "khó để lựa chọn"
+                        "en": "both are equally important",
+                        "vn": "cả hai đều quan trọng như nhau"
                     },
                     {
-                        "en": "both are important",
-                        "vn": "cả hai đều quan trọng"
+                        "en": "offer different benefits",
+                        "vn": "mang lại những lợi ích khác nhau"
                     },
                     {
-                        "en": "allow me to",
-                        "vn": "cho phép tôi / giúp tôi"
+                        "en": "helps me ... while ... allows me to",
+                        "vn": "giúp tôi... trong khi... cho phép tôi..."
                     },
                     {
-                        "q": "Which is more important, <span class='sub-hl' style='font-style: italic; padding: 0.05rem 0.35rem; border-radius: 4px;'>money</span> or <span class='sub-hl' style='font-style: italic; padding: 0.05rem 0.35rem; border-radius: 4px;'>happiness</span>?",
-                        "a": "→ It’s hard to choose because both are important. Money helps me prepare for the future, while happiness allows me to create a balanced lifestyle.",
-                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → It’s hard to choose because both are important. <strong>Money</strong> helps me <strong>prepare for the future</strong>, while <strong>happiness</strong> allows me to <strong>create a balanced lifestyle</strong>.</div>"
+                        "en": "hard to choose one over the other",
+                        "vn": "khó để chọn một trong hai"
                     },
                     {
-                        "q": "Which is more important, <span class='sub-hl' style='font-style: italic; padding: 0.05rem 0.35rem; border-radius: 4px;'>family</span> or <span class='sub-hl' style='font-style: italic; padding: 0.05rem 0.35rem; border-radius: 4px;'>money</span>?",
-                        "a": "→ It’s hard to choose because both are important. Family helps me escape from daily stress, while money allows me to prepare for the future.",
-                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → It’s hard to choose because both are important. <strong>Family</strong> helps me <strong>escape from daily stress</strong>, while <strong>money</strong> allows me to <strong>prepare for the future</strong>.</div>"
+                        "en": "both play a vital role",
+                        "vn": "cả hai đều đóng vai trò thiết yếu"
                     },
                     {
-                        "q": "Which is more important, <span class='sub-hl' style='font-style: italic; padding: 0.05rem 0.35rem; border-radius: 4px;'>career</span> or <span class='sub-hl' style='font-style: italic; padding: 0.05rem 0.35rem; border-radius: 4px;'>family</span>?",
-                        "a": "→ It’s hard to choose because both are important. Career helps me develop useful skills, while family allows me to escape from daily stress.",
-                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → It’s hard to choose because both are important. <strong>Career</strong> helps me <strong>develop useful skills</strong>, while <strong>family</strong> allows me to <strong>escape from daily stress</strong>.</div>"
+                        "en": "essential to",
+                        "vn": "thiết yếu đối với việc..."
                     },
                     {
-                        "q": "Which is more important, <span class='sub-hl' style='font-style: italic; padding: 0.05rem 0.35rem; border-radius: 4px;'>health</span> or <span class='sub-hl' style='font-style: italic; padding: 0.05rem 0.35rem; border-radius: 4px;'>wealth</span>?",
-                        "a": "→ It’s hard to choose because both are important. Health helps me stay healthy, while wealth allows me to prepare for the future.",
-                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → It’s hard to choose because both are important. <strong>Health</strong> helps me <strong>stay healthy</strong>, while <strong>wealth</strong> allows me to <strong>prepare for the future</strong>.</div>"
-                    },
-                    {
-                        "q": "Which is more important, <span class='sub-hl' style='font-style: italic; padding: 0.05rem 0.35rem; border-radius: 4px;'>time</span> or <span class='sub-hl' style='font-style: italic; padding: 0.05rem 0.35rem; border-radius: 4px;'>money</span>?",
-                        "a": "→ It’s hard to choose because both are important. Time helps me enjoy my free time, while money allows me to prepare for the future.",
-                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → It’s hard to choose because both are important. <strong>Time</strong> helps me <strong>enjoy my free time</strong>, while <strong>money</strong> allows me to <strong>prepare for the future</strong>.</div>"
-                    },
-                    {
-                        "q": "Which is more important, <span class='sub-hl' style='font-style: italic; padding: 0.05rem 0.35rem; border-radius: 4px;'>knowledge</span> or <span class='sub-hl' style='font-style: italic; padding: 0.05rem 0.35rem; border-radius: 4px;'>experience</span>?",
-                        "a": "→ It’s hard to choose because both are important. Knowledge helps me widen my knowledge, while experience allows me to learn to solve problems.",
-                        "f": "<div style='margin-bottom: 8px;'><strong>- Trả lời:</strong> → It’s hard to choose because both are important. <strong>Knowledge</strong> helps me <strong>widen my knowledge</strong>, while <strong>experience</strong> allows me to <strong>learn to solve problems</strong>.</div>"
+                        "en": "gives me a chance to",
+                        "vn": "mang lại cho tôi cơ hội để..."
                     }
                 ]
             },
@@ -3321,6 +3433,28 @@ const renderChoice = (o) => {
                         {
                             "isNote": true,
                             "vn": "👉 (Sử dụng các cụm trong BẢNG LỢI ÍCH B2)"
+                        }
+                    ]
+                },
+                {
+                    "type": "note",
+                    "title": "Ghi chú từ vựng trong câu:",
+                    "items": [
+                        {
+                            "en": "tend to",
+                            "vn": "có xu hướng / thường hay..."
+                        },
+                        {
+                            "en": "find it + adj",
+                            "vn": "thấy nó... (ví dụ: find it relaxing)"
+                        },
+                        {
+                            "en": "allows me to",
+                            "vn": "cho phép tôi..."
+                        },
+                        {
+                            "en": "so that I can",
+                            "vn": "để tôi có thể..."
                         }
                     ]
                 },
@@ -3525,11 +3659,23 @@ const renderChoice = (o) => {
                 },
                 {
                     "type": "note",
-                    "title": "Cụm từ cố định trong công thức:",
+                    "title": "Ghi chú từ vựng trong câu:",
                     "items": [
                         {
-                            "en": "simple and easy to do",
-                            "vn": "đơn giản và dễ thực hiện"
+                            "en": "an effective way to",
+                            "vn": "một cách hiệu quả để..."
+                        },
+                        {
+                            "en": "allows me to",
+                            "vn": "cho phép tôi..."
+                        },
+                        {
+                            "en": "my top priority is to",
+                            "vn": "ưu tiên hàng đầu của tôi là..."
+                        },
+                        {
+                            "en": "gives me a chance to",
+                            "vn": "cho tôi cơ hội để..."
                         }
                     ]
                 }
@@ -5393,15 +5539,23 @@ const renderChoice = (o) => {
                 },
                 {
                     "type": "note",
-                    "title": "Ghi chú từ vựng (Có trong template):",
+                    "title": "Ghi chú từ vựng trong câu:",
                     "items": [
                         {
-                            "en": "Although I'm busy",
-                            "vn": "Mặc dù tôi bận rộn"
+                            "en": "Although I have a busy schedule",
+                            "vn": "Mặc dù tôi có lịch trình bận rộn"
                         },
                         {
-                            "en": "I try to",
-                            "vn": "Tôi cố gắng"
+                            "en": "still try to",
+                            "vn": "vẫn cố gắng..."
+                        },
+                        {
+                            "en": "make it a habit to",
+                            "vn": "tạo thói quen làm gì..."
+                        },
+                        {
+                            "en": "keeps me feeling",
+                            "vn": "giúp tôi luôn cảm thấy..."
                         }
                     ]
                 },
@@ -5568,11 +5722,27 @@ const renderChoice = (o) => {
                 },
                 {
                     "type": "note",
-                    "title": "Ghi chú từ vựng (Có trong template):",
+                    "title": "Ghi chú từ vựng trong câu:",
                     "items": [
                         {
                             "en": "busy schedule",
                             "vn": "lịch trình bận rộn"
+                        },
+                        {
+                            "en": "allows me to",
+                            "vn": "cho phép tôi..."
+                        },
+                        {
+                            "en": "On average",
+                            "vn": "trung bình"
+                        },
+                        {
+                            "en": "dedicate around ... a day to",
+                            "vn": "dành khoảng ... mỗi ngày cho việc..."
+                        },
+                        {
+                            "en": "gives me a chance to",
+                            "vn": "mang lại cho tôi cơ hội để..."
                         }
                     ]
                 },
@@ -5721,19 +5891,27 @@ const renderChoice = (o) => {
             "vocab": [
                 {
                     "type": "note",
-                    "title": "Ghi chú từ vựng:",
+                    "title": "Ghi chú từ vựng trong câu:",
                     "items": [
                         {
-                            "en": "save money",
-                            "vn": "tiết kiệm tiền"
+                            "en": "keep my spending under control",
+                            "vn": "kiểm soát chi tiêu của mình"
                         },
                         {
-                            "en": "reasonable for me",
-                            "vn": "hợp lý đối với tôi"
+                            "en": "saving some money",
+                            "vn": "tiết kiệm một khoản tiền"
                         },
                         {
-                            "en": "dollars",
-                            "vn": "đô la (đơn vị tiền tệ)"
+                            "en": "set aside approximately",
+                            "vn": "dành riêng ra khoảng..."
+                        },
+                        {
+                            "en": "without breaking the bank",
+                            "vn": "mà không tốn quá nhiều tiền / không bị cháy túi"
+                        },
+                        {
+                            "en": "allows me to",
+                            "vn": "cho phép tôi..."
                         }
                     ]
                 },
