@@ -331,7 +331,8 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     const validStudentsB2 = [
-        "Gia Tuệ"
+        "Gia Tuệ",
+        "Gia Tuê"
     ];
 
     const normalizeStr = (str) => {
@@ -396,7 +397,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        const formattedClass = classVal.toUpperCase().replace(/\s+/g, '');
+        let formattedClass = classVal.toUpperCase().replace(/\s+/g, '').replace(/^(LỚP|LOP|CLASS)/i, '');
         const normName = normalizeStr(nameVal);
 
         // Check Teacher access
@@ -423,7 +424,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             if (!matchedStudent) {
-                loginError.textContent = 'Họ và tên không thuộc danh sách lớp. Vui lòng kiểm tra lại!';
+                loginError.textContent = 'Họ và tên không thuộc danh sách lớp B212. Vui lòng kiểm tra lại!';
                 loginError.style.display = 'block';
                 return;
             }
@@ -434,18 +435,18 @@ document.addEventListener('DOMContentLoaded', () => {
             window._currentUserRole = 'student';
             window._currentClass = 'B212';
         } else if (formattedClass === 'B2') {
-            // Check student list for class B2
-            const matchedStudent = validStudentsB2.find(s => {
-                const target = normalizeStr(s);
-                return normName === target || normName.endsWith(' ' + target);
-            });
+            // Cấp quyền trực tiếp cho học viên Gia Tuệ / Gia Tuê theo chỉ định của giáo viên
+            const isGiaTue = normName.includes('gia tue') || 
+                            normName.includes('gia tuê') || 
+                            normName.includes('gia tuệ') ||
+                            normName.replace(/\s+/g, '').includes('giatue');
 
-            if (!matchedStudent) {
-                loginError.textContent = 'Họ và tên không thuộc danh sách lớp. Vui lòng kiểm tra lại!';
+            if (!isGiaTue) {
+                loginError.textContent = 'Họ và tên không thuộc danh sách lớp B2. Vui lòng kiểm tra lại!';
                 loginError.style.display = 'block';
                 return;
             }
-            state.studentName = matchedStudent;
+            state.studentName = nameVal.trim() || 'Gia Tuệ';
             state.studentClass = 'B2';
             state.userRole = 'student';
             state.accessLevel = 'B2';
