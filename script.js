@@ -1521,8 +1521,93 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.formatFormulaHighlight = (formHtml) => {
         if (!formHtml) return '';
-        let res = formHtml.replace(/<strong>\s*\[(.*?)\]\s*<\/strong>/g, "[$1]");
-        return res.replace(/\[(.*?)\]/g, '<span class="formula-bracket-hl">[$1]</span>');
+        let raw = String(formHtml).trim();
+
+        // 1. Topic Formula Rows (từ practiceTopicsData - 60 Chủ đề)
+        if (raw.includes('topic-formula-row')) {
+            const rowRegex = /<div class=[\"']topic-formula-row[\"']>([\s\S]*?)<\/div>\s*(?=(?:<div class=[\"']topic-formula-row[\"']>|$))/gi;
+            const rows = [];
+            let m;
+            while ((m = rowRegex.exec(raw)) !== null) {
+                rows.push(m[1]);
+            }
+            if (rows.length > 0) {
+                return '<div class="formula-cards-wrap">' + rows.map((inner, idx) => {
+                    const titleM = inner.match(/<div class=[\"']topic-formula-title[\"']>([\s\S]*?)<\/div>/i);
+                    const textM = inner.match(/<div class=[\"']topic-formula-text[\"']>([\s\S]*?)<\/div>/i);
+                    const title = titleM ? titleM[1].trim() : (idx === 0 ? '- Cách 1' : '- Cách 2');
+                    let text = textM ? textM[1].trim() : inner.replace(/<div class=[\"']topic-formula-title[\"']>[\s\S]*?<\/div>/i, '').trim();
+
+                    const isNo = /(?:NO|KHÔNG|CHƯA TỪNG|HIẾM KHI|Phủ định)/i.test(title);
+                    const isC1 = idx === 0 || /Cách 1/i.test(title);
+
+                    const cardType = isC1 ? 'card-c1' : (isNo ? 'card-c2-no' : 'card-c2-green');
+                    const badgeClass = isC1 ? 'badge-c1' : (isNo ? 'badge-c2-no' : 'badge-c2-green');
+                    const bracketClass = isC1 ? 'bracket-c1' : (isNo ? 'bracket-c2-no' : 'bracket-c2-green');
+                    const icon = isC1 ? 'fa-solid fa-circle-check' : (isNo ? 'fa-solid fa-circle-xmark' : 'fa-solid fa-lightbulb');
+
+                    let cleanTitle = title.replace(/^[-•–\s]+/, '').replace(/:$/, '').trim();
+
+                    text = text.replace(/<strong>\s*\[(.*?)\]\s*<\/strong>/g, '[$1]');
+                    text = text.replace(/<span class=[\"']formula-bracket-hl(?:\s+[^\"']*)?[\"']>\[(.*?)\]<\/span>/g, '[$1]');
+                    text = text.replace(/\[(.*?)\]/g, `<span class="formula-bracket-hl ${bracketClass}">[$1]</span>`);
+
+                    text = text.replace(/^→\s*/, '<span class="formula-arrow">→</span> ');
+
+                    return `
+                    <div class="formula-card ${cardType}">
+                        <div class="formula-card-header">
+                            <span class="formula-card-badge ${badgeClass}"><i class="${icon}"></i> ${cleanTitle}</span>
+                        </div>
+                        <div class="formula-card-body">${text}</div>
+                    </div>`;
+                }).join('') + '</div>';
+            }
+        }
+
+        // 2. Cấu trúc Standard Div: <div style="margin-bottom: 8px;"><strong>- Cách 1...:</strong>...</div><div><strong>- Cách 2...</strong>...</div>
+        const divRegex = /<div(?:\s+style=[\"'][^\"']*[\"'])?>\s*(?:<strong>)?\s*([–\-•]?\s*Cách\s*\d+[^:<]*):?\s*(?:<\/strong>)?\s*:?\s*([\s\S]*?)<\/div>/gi;
+        const cards = [];
+        let match;
+        while ((match = divRegex.exec(raw)) !== null) {
+            cards.push({
+                title: match[1].trim(),
+                body: match[2].trim()
+            });
+        }
+
+        if (cards.length > 0) {
+            return '<div class="formula-cards-wrap">' + cards.map((c, idx) => {
+                const isNo = /(?:NO|KHÔNG|CHƯA TỪNG|HIẾM KHI|Phủ định)/i.test(c.title);
+                const isC1 = idx === 0 || /Cách 1/i.test(c.title);
+
+                const cardType = isC1 ? 'card-c1' : (isNo ? 'card-c2-no' : 'card-c2-green');
+                const badgeClass = isC1 ? 'badge-c1' : (isNo ? 'badge-c2-no' : 'badge-c2-green');
+                const bracketClass = isC1 ? 'bracket-c1' : (isNo ? 'bracket-c2-no' : 'bracket-c2-green');
+                const icon = isC1 ? 'fa-solid fa-circle-check' : (isNo ? 'fa-solid fa-circle-xmark' : 'fa-solid fa-lightbulb');
+
+                let cleanTitle = c.title.replace(/^[-•–\s]+/, '').replace(/:$/, '').trim();
+
+                let text = c.body;
+                text = text.replace(/<strong>\s*\[(.*?)\]\s*<\/strong>/g, '[$1]');
+                text = text.replace(/<span class=[\"']formula-bracket-hl(?:\s+[^\"']*)?[\"']>\[(.*?)\]<\/span>/g, '[$1]');
+                text = text.replace(/\[(.*?)\]/g, `<span class="formula-bracket-hl ${bracketClass}">[$1]</span>`);
+
+                text = text.replace(/^→\s*/, '<span class="formula-arrow">→</span> ');
+
+                return `
+                <div class="formula-card ${cardType}">
+                    <div class="formula-card-header">
+                        <span class="formula-card-badge ${badgeClass}"><i class="${icon}"></i> ${cleanTitle}</span>
+                    </div>
+                    <div class="formula-card-body">${text}</div>
+                </div>`;
+            }).join('') + '</div>';
+        }
+
+        // 3. Fallback: Thay thế bracket chuẩn
+        let res = raw.replace(/<strong>\s*\[(.*?)\]\s*<\/strong>/g, '[$1]');
+        return res.replace(/\[(.*?)\]/g, '<span class="formula-bracket-hl bracket-c1">[$1]</span>');
     };
 
     window.renderSampleAnswersContent = (d) => {
@@ -5945,8 +6030,8 @@ const whShowcase = document.getElementById('wh-showcase');
                                 <div class="hint-content fade-in" style="display:none; margin-top:0.5rem; font-size:1.05rem; line-height:1.6; text-align: left;">
                                     <div style="margin-bottom: 0.75rem;">
                                         <strong style="color: #059669;">💡 Áp dụng Cấu trúc:</strong><br/> 
-                                        <div style="background: rgba(16, 185, 129, 0.05); padding: 0.75rem; border-left: 3px solid #10b981; margin-top: 0.5rem; border-radius: 4px;">
-                                            ${final.formula || ''}
+                                        <div style="margin-top: 0.5rem;">
+                                            ${typeof window.formatFormulaHighlight === 'function' ? window.formatFormulaHighlight(final.formula || '') : (final.formula || '')}
                                         </div>
                                     </div>
                                     <div>
@@ -32467,7 +32552,7 @@ function renderPracticeTopic(topicId) {
                     </div>
                     <div class="topic-section-content" style="background: rgba(59, 130, 246, 0.02);">
                         <div class="f-formula-box" style="margin: 0; padding: 0.5rem 0; background: transparent; border: none;">
-                            ${q.formula}
+                            ${typeof window.formatFormulaHighlight === 'function' ? window.formatFormulaHighlight(q.formula) : q.formula}
                         </div>
                     </div>
                 </div>
