@@ -48,47 +48,65 @@ document.addEventListener('DOMContentLoaded', () => {
         'practice-topics': 'LUYỆN TẬP THEO CHỦ ĐỀ'
     };
 
-    // Thuật toán tìm giọng đọc AI tự nhiên nhất (High Quality / Neural / Natural / Siri)
+    // Kiểm tra và lọc bỏ hoàn toàn các giọng nam hoặc giọng robot kỳ quặc
+    const isMaleOrUnwantedVoice = (voice) => {
+        if (!voice) return false;
+        const name = ((voice.name || '') + ' ' + (voice.voiceURI || '')).toLowerCase();
+        const blacklist = [
+            'guy', 'male', 'david', 'mark', 'george', 'alex', 'fred', 'daniel', 'albert',
+            'evan', 'nathan', 'oliver', 'tom', 'rishi', 'eddy', 'grandpa', 'jester', 'junior',
+            'ralph', 'reed', 'rocko', 'zarvox', 'wobble', 'bad news', 'bahh', 'bells',
+            'boing', 'bubbles', 'cellos', 'organ', 'superstar', 'whisper', 'trinoids',
+            'alva', 'diego', 'jorge', 'juan', 'carlos'
+        ];
+        return blacklist.some(term => name.includes(term));
+    };
+
+    // Thuật toán tìm giọng đọc AI tự nhiên nhất (Ưu tiên Giọng Nữ trong trẻo / High Quality / Neural / Natural / Siri)
     const getBestNaturalVoice = (voices) => {
         if (!voices || voices.length === 0) return null;
         const enVoices = voices.filter(v => v.lang && (v.lang.toLowerCase().startsWith('en') || v.lang.toLowerCase().startsWith('us')));
         if (enVoices.length === 0) return null;
 
+        // Ưu tiên hoàn toàn các giọng Nữ
+        const femaleOnlyVoices = enVoices.filter(v => !isMaleOrUnwantedVoice(v));
+        const candidateList = femaleOnlyVoices.length > 0 ? femaleOnlyVoices : enVoices;
+
         // 1. Ưu tiên cao nhất: Các giọng Neural / Natural / Premium / Enhanced / Siri (Chất lượng phòng thu / người thật)
         const premiumKeywords = ['natural', 'premium', 'enhanced', 'neural', 'siri'];
         for (const kw of premiumKeywords) {
-            const match = enVoices.find(v => (v.name && v.name.toLowerCase().includes(kw)) || (v.voiceURI && v.voiceURI.toLowerCase().includes(kw)));
+            const match = candidateList.find(v => (v.name && v.name.toLowerCase().includes(kw)) || (v.voiceURI && v.voiceURI.toLowerCase().includes(kw)));
             if (match) return match;
         }
 
         // 2. Trên iOS (iPhone/iPad): Ưu tiên các giọng hiện đại chất lượng cao của Apple
-        const appleModernNames = ['ava', 'evan', 'allison', 'zoe', 'nathan', 'oliver', 'tom', 'nicky', 'daniel', 'serena'];
+        const appleModernNames = ['ava', 'allison', 'zoe', 'serena', 'samantha'];
         for (const name of appleModernNames) {
-            const match = enVoices.find(v => v.name && v.name.toLowerCase().includes(name));
+            const match = candidateList.find(v => v.name && v.name.toLowerCase().includes(name));
             if (match) return match;
         }
 
         // 3. Trên PC (Microsoft Edge, Windows, Chrome Desktop)
-        const pcModernNames = ['guy', 'jenny', 'aria', 'google us english', 'google uk english female'];
+        const pcModernNames = ['jenny', 'aria', 'ava', 'google us english', 'google uk english female'];
         for (const name of pcModernNames) {
-            const match = enVoices.find(v => v.name && v.name.toLowerCase().includes(name));
+            const match = candidateList.find(v => v.name && v.name.toLowerCase().includes(name));
             if (match) return match;
         }
 
         // 4. Trên Android (Google Speech Services): Ưu tiên giọng network (WaveNet)
-        const networkVoice = enVoices.find(v => (v.voiceURI && v.voiceURI.includes('network')) || (v.name && v.name.toLowerCase().includes('network')));
+        const networkVoice = candidateList.find(v => (v.voiceURI && v.voiceURI.includes('network')) || (v.name && v.name.toLowerCase().includes('network')));
         if (networkVoice) return networkVoice;
 
         // 5. Lọc bỏ các giọng tổng hợp máy móc cổ điển (Alex, Samantha standard) nếu có giọng khác
-        const nonRobotic = enVoices.filter(v => {
+        const nonRobotic = candidateList.filter(v => {
             const n = (v.name || '').toLowerCase();
-            return !n.includes('alex') && !n.includes('samantha') && !n.includes('fred') && !n.includes('victoria');
+            return !n.includes('alex') && !n.includes('fred') && !n.includes('victoria');
         });
         if (nonRobotic.length > 0) {
             return nonRobotic.find(v => v.lang.includes('US') || v.lang.includes('en-US')) || nonRobotic[0];
         }
 
-        return enVoices[0];
+        return candidateList[0];
     };
 
     // Quản lý danh sách giọng đọc AI
@@ -131,12 +149,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if ('speechSynthesis' in window) {
         populateVoices();
         window.speechSynthesis.onvoiceschanged = () => populateVoices();
-        window.addEventListener('touchstart', () => {
-            if (window.speechSynthesis && (!window.speechSynthesis.getVoices() || window.speechSynthesis.getVoices().length === 0)) {
+        const unlockAudioSubsystem = () => {
+            try {
+                if (window.speechSynthesis.paused) window.speechSynthesis.resume();
                 window.speechSynthesis.getVoices();
                 populateVoices();
-            }
-        }, { once: true });
+            } catch (e) {}
+        };
+        document.addEventListener('click', unlockAudioSubsystem, { once: true, passive: true });
+        document.addEventListener('touchstart', unlockAudioSubsystem, { once: true, passive: true });
     }
 
     // Studio Audio Manifest (Real Human Studio Recordings)
@@ -151,77 +172,113 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(() => {});
     }
 
-    // Classic Computer Browser Speech (Original Pitch 1.25, Rate 1.0, Energetic & Smooth)
+    // Chuẩn hóa và làm sạch văn bản trước khi phát âm
+    window.prepareSpeechText = (txt) => {
+        if (!txt) return '';
+        let t = String(txt);
+        // Bỏ thẻ HTML
+        t = t.replace(/<[^>]*>/g, ' ');
+        // Giải mã các thực thể HTML phổ biến
+        t = t.replace(/&amp;/g, ' and ')
+             .replace(/&quot;/g, '"')
+             .replace(/&#39;/g, "'")
+             .replace(/&lt;/g, '<')
+             .replace(/&gt;/g, '>');
+        // Bỏ mũi tên, gạch đầu dòng
+        t = t.replace(/^[→\-\*\•\s]+/, '');
+        // Chuyển dấu gạch chéo lựa chọn thành ", or " để TTS đọc tự nhiên (vd: "go out to eat / eat out" -> "go out to eat, or eat out")
+        t = t.replace(/([a-zA-Z0-9])\s*\/\s*([a-zA-Z0-9])/g, '$1, or $2');
+        // Chuyển ngoặc đơn thành dấu phẩy (vd: "role-playing game (RPG)" -> "role-playing game, RPG")
+        t = t.replace(/\s*\(([^\)]+)\)/g, ', $1');
+        // Rút gọn dấu ba chấm lơ lửng (...) để tránh ngắt quãng hoặc treo bộ đọc
+        t = t.replace(/\.{2,}/g, '.');
+        // Gỡ bỏ ký tự escape không cần thiết
+        t = t.replace(/\\'/g, "'").replace(/\\"/g, '"').replace(/\\/g, '');
+        // Chuẩn hoá khoảng trắng
+        t = t.replace(/\s+/g, ' ').trim();
+        return t;
+    };
+
+    // Classic Computer Browser Speech (Giọng Nữ trong trẻo, tự nhiên, dễ nghe)
     window._activeUtterance = null;
+    window._activeUtterances = window._activeUtterances || new Set();
     const speakClassicTTS = (cleanTxt) => {
         if (!('speechSynthesis' in window)) return;
         try {
             if (window._currentAudio) {
-                window._currentAudio.pause();
-                window._currentAudio.currentTime = 0;
+                try {
+                    window._currentAudio.pause();
+                    window._currentAudio.currentTime = 0;
+                } catch (e) {}
             }
             if (window.speechSynthesis.paused) {
                 window.speechSynthesis.resume();
             }
-            window.speechSynthesis.cancel();
+            if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
+                window.speechSynthesis.cancel();
+            }
             
-            const utt = new SpeechSynthesisUtterance(cleanTxt);
+            const spokenTxt = window.prepareSpeechText(cleanTxt);
+            if (!spokenTxt) return;
+
+            const utt = new SpeechSynthesisUtterance(spokenTxt);
             window._activeUtterance = utt;
+            window._activeUtterances.add(utt);
+
             const voices = window.speechSynthesis.getVoices() || [];
             
             let bestVoice = null;
-            if (state.selectedVoiceURI) {
-                bestVoice = voices.find(v => v.voiceURI === state.selectedVoiceURI);
+            const curVoiceURI = (window.state && window.state.selectedVoiceURI) || state.selectedVoiceURI;
+            if (curVoiceURI) {
+                bestVoice = voices.find(v => v.voiceURI === curVoiceURI);
+                if (bestVoice && isMaleOrUnwantedVoice(bestVoice)) {
+                    bestVoice = null;
+                    if (window.state) window.state.selectedVoiceURI = null;
+                    state.selectedVoiceURI = null;
+                    try { localStorage.removeItem('vstep_voice_uri'); } catch(e) {}
+                }
             }
-            if (!bestVoice) {
-                const preferredFemaleNames = [
-                    "Microsoft Ava Online (Natural)",
-                    "Microsoft Jenny Online (Natural)",
-                    "Microsoft Aria Online (Natural)",
-                    "Ava (Premium)",
-                    "Ava (Enhanced)",
-                    "Ava",
-                    "Google US English",
-                    "Samantha (Enhanced)",
-                    "Samantha",
-                    "Victoria",
-                    "Karen",
-                    "Moira",
-                    "Fiona",
-                    "Tessa",
-                    "Microsoft Zira"
-                ];
-                for (let name of preferredFemaleNames) {
-                    bestVoice = voices.find(v => v.name && v.name.toLowerCase().includes(name.toLowerCase()));
-                    if (bestVoice) break;
-                }
-                if (!bestVoice) {
-                    bestVoice = voices.find(v => v.lang && (v.lang.startsWith("en-US") || v.lang.startsWith("en-GB") || v.lang.startsWith("en")) && (v.name.toLowerCase().includes("female") || !v.name.toLowerCase().includes("male")));
-                }
-                if (!bestVoice) {
-                    bestVoice = voices.find(v => v.lang && (v.lang.startsWith("en-US") || v.lang.startsWith("en-GB")));
-                }
-                if (!bestVoice) {
-                    bestVoice = voices[0];
-                }
+            if (!bestVoice && typeof getBestNaturalVoice === 'function') {
+                bestVoice = getBestNaturalVoice(voices);
             }
             
-            if (bestVoice) {
+            if (bestVoice && bestVoice.lang && bestVoice.lang.toLowerCase().startsWith('en')) {
                 utt.voice = bestVoice;
                 utt.lang = bestVoice.lang;
             } else {
                 utt.lang = 'en-US';
             }
-            utt.rate = 0.96; // Tốc độ chuẩn tự nhiên, dễ nghe
-            utt.pitch = 1.0; // Cao độ tự nhiên, ấm áp của giọng nữ
             
-            utt.onend = () => { window._activeUtterance = null; };
-            utt.onerror = () => { window._activeUtterance = null; };
+            const savedSpeed = parseFloat(localStorage.getItem('vstep_voice_speed') || '0.98');
+            utt.rate = isNaN(savedSpeed) ? 0.96 : savedSpeed;
+            utt.pitch = 1.05; // Cao độ nữ tự nhiên, ấm áp
+            
+            const cleanup = () => {
+                window._activeUtterances.delete(utt);
+                if (window._activeUtterance === utt) window._activeUtterance = null;
+                if (window._speechKeepAlive) {
+                    clearInterval(window._speechKeepAlive);
+                    window._speechKeepAlive = null;
+                }
+            };
+            utt.onend = cleanup;
+            utt.onerror = cleanup;
 
-            setTimeout(() => {
-                window.speechSynthesis.speak(utt);
-                if (window.speechSynthesis.paused) window.speechSynthesis.resume();
-            }, 10);
+            if (window._speechKeepAlive) clearInterval(window._speechKeepAlive);
+            window._speechKeepAlive = setInterval(() => {
+                if (!window.speechSynthesis || !window.speechSynthesis.speaking) {
+                    clearInterval(window._speechKeepAlive);
+                    window._speechKeepAlive = null;
+                } else if (window.speechSynthesis.paused) {
+                    window.speechSynthesis.resume();
+                }
+            }, 5000);
+
+            // Phát âm thanh đồng bộ ngay trong user gesture (không dùng setTimeout để tránh bị Safari & Chrome chặn)
+            window.speechSynthesis.speak(utt);
+            if (window.speechSynthesis.paused) {
+                window.speechSynthesis.resume();
+            }
         } catch (e) {
             console.error("Error in classic TTS:", e);
         }
@@ -230,26 +287,57 @@ document.addEventListener('DOMContentLoaded', () => {
     // Global AI Speech - Hỗ trợ cả 2 chế độ (Ưu tiên Giọng B: Nữ Phòng Thu Studio)
     window._currentAudio = null;
     window.speakText = (txt, forcedMode) => {
-        if (!state.isAudio) return;
+        // Tự động bật lại âm thanh nếu đang bị tắt khi người dùng bấm nghe
+        if (!state.isAudio || (window.state && !window.state.isAudio)) {
+            state.isAudio = true;
+            if (window.state) window.state.isAudio = true;
+            const audioToggle = document.getElementById('audio-toggle');
+            if (audioToggle) {
+                audioToggle.classList.add('active');
+                audioToggle.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+            }
+        }
+
+        // Hiệu ứng phản hồi thị giác nhấp nháy nhẹ trên nút vừa bấm
+        try {
+            const activeTrigger = (window.event && window.event.currentTarget && window.event.currentTarget.classList) ? window.event.currentTarget : null;
+            if (activeTrigger) {
+                activeTrigger.classList.add('active');
+                setTimeout(() => {
+                    try { activeTrigger.classList.remove('active'); } catch(e) {}
+                }, 1000);
+            }
+        } catch (e) {}
+
+        const rawClean = (txt || '').replace(/<[^>]*>/g, '').replace(/^→\s*/, '').replace(/[\r\n]+/g, ' ').trim();
+        const cleanTxt = window.prepareSpeechText(txt);
+        if (!cleanTxt && !rawClean) return;
 
         const mode = forcedMode || state.voiceMode || 'studio';
-        let cleanTxt = (txt || '').replace(/<[^>]*>/g, '').replace(/^→\s*/, '').replace(/[\r\n]+/g, ' ').trim();
-        if (!cleanTxt) return;
 
         if (mode === 'studio') {
             const manifest = window.studioAudioManifest || studioAudioManifest || {};
-            const audioPath = manifest[cleanTxt] || manifest[cleanTxt.toLowerCase()];
+            const audioPath = manifest[rawClean] || manifest[rawClean.toLowerCase()] || manifest[cleanTxt] || manifest[cleanTxt.toLowerCase()];
             if (audioPath) {
                 try {
                     if (window._currentAudio) {
-                        window._currentAudio.pause();
-                        window._currentAudio.currentTime = 0;
+                        try {
+                            window._currentAudio.pause();
+                            window._currentAudio.currentTime = 0;
+                        } catch (e) {}
                     }
                     if ('speechSynthesis' in window) {
+                        if (window.speechSynthesis.paused) window.speechSynthesis.resume();
                         window.speechSynthesis.cancel();
                     }
                     const audio = new Audio(audioPath);
                     window._currentAudio = audio;
+
+                    audio.onerror = () => {
+                        console.warn("Studio audio file error, fallback to TTS:", audioPath);
+                        speakClassicTTS(cleanTxt);
+                    };
+
                     const playPromise = audio.play();
                     if (playPromise !== undefined) {
                         playPromise.catch(err => {
@@ -265,7 +353,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Fallback sang TTS Giọng Nữ
-        speakClassicTTS(cleanTxt);
+        speakClassicTTS(cleanTxt || rawClean);
     };
 
     // Hàm Nghe Thử & Chọn Chế Độ Giọng
@@ -2582,9 +2670,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 card.dataset.vn = vn;
 
                 // Stop propagation on speaker button so clicking speaker only plays audio
+                const originalOnClickText = speakerBtn.getAttribute('onclick');
+                let targetAudio = en;
+                if (originalOnClickText) {
+                    const match = originalOnClickText.match(/speakText\(['"]([^'"]+)['"]\)/);
+                    if (match && match[1]) targetAudio = match[1];
+                }
                 speakerBtn.onclick = (e) => {
                     e.stopPropagation();
-                    window.speakText(en);
+                    window.speakText(targetAudio);
                 };
 
                 // Add star button and selected badge if not present
@@ -6253,7 +6347,7 @@ const whShowcase = document.getElementById('wh-showcase');
     };
 
     if ('speechSynthesis' in window) {
-        window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+        window.speechSynthesis.onvoiceschanged = () => populateVoices();
     }
     // =========================================
     // REVIEW GAMES LOGIC & SFX
