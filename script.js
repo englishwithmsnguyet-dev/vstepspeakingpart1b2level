@@ -1888,6 +1888,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 bg = 'rgba(217, 119, 6, 0.06)';
                 border = 'rgba(217, 119, 6, 0.25)';
                 icon = 'fa-solid fa-person-running';
+            } else if (group.type === 'dislike') {
+                col = '#e11d48';
+                bg = 'rgba(225, 29, 72, 0.06)';
+                border = 'rgba(225, 29, 72, 0.25)';
+                icon = 'fa-solid fa-thumbs-down';
             } else if (group.type === 'time') {
                 icon = 'fa-regular fa-clock';
             } else if (group.type === 'emotion') {
