@@ -2483,12 +2483,32 @@ document.addEventListener('DOMContentLoaded', () => {
     window._benefitsFilter = 'all'; // 'all' | 'favorites'
     window._reviewDatasetMode = 'favorites'; // 'favorites' | 'all'
 
+    function cleanBenefitVnText(en, vn) {
+        const cleanEn = (en || '').replace(/\s+/g, ' ').trim();
+        let cleanVn = (vn || '')
+            .replace(/Đã chọn để trả bài/gi, '')
+            .replace(/\s+/g, ' ')
+            .trim();
+        if (cleanEn && cleanVn) {
+            const lowerEn = cleanEn.toLowerCase();
+            const lowerVn = cleanVn.toLowerCase();
+            if (lowerVn.startsWith(lowerEn) && cleanVn.length > cleanEn.length) {
+                cleanVn = cleanVn.slice(cleanEn.length).replace(/^[\s:–—-]+/, '').trim();
+            }
+        }
+        return cleanVn;
+    }
+
     window.getFavoriteBenefits = () => {
         if (!window._studentProgress || !Array.isArray(window._studentProgress.favoriteBenefits)) {
             if (window._studentProgress) window._studentProgress.favoriteBenefits = [];
             return [];
         }
-        return window._studentProgress.favoriteBenefits;
+        return window._studentProgress.favoriteBenefits.map(item => {
+            const en = (typeof item === 'string' ? item : (item?.en || '')).replace(/\s+/g, ' ').trim();
+            const vn = cleanBenefitVnText(en, typeof item === 'string' ? '' : (item?.vn || ''));
+            return { en, vn };
+        }).filter(item => item.en);
     };
 
     window.isBenefitFavorite = (en) => {
@@ -2651,19 +2671,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const benefitsTab = document.getElementById('benefits');
         if (!benefitsTab) return;
 
+        const cleanBenefitMap = new Map();
         const grids = benefitsTab.querySelectorAll('div[style*="display:grid"], div[style*="display: grid"]');
         let totalCards = 0;
 
         grids.forEach(grid => {
             Array.from(grid.children).forEach(card => {
-                const strong = card.querySelector('strong');
+                const strong = card.querySelector('.vocab-en') || card.querySelector('strong');
                 const speakerBtn = card.querySelector('.icon-btn');
                 if (!strong || !speakerBtn) return;
 
                 totalCards++;
-                const en = strong.textContent.trim();
-                const vnEl = strong.nextElementSibling || card.querySelector('div:not(:has(strong))') || card.querySelector('div > div');
-                const vn = vnEl ? vnEl.textContent.trim() : '';
+                const en = strong.textContent.replace(/\s+/g, ' ').trim();
+                const vnEl = card.querySelector('.vocab-vn') || (strong.nextElementSibling && !strong.nextElementSibling.classList.contains('benefit-fav-tag') ? strong.nextElementSibling : null);
+                const vn = cleanBenefitVnText(en, vnEl ? vnEl.textContent : '');
+                if (en && vn) {
+                    cleanBenefitMap.set(en.toLowerCase(), vn);
+                }
 
                 card.classList.add('benefit-card');
                 card.dataset.en = en;
@@ -2717,6 +2741,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         });
+
+        if (window._studentProgress && Array.isArray(window._studentProgress.favoriteBenefits) && window._studentProgress.favoriteBenefits.length > 0) {
+            let healed = false;
+            window._studentProgress.favoriteBenefits = window._studentProgress.favoriteBenefits.map(item => {
+                const itemEn = (typeof item === 'string' ? item : (item?.en || '')).replace(/\s+/g, ' ').trim();
+                const mappedVn = cleanBenefitMap.get(itemEn.toLowerCase());
+                const itemVn = mappedVn || cleanBenefitVnText(itemEn, typeof item === 'string' ? '' : (item?.vn || ''));
+                if (!item || typeof item === 'string' || item.en !== itemEn || item.vn !== itemVn) {
+                    healed = true;
+                }
+                return { en: itemEn, vn: itemVn };
+            }).filter(item => item.en && item.vn);
+            if (healed && typeof window.saveStudentProgress === 'function') {
+                window.saveStudentProgress();
+            }
+        }
 
         window._totalBenefitsCount = totalCards || 84;
         window.updateBenefitsFavoriteUI();
@@ -6420,9 +6460,35 @@ const whShowcase = document.getElementById('wh-showcase');
     }
     let reviewWords = [];
     
+    function maskSpellingPrompt(vn, en) {
+        const cleanVn = (vn || '').replace(/\s+/g, ' ').trim();
+        const cleanEn = (en || '').replace(/\s+/g, ' ').trim();
+        if (!cleanVn || !cleanEn) return cleanVn;
+        const baseEn = cleanEn.replace(/\s*\([^)]*\)\s*/g, '').trim();
+        const terms = [cleanEn];
+        if (baseEn && baseEn.length >= 2 && baseEn.toLowerCase() !== cleanEn.toLowerCase()) {
+            terms.push(baseEn);
+        }
+        let masked = cleanVn;
+        for (const term of terms) {
+            const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            try {
+                const regex = new RegExp(`(^|[^\\p{L}\\p{N}])(${escaped})(?=[^\\p{L}\\p{N}]|$)`, 'giu');
+                masked = masked.replace(regex, '$1___');
+            } catch (e) {
+                const fallbackRegex = new RegExp(escaped, 'gi');
+                masked = masked.replace(fallbackRegex, '___');
+            }
+        }
+        if (masked.replace(/[_\s()/,.:;–—-]/g, '').trim().length === 0) {
+            return '___ (Nhấn nút loa 🔊 bên dưới để nghe và gõ từ)';
+        }
+        return masked;
+    }
+
     function extractReviewWords(tabId) {
         if (tabId === 'benefits' && window._reviewDatasetMode === 'favorites') {
-            const favs = window.getFavoriteBenefits();
+            const favs = window.getFavoriteBenefits().filter(b => b.en && b.vn);
             if (favs && favs.length > 0) {
                 return [...favs];
             } else {
@@ -6431,16 +6497,30 @@ const whShowcase = document.getElementById('wh-showcase');
             }
         }
         let currentWords = [];
+        const seen = new Set();
         const cards = document.querySelectorAll('#' + tabId + ' .icon-btn');
         cards.forEach(btn => {
-            const container = btn.closest('.benefit-card') || btn.parentElement.parentElement || btn.parentElement;
+            if (btn.closest('.game-content, .review-section, #review-section')) return;
+            const container = btn.closest('.benefit-card, .benefit-card-wrapper') || (btn.parentElement && btn.parentElement.classList.contains('benefit-card-actions') ? btn.parentElement.parentElement : btn.parentElement);
+            if (!container) return;
             const enEl = container.querySelector('.vocab-en') || container.querySelector('strong');
-            const vnEl = container.querySelector('.vocab-vn') || (enEl ? enEl.nextElementSibling : null);
+            let vnEl = container.querySelector('.vocab-vn');
+            if (!vnEl && enEl) {
+                if (enEl.nextElementSibling && !enEl.nextElementSibling.classList.contains('fav-badge') && !enEl.nextElementSibling.classList.contains('benefit-fav-tag')) {
+                    vnEl = enEl.nextElementSibling;
+                } else if (enEl.parentElement && enEl.parentElement !== container && enEl.parentElement.nextElementSibling) {
+                    vnEl = enEl.parentElement.nextElementSibling;
+                }
+            }
             if (enEl && vnEl) {
-                currentWords.push({
-                    en: enEl.textContent.trim(),
-                    vn: vnEl.textContent.trim()
-                });
+                const en = enEl.textContent.replace(/\s+/g, ' ').trim();
+                const rawVn = vnEl.textContent.replace(/Đã chọn để trả bài/gi, '').replace(/\s+/g, ' ').trim();
+                const vn = tabId === 'benefits' ? cleanBenefitVnText(en, rawVn) : rawVn;
+                const key = en.toLowerCase();
+                if (en && vn && !seen.has(key)) {
+                    seen.add(key);
+                    currentWords.push({ en, vn });
+                }
             }
         });
         return currentWords;
@@ -6705,6 +6785,7 @@ const whShowcase = document.getElementById('wh-showcase');
             }
             
             const currentWord = words[currentIndex];
+            const promptVn = maskSpellingPrompt(currentWord.vn, currentWord.en);
             
             container.innerHTML = `
                 <div class="quiz-container fade-in" style="max-width: 500px;">
@@ -6714,7 +6795,7 @@ const whShowcase = document.getElementById('wh-showcase');
                     </div>
                     <div class="quiz-question" style="margin-bottom:1.5rem; position:relative;">
                         <div style="color:var(--text-muted); font-size:1rem; margin-bottom:0.5rem;">Nghĩa tiếng Việt:</div>
-                        <div style="color:var(--text-main); font-size:1.6rem; margin-bottom:1.5rem; line-height:1.4;">"${currentWord.vn}"</div>
+                        <div style="color:var(--text-main); font-size:1.6rem; margin-bottom:1.5rem; line-height:1.4;">"${promptVn}"</div>
                         <button class="icon-btn" onclick="speakText('${currentWord.en.replace(/'/g, "\\'")}')" style="margin: 0 auto; background:var(--bg-body); width: 45px; height: 45px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'" title="Nghe gợi ý"><i class="fa-solid fa-volume-high"></i></button>
                     </div>
                     <div style="display:flex; flex-direction:column; gap:1rem;">
