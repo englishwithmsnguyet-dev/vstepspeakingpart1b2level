@@ -604,11 +604,15 @@ document.addEventListener('DOMContentLoaded', () => {
         tabPanes.forEach(pane => {
             if (pane.id === target) {
                 pane.classList.remove('hidden');
+                pane.classList.add('active');
+                pane.style.display = '';
                 pane.classList.remove('fade-in');
                 void pane.offsetWidth;
                 pane.classList.add('fade-in');
             } else {
+                pane.classList.remove('active');
                 pane.classList.add('hidden');
+                pane.style.display = '';
             }
         });
 
