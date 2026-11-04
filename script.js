@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Tab Titles Mapping
     const titles = {
+        'flower-garden': 'CHĂM HOA CHĂM HỌC',
         'overview': 'OVERVIEW',
         'yes-no': 'YES/NO QUESTIONS',
         'choice': 'CHOICE QUESTIONS',
@@ -612,6 +613,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (topTitle) topTitle.textContent = titles[target] || target.toUpperCase();
+        if (target === 'flower-garden' && window.FlowerGarden) {
+            window.FlowerGarden.render();
+        }
         if (target === 'topics') {
             const activeBtn = document.querySelector('.sub-tab-btn.active') || document.querySelector('.sub-tab-btn');
             if (activeBtn) {
