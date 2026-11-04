@@ -6520,7 +6520,7 @@ const whShowcase = document.getElementById('wh-showcase');
             if (enEl && vnEl) {
                 const en = enEl.textContent.replace(/\s+/g, ' ').trim();
                 const rawVn = vnEl.textContent.replace(/Đã chọn để trả bài/gi, '').replace(/\s+/g, ' ').trim();
-                const vn = tabId === 'benefits' ? cleanBenefitVnText(en, rawVn) : rawVn;
+                const vn = cleanBenefitVnText(en, rawVn);
                 const key = en.toLowerCase();
                 if (en && vn && !seen.has(key)) {
                     seen.add(key);
