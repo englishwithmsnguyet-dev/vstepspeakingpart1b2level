@@ -34819,7 +34819,7 @@ const practiceTopicsData = [
                         "qNum": 1,
                         "question": "What things usually make you feel sad?",
                         "qType": "Wh-question: What things usually make you feel sad?",
-                        "formula": "<div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 1 (Thất bại trong công việc/học tập hoặc không đạt kỳ vọng):</div>\n                    <div class=\"topic-formula-text\">\n                        → <u>One of the primary catalysts for my sadness is experiencing</u> <span class=\"formula-bracket-hl\">[thất bại / trở ngại sự nghiệp]</span>. Putting immense effort into a goal only to <span class=\"formula-bracket-hl\">[kết quả không như ý]</span> often leaves me feeling <span class=\"formula-bracket-hl\">[tính từ cảm xúc]</span>.\n                    </div>\n                </div>\n                <div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 2 (Hiểu lầm hoặc rạn nứt trong các mối quan hệ thân thiết):</div>\n                    <div class=\"topic-formula-text\">\n                        → <u>What truly dampens my spirits is dealing with</u> <span class=\"formula-bracket-hl\">[mâu thuẫn tình cảm / hiểu lầm]</span>. When arguments arise with loved ones, it makes me feel <span class=\"formula-bracket-hl\">[cảm xúc buồn bã]</span> and disrupts my inner peace.\n                    </div>\n                </div>",
+                        "formula": "<div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 1 (Kết quả thi cử hoặc công việc không như ý muốn):</div>\n                    <div class=\"topic-formula-text\">\n                        → Generally, <u>one of the main things that makes me feel sad is</u> <span class=\"formula-bracket-hl\">[kết quả không tốt / thất bại trong học tập]</span>. When I try my best but <span class=\"formula-bracket-hl\">[kết quả không như mong đợi]</span>, it naturally leaves me feeling <span class=\"formula-bracket-hl\">[tính từ cảm xúc]</span>.\n                    </div>\n                </div>\n                <div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 2 (Mâu thuẫn, cãi vã hoặc hiểu lầm với bạn bè, người thân):</div>\n                    <div class=\"topic-formula-text\">\n                        → Another thing that makes me sad is <u>having conflicts or misunderstandings with</u> <span class=\"formula-bracket-hl\">[bạn thân / người thân]</span>. Whenever an argument happens, it makes me feel <span class=\"formula-bracket-hl\">[cảm xúc buồn bã]</span> because I value our relationship so much.\n                    </div>\n                </div>",
                         "vocabGroups": [
                                 {
                                         "type": "note",
@@ -34827,37 +34827,45 @@ const practiceTopicsData = [
                                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> BẢNG LỢI ÍCH B2</button> để điền vào vị trí <em>[lợi ích]</em>."
                                 },
                                 {
-                                        "title": "🌧️ [Nguyên nhân gây nỗi buồn & Tâm trạng]:",
+                                        "title": "🌧️ [Nguyên nhân gây buồn & Cảm xúc]:",
                                         "items": [
                                                 {
-                                                        "en": "academic setbacks and career disappointments",
-                                                        "vn": "những thất bại trong học tập và nỗi thất vọng sự nghiệp"
+                                                        "en": "get poor exam results",
+                                                        "vn": "nhận kết quả thi không tốt"
                                                 },
                                                 {
-                                                        "en": "fall short of personal expectations",
-                                                        "vn": "không đạt được kỳ vọng của bản thân"
+                                                        "en": "fail an important test",
+                                                        "vn": "không đạt trong kỳ thi quan trọng"
                                                 },
                                                 {
-                                                        "en": "unresolved interpersonal misunderstandings",
-                                                        "vn": "những hiểu lầm chưa được giải quyết trong quan hệ"
+                                                        "en": "have misunderstandings with close friends",
+                                                        "vn": "có hiểu lầm với bạn bè thân thiết"
                                                 },
                                                 {
-                                                        "en": "witnessing the suffering of loved ones",
-                                                        "vn": "chứng kiến nỗi đau khổ của người thân yêu"
+                                                        "en": "have an argument with family members",
+                                                        "vn": "tranh cãi bất đồng với người thân trong nhà"
+                                                },
+                                                {
+                                                        "en": "quite disappointed and down",
+                                                        "vn": "khá thất vọng và buồn bã"
+                                                },
+                                                {
+                                                        "en": "upset and stressed",
+                                                        "vn": "buồn lòng và cảm thấy căng thẳng"
                                                 }
                                         ]
                                 }
                         ],
                         "samples": [
                                 {
-                                        "label": "Bài mẫu Cách 1 (Không đạt được mục tiêu học tập hoặc kỳ vọng của bản thân)",
-                                        "text": "One of the primary catalysts for my sadness is experiencing unexpected academic or professional setbacks. Putting relentless dedication into a project only to fall short of my expectations naturally leaves me feeling disheartened and demoralized.",
-                                        "formatted": "→ <u>One of the primary catalysts for my sadness is experiencing</u> <span class=\"sub-hl\">unexpected academic or professional setbacks</span>. Putting immense effort into a goal only to <span class=\"sub-hl\">fall short of my personal expectations</span> often leaves me feeling <span class=\"sub-hl\">disheartened and demoralized</span>."
+                                        "label": "Bài mẫu Cách 1 (Kết quả thi cử không tốt dù đã nỗ lực nhiều - 38 từ)",
+                                        "text": "Generally, one of the main things that makes me feel sad is getting poor exam results. When I put a lot of effort into studying but still get bad grades, it naturally leaves me feeling quite disappointed and down.",
+                                        "formatted": "→ Generally, <u>one of the main things that makes me feel sad is</u> <span class=\"sub-hl\">getting poor exam results</span>. When I put a lot of effort into studying but <span class=\"sub-hl\">still get bad grades</span>, it naturally leaves me feeling <span class=\"sub-hl\">quite disappointed and down</span>."
                                 },
                                 {
-                                        "label": "Bài mẫu Cách 2 (Mâu thuẫn và hiểu lầm với những người thân yêu)",
-                                        "text": "What truly dampens my spirits is dealing with interpersonal conflicts or misunderstandings with family members and close friends. When communication breaks down, it makes me feel profoundly isolated and disrupts my emotional stability.",
-                                        "formatted": "→ <u>What truly dampens my spirits is dealing with</u> <span class=\"sub-hl\">interpersonal conflicts or misunderstandings with family and close friends</span>. When arguments arise with loved ones, it makes me feel <span class=\"sub-hl\">profoundly isolated and emotionally distressed</span>."
+                                        "label": "Bài mẫu Cách 2 (Hiểu lầm hoặc cãi vã với bạn bè, người thân - 37 từ)",
+                                        "text": "Another thing that makes me sad is having conflicts or misunderstandings with my close friends or family members. Whenever an argument happens, it makes me feel very upset and stressed because I value our relationship so much.",
+                                        "formatted": "→ Another thing that makes me sad is <u>having conflicts or misunderstandings with</u> <span class=\"sub-hl\">my close friends or family members</span>. Whenever an argument happens, it makes me feel <span class=\"sub-hl\">very upset and stressed</span> because I value our relationship so much."
                                 }
                         ]
                 },
@@ -34865,7 +34873,7 @@ const practiceTopicsData = [
                         "qNum": 2,
                         "question": "What do you usually do when you feel sad?",
                         "qType": "Wh-question: What do you usually do when you feel sad?",
-                        "formula": "<div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 1 (Tập thể dục, chạy bộ hoặc nghe nhạc thư giãn để xả cảm xúc tiêu cực):</div>\n                    <div class=\"topic-formula-text\">\n                        → <u>Whenever melancholy strikes, I tend to engage in</u> <span class=\"formula-bracket-hl\">[hoạt động thể chất / nghe nhạc]</span>. Sweating through intense exercise allows me to <span class=\"formula-bracket-hl\">[lợi ích 1 - Vo]</span> and helps me <span class=\"formula-bracket-hl\">[lợi ích 2 - Vo]</span>.\n                    </div>\n                </div>\n                <div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 2 (Viết nhật ký tâm sự hoặc trò chuyện với bạn bè đáng tin cậy):</div>\n                    <div class=\"topic-formula-text\">\n                        → <u>I usually seek solace by</u> <span class=\"formula-bracket-hl\">[viết nhật ký / tâm sự với bạn thân]</span>. Expressing my deepest thoughts openly allows me to <span class=\"formula-bracket-hl\">[lợi ích - Vo]</span> and gain a healthier perspective.\n                    </div>\n                </div>",
+                        "formula": "<div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 1 (Nghe nhạc êm dịu hoặc đi dạo để giải tỏa tâm trí):</div>\n                    <div class=\"topic-formula-text\">\n                        → Whenever I feel sad, <u>I usually listen to soothing music or go for a walk</u>. It allows me to <span class=\"formula-bracket-hl\">[lợi ích 1 - Vo]</span> and helps me <span class=\"formula-bracket-hl\">[lợi ích 2 - Vo]</span>.\n                    </div>\n                </div>\n                <div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 2 (Tâm sự cùng bạn thân hoặc người nhà để được giải tỏa):</div>\n                    <div class=\"topic-formula-text\">\n                        → <u>I often confide in my best friend or family members</u>. Sharing my feelings openly allows me to <span class=\"formula-bracket-hl\">[lợi ích 1 - Vo]</span> and gives me useful advice to overcome my problems.\n                    </div>\n                </div>",
                         "vocabGroups": [
                                 {
                                         "type": "note",
@@ -34873,37 +34881,45 @@ const practiceTopicsData = [
                                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> BẢNG LỢI ÍCH B2</button> để điền vào vị trí <em>[lợi ích]</em>."
                                 },
                                 {
-                                        "title": "🌱 [Phương pháp phục hồi cảm xúc]:",
+                                        "title": "🌱 [Cách vượt qua nỗi buồn & Lợi ích]:",
                                         "items": [
                                                 {
-                                                        "en": "release pent-up emotions through cardio exercise",
-                                                        "vn": "giải tỏa cảm xúc dồn nén thông qua các bài tập thể lực"
+                                                        "en": "listen to soothing music",
+                                                        "vn": "nghe nhạc nhẹ nhàng êm dịu"
                                                 },
                                                 {
-                                                        "en": "listen to uplifting classical melodies",
-                                                        "vn": "nghe những giai điệu cổ điển truyền cảm hứng"
+                                                        "en": "go for a peaceful walk in the park",
+                                                        "vn": "đi dạo thanh thản trong công viên"
                                                 },
                                                 {
-                                                        "en": "confide in an empathetic confidant",
-                                                        "vn": "tâm sự với một người bạn đáng tin cậy và thấu cảm"
+                                                        "en": "clear my mind and release stress",
+                                                        "vn": "giải tỏa tâm trí và xua tan căng thẳng"
                                                 },
                                                 {
-                                                        "en": "journal private feelings to gain mental clarity",
-                                                        "vn": "viết nhật ký cảm xúc để lấy lại sự sáng suốt trong tâm trí"
+                                                        "en": "improve my mood and feel better",
+                                                        "vn": "cải thiện tâm trạng và thấy dễ chịu hơn"
+                                                },
+                                                {
+                                                        "en": "confide in my best friend",
+                                                        "vn": "tâm sự giãi bày với bạn thân"
+                                                },
+                                                {
+                                                        "en": "relieve emotional pressure",
+                                                        "vn": "giải tỏa áp lực cảm xúc dồn nén"
                                                 }
                                         ]
                                 }
                         ],
                         "samples": [
                                 {
-                                        "label": "Bài mẫu Cách 1 (Chạy bộ ngoài trời và nghe nhạc êm dịu để giải phóng endorphin)",
-                                        "text": "Whenever melancholy strikes, I tend to go for a brisk outdoor jog while listening to soothing instrumental music. Engaging in physical exertion triggers endorphins, which allows me to release emotional tension and regain mental equilibrium.",
-                                        "formatted": "→ <u>Whenever melancholy strikes, I tend to engage in</u> <span class=\"sub-hl\">a brisk outdoor jog while listening to instrumental music</span>. Sweating through intense exercise allows me to <span class=\"sub-hl\">release emotional tension</span> and helps me <span class=\"sub-hl\">regain mental equilibrium</span>."
+                                        "label": "Bài mẫu Cách 1 (Nghe nhạc nhẹ và đi dạo trong công viên - 38 từ)",
+                                        "text": "Whenever I feel sad, I usually listen to soothing music or go for a peaceful walk in the park. It allows me to clear my mind and release stress, which helps me improve my mood and feel much better.",
+                                        "formatted": "→ Whenever I feel sad, <u>I usually listen to soothing music or go for a walk</u>. It allows me to <span class=\"sub-hl\">clear my mind and release stress</span>, which helps me <span class=\"sub-hl\">improve my mood and feel much better</span>."
                                 },
                                 {
-                                        "label": "Bài mẫu Cách 2 (Viết nhật ký và giãi bày cùng người bạn thân thấu cảm)",
-                                        "text": "I usually seek solace by journaling my raw feelings in a notebook or having a heart-to-heart conversation with my closest friend. Putting my worries into words allows me to process difficult emotions and realize that hardship is only temporary.",
-                                        "formatted": "→ <u>I usually seek solace by</u> <span class=\"sub-hl\">journaling my feelings in a notebook or having a heart-to-heart talk with a close friend</span>. Expressing my deepest thoughts openly allows me to <span class=\"sub-hl\">process difficult emotions constructively</span> and gain a healthier perspective."
+                                        "label": "Bài mẫu Cách 2 (Tâm sự với bạn thân hoặc người thân - 37 từ)",
+                                        "text": "I often confide in my best friend or a family member. Sharing my feelings openly allows me to relieve emotional pressure and gives me useful advice to overcome my problems and regain positive energy.",
+                                        "formatted": "→ <u>I often confide in my best friend or family members</u>. Sharing my feelings openly allows me to <span class=\"sub-hl\">relieve emotional pressure</span> and gives me useful advice to <span class=\"sub-hl\">overcome my problems and regain positive energy</span>."
                                 }
                         ]
                 },
@@ -34911,7 +34927,7 @@ const practiceTopicsData = [
                         "qNum": 3,
                         "question": "Do you think sadness is a bad emotion? Why or why not?",
                         "qType": "Yes/No Question: Is sadness a bad emotion? Why or why not?",
-                        "formula": "<div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 1 (KHÔNG PHẢI XẤU - Nỗi buồn là một phần tự nhiên giúp ta thấu cảm và trưởng thành):</div>\n                    <div class=\"topic-formula-text\">\n                        → <u>No, I certainly do not believe sadness is inherently negative</u>. Although uncomfortable, it allows individuals to <span class=\"formula-bracket-hl\">[lợi ích 1 - Vo]</span> and gives them an opportunity to <span class=\"formula-bracket-hl\">[lợi ích 2 - Vo]</span>.\n                    </div>\n                </div>\n                <div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 2 (CÓ HAI MẶT - Lành mạnh khi là tín hiệu cảnh báo, nhưng có hại nếu kéo dài thành trầm cảm):</div>\n                    <div class=\"topic-formula-text\">\n                        → <u>In my view, sadness is a double-edged sword</u>. While temporary sorrow serves as <span class=\"formula-bracket-hl\">[tín hiệu tự phản chiếu]</span>, allowing it to linger unchecked can <span class=\"formula-bracket-hl\">[nguy cơ gây hại tinh thần]</span>.\n                    </div>\n                </div>",
+                        "formula": "<div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 1 (KHÔNG PHẢI XẤU - Nỗi buồn là cảm xúc tự nhiên giúp ta trân trọng niềm vui):</div>\n                    <div class=\"topic-formula-text\">\n                        → <u>No, I don't think sadness is necessarily a bad emotion</u>. It is a completely natural part of life that allows us to <span class=\"formula-bracket-hl\">[lợi ích 1 - Vo]</span> and helps us <span class=\"formula-bracket-hl\">[lợi ích 2 - Vo]</span>.\n                    </div>\n                </div>\n                <div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 2 (CÓ HAI MẶT - Giúp ta lắng lại, nhưng nếu kéo dài thì không tốt cho sức khỏe):</div>\n                    <div class=\"topic-formula-text\">\n                        → <u>In my view, sadness has two sides</u>. On the one hand, it helps us <span class=\"formula-bracket-hl\">[mặt tích cực - Vo]</span>, but on the other hand, feeling sad for too long can <span class=\"formula-bracket-hl\">[tác động tiêu cực - Vo]</span>.\n                    </div>\n                </div>",
                         "vocabGroups": [
                                 {
                                         "type": "note",
@@ -34919,37 +34935,41 @@ const practiceTopicsData = [
                                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> BẢNG LỢI ÍCH B2</button> để điền vào vị trí <em>[lợi ích]</em>."
                                 },
                                 {
-                                        "title": "⚖️ [Bản chất tâm lý học của nỗi buồn]:",
+                                        "title": "⚖️ [Góc nhìn về nỗi buồn]:",
                                         "items": [
                                                 {
-                                                        "en": "inherently natural and functional emotion",
-                                                        "vn": "cảm xúc mang tính tự nhiên và có chức năng sinh học"
+                                                        "en": "a natural part of life",
+                                                        "vn": "một phần hoàn toàn tự nhiên của cuộc sống"
                                                 },
                                                 {
-                                                        "en": "foster emotional maturity and empathy",
-                                                        "vn": "nuôi dưỡng sự trưởng thành cảm xúc và lòng thấu cảm"
+                                                        "en": "appreciate happy moments much more",
+                                                        "vn": "trân trọng những khoảnh khắc vui vẻ hơn nhiều"
                                                 },
                                                 {
-                                                        "en": "catalyst for deep self-reflection",
-                                                        "vn": "chất xúc tác cho sự tự phản chiếu sâu sắc"
+                                                        "en": "learn from mistakes to grow stronger",
+                                                        "vn": "học hỏi từ sai lầm để ngày càng mạnh mẽ hơn"
                                                 },
                                                 {
-                                                        "en": "appreciate joy and contentment more profoundly",
-                                                        "vn": "trân trọng niềm vui và sự an yên một cách sâu sắc hơn"
+                                                        "en": "understand my feelings deeper",
+                                                        "vn": "thấu hiểu cảm xúc của bản thân sâu sắc hơn"
+                                                },
+                                                {
+                                                        "en": "negatively affect our mental health",
+                                                        "vn": "ảnh hưởng tiêu cực tới sức khỏe tinh thần"
                                                 }
                                         ]
                                 }
                         ],
                         "samples": [
                                 {
-                                        "label": "Bài mẫu Cách 1 (Nỗi buồn giúp con người thấu cảm và trân trọng niềm vui hơn)",
-                                        "text": "No, I certainly do not believe sadness is inherently negative. In psychological terms, sorrow is an essential human signal that fosters self-reflection, deepens our empathy for others, and helps us appreciate joyful moments far more profoundly.",
-                                        "formatted": "→ <u>No, I certainly do not believe sadness is inherently negative</u>. Although uncomfortable, it allows individuals to <span class=\"sub-hl\">reflect deeply on their core values</span> and gives them an opportunity to <span class=\"sub-hl\">deepen empathy for others and appreciate joy more profoundly</span>."
+                                        "label": "Bài mẫu Cách 1 (Cảm xúc tự nhiên giúp biết trân trọng niềm vui và mạnh mẽ hơn - 38 từ)",
+                                        "text": "No, I don't think sadness is necessarily a bad emotion. It is a completely natural part of life that allows us to appreciate happy moments much more and helps us learn from our mistakes to grow stronger.",
+                                        "formatted": "→ <u>No, I don't think sadness is necessarily a bad emotion</u>. It is a completely natural part of life that allows us to <span class=\"sub-hl\">appreciate happy moments much more</span> and helps us <span class=\"sub-hl\">learn from our mistakes to grow stronger</span>."
                                 },
                                 {
-                                        "label": "Bài mẫu Cách 2 (Hữu ích khi thúc đẩy thay đổi, nhưng độc hại nếu chìm đắm quá lâu)",
-                                        "text": "In my view, sadness is a double-edged sword. While momentary sadness acts as a healthy catalyst for personal introspection and change, allowing chronic sorrow to persist without support can severely damage our psychological well-being.",
-                                        "formatted": "→ <u>In my view, sadness is a double-edged sword</u>. While temporary sorrow serves as <span class=\"sub-hl\">a healthy catalyst for personal introspection</span>, allowing it to linger unchecked can <span class=\"sub-hl\">severely damage our psychological and physical well-being</span>."
+                                        "label": "Bài mẫu Cách 2 (Có hai mặt: giúp lắng lại nhưng không nên để kéo dài - 40 từ)",
+                                        "text": "In my view, sadness has two sides. On the one hand, it helps us slow down and understand our feelings better, but on the other hand, feeling sad for too long can negatively affect our mental health and work performance.",
+                                        "formatted": "→ <u>In my view, sadness has two sides</u>. On the one hand, it helps us <span class=\"sub-hl\">slow down and understand our feelings better</span>, but on the other hand, feeling sad for too long can <span class=\"sub-hl\">negatively affect our mental health and work performance</span>."
                                 }
                         ]
                 }
@@ -34965,7 +34985,7 @@ const practiceTopicsData = [
                         "qNum": 1,
                         "question": "Do you often use AI tools?",
                         "qType": "Yes/No Question: Do you often use AI tools?",
-                        "formula": "<div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 1 (YES - Sử dụng hằng ngày để hỗ trợ học tập, viết lách và làm việc):</div>\n                    <div class=\"topic-formula-text\">\n                        → Yes, definitely! <u>I utilize modern AI assistants like ChatGPT and Grammarly on a daily basis</u>. Leveraging AI tools allows me to <span class=\"formula-bracket-hl\">[lợi ích 1 - Vo]</span> and significantly enhances my <span class=\"formula-bracket-hl\">[năng suất / hiệu quả]</span>.\n                    </div>\n                </div>\n                <div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 2 (CÓ DÙNG NHƯNG CÓ CHỌN LỌC - Tránh phụ thuộc quá mức vào máy móc):</div>\n                    <div class=\"topic-formula-text\">\n                        → <u>Yes, but I only employ AI tools as a supplementary resource</u>. While they help me <span class=\"formula-bracket-hl\">[tra cứu thông tin / gợi ý]</span>, <u>I always prioritize my own critical thinking to</u> <span class=\"formula-bracket-hl\">[lợi ích - Vo]</span>.\n                    </div>\n                </div>",
+                        "formula": "<div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 1 (YES - Dùng thường xuyên để hỗ trợ học tập, tra cứu và kiểm tra ngữ pháp):</div>\n                    <div class=\"topic-formula-text\">\n                        → Yes, definitely! <u>I often use AI tools like ChatGPT or Grammarly in my daily life</u>. Using these tools allows me to <span class=\"formula-bracket-hl\">[lợi ích 1 - Vo]</span> and helps me <span class=\"formula-bracket-hl\">[lợi ích 2 - Vo]</span>.\n                    </div>\n                </div>\n                <div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 2 (CÓ DÙNG NHƯNG KHÔNG QUÁ PHỤ THUỘC - Chỉ dùng hỗ trợ tìm ý tưởng):</div>\n                    <div class=\"topic-formula-text\">\n                        → <u>Yes, I do, but I try not to rely on them too much</u>. I mainly use AI to <span class=\"formula-bracket-hl\">[tìm ý tưởng / tóm tắt bài viết]</span>, but I always <span class=\"formula-bracket-hl\">[tự kiểm tra / tự suy nghĩ]</span> to keep my own ideas.\n                    </div>\n                </div>",
                         "vocabGroups": [
                                 {
                                         "type": "note",
@@ -34973,37 +34993,45 @@ const practiceTopicsData = [
                                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> BẢNG LỢI ÍCH B2</button> để điền vào vị trí <em>[lợi ích]</em>."
                                 },
                                 {
-                                        "title": "🤖 [Công nghệ trí tuệ nhân tạo & Ứng dụng]:",
+                                        "title": "🤖 [Sử dụng AI & Lợi ích thực tế]:",
                                         "items": [
                                                 {
-                                                        "en": "generative AI assistants (ChatGPT, Claude)",
-                                                        "vn": "trợ lý AI tạo sinh (ChatGPT, Claude)"
+                                                        "en": "search for information quickly",
+                                                        "vn": "tra cứu và tìm kiếm thông tin nhanh chóng"
                                                 },
                                                 {
-                                                        "en": "streamline research and writing workflows",
-                                                        "vn": "tinh gọn quy trình nghiên cứu và viết lách"
+                                                        "en": "check grammar and spelling mistakes",
+                                                        "vn": "kiểm tra lỗi ngữ pháp và lỗi chính tả"
                                                 },
                                                 {
-                                                        "en": "automate repetitive administrative tasks",
-                                                        "vn": "tự động hóa các tác vụ hành chính lặp đi lặp lại"
+                                                        "en": "save a lot of time and effort",
+                                                        "vn": "tiết kiệm nhiều thời gian và công sức"
                                                 },
                                                 {
-                                                        "en": "avoid cognitive laziness and overdependence",
-                                                        "vn": "tránh sự lười biếng tư duy và thói ỷ lại"
+                                                        "en": "improve study and work efficiency",
+                                                        "vn": "nâng cao hiệu quả học tập và công việc"
+                                                },
+                                                {
+                                                        "en": "brainstorm creative ideas",
+                                                        "vn": "tìm kiếm các ý tưởng sáng tạo"
+                                                },
+                                                {
+                                                        "en": "not rely on them too much",
+                                                        "vn": "không quá phụ thuộc ỷ lại vào máy móc"
                                                 }
                                         ]
                                 }
                         ],
                         "samples": [
                                 {
-                                        "label": "Bài mẫu Cách 1 (YES - Dùng hằng ngày để tra cứu, chỉnh ngữ pháp và tối ưu hóa thời gian)",
-                                        "text": "Yes, definitely! I utilize AI tools like ChatGPT and specialized language software practically every single day. Leveraging artificial intelligence allows me to brainstorm ideas, proofread English essays, and boost my academic productivity immensely.",
-                                        "formatted": "→ Yes, definitely! <u>I utilize modern AI assistants like ChatGPT and Grammarly on a daily basis</u>. Leveraging AI tools allows me to <span class=\"sub-hl\">brainstorm creative ideas and proofread English essays</span> and significantly enhances my <span class=\"sub-hl\">overall working productivity</span>."
+                                        "label": "Bài mẫu Cách 1 (Dùng thường xuyên để tra cứu và sửa lỗi ngữ pháp - 39 từ)",
+                                        "text": "Yes, definitely! I often use AI tools like ChatGPT or Grammarly in my daily study. Using these tools allows me to search for information quickly and check my English grammar, which helps me save a lot of time and improve my study efficiency.",
+                                        "formatted": "→ Yes, definitely! <u>I often use AI tools like ChatGPT or Grammarly in my daily life</u>. Using these tools allows me to <span class=\"sub-hl\">search for information quickly and check my English grammar</span>, which helps me <span class=\"sub-hl\">save a lot of time and improve my study efficiency</span>."
                                 },
                                 {
-                                        "label": "Bài mẫu Cách 2 (Dùng có chọn lọc để hỗ trợ chứ không giao phó hoàn toàn tư duy)",
-                                        "text": "Yes, but I try to use them judiciously. While AI is brilliant for summarizing lengthy articles and generating preliminary outlines, I always apply my own rigorous critical thinking to verify facts and preserve originality.",
-                                        "formatted": "→ <u>Yes, but I only employ AI tools as a supplementary resource</u>. While they help me <span class=\"sub-hl\">summarize complex data and generate outlines</span>, <u>I always prioritize my own critical thinking to</u> <span class=\"sub-hl\">verify information and preserve my personal intellectual voice</span>."
+                                        "label": "Bài mẫu Cách 2 (Dùng hỗ trợ tìm ý tưởng nhưng không quá phụ thuộc - 40 từ)",
+                                        "text": "Yes, I do, but I try not to rely on them too much. I mainly use AI to brainstorm ideas and summarize long articles, but I always double-check the facts and think for myself to keep my own original ideas.",
+                                        "formatted": "→ <u>Yes, I do, but I try not to rely on them too much</u>. I mainly use AI to <span class=\"sub-hl\">brainstorm ideas and summarize long articles</span>, but I always <span class=\"sub-hl\">double-check the facts and think for myself</span> to keep my own original ideas."
                                 }
                         ]
                 },
@@ -35011,7 +35039,7 @@ const practiceTopicsData = [
                         "qNum": 2,
                         "question": "What do you think about using AI to learn English?",
                         "qType": "Wh-question: What do you think about using AI for English?",
-                        "formula": "<div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 1 (Rất hiệu quả: phản hồi tức thì, luyện nói 24/7 và sửa lỗi chuẩn xác):</div>\n                    <div class=\"topic-formula-text\">\n                        → <u>In my view, incorporating AI into English acquisition is a revolutionary breakthrough</u>. It allows language learners to <span class=\"formula-bracket-hl\">[lợi ích 1 - Vo]</span> and gives them personalized feedback to <span class=\"formula-bracket-hl\">[lợi ích 2 - Vo]</span> without anxiety.\n                    </div>\n                </div>\n                <div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 2 (Hữu ích về ngữ pháp/từ vựng nhưng cần kết hợp giao tiếp thực tế với con người):</div>\n                    <div class=\"topic-formula-text\">\n                        → <u>While AI is an invaluable asset for vocabulary and grammar drills, it cannot fully simulate</u> <span class=\"formula-bracket-hl\">[sự thấu hiểu giao tiếp thực tế]</span>. Learners should combine AI assistance with <span class=\"formula-bracket-hl\">[giao tiếp thực tế]</span> to develop natural fluency.\n                    </div>\n                </div>",
+                        "formula": "<div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 1 (Rất hữu ích: luyện nói phản xạ, sửa lỗi phát âm và học mọi lúc):</div>\n                    <div class=\"topic-formula-text\">\n                        → <u>In my opinion, using AI to learn English is extremely useful and convenient</u>. It allows learners to <span class=\"formula-bracket-hl\">[lợi ích 1 - Vo]</span> and gives them a comfortable environment to <span class=\"formula-bracket-hl\">[lợi ích 2 - Vo]</span>.\n                    </div>\n                </div>\n                <div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 2 (Tốt cho ngữ pháp/từ vựng nhưng vẫn cần nói chuyện với người thật):</div>\n                    <div class=\"topic-formula-text\">\n                        → <u>I think AI is a great study companion, especially for vocabulary and grammar</u>. However, to develop natural fluency, we still need to <span class=\"formula-bracket-hl\">[giao tiếp thực tế với người thật]</span>.\n                    </div>\n                </div>",
                         "vocabGroups": [
                                 {
                                         "type": "note",
@@ -35019,37 +35047,45 @@ const practiceTopicsData = [
                                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> BẢNG LỢI ÍCH B2</button> để điền vào vị trí <em>[lợi ích]</em>."
                                 },
                                 {
-                                        "title": "💡 [Học tiếng Anh cùng AI]:",
+                                        "title": "💡 [Học tiếng Anh với AI]:",
                                         "items": [
                                                 {
-                                                        "en": "revolutionary breakthrough in language pedagogy",
-                                                        "vn": "bước đột phá mang tính cách mạng trong phương pháp dạy học"
+                                                        "en": "extremely useful and convenient",
+                                                        "vn": "cực kỳ hữu ích và tiện lợi"
                                                 },
                                                 {
-                                                        "en": "real-time grammatical corrections and tailored explanations",
-                                                        "vn": "sửa lỗi ngữ pháp tức thì và giải thích phù hợp trình độ"
+                                                        "en": "practice speaking skills anytime",
+                                                        "vn": "luyện kỹ năng nói bất cứ lúc nào"
                                                 },
                                                 {
-                                                        "en": "practice conversational English without fear of judgment",
-                                                        "vn": "luyện nói tiếng Anh mà không sợ bị phán xét hay ngại ngùng"
+                                                        "en": "receive instant feedback and corrections",
+                                                        "vn": "nhận phản hồi và sửa lỗi ngay lập tức"
                                                 },
                                                 {
-                                                        "en": "lacks nuanced cultural empathy and human emotion",
-                                                        "vn": "thiếu sự thấu cảm văn hóa tinh tế và cảm xúc con người"
+                                                        "en": "make mistakes without feeling shy",
+                                                        "vn": "mắc lỗi sai mà không sợ bị ngại ngùng"
+                                                },
+                                                {
+                                                        "en": "a great study companion",
+                                                        "vn": "một người bạn đồng hành học tập tuyệt vời"
+                                                },
+                                                {
+                                                        "en": "develop natural English fluency",
+                                                        "vn": "phát triển sự lưu loát tiếng Anh tự nhiên"
                                                 }
                                         ]
                                 }
                         ],
                         "samples": [
                                 {
-                                        "label": "Bài mẫu Cách 1 (Trợ thủ đắc lực: sửa phát âm và luyện phản xạ không lo ngại ngùng)",
-                                        "text": "In my view, incorporating AI into English acquisition is a revolutionary breakthrough. It allows self-learners to practice speaking and receive instantaneous grammatical feedback around the clock without the fear of making embarrassing mistakes.",
-                                        "formatted": "→ <u>In my view, incorporating AI into English acquisition is a revolutionary breakthrough</u>. It allows language learners to <span class=\"sub-hl\">practice conversational dialogues 24/7</span> and gives them personalized feedback to <span class=\"sub-hl\">rectify pronunciation and grammatical errors</span> without anxiety."
+                                        "label": "Bài mẫu Cách 1 (Luyện nói 24/7 và nhận phản hồi tức thì không sợ ngại - 38 từ)",
+                                        "text": "In my opinion, using AI to learn English is extremely useful and convenient. It allows learners to practice speaking anytime and receive instant feedback. It also gives them a comfortable environment to make mistakes without feeling shy or embarrassed.",
+                                        "formatted": "→ <u>In my opinion, using AI to learn English is extremely useful and convenient</u>. It allows learners to <span class=\"sub-hl\">practice speaking anytime and receive instant feedback</span>. It also gives them a comfortable environment to <span class=\"sub-hl\">make mistakes without feeling shy or embarrassed</span>."
                                 },
                                 {
-                                        "label": "Bài mẫu Cách 2 (Tốt cho kỹ năng đọc viết, nhưng cần người thật để hoàn thiện độ nhạy văn hóa)",
-                                        "text": "While AI is fantastic for expanding lexical resources and syntax, it cannot entirely replicate the cultural nuances and spontaneous humor of human conversation. To master natural fluency, learners should blend AI tools with authentic interactions with native speakers.",
-                                        "formatted": "→ <u>While AI is an invaluable asset for vocabulary and grammar drills, it cannot fully simulate</u> <span class=\"sub-hl\">subtle cultural nuances and authentic humor</span>. Learners should combine AI assistance with <span class=\"sub-hl\">real-world human conversations</span> to develop natural fluency."
+                                        "label": "Bài mẫu Cách 2 (Tốt cho ngữ pháp nhưng cần nói chuyện với người thật để tự nhiên - 39 từ)",
+                                        "text": "I think AI is a great study companion, especially for practicing vocabulary and grammar drills. However, to develop natural fluency, we still need to talk with real people and teachers to understand genuine emotions and body language.",
+                                        "formatted": "→ <u>I think AI is a great study companion, especially for vocabulary and grammar</u>. However, to develop natural fluency, we still need to <span class=\"sub-hl\">talk with real people and teachers to understand genuine emotions and body language</span>."
                                 }
                         ]
                 },
@@ -35057,7 +35093,7 @@ const practiceTopicsData = [
                         "qNum": 3,
                         "question": "Do you think AI can replace human teachers? Why or why not?",
                         "qType": "Yes/No Question: Can AI replace human teachers? Why or why not?",
-                        "formula": "<div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 1 (KHÔNG THỂ THAY THẾ - Giáo viên mang lại sự thấu cảm, truyền cảm hứng và định hướng đạo đức):</div>\n                    <div class=\"topic-formula-text\">\n                        → <u>No, I firmly believe AI will never completely replace human educators</u>. While algorithms excel at delivering information, human teachers provide <span class=\"formula-bracket-hl\">[sự kết nối cảm xúc & truyền cảm hứng]</span>, which allows students to <span class=\"formula-bracket-hl\">[lợi ích giáo dục toàn diện - Vo]</span>.\n                    </div>\n                </div>\n                <div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 2 (AI ĐÓNG VAI TRÒ TRỢ GIẢNG - Mô hình giáo dục kết hợp Người + Máy):</div>\n                    <div class=\"topic-formula-text\">\n                        → <u>Rather than replacing teachers, AI will serve as a powerful co-pilot in classrooms</u>. Automating grading and repetitive paperwork will allow instructors to <span class=\"formula-bracket-hl\">[tập trung vào cố vấn học viên - Vo]</span>.\n                    </div>\n                </div>",
+                        "formula": "<div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 1 (KHÔNG THỂ THAY THẾ - Giáo viên mang lại sự thấu hiểu, động viên và truyền cảm hứng):</div>\n                    <div class=\"topic-formula-text\">\n                        → <u>No, I don't think AI can ever completely replace human teachers</u>. While AI can provide plenty of information, only real teachers can offer <span class=\"formula-bracket-hl\">[sự thấu cảm và động viên]</span>, which helps students <span class=\"formula-bracket-hl\">[lợi ích - Vo]</span>.\n                    </div>\n                </div>\n                <div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 2 (AI ĐÓNG VAI TRÒ TRỢ LÝ - Giúp giáo viên giảm tải việc hành chính để tập trung dạy học):</div>\n                    <div class=\"topic-formula-text\">\n                        → <u>I believe AI will act as a helpful assistant rather than a replacement</u>. By helping teachers <span class=\"formula-bracket-hl\">[chấm bài / soạn giáo án]</span>, it allows them to <span class=\"formula-bracket-hl\">[dành nhiều thời gian hơn cho từng học sinh - Vo]</span>.\n                    </div>\n                </div>",
                         "vocabGroups": [
                                 {
                                         "type": "note",
@@ -35065,37 +35101,45 @@ const practiceTopicsData = [
                                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> BẢNG LỢI ÍCH B2</button> để điền vào vị trí <em>[lợi ích]</em>."
                                 },
                                 {
-                                        "title": "👩‍🏫 [Vai trò của Giáo viên vs Trí tuệ nhân tạo]:",
+                                        "title": "👩‍🏫 [Giáo viên vs Trí tuệ nhân tạo]:",
                                         "items": [
                                                 {
-                                                        "en": "emotional empathy and motivational mentorship",
-                                                        "vn": "sự thấu hiểu cảm xúc và cố vấn truyền cảm hứng"
+                                                        "en": "completely replace human teachers",
+                                                        "vn": "thay thế hoàn toàn giáo viên là con người"
                                                 },
                                                 {
-                                                        "en": "inculcate moral values and critical inquiry",
-                                                        "vn": "truyền thụ các giá trị đạo đức và tư duy phản biện"
+                                                        "en": "give personal encouragement and emotional support",
+                                                        "vn": "đưa ra sự khích lệ cá nhân và nâng đỡ tinh thần"
                                                 },
                                                 {
-                                                        "en": "act as an indispensable educational co-pilot",
-                                                        "vn": "đóng vai trò như một trợ giảng công nghệ không thể thiếu"
+                                                        "en": "stay motivated and develop good values",
+                                                        "vn": "giữ vững động lực và bồi dưỡng các giá trị tốt đẹp"
                                                 },
                                                 {
-                                                        "en": "tailor pedagogical strategies to psychological needs",
-                                                        "vn": "may đo chiến lược giảng dạy theo tâm lý học sinh"
+                                                        "en": "act as a helpful assistant in the classroom",
+                                                        "vn": "đóng vai trò như một trợ giảng hữu ích trong lớp học"
+                                                },
+                                                {
+                                                        "en": "grade assignments and prepare lesson plans",
+                                                        "vn": "chấm bài tập và chuẩn bị giáo án bài giảng"
+                                                },
+                                                {
+                                                        "en": "spend more quality time guiding students",
+                                                        "vn": "dành nhiều thời gian chất lượng hơn để chỉ dẫn học sinh"
                                                 }
                                         ]
                                 }
                         ],
                         "samples": [
                                 {
-                                        "label": "Bài mẫu Cách 1 (Không thể thay thế vì giáo viên truyền cảm hứng và bồi dưỡng nhân cách)",
-                                        "text": "No, I firmly believe AI will never fully replace human educators. While artificial intelligence can deliver factual data flawlessly, only human teachers possess emotional empathy, inspiring stories, and the moral guidance necessary to shape young minds.",
-                                        "formatted": "→ <u>No, I firmly believe AI will never completely replace human educators</u>. While algorithms excel at delivering information, human teachers provide <span class=\"sub-hl\">emotional empathy, moral mentorship, and personal encouragement</span>, which allows students to <span class=\"sub-hl\">develop holistic character and self-confidence</span>."
+                                        "label": "Bài mẫu Cách 1 (Không thể thay thế vì chỉ có thầy cô mới truyền cảm hứng và động viên - 39 từ)",
+                                        "text": "No, I don't think AI can ever completely replace human teachers. While AI can provide plenty of information, only real teachers can offer personal encouragement and emotional support, which helps students stay motivated and develop good moral values.",
+                                        "formatted": "→ <u>No, I don't think AI can ever completely replace human teachers</u>. While AI can provide plenty of information, only real teachers can offer <span class=\"sub-hl\">personal encouragement and emotional support</span>, which helps students <span class=\"sub-hl\">stay motivated and develop good moral values</span>."
                                 },
                                 {
-                                        "label": "Bài mẫu Cách 2 (AI trở thành trợ thủ đắc lực giúp giáo viên cá nhân hóa bài giảng)",
-                                        "text": "Rather than replacing teachers, AI will transform their roles into mentors. By automating grading and administrative busywork, technology will free up valuable time for teachers to offer personalized emotional support and inspire creativity.",
-                                        "formatted": "→ <u>Rather than replacing teachers, AI will serve as a powerful co-pilot in classrooms</u>. Automating grading and repetitive paperwork will allow instructors to <span class=\"sub-hl\">devote quality time to one-on-one mentorship and foster deep creative thinking</span>."
+                                        "label": "Bài mẫu Cách 2 (AI là trợ tá đắc lực giúp giáo viên tập trung hướng dẫn học sinh - 40 từ)",
+                                        "text": "I believe AI will act as a helpful assistant rather than a replacement. By helping teachers grade assignments and prepare lesson plans faster, it allows instructors to spend more quality time guiding each student and answering their questions.",
+                                        "formatted": "→ <u>I believe AI will act as a helpful assistant rather than a replacement</u>. By helping teachers <span class=\"sub-hl\">grade assignments and prepare lesson plans faster</span>, it allows instructors to <span class=\"sub-hl\">spend more quality time guiding each student and answering their questions</span>."
                                 }
                         ]
                 }
