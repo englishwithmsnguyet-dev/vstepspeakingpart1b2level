@@ -7369,7 +7369,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "👥 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Khi tham gia cùng người khác]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "strengthen our bond",
@@ -7390,7 +7390,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "👤 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Khi thực hiện một mình]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "proceed at my own pace",
@@ -7536,7 +7536,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "🧘 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Phục hồi năng lượng]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "release stress",
@@ -7583,7 +7583,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Hobbies"
     },
     {
         "id": 2,
@@ -7797,7 +7798,12 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Rèn luyện tư duy]:",
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>relax after a busy day, clear my mind, reduce stress, widen my knowledge, stay healthy, save money, save time...</em> hoặc các cụm bạn đã lưu)."
+                    },
+                    {
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "sharpen my tactical thinking",
@@ -7876,7 +7882,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "🎯 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH)]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "escape from academic pressure",
@@ -7989,7 +7995,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "👥 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Khi chơi cùng bạn bè]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "strengthen our bond",
@@ -8006,7 +8012,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "👤 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Khi chơi một mình]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "immerse myself fully in the storyline",
@@ -8036,7 +8042,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Video games"
     },
     {
         "id": 3,
@@ -8246,7 +8253,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "🌱 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Đọc sách]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "broaden my horizons",
@@ -8310,6 +8317,11 @@ const practiceTopicsData = [
                                 "vn": "tiết kiệm hơn"
                             }
                         ]
+                    },
+                    {
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>relax after a busy day, clear my mind, reduce stress, widen my knowledge, stay healthy, save money, save time...</em> hoặc các cụm bạn đã lưu)."
                     },
                     {
                         "title": "📱 [Lợi ích khi đọc sách điện tử - E-books]:",
@@ -8400,7 +8412,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "📖 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Lợi thế của Sách Giấy]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "protect my eyesight from screen glare",
@@ -8417,7 +8429,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "📱 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Lợi thế của Sách Điện Tử]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "store hundreds of titles in one lightweight device",
@@ -8504,6 +8516,11 @@ const practiceTopicsData = [
                         ]
                     },
                     {
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>relax after a busy day, clear my mind, reduce stress, widen my knowledge, stay healthy, save money, save time...</em> hoặc các cụm bạn đã lưu)."
+                    },
+                    {
                         "title": "⭐ [Lợi ích mang lại cho giới trẻ]:",
                         "items": [
                             {
@@ -8567,7 +8584,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "🌟 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Đối với người trẻ]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "relieve study pressure",
@@ -8601,7 +8618,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Books"
     },
     {
         "id": 4,
@@ -8638,6 +8656,11 @@ const practiceTopicsData = [
                                 "vn": "trước khi đi ngủ"
                             }
                         ]
+                    },
+                    {
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>relax after a busy day, clear my mind, reduce stress, widen my knowledge, stay healthy, save money, save time...</em> hoặc các cụm bạn đã lưu)."
                     },
                     {
                         "title": "⭐ [Cụm Lợi ích khi nghe đài] (Cách 1):",
@@ -8753,7 +8776,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "📡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Khi nghe radio / podcast]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "catch up on traffic updates",
@@ -8928,7 +8951,12 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "🎯 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Kênh phát thanh]:",
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>relax after a busy day, clear my mind, reduce stress, widen my knowledge, stay healthy, save money, save time...</em> hoặc các cụm bạn đã lưu)."
+                    },
+                    {
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "avoid congested roads during rush hours",
@@ -9019,7 +9047,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "📻 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Thói quen nghe radio]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "keep up to date with current affairs",
@@ -9062,7 +9090,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Listening to the radio"
     },
     {
         "id": 5,
@@ -9243,7 +9272,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "🎧 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Âm nhạc]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "release negative emotions",
@@ -9328,6 +9357,11 @@ const practiceTopicsData = [
                                 "vn": "nấu bữa tối"
                             }
                         ]
+                    },
+                    {
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>relax after a busy day, clear my mind, reduce stress, widen my knowledge, stay healthy, save money, save time...</em> hoặc các cụm bạn đã lưu)."
                     },
                     {
                         "title": "⭐ [Lợi ích khi nghe nhạc]:",
@@ -9446,6 +9480,11 @@ const practiceTopicsData = [
                 "formula": "<div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 1 (Khẳng định vai trò thiết yếu không thể thiếu - plays an indispensable role):</div>\n                    <div class=\"topic-formula-text\">\n                        → Yes, absolutely. <u>Music plays an indispensable role in my daily life</u> because it's both <span class=\"formula-bracket-hl\">[tính từ 1]</span> and <span class=\"formula-bracket-hl\">[tính từ 2]</span>. It allows me to <span class=\"formula-bracket-hl\">[lợi ích 1 - Vo]</span> and gives me a chance to <span class=\"formula-bracket-hl\">[lợi ích 2 - Vo]</span>.\n                    </div>\n                </div>\n                <div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 2 (Cấu trúc giả định giàu cảm xúc - I can't imagine my life without music):</div>\n                    <div class=\"topic-formula-text\">\n                        → Without a doubt, <u>I can't imagine my life without music</u>. It acts as an incredible emotional therapy that allows me to <span class=\"formula-bracket-hl\">[lợi ích 1 - Vo]</span> and gives me an opportunity to <span class=\"formula-bracket-hl\">[lợi ích 2 - Vo]</span>.\n                    </div>\n                </div>",
                 "vocabGroups": [
                     {
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>relax after a busy day, clear my mind, reduce stress, widen my knowledge, stay healthy, save money, save time...</em> hoặc các cụm bạn đã lưu)."
+                    },
+                    {
                         "title": "⭐ [Lợi ích thiết yếu của âm nhạc] (Cách 1):",
                         "items": [
                             {
@@ -9559,7 +9598,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "🌟 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Giá trị của âm nhạc]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "heal emotional exhaustion and reduce anxiety",
@@ -9593,7 +9632,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Music"
     },
     {
         "id": 6,
@@ -9716,7 +9756,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "🎼 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Chơi nhạc cụ]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "express personal feelings musically",
@@ -9822,6 +9862,11 @@ const practiceTopicsData = [
                                 "vn": "những buổi gặp gỡ bạn bè thân mật"
                             }
                         ]
+                    },
+                    {
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>relax after a busy day, clear my mind, reduce stress, widen my knowledge, stay healthy, save money, save time...</em> hoặc các cụm bạn đã lưu)."
                     },
                     {
                         "title": "⭐ [Lợi ích khi nghe hoặc chơi nhạc cụ] (Cách 1):",
@@ -9991,7 +10036,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "👶 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Lợi ích cho trẻ em]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "cultivate self-discipline and perseverance",
@@ -10025,7 +10070,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Musical instruments"
     },
     {
         "id": 7,
@@ -10199,7 +10245,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>unwind after an exhausting workday, socialize with friends, strengthen family bonding...</em>)."
                     },
                     {
-                        "title": "🍷 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Đi ăn ngoài]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "savor mouth-watering culinary delights",
@@ -10511,7 +10557,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "🥗 [Món ăn thanh đạm & Lợi ích]:",
+                        "title": "🥗 [Món ăn thanh đạm - Vo]:",
                         "items": [
                             {
                                 "en": "lighter options like steamed vegetables",
@@ -10530,6 +10576,11 @@ const practiceTopicsData = [
                                 "vn": "giữ cho hệ tiêu hóa luôn khỏe mạnh cân bằng"
                             }
                         ]
+                    },
+                    {
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>relax after a busy day, clear my mind, reduce stress, widen my knowledge, stay healthy, save money, save time...</em> hoặc các cụm bạn đã lưu)."
                     }
                 ],
                 "samples": [
@@ -10545,7 +10596,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Restaurants"
     },
     {
         "id": 8,
@@ -10710,6 +10762,11 @@ const practiceTopicsData = [
                         ]
                     },
                     {
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>relax after a busy day, clear my mind, reduce stress, widen my knowledge, stay healthy, save money, save time...</em> hoặc các cụm bạn đã lưu)."
+                    },
+                    {
                         "title": "🥗 [Lợi ích khi dùng bữa]:",
                         "items": [
                             {
@@ -10839,6 +10896,11 @@ const practiceTopicsData = [
                         ]
                     },
                     {
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>relax after a busy day, clear my mind, reduce stress, widen my knowledge, stay healthy, save money, save time...</em> hoặc các cụm bạn đã lưu)."
+                    },
+                    {
                         "title": "⭐ [Lợi ích chia sẻ] (Cách 2):",
                         "items": [
                             {
@@ -10919,7 +10981,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "🎉 [Lợi ích cảm xúc & Tinh thần]:",
+                        "title": "🎉 [Lợi ích tinh thần ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "satisfy my comfort food cravings",
@@ -11023,6 +11085,11 @@ const practiceTopicsData = [
                         ]
                     },
                     {
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>relax after a busy day, clear my mind, reduce stress, widen my knowledge, stay healthy, save money, save time...</em> hoặc các cụm bạn đã lưu)."
+                    },
+                    {
                         "title": "💪 [Lợi ích sức khỏe] (Cách 2):",
                         "items": [
                             {
@@ -11120,7 +11187,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Fast food restaurants"
     },
     {
         "id": 9,
@@ -11265,7 +11333,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>unwind after an exhausting day, maintain good health, cherish warm family moments...</em>)."
                     },
                     {
-                        "title": "🍳 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Nấu ăn]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "experiment with diverse culinary recipes",
@@ -11451,6 +11519,11 @@ const practiceTopicsData = [
                                 "vn": "cảm nhận sự hòa quyện tuyệt vời của rau thơm và gia vị"
                             }
                         ]
+                    },
+                    {
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>relax after a busy day, clear my mind, reduce stress, widen my knowledge, stay healthy, save money, save time...</em> hoặc các cụm bạn đã lưu)."
                     }
                 ],
                 "samples": [
@@ -11492,6 +11565,11 @@ const practiceTopicsData = [
                                 "vn": "ngon miệng và tiết kiệm"
                             }
                         ]
+                    },
+                    {
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>relax after a busy day, clear my mind, reduce stress, widen my knowledge, stay healthy, save money, save time...</em> hoặc các cụm bạn đã lưu)."
                     },
                     {
                         "title": "⭐ [Lợi ích khi ăn ở nhà] (Cách 1):",
@@ -11633,7 +11711,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Cooking"
     },
     {
         "id": 10,
@@ -11708,6 +11787,11 @@ const practiceTopicsData = [
                                 "vn": "các kênh dạy nấu ăn trên YouTube"
                             }
                         ]
+                    },
+                    {
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>relax after a busy day, clear my mind, reduce stress, widen my knowledge, stay healthy, save money, save time...</em> hoặc các cụm bạn đã lưu)."
                     },
                     {
                         "title": "⭐ [Lợi ích khi học nấu ăn] (Cách 1 & 2):",
@@ -11894,7 +11978,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "🎯 [Lý do tự lập & Lợi ích khi học một mình] (Cách 2):",
+                        "title": "🎯 [Lý do tự lập - Vo] (Cách 2):",
                         "items": [
                             {
                                 "en": "focus on the lesson",
@@ -11964,6 +12048,11 @@ const practiceTopicsData = [
                                 "vn": "tập trung cao độ và hiệu quả"
                             }
                         ]
+                    },
+                    {
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>relax after a busy day, clear my mind, reduce stress, widen my knowledge, stay healthy, save money, save time...</em> hoặc các cụm bạn đã lưu)."
                     },
                     {
                         "title": "💡 [Lợi ích tương ứng]:",
@@ -12049,6 +12138,11 @@ const practiceTopicsData = [
                         ]
                     },
                     {
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>relax after a busy day, clear my mind, reduce stress, widen my knowledge, stay healthy, save money, save time...</em> hoặc các cụm bạn đã lưu)."
+                    },
+                    {
                         "title": "⭐ [Lợi ích] (Cách 1 & 2):",
                         "items": [
                             {
@@ -12091,7 +12185,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "✨ [Kỹ năng & Lợi ích lớp học nấu ăn]:",
+                        "title": "✨ [Lợi ích khi học nấu ăn - Vo]:",
                         "items": [
                             {
                                 "en": "essential culinary life skills",
@@ -12146,7 +12240,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "The cooking class"
     },
     {
         "id": 11,
@@ -12316,7 +12411,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>boost my stamina, stay energetic throughout the day, sleep much better at night...</em>)."
                     },
                     {
-                        "title": "🏃 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Sức khỏe]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "strengthen my immune system",
@@ -12407,31 +12502,6 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "⭐ [Lợi ích cho cơ thể & công việc] (Cách 1 & 2):",
-                        "items": [
-                            {
-                                "en": "keep fit",
-                                "vn": "giữ dáng thon gọn"
-                            },
-                            {
-                                "en": "stay healthy",
-                                "vn": "duy trì sức khỏe tốt"
-                            },
-                            {
-                                "en": "study and work effectively",
-                                "vn": "học tập và làm việc hiệu quả"
-                            },
-                            {
-                                "en": "clear my mind",
-                                "vn": "giúp đầu óc minh mẫn"
-                            },
-                            {
-                                "en": "regain my energy",
-                                "vn": "nạp lại năng lượng"
-                            }
-                        ]
-                    },
-                    {
                         "title": "🌟 [Cấu trúc nêu thói quen rèn luyện]:",
                         "items": [
                             {
@@ -12479,7 +12549,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>burn excess calories, stay in good shape, recharge my energy, relieve stress...</em>)."
                     },
                     {
-                        "title": "🍎 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Giữ dáng & Sức khỏe]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "maintain an ideal body weight",
@@ -12520,7 +12590,7 @@ const practiceTopicsData = [
                 "formula": "<div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 1 (Làm việc năng suất cao & Dành trọn thời gian quý giá bên người thân):</div>\n                    <div class=\"topic-formula-text\">\n                        → From my perspective, <u>having good health brings countless benefits</u>. First of all, it allows people to <span class=\"formula-bracket-hl\">[lợi ích công việc - Vo]</span> without feeling exhausted. Furthermore, it gives us the energy to <span class=\"formula-bracket-hl\">[lợi ích cuộc sống - Vo]</span>.\n                    </div>\n                </div>\n                <div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 2 (Phòng ngừa bệnh tật nghiêm trọng, tiết kiệm viện phí & Tinh thần luôn vui tươi, lạc quan):</div>\n                    <div class=\"topic-formula-text\">\n                        → Without a doubt, <u>good health is our greatest asset</u> because it helps us <span class=\"formula-bracket-hl\">[lợi ích phòng bệnh - Vo]</span> and <span class=\"formula-bracket-hl\">[lợi ích tài chính - Vo]</span>. It also enables us to maintain a <span class=\"formula-bracket-hl\">[tính từ tinh thần]</span> mindset every single day.\n                    </div>\n                </div>",
                 "vocabGroups": [
                     {
-                        "title": "💼 [Lợi ích cho công việc & cuộc sống] (Cách 1):",
+                        "title": "💼 [Lợi ích cho công việc - Vo] (Cách 1):",
                         "items": [
                             {
                                 "en": "work and study effectively",
@@ -12541,7 +12611,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "🛡️ [Lợi ích phòng bệnh & Tiết kiệm] (Cách 2):",
+                        "title": "🛡️ [Lợi ích phòng bệnh - Vo] (Cách 2):",
                         "items": [
                             {
                                 "en": "avoid serious diseases",
@@ -12604,7 +12674,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "✨ [Lợi ích công việc & Tinh thần]:",
+                        "title": "✨ [Lợi ích công việc ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "work and study with high productivity",
@@ -12630,7 +12700,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>spend quality time with loved ones, enjoy life to the fullest, maintain high productivity...</em>)."
                     },
                     {
-                        "title": "💼 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Giá trị của sức khỏe]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "pursue long-term career aspirations",
@@ -12664,7 +12734,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Health"
     },
     {
         "id": 12,
@@ -12826,7 +12897,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>maintain good health, stay resilient, bounce back quickly...</em>)."
                     },
                     {
-                        "title": "🛡️ [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Đề kháng & Bình phục]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "fight off common seasonal viruses",
@@ -12994,7 +13065,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>protect my long-term well-being, heal naturally, feel completely reassured...</em>)."
                     },
                     {
-                        "title": "🩺 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Chăm sóc y tế]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "monitor key health indicators",
@@ -13149,7 +13220,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>strengthen their immune system, cope with work stress, enjoy a happier lifestyle...</em>)."
                     },
                     {
-                        "title": "🧘 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Ý thức sức khỏe cộng đồng]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "adopt a proactive preventive mindset",
@@ -13183,11 +13254,12 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Health (part 2)"
     },
     {
         "id": 13,
-        "title": "Chủ đề 13: Talk about your favorite day of the week",
+        "title": "Chủ đề 13: Let's talk about your favorite day of the week",
         "introText": "Let’s talk about your favorite day of the week.",
         "questions": [
             {
@@ -13332,7 +13404,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>unwind after an exhausting week, recharge my batteries, clear my mind...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Tự do & Tái tạo]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "take full control of my schedule",
@@ -13444,35 +13516,6 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "🎉 [Lợi ích giải trí & Sức khỏe] (Cách 1 & 2):",
-                        "items": [
-                            {
-                                "en": "improve my mood",
-                                "vn": "cải thiện tâm trạng"
-                            },
-                            {
-                                "en": "have fun",
-                                "vn": "vui vẻ giải trí"
-                            },
-                            {
-                                "en": "reduce stress",
-                                "vn": "giảm căng thẳng"
-                            },
-                            {
-                                "en": "clear my mind",
-                                "vn": "thư thái đầu óc"
-                            },
-                            {
-                                "en": "take a mental break",
-                                "vn": "nghỉ ngơi thư giãn tinh thần"
-                            },
-                            {
-                                "en": "spend quality time with my family",
-                                "vn": "dành thời gian chất lượng bên gia đình"
-                            }
-                        ]
-                    },
-                    {
                         "title": "🌟 [Cấu trúc thói quen & Ưu tiên ngày nghỉ]:",
                         "items": [
                             {
@@ -13520,7 +13563,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>relieve daily stress, cherish warm moments, foster closer bonds...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Gắn kết & An yên]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "share lots of genuine laughter together",
@@ -13561,7 +13604,7 @@ const practiceTopicsData = [
                 "formula": "<div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 1 (Có ý nghĩa to lớn - Tạo động lực tinh thần, giúp làm việc hiệu quả suốt tuần):</div>\n                    <div class=\"topic-formula-text\">\n                        → From my perspective, <u>having a favorite day is of great significance</u> because it gives people <span class=\"formula-bracket-hl\">[động lực tinh thần]</span>. It allows us to <span class=\"formula-bracket-hl\">[lợi ích 1 - Vo]</span> and motivates us to <span class=\"formula-bracket-hl\">[lợi ích 2 - Vo]</span>.\n                    </div>\n                </div>\n                <div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 2 (Thiết yếu cho sức khỏe tinh thần - Giúp tái tạo năng lượng, tránh nguy cơ kiệt sức):</div>\n                    <div class=\"topic-formula-text\">\n                        → Without doubt, <u>it's truly essential for our mental well-being</u>. Having a dedicated day to unwind allows people to <span class=\"formula-bracket-hl\">[lợi ích 1 - Vo]</span> and prevents them from <span class=\"formula-bracket-hl\">[nguy cơ kiệt sức - V-ing]</span>.\n                    </div>\n                </div>",
                 "vocabGroups": [
                     {
-                        "title": "🎯 [Mục đích & Lợi ích] (Cách 1):",
+                        "title": "🎯 [Mục đích làm việc - Vo] (Cách 1):",
                         "items": [
                             {
                                 "en": "look forward to",
@@ -13582,35 +13625,6 @@ const practiceTopicsData = [
                             {
                                 "en": "work more effectively",
                                 "vn": "làm việc hiệu quả hơn"
-                            }
-                        ]
-                    },
-                    {
-                        "title": "⚖️ [Lợi ích giải trí & Sức khỏe] (Cách 2):",
-                        "items": [
-                            {
-                                "en": "take a mental break",
-                                "vn": "cho tinh thần nghỉ ngơi"
-                            },
-                            {
-                                "en": "balance work and life",
-                                "vn": "cân bằng giữa công việc và cuộc sống"
-                            },
-                            {
-                                "en": "enjoy personal time",
-                                "vn": "tận hưởng thời gian riêng tư"
-                            },
-                            {
-                                "en": "regain our energy",
-                                "vn": "phục hồi lại năng lượng"
-                            },
-                            {
-                                "en": "recharge my batteries",
-                                "vn": "nạp lại năng lượng tích cực"
-                            },
-                            {
-                                "en": "sleep better",
-                                "vn": "ngủ ngon hơn"
                             }
                         ]
                     },
@@ -13662,7 +13676,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>recharge their energy, stay productive, maintain mental wellness...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Động lực & Cân bằng]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "break the monotony of daily routines",
@@ -13696,7 +13710,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Your favorite day of the week"
     },
     {
         "id": 14,
@@ -13731,35 +13746,6 @@ const practiceTopicsData = [
                             {
                                 "en": "Sunday evenings",
                                 "vn": "các buổi tối Chủ nhật"
-                            }
-                        ]
-                    },
-                    {
-                        "title": "🎉 [Lợi ích giải trí & Sức khỏe] (Cách 1 & 2):",
-                        "items": [
-                            {
-                                "en": "relax after a busy day",
-                                "vn": "thư giãn sau một ngày bận rộn"
-                            },
-                            {
-                                "en": "enjoy the fresh air",
-                                "vn": "tận hưởng bầu không khí trong lành"
-                            },
-                            {
-                                "en": "clear my mind",
-                                "vn": "giải tỏa tâm trí"
-                            },
-                            {
-                                "en": "digest better",
-                                "vn": "tiêu hóa thức ăn tốt hơn"
-                            },
-                            {
-                                "en": "sleep better",
-                                "vn": "ngủ ngon giấc hơn"
-                            },
-                            {
-                                "en": "get some fresh air",
-                                "vn": "hít thở không khí thoáng đãng"
                             }
                         ]
                     },
@@ -13832,7 +13818,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>promote food digestion, clear my mind, ease mental stress...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Không khí & Tiêu hóa]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "breathe in cool and fresh air",
@@ -14004,7 +13990,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>enjoy the cool night breeze, stretch my legs, decompress after work...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Cảnh quan & An toàn]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "admire the peaceful evening scenery",
@@ -14099,7 +14085,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "🌟 [Cấu trúc phân tích lợi ích thể chất & Tinh thần]:",
+                        "title": "🌟 [Lợi ích thể chất ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "from a physical perspective",
@@ -14120,7 +14106,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "🏃 [Lợi ích thể lực & Tinh thần thư thái]:",
+                        "title": "🏃 [Lợi ích thể lực ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "burn excess calories and boost metabolism",
@@ -14146,7 +14132,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>strengthen the immune system, clear their minds, bounce back quickly...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Sức khỏe toàn diện]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "alleviate back and joint stiffness",
@@ -14180,7 +14166,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "An evening walk"
     },
     {
         "id": 15,
@@ -14346,7 +14333,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>clear my mind, unwind after a demanding workweek, save precious time...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Tiện ích & Thông minh]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "hunt for exclusive digital discount vouchers",
@@ -14433,27 +14420,6 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "🎉 [Lợi ích giải trí & Gắn kết] (Cách 1 & 2):",
-                        "items": [
-                            {
-                                "en": "spend quality time with each other",
-                                "vn": "dành thời gian chất lượng bên nhau"
-                            },
-                            {
-                                "en": "enjoy our free time",
-                                "vn": "tận hưởng thời gian rảnh rỗi"
-                            },
-                            {
-                                "en": "improve my mood",
-                                "vn": "cải thiện tâm trạng"
-                            },
-                            {
-                                "en": "have fun",
-                                "vn": "có nhiều niềm vui"
-                            }
-                        ]
-                    },
-                    {
                         "title": "🌟 [Cấu trúc thể hiện sở thích đi cùng bạn bè & Người thân]:",
                         "items": [
                             {
@@ -14501,7 +14467,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>strengthen family bonds, foster closer friendships, relieve daily fatigue...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Gắn kết & Tư vấn]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "prevent buying ill-fitting clothes",
@@ -14563,7 +14529,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "💰 [Lợi ích tài chính & Mục tiêu kiểm soát] (Cách 1 & 2):",
+                        "title": "💰 [Lợi ích tài chính - Vo] (Cách 1 & 2):",
                         "items": [
                             {
                                 "en": "save money and avoid overspending",
@@ -14652,7 +14618,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>manage my budget effectively, build a solid emergency fund, achieve financial independence...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Quản lý tiền bạc]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "avoid falling into unnecessary credit card debt",
@@ -14686,7 +14652,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Shopping habits"
     },
     {
         "id": 16,
@@ -14831,7 +14798,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>manage finances wisely, avoid financial strain, secure better value for money...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Quyết định thông minh]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "spot deceptive price markups during sales",
@@ -15003,7 +14970,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>cut living expenses, overcome inflation challenges, build financial resilience...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Ứng phó lạm phát]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "cushion against unexpected medical emergencies",
@@ -15154,7 +15121,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>ensure a longer product lifespan, maximize cost-efficiency, avoid deceptive marketing traps...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Giá trị tiêu dùng]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "deliver a smoother user experience in daily life",
@@ -15188,7 +15155,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Prices and shopping habits"
     },
     {
         "id": 17,
@@ -15337,7 +15305,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>broaden my horizons, recharge my batteries, relieve daily stress...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Khám phá & Trải nghiệm]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "step out of my comfort zone",
@@ -15509,7 +15477,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>strengthen interpersonal bonds, boost self-confidence, enjoy personal freedom...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Đi nhóm & Đi đơn]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "ensure safety and security in unfamiliar areas",
@@ -15664,7 +15632,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>boost vitality, connect with nature, escape scorching weather...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Theo mùa]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "take advantage of off-peak travel discounts",
@@ -15698,7 +15666,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Traveling"
     },
     {
         "id": 18,
@@ -15905,7 +15874,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>strengthen family bonds, recharge energy, find inner peace...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Kỷ niệm & Tĩnh dưỡng]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "breathe in crisp unpolluted country air",
@@ -16056,7 +16025,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>recharge energy, maintain work-life balance, prevent chronic burnout...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Cân bằng cuộc sống]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "reset mental focus before launching new projects",
@@ -16274,7 +16243,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>strengthen communal spirit, recharge batteries, enrich life experience...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Văn hóa & Du lịch]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "exchange heartfelt well-wishes and lucky money",
@@ -16308,7 +16277,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Holidays"
     },
     {
         "id": 19,
@@ -16432,7 +16402,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>foster creativity, broaden horizons, build strong connections...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Giá trị học đường]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "build solid academic foundations",
@@ -16587,7 +16557,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>boost confidence, enhance interpersonal skills, expand social network...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Tài chính & Cá nhân hóa]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "interact with peers from diverse socio-economic backgrounds",
@@ -16734,7 +16704,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>open up career opportunities, foster independence, promote social mobility...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Tầm nhìn tương lai]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "gain a competitive edge in global workplaces",
@@ -16768,7 +16738,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Schools"
     },
     {
         "id": 20,
@@ -16913,7 +16884,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>spark curiosity, boost language confidence, unlock potential...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Cảm xúc & Kỹ năng học tập]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "practice spontaneous speaking with classmates",
@@ -17017,7 +16988,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "⭐ [Lợi ích học tập & Mục tiêu cải thiện] (Cách 1 & 2):",
+                        "title": "⭐ [Lợi ích học tập - Vo] (Cách 1 & 2):",
                         "items": [
                             {
                                 "en": "improve my listening skills",
@@ -17089,7 +17060,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>sharpen communication skills, expand vocabulary range, enhance listening comprehension...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Phản xạ & Tự tin]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "absorb authentic idioms while sharpening listening comprehension effortlessly",
@@ -17257,7 +17228,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>boost confidence, master communication skills, overcome psychological barriers...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Vượt qua rào cản]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "overcome the psychological barrier of making mistakes",
@@ -17291,7 +17262,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Learning English"
     },
     {
         "id": 21,
@@ -17452,7 +17424,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>expand vocabulary range, sharpen communication skills, boost confidence...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Kỹ năng & Tương tác]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "expand everyday vocabulary and colloquial phrases",
@@ -17640,7 +17612,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>maximize time efficiency, optimize learning curve, acquire natural phrasing...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Chủ động & Tiết kiệm]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "study at my own comfortable pace",
@@ -17803,7 +17775,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>maintain sharp memory, build consistent study habits, prevent knowledge loss...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Duy trì thói quen]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "maintain conversational reflexes in daily life",
@@ -17837,7 +17809,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Studying English on the Internet"
     },
     {
         "id": 22,
@@ -17973,7 +17946,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>maintain physical health, ensure restful sleep, boost productivity...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Cân bằng công nghệ]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "prevent severe eye strain and digital fatigue",
@@ -18161,7 +18134,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>relieve mental exhaustion, streamline daily workflow, optimize personal time...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Hiệu năng & Tâm trạng]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "clear mind of work-related worries temporarily",
@@ -18324,7 +18297,7 @@ const practiceTopicsData = [
                         "note": "Kết hợp các cụm từ đắt giá tại <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>enhance academic engagement, foster digital literacy, cultivate deep concentration...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Giáo dục & Tập trung]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "absorb key concepts effectively during lectures",
@@ -18358,7 +18331,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Using mobile phones"
     },
     {
         "id": 23,
@@ -18494,7 +18468,7 @@ const practiceTopicsData = [
                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>broaden my knowledge, learn new things, help those in need, contribute to the community...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Ý nghĩa công việc]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "share useful knowledge with others",
@@ -18632,7 +18606,7 @@ const practiceTopicsData = [
                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>gain practical experience, learn some soft skills, expand my social circle, build my confidence...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Lợi ích tài chính & kỹ năng]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "earn some extra pocket money",
@@ -18766,7 +18740,7 @@ const practiceTopicsData = [
                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>enhance my creativity, learn new things, prepare for the future, develop useful skills...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Phát triển sự nghiệp]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "have a stable and well-paid job",
@@ -18796,7 +18770,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Your dream job"
     },
     {
         "id": 24,
@@ -18941,7 +18916,7 @@ const practiceTopicsData = [
                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>unwind after a tiring day, stay healthy, listen to music, reduce stress...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Lợi ích đi lại]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "move easily through crowded streets",
@@ -19104,7 +19079,7 @@ const practiceTopicsData = [
                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>stay healthy, stay in good shape, learn to manage my money better...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Tiết kiệm & Sức khỏe]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "cut down on daily fuel expenses",
@@ -19162,7 +19137,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "⏱️ [Lợi ích thời gian & Sức khỏe] (Cách 1):",
+                        "title": "⏱️ [Lợi ích thời gian - Vo] (Cách 1):",
                         "items": [
                             {
                                 "en": "save a lot of travel time",
@@ -19263,7 +19238,7 @@ const practiceTopicsData = [
                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>regain my energy, unwind, create unforgettable memories...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Trải nghiệm đường dài]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "avoid getting tired on long journeys",
@@ -19289,7 +19264,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Transportation"
     },
     {
         "id": 25,
@@ -19446,7 +19422,7 @@ const practiceTopicsData = [
                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>have new experiences, discover new places, create unforgettable memories...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Lợi ích chuyến bay]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "reach my destination quickly",
@@ -19593,7 +19569,7 @@ const practiceTopicsData = [
                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>unwind, take a mental break, regain my energy...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Trải nghiệm hành khách]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "save waiting time at the airport",
@@ -19727,7 +19703,7 @@ const practiceTopicsData = [
                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>discover new places, explore different cultures, have new experiences, unwind...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Ưu điểm khi đi máy bay]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "save a lot of travel time on long trips",
@@ -19761,7 +19737,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Planes"
     },
     {
         "id": 26,
@@ -20180,7 +20157,12 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Lợi ích cho đô thị]:",
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>relax after a busy day, clear my mind, reduce stress, widen my knowledge, stay healthy, save money, save time...</em> hoặc các cụm bạn đã lưu)."
+                    },
+                    {
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "rely on buses and subways instead of private cars",
@@ -20214,7 +20196,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Traffic problems"
     },
     {
         "id": 27,
@@ -20488,7 +20471,7 @@ const practiceTopicsData = [
                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>escape from daily stress, find peace of mind, stay healthy, boost my emotional well-being...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Cuộc sống quê hương]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "enjoy a comfortable life without high living costs",
@@ -20656,7 +20639,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Your hometown"
     },
     {
         "id": 28,
@@ -20901,7 +20885,7 @@ const practiceTopicsData = [
                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>maintain close relationships, solve conflicts peacefully, find peace of mind, unwind...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Tình làng nghĩa xóm]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "build a warm and friendly neighborhood",
@@ -21035,7 +21019,7 @@ const practiceTopicsData = [
                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>find peace of mind, support each other, forget about my worries...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Sự an tâm]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "travel without worrying about home safety",
@@ -21061,7 +21045,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Neighbors"
     },
     {
         "id": 29,
@@ -21494,7 +21479,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "A room in your house"
     },
     {
         "id": 30,
@@ -21856,7 +21842,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Childhood"
     },
     {
         "id": 31,
@@ -22232,7 +22219,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Friends"
     },
     {
         "id": 32,
@@ -22343,7 +22331,7 @@ const practiceTopicsData = [
                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>create unforgettable memories, boost my emotional well-being, prepare for the future, learn to communicate effectively...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Lợi ích hẹn hò]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "share daily joys and worries together",
@@ -22582,7 +22570,7 @@ const practiceTopicsData = [
                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>learn to communicate effectively, build my confidence...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Ấn tượng buổi hẹn]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "talk comfortably without loud noise",
@@ -22612,7 +22600,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Dating"
     },
     {
         "id": 33,
@@ -22962,7 +22951,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Emails"
     },
     {
         "id": 34,
@@ -23094,7 +23084,7 @@ const practiceTopicsData = [
                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>create unforgettable memories, maintain close relationships, stay connected with friends and family...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Ý nghĩa bưu thiếp]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "share my travel experiences with loved ones",
@@ -23358,7 +23348,7 @@ const practiceTopicsData = [
                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>create unforgettable memories, maintain close relationships, explore different cultures...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Giá trị của bưu thiếp]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "keep meaningful travel souvenirs for a long time",
@@ -23388,7 +23378,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Postcards"
     },
     {
         "id": 35,
@@ -23507,7 +23498,7 @@ const practiceTopicsData = [
                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>improve my mood, stay energetic, unwind after a tiring day, sleep better...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Hoạt động theo thời tiết]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "take part in outdoor activities comfortably",
@@ -23561,31 +23552,6 @@ const practiceTopicsData = [
                             {
                                 "en": "drink coffee at an outdoor cafe",
                                 "vn": "uống cà phê ở quán ngoài trời"
-                            }
-                        ]
-                    },
-                    {
-                        "title": "💪 [Lợi ích sức khỏe & Tinh thần] (Cách 1):",
-                        "items": [
-                            {
-                                "en": "breathe fresh air and stay healthy",
-                                "vn": "hít thở không khí trong lành và giữ sức khỏe"
-                            },
-                            {
-                                "en": "regain positive energy",
-                                "vn": "lấy lại năng lượng tích cực"
-                            },
-                            {
-                                "en": "keep my body fit",
-                                "vn": "giữ cho cơ thể cân đối"
-                            },
-                            {
-                                "en": "enjoy nature beauty",
-                                "vn": "tận hưởng vẻ đẹp thiên nhiên"
-                            },
-                            {
-                                "en": "refresh my mind",
-                                "vn": "làm mới tâm trí của mình"
                             }
                         ]
                     },
@@ -23796,7 +23762,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "The weather"
     },
     {
         "id": 36,
@@ -23902,7 +23869,12 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Bảo vệ môi trường]:",
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>relax after a busy day, clear my mind, reduce stress, widen my knowledge, stay healthy, save money, save time...</em> hoặc các cụm bạn đã lưu)."
+                    },
+                    {
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "reduce plastic pollution",
@@ -23985,6 +23957,11 @@ const practiceTopicsData = [
                         ]
                     },
                     {
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>relax after a busy day, clear my mind, reduce stress, widen my knowledge, stay healthy, save money, save time...</em> hoặc các cụm bạn đã lưu)."
+                    },
+                    {
                         "title": "♻️ [Lợi ích khi tái sử dụng] (Cách 2):",
                         "items": [
                             {
@@ -24031,7 +24008,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Sự sạch sẽ & Tiết kiệm]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "keep my shopping basket clean and dry",
@@ -24083,6 +24060,11 @@ const practiceTopicsData = [
                                 "vn": "đủ bền chắc cho những món đồ nặng"
                             }
                         ]
+                    },
+                    {
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>relax after a busy day, clear my mind, reduce stress, widen my knowledge, stay healthy, save money, save time...</em> hoặc các cụm bạn đã lưu)."
                     },
                     {
                         "title": "🌍 [Lợi ích bảo vệ môi trường] (Cách 1):",
@@ -24169,7 +24151,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Lối sống xanh]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "go green and reduce plastic waste",
@@ -24195,7 +24177,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Plastic bags"
     },
     {
         "id": 37,
@@ -24565,7 +24548,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Saving money"
     },
     {
         "id": 38,
@@ -24902,7 +24886,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Public speaking"
     },
     {
         "id": 39,
@@ -25264,7 +25249,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Noise"
     },
     {
         "id": 40,
@@ -25299,7 +25285,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "💪 [Lợi ích sức khỏe & Xã hội] (Cách 1):",
+                        "title": "💪 [Lợi ích sức khỏe thể chất - Vo] (Cách 1):",
                         "items": [
                             {
                                 "en": "improve my physical stamina",
@@ -25604,7 +25590,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "🏙️ [Lợi ích & Hạn chế của sự kiện công cộng]:",
+                        "title": "🏙️ [Lợi ích cộng đồng ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "build strong connections with others",
@@ -25639,7 +25625,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Public events"
     },
     {
         "id": 41,
@@ -25738,7 +25725,7 @@ const practiceTopicsData = [
                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>enhance my creativity, learn about culture and traditions, unwind after a tiring day...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Giá trị đồ thủ công]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "decorate my living space nicely",
@@ -25847,7 +25834,7 @@ const practiceTopicsData = [
                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>enhance my creativity, reduce stress, create unforgettable memories...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Ý nghĩa món quà]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "express my love and care for my family",
@@ -25935,7 +25922,7 @@ const practiceTopicsData = [
                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>develop my imagination, enhance my creativity, learn teamwork skills, escape from study pressure...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Lợi ích cho trẻ em]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "limit their daily screen time on smartphones",
@@ -25961,7 +25948,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Handicrafts"
     },
     {
         "id": 42,
@@ -26282,7 +26270,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Traditional food"
     },
     {
         "id": 43,
@@ -26610,6 +26599,11 @@ const practiceTopicsData = [
                         ]
                     },
                     {
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>relax after a busy day, clear my mind, reduce stress, widen my knowledge, stay healthy, save money, save time...</em> hoặc các cụm bạn đã lưu)."
+                    },
+                    {
                         "title": "🛒 [Lợi ích kinh tế] (Cách 2):",
                         "items": [
                             {
@@ -26673,7 +26667,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Traditional villages"
     },
     {
         "id": 44,
@@ -27027,7 +27022,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Community service"
     },
     {
         "id": 45,
@@ -27389,7 +27385,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Happiness"
     },
     {
         "id": 46,
@@ -27789,7 +27786,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Cinema"
     },
     {
         "id": 47,
@@ -28109,7 +28107,7 @@ const practiceTopicsData = [
                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>stay healthy, stay in good shape, unwind after a tiring day, broaden my knowledge, create a balanced lifestyle...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Kết hợp trong nhà & ngoài trời]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "breathe fresh air and enjoy nature",
@@ -28135,7 +28133,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Outdoor activities"
     },
     {
         "id": 48,
@@ -28434,7 +28433,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Your favorite number"
     },
     {
         "id": 49,
@@ -28524,7 +28524,7 @@ const practiceTopicsData = [
                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>reduce stress and anxiety, improve my academic and job prospects...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Hiệu quả công việc]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "finish my daily work on time and avoid unnecessary stress",
@@ -28645,7 +28645,12 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Lợi ích lập kế hoạch]:",
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>relax after a busy day, clear my mind, reduce stress, widen my knowledge, stay healthy, save money, save time...</em> hoặc các cụm bạn đã lưu)."
+                    },
+                    {
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "keep track of all my urgent assignments without forgetting anything",
@@ -28737,7 +28742,7 @@ const practiceTopicsData = [
                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>reduce stress and anxiety, improve my academic and job prospects...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Lợi ích quản lý thời gian]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "complete my daily tasks efficiently without feeling stressed",
@@ -28767,7 +28772,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Time management"
     },
     {
         "id": 50,
@@ -28961,7 +28967,12 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Hạnh phúc gia đình]:",
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>relax after a busy day, clear my mind, reduce stress, widen my knowledge, stay healthy, save money, save time...</em> hoặc các cụm bạn đã lưu)."
+                    },
+                    {
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "share daily responsibilities equally with her husband and build mutual trust",
@@ -29057,7 +29068,12 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH & LÝ DO THÊM]:",
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>relax after a busy day, clear my mind, reduce stress, widen my knowledge, stay healthy, save money, save time...</em> hoặc các cụm bạn đã lưu)."
+                    },
+                    {
+                        "title": "💡 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "handle stressful challenges at work and in life more wisely",
@@ -29083,7 +29099,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Personality"
     },
     {
         "id": 51,
@@ -29190,7 +29207,7 @@ const practiceTopicsData = [
                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>improve my academic and job prospects, gain more confidence...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Ý nghĩa thành công]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "feel much more confident in my own abilities and make my parents proud",
@@ -29336,6 +29353,11 @@ const practiceTopicsData = [
                         ]
                     },
                     {
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>relax after a busy day, clear my mind, reduce stress, widen my knowledge, stay healthy, save money, save time...</em> hoặc các cụm bạn đã lưu)."
+                    },
+                    {
                         "title": "⛰️ [Lợi ích vượt khó] (Cách 1):",
                         "items": [
                             {
@@ -29399,7 +29421,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Kết quả đạt được]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "overcome difficult obstacles without giving up easily",
@@ -29429,7 +29451,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Success"
     },
     {
         "id": 52,
@@ -29641,6 +29664,11 @@ const practiceTopicsData = [
                                 "vn": "các đường dẫn lạ có thể chứa vi-rút máy tính nguy hiểm hoặc lừa đảo trực tuyến"
                             }
                         ]
+                    },
+                    {
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>relax after a busy day, clear my mind, reduce stress, widen my knowledge, stay healthy, save money, save time...</em> hoặc các cụm bạn đã lưu)."
                     }
                 ],
                 "samples": [
@@ -29684,7 +29712,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "🎵 [Lợi ích tinh thần & Ghi nhớ] (Cách 1):",
+                        "title": "🎵 [Lợi ích tinh thần ngoài Bảng - Vo] (Cách 1):",
                         "items": [
                             {
                                 "en": "laugh after a tiring day",
@@ -29790,7 +29818,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Advertising"
     },
     {
         "id": 53,
@@ -29859,7 +29888,7 @@ const practiceTopicsData = [
                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>strengthen family bonds, unwind after a stressful day, boost my energy for the whole day...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Lợi ích bữa ăn]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "gather around the dining table with my parents and share daily stories",
@@ -29999,6 +30028,11 @@ const practiceTopicsData = [
                                 "vn": "trái cây nhiệt đới tươi ngon để tráng miệng"
                             }
                         ]
+                    },
+                    {
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>relax after a busy day, clear my mind, reduce stress, widen my knowledge, stay healthy, save money, save time...</em> hoặc các cụm bạn đã lưu)."
                     }
                 ],
                 "samples": [
@@ -30021,7 +30055,7 @@ const practiceTopicsData = [
                 "formula": "<div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 1 (Cung cấp dưỡng chất thiết yếu và năng lượng làm việc):</div>\n                    <div class=\"topic-formula-text\">\n                        → Well, daily meals <u>are definitely important to me because they allow me to</u> <span class=\"formula-bracket-hl\">[lợi ích 1 - Vo]</span>. <u>Besides, eating healthy food gives me a chance to</u> <span class=\"formula-bracket-hl\">[lợi ích 2 - Vo]</span>.\n                    </div>\n                </div>\n                <div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 2 (Thắt chặt tình cảm gia đình và thư giãn sau giờ làm):</div>\n                    <div class=\"topic-formula-text\">\n                        → Beyond physical nutrition, daily meals <u>play a vital role in my life because they help me</u> <span class=\"formula-bracket-hl\">[lợi ích 1 - Vo]</span>. Moreover, they allow me to <span class=\"formula-bracket-hl\">[lợi ích 2 - Vo]</span>.\n                    </div>\n                </div>",
                 "vocabGroups": [
                     {
-                        "title": "💪 [Vai trò dinh dưỡng & Sức khỏe] (Cách 1):",
+                        "title": "💪 [Vai trò dinh dưỡng - Vo] (Cách 1):",
                         "items": [
                             {
                                 "en": "provide essential nutrients and energy",
@@ -30046,7 +30080,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "❤️ [Lợi ích gắn kết & Tinh thần] (Cách 2):",
+                        "title": "❤️ [Lợi ích gắn kết - Vo] (Cách 2):",
                         "items": [
                             {
                                 "en": "connect deeply with my family",
@@ -30076,7 +30110,7 @@ const practiceTopicsData = [
                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>boost my energy for the whole day, stay healthy and keep fit, strengthen family bonds, unwind after a stressful day...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Dinh dưỡng]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "get essential nutrients to work and study effectively",
@@ -30098,7 +30132,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Meals"
     },
     {
         "id": 54,
@@ -30422,7 +30457,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Traditional festivals in your country"
     },
     {
         "id": 55,
@@ -30737,7 +30773,12 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "✨ [Lợi ích cá nhân & Cộng đồng] (Cách 2):",
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>relax after a busy day, clear my mind, reduce stress, widen my knowledge, stay healthy, save money, save time...</em> hoặc các cụm bạn đã lưu)."
+                    },
+                    {
+                        "title": "✨ [Lợi ích cộng đồng ngoài Bảng - Vo] (Cách 2):",
                         "items": [
                             {
                                 "en": "earn a high income",
@@ -30762,7 +30803,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "📸 [Bất lợi & Lợi ích của sự nổi tiếng - Vo]:",
+                        "title": "📸 [Lợi ích của sự nổi tiếng ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "lose my personal privacy and face constant public pressure",
@@ -30796,7 +30837,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Celebrities"
     },
     {
         "id": 56,
@@ -30992,6 +31034,11 @@ const practiceTopicsData = [
                                 "vn": "gọi video và hẹn gặp nhau uống cà phê (V-ing)"
                             }
                         ]
+                    },
+                    {
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>relax after a busy day, clear my mind, reduce stress, widen my knowledge, stay healthy, save money, save time...</em> hoặc các cụm bạn đã lưu)."
                     }
                 ],
                 "samples": [
@@ -31090,7 +31137,7 @@ const practiceTopicsData = [
                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>reduce stress and anxiety, create unforgettable memories together, learn new things...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Ý nghĩa tình bạn]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "have warm emotional support whenever I face difficulties in life",
@@ -31116,7 +31163,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Close friends"
     },
     {
         "id": 57,
@@ -31284,7 +31332,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "🌿 [Lợi ích giải tỏa & Tinh thần] (Cách 2):",
+                        "title": "🌿 [Lợi ích ngoài Bảng - Vo] (Cách 2):",
                         "items": [
                             {
                                 "en": "escape from noisy city traffic",
@@ -31397,7 +31445,12 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Vai trò nông nghiệp]:",
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>relax after a busy day, clear my mind, reduce stress, widen my knowledge, stay healthy, save money, save time...</em> hoặc các cụm bạn đã lưu)."
+                    },
+                    {
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "have enough fresh food like rice, vegetables, and meat every day",
@@ -31427,7 +31480,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Farms"
     },
     {
         "id": 58,
@@ -31512,7 +31566,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "🎒 [Loại túi & Lợi ích / Thói quen thay thế]:",
+                        "title": "🎒 [Loại túi & Thói quen thay thế]:",
                         "items": [
                             {
                                 "en": "a lightweight canvas backpack / a small crossbody bag",
@@ -31527,6 +31581,11 @@ const practiceTopicsData = [
                                 "vn": "bỏ điện thoại thông minh, chìa khóa và ví trực tiếp vào túi quần áo (Vo)"
                             }
                         ]
+                    },
+                    {
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>relax after a busy day, clear my mind, reduce stress, widen my knowledge, stay healthy, save money, save time...</em> hoặc các cụm bạn đã lưu)."
                     }
                 ],
                 "samples": [
@@ -31618,6 +31677,11 @@ const practiceTopicsData = [
                                 "vn": "ghi chép và hoàn thành công việc hằng ngày một cách hiệu quả (Vo)"
                             }
                         ]
+                    },
+                    {
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>relax after a busy day, clear my mind, reduce stress, widen my knowledge, stay healthy, save money, save time...</em> hoặc các cụm bạn đã lưu)."
                     }
                 ],
                 "samples": [
@@ -31762,7 +31826,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Bags"
     },
     {
         "id": 59,
@@ -31864,7 +31929,7 @@ const practiceTopicsData = [
                         ]
                     },
                     {
-                        "title": "⌚ [Đồng hồ thông minh & Lợi ích / Lựa chọn thay thế]:",
+                        "title": "⌚ [Đồng hồ thông minh & Lựa chọn thay thế]:",
                         "items": [
                             {
                                 "en": "an Apple Watch / a Xiaomi smart band",
@@ -31879,6 +31944,11 @@ const practiceTopicsData = [
                                 "vn": "một chiếc đồng hồ thông minh tốt khá đắt đỏ so với ngân sách hiện tại của tôi"
                             }
                         ]
+                    },
+                    {
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>relax after a busy day, clear my mind, reduce stress, widen my knowledge, stay healthy, save money, save time...</em> hoặc các cụm bạn đã lưu)."
                     }
                 ],
                 "samples": [
@@ -31956,7 +32026,7 @@ const practiceTopicsData = [
                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>stay healthy and keep fit...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Tiện ích đồng hồ thông minh]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "monitor their heart rate, sleep quality, and burned calories accurately",
@@ -32094,7 +32164,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Smartwatches"
     },
     {
         "id": 60,
@@ -32108,7 +32179,7 @@ const practiceTopicsData = [
                 "formula": "<div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 1 (Trả lời CÓ - Giúp trang trí nhà cửa tươi mát và thư giãn):</div>\n                    <div class=\"topic-formula-text\">\n                        → Yes, <u>I'm a big fan of</u> growing green plants at home. First, it allows me to <span class=\"formula-bracket-hl\">[lợi ích 1 - Vo]</span>. Second, taking care of plants every day helps me <span class=\"formula-bracket-hl\">[lợi ích 2 - Vo]</span>.\n                    </div>\n                </div>\n                <div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 2 (Trả lời KHÔNG - Lịch trình bận rộn nên hay quên tưới nước):</div>\n                    <div class=\"topic-formula-text\">\n                        → Honestly, <u>I'm not very keen on</u> growing plants because I have a tight schedule. I often forget to water them regularly, so I prefer <span class=\"formula-bracket-hl\">[hoạt động giải trí khác - V-ing]</span> in my free time.\n                    </div>\n                </div>",
                 "vocabGroups": [
                     {
-                        "title": "🪴 [Lợi ích không gian & Tinh thần] (Cách 1):",
+                        "title": "🪴 [Lợi ích không gian ngoài Bảng - Vo] (Cách 1):",
                         "items": [
                             {
                                 "en": "decorate my small balcony nicely",
@@ -32184,7 +32255,7 @@ const practiceTopicsData = [
                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>unwind after a stressful day, reduce stress and anxiety...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Lợi ích trồng cây]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "decorate my small balcony and make my living space fresher",
@@ -32380,7 +32451,7 @@ const practiceTopicsData = [
                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Bảng Lợi Ích</button> (Ví dụ: <em>reduce stress and anxiety...</em>)."
                     },
                     {
-                        "title": "💡 [GỢI Ý LỢI ÍCH THÊM (không có trong BẢNG LỢI ÍCH) - Vai trò của cây xanh]:",
+                        "title": "🌟 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "produce fresh oxygen and reduce harmful air pollution in big cities",
@@ -32410,7 +32481,8 @@ const practiceTopicsData = [
                     }
                 ]
             }
-        ]
+        ],
+        "topicName": "Plants"
     },
     {
         "id": 61,
@@ -33309,7 +33381,7 @@ const practiceTopicsData = [
                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> BẢNG LỢI ÍCH B2</button> để điền vào vị trí <em>[lợi ích]</em>."
                     },
                     {
-                        "title": "🌱 [Lợi ích xã hội & Cá nhân của xe buýt]:",
+                        "title": "🌱 [Lợi ích ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "curb carbon emissions and air pollution",
@@ -33497,7 +33569,7 @@ const practiceTopicsData = [
     },
     {
         "id": 68,
-        "title": "Chủ đề 68: Let's talk about Vietnamese actors",
+        "title": "Chủ đề 68: Let's talk about vietnamese actors",
         "topicName": "Vietnamese actors",
         "introText": "Let’s talk about Vietnamese actors.",
         "questions": [
@@ -34881,7 +34953,7 @@ const practiceTopicsData = [
                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> BẢNG LỢI ÍCH B2</button> để điền vào vị trí <em>[lợi ích]</em>."
                     },
                     {
-                        "title": "🌱 [Cách vượt qua nỗi buồn & Lợi ích]:",
+                        "title": "🌱 [Cách vượt qua nỗi buồn - Vo]:",
                         "items": [
                             {
                                 "en": "listen to soothing music",
@@ -34993,7 +35065,7 @@ const practiceTopicsData = [
                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> BẢNG LỢI ÍCH B2</button> để điền vào vị trí <em>[lợi ích]</em>."
                     },
                     {
-                        "title": "🤖 [Sử dụng AI & Lợi ích thực tế]:",
+                        "title": "🤖 [Lợi ích thực tế ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "search for information quickly",
@@ -35739,45 +35811,87 @@ const practiceTopicsData = [
                 "qNum": 1,
                 "question": "What do you usually enjoy doing when you are on holiday?",
                 "qType": "Wh-Question: What do you enjoy doing on holiday?",
-                "formula": "<div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 1 (Du lịch nghỉ dưỡng ven biển & thư giãn tâm trí hoàn toàn):</div>\n                    <div class=\"topic-formula-text\">\n                        → <u>Whenever an extended vacation comes around, my absolute priority is to</u> <span class=\"formula-bracket-hl\">[đi du lịch nghỉ mát ở biển]</span>. Sunbathing by the shore and swimming in turquoise waters allows me to <span class=\"formula-bracket-hl\">[lợi ích 1 - Vo]</span> and gives me an opportunity to <span class=\"formula-bracket-hl\">[lợi ích 2 - Vo]</span>.\n                    </div>\n                </div>\n                <div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 2 (Dành thời gian quây quần bên gia đình & nấu những bữa cơm thịnh soạn):</div>\n                    <div class=\"topic-formula-text\">\n                        → <u>To be honest, instead of traveling to congested tourist spots, I take great pleasure in</u> <span class=\"formula-bracket-hl\">[ở nhà sum vầy cùng người thân]</span>. Preparing homemade feasts and sharing laughs allows me to <span class=\"formula-bracket-hl\">[lợi ích 1 - Vo]</span> and fosters <span class=\"formula-bracket-hl\">[lợi ích 2 - N]</span>.\n                    </div>\n                </div>",
+                "formula": "<div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 1 (Đi du lịch ngắm cảnh thư giãn):</div>\n                    <div class=\"topic-formula-text\">\n                        → On holidays, I usually enjoy <span class=\"formula-bracket-hl\">[hoạt động - Ving]</span> because it helps me <span class=\"formula-bracket-hl\">[lợi ích 1 - Vo]</span> and <span class=\"formula-bracket-hl\">[lợi ích 2 - Vo]</span>.\n                    </div>\n                </div>\n                <div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 2 (Ở nhà quây quần gia đình nạp năng lượng):</div>\n                    <div class=\"topic-formula-text\">\n                        → When I am on holiday, I prefer <span class=\"formula-bracket-hl\">[hoạt động - Ving]</span> to <span class=\"formula-bracket-hl\">[lợi ích - Vo]</span>. It also makes me feel <span class=\"formula-bracket-hl\">[tính từ cảm xúc]</span>.\n                    </div>\n                </div>",
                 "vocabGroups": [
                     {
-                        "type": "note",
-                        "title": "⭐ [Cụm Lợi ích B2]:",
-                        "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> BẢNG LỢI ÍCH B2</button> để điền vào vị trí <em>[lợi ích]</em>."
-                    },
-                    {
-                        "title": "🏖️ [Kỳ nghỉ & Hoạt động giải trí]:",
+                        "title": "🏖️ [Hoạt động - Ving]",
                         "items": [
                             {
-                                "en": "retreat to serene coastal resorts",
-                                "vn": "rút về các khu nghỉ dưỡng ven biển thanh bình"
+                                "en": "traveling to new places",
+                                "vn": "đi du lịch đến những vùng đất mới"
                             },
                             {
-                                "en": "escape the stressful work routine",
-                                "vn": "thoát khỏi guồng quay công việc kiệt sức"
+                                "en": "spending time with my family",
+                                "vn": "dành thời gian bên gia đình"
                             },
                             {
-                                "en": "cherish intimate family bonding moments",
-                                "vn": "trân trọng những khoảnh khắc gắn kết gia đình ấm cúng"
+                                "en": "cooking delicious meals at home",
+                                "vn": "nấu những bữa ăn ngon tại nhà"
                             },
                             {
-                                "en": "rejuvenate physical and mental stamina",
-                                "vn": "tái tạo sinh lực thể chất và sức bền tinh thần"
+                                "en": "relaxing on the beach",
+                                "vn": "thư giãn trên bãi biển"
+                            },
+                            {
+                                "en": "visiting famous tourist attractions",
+                                "vn": "tham quan các địa điểm du lịch nổi tiếng"
+                            },
+                            {
+                                "en": "watching my favorite movies",
+                                "vn": "xem những bộ phim yêu thích"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>relax after a busy day, clear my mind, reduce stress, widen my knowledge, stay healthy...</em> hoặc các cụm bạn đã lưu)."
+                    },
+                    {
+                        "title": "🌟 [Lợi ích ngoài Bảng Lợi Ích - Vo]",
+                        "items": [
+                            {
+                                "en": "strengthen family bonds",
+                                "vn": "gắn kết tình cảm gia đình"
+                            },
+                            {
+                                "en": "reconnect with loved ones",
+                                "vn": "kết nối lại với người thân yêu"
+                            },
+                            {
+                                "en": "create precious memories",
+                                "vn": "tạo nên những kỷ niệm quý báu"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "✨ [Tính từ cảm xúc]",
+                        "items": [
+                            {
+                                "en": "joyful and refreshed",
+                                "vn": "vui tươi và sảng khoái"
+                            },
+                            {
+                                "en": "relaxed and peaceful",
+                                "vn": "thư thái và bình yên"
+                            },
+                            {
+                                "en": "comfortable and happy",
+                                "vn": "thoải mái và hạnh phúc"
                             }
                         ]
                     }
                 ],
                 "samples": [
                     {
-                        "label": "Bài mẫu Cách 1 (Nghỉ mát ở bãi biển Nha Trang để tái tạo năng lượng)",
-                        "text": "Whenever an extended vacation comes around, my absolute priority is to travel to coastal destinations like Da Nang or Nha Trang. Sunbathing by the shore and swimming in turquoise waters allows me to unwind completely and gives me an opportunity to escape intense workplace pressure.",
-                        "formatted": "→ <u>Whenever an extended vacation comes around, my absolute priority is to</u> <span class=\"sub-hl\">travel to coastal destinations like Da Nang or Nha Trang</span>. Sunbathing by the shore and swimming in turquoise waters allows me to <span class=\"sub-hl\">unwind completely</span> and gives me an opportunity to <span class=\"sub-hl\">escape intense workplace pressure</span>."
+                        "label": "Bài mẫu Cách 1 (Đi du lịch ngắm cảnh thư giãn - 21 từ)",
+                        "text": "On holidays, I usually enjoy traveling to new places because it helps me relax after a busy day and clear my mind.",
+                        "formatted": "→ On holidays, I usually enjoy <span class=\"sub-hl\">traveling to new places</span> because it helps me <span class=\"sub-hl\">relax after a busy day</span> and <span class=\"sub-hl\">clear my mind</span>."
                     },
                     {
-                        "label": "Bài mẫu Cách 2 (Ở nhà nấu ăn, xem phim và tâm sự cùng người thân)",
-                        "text": "To be honest, instead of traveling to congested tourist spots, I take great pleasure in gathering at home with my loved ones. Preparing homemade feasts and sharing laughs allows me to strengthen familial affection and fosters a peaceful, grounded mindset.",
-                        "formatted": "→ <u>To be honest, instead of traveling to congested tourist spots, I take great pleasure in</u> <span class=\"sub-hl\">gathering at home with my loved ones</span>. Preparing homemade feasts and sharing laughs allows me to <span class=\"sub-hl\">strengthen familial affection</span> and fosters <span class=\"sub-hl\">a peaceful, grounded mindset</span>."
+                        "label": "Bài mẫu Cách 2 (Ở nhà nấu ăn quây quần nạp năng lượng - 24 từ)",
+                        "text": "When I am on holiday, I prefer cooking delicious meals at home to strengthen family bonds. It also makes me feel joyful and refreshed.",
+                        "formatted": "→ When I am on holiday, I prefer <span class=\"sub-hl\">cooking delicious meals at home</span> to <span class=\"sub-hl\">strengthen family bonds</span>. It also makes me feel <span class=\"sub-hl\">joyful and refreshed</span>."
                     }
                 ]
             },
@@ -35785,45 +35899,88 @@ const practiceTopicsData = [
                 "qNum": 2,
                 "question": "Do you often try local food when you travel? Why or why not?",
                 "qType": "Yes/No Question: Do you try local food when traveling?",
-                "formula": "<div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 1 (YES - Thưởng thức ẩm thực bản địa là trải nghiệm văn hóa tuyệt đỉnh):</div>\n                    <div class=\"topic-formula-text\">\n                        → Yes, absolutely! <u>Sampling authentic local food is an irreplaceable component of my travels</u>. Trying exotic flavors allows me to <span class=\"formula-bracket-hl\">[lợi ích 1 - Vo]</span> and gives me profound insight into <span class=\"formula-bracket-hl\">[văn hóa và con người bản địa]</span>.\n                    </div>\n                </div>\n                <div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 2 (CÓ nhưng rất thận trọng vì đường tiêu hóa nhạy cảm):</div>\n                    <div class=\"topic-formula-text\">\n                        → <u>Yes, I do, although I always exercise considerable caution regarding hygiene</u>. I prefer dining at clean, well-rated local establishments so that I can <span class=\"formula-bracket-hl\">[lợi ích 1 - Vo]</span> without <span class=\"formula-bracket-hl\">[nguy cơ rối loạn tiêu hóa - V-ing]</span>.\n                    </div>\n                </div>",
+                "formula": "<div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 1 (Trả lời Có - Khám phá ẩm thực & văn hóa):</div>\n                    <div class=\"topic-formula-text\">\n                        → Sure. I often <span class=\"formula-bracket-hl\">[thử món ăn địa phương - Vo]</span> when traveling because it helps me <span class=\"formula-bracket-hl\">[lợi ích 1 - Vo]</span> and <span class=\"formula-bracket-hl\">[lợi ích 2 - Vo]</span>.\n                    </div>\n                </div>\n                <div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 2 (Trả lời Không - Bụng nhạy cảm, cẩn trọng):</div>\n                    <div class=\"topic-formula-text\">\n                        → Not really. I don't often <span class=\"formula-bracket-hl\">[thử món ăn địa phương - Vo]</span> because <span class=\"formula-bracket-hl\">[lý do bụng yếu]</span>. Instead, I prefer to <span class=\"formula-bracket-hl\">[hoạt động an toàn - Vo]</span> to <span class=\"formula-bracket-hl\">[lợi ích - Vo]</span>.\n                    </div>\n                </div>",
                 "vocabGroups": [
                     {
-                        "type": "note",
-                        "title": "⭐ [Cụm Lợi ích B2]:",
-                        "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> BẢNG LỢI ÍCH B2</button> để điền vào vị trí <em>[lợi ích]</em>."
-                    },
-                    {
-                        "title": "🍜 [Ẩm thực du lịch & Khám phá địa phương]:",
+                        "title": "🍜 [Thử món ăn địa phương - Vo]",
                         "items": [
                             {
-                                "en": "savor authentic regional gastronomy",
-                                "vn": "thưởng thức nền ẩm thực vùng miền đích thực"
+                                "en": "try local dishes",
+                                "vn": "thử các món ăn địa phương"
                             },
                             {
-                                "en": "expand my culinary palate",
-                                "vn": "mở rộng gu thưởng thức ẩm thực của bản thân"
+                                "en": "taste traditional food",
+                                "vn": "nếm thử đồ ăn truyền thống"
                             },
                             {
-                                "en": "prioritize food hygiene standards",
-                                "vn": "ưu tiên các tiêu chuẩn vệ sinh an toàn thực phẩm"
+                                "en": "enjoy famous street food",
+                                "vn": "thưởng thức ẩm thực đường phố nổi tiếng"
                             },
                             {
-                                "en": "bursting with exotic herbs and spices",
-                                "vn": "bùng nổ các loại rau thơm và gia vị độc lạ"
+                                "en": "explore regional specialities",
+                                "vn": "khám phá các đặc sản vùng miền"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm lợi ích sức khỏe / hiểu biết trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>protect my health, stay healthy, avoid getting sick, widen my knowledge...</em> hoặc cụm bạn đã lưu)."
+                    },
+                    {
+                        "title": "🌟 [Lợi ích ẩm thực ngoài Bảng - Vo]",
+                        "items": [
+                            {
+                                "en": "explore local culture and traditions",
+                                "vn": "khám phá văn hóa và truyền thống bản địa"
+                            },
+                            {
+                                "en": "enjoy unique flavors",
+                                "vn": "thưởng thức những hương vị độc đáo"
+                            },
+                            {
+                                "en": "have memorable culinary experiences",
+                                "vn": "có những trải nghiệm ẩm thực đáng nhớ"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "⚠️ [Lý do bụng yếu / cẩn trọng]",
+                        "items": [
+                            {
+                                "en": "my stomach is quite sensitive",
+                                "vn": "bụng dạ của tôi khá nhạy cảm"
+                            },
+                            {
+                                "en": "strange food easily upsets my stomach",
+                                "vn": "món ăn lạ dễ làm tôi đau bụng"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "🛡️ [Hoạt động an toàn - Vo]",
+                        "items": [
+                            {
+                                "en": "eat familiar food",
+                                "vn": "ăn những món ăn quen thuộc"
+                            },
+                            {
+                                "en": "choose clean and safe food",
+                                "vn": "chọn đồ ăn sạch sẽ và an toàn"
                             }
                         ]
                     }
                 ],
                 "samples": [
                     {
-                        "label": "Bài mẫu Cách 1 (YES - Khám phá ẩm thực đường phố và đặc sản vùng miền)",
-                        "text": "Yes, absolutely! Sampling authentic local food is an irreplaceable component of my travels. Trying exotic flavors allows me to expand my culinary palate and gives me profound insight into the traditions and lifestyle of indigenous people.",
-                        "formatted": "→ Yes, absolutely! <u>Sampling authentic local food is an irreplaceable component of my travels</u>. Trying exotic flavors allows me to <span class=\"sub-hl\">expand my culinary palate</span> and gives me profound insight into <span class=\"sub-hl\">the traditions and lifestyle of indigenous people</span>."
+                        "label": "Bài mẫu Cách 1 (Thích thử vì hiểu văn hóa và hương vị độc đáo - 20 từ)",
+                        "text": "Sure. I often try local dishes when traveling because it helps me explore local culture and traditions and enjoy unique flavors.",
+                        "formatted": "→ Sure. I often <span class=\"sub-hl\">try local dishes</span> when traveling because it helps me <span class=\"sub-hl\">explore local culture and traditions</span> and <span class=\"sub-hl\">enjoy unique flavors</span>."
                     },
                     {
-                        "label": "Bài mẫu Cách 2 (CÓ nhưng chọn quán ăn sạch sẽ, uy tín có đánh giá tốt)",
-                        "text": "Yes, I do, although I always exercise considerable caution regarding hygiene because my stomach can be quite sensitive. I prefer dining at clean, well-rated local establishments so that I can savor signature dishes without experiencing distressing digestive issues.",
-                        "formatted": "→ <u>Yes, I do, although I always exercise considerable caution regarding hygiene</u>. I prefer dining at clean, well-rated local establishments so that I can <span class=\"sub-hl\">savor signature dishes</span> without <span class=\"sub-hl\">experiencing distressing digestive issues</span>."
+                        "label": "Bài mẫu Cách 2 (Bụng nhạy cảm nên ăn món quen bảo vệ sức khỏe - 27 từ)",
+                        "text": "Not really. I don't often try local dishes because my stomach is quite sensitive. Instead, I prefer to eat familiar food to protect my health.",
+                        "formatted": "→ Not really. I don't often <span class=\"sub-hl\">try local dishes</span> because <span class=\"sub-hl\">my stomach is quite sensitive</span>. Instead, I prefer to <span class=\"sub-hl\">eat familiar food</span> to <span class=\"sub-hl\">protect my health</span>."
                     }
                 ]
             },
@@ -35831,45 +35988,75 @@ const practiceTopicsData = [
                 "qNum": 3,
                 "question": "What place would you like to visit again in the future?",
                 "qType": "Wh-Question: What place would you visit again?",
-                "formula": "<div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 1 (Thành phố ngàn hoa Đà Lạt - Khí hậu mát mẻ, cà phê đồi thông mộng mơ):</div>\n                    <div class=\"topic-formula-text\">\n                        → <u>If given the chance, I would eagerly revisit the highland city of Da Lat</u>. The tranquil pine forests and refreshingly cool climate allow me to <span class=\"formula-bracket-hl\">[lợi ích 1 - Vo]</span> and provide the ultimate setting to <span class=\"formula-bracket-hl\">[lợi ích 2 - Vo]</span>.\n                    </div>\n                </div>\n                <div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 2 (Đảo ngọc Phú Quốc - Bãi biển cát trắng, hải sản tươi ngon, ngắm hoàng hôn):</div>\n                    <div class=\"topic-formula-text\">\n                        → <u>A breathtaking destination that I yearn to explore again is Phu Quoc island</u>. Strolling along the pristine beaches at sunset allows me to <span class=\"formula-bracket-hl\">[lợi ích 1 - Vo]</span> and helps me <span class=\"formula-bracket-hl\">[lợi ích 2 - Vo]</span>.\n                    </div>\n                </div>",
+                "formula": "<div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 1 (Quay lại thành phố biển thư giãn):</div>\n                    <div class=\"topic-formula-text\">\n                        → I would love to visit <span class=\"formula-bracket-hl\">[địa điểm]</span> again because it has <span class=\"formula-bracket-hl\">[đặc điểm 1]</span> and <span class=\"formula-bracket-hl\">[đặc điểm 2]</span>. It helps me <span class=\"formula-bracket-hl\">[lợi ích - Vo]</span>.\n                    </div>\n                </div>\n                <div class=\"topic-formula-row\">\n                    <div class=\"topic-formula-title\">- Cách 2 (Quay lại vùng cao thanh bình xua tan căng thẳng):</div>\n                    <div class=\"topic-formula-text\">\n                        → In the future, I really want to visit <span class=\"formula-bracket-hl\">[địa điểm]</span> again. Its <span class=\"formula-bracket-hl\">[không gian / khí hậu]</span> always helps me <span class=\"formula-bracket-hl\">[lợi ích - Vo]</span>.\n                    </div>\n                </div>",
                 "vocabGroups": [
                     {
-                        "type": "note",
-                        "title": "⭐ [Cụm Lợi ích B2]:",
-                        "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> BẢNG LỢI ÍCH B2</button> để điền vào vị trí <em>[lợi ích]</em>."
-                    },
-                    {
-                        "title": "📍 [Điểm đến ấn tượng & Cảm xúc quay lại]:",
+                        "title": "🏖️ [Địa điểm & Điểm đến]",
                         "items": [
                             {
-                                "en": "highland misty town of Da Lat",
-                                "vn": "thị trấn cao nguyên sương mù Đà Lạt"
+                                "en": "Da Nang coastal city",
+                                "vn": "thành phố biển Đà Nẵng"
                             },
                             {
-                                "en": "tropical paradise of Phu Quoc island",
-                                "vn": "thiên đường nhiệt đới đảo Phú Quốc"
+                                "en": "Da Lat mountain city",
+                                "vn": "thành phố cao nguyên Đà Lạt"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "✨ [Đặc điểm nổi bật / Không gian / Khí hậu]",
+                        "items": [
+                            {
+                                "en": "beautiful sandy beaches",
+                                "vn": "những bãi biển cát trắng tuyệt đẹp"
                             },
                             {
-                                "en": "unrivaled coastal sunsets",
-                                "vn": "những buổi hoàng hôn ven biển đẹp vô song"
+                                "en": "fresh and cheap seafood",
+                                "vn": "hải sản tươi ngon và giá rẻ"
                             },
                             {
-                                "en": "peaceful haven away from bustling cities",
-                                "vn": "chốn bình yên tách biệt khỏi phố thị ồn ào"
+                                "en": "friendly and helpful locals",
+                                "vn": "người dân bản địa thân thiện và nhiệt tình"
+                            },
+                            {
+                                "en": "cool weather and fresh air",
+                                "vn": "thời tiết mát mẻ và không khí trong lành"
+                            },
+                            {
+                                "en": "peaceful atmosphere",
+                                "vn": "không gian thanh bình, yên tĩnh"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "note",
+                        "title": "💡 [Lợi ích trong BẢNG LỢI ÍCH - Vo]",
+                        "note": "Thí sinh chủ động sử dụng các cụm từ quen thuộc trong <strong>BẢNG LỢI ÍCH</strong> (như: <em>reduce stress, clear my mind, regain my energy, escape from daily pressure...</em> hoặc cụm bạn đã lưu)."
+                    },
+                    {
+                        "title": "🌟 [Lợi ích du lịch ngoài Bảng - Vo]",
+                        "items": [
+                            {
+                                "en": "relive wonderful memories",
+                                "vn": "sống lại những kỷ niệm tuyệt vời"
+                            },
+                            {
+                                "en": "discover new hidden spots",
+                                "vn": "khám phá thêm những góc đẹp mới"
                             }
                         ]
                     }
                 ],
                 "samples": [
                     {
-                        "label": "Bài mẫu Cách 1 (Quay lại Đà Lạt để tận hưởng không khí trong lành và quán cà phê đẹp)",
-                        "text": "If given the chance, I would eagerly revisit the highland city of Da Lat. The tranquil pine forests and refreshingly cool climate allow me to recharge my batteries thoroughly and provide the ultimate setting to clear my mind after exhausting work weeks.",
-                        "formatted": "→ <u>If given the chance, I would eagerly revisit the highland city of Da Lat</u>. The tranquil pine forests and refreshingly cool climate allow me to <span class=\"sub-hl\">recharge my batteries thoroughly</span> and provide the ultimate setting to <span class=\"sub-hl\">clear my mind after exhausting work weeks</span>."
+                        "label": "Bài mẫu Cách 1 (Quay lại Đà Nẵng biển đẹp, hải sản tươi ngon - 25 từ)",
+                        "text": "I would love to visit Da Nang coastal city again because it has beautiful sandy beaches and fresh and cheap seafood. It helps me reduce stress and clear my mind.",
+                        "formatted": "→ I would love to visit <span class=\"sub-hl\">Da Nang coastal city</span> again because it has <span class=\"sub-hl\">beautiful sandy beaches</span> and <span class=\"sub-hl\">fresh and cheap seafood</span>. It helps me <span class=\"sub-hl\">reduce stress and clear my mind</span>."
                     },
                     {
-                        "label": "Bài mẫu Cách 2 (Quay lại Phú Quốc để lặn ngắm san hô và ngắm hoàng hôn biển)",
-                        "text": "A breathtaking destination that I yearn to explore again is Phu Quoc island. Strolling along the pristine beaches at sunset allows me to relieve accumulated tension and helps me create indelible memories with my closest companions.",
-                        "formatted": "→ <u>A breathtaking destination that I yearn to explore again is Phu Quoc island</u>. Strolling along the pristine beaches at sunset allows me to <span class=\"sub-hl\">relieve accumulated tension</span> and helps me <span class=\"sub-hl\">create indelible memories with my closest companions</span>."
+                        "label": "Bài mẫu Cách 2 (Quay lại Đà Lạt không khí thanh bình giảm áp lực - 24 từ)",
+                        "text": "In the future, I really want to visit Da Lat mountain city again. Its peaceful atmosphere always helps me escape from daily pressure.",
+                        "formatted": "→ In the future, I really want to visit <span class=\"sub-hl\">Da Lat mountain city</span> again. Its <span class=\"sub-hl\">peaceful atmosphere</span> always helps me <span class=\"sub-hl\">escape from daily pressure</span>."
                     }
                 ]
             }
@@ -36477,7 +36664,7 @@ const practiceTopicsData = [
                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> BẢNG LỢI ÍCH B2</button> để điền vào vị trí <em>[lợi ích]</em>."
                     },
                     {
-                        "title": "🎨 [Sở thích mới & Lợi ích thực tế]:",
+                        "title": "🎨 [Lợi ích thực tế ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "take up cooking at home and baking",
@@ -36577,7 +36764,7 @@ const practiceTopicsData = [
                         "note": "Sử dụng các cụm từ trong <button type=\"button\" onclick=\"switchTab('benefits')\" style=\"background: none; border: none; padding: 0; color: #d946ef; font-weight: 800; text-decoration: underline; cursor: pointer; font-size: 0.95rem; font-family: inherit;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> BẢNG LỢI ÍCH B2</button> để điền vào vị trí <em>[lợi ích]</em>."
                     },
                     {
-                        "title": "🤝 [Lời khuyên & Lợi ích lan tỏa]:",
+                        "title": "🤝 [Lợi ích lan tỏa ngoài Bảng - Vo]:",
                         "items": [
                             {
                                 "en": "recommend this hobby to friends",
@@ -36938,7 +37125,6 @@ const practiceTopicsData = [
         ]
     }
 ];
-
 window.practiceTopicsData = practiceTopicsData;
 
 // ==========================================================================
